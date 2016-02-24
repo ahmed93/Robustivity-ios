@@ -8,8 +8,17 @@
 
 import UIKit
 
+
 class BaseViewController: UIViewController {
 
+    var delegate:AppDelegate!
+
+    @IBOutlet weak var label: UILabel!
+    
+    override func loadView() {
+        super.loadView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

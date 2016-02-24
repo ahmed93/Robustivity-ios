@@ -10,6 +10,8 @@ import UIKit
 
 class BaseTableViewController: UITableViewController {
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
