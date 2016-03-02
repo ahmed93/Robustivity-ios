@@ -8,18 +8,20 @@
 
 import UIKit
 
-
-enum Type:Int {
-    case Default, TopBar, Body
-}
-
-
-
-
-
-
 class Theme: NSObject {
     
+    // MARK: Application Main Colors
+    static func redColor() -> UIColor {
+        return UIColor(hexValue: 0xCC0000) // to be changed for the needed red
+    }
     
-
+    // MARK: Application Main Fonts
+    static func headerFont() -> String {
+        return "Cabin-BoldItalic" // to be changed for the needed red
+    }
+    
+    static func topBarFont() -> String {
+        return "Cabin-Italic" // to be changed for the needed red
+    }
 }
+

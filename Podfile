@@ -5,9 +5,5 @@ use_frameworks!
 
 xcodeproj 'Robustivity/Robustivity.xcodeproj'
 
-target 'Robustivity' do
-    pod 'Realm'
-    pod 'SDWebImage'
-    
-end
-
+pod 'Realm'
+pod 'SDWebImage'

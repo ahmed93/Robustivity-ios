@@ -8,6 +8,6 @@
 
 import Foundation
 
-extension BaseAPIConnector {
-    
+extension APIConnector {
+
 }

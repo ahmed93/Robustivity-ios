@@ -7,25 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A77A5EC61C84D7070042341E /* UIViewController+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A5EC51C84D7070042341E /* UIViewController+Theme.swift */; };
+		A77A5EC81C84DB2A0042341E /* UILable+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A5EC71C84DB2A0042341E /* UILable+Theme.swift */; };
+		A77A5EEB1C85AD540042341E /* ViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A5EEA1C85AD540042341E /* ViewAdaptor.swift */; };
 		A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7AD1C7D8244007870CB /* AppDelegate.swift */; };
 		A7BCE7B31C7D8244007870CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BCE7B11C7D8244007870CB /* Main.storyboard */; };
 		A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BCE7B41C7D8244007870CB /* Assets.xcassets */; };
 		A7BCE7B81C7D8244007870CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BCE7B61C7D8244007870CB /* LaunchScreen.storyboard */; };
 		A7BCE7CE1C7DA15C007870CB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7CD1C7DA15C007870CB /* Theme.swift */; };
 		A7BCE7D01C7DA84D007870CB /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7CF1C7DA84D007870CB /* UIColor+Theme.swift */; };
-		A7BCE7D21C7DA8AF007870CB /* UILabel+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7D11C7DA8AF007870CB /* UILabel+Theme.swift */; };
 		A7BCE7D41C7DAD12007870CB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7D31C7DAD12007870CB /* API.swift */; };
 		A7BCE7D61C7DADE5007870CB /* APIConnector_Module_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7D51C7DADE5007870CB /* APIConnector_Module_1.swift */; };
-		A7BCE7D81C7DAE06007870CB /* BaseAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7D71C7DAE06007870CB /* BaseAPIConnector.swift */; };
+		A7BCE7D81C7DAE06007870CB /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7D71C7DAE06007870CB /* APIConnector.swift */; };
 		A7BCE7DC1C7DAE51007870CB /* APIConnector_Module_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7D91C7DAE51007870CB /* APIConnector_Module_2.swift */; };
 		A7BCE7DD1C7DAE51007870CB /* APIConnector_Module_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7DA1C7DAE51007870CB /* APIConnector_Module_3.swift */; };
 		A7BCE7DE1C7DAE51007870CB /* APIConnector_Module_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7DB1C7DAE51007870CB /* APIConnector_Module_4.swift */; };
-		A7BCE7E81C7DAFBA007870CB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7E61C7DAFBA007870CB /* BaseTableViewController.swift */; };
 		A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7E71C7DAFBA007870CB /* BaseViewController.swift */; };
-		A7BCE7EB1C7DAFDD007870CB /* BaseTableAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7EA1C7DAFDD007870CB /* BaseTableAdaptor.swift */; };
+		A7BCE7EB1C7DAFDD007870CB /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7EA1C7DAFDD007870CB /* BaseTableAdapter.swift */; };
+		AA489AE67CC76CCB65C307BC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6482E17E4B751B0CFC059D39 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6482E17E4B751B0CFC059D39 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6AE3A9FE9B6D775798860CD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A77A5EC51C84D7070042341E /* UIViewController+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Theme.swift"; sourceTree = "<group>"; };
+		A77A5EC71C84DB2A0042341E /* UILable+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Theme.swift"; sourceTree = "<group>"; };
+		A77A5EEA1C85AD540042341E /* ViewAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdaptor.swift; sourceTree = "<group>"; };
 		A7BCE7AA1C7D8244007870CB /* Robustivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robustivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BCE7AD1C7D8244007870CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BCE7B21C7D8244007870CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,16 +41,16 @@
 		A7BCE7B91C7D8244007870CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7BCE7CD1C7DA15C007870CB /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A7BCE7CF1C7DA84D007870CB /* UIColor+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
-		A7BCE7D11C7DA8AF007870CB /* UILabel+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Theme.swift"; sourceTree = "<group>"; };
 		A7BCE7D31C7DAD12007870CB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A7BCE7D51C7DADE5007870CB /* APIConnector_Module_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector_Module_1.swift; sourceTree = "<group>"; };
-		A7BCE7D71C7DAE06007870CB /* BaseAPIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIConnector.swift; sourceTree = "<group>"; };
+		A7BCE7D71C7DAE06007870CB /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		A7BCE7D91C7DAE51007870CB /* APIConnector_Module_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector_Module_2.swift; sourceTree = "<group>"; };
 		A7BCE7DA1C7DAE51007870CB /* APIConnector_Module_3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector_Module_3.swift; sourceTree = "<group>"; };
 		A7BCE7DB1C7DAE51007870CB /* APIConnector_Module_4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector_Module_4.swift; sourceTree = "<group>"; };
-		A7BCE7E61C7DAFBA007870CB /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		A7BCE7E71C7DAFBA007870CB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		A7BCE7EA1C7DAFDD007870CB /* BaseTableAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdaptor.swift; sourceTree = "<group>"; };
+		A7BCE7EA1C7DAFDD007870CB /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
+		A7BCE7FB1C7F176B007870CB /* Robustivity-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Robustivity-Bridging-Header.h"; path = "Theme/Robustivity-Bridging-Header.h"; sourceTree = "<group>"; };
+		DBC23C5D34179A7FACD256A1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +58,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA489AE67CC76CCB65C307BC /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		445111B6FE0B4C1C41B4E4A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBC23C5D34179A7FACD256A1 /* Pods.debug.xcconfig */,
+				A6AE3A9FE9B6D775798860CD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A7BCE7A11C7D8244007870CB = {
 			isa = PBXGroup;
 			children = (
 				A7BCE7AC1C7D8244007870CB /* Robustivity */,
 				A7BCE7AB1C7D8244007870CB /* Products */,
+				445111B6FE0B4C1C41B4E4A4 /* Pods */,
+				E6B17D40907C7DE68E55434D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +124,7 @@
 		A7BCE7C11C7D834F007870CB /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				A7BCE7FB1C7F176B007870CB /* Robustivity-Bridging-Header.h */,
 				A7BCE7CC1C7DA129007870CB /* Theme */,
 				A7BCE7C21C7D834F007870CB /* API */,
 			);
@@ -115,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				A7BCE7D31C7DAD12007870CB /* API.swift */,
-				A7BCE7D71C7DAE06007870CB /* BaseAPIConnector.swift */,
+				A7BCE7D71C7DAE06007870CB /* APIConnector.swift */,
 				A7BCE7D51C7DADE5007870CB /* APIConnector_Module_1.swift */,
 				A7BCE7D91C7DAE51007870CB /* APIConnector_Module_2.swift */,
 				A7BCE7DA1C7DAE51007870CB /* APIConnector_Module_3.swift */,
@@ -128,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				A7BCE7E51C7DAFBA007870CB /* BaseViewControllers */,
+				A7BCE8001C7F68F1007870CB /* DashBoard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -146,7 +167,8 @@
 			children = (
 				A7BCE7CD1C7DA15C007870CB /* Theme.swift */,
 				A7BCE7CF1C7DA84D007870CB /* UIColor+Theme.swift */,
-				A7BCE7D11C7DA8AF007870CB /* UILabel+Theme.swift */,
+				A77A5EC51C84D7070042341E /* UIViewController+Theme.swift */,
+				A77A5EC71C84DB2A0042341E /* UILable+Theme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -154,11 +176,26 @@
 		A7BCE7E51C7DAFBA007870CB /* BaseViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7BCE7E61C7DAFBA007870CB /* BaseTableViewController.swift */,
 				A7BCE7E71C7DAFBA007870CB /* BaseViewController.swift */,
-				A7BCE7EA1C7DAFDD007870CB /* BaseTableAdaptor.swift */,
+				A7BCE7EA1C7DAFDD007870CB /* BaseTableAdapter.swift */,
 			);
 			path = BaseViewControllers;
+			sourceTree = "<group>";
+		};
+		A7BCE8001C7F68F1007870CB /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				A77A5EEA1C85AD540042341E /* ViewAdaptor.swift */,
+			);
+			name = DashBoard;
+			sourceTree = "<group>";
+		};
+		E6B17D40907C7DE68E55434D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6482E17E4B751B0CFC059D39 /* Pods.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7BCE7BC1C7D8244007870CB /* Build configuration list for PBXNativeTarget "Robustivity" */;
 			buildPhases = (
+				0ED9A905DBEF08D7D1493DA2 /* Check Pods Manifest.lock */,
 				A7BCE7A61C7D8244007870CB /* Sources */,
 				A7BCE7A71C7D8244007870CB /* Frameworks */,
 				A7BCE7A81C7D8244007870CB /* Resources */,
+				FEBDC906941097D051323199 /* Embed Pods Frameworks */,
+				6FB2592A43E37551F590AA6E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +267,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0ED9A905DBEF08D7D1493DA2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6FB2592A43E37551F590AA6E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEBDC906941097D051323199 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7BCE7A61C7D8244007870CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -235,15 +323,16 @@
 				A7BCE7DD1C7DAE51007870CB /* APIConnector_Module_3.swift in Sources */,
 				A7BCE7D61C7DADE5007870CB /* APIConnector_Module_1.swift in Sources */,
 				A7BCE7DE1C7DAE51007870CB /* APIConnector_Module_4.swift in Sources */,
-				A7BCE7EB1C7DAFDD007870CB /* BaseTableAdaptor.swift in Sources */,
+				A7BCE7EB1C7DAFDD007870CB /* BaseTableAdapter.swift in Sources */,
+				A77A5EC81C84DB2A0042341E /* UILable+Theme.swift in Sources */,
 				A7BCE7CE1C7DA15C007870CB /* Theme.swift in Sources */,
 				A7BCE7DC1C7DAE51007870CB /* APIConnector_Module_2.swift in Sources */,
 				A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */,
-				A7BCE7D81C7DAE06007870CB /* BaseAPIConnector.swift in Sources */,
+				A77A5EEB1C85AD540042341E /* ViewAdaptor.swift in Sources */,
+				A7BCE7D81C7DAE06007870CB /* APIConnector.swift in Sources */,
+				A77A5EC61C84D7070042341E /* UIViewController+Theme.swift in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
-				A7BCE7D21C7DA8AF007870CB /* UILabel+Theme.swift in Sources */,
 				A7BCE7D01C7DA84D007870CB /* UIColor+Theme.swift in Sources */,
-				A7BCE7E81C7DAFBA007870CB /* BaseTableViewController.swift in Sources */,
 				A7BCE7D41C7DAD12007870CB /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,23 +446,30 @@
 		};
 		A7BCE7BD1C7D8244007870CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBC23C5D34179A7FACD256A1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Robustivity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BumbleBee.Robustivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Robustivity/Support/Theme/Robustivity-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A7BCE7BE1C7D8244007870CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6AE3A9FE9B6D775798860CD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Robustivity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BumbleBee.Robustivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Robustivity/Support/Theme/Robustivity-Bridging-Header.h";
 			};
 			name = Release;
 		};
