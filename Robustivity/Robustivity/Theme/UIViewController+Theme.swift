@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ThemeViewControllerDelegate {
+    
+}
+
 extension UIViewController {
     
     public override class func initialize() {
@@ -46,7 +50,9 @@ extension UIViewController {
         self.xxx_viewWillAppear(animated)
         
         let navigationController = self.navigationController
-        if navigationController == nil {
+        let destinationVC = self as UIViewController
+//        print(destinationVC.conformsToProtocol(NSProtocolFromString("ThemeViewControllerDelegate")!))
+        if navigationController == nil {// || destinationVC.superclass! != BaseViewController().classForCoder {
             return
         }
         self.navigationController!.navigationBar.tintColor = Theme.redColor()

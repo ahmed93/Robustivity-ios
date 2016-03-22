@@ -24,7 +24,7 @@
 		A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A717E5AE1CA1774400F237DD /* Main.storyboard */; };
 		A717E5B11CA17C5300F237DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A717E5B01CA17C5300F237DD /* LaunchScreen.storyboard */; };
 		A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E5B21CA17D4000F237DD /* BaseModel.swift */; };
-		A717E5B51CA1816D00F237DD /* RobustivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E5B41CA1816D00F237DD /* RobustivityModel.swift */; };
+		A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E5B41CA1816D00F237DD /* ListModel.swift */; };
 		A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */; };
 		A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED11C9E9724002B3991 /* FeedViewController.swift */; };
 		A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */; };
@@ -62,7 +62,7 @@
 		A717E5AE1CA1774400F237DD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Robustivity/Global/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		A717E5B01CA17C5300F237DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A717E5B21CA17D4000F237DD /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		A717E5B41CA1816D00F237DD /* RobustivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobustivityModel.swift; sourceTree = "<group>"; };
+		A717E5B41CA1816D00F237DD /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		A7A94ED11C9E9724002B3991 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
@@ -250,8 +250,8 @@
 		A7BCE7C01C7D834F007870CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
-				A717E5B41CA1816D00F237DD /* RobustivityModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,7 +438,7 @@
 				A7A94ED91C9E97B5002B3991 /* ToggleViewController.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
-				A717E5B51CA1816D00F237DD /* RobustivityModel.swift in Sources */,
+				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
 				A717E5A21CA1485000F237DD /* UIColor+Theme.swift in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,

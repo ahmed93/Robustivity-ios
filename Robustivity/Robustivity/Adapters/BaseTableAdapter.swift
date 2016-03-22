@@ -10,8 +10,8 @@ import UIKit
 
 class BaseTableAdapter: BaseAdapter {
     
-    var tableItems:NSMutableArray!
-    var searchTableViewList:NSMutableArray?
+    var tableItems:ListModel!
+    var searchTableViewList:ListModel?
     var tableView:UITableView!
     var cellIdentifier:String!
     
@@ -43,7 +43,7 @@ class BaseTableAdapter: BaseAdapter {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 200
-        tableItems = NSMutableArray()
+        tableItems = ListModel()
         
     }
     
@@ -60,7 +60,7 @@ extension BaseTableAdapter: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableItems.count
+        return tableItems.count()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

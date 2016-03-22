@@ -8,8 +8,10 @@
 
 import UIKit
 
+@IBDesignable
 class FeedViewController: BaseViewController {
 
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("FeedViewController", owner: self, options: nil)
@@ -22,7 +24,6 @@ class FeedViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
 

@@ -11,8 +11,11 @@ import UIKit
 
 extension UILabel {
     
+    
+    
     public override class func initialize() {
         super.initialize()
+
         struct Static {
             static var token: dispatch_once_t = 0
         }
@@ -21,7 +24,7 @@ extension UILabel {
         if self !== UILabel.self {
             return
         }
-
+        
         dispatch_once(&Static.token) {
             let originalSelector = Selector("setText:")
             let swizzledSelector = Selector("xxx_setText:")
@@ -41,15 +44,17 @@ extension UILabel {
     
     func xxx_setText(text:String) {
         self.xxx_setText(text)
-        if tag == 1000 {
-            font = UIFont(name: "HelveticaNeue", size: 11)
-            textColor = .redColor()
+        print(self.tag)
+        print(self.font.pointSize)
+        if self.font.pointSize == 17 {
+            self.font = UIFont(name: "HelveticaNeue-Bold", size: self.font.pointSize)
+            textColor = UIColor.greenColor()
         }else if tag == 2000 {
-            font = UIFont(name: "HelveticaNeue", size: 15)
+            font = UIFont(name: "HelveticaNeue", size: self.font.pointSize)
             textColor = .redColor()
         }else if tag == 3000 {
             print("In")
-            font = UIFont(name: "HelveticaNeue-Bold", size: 20)
+            font = UIFont(name: "HelveticaNeue-Bold", size: self.font.pointSize)
             textColor = .redColor()
         }
     }

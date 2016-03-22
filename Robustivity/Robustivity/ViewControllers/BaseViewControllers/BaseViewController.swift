@@ -9,7 +9,7 @@
 import UIKit
 
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, ThemeViewControllerDelegate {
 
     var delegate:AppDelegate!
     
