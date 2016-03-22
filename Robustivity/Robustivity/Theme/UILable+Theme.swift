@@ -1,5 +1,5 @@
 //
-//  UIViewController+Theme.swift
+//  UILable+Theme.swift
 //  Robustivity
 //
 //  Created by Ahmed Mohamed Fareed on 2/29/16.
@@ -8,25 +8,23 @@
 
 import UIKit
 
-extension UIViewController {
+
+extension UILabel {
     
     public override class func initialize() {
+        super.initialize()
         struct Static {
             static var token: dispatch_once_t = 0
         }
         
-        if self !== UILabel.self {
-            
-        }
-        
         // make sure this isn't a subclass
-        if self !== UIViewController.self {
+        if self !== UILabel.self {
             return
         }
-        
+
         dispatch_once(&Static.token) {
-            let originalSelector = Selector("viewWillAppear:")
-            let swizzledSelector = Selector("xxx_viewWillAppear:")
+            let originalSelector = Selector("setText:")
+            let swizzledSelector = Selector("xxx_setText:")
             
             let originalMethod = class_getInstanceMethod(self, originalSelector)
             let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
@@ -41,17 +39,18 @@ extension UIViewController {
         }
     }
     
-    // MARK: - Method Swizzling
-    func xxx_viewWillAppear(animated: Bool) {
-        self.xxx_viewWillAppear(animated)
-        
-        let navigationController = self.navigationController
-        if navigationController == nil {
-            return
+    func xxx_setText(text:String) {
+        self.xxx_setText(text)
+        if tag == 1000 {
+            font = UIFont(name: "HelveticaNeue", size: 11)
+            textColor = .redColor()
+        }else if tag == 2000 {
+            font = UIFont(name: "HelveticaNeue", size: 15)
+            textColor = .redColor()
+        }else if tag == 3000 {
+            print("In")
+            font = UIFont(name: "HelveticaNeue-Bold", size: 20)
+            textColor = .redColor()
         }
-        self.navigationController!.navigationBar.tintColor = Theme.redColor()
-        self.navigationController!.navigationBar.barTintColor = Theme.redColor()
-        
-        // adding right/left button for sideMenus
     }
 }

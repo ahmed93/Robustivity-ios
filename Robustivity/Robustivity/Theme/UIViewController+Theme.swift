@@ -1,5 +1,5 @@
 //
-//  UILable+Theme.swift
+//  UIViewController+Theme.swift
 //  Robustivity
 //
 //  Created by Ahmed Mohamed Fareed on 2/29/16.
@@ -8,23 +8,25 @@
 
 import UIKit
 
-
-extension UILabel {
+extension UIViewController {
     
     public override class func initialize() {
-        super.initialize()
         struct Static {
             static var token: dispatch_once_t = 0
         }
         
-        // make sure this isn't a subclass
         if self !== UILabel.self {
+            
+        }
+        
+        // make sure this isn't a subclass
+        if self !== UIViewController.self {
             return
         }
-
+        
         dispatch_once(&Static.token) {
-            let originalSelector = Selector("setText:")
-            let swizzledSelector = Selector("xxx_setText:")
+            let originalSelector = Selector("viewWillAppear:")
+            let swizzledSelector = Selector("xxx_viewWillAppear:")
             
             let originalMethod = class_getInstanceMethod(self, originalSelector)
             let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
@@ -39,14 +41,18 @@ extension UILabel {
         }
     }
     
-    func xxx_setText(text:String) {
-        self.xxx_setText(text)
-        if tag == 1000 {
-            font = UIFont(name: "HelveticaNeue-Bold", size: 16)
-            textColor = UIColor.redColor()
-        }else if tag == 2000 {
-            font = UIFont(name: "HelveticaNeue-Bold", size: 16)
-            textColor = .redColor()
+    // MARK: - Method Swizzling
+    func xxx_viewWillAppear(animated: Bool) {
+        self.xxx_viewWillAppear(animated)
+        
+        let navigationController = self.navigationController
+        if navigationController == nil {
+            return
         }
+        self.navigationController!.navigationBar.tintColor = Theme.redColor()
+        self.navigationController!.navigationBar.barTintColor = Theme.redColor()
+        self.navigationController?.navigationBar.tag = 3000
+        
+        // adding right/left button for sideMenus
     }
 }

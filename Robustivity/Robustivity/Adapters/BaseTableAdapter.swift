@@ -8,32 +8,47 @@
 
 import UIKit
 
-class BaseTableAdapter: NSObject {
+class BaseTableAdapter: BaseAdapter {
     
-    var tableView:UITableView!
     var tableItems:NSMutableArray!
-    var cellClass:AnyClass!
+    var searchTableViewList:NSMutableArray?
+    var tableView:UITableView!
     var cellIdentifier:String!
     
     init(tablView:UITableView, cellIdentifier:String) {
         super.init()
-
+        self.cellIdentifier = cellIdentifier
+        commonSetup()
     }
     
-    init(tableView:UITableView,withCellClass cellClass:AnyClass, withCellIdentifier cellID:String) {
+    init(tableView:UITableView,registerCellWithClass cellClass:AnyClass, withIdentifier identifier:String) {
         super.init()
-        
         self.tableView = tableView
-        self.cellClass = cellClass
-        self.cellIdentifier = cellID
-        self.tableView.estimatedRowHeight = 120
+        self.cellIdentifier = identifier
+        self.tableView.registerClass(cellClass, forCellReuseIdentifier: identifier)
         
+        commonSetup()
+    }
+
+    init(tableView:UITableView,registerCellWithNib name:String, withIdentifier identifier:String) {
+        super.init()
+        self.tableView = tableView
+        self.cellIdentifier = identifier
+        self.tableView.registerNib(UINib(nibName: name, bundle: nil), forCellReuseIdentifier: identifier)
+        
+        commonSetup()
+    }
+    
+    func commonSetup() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 200
+        tableItems = NSMutableArray()
+        
     }
     
-    func reloadData() {
-        tableView.reloadData()
+    func reloadItems() {
+
     }
     
 }
@@ -51,15 +66,17 @@ extension BaseTableAdapter: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell!
         
-        if self.respondsToSelector(Selector("configureCell:")) {
-            print("isHere")
-        }
-        
+        configure(cell, indexPath: indexPath)
         return cell
     }
+    
+    
+    // Empty implementation to be overriden
+    func configure(cell:UITableViewCell, indexPath:NSIndexPath) {}
 }
 
 extension BaseTableAdapter: UITableViewDelegate {
     
 }
+
 
