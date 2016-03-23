@@ -25,15 +25,6 @@ class BaseViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        if let navigationController = self.navigationController {
-            navigationController.navigationBar.tintColor = Theme.redColor()
-            navigationController.navigationBar.barTintColor = Theme.redColor()
-            navigationController.navigationBar.tag = 3000
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

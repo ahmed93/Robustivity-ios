@@ -45,30 +45,11 @@ extension UIViewController {
     func xxx_viewWillAppear(animated: Bool) {
         self.xxx_viewWillAppear(animated)
         
-        let destinationVC:UIViewController = self as UIViewController
-        if let mainProtocol = NSProtocolFromString("ThemeViewControllerDelegate") where destinationVC.conformsToProtocol(mainProtocol) {
-
-            if let navigationController = self.navigationController {
-                navigationController.navigationBar.tintColor = Theme.redColor()
-                navigationController.navigationBar.barTintColor = Theme.redColor()
-                navigationController.navigationBar.tag = 3000
-            }
-            return
+    
+        if let navigationController = self.navigationController {
+            navigationController.navigationBar.tintColor = Theme.redColor()
+            navigationController.navigationBar.barTintColor = Theme.redColor()
+            navigationController.navigationBar.tag = 3000
         }
-        
-        // adding right/left button for sideMenus
-        if (self.presentingViewController == nil)
-        {
-            return;
-        }
-        
-
-        
-//        UIImage *backButtonImage = [nextViewController backButtonImage];
-//        backButtonImage = [backButtonImage imageWithAlignmentRectInsets:UIEdgeInsetsMake(0, 0, -4, 0)];
-//        navigationController.navigationBar.backIndicatorImage = backButtonImage;
-//        navigationController.navigationBar.backIndicatorTransitionMaskImage = backButtonImage;
-//        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
-//        nextViewController.navigationItem.backBarButtonItem = backButton;
     }
 }
