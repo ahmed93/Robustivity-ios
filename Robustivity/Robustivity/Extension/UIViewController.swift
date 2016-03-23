@@ -47,9 +47,10 @@ extension UIViewController {
         
     
         if let navigationController = self.navigationController {
-            navigationController.navigationBar.tintColor = Theme.redColor()
+            navigationController.navigationBar.tintColor    = Theme.redColor()
             navigationController.navigationBar.barTintColor = Theme.redColor()
             navigationController.navigationBar.tag = 3000
+            navigationController.navigationBar.translucent = false
         }
     }
 }
