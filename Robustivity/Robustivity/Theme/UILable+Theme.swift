@@ -10,9 +10,7 @@ import UIKit
 
 
 extension UILabel {
-    
-    
-    
+        
     public override class func initialize() {
         super.initialize()
 

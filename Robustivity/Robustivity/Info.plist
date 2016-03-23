@@ -37,9 +37,19 @@
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MyriadPro-Bold.otf</string>
+		<string>MyriadPro-BoldCond.otf</string>
+		<string>MyriadPro-BoldCondlt.otf</string>
+		<string>MyriadPro-Boldlt.otf</string>
+		<string>MyriadPro-Cond.otf</string>
+		<string>MyriadPro-Condlt.otf</string>
+		<string>MyriadPro-lt.otf</string>
+		<string>MyriadPro-Regular.otf</string>
+		<string>MyriadPro-Semibold.otf</string>
+		<string>MyriadPro-Semiboldlt.otf</string>
 	</array>
 </dict>
 </plist>

@@ -75,19 +75,11 @@
                 <viewController id="wqb-WL-jsQ" userLabel="Planner" customClass="PlannerViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pZ9-FK-dqV">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="7rA-Pq-Lb3">
-                            <rect key="frame" x="180" y="7" width="240" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                            </segments>
-                        </segmentedControl>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbi-Xo-TAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="407"/>
+            <point key="canvasLocation" x="2204" y="399"/>
         </scene>
         <!--Feeds-->
         <scene sceneID="LTc-ad-5NI">
@@ -130,7 +122,6 @@
         <!--Toggle-->
         <scene sceneID="dL7-B9-6W2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ptt-ag-pN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q6R-mu-bHS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Toggle" image="toggle" selectedImage="toggle_selected" id="vyb-BY-kAV"/>
                     <toolbarItems/>
@@ -143,6 +134,7 @@
                         <segue destination="HWH-za-X6u" kind="relationship" relationship="rootViewController" id="54o-Vr-d9M"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptt-ag-pN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1392" y="1131"/>
         </scene>

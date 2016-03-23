@@ -10,11 +10,18 @@ import UIKit
 
 class PlannerViewController: BaseViewController {
 
+    var segments:UISegmentedControl!
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("PlannerViewController", owner: self, options: nil)
     }
     
-    
- 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        segments = UISegmentedControl(items: ["Tasks","ToDo"])
+//        self.navigationController?.navigationBar.addSubview(segments)
+        
+    }
 }

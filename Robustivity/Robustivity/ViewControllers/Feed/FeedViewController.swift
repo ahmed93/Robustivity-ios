@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class FeedViewController: BaseViewController {
 
     
@@ -19,11 +18,6 @@ class FeedViewController: BaseViewController {
 
     override func loadView() {
         super.loadView()
-    }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 
 

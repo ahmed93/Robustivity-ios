@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol ThemeViewControllerDelegate {
-    
-}
-
 extension UIViewController {
     
     public override class func initialize() {
@@ -49,16 +45,30 @@ extension UIViewController {
     func xxx_viewWillAppear(animated: Bool) {
         self.xxx_viewWillAppear(animated)
         
-        let navigationController = self.navigationController
-        let destinationVC = self as UIViewController
-//        print(destinationVC.conformsToProtocol(NSProtocolFromString("ThemeViewControllerDelegate")!))
-        if navigationController == nil {// || destinationVC.superclass! != BaseViewController().classForCoder {
+        let destinationVC:UIViewController = self as UIViewController
+        if let mainProtocol = NSProtocolFromString("ThemeViewControllerDelegate") where destinationVC.conformsToProtocol(mainProtocol) {
+
+            if let navigationController = self.navigationController {
+                navigationController.navigationBar.tintColor = Theme.redColor()
+                navigationController.navigationBar.barTintColor = Theme.redColor()
+                navigationController.navigationBar.tag = 3000
+            }
             return
         }
-        self.navigationController!.navigationBar.tintColor = Theme.redColor()
-        self.navigationController!.navigationBar.barTintColor = Theme.redColor()
-        self.navigationController?.navigationBar.tag = 3000
         
         // adding right/left button for sideMenus
+        if (self.presentingViewController == nil)
+        {
+            return;
+        }
+        
+
+        
+//        UIImage *backButtonImage = [nextViewController backButtonImage];
+//        backButtonImage = [backButtonImage imageWithAlignmentRectInsets:UIEdgeInsetsMake(0, 0, -4, 0)];
+//        navigationController.navigationBar.backIndicatorImage = backButtonImage;
+//        navigationController.navigationBar.backIndicatorTransitionMaskImage = backButtonImage;
+//        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+//        nextViewController.navigationItem.backBarButtonItem = backButton;
     }
 }
