@@ -5,15 +5,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Robustivity Tab Bar Controller-->
         <scene sceneID="RkI-Ls-cn9">
             <objects>
-                <tabBarController id="UcJ-ji-tWe" sceneMemberID="viewController">
+                <tabBarController id="UcJ-ji-tWe" customClass="RobustivityTabBarController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="GcK-Pc-EKV"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="LEV-69-bCN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="xNz-KU-Xmc" kind="relationship" relationship="viewControllers" id="3Hd-pQ-WeS"/>
@@ -81,11 +82,11 @@
             </objects>
             <point key="canvasLocation" x="2204" y="399"/>
         </scene>
-        <!--Feeds-->
+        <!--Feed-->
         <scene sceneID="LTc-ad-5NI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xNz-KU-Xmc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feeds" image="feed" selectedImage="feed_selected" id="XCJ-dx-h0j"/>
+                    <tabBarItem key="tabBarItem" tag="1000" title="Feed" image="feed" selectedImage="feed_selected" id="XCJ-dx-h0j"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CLi-yf-7xo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -104,7 +105,7 @@
         <scene sceneID="luj-hO-atj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a1L-LQ-Ddd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Planner" image="planner" selectedImage="planner_selected" id="s7e-U0-QiE"/>
+                    <tabBarItem key="tabBarItem" tag="2000" title="Planner" image="planner" selectedImage="planner_selected" id="s7e-U0-QiE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O8F-v0-GOS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -123,7 +124,7 @@
         <scene sceneID="dL7-B9-6W2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q6R-mu-bHS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Toggle" image="toggle" selectedImage="toggle_selected" id="vyb-BY-kAV"/>
+                    <tabBarItem key="tabBarItem" tag="3000" title="Toggle" image="toggle" selectedImage="toggle_selected" id="vyb-BY-kAV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eT5-BA-l8k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -142,7 +143,7 @@
         <scene sceneID="UQj-2e-3PI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7OB-Zm-L7B" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notifications" image="notifications" selectedImage="notification_selected" id="hFa-vc-y2m"/>
+                    <tabBarItem key="tabBarItem" tag="4000" title="Notifications" image="notifications" selectedImage="notification_selected" id="hFa-vc-y2m"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s9I-F5-ovw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -161,7 +162,7 @@
         <scene sceneID="aoe-dQ-AFJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="png-J6-ap9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" image="more" selectedImage="more_selected" id="uTg-1z-pMF"/>
+                    <tabBarItem key="tabBarItem" tag="5000" title="More" image="more" selectedImage="more_selected" id="uTg-1z-pMF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h83-MP-wAW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

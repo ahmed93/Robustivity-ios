@@ -65,20 +65,32 @@ class Theme: NSObject {
     static func orangeColor() -> UIColor {
         return UIColor(hexValue: Color.orange.rawValue)
     }
-    
+    static func whiteColor() -> UIColor {
+        return UIColor(hexValue: 0xFFFFFF)
+    }
     
     // MARK: Application Main Fonts
-    static func headerFont() -> String {
-        return "Cabin-BoldItalic" // to be changed for the needed red
+    static func font(font:Font)->String {
+        return "MyriadPro-\(font.rawValue)"
     }
     
-    static func topBarFont() -> String {
-        return "Cabin-Italic" // to be changed for the needed red
+    
+    // MARK: Application Suitable Naming func-Colors
+    static func tableBackgroundColor() -> UIColor {
+        return lightGrayColor()
+    }
+    
+    static func viewControllerBackgroundColor() -> UIColor {
+        return whiteColor()
     }
 
+    static func statusBarColor()-> UIColor {
+        return Theme.redColor()
+    }
+    
     
     static func customFontForLabel(label:UILabel, font:Font, color:Color, size:Size) {
-        label.font =  UIFont(name: font.rawValue, size: size.rawValue)
+        label.font =  UIFont(name: self.font(font), size: size.rawValue)
         label.textColor = UIColor(hexValue: color.rawValue)
     }
 }

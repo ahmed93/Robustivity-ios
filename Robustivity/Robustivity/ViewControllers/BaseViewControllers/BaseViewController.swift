@@ -22,15 +22,16 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("dissmissKeyboard")))
+    
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.view.backgroundColor = Theme.viewControllerBackgroundColor()
         
         if let navigationController = self.navigationController {
-            navigationController.navigationBar.tintColor    = Theme.redColor()
-            navigationController.navigationBar.barTintColor = Theme.redColor()
-            navigationController.navigationBar.tag = 3000
+            navigationController.navigationBar.tintColor    = Theme.statusBarColor()
+            navigationController.navigationBar.barTintColor = Theme.statusBarColor()
             navigationController.navigationBar.translucent = false
         }
     }
@@ -42,6 +43,8 @@ class BaseViewController: UIViewController {
     func dissmissKeyboard() {
         self.view.endEditing(true)
     }
+    
+    
     
    
 }

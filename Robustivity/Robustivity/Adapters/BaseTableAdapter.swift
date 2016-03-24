@@ -14,28 +14,31 @@ class BaseTableAdapter: BaseAdapter {
     var searchTableViewList:ListModel?
     var tableView:UITableView!
     var cellIdentifier:String!
+    var viewController:UIViewController!
     
-    init(tablView:UITableView, cellIdentifier:String) {
+    init(viewController:UIViewController, tableView:UITableView, cellIdentifier:String) {
         super.init()
         self.cellIdentifier = cellIdentifier
+        self.viewController = viewController
+        self.tableView = tableView
         commonSetup()
     }
     
-    init(tableView:UITableView,registerCellWithClass cellClass:AnyClass, withIdentifier identifier:String) {
+    init(viewController:UIViewController, tableView:UITableView,registerCellWithClass cellClass:AnyClass, withIdentifier identifier:String) {
         super.init()
         self.tableView = tableView
         self.cellIdentifier = identifier
         self.tableView.registerClass(cellClass, forCellReuseIdentifier: identifier)
-        
+        self.viewController = viewController
         commonSetup()
     }
 
-    init(tableView:UITableView,registerCellWithNib name:String, withIdentifier identifier:String) {
+    init(viewController:UIViewController, tableView:UITableView,registerCellWithNib name:String, withIdentifier identifier:String) {
         super.init()
         self.tableView = tableView
         self.cellIdentifier = identifier
         self.tableView.registerNib(UINib(nibName: name, bundle: nil), forCellReuseIdentifier: identifier)
-        
+        self.viewController = viewController
         commonSetup()
     }
     
@@ -45,10 +48,14 @@ class BaseTableAdapter: BaseAdapter {
         tableView.estimatedRowHeight = 200
         tableItems = ListModel()
         
+        tableView.backgroundColor = Theme.lightGrayColor()
+        
     }
     
-    func reloadItems() {
-
+    func reloadData() {
+        if self.respondsToSelector(NSSelectorFromString("fetchItems")) {
+            self.performSelector(NSSelectorFromString("fetchItems"))
+        }
     }
     
 }
@@ -69,7 +76,6 @@ extension BaseTableAdapter: UITableViewDataSource {
         configure(cell, indexPath: indexPath)
         return cell
     }
-    
     
     // Empty implementation to be overriden
     func configure(cell:UITableViewCell, indexPath:NSIndexPath) {}

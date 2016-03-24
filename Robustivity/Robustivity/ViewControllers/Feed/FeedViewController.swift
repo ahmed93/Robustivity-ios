@@ -11,6 +11,9 @@ import UIKit
 class FeedViewController: BaseViewController {
 
     
+    @IBOutlet weak var tableView: UITableView!
+    var adapter:FeedAdapter!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("FeedViewController", owner: self, options: nil)
@@ -19,11 +22,18 @@ class FeedViewController: BaseViewController {
     override func loadView() {
         super.loadView()
     }
-
     
-    @IBOutlet weak var ddd: UILabel!
-    @IBAction func asd(sender: AnyObject) {
-     ddd.text = "asd"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.title = "Feed"
+        adapter = FeedAdapter(viewController: self, tableView: tableView, cellIdentifier: "cell")
+        
+        
     }
+    
+    
+    
 
 }

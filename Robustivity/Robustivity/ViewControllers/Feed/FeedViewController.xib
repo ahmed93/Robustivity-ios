@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
-                <outlet property="ddd" destination="5kb-HU-V7V" id="3ye-55-axy"/>
+                <outlet property="tableView" destination="zlu-xS-eTC" id="CGB-g7-eMf"/>
                 <outlet property="view" destination="9xv-X2-7rN" id="tUX-hc-Lyi"/>
             </connections>
         </placeholder>
@@ -16,25 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kb-HU-V7V">
-                    <rect key="frame" x="279" y="289" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PML-sN-TnT">
-                    <rect key="frame" x="277" y="337" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="asd:" destination="-1" eventType="touchUpInside" id="gJj-81-CXN"/>
-                    </connections>
-                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zlu-xS-eTC">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="PML-sN-TnT" firstAttribute="top" secondItem="5kb-HU-V7V" secondAttribute="bottom" constant="27" id="7Oc-Th-uvR"/>
-                <constraint firstItem="5kb-HU-V7V" firstAttribute="centerY" secondItem="9xv-X2-7rN" secondAttribute="centerY" id="TEQ-Za-hkO"/>
-                <constraint firstItem="5kb-HU-V7V" firstAttribute="centerX" secondItem="9xv-X2-7rN" secondAttribute="centerX" id="zo2-eA-iCL"/>
+                <constraint firstAttribute="trailing" secondItem="zlu-xS-eTC" secondAttribute="trailing" id="2De-9C-KXx"/>
+                <constraint firstItem="zlu-xS-eTC" firstAttribute="top" secondItem="9xv-X2-7rN" secondAttribute="top" id="R2D-fd-yWb"/>
+                <constraint firstAttribute="bottom" secondItem="zlu-xS-eTC" secondAttribute="bottom" id="d8F-QZ-d0o"/>
+                <constraint firstItem="zlu-xS-eTC" firstAttribute="leading" secondItem="9xv-X2-7rN" secondAttribute="leading" id="t3i-PD-aJp"/>
             </constraints>
             <point key="canvasLocation" x="736" y="-69"/>
         </view>

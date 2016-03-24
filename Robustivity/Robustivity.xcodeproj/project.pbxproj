@@ -51,6 +51,8 @@
 		A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C4800F1CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m */; };
 		A7C480221CA3F1EC00F4FDB7 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C480111CA3F1EC00F4FDB7 /* UIImageView+WebCache.m */; };
 		A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C480131CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m */; };
+		A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C480251CA4030900F4FDB7 /* RBLabel.swift */; };
+		A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */; };
 		A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2431CA2EE6E002DB6FE /* MyriadPro-Bold.otf */; };
 		A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2441CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf */; };
 		A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2451CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf */; };
@@ -62,7 +64,6 @@
 		A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24B1CA2EE6E002DB6FE /* MyriadPro-Semibold.otf */; };
 		A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */; };
 		A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7A2581CA32524002DB6FE /* UIColor.swift */; };
-		A7E7A25C1CA32524002DB6FE /* UILable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7A2591CA32524002DB6FE /* UILable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,8 @@
 		A7C480111CA3F1EC00F4FDB7 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		A7C480121CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		A7C480131CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		A7C480251CA4030900F4FDB7 /* RBLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBLabel.swift; sourceTree = "<group>"; };
+		A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedAdapter.swift; sourceTree = "<group>"; };
 		A7E7A2431CA2EE6E002DB6FE /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
 		A7E7A2441CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCond.otf"; sourceTree = "<group>"; };
 		A7E7A2451CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCondIt.otf"; sourceTree = "<group>"; };
@@ -141,7 +144,6 @@
 		A7E7A24B1CA2EE6E002DB6FE /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
 		A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
 		A7E7A2581CA32524002DB6FE /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		A7E7A2591CA32524002DB6FE /* UILable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				A717E5A61CA14D2D00F237DD /* BaseAdapter.swift */,
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
+				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -182,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				A7E7A2581CA32524002DB6FE /* UIColor.swift */,
-				A7E7A2591CA32524002DB6FE /* UILable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				A717E5961CA1485000F237DD /* Theme.swift */,
+				A7C480251CA4030900F4FDB7 /* RBLabel.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
+				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
@@ -543,13 +547,13 @@
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
+				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
 				A7C480221CA3F1EC00F4FDB7 /* UIImageView+WebCache.m in Sources */,
 				A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */,
 				A7A94ED91C9E97B5002B3991 /* ToggleViewController.swift in Sources */,
 				A7C480151CA3F1EC00F4FDB7 /* NSData+ImageContentType.m in Sources */,
 				A7C480191CA3F1EC00F4FDB7 /* SDWebImageDownloader.m in Sources */,
-				A7E7A25C1CA32524002DB6FE /* UILable.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,

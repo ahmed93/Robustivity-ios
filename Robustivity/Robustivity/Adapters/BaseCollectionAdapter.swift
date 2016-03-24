@@ -14,27 +14,35 @@ class BaseCollectionAdapter: BaseAdapter {
     var searchTableViewList:NSMutableArray?
     var collectionView:UICollectionView!
     var cellIdentifier:String!
+    var viewController:UIViewController!
     
     var selectedIndexPath:NSIndexPath?
     
-    init(collectionView:UITableView, cellIdentifier:String) {
+    init(viewController:UIViewController, collectionView:UICollectionView, cellIdentifier:String) {
         super.init()
         self.cellIdentifier = cellIdentifier
+        self.collectionView = collectionView
+        self.viewController = viewController
+        
         commonSetup()
     }
     
-    init(collectionView:UICollectionView,registerCellWithClass cellClass:AnyClass, withIdentifier cellIdentifier:String) {
+    init(viewController:UIViewController, collectionView:UICollectionView,registerCellWithClass cellClass:AnyClass, withIdentifier cellIdentifier:String) {
         super.init()
         self.collectionView = collectionView
         self.cellIdentifier = cellIdentifier
         collectionView.registerClass(cellClass, forCellWithReuseIdentifier: cellIdentifier)
+        self.viewController = viewController
+        
+        commonSetup()
     }
 
-    init(collectionView:UICollectionView,registerCellNib nibName:String, withIdentifier cellIdentifier:String) {
+    init(viewController:UIViewController, collectionView:UICollectionView,registerCellNib nibName:String, withIdentifier cellIdentifier:String) {
         super.init()
         self.collectionView = collectionView
         self.cellIdentifier = cellIdentifier
         collectionView.registerNib(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        self.viewController = viewController
         
         commonSetup()
     }
@@ -45,7 +53,7 @@ class BaseCollectionAdapter: BaseAdapter {
         collectionItems = NSMutableArray()
     }
     
-    func reloadItems() {
+    func reloadData() {
 
     }
     
