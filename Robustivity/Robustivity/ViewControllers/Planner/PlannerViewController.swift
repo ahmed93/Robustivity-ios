@@ -20,8 +20,6 @@ class PlannerViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        segments = UISegmentedControl(items: ["Tasks","ToDo"])
-//        self.navigationController?.navigationBar.addSubview(segments)
-        
+
     }
 }
