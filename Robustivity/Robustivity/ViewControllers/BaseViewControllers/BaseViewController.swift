@@ -22,18 +22,27 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("dissmissKeyboard")))
-    
+        self.setNavigationBarStyle()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.view.backgroundColor = Theme.viewControllerBackgroundColor()
         
-        if let navigationController = self.navigationController {
-            navigationController.navigationBar.tintColor    = Theme.statusBarColor()
-            navigationController.navigationBar.barTintColor = Theme.statusBarColor()
-            navigationController.navigationBar.translucent = false
-        }
+    }
+    
+   func setNavigationBarStyle()
+   {
+    
+    if let navigationController = self.navigationController {
+        navigationController.navigationBar.tintColor    = Theme.statusBarColor()
+        navigationController.navigationBar.barTintColor = Theme.statusBarColor()
+        navigationController.navigationBar.translucent = false
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Theme.whiteColor()]
+    }
+
+
+    
     }
     
     override func didReceiveMemoryWarning() {
