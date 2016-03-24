@@ -44,11 +44,8 @@ extension UILabel {
         self.xxx_setText(text)
         print(self.tag)
         print(self.font.pointSize)
-        if self.font.pointSize == 17 {
-            self.font = UIFont(name: "HelveticaNeue-Bold", size: self.font.pointSize)
-            textColor = UIColor.greenColor()
-        }else if tag == 2000 {
-            font = UIFont(name: "HelveticaNeue", size: self.font.pointSize)
+        if tag == 1000 {
+            font = UIFont(name: "HelveticaNeue", size:50)
             textColor = .redColor()
         }else if tag == 3000 {
             print("In")

@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
+                <outlet property="ddd" destination="5kb-HU-V7V" id="3ye-55-axy"/>
                 <outlet property="view" destination="9xv-X2-7rN" id="tUX-hc-Lyi"/>
             </connections>
         </placeholder>
@@ -21,9 +22,17 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PML-sN-TnT">
+                    <rect key="frame" x="277" y="337" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="asd:" destination="-1" eventType="touchUpInside" id="gJj-81-CXN"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="PML-sN-TnT" firstAttribute="top" secondItem="5kb-HU-V7V" secondAttribute="bottom" constant="27" id="7Oc-Th-uvR"/>
                 <constraint firstItem="5kb-HU-V7V" firstAttribute="centerY" secondItem="9xv-X2-7rN" secondAttribute="centerY" id="TEQ-Za-hkO"/>
                 <constraint firstItem="5kb-HU-V7V" firstAttribute="centerX" secondItem="9xv-X2-7rN" secondAttribute="centerX" id="zo2-eA-iCL"/>
             </constraints>

@@ -20,5 +20,10 @@ class FeedViewController: BaseViewController {
         super.loadView()
     }
 
+    
+    @IBOutlet weak var ddd: UILabel!
+    @IBAction func asd(sender: AnyObject) {
+     ddd.text = "asd"
+    }
 
 }

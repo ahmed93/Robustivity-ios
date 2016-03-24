@@ -47,7 +47,6 @@
 		A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */; };
 		A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7A2581CA32524002DB6FE /* UIColor.swift */; };
 		A7E7A25C1CA32524002DB6FE /* UILable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7A2591CA32524002DB6FE /* UILable.swift */; };
-		A7E7A25D1CA32524002DB6FE /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7A25A1CA32524002DB6FE /* UIViewController.swift */; };
 		AA489AE67CC76CCB65C307BC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6482E17E4B751B0CFC059D39 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,7 +96,6 @@
 		A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
 		A7E7A2581CA32524002DB6FE /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A7E7A2591CA32524002DB6FE /* UILable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILable.swift; sourceTree = "<group>"; };
-		A7E7A25A1CA32524002DB6FE /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DBC23C5D34179A7FACD256A1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,7 +148,6 @@
 			children = (
 				A7E7A2581CA32524002DB6FE /* UIColor.swift */,
 				A7E7A2591CA32524002DB6FE /* UILable.swift */,
-				A7E7A25A1CA32524002DB6FE /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -542,7 +539,6 @@
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */,
 				A717E5AD1CA1567F00F237DD /* RobustivityTabBarController.swift in Sources */,
-				A7E7A25D1CA32524002DB6FE /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

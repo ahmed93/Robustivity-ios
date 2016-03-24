@@ -189,4 +189,5 @@
         <image name="toggle" width="61" height="61"/>
         <image name="toggle_selected" width="58" height="58"/>
     </resources>
+    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
