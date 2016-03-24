@@ -75,6 +75,13 @@ class Theme: NSObject {
     }
     
     
+    // MARK: Application UIFonts
+//    static func getFont(font:Font, size:CGFloat)->UIFont {
+//        return UIFont(name: self.font(font), size: size)!
+//    }
+    
+    
+    
     // MARK: Application Suitable Naming func-Colors
     static func tableBackgroundColor() -> UIColor {
         return lightGrayColor()
@@ -89,9 +96,9 @@ class Theme: NSObject {
     }
     
     
-    static func customFontForLabel(label:UILabel, font:Font, color:Color, size:Size) {
-        label.font =  UIFont(name: self.font(font), size: size.rawValue)
-        label.textColor = UIColor(hexValue: color.rawValue)
+    static func customFontForLabel(label:UILabel, font:String, color:UIColor, size:CGFloat) {
+        label.font =  UIFont(name: font, size: size)
+        label.textColor = color
     }
 }
 

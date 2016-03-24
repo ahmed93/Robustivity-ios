@@ -30,7 +30,7 @@ import UIKit
     func loadStyle() {
         switch(self.labelType) {
         case 1000:
-            Theme.customFontForLabel(self, font: Font.Bold, color: Color.blue, size: Size.big)
+            Theme.customFontForLabel(self, font: Font.Regular, color: Color.lightBlack, size: Size.big)
         case 2000:
             Theme.customFontForLabel(self, font: Font.Bold, color: Color.green, size: Size.small)
         case 3000:
