@@ -6,7 +6,7 @@
 build/
 DerivedData
 *.DS_Store
-Robustivity/Robustivity.xcodeproj
+Robustivity/Robustivity/Global/Main.storyboard
 ## Various settings
 *.pbxuser
 !default.pbxuser
