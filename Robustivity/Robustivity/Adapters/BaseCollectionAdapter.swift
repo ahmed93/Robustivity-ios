@@ -14,8 +14,6 @@ class BaseCollectionAdapter: BaseAdapter {
     var cellIdentifier:String!
     var viewController:UIViewController!
     
-    var selectedIndexPath:NSIndexPath?
-    
     init(viewController:UIViewController, collectionView:UICollectionView, cellIdentifier:String) {
         super.init()
         self.cellIdentifier = cellIdentifier
@@ -25,15 +23,15 @@ class BaseCollectionAdapter: BaseAdapter {
         commonSetup()
     }
     
-    init(viewController:UIViewController, collectionView:UICollectionView,registerCellWithClass cellClass:AnyClass, withIdentifier cellIdentifier:String) {
-        super.init()
-        self.collectionView = collectionView
-        self.cellIdentifier = cellIdentifier
-        collectionView.registerClass(cellClass, forCellWithReuseIdentifier: cellIdentifier)
-        self.viewController = viewController
-        
-        commonSetup()
-    }
+//    init(viewController:UIViewController, collectionView:UICollectionView,registerCellWithClass cellClass:AnyClass, withIdentifier cellIdentifier:String) {
+//        super.init()
+//        self.collectionView = collectionView
+//        self.cellIdentifier = cellIdentifier
+//        collectionView.registerClass(cellClass, forCellWithReuseIdentifier: cellIdentifier)
+//        self.viewController = viewController
+//        
+//        commonSetup()
+//    }
 
     init(viewController:UIViewController, collectionView:UICollectionView,registerCellNib nibName:String, withIdentifier cellIdentifier:String) {
         super.init()

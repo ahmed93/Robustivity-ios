@@ -29,9 +29,9 @@ class BaseViewController: UIViewController {
     
    func setNavigationBarStyle() {
     if let navigationController = self.navigationController {
-        navigationController.navigationBar.tintColor    = Theme.statusBarColor()
+        navigationController.navigationBar.tintColor    = Theme.whiteColor()
         navigationController.navigationBar.barTintColor = Theme.statusBarColor()
-        navigationController.navigationBar.translucent = false
+//        navigationController.navigationBar.translucent  = true
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Theme.whiteColor()]
     }
     }

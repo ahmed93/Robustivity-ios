@@ -15,6 +15,6 @@ import UIKit
 
 class BaseModel: NSObject, BaseModelDelegate {
     var modelID:Int?
-    var createdData:String?
+    var createdDate:String?
     var modifiedDate:String?
 }

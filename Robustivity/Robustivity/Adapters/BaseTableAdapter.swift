@@ -42,13 +42,13 @@ class BaseTableAdapter: BaseAdapter {
     
     func commonSetup() {
         tableView.dataSource = self        
-        tableView.delegate = self
+        tableView.delegate   = self
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
 
         tableItems = ListModel()
-        reloadItems()
         tableView.backgroundColor = Theme.listBackgroundColor()
+        reloadItems()
     }
 }
 
@@ -71,7 +71,7 @@ extension BaseTableAdapter: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        selectedIndexPath = indexPath
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

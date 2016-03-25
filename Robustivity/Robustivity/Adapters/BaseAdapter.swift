@@ -18,7 +18,7 @@ class BaseAdapter: NSObject, BaseAdapterDelegate {
     var tableItems:ListModel!
     var searchTableViewList:ListModel!
     var searchModeEnabled:Bool = false
-    
+    var selectedIndexPath:NSIndexPath?
     
     func reloadItems() {
         if self.respondsToSelector(NSSelectorFromString("fetchItems")) {
