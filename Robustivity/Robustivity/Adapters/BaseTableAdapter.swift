@@ -52,7 +52,7 @@ class BaseTableAdapter: BaseAdapter {
     }
 }
 
-extension BaseTableAdapter: UITableViewDataSource {
+extension BaseTableAdapter: UITableViewDelegate {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -76,7 +76,7 @@ extension BaseTableAdapter: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? UITableViewCell
-        
+
         configure(cell!, indexPath: indexPath)
         return cell!
     }
@@ -87,6 +87,6 @@ extension BaseTableAdapter: UITableViewDataSource {
 }
 
 
-extension BaseTableAdapter: UITableViewDelegate {
+extension BaseTableAdapter: UITableViewDataSource {
     
 }

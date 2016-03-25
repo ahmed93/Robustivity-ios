@@ -41,19 +41,19 @@
         <!--Feed-->
         <scene sceneID="LEA-YV-mgS">
             <objects>
-                <viewController id="Po8-rt-9bi" userLabel="Feed" customClass="FeedViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedViewController" id="Po8-rt-9bi" userLabel="Feed" customClass="FeedViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fiT-Wt-wfa">
                         <nil key="title"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05k-aW-3ZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="-369"/>
+            <point key="canvasLocation" x="2155" y="-491"/>
         </scene>
         <!--More-->
         <scene sceneID="2R1-A1-NxH">
             <objects>
-                <viewController id="Ybe-zW-Vbw" userLabel="More" customClass="MoreViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreViewController" id="Ybe-zW-Vbw" userLabel="More" customClass="MoreViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="wSQ-C6-yiW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnf-aW-XdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -63,7 +63,7 @@
         <!--Toggle-->
         <scene sceneID="ENY-rs-eBc">
             <objects>
-                <viewController id="HWH-za-X6u" userLabel="Toggle" customClass="ToggleViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ToggleViewController" id="HWH-za-X6u" userLabel="Toggle" customClass="ToggleViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="QLC-xu-e4D">
                         <nil key="title"/>
                     </navigationItem>
@@ -75,7 +75,7 @@
         <!--Planner-->
         <scene sceneID="KsH-V7-fyH">
             <objects>
-                <viewController id="wqb-WL-jsQ" userLabel="Planner" customClass="PlannerViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlannerViewController" id="wqb-WL-jsQ" userLabel="Planner" customClass="PlannerViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pZ9-FK-dqV">
                         <nil key="title"/>
                     </navigationItem>
@@ -87,7 +87,7 @@
         <!--Feed-->
         <scene sceneID="LTc-ad-5NI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xNz-KU-Xmc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="feedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="xNz-KU-Xmc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1000" title="Feed" image="feed" selectedImage="feed_selected" id="XCJ-dx-h0j">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
