@@ -41,8 +41,8 @@ class BaseTableAdapter: BaseAdapter {
     }
     
     func commonSetup() {
+        tableView.dataSource = self        
         tableView.delegate = self
-        tableView.dataSource = self
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
 

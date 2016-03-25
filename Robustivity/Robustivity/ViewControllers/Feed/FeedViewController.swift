@@ -29,11 +29,10 @@ class FeedViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // setting View TabBartitle + navigationBarTitle
-        self.title = "Feeds";
-        self.navigationItem.title = "Feeds";
+        self.title = "Feed";
+        self.navigationItem.title = "Feed";
 
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerCellWithNib:"BaseTableViewCell", withIdentifier: "cell")
-
     }
 
 }

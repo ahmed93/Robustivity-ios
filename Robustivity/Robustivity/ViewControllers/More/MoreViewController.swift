@@ -15,4 +15,12 @@ class MoreViewController: BaseViewController {
         NSBundle.mainBundle().loadNibNamed("MoreViewController", owner: self, options: nil)
     }
 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "More";
+        self.navigationItem.title = "More";
+    }
+
+    
 }

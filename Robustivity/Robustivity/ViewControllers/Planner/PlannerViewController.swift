@@ -18,13 +18,9 @@ class PlannerViewController: BaseViewController {
         NSBundle.mainBundle().loadNibNamed("PlannerViewController", owner: self, options: nil)
     }
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        segmentControl = UISegmentedControl(items: ["test","newTest"])
-//        segmentControl?.tintColor = Theme.whiteColor()
-//        segmentControl?.selectedSegmentIndex = 0
-//        segmentControl?.addTarget(self, action: NSSelectorFromString("valueChange:"), forControlEvents: .ValueChanged)
-//        self.navigationItem.titleView = segmentControl
-//
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Planner";
+    }
+    
 }

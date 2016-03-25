@@ -17,6 +17,10 @@ class ToggleViewController: BaseViewController {
     }
     
   
-  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Toggle";
+        self.navigationItem.title = "Toggle";
+    }
 
 }

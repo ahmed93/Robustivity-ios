@@ -16,5 +16,10 @@ class NotificationsViewController: BaseViewController {
         NSBundle.mainBundle().loadNibNamed("NotificationsViewController", owner: self, options: nil)
     }
     
- 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Notifications";
+        self.navigationItem.title = "Notifications";
+    }
+
 }

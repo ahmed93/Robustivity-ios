@@ -46,9 +46,10 @@ class BaseCollectionAdapter: BaseAdapter {
     }
     
     func commonSetup() {
+        collectionView.dataSource = self        
         collectionView.delegate = self
-        collectionView.dataSource = self
         tableItems = ListModel()
+        reloadItems()
     }
 
 }
