@@ -6,10 +6,17 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
-import Foundation
+import UIKit
+//import Alamofire
 
 class API: NSObject {
-    static func baseURL() -> String {
-        return "http://www.google.com"
+    
+    static let BaseURL = "http://www.google.com"
+    
+    
+    
+    static func get(url:String, parameters:NSDictionary) {
+
     }
+    
 }

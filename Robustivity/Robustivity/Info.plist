@@ -36,7 +36,7 @@
 		<string>MyriadPro-Semiboldlt.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>BaseTableViewCell</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
