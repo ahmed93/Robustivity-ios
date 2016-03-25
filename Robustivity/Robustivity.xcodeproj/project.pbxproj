@@ -22,6 +22,12 @@
 		A717E5B11CA17C5300F237DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A717E5B01CA17C5300F237DD /* LaunchScreen.storyboard */; };
 		A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E5B21CA17D4000F237DD /* BaseModel.swift */; };
 		A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E5B41CA1816D00F237DD /* ListModel.swift */; };
+		A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC01E1CA469E800A7FDEB /* Comp_1+Theme.swift */; };
+		A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */; };
+		A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */; };
+		A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */; };
+		A74EC02B1CA4729500A7FDEB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC02A1CA4729500A7FDEB /* BaseTableViewCell.swift */; };
+		A74EC02D1CA472A900A7FDEB /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A74EC02C1CA472A900A7FDEB /* BaseTableViewCell.xib */; };
 		A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */; };
 		A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED11C9E9724002B3991 /* FeedViewController.swift */; };
 		A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */; };
@@ -83,6 +89,12 @@
 		A717E5B01CA17C5300F237DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A717E5B21CA17D4000F237DD /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		A717E5B41CA1816D00F237DD /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		A74EC01E1CA469E800A7FDEB /* Comp_1+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_1+Theme.swift"; sourceTree = "<group>"; };
+		A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_2+Theme.swift"; sourceTree = "<group>"; };
+		A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_3+Theme.swift"; sourceTree = "<group>"; };
+		A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_4+Theme.swift"; sourceTree = "<group>"; };
+		A74EC02A1CA4729500A7FDEB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = "Custom Views/BaseTableViewCell.swift"; sourceTree = "<group>"; };
+		A74EC02C1CA472A900A7FDEB /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseTableViewCell.xib; path = "Custom Views/BaseTableViewCell.xib"; sourceTree = "<group>"; };
 		A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		A7A94ED11C9E9724002B3991 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +197,10 @@
 			isa = PBXGroup;
 			children = (
 				A7E7A2581CA32524002DB6FE /* UIColor.swift */,
+				A74EC01E1CA469E800A7FDEB /* Comp_1+Theme.swift */,
+				A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */,
+				A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */,
+				A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -253,6 +269,15 @@
 			children = (
 			);
 			path = AttendanceLog;
+			sourceTree = "<group>";
+		};
+		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				A74EC02A1CA4729500A7FDEB /* BaseTableViewCell.swift */,
+				A74EC02C1CA472A900A7FDEB /* BaseTableViewCell.xib */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 		A7A94EBE1C9E9321002B3991 /* Feed */ = {
@@ -337,6 +362,7 @@
 				A717E58B1CA1485000F237DD /* API */,
 				A717E5891CA1485000F237DD /* Adapters */,
 				A717E5921CA1485000F237DD /* Extension */,
+				A74EC0281CA4724300A7FDEB /* Custom Views */,
 				A717E5931CA1485000F237DD /* Support Libraries */,
 				A717E5941CA1485000F237DD /* Theme */,
 				A7BCE7C01C7D834F007870CB /* Models */,
@@ -522,6 +548,7 @@
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
+				A74EC02D1CA472A900A7FDEB /* BaseTableViewCell.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
 				A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */,
 				A7A94EDA1C9E97B5002B3991 /* ToggleViewController.xib in Resources */,
@@ -537,17 +564,21 @@
 			files = (
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
 				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
+				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
+				A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */,
 				A7C4801D1CA3F1EC00F4FDB7 /* UIButton+WebCache.m in Sources */,
+				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
 				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
+				A74EC02B1CA4729500A7FDEB /* BaseTableViewCell.swift in Sources */,
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
 				A7C480221CA3F1EC00F4FDB7 /* UIImageView+WebCache.m in Sources */,
 				A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */,
@@ -561,6 +592,7 @@
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */,
+				A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */,
 				A7C480171CA3F1EC00F4FDB7 /* SDWebImageCompat.m in Sources */,
 				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,
 				A7C480141CA3F1EC00F4FDB7 /* MKAnnotationView+WebCache.m in Sources */,

@@ -8,44 +8,40 @@
 
 import UIKit
 
-class ListModel: BaseModel {
+class ListModel: NSObject {
     
-    var items:NSMutableArray!
-    var searchItems:NSMutableArray!
+    var objects:NSMutableArray!
     var selectedItemIndex:NSIndexPath!
-    var isSearchMode:Bool = false
+    
+    var currentPage:NSInteger?
+    var lastPage:NSInteger?
+    var objectsPrePage:NSInteger?
+    
+    var count:Int {
+        get {
+            return objects.count
+        }
+    }
     
     override init() {
         super.init()
-        items = NSMutableArray()
-        searchItems = NSMutableArray()
-        
-        
+        objects = NSMutableArray()
     }
     
     func objectAtIndex(index:Int)-> AnyObject? {
-        if isSearchMode
-        {
-            return searchItems.objectAtIndex(index)
-        }
-        else
-        {
-            return items.objectAtIndex(index)
-        }
-
+        return objects.objectAtIndex(index)
+    }
+        
+    func removeObjectAtIndex(index:Int) {
+        objects.removeObjectAtIndex(index)
     }
     
-    
-    func count() -> Int {
-        if isSearchMode
-        {
-            return searchItems.count
-        }
-        else
-        {
-            return items.count
-        }
+    func addObject(object:AnyObject) {
+        objects.addObject(object)
     }
-
     
+    func hasMorePages()->Bool {
+        return currentPage < lastPage
+    }
+        
 }

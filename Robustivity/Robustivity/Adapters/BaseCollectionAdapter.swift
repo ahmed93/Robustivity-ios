@@ -10,8 +10,6 @@ import UIKit
 
 class BaseCollectionAdapter: BaseAdapter {
     
-    var collectionItems:NSMutableArray!
-    var searchTableViewList:NSMutableArray?
     var collectionView:UICollectionView!
     var cellIdentifier:String!
     var viewController:UIViewController!
@@ -50,13 +48,9 @@ class BaseCollectionAdapter: BaseAdapter {
     func commonSetup() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionItems = NSMutableArray()
+        tableItems = ListModel()
     }
-    
-    func reloadData() {
 
-    }
-    
 }
 
 
@@ -72,7 +66,7 @@ extension BaseCollectionAdapter: UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionItems.count
+        return tableItems!.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -83,5 +77,6 @@ extension BaseCollectionAdapter: UICollectionViewDataSource {
     }
     
     // Empty implementation to be overriden
-    func configure(cell:UICollectionViewCell, indexPath:NSIndexPath) {}
+    func configure(cell:UICollectionViewCell, indexPath:NSIndexPath) {
+    }
 }

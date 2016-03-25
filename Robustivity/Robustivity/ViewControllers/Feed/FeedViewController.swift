@@ -12,7 +12,9 @@ class FeedViewController: BaseViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
+    
     var adapter:FeedAdapter!
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -28,12 +30,9 @@ class FeedViewController: BaseViewController {
         super.viewDidLoad()
         
         self.title = "Feed"
-        adapter = FeedAdapter(viewController: self, tableView: tableView, cellIdentifier: "cell")
+        adapter = FeedAdapter(viewController: self, tableView: tableView, registerCellWithNib:"BaseTableViewCell", withIdentifier: "cell")
         
-        
+        let segment = UISegmentedControl(items: ["test","newTest"])
+        self.navigationItem.titleView = segment
     }
-    
-    
-    
-
 }

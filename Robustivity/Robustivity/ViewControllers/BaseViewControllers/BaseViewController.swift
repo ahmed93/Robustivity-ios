@@ -9,14 +9,10 @@
 import UIKit
 
 
+
 class BaseViewController: UIViewController {
 
     var delegate:AppDelegate!
-    
-    override func loadView() {
-        super.loadView()
-    
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +48,5 @@ class BaseViewController: UIViewController {
     func dissmissKeyboard() {
         self.view.endEditing(true)
     }
-    
-    
-    
    
 }

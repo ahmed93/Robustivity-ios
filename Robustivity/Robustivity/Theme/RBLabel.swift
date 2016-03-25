@@ -27,18 +27,21 @@ import UIKit
         loadStyle()
     }
     
+//    case 1000:
+//      Theme.sampleHeaderLabel(self)
+    
     func loadStyle() {
         switch(self.labelType) {
         case 1000:
-            Theme.customFontForLabel(self, font: Font.Regular, color: Color.lightBlack, size: Size.big)
+            Theme.sampleHeaderLabel(self)
         case 2000:
-            Theme.customFontForLabel(self, font: Font.Bold, color: Color.green, size: Size.small)
+            Theme.customFontForLabel(self, font: Theme.font(.Regular), color: Theme.lightGrayColor(), size: Theme.size(.big))
         case 3000:
-            Theme.customFontForLabel(self, font: Font.Bold, color: Color.blue, size: Size.big)
+            Theme.customFontForLabel(self, font: Theme.font(.Regular), color: Theme.lightGrayColor(), size: Theme.size(.big))
         case 4000:
-            Theme.customFontForLabel(self, font: Font.Bold, color: Color.blue, size: Size.big)
+            Theme.customFontForLabel(self, font: Theme.font(.Regular), color: Theme.lightGrayColor(), size: Theme.size(.big))
         default:
-            Theme.customFontForLabel(self, font: Font.Bold, color: Color.black, size: Size.small)
+            break;
         }
     }
 }

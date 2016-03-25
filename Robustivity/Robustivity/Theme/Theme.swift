@@ -17,13 +17,14 @@ enum Color: Int {
     case red        = 0xC30017
     case blue       = 0x3A95FF
     case purple     = 0x9013FE
-    case orange     = 0xDB4C32
+    case darkOrange = 0xDB4C32
+    case orange     = 0xFF7C2A
 }
 
 enum Size: CGFloat {
     case tiny       = 11 // 22
     case small      = 12 // 24
-    case mediam     = 13 // 26
+    case regular     = 13 // 26
     case big        = 14 // 28
     case extraBig   = 15 // 30
     case Large      = 16 // 32
@@ -61,6 +62,9 @@ class Theme: NSObject {
     static func purpleColor() -> UIColor {
         return UIColor(hexValue: Color.purple.rawValue)
     }
+    static func darkOrangeColor() -> UIColor {
+        return UIColor(hexValue: Color.darkOrange.rawValue)
+    }
     
     static func orangeColor() -> UIColor {
         return UIColor(hexValue: Color.orange.rawValue)
@@ -74,6 +78,10 @@ class Theme: NSObject {
         return "MyriadPro-\(font.rawValue)"
     }
     
+    static func size(size:Size)->CGFloat {
+        return CGFloat(size.hashValue)
+    }
+    
     
     // MARK: Application UIFonts
 //    static func getFont(font:Font, size:CGFloat)->UIFont {
@@ -82,7 +90,7 @@ class Theme: NSObject {
     
     
     
-    // MARK: Application Suitable Naming func-Colors
+    // MARK: Application Suitable Naming funcs
     static func tableBackgroundColor() -> UIColor {
         return lightGrayColor()
     }
@@ -95,6 +103,16 @@ class Theme: NSObject {
         return Theme.redColor()
     }
     
+    static func listBackgroundColor()-> UIColor {
+        return Theme.lightGrayColor()
+    }
+    
+    
+    
+    
+    static func sampleHeaderLabel(label:UILabel) {
+        customFontForLabel(label, font: font(.Bold), color: redColor(), size: size(.regular))
+    }
     
     static func customFontForLabel(label:UILabel, font:String, color:UIColor, size:CGFloat) {
         label.font =  UIFont(name: font, size: size)

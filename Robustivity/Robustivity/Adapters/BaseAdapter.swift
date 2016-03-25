@@ -8,6 +8,24 @@
 
 import UIKit
 
-class BaseAdapter: NSObject {
+@objc protocol BaseAdapterDelegate {
+
+    
+    optional func fetchItems()
+    optional func fetchMoreItems()
+}
+
+class BaseAdapter: NSObject, BaseAdapterDelegate {
+    
+    var tableItems:ListModel!
+    var searchTableViewList:ListModel!
+    var searchModeEnabled:Bool = false
+    
+    
+    func reloadItems() {
+        if self.respondsToSelector(NSSelectorFromString("fetchItems")) {
+            self.performSelector(NSSelectorFromString("fetchItems"))
+        }
+    }
     
 }

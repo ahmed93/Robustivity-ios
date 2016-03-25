@@ -10,8 +10,6 @@ import UIKit
 
 class BaseTableAdapter: BaseAdapter {
     
-    var tableItems:ListModel!
-    var searchTableViewList:ListModel?
     var tableView:UITableView!
     var cellIdentifier:String!
     var viewController:UIViewController!
@@ -24,14 +22,14 @@ class BaseTableAdapter: BaseAdapter {
         commonSetup()
     }
     
-    init(viewController:UIViewController, tableView:UITableView,registerCellWithClass cellClass:AnyClass, withIdentifier identifier:String) {
-        super.init()
-        self.tableView = tableView
-        self.cellIdentifier = identifier
-        self.tableView.registerClass(cellClass, forCellReuseIdentifier: identifier)
-        self.viewController = viewController
-        commonSetup()
-    }
+//    init(viewController:UIViewController, tableView:UITableView,registerCellWithClass cellClass:AnyClass, withIdentifier identifier:String) {
+//        super.init()
+//        self.tableView = tableView
+//        self.cellIdentifier = identifier
+//        self.tableView.registerClass(cellClass, forCellReuseIdentifier: identifier)
+//        self.viewController = viewController
+//        commonSetup()
+//    }
 
     init(viewController:UIViewController, tableView:UITableView,registerCellWithNib name:String, withIdentifier identifier:String) {
         super.init()
@@ -46,43 +44,43 @@ class BaseTableAdapter: BaseAdapter {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+
+        
         tableItems = ListModel()
-        
-        tableView.backgroundColor = Theme.lightGrayColor()
-        
+        reloadItems()
+        tableView.backgroundColor = Theme.listBackgroundColor()
     }
-    
-    func reloadData() {
-        if self.respondsToSelector(NSSelectorFromString("fetchItems")) {
-            self.performSelector(NSSelectorFromString("fetchItems"))
-        }
-    }
-    
 }
 
-extension BaseTableAdapter: UITableViewDataSource {
+extension BaseTableAdapter: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableItems.count()
+        if searchModeEnabled {
+            return searchTableViewList.count
+        }else {
+            return tableItems.count
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? UITableViewCell
         
-        configure(cell, indexPath: indexPath)
-        return cell
+        configure(cell!, indexPath: indexPath)
+        return cell!
     }
     
     // Empty implementation to be overriden
-    func configure(cell:UITableViewCell, indexPath:NSIndexPath) {}
-}
-
-extension BaseTableAdapter: UITableViewDelegate {
-    
+    func configure(cell:UITableViewCell, indexPath:NSIndexPath) {
+    }
 }
 
 

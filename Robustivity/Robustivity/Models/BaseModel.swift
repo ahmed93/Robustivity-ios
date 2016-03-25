@@ -8,6 +8,13 @@
 
 import UIKit
 
-class BaseModel: NSObject {
+@objc protocol BaseModelDelegate {
+    optional func initWithDictionary(dictionary:NSDictionary)-> AnyObject
+    optional func modelName()->String
+}
 
+class BaseModel: NSObject, BaseModelDelegate {
+    var modelID:Int?
+    var createdData:String?
+    var modifiedDate:String?
 }
