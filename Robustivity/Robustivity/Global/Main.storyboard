@@ -42,7 +42,9 @@
         <scene sceneID="LEA-YV-mgS">
             <objects>
                 <viewController id="Po8-rt-9bi" userLabel="Feed" customClass="FeedViewController" customModule="Robustivity" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="fiT-Wt-wfa"/>
+                    <navigationItem key="navigationItem" id="fiT-Wt-wfa">
+                        <nil key="title"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05k-aW-3ZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

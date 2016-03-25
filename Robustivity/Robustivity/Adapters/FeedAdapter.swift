@@ -13,6 +13,8 @@ class FeedAdapter: BaseTableAdapter {
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
+        
+        // any extra stuff to be done
     }
     
     
@@ -30,16 +32,16 @@ class FeedAdapter: BaseTableAdapter {
         tableView.reloadData()
     }
 //    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("feedViewController") as! FeedViewController
-        viewController.navigationController?.pushViewController(controller, animated: true)
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("feedViewController") as! FeedViewController
+//        viewController.navigationController?.pushViewController(controller, animated: true)
+//    }
 //
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let _cell = cell as? BaseTableViewCell
         
-        _cell?.label.text = tableItems.objectAtIndex(indexPath.row) as! String
+        _cell?.label.text = tableItems.objectAtIndex(indexPath.row) as? String
         _cell?.imgView.image = UIImage(named: "call_blue")
         
     }

@@ -24,21 +24,17 @@ class BaseViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.view.backgroundColor = Theme.viewControllerBackgroundColor()
+    
         
     }
     
-   func setNavigationBarStyle()
-   {
-    
+   func setNavigationBarStyle() {
     if let navigationController = self.navigationController {
         navigationController.navigationBar.tintColor    = Theme.statusBarColor()
         navigationController.navigationBar.barTintColor = Theme.statusBarColor()
         navigationController.navigationBar.translucent = false
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Theme.whiteColor()]
     }
-
-
-    
     }
     
     override func didReceiveMemoryWarning() {

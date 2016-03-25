@@ -11,18 +11,20 @@ import UIKit
 class PlannerViewController: BaseViewController {
 
     var segments:UISegmentedControl!
-    
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//    }
+    var segmentControl:UISegmentedControl?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("PlannerViewController", owner: self, options: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        segmentControl = UISegmentedControl(items: ["test","newTest"])
+//        segmentControl?.tintColor = Theme.whiteColor()
+//        segmentControl?.selectedSegmentIndex = 0
+//        segmentControl?.addTarget(self, action: NSSelectorFromString("valueChange:"), forControlEvents: .ValueChanged)
+//        self.navigationItem.titleView = segmentControl
+//
+//    }
 }

@@ -46,14 +46,13 @@ class BaseTableAdapter: BaseAdapter {
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        
         tableItems = ListModel()
         reloadItems()
         tableView.backgroundColor = Theme.listBackgroundColor()
     }
 }
 
-extension BaseTableAdapter: UITableViewDataSource, UITableViewDelegate {
+extension BaseTableAdapter: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -65,6 +64,10 @@ extension BaseTableAdapter: UITableViewDataSource, UITableViewDelegate {
         }else {
             return tableItems.count
         }
+    }
+    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        return indexPath
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -84,3 +87,6 @@ extension BaseTableAdapter: UITableViewDataSource, UITableViewDelegate {
 }
 
 
+extension BaseTableAdapter: UITableViewDelegate {
+    
+}
