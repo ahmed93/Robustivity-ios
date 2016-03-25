@@ -24,7 +24,7 @@ enum Color: Int {
 enum Size: CGFloat {
     case tiny       = 11 // 22
     case small      = 12 // 24
-    case regular     = 13 // 26
+    case regular    = 13 // 26
     case big        = 14 // 28
     case extraBig   = 15 // 30
     case Large      = 16 // 32
@@ -79,7 +79,7 @@ class Theme: NSObject {
     }
     
     static func size(size:Size)->CGFloat {
-        return CGFloat(size.hashValue)
+        return size.rawValue
     }
     
     
@@ -87,7 +87,6 @@ class Theme: NSObject {
 //    static func getFont(font:Font, size:CGFloat)->UIFont {
 //        return UIFont(name: self.font(font), size: size)!
 //    }
-    
     
     
     // MARK: Application Suitable Naming funcs
@@ -108,10 +107,8 @@ class Theme: NSObject {
     }
     
     
-    
-    
     static func sampleHeaderLabel(label:UILabel) {
-        customFontForLabel(label, font: font(.Bold), color: redColor(), size: size(.regular))
+        customFontForLabel(label, font: font(.Bold), color: redColor(), size: size(.big))
     }
     
     static func customFontForLabel(label:UILabel, font:String, color:UIColor, size:CGFloat) {

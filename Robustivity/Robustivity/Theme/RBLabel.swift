@@ -35,11 +35,11 @@ import UIKit
         case 1000:
             Theme.sampleHeaderLabel(self)
         case 2000:
-            Theme.customFontForLabel(self, font: Theme.font(.Regular), color: Theme.lightGrayColor(), size: Theme.size(.big))
+            Theme.customFontForLabel(self, font: Theme.font(.Regular), color: Theme.blackColor(), size: Theme.size(.Large))
         case 3000:
-            Theme.customFontForLabel(self, font: Theme.font(.Regular), color: Theme.lightGrayColor(), size: Theme.size(.big))
+            Theme.customFontForLabel(self, font: Theme.font(.Bold), color: Theme.greenColor(), size: Theme.size(.small))
         case 4000:
-            Theme.customFontForLabel(self, font: Theme.font(.Regular), color: Theme.lightGrayColor(), size: Theme.size(.big))
+            Theme.customFontForLabel(self, font: Theme.font(.Cond), color: Theme.orangeColor(), size: Theme.size(.big))
         default:
             break;
         }

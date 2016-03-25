@@ -9,8 +9,6 @@
 import UIKit
 
 @objc protocol BaseAdapterDelegate {
-
-    
     optional func fetchItems()
     optional func fetchMoreItems()
 }

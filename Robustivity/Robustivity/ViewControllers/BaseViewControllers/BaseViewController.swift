@@ -25,7 +25,6 @@ class BaseViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.backgroundColor = Theme.viewControllerBackgroundColor()
     
-        
     }
     
    func setNavigationBarStyle() {

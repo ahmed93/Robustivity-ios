@@ -76,7 +76,7 @@ extension BaseTableAdapter: UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? UITableViewCell
-
+        
         configure(cell!, indexPath: indexPath)
         return cell!
     }
