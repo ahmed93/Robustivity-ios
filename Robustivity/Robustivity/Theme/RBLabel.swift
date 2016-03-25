@@ -27,19 +27,50 @@ import UIKit
         loadStyle()
     }
     
-//    case 1000:
-//      Theme.sampleHeaderLabel(self)
-    
     func loadStyle() {
         switch(self.labelType) {
-        case 1000:
-            Theme.sampleHeaderLabel(self)
-        case 2000:
-            Theme.customFontForLabel(self, font: Theme.font(.Regular), color: Theme.blackColor(), size: Theme.size(.Large))
-        case 3000:
-            Theme.customFontForLabel(self, font: Theme.font(.Bold), color: Theme.greenColor(), size: Theme.size(.small))
-        case 4000:
-            Theme.customFontForLabel(self, font: Theme.font(.Cond), color: Theme.orangeColor(), size: Theme.size(.big))
+            // MyriadPro-Regular
+        case 1000:              // 494949, 28
+            Theme.style_1(self)
+        case 1010:              // 494949, 24
+            Theme.style_2(self)
+        case 1020:              // 343434, 24
+            Theme.style_3(self)
+        case 1030:              // 343434, 28
+            Theme.style_4(self)
+        case 1040:              // 32C62C, 44
+            Theme.style_5(self)
+        case 1050:              // C30017, 28
+            Theme.style_6(self)
+        case 1060:              // FFFFFF, 26
+            Theme.style_7(self)
+        case 1070:              // 000000, 32
+            Theme.style_8(self)
+        case 1080:              // 828282, 22
+            Theme.style_9(self)
+        case 1090:              // 828282, 30
+            Theme.style_10(self)
+            
+            // MyriadPro-boldCond
+        case 2000:              // 3A95FF, 32
+            Theme.style_11(self)
+            
+            // MyriadPro-semiBold
+        case 3000:              // 494949, 28
+            Theme.style_12(self)
+        case 3010:              // 494949, 30
+            Theme.style_13(self)
+        case 3020:              // 494949, 34
+            Theme.style_14(self)
+        case 3030:              // 32C62C, 24
+            Theme.style_15(self)
+        case 3040:              // 32C62C, 32
+            Theme.style_16(self)
+        case 3050:              // 000000, 24
+            Theme.style_17(self)
+        case 3060:              // 9013FE, 24
+            Theme.style_18(self)
+            
         default:
             break;
         }

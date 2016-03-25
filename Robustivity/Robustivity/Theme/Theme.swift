@@ -9,16 +9,18 @@
 import UIKit
 
 enum Color: Int {
-    case lightGray  = 0xE6E6E6
-    case lightBlack = 0x494949
-    case black      = 0x000000
-    case gray       = 0x828282
-    case green      = 0x32C62C
-    case red        = 0xC30017
-    case blue       = 0x3A95FF
-    case purple     = 0x9013FE
-    case darkOrange = 0xDB4C32
-    case orange     = 0xFF7C2A
+    case lightGray    = 0xE6E6E6
+    case gray         = 0x828282
+    case lighterBlack = 0x494949
+    case lightBlack   = 0x343434
+    case black        = 0x000000
+    case green        = 0x32C62C
+    case red          = 0xC30017
+    case blue         = 0x3A95FF
+    case purple       = 0x9013FE
+    case darkOrange   = 0xDB4C32
+    case orange       = 0xFF7C2A
+    case white        = 0xFFFFFF
 }
 
 enum Size: CGFloat {
@@ -27,22 +29,32 @@ enum Size: CGFloat {
     case regular    = 13 // 26
     case big        = 14 // 28
     case extraBig   = 15 // 30
-    case Large      = 16 // 32
+    case large      = 16 // 32
     case extraLarge = 17 // 34
+    case veryExBig  = 22 // 44
 }
 
-enum Font: String {
-    case Bold, BoldIt, It , SemiboldIt, BoldCond, Cond , Regular, BoldCondIt, CondIt, Semibold
+enum MyriadProFont: String {
+    case bold           = "Bold"
+    case boldItalic     = "BoldIt"
+    case italic		    = "It"
+    case semiboldItalic	= "SemiboldIt"
+    case boldCond	    = "BoldCond"
+    case cond 		    = "Cond"
+    case regular	    = "Regular"
+    case boldCondItalic	= "BoldCondIt"
+    case condItalic		= "CondIt"
+    case semiBold	    = "Semibold"
 }
 
 class Theme: NSObject {
-
+    
     // MARK: Application Main Colors
     static func lightGrayColor() -> UIColor {
         return UIColor(hexValue: Color.lightGray.rawValue)
     }
-    static func lightBlackColor() -> UIColor {
-        return UIColor(hexValue: Color.lightBlack.rawValue)
+    static func lighterBlackColor() -> UIColor {
+        return UIColor(hexValue: Color.lighterBlack.rawValue)
     }
     static func blackColor() -> UIColor {
         return UIColor(hexValue: Color.black.rawValue)
@@ -64,29 +76,13 @@ class Theme: NSObject {
     }
     static func darkOrangeColor() -> UIColor {
         return UIColor(hexValue: Color.darkOrange.rawValue)
-    }
-    
+    }    
     static func orangeColor() -> UIColor {
         return UIColor(hexValue: Color.orange.rawValue)
     }
     static func whiteColor() -> UIColor {
-        return UIColor(hexValue: 0xFFFFFF)
+        return UIColor(hexValue: Color.white.rawValue)
     }
-    
-    // MARK: Application Main Fonts
-    static func font(font:Font)->String {
-        return "MyriadPro-\(font.rawValue)"
-    }
-    
-    static func size(size:Size)->CGFloat {
-        return size.rawValue
-    }
-    
-    
-    // MARK: Application UIFonts
-//    static func getFont(font:Font, size:CGFloat)->UIFont {
-//        return UIFont(name: self.font(font), size: size)!
-//    }
     
     
     // MARK: Application Suitable Naming funcs
@@ -97,7 +93,7 @@ class Theme: NSObject {
     static func viewControllerBackgroundColor() -> UIColor {
         return whiteColor()
     }
-
+    
     static func statusBarColor()-> UIColor {
         return Theme.redColor()
     }
@@ -107,13 +103,80 @@ class Theme: NSObject {
     }
     
     
-    static func sampleHeaderLabel(label:UILabel) {
-        customFontForLabel(label, font: font(.Bold), color: redColor(), size: size(.big))
+    // MARK: Application FontStyles
+    static func style_1(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.lightBlack), size: getSize(.big))
+    }
+    static func style_2(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.lightBlack), size: getSize(.small))
+    }
+    static func style_3(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.lighterBlack), size: getSize(.small))
+    }
+    static func style_4(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.lighterBlack), size: getSize(.big))
+    }
+    static func style_5(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.green), size: getSize(.veryExBig))
+    }
+    static func style_6(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.red), size: getSize(.big))
+    }
+    static func style_7(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.white), size: getSize(.regular))
+    }
+    static func style_8(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.black), size: getSize(.extraLarge))
+    }
+    static func style_9(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.gray), size: getSize(.tiny))
+    }
+    static func style_10(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.regular), color: getColor(.gray), size: getSize(.extraBig))
+    }
+    static func style_11(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.boldCond), color: getColor(.blue), size: getSize(.extraLarge))
+    }
+    static func style_12(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.semiBold), color: getColor(.lightBlack), size: getSize(.big))
+    }
+    static func style_13(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.semiBold), color: getColor(.lightBlack), size: getSize(.extraBig))
+    }
+    static func style_14(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.semiBold), color: getColor(.lightBlack), size: getSize(.extraLarge))
+    }
+    static func style_15(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.semiBold), color: getColor(.green), size: getSize(.small))
+    }
+    static func style_16(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.semiBold), color: getColor(.green), size: getSize(.large))
+    }
+    static func style_17(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.semiBold), color: getColor(.black), size: getSize(.small))
+    }
+    static func style_18(label:UILabel) {
+        customFontForLabel(label,font: getMyriadProFont(.semiBold), color: getColor(.purple), size: getSize(.small))
+    }
+    
+    
+    // MARK: Other Uses
+    static func getMyriadProFont(font:MyriadProFont)->String {
+        return "MyriadPro-\(font.rawValue)"
+    }
+    
+    static func getSize(size:Size)->CGFloat {
+        return size.rawValue
+    }
+    
+    static func getColor(color:Color)->UIColor {
+        return UIColor(hexValue: color.rawValue)
     }
     
     static func customFontForLabel(label:UILabel, font:String, color:UIColor, size:CGFloat) {
         label.font =  UIFont(name: font, size: size)
         label.textColor = color
     }
+    
 }
 
