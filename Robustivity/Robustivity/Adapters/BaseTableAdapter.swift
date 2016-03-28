@@ -13,6 +13,7 @@ class BaseTableAdapter: BaseAdapter {
     var tableView:UITableView!
     var cellIdentifier:String!
     var viewController:UIViewController!
+    var multipleIdentifiers:Bool = false
     
     init(viewController:UIViewController, tableView:UITableView, cellIdentifier:String) {
         super.init()
@@ -22,20 +23,25 @@ class BaseTableAdapter: BaseAdapter {
         commonSetup()
     }
     
-//    init(viewController:UIViewController, tableView:UITableView,registerCellWithClass cellClass:AnyClass, withIdentifier identifier:String) {
-//        super.init()
-//        self.tableView = tableView
-//        self.cellIdentifier = identifier
-//        self.tableView.registerClass(cellClass, forCellReuseIdentifier: identifier)
-//        self.viewController = viewController
-//        commonSetup()
-//    }
-
     init(viewController:UIViewController, tableView:UITableView,registerCellWithNib name:String, withIdentifier identifier:String) {
         super.init()
         self.tableView = tableView
         self.cellIdentifier = identifier
         self.tableView.registerNib(UINib(nibName: name, bundle: nil), forCellReuseIdentifier: identifier)
+        self.viewController = viewController
+        commonSetup()
+    }
+    
+    
+    // Dictionary Sample: {"NibName": "IdentifierName"}
+    init(viewController:UIViewController, tableView:UITableView,registerMultipleNibsAndIdenfifers cellsNibs:NSDictionary) {
+        super.init()
+        multipleIdentifiers = true
+        
+        self.tableView = tableView
+        for nibFileName in cellsNibs.allKeys {
+            self.tableView.registerNib(UINib(nibName: nibFileName as! String, bundle: nil), forCellReuseIdentifier: cellsNibs.valueForKey(nibFileName as! String) as! String)
+        }
         self.viewController = viewController
         commonSetup()
     }
@@ -75,15 +81,31 @@ extension BaseTableAdapter: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? UITableViewCell
+        var cell:UITableViewCell!
         
-        configure(cell!, indexPath: indexPath)
+        if multipleIdentifiers {
+            cell = configureViaMultipleIdentifiers(indexPath)
+        } else {
+            cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? UITableViewCell
+            configure(cell!, indexPath: indexPath)
+        }
+        
+        
+
         return cell!
     }
     
     // Empty implementation to be overriden
     func configure(cell:UITableViewCell, indexPath:NSIndexPath) {
+        assertionFailure("\n======> You didn't Implement configure func\n")
     }
+    
+    // Empty implementation to be overriden
+    func configureViaMultipleIdentifiers(indexPath:NSIndexPath)->UITableViewCell? {
+        assertionFailure("\n======> You didn't Implement configureViaMultipleIdentifiers func\n")
+        return nil
+    }
+
 }
 
 
