@@ -66,7 +66,7 @@ class NotificationsAdapter: BaseTableAdapter {
                 ],[
                     "type"       	:"broadcast",
                     "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
+                    "image"      	:"Stroke 751 + Stroke 752", 
                     "description"	:"Dear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, PleasPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPleaselease jPlease je joinDear Team, Please joinDear Team, Please joinDear Team, Please join",
                     "timestampe"  	:"01:20 am"
                 ]]
