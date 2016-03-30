@@ -14,13 +14,11 @@ class PlannerAdapter: BaseTableAdapter {
     }
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
-        // Setting the segment index must be done before initializing the adapter
-        // as long as the bug of loading all tabs upon launch exists
-//        selectedSegmentIndex = (viewController as! PlannerViewController).segmentedControl.selectedSegmentIndex
-
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
+
+        tableView.sectionHeaderHeight = 44
     }
-    
+
     func fetchItems() {
         if tableItems == nil {
             tableItems = ListModel()
@@ -28,22 +26,41 @@ class PlannerAdapter: BaseTableAdapter {
         tableView.reloadData()
     }
     
+    // MARK: Table view delegate and datasource
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
     
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerLabelType = [3040, 3040]
+        let headerLabelText = ["In Progress", "Done"]
+
+        let headerCell = tableView.dequeueReusableCellWithIdentifier("PlannerHeader") as! PlannerHeaderTableViewCell
+        headerCell.headerLabel.labelType = headerLabelType[section]
+        headerCell.headerLabel.text = headerLabelText[section]
+        return headerCell.contentView
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Items Progress Count
-        if selectedSegmentIndex == 0 {
+        if section == 0 {
             // [TODO] replace it by the number of items in progress returned from the server
             return 5
         }
 
         // Items Done Count
         // [TODO] replace it by the number of items done returned from the server
-        return 7
+        return 5
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("selected")
+    }
+
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let plannerCell = cell as? PlannerTableViewCell
         
@@ -52,7 +69,7 @@ class PlannerAdapter: BaseTableAdapter {
             plannerCell?.bottomCellLayoutConstraint.constant = 14
         } else {
             plannerCell?.dueDate.text = ""
-            plannerCell?.bottomCellLayoutConstraint.constant = 0
+            plannerCell?.bottomCellLayoutConstraint.constant = 7
         }
     }
 

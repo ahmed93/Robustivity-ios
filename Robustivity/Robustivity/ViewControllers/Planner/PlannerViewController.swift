@@ -22,21 +22,24 @@ class PlannerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Planner";
-
+        
         // Init segmented control
         let segmentControlItems = ["Tasks", "My ToDos"]
         initSegmentedControl(segmentControlItems)
-
+        
         // Init Adapter
         adapter = PlannerAdapter(viewController: self, tableView: tableView, registerCellWithNib: "PlannerTableViewCell", withIdentifier: "PlannerCell")
+        tableView.registerNib(UINib(nibName: "PlannerHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "PlannerHeader")
         
         // Add Right navigation item
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .Plain, target: self, action: "createItemAction:")
         
         // Add Left navigation item
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
-        self.navigationItem.leftBarButtonItem?.tintColor = Theme.greenColor()
-        toggleUserStatus()
+        let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
+        userStatusBarButtonItem.tintColor = Theme.greenColor()
+        self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
+        // toggleUserStatus()
+        
     }
     
     //    MARK: Segmented Control
@@ -67,12 +70,12 @@ class PlannerViewController: BaseViewController {
             // [TODO] Create new ToDo
         }
     }
-
+    
     // Lefy Navigation Bar Button item
     func toggleUserStatus(){
         let statusCircle = self.navigationItem.leftBarButtonItem
         if statusCircle!.tintColor!.isEqual(Theme.greenColor()) {
-            statusCircle?.tintColor = Theme.statusBarColor()
+            statusCircle?.tintColor = Theme.whiteColor()
         } else {
             statusCircle?.tintColor = Theme.greenColor()
         }

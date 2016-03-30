@@ -10,6 +10,8 @@
 		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
 		01530AFF1CAB1CA900429264 /* PlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFD1CAB1CA900429264 /* PlannerTableViewCell.swift */; };
 		01530B001CAB1CA900429264 /* PlannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */; };
+		01530B031CAC2C0500429264 /* PlannerHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */; };
+		01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -131,6 +133,8 @@
 		01530AFA1CAB145A00429264 /* PlannerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerAdapter.swift; sourceTree = "<group>"; };
 		01530AFD1CAB1CA900429264 /* PlannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerTableViewCell.swift; sourceTree = "<group>"; };
 		01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerTableViewCell.xib; sourceTree = "<group>"; };
+		01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 			children = (
 				01530AFD1CAB1CA900429264 /* PlannerTableViewCell.swift */,
 				01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */,
+				01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */,
+				01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */,
 			);
 			name = Planner;
 			path = "Custom Views/Planner";
@@ -696,6 +702,7 @@
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
+				01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
@@ -748,6 +755,7 @@
 				A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */,
 				A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */,
 				A7C480171CA3F1EC00F4FDB7 /* SDWebImageCompat.m in Sources */,
+				01530B031CAC2C0500429264 /* PlannerHeaderTableViewCell.swift in Sources */,
 				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,
 				A7C480141CA3F1EC00F4FDB7 /* MKAnnotationView+WebCache.m in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,

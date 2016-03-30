@@ -13,12 +13,14 @@ class PlannerTableViewCell: UITableViewCell {
     @IBOutlet weak var projectName:RBLabel!
     @IBOutlet weak var toggleTimer:RBLabel!
     @IBOutlet weak var dueDate:RBLabel!
+    @IBOutlet weak var cellSeparator: UIView!
 
     @IBOutlet weak var bottomCellLayoutConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cellSeparator.backgroundColor = Theme.tableBackgroundColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
