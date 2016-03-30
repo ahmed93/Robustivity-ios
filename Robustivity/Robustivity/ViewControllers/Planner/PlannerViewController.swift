@@ -64,15 +64,23 @@ class PlannerViewController: BaseViewController {
     
     // Right Navigation Bar Button item
     func createItemAction(sender: UIBarButtonItem) {
+        // let viewController:UIViewController;
+        
         if segmentedControl.selectedSegmentIndex == 0 {
             // [TODO] Create new Task
+            // Replace viewController
+            // projectAssignmentViewController = ProjectAssignmentViewController()
         } else {
             // [TODO] Create new ToDo
+            // Replace viewController
+            // projectAssignmentViewController = CREATE TODO View Controller
         }
+        
+        // self.navigationController?.pushViewController(projectAssignmentViewController, animated: true)
     }
     
     // Left Navigation Bar Button item
-    func toggleUserStatus(){
+    func toggleUserStatus() {
         let statusCircle = self.navigationItem.leftBarButtonItem
         if statusCircle!.tintColor!.isEqual(Theme.greenColor()) {
             statusCircle?.tintColor = Theme.whiteColor()
