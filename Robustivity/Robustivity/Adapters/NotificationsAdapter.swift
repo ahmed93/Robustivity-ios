@@ -13,6 +13,8 @@ class NotificationsAdapter: BaseTableAdapter {
     let broadCastNotification = "doubleLineNotifCell"
     let normalNotification    = "singleLineNotifCell"
     
+    let headerHeight = CGFloat(50)
+    
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
     }
@@ -66,7 +68,7 @@ class NotificationsAdapter: BaseTableAdapter {
                 ],[
                     "type"       	:"broadcast",
                     "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752", 
+                    "image"      	:"feed",
                     "description"	:"Dear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, PleasPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPleaselease jPlease je joinDear Team, Please joinDear Team, Please joinDear Team, Please join",
                     "timestampe"  	:"01:20 am"
                 ]]
@@ -76,9 +78,9 @@ class NotificationsAdapter: BaseTableAdapter {
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerTitle = (tableItems.objectAtIndex(section) as! NSDictionary).objectForKey("time") as! String
         
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: viewController.view.frame.width, height: 30))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: viewController.view.frame.width, height: headerHeight))
         
-        let headerLabel = RBLabel(frame: CGRect(x: 10, y: 5, width: headerView.frame.width - 30, height: 20))
+        let headerLabel = RBLabel(frame: CGRect(x: 10, y: 25, width: headerView.frame.width - 30, height: 20))
         headerLabel.labelType = 3020
         
         headerLabel.text = headerTitle
@@ -89,7 +91,7 @@ class NotificationsAdapter: BaseTableAdapter {
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return headerHeight
     }
     
     
@@ -106,20 +108,22 @@ class NotificationsAdapter: BaseTableAdapter {
         let notification = ((tableItems.objectAtIndex(indexPath.section) as! NSDictionary).objectForKey("data") as! NSArray).objectAtIndex(indexPath.row) as! NSDictionary
         
         let identifer = (notification.objectForKey("type")?.isEqualToString("broadcast"))! ? broadCastNotification : normalNotification
-        
+       
         let notificationCell = tableView.dequeueReusableCellWithIdentifier(identifer, forIndexPath: indexPath) as! NotificationsTableViewCell
         
         notificationCell.titleLabel.text = notification.objectForKey("title") as? String
-        notificationCell.imageView?.image = UIImage(named: (notification.objectForKey("image") as! String) )
+        notificationCell.notificationImageView?.image = UIImage(named: (notification.objectForKey("image") as! String) )
         notificationCell.timeLabel.text = notification.objectForKey("timestampe") as? String
         
+        notificationCell.notificationImageView?.layer.cornerRadius = (notificationCell.imageView?.frame.width)! / 2
+        notificationCell.notificationImageView?.clipsToBounds = true
+        //        notificationCell.imageView?.backgroundColor = UIColor.blackColor()
         if identifer == broadCastNotification {
             notificationCell.descriptionLabel.text = notification.objectForKey("description") as? String
             notificationCell.descriptionLabel.lineBreakMode =  .ByTruncatingTail
             notificationCell.descriptionLabel.numberOfLines = 5
-
+            
         }
-        
         
         return notificationCell
         
