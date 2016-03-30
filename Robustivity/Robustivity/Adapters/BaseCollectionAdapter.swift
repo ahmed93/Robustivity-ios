@@ -57,6 +57,12 @@ extension BaseCollectionAdapter: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedIndexPath = indexPath
     }
+    
+    func collectionView(collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
 }
 
 extension BaseCollectionAdapter: UICollectionViewDataSource {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41ED59101CAC379900508474 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED590E1CAC379900508474 /* CallViewController.swift */; };
+		41ED59111CAC379900508474 /* CallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED590F1CAC379900508474 /* CallViewController.xib */; };
+		41ED59151CAC48B700508474 /* CallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */; };
+		41ED59161CAC48B700508474 /* CallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -125,6 +129,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41ED590E1CAC379900508474 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
+		41ED590F1CAC379900508474 /* CallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallViewController.xib; sourceTree = "<group>"; };
+		41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallCollectionViewCell.swift; sourceTree = "<group>"; };
+		41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallCollectionViewCell.xib; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -222,6 +230,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41ED59061CAC377100508474 /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				41ED590E1CAC379900508474 /* CallViewController.swift */,
+				41ED590F1CAC379900508474 /* CallViewController.xib */,
+			);
+			name = Call;
+			sourceTree = "<group>";
+		};
+		41ED59121CAC487900508474 /* CallCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */,
+				41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */,
+			);
+			name = CallCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +377,7 @@
 		A7A94EC01C9E9321002B3991 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				41ED59061CAC377100508474 /* Call */,
 				A72B29131CA2DE7D00C49913 /* Profile */,
 				A72B29181CA2DEA000C49913 /* AttendanceLog */,
 				A72B29121CA2DE7D00C49913 /* Ping */,
@@ -531,6 +558,7 @@
 		A7FD4DAC1CA5DE6400BD7332 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				41ED59121CAC487900508474 /* CallCollectionViewCell */,
 				A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */,
 				A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */,
 			);
@@ -671,6 +699,7 @@
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
+				41ED59161CAC48B700508474 /* CallCollectionViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
@@ -681,6 +710,7 @@
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
+				41ED59111CAC379900508474 /* CallViewController.xib in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
@@ -699,6 +729,7 @@
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
 				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
+				41ED59101CAC379900508474 /* CallViewController.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
@@ -735,6 +766,7 @@
 				A7C4801C1CA3F1EC00F4FDB7 /* SDWebImagePrefetcher.m in Sources */,
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				A7C4801A1CA3F1EC00F4FDB7 /* SDWebImageDownloaderOperation.m in Sources */,
+				41ED59151CAC48B700508474 /* CallCollectionViewCell.swift in Sources */,
 				A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */,
 				A7C4801B1CA3F1EC00F4FDB7 /* SDWebImageManager.m in Sources */,
 				A7C480201CA3F1EC00F4FDB7 /* UIImage+WebP.m in Sources */,
