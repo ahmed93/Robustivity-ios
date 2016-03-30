@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseSwipableTableViewCell: MGSwipeTableCell {
+class SwipableTableViewCell: MGSwipeTableCell {
 
     let playImage : UIImage = UIImage(named:"play.png")!
     let pauseImage : UIImage = UIImage(named:"pause.png")!
