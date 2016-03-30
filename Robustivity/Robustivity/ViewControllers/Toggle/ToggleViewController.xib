@@ -10,6 +10,7 @@
                 <outlet property="playBtn" destination="IEZ-gZ-iTk" id="IAg-Dm-bxz"/>
                 <outlet property="recordedTime" destination="hIR-dF-U02" id="piK-6u-pwD"/>
                 <outlet property="stopBtn" destination="bsp-tN-ARa" id="9cD-aD-gzj"/>
+                <outlet property="todoTitle" destination="IFk-6u-tyA" id="9nE-0e-UhH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,11 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFk-6u-tyA">
-                    <rect key="frame" x="139" y="181" width="97" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEZ-gZ-iTk">
                     <rect key="frame" x="53" y="283" width="100" height="100"/>
                     <color key="backgroundColor" red="0.46689141575162763" green="1" blue="0.49048709974663951" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,7 +28,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIR-dF-U02" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                    <rect key="frame" x="161" y="248" width="264" height="44"/>
+                    <rect key="frame" x="73" y="219" width="264" height="44"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -53,6 +49,11 @@
                         <action selector="stop:" destination="-1" eventType="touchUpInside" id="YLw-cN-MtX"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFk-6u-tyA">
+                    <rect key="frame" x="120" y="131" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

@@ -12,12 +12,14 @@ class ToggleViewController: BaseViewController {
     @IBOutlet weak var stopBtn: UIButton!
     @IBOutlet weak var pauseBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
-    
     @IBOutlet weak var recordedTime: UILabel!
+    
+    var confirmToggleView = ConfirmToggleViewController();
     var timer = NSTimer();
     var startDate = NSDate();
     var pausedDate = NSDate();
     var currentTimeInterval = NSTimeInterval();
+    @IBOutlet weak var todoTitle: UITextField!
     var pausedTimeInterval = NSTimeInterval();
 
     required init?(coder aDecoder: NSCoder) {
@@ -47,6 +49,8 @@ class ToggleViewController: BaseViewController {
         let currentDate = NSDate();
         startDate = currentDate;
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true);
+        
+        self.recordedTime.textColor = Theme.greenColor();
         self.playBtn.hidden = true;
         self.pauseBtn.hidden = false;
         self.stopBtn.hidden = false;
@@ -72,14 +76,18 @@ class ToggleViewController: BaseViewController {
     @IBAction func pause(sender: AnyObject) {
         self.pausedDate = NSDate();
         timer.invalidate();
+        self.recordedTime.textColor = Theme.blackColor();
         self.pausedTimeInterval = self.currentTimeInterval;
-
         self.pauseBtn.hidden = true;
         self.playBtn.hidden = false;
     }
 
     @IBAction func stop(sender: AnyObject) {
         self.pausedDate = NSDate();
+        if(self.todoTitle.text == "") {
+            self.confirmToggleView.toggledTime = self.recordedTime.text!;
+            self.navigationController?.pushViewController(self.confirmToggleView, animated: true);
+        }
         timer.invalidate();
         self.recordedTime.text = "00:00:00";
         self.pausedTimeInterval = 0;
