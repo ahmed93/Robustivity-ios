@@ -15,15 +15,13 @@ class PlannerAdapter: BaseTableAdapter {
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
-
-        tableView.sectionHeaderHeight = 44
     }
 
     func fetchItems() {
         if tableItems == nil {
             tableItems = ListModel()
         }
-        tableView.reloadData()
+        tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
     }
     
     // MARK: Table view delegate and datasource
@@ -49,12 +47,18 @@ class PlannerAdapter: BaseTableAdapter {
         // Items Progress Count
         if section == 0 {
             // [TODO] replace it by the number of items in progress returned from the server
+            if selectedSegmentIndex == 0 {
+                return 7
+            }
             return 5
         }
 
         // Items Done Count
         // [TODO] replace it by the number of items done returned from the server
-        return 5
+        if selectedSegmentIndex == 0 {
+            return 2
+        }
+        return 4
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

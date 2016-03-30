@@ -71,7 +71,7 @@ class PlannerViewController: BaseViewController {
         }
     }
     
-    // Lefy Navigation Bar Button item
+    // Left Navigation Bar Button item
     func toggleUserStatus(){
         let statusCircle = self.navigationItem.leftBarButtonItem
         if statusCircle!.tintColor!.isEqual(Theme.greenColor()) {
