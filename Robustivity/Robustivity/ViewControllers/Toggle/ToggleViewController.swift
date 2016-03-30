@@ -9,59 +9,75 @@
 import UIKit
 
 class ToggleViewController: BaseViewController {
-
-    @IBOutlet weak var recordedTime: UILabel!
-    var timer = NSTimer()
-    var counter = 0
-    var startDate = NSDate()
+    @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var pauseBtn: UIButton!
+    @IBOutlet weak var playBtn: UIButton!
     
-    @IBAction func startPlay(sender: AnyObject) {
-        let currentDate = NSDate()
-        startDate = currentDate
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
-        
-    }
-    func updateCounter() {
-        // Create date from the elapsed time
-        let currentDate = NSDate()
-        
-        let timeInterval = currentDate.timeIntervalSinceDate(self.startDate)
-        let timerDate = NSDate(timeIntervalSince1970: timeInterval)
-//        let timerDate = NSDate(timeInterval: timeInterval, sinceDate: startDate  )
-         // Create a date formatter
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-//        dateFormatter.timeZone = NSTimeZone
-        let timeString = dateFormatter.stringFromDate(timerDate);
-        self.recordedTime.text = timeString;
-        
-        
-        
-        // Create a date formatter
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
-//        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-        
-        // Format the elapsed time and set it to the label
-//        NSString *timeString = [dateFormatter stringFromDate:timerDate];
-//        self.stopwatchLabel.text = timeString;
-        
-//        recordedTime.text = String(counter++)
-    }
-    @IBAction func pause(sender: AnyObject) {
-         timer.invalidate()
-    }
+    @IBOutlet weak var recordedTime: UILabel!
+    var timer = NSTimer();
+    var startDate = NSDate();
+    var pausedDate = NSDate();
+    var currentTimeInterval = NSTimeInterval();
+    var pausedTimeInterval = NSTimeInterval();
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("ToggleViewController", owner: self, options: nil)
     }
     
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
+        self.stopBtn.hidden = true;
+        self.pauseBtn.hidden = true;
     }
 
+    
+    @IBAction func startPlay(sender: AnyObject) {
+        let currentDate = NSDate();
+        startDate = currentDate;
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true);
+        self.playBtn.hidden = true;
+        self.pauseBtn.hidden = false;
+        self.stopBtn.hidden = false;
+        
+    }
+    func updateCounter() {
+        // Create date from the elapsed time
+        let currentDate = NSDate();
+        
+        var timeInterval = currentDate.timeIntervalSinceDate(self.startDate);
+        timeInterval += pausedTimeInterval;
+
+        let timerDate = NSDate(timeIntervalSince1970: timeInterval);
+         // Create a date formatter
+        let dateFormatter = NSDateFormatter();
+        dateFormatter.dateFormat = "HH:mm:ss";
+        dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0);
+        let timeString = dateFormatter.stringFromDate(timerDate);
+        self.currentTimeInterval = timeInterval;
+        self.recordedTime.text = timeString;
+        
+    }
+    @IBAction func pause(sender: AnyObject) {
+        self.pausedDate = NSDate();
+        timer.invalidate();
+        self.pausedTimeInterval = self.currentTimeInterval;
+
+        self.pauseBtn.hidden = true;
+        self.playBtn.hidden = false;
+    }
+
+    @IBAction func stop(sender: AnyObject) {
+        self.pausedDate = NSDate();
+        timer.invalidate();
+        self.recordedTime.text = "00:00:00";
+        self.pausedTimeInterval = 0;
+        self.stopBtn.hidden = true;
+        self.pauseBtn.hidden = true;
+        self.playBtn.hidden = false;
+    }
 
 }
