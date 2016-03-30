@@ -30,6 +30,13 @@ class ToggleViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
+        self.playBtn.layer.cornerRadius = 0.5 * self.playBtn.bounds.size.width;
+        self.playBtn.backgroundColor = Theme.greenColor();
+        self.pauseBtn.layer.cornerRadius = 0.5 * self.pauseBtn.bounds.size.width;
+        self.pauseBtn.backgroundColor = Theme.greenColor();
+        self.stopBtn.layer.cornerRadius = 0.5 * self.stopBtn.bounds.size.width;
+        self.stopBtn.backgroundColor = Theme.redColor();
+
         self.recordedTime.text = "00:00:00";
         self.stopBtn.hidden = true;
         self.pauseBtn.hidden = true;
