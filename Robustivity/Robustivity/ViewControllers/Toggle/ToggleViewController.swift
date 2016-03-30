@@ -30,6 +30,7 @@ class ToggleViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
+        self.recordedTime.text = "00:00:00";
         self.stopBtn.hidden = true;
         self.pauseBtn.hidden = true;
     }
