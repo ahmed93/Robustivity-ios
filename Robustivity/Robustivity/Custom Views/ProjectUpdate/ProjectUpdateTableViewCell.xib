@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="105" id="KGk-i7-Jjw" customClass="ProjectUpdateTableViewCell" customModule="Robustivity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MPC-LG-cCw">
+                        <rect key="frame" x="12" y="13" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Msd-ov-mld"/>
+                            <constraint firstAttribute="width" constant="50" id="avH-AB-rT2"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmI-0o-Mln" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="67" y="33" width="45" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="3000"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQE-Jq-DPW" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="262" y="29" width="50" height="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="1080"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xu8-6I-Ch5" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="12" y="71" width="300" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="300" id="HPO-Hv-8FB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="1030"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MPC-LG-cCw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="4MO-MV-ZIL"/>
+                    <constraint firstItem="dmI-0o-Mln" firstAttribute="leading" secondItem="MPC-LG-cCw" secondAttribute="trailing" constant="5" id="6pQ-uN-HQx"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xu8-6I-Ch5" secondAttribute="bottom" constant="11" id="AZb-He-bRi"/>
+                    <constraint firstItem="oQE-Jq-DPW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="X35-gc-hzL"/>
+                    <constraint firstItem="dmI-0o-Mln" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="25" id="lCX-GO-TQp"/>
+                    <constraint firstItem="xu8-6I-Ch5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="pLR-7S-xan"/>
+                    <constraint firstItem="oQE-Jq-DPW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="21" id="phH-nK-SXK"/>
+                    <constraint firstItem="xu8-6I-Ch5" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="rAZ-C1-Xto"/>
+                    <constraint firstItem="MPC-LG-cCw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="rGU-Ap-HRc"/>
+                    <constraint firstItem="oQE-Jq-DPW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="sTj-6Z-OEL"/>
+                    <constraint firstItem="oQE-Jq-DPW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="21" id="xoS-ln-Ifa"/>
+                    <constraint firstItem="xu8-6I-Ch5" firstAttribute="top" secondItem="MPC-LG-cCw" secondAttribute="bottom" constant="8" id="ypb-XI-4AV"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="X35-gc-hzL"/>
+                        <exclude reference="phH-nK-SXK"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="280" y="360.5"/>
+        </tableViewCell>
+    </objects>
+</document>

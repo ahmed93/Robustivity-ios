@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011083381CAC173500F616DD /* ProjectUpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */; };
+		011083391CAC173500F616DD /* ProjectUpdateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -125,6 +127,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectUpdateTableViewCell.swift; path = "Custom Views/ProjectUpdate/ProjectUpdateTableViewCell.swift"; sourceTree = "<group>"; };
+		011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectUpdateTableViewCell.xib; path = "Custom Views/ProjectUpdate/ProjectUpdateTableViewCell.xib"; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -222,6 +226,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011083351CAC171200F616DD /* ProjectUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */,
+				011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */,
+			);
+			name = ProjectUpdate;
+			sourceTree = "<group>";
+		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +340,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				011083351CAC171200F616DD /* ProjectUpdate */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -671,6 +685,7 @@
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
+				011083391CAC173500F616DD /* ProjectUpdateTableViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
@@ -708,6 +723,7 @@
 				A7C4801D1CA3F1EC00F4FDB7 /* UIButton+WebCache.m in Sources */,
 				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
 				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
+				011083381CAC173500F616DD /* ProjectUpdateTableViewCell.swift in Sources */,
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
