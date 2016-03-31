@@ -3,17 +3,15 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="MyriadPro-Regular.otf">
-            <string>MyriadPro-Regular</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToggleViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
+                <outlet property="pauseBtn" destination="9ql-K8-3jW" id="A3T-4i-M8Y"/>
+                <outlet property="playBtn" destination="IEZ-gZ-iTk" id="IAg-Dm-bxz"/>
                 <outlet property="recordedTime" destination="hIR-dF-U02" id="piK-6u-pwD"/>
-                <outlet property="todoProjectTitle" destination="IFk-6u-tyA" id="Bbo-fN-8Lu"/>
-                <outlet property="todo_project_picker" destination="nUZ-ta-SRd" id="ggZ-Mw-FY7"/>
+                <outlet property="stopBtn" destination="bsp-tN-ARa" id="9cD-aD-gzj"/>
+                <outlet property="todoProjectPicker" destination="83e-iV-LhO" id="QL0-33-5dN"/>
+                <outlet property="todoTitleField" destination="WvJ-tl-GBe" id="fsI-0i-Jn2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,56 +20,66 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ToDo title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFk-6u-tyA" userLabel="todo_title">
-                    <rect key="frame" x="49" y="68" width="284" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="262" id="hFi-yL-zGp"/>
-                        <constraint firstAttribute="height" constant="40" id="jSo-UD-1F9"/>
-                    </constraints>
-                    <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEZ-gZ-iTk">
-                    <rect key="frame" x="266" y="300" width="30" height="30"/>
-                    <state key="normal" title="Play"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEZ-gZ-iTk">
+                    <rect key="frame" x="53" y="283" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.46689141575162763" green="1" blue="0.49048709974663951" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="play"/>
                     <connections>
                         <action selector="startPlay:" destination="-1" eventType="touchUpInside" id="EJe-1y-Ug7"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ql-K8-3jW">
-                    <rect key="frame" x="268" y="375" width="42" height="30"/>
-                    <state key="normal" title="Pause"/>
-                    <connections>
-                        <action selector="pause:" destination="-1" eventType="touchUpInside" id="hMx-0X-Zqx"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIR-dF-U02" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                    <rect key="frame" x="161" y="248" width="66" height="44"/>
+                    <rect key="frame" x="73" y="219" width="264" height="44"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-ta-SRd">
-                    <rect key="frame" x="49" y="155" width="284" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="262" id="koA-li-ONX"/>
-                        <constraint firstAttribute="height" constant="40" id="lky-Wh-5Md"/>
-                    </constraints>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ql-K8-3jW">
+                    <rect key="frame" x="53" y="404" width="100" height="100"/>
+                    <color key="backgroundColor" red="1" green="0.1751907348" blue="0.29724368369999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="pause"/>
                     <connections>
-                        <outlet property="dataSource" destination="i5M-Pr-FkT" id="qUA-ez-p4Q"/>
-                        <outlet property="delegate" destination="i5M-Pr-FkT" id="UTI-a1-xx4"/>
+                        <action selector="pause:" destination="-1" eventType="touchUpInside" id="hMx-0X-Zqx"/>
                     </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsp-tN-ARa">
+                    <rect key="frame" x="198" y="404" width="100" height="100"/>
+                    <color key="backgroundColor" red="1" green="0.1751907348" blue="0.29724368369999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="stop"/>
+                    <connections>
+                        <action selector="stop:" destination="-1" eventType="touchUpInside" id="YLw-cN-MtX"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WvJ-tl-GBe">
+                    <rect key="frame" x="44" y="57" width="293" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="3Ub-Gc-vpH"/>
+                        <constraint firstAttribute="width" constant="262" id="ZfR-tk-kiv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83e-iV-LhO">
+                    <rect key="frame" x="43" y="112" width="288" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="DsB-jE-gro"/>
+                        <constraint firstAttribute="width" constant="262" id="xft-oT-cDu"/>
+                    </constraints>
                 </pickerView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="nUZ-ta-SRd" firstAttribute="top" secondItem="IFk-6u-tyA" secondAttribute="bottom" constant="50" id="Hsa-xU-4vr"/>
-                <constraint firstItem="nUZ-ta-SRd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NfV-FC-PCD"/>
-                <constraint firstItem="IFk-6u-tyA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="rMf-Dt-aF7"/>
-                <constraint firstItem="IFk-6u-tyA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="raw-1Z-8Hi"/>
+                <constraint firstItem="83e-iV-LhO" firstAttribute="top" secondItem="WvJ-tl-GBe" secondAttribute="bottom" constant="20" id="3l6-mZ-yBN"/>
+                <constraint firstItem="83e-iV-LhO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EXE-XN-oI4"/>
+                <constraint firstItem="WvJ-tl-GBe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="105" id="pOg-ok-4iC"/>
+                <constraint firstItem="WvJ-tl-GBe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uFs-yH-b9v"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
     </objects>
+    <resources>
+        <image name="pause" width="37" height="47"/>
+        <image name="play" width="40" height="40"/>
+        <image name="stop" width="49" height="49"/>
+    </resources>
 </document>

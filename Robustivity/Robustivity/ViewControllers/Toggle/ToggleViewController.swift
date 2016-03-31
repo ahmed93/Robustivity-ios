@@ -9,65 +9,104 @@
 import UIKit
 
 class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
-    @IBOutlet weak var todoProjectTitle: UITextField!
-    @IBOutlet weak var todo_project_picker: UIPickerView!
+    @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var pauseBtn: UIButton!
+    @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var recordedTime: UILabel!
-    var timer = NSTimer()
-    var counter = 0
-    var startDate = NSDate()
-    var todoProjectPickerDataSource = ["Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
 
+    @IBOutlet weak var todoTitleField: UITextField!
+    @IBOutlet weak var todoProjectPicker: UIPickerView!
     
-    @IBAction func startPlay(sender: AnyObject) {
-        let currentDate = NSDate()
-        startDate = currentDate
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
-        
-    }
-    func updateCounter() {
-        // Create date from the elapsed time
-        let currentDate = NSDate()
-        
-        let timeInterval = currentDate.timeIntervalSinceDate(self.startDate)
-        let timerDate = NSDate(timeIntervalSince1970: timeInterval)
-//        let timerDate = NSDate(timeInterval: timeInterval, sinceDate: startDate  )
-         // Create a date formatter
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-//        dateFormatter.timeZone = NSTimeZone
-        let timeString = dateFormatter.stringFromDate(timerDate);
-        self.recordedTime.text = timeString;
-        
-        
-        
-        // Create a date formatter
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        [dateFormatter setDateFormat:@"HH:mm:ss.SSS"];
-//        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-        
-        // Format the elapsed time and set it to the label
-//        NSString *timeString = [dateFormatter stringFromDate:timerDate];
-//        self.stopwatchLabel.text = timeString;
-        
-//        recordedTime.text = String(counter++)
-    }
-    @IBAction func pause(sender: AnyObject) {
-         timer.invalidate()
-    }
+    var confirmToggleView = ConfirmToggleViewController();
+    var timer = NSTimer();
+    var startDate = NSDate();
+    var pausedDate = NSDate();
+    var currentTimeInterval = NSTimeInterval();
+    @IBOutlet weak var todoTitle: UITextField!
+    var pausedTimeInterval = NSTimeInterval();
+    
+    var todoProjectPickerDataSource = ["Project name", "Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("ToggleViewController", owner: self, options: nil)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
-        self.todoProjectTitle.backgroundColor = Theme.lightGrayColor();
-        self.todo_project_picker.backgroundColor = Theme.lightGrayColor();
-        self.todo_project_picker.dataSource = self;
-        self.todo_project_picker.delegate = self;
+        self.playBtn.layer.cornerRadius = 0.5 * self.playBtn.bounds.size.width;
+        self.playBtn.backgroundColor = Theme.greenColor();
+        self.pauseBtn.layer.cornerRadius = 0.5 * self.pauseBtn.bounds.size.width;
+        self.pauseBtn.backgroundColor = Theme.greenColor();
+        self.stopBtn.layer.cornerRadius = 0.5 * self.stopBtn.bounds.size.width;
+        self.stopBtn.backgroundColor = Theme.redColor();
+
+        self.recordedTime.text = "00:00:00";
+        self.stopBtn.hidden = true;
+        self.pauseBtn.hidden = true;
+        
+        self.todoTitleField.backgroundColor = Theme.lightGrayColor();
+        self.todoTitleField.text = "ToDo title"
+        self.todoProjectPicker.backgroundColor = Theme.lightGrayColor();
+        self.todoProjectPicker.dataSource = self;
+        self.todoProjectPicker.delegate = self;
+
+    }
+    
+    @IBAction func startPlay(sender: AnyObject) {
+        let currentDate = NSDate();
+        startDate = currentDate;
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true);
+        
+        self.recordedTime.textColor = Theme.greenColor();
+        self.playBtn.hidden = true;
+        self.pauseBtn.hidden = false;
+        self.stopBtn.hidden = false;
+        
+    }
+    
+    func updateCounter() {
+        // Create date from the elapsed time
+        let currentDate = NSDate();
+        
+        var timeInterval = currentDate.timeIntervalSinceDate(self.startDate);
+        timeInterval += pausedTimeInterval;
+
+        let timerDate = NSDate(timeIntervalSince1970: timeInterval);
+         // Create a date formatter
+        let dateFormatter = NSDateFormatter();
+        dateFormatter.dateFormat = "HH:mm:ss";
+        dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0);
+        let timeString = dateFormatter.stringFromDate(timerDate);
+        self.currentTimeInterval = timeInterval;
+        self.recordedTime.text = timeString;
+        
+    }
+    
+    @IBAction func pause(sender: AnyObject) {
+        self.pausedDate = NSDate();
+        timer.invalidate();
+        self.recordedTime.textColor = Theme.blackColor();
+        self.pausedTimeInterval = self.currentTimeInterval;
+        self.pauseBtn.hidden = true;
+        self.playBtn.hidden = false;
+    }
+    
+    @IBAction func stop(sender: AnyObject) {
+        self.pausedDate = NSDate();
+        if(self.todoTitle.text == "") {
+            self.confirmToggleView.toggledTime = self.recordedTime.text!;
+            self.navigationController?.pushViewController(self.confirmToggleView, animated: true);
+        }
+        timer.invalidate();
+        self.recordedTime.text = "00:00:00";
+        self.pausedTimeInterval = 0;
+        self.stopBtn.hidden = true;
+        self.pauseBtn.hidden = true;
+        self.playBtn.hidden = false;
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -81,6 +120,4 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return todoProjectPickerDataSource[row]
     }
-
-
 }
