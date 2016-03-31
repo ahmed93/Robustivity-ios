@@ -7,7 +7,15 @@
 //
 
 import UIKit
-
+/**
+    PlannerTableViewCell subclass of UITableViewCell. This cell can be used for both Tasks and My ToDos in the PlannerViewController.
+    - Author:
+        Ahmed Elassuty.
+    - Date  :
+        3/31/16.
+    - Note  :
+        - This cell is used for both Done and In Progress table sections by setting dueDate label text to an empty string. The cell handles the height automatically by adjusting the bottom constraint of the dueDate label based on the design.
+ */
 class PlannerTableViewCell: UITableViewCell {
     @IBOutlet weak var itemTitle:RBLabel!
     @IBOutlet weak var projectName:RBLabel!
@@ -15,11 +23,12 @@ class PlannerTableViewCell: UITableViewCell {
     @IBOutlet weak var dueDate:RBLabel!
     @IBOutlet weak var cellSeparator: UIView!
 
-    @IBOutlet weak var bottomCellLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dueDateBottomMarginLayoutConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
         cellSeparator.backgroundColor = Theme.tableBackgroundColor()
     }
 

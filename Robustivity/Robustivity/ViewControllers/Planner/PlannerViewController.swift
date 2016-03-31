@@ -7,15 +7,20 @@
 //
 
 
+enum PlannerViewControllerSegmentControlItem : String {
+    case Left
+    case Right
+}
+
 import UIKit
 
 /**
-
- - Author: 
-    Ahmed Elassuty.
- - Date  : 
-    31/3/16.
-
+    PlannerViewController subclass of BaseViewController
+ 
+    - Author:
+        Ahmed Elassuty.
+    - Date  :
+        3/31/16.
  */
 class PlannerViewController: BaseViewController {
     @IBOutlet weak var tableView:UITableView!
@@ -32,9 +37,9 @@ class PlannerViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "Planner";
         
-        // Init segmented control
+        // Add segmented control
         let segmentControlItems = ["Tasks", "My ToDos"]
-        loadSegmentedControl(segmentControlItems)
+        addSegmentedControl(segmentControlItems)
         
         // Init Adapter
         adapter = PlannerAdapter(viewController: self, tableView: tableView, registerCellWithNib: "PlannerTableViewCell", withIdentifier: "PlannerCell")
@@ -59,7 +64,7 @@ class PlannerViewController: BaseViewController {
         - Parameter items:
             Array of AnyObject items that should be shown in the segment control.
     */
-    func loadSegmentedControl(items:[AnyObject]) {
+    func addSegmentedControl(items:[AnyObject]) {
         segmentedControl = UISegmentedControl(items: items)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: "segmentControlAction:", forControlEvents: .ValueChanged)
@@ -92,7 +97,7 @@ class PlannerViewController: BaseViewController {
         Creates new Task or ToDo navigation bar button item action. This method renders the appropriate view controller based on the selected segment.
 
         - Author: 
-            Ahmed Elassuty
+            Ahmed Elassuty.
         - Parameter sender:
             The right clicked bar button.
         - TODO:
@@ -118,8 +123,8 @@ class PlannerViewController: BaseViewController {
     /**
         Toggle user status left bar item circle color.
 
-        - Author: Ahmed Elassuty
-    
+        - Author: 
+            Ahmed Elassuty.
         - TODO:
             - Move this method to baseViewController.
             - Disable user interaction.

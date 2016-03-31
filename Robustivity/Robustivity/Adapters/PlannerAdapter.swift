@@ -8,6 +8,14 @@
 
 import UIKit
 
+/**
+    PlannerAdapter subclass of BaseTableAdapter.
+ 
+    - Author:
+        Ahmed Elassuty.
+    - Date  :
+        31/3/16.
+*/
 class PlannerAdapter: BaseTableAdapter {
     var selectedSegmentIndex: Int! {
         return (viewController as! PlannerViewController).segmentedControl.selectedSegmentIndex
@@ -45,35 +53,47 @@ class PlannerAdapter: BaseTableAdapter {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Items Progress Count
         if section == 0 {
-            // [TODO] replace it by the number of items in progress returned from the server
+            // [TODO] replace it by the number of items IN PROGRESS returned from the server.
             if selectedSegmentIndex == 0 {
                 return 7
             }
             return 5
         }
 
-        // Items Done Count
-        // [TODO] replace it by the number of items done returned from the server
+        // Items Done Count.
+        // [TODO] replace it by the number of items DONE returned from the server.
         if selectedSegmentIndex == 0 {
             return 2
         }
         return 4
     }
 
-    // OVERRIDE method configure of the parent class
+    // MARK: Parent Overridden Functions
+    /**
+        Overrides method configure of the parent class to layout the input cell.
+    
+        - Author:
+            Ahmed Elassuty.
+        - Parameters:
+            - cell: 
+                Table view cell that the table view will render.
+            - indexPath:
+                The index path of the current cell.
+    */
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let plannerCell = cell as? PlannerTableViewCell
-        
+        let plannerCell = cell as! PlannerTableViewCell
+
         if indexPath.section == 0 {
-            plannerCell?.dueDate.text = "Oct 15, 2015"
-            plannerCell?.bottomCellLayoutConstraint.constant = 14
+            // [TODO] In Progress cell configurations
+
+            plannerCell.dueDate.text = "Oct 15, 2016"
+            plannerCell.dueDateBottomMarginLayoutConstraint.constant = 14
         } else {
-            plannerCell?.dueDate.text = ""
-            plannerCell?.bottomCellLayoutConstraint.constant = 7
+            // [TODO] Done cell configurations
+
+            plannerCell.dueDate.text = ""
+            plannerCell.dueDateBottomMarginLayoutConstraint.constant = 7
         }
     }
-
-
 }

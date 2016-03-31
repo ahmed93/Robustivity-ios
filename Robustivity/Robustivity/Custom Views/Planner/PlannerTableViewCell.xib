@@ -50,7 +50,7 @@
                     <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VO8-Pe-teX">
                         <rect key="frame" x="75" y="17" width="168" height="58"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="FrontEnd-IOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKT-qO-Kmq" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="FrontEnd-IOS" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKT-qO-Kmq" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="168" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="highlightedColor"/>
@@ -122,9 +122,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="bottomCellLayoutConstraint" destination="NPt-h5-7qR" id="rEM-cU-VIZ"/>
                 <outlet property="cellSeparator" destination="raW-2h-dQ3" id="qRd-19-Yq3"/>
                 <outlet property="dueDate" destination="z00-Hg-Q5H" id="UIM-Rr-E7H"/>
+                <outlet property="dueDateBottomMarginLayoutConstraint" destination="NPt-h5-7qR" id="sSE-2y-gR5"/>
                 <outlet property="itemTitle" destination="ZKT-qO-Kmq" id="IrC-F7-Cm7"/>
                 <outlet property="projectName" destination="tuG-wv-mU4" id="th0-N8-Hz8"/>
                 <outlet property="toggleTimer" destination="2Yh-FX-Z7H" id="rvQ-TT-kds"/>
