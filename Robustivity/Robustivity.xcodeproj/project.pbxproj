@@ -70,8 +70,6 @@
 		A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */; };
 		A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */; };
 		A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */; };
-		F481860D1CAC6DFF001760BC /* Islam2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F481860B1CAC6DFF001760BC /* Islam2x.png */; };
-		F481860E1CAC6DFF001760BC /* Abosafy2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F481860C1CAC6DFF001760BC /* Abosafy2x.png */; };
 		F4E6457A1CA9540C00B579C2 /* ProfileDirectoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E645781CA9540C00B579C2 /* ProfileDirectoryCell.swift */; };
 		F4E6457B1CA9540C00B579C2 /* ProfileDirectoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E645791CA9540C00B579C2 /* ProfileDirectoryCell.xib */; };
 		F4E645841CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E645831CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift */; };
@@ -216,8 +214,6 @@
 		A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseTableViewCell.xib; path = "Custom Views/Example/BaseTableViewCell.xib"; sourceTree = "<group>"; };
 		A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Robustivity/Global/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		A7FD4EA81CA5E49500BD7332 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		F481860B1CAC6DFF001760BC /* Islam2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Islam2x.png; sourceTree = "<group>"; };
-		F481860C1CAC6DFF001760BC /* Abosafy2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Abosafy2x.png; sourceTree = "<group>"; };
 		F4E645781CA9540C00B579C2 /* ProfileDirectoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileDirectoryCell.swift; path = "Custom Views/ProfileDirectoryCell.swift"; sourceTree = "<group>"; };
 		F4E645791CA9540C00B579C2 /* ProfileDirectoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileDirectoryCell.xib; path = "Custom Views/ProfileDirectoryCell.xib"; sourceTree = "<group>"; };
 		F4E645831CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDirectoryAdapter.swift; sourceTree = "<group>"; };
@@ -244,8 +240,6 @@
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
 				F4E645831CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift */,
-				F481860B1CAC6DFF001760BC /* Islam2x.png */,
-				F481860C1CAC6DFF001760BC /* Abosafy2x.png */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -703,13 +697,11 @@
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
-				F481860E1CAC6DFF001760BC /* Abosafy2x.png in Resources */,
 				F4E6457B1CA9540C00B579C2 /* ProfileDirectoryCell.xib in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
-				F481860D1CAC6DFF001760BC /* Islam2x.png in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				F4E6AA441CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
