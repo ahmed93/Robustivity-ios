@@ -11,14 +11,22 @@ import UIKit
 class ProjectUpdateViewController: BaseViewController {
     
     @IBOutlet weak var projectUpdateTableView: UITableView!
+    
+    @IBOutlet weak var newUpdateTextView: UITextView!
+    
     var adapter: ProjectUpdateAdapter!
+    let placeholderText = "Write Comment here"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Project Updates";
-        self.navigationItem.title = "Project Update";
+        self.title = "Project Updates"
+        self.navigationItem.title = "Project Update"
+        
+        // place holder
+        self.newUpdateTextView.text = placeholderText
+        self.newUpdateTextView.textColor = Theme.lightGrayColor()
         
         adapter = ProjectUpdateAdapter(viewController: self, tableView: projectUpdateTableView, registerCellWithNib:"ProjectUpdateTableViewCell", withIdentifier: "projectUpdateCell")
     }
@@ -30,6 +38,20 @@ class ProjectUpdateViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if self.newUpdateTextView.textColor == Theme.lightGrayColor() {
+            self.newUpdateTextView.text = nil
+            self.newUpdateTextView.textColor = Theme.blackColor();
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if self.newUpdateTextView.text.isEmpty {
+            self.newUpdateTextView.text = placeholderText
+            self.newUpdateTextView.textColor = Theme.lightGrayColor()
+        }
     }
 
     override func didReceiveMemoryWarning() {
