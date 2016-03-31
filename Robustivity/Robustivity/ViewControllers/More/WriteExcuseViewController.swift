@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteExcuseViewController: BaseViewController {
+class WriteExcuseViewController: BaseViewController, UITextViewDelegate {
     
     @IBOutlet weak var textView: UITextView!
 //    
@@ -26,10 +26,10 @@ class WriteExcuseViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        self.view.backgroundColor = Theme.lightGrayColor()
+        self.view.backgroundColor = Theme.lightGrayColor() // setting background color
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { // setting title and bar buttons and placeholders
         super.viewDidLoad()
         self.title = "Write Excuse";
         self.navigationItem.title = "Write Excuse";
@@ -37,10 +37,9 @@ class WriteExcuseViewController: BaseViewController {
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelExcuse")
         self.navigationItem.rightBarButtonItem = sendButton
         self.navigationItem.leftBarButtonItem = cancelButton
-        self.textView.text = "Placeholder"
-        self.textView.textColor = UIColor.lightGrayColor()
-        textViewDidBeginEditing(self.textView)
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.textView.text = "Write here your excuse"
+        self.textView.textColor = Theme.grayColor()
+        textView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -48,16 +47,24 @@ class WriteExcuseViewController: BaseViewController {
         
     }
     
-    func cancelExcuse() {
+    func cancelExcuse() {  // this dismisses the view upon click on cancel bar button
         dismissViewControllerAnimated(true) { () -> Void in
             
         }
     }
     
-    func textViewDidBeginEditing(textView: UITextView) {
-        if textView.textColor == UIColor.lightGrayColor() {
-            textView.text = nil
-            textView.textColor = UIColor.blackColor()
+    
+    func textViewDidBeginEditing(textview: UITextView) { // handle placeholder in text view
+        if textview.textColor == Theme.grayColor() {
+            textview.text = nil
+            textview.textColor = Theme.blackColor()
+        }
+    }
+    
+    func textViewDidEndEditing(textview: UITextView) { // handle placeholder in text view
+        if textview.text.isEmpty {
+            textview.text = "Write here your excuse"
+            textview.textColor = Theme.grayColor()
         }
     }
     
