@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ToggleViewController: BaseViewController {
+class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet weak var todoProjectTitle: UITextField!
+    @IBOutlet weak var todo_project_picker: UIPickerView!
     @IBOutlet weak var recordedTime: UILabel!
     var timer = NSTimer()
     var counter = 0
     var startDate = NSDate()
+    var todoProjectPickerDataSource = ["Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
+
     
     @IBAction func startPlay(sender: AnyObject) {
         let currentDate = NSDate()
@@ -56,11 +60,26 @@ class ToggleViewController: BaseViewController {
         NSBundle.mainBundle().loadNibNamed("ToggleViewController", owner: self, options: nil)
     }
     
-  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
+        self.todoProjectTitle.backgroundColor = Theme.lightGrayColor();
+        self.todo_project_picker.backgroundColor = Theme.lightGrayColor();
+        self.todo_project_picker.dataSource = self;
+        self.todo_project_picker.delegate = self;
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return todoProjectPickerDataSource.count;
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return todoProjectPickerDataSource[row]
     }
 
 
