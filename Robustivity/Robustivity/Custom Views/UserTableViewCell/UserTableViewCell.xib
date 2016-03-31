@@ -56,23 +56,14 @@
                     <constraint firstItem="GcZ-Rz-bCK" firstAttribute="leading" secondItem="4tY-lu-nUx" secondAttribute="trailing" constant="10" id="9Q4-sQ-Zx1"/>
                     <constraint firstItem="HIH-6g-Y7R" firstAttribute="top" secondItem="4tY-lu-nUx" secondAttribute="bottom" constant="8" id="Gig-Zm-EIB"/>
                     <constraint firstAttribute="trailingMargin" secondItem="HIH-6g-Y7R" secondAttribute="trailing" constant="-8" id="IEn-1O-ozh"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="4tY-lu-nUx" secondAttribute="bottom" constant="4" id="Pjm-5G-pWE"/>
                     <constraint firstItem="jQa-j1-SNq" firstAttribute="leading" secondItem="4tY-lu-nUx" secondAttribute="trailing" constant="10" id="Ttp-Q4-Eeb"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="GcZ-Rz-bCK" secondAttribute="bottom" id="bl6-SB-F5f"/>
                     <constraint firstAttribute="bottomMargin" secondItem="HIH-6g-Y7R" secondAttribute="bottom" constant="-8" id="cOt-cs-kjI"/>
                     <constraint firstItem="HIH-6g-Y7R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="dgO-bl-P9L"/>
                     <constraint firstAttribute="bottomMargin" secondItem="GcZ-Rz-bCK" secondAttribute="bottom" constant="10" id="fJY-VT-cLM"/>
                     <constraint firstItem="4tY-lu-nUx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fgy-Sr-SVa"/>
-                    <constraint firstItem="GcZ-Rz-bCK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="22" id="iRQ-7y-1Q9"/>
                     <constraint firstItem="4tY-lu-nUx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="siw-4R-NpB"/>
                     <constraint firstItem="GcZ-Rz-bCK" firstAttribute="top" secondItem="jQa-j1-SNq" secondAttribute="bottom" constant="5" id="vdS-vt-vzb"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="bl6-SB-F5f"/>
-                        <exclude reference="iRQ-7y-1Q9"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>

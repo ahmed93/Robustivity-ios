@@ -15,7 +15,8 @@ class ChooseAssigneeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Choose Assignee";
+        self.title = "Assign To";
+        self.navigationController!.navigationBar.barTintColor = Theme.redColor()
         adapter = UserAdapter(viewController: self, tableView: tableView, registerCellWithNib:"UserTableViewCell", withIdentifier: "cell")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
