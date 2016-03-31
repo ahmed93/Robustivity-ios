@@ -12,11 +12,12 @@ class PlannerAdapter: BaseTableAdapter {
     var selectedSegmentIndex: Int! {
         return (viewController as! PlannerViewController).segmentedControl.selectedSegmentIndex
     }
-    
+
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
     }
 
+    // MARK: Base Adapter Delegate methods
     func fetchItems() {
         if tableItems == nil {
             tableItems = ListModel()
@@ -30,7 +31,7 @@ class PlannerAdapter: BaseTableAdapter {
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerLabelType = [3040, 3040]
+        let headerLabelType = [3040, 3070]
         let headerLabelText = ["In Progress", "Done"]
 
         let headerCell = tableView.dequeueReusableCellWithIdentifier("PlannerHeader") as! PlannerHeaderTableViewCell
@@ -60,11 +61,8 @@ class PlannerAdapter: BaseTableAdapter {
         }
         return 4
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("selected")
-    }
 
+    // OVERRIDE method configure of the parent class
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let plannerCell = cell as? PlannerTableViewCell
         
