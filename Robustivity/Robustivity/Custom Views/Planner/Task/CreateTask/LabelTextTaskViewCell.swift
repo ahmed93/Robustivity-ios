@@ -10,7 +10,6 @@ import UIKit
 
 class LabelTextTaskViewCell: UITableViewCell {
 
-    @IBOutlet var textView:UITextView!
+    @IBOutlet weak var textField:UITextField!
     @IBOutlet var label: RBLabel!
-    
 }

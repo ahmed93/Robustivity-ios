@@ -19,9 +19,8 @@ class CreateTaskAdapter : BaseTableAdapter {
         
         tableItems.addObject(["textView":"Task Name (required)", "height":57]);
         tableItems.addObject(["label":"Due date" , "textView":"DD.MM.YYYY", "height" : 57]);
-        tableItems.addObject(["textView":"Description (required)", "height":159]);
+        tableItems.addObject(["textView":"Description (required)", "height":325]);
         
-        tableView.separatorColor = Theme.tableBackgroundColor();
         tableView.reloadData();
     }
     
@@ -42,7 +41,8 @@ class CreateTaskAdapter : BaseTableAdapter {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("textView", forIndexPath: indexPath) as! TextViewTaskViewCell
             
             cell.textView.text = cellProperties.objectForKey("textView") as! String;
-            cell.textView.autocorrectionType = UITextAutocorrectionType.No;
+            cell.textView.delegate = (self.viewController as! CreateTaskViewController).textViewDelegate
+            (cell.textView.delegate as! CreateTaskTextViewDelegate).defaultTextViewsValues[cell.textView] = cellProperties.objectForKey("textView") as? String;
             
             return cell;
          
@@ -52,8 +52,8 @@ class CreateTaskAdapter : BaseTableAdapter {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("label", forIndexPath: indexPath) as! LabelTextTaskViewCell;
             
             cell.label.text = cellProperties.objectForKey("label") as? String;
-            cell.textView.text = cellProperties.objectForKey("textView") as! String;
-            cell.textView.clearsOnInsertion = true;
+            cell.textField.placeholder = cellProperties.objectForKey("textView") as? String;
+            cell.textField.delegate = (self.viewController as! CreateTaskViewController).textFieldDelegate;
             
             return cell;
         }

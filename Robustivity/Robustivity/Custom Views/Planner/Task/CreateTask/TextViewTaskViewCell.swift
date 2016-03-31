@@ -8,7 +8,9 @@
 
 import UIKit
 
-class TextViewTaskViewCell: BaseTableViewCell {
+class TextViewTaskViewCell: BaseTableViewCell{
 
-    @IBOutlet var textView:UITextView!
+    @IBOutlet weak var textView:UITextView!
+    
 }
+

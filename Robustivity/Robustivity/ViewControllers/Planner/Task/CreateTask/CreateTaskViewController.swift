@@ -8,21 +8,22 @@
 
 import UIKit
 
-class CreateTaskViewController: BaseViewController {
+class CreateTaskViewController: BaseViewController, UITextViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     
     var adapter:CreateTaskAdapter!
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        viewDidLoad();
-        NSBundle.mainBundle().loadNibNamed("CreateTaskViewController", owner: self, options: nil)
-    }
     
+    var textViewDelegate:CreateTaskTextViewDelegate!
+    var textFieldDelegate:CreateTaskTextFieldDelegate!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+        autoreleasepool{
+        
+        super.viewDidLoad();
+        self.textViewDelegate = CreateTaskTextViewDelegate();
+        self.textFieldDelegate = CreateTaskTextFieldDelegate();
         self.title = "Task info";
         self.navigationItem.title = "Task info";
         
@@ -33,6 +34,7 @@ class CreateTaskViewController: BaseViewController {
         self.navigationItem.rightBarButtonItem = doneButton;
         
         adapter = CreateTaskAdapter(viewController: self, tableView: tableView!, registerMultipleNibsAndIdenfifers: ["TextViewTaskViewCell":"textView", "LabelTextTaskViewCell":"label"]);
+        }
         
     }
 

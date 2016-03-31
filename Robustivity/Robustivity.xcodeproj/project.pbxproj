@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1850ED361CAD84690096B4B3 /* CreateTaskTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850ED351CAD84690096B4B3 /* CreateTaskTextViewDelegate.swift */; };
 		18CE2A791CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A771CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift */; };
 		18CE2A7A1CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CE2A781CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib */; };
 		18CE2A811CAC8AA700FE4A46 /* TextViewTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A7F1CAC8AA700FE4A46 /* TextViewTaskViewCell.swift */; };
@@ -14,6 +15,7 @@
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
 		18D7C1551CA747F400F9AEFA /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7C1531CA747F400F9AEFA /* CreateTaskViewController.swift */; };
 		18D7C1561CA747F400F9AEFA /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D7C1541CA747F400F9AEFA /* CreateTaskViewController.xib */; };
+		18F17F8E1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F17F8D1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -132,6 +134,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1850ED351CAD84690096B4B3 /* CreateTaskTextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskTextViewDelegate.swift; path = Task/CreateTask/CreateTaskTextViewDelegate.swift; sourceTree = "<group>"; };
 		18CE2A771CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelTextTaskViewCell.swift; path = "Custom Views/Planner/Task/CreateTask/LabelTextTaskViewCell.swift"; sourceTree = "<group>"; };
 		18CE2A781CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelTextTaskViewCell.xib; path = "Custom Views/Planner/Task/CreateTask/LabelTextTaskViewCell.xib"; sourceTree = "<group>"; };
 		18CE2A7F1CAC8AA700FE4A46 /* TextViewTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewTaskViewCell.swift; path = "Custom Views/Planner/Task/CreateTask/TextViewTaskViewCell.swift"; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
 		18D7C1531CA747F400F9AEFA /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskViewController.swift; path = Task/CreateTask/CreateTaskViewController.swift; sourceTree = "<group>"; };
 		18D7C1541CA747F400F9AEFA /* CreateTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateTaskViewController.xib; path = Task/CreateTask/CreateTaskViewController.xib; sourceTree = "<group>"; };
+		18F17F8D1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskTextFieldDelegate.swift; path = Task/CreateTask/CreateTaskTextFieldDelegate.swift; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 			children = (
 				18D7C1531CA747F400F9AEFA /* CreateTaskViewController.swift */,
 				18D7C1541CA747F400F9AEFA /* CreateTaskViewController.xib */,
+				1850ED351CAD84690096B4B3 /* CreateTaskTextViewDelegate.swift */,
+				18F17F8D1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift */,
 			);
 			name = CreateTask;
 			sourceTree = "<group>";
@@ -764,6 +770,8 @@
 				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
+				1850ED361CAD84690096B4B3 /* CreateTaskTextViewDelegate.swift in Sources */,
+				18F17F8E1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
