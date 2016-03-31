@@ -35,8 +35,8 @@ class ProjectsListViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // setting View TabBartitle + navigationBarTitle
-    self.title = "Projects";
-    self.navigationItem.title = "Projects";
+    self.title = "My Projects";
+    self.navigationItem.title = "My Projects";
     
     adapter = ProjectsListAdapter(viewController: self, tableView: projectsTableView, registerCellWithNib:"CustomProjectsListTableViewCell", withIdentifier: "listProjectCell")
   }
