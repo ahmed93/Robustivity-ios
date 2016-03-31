@@ -10,6 +10,13 @@ import UIKit
 
 class ProjectUpdateTableViewCell: BaseTableViewCell {
 
+    @IBOutlet weak var userAvatarImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: RBLabel!
+    
+    
+    @IBOutlet weak var updateTimeLabel: RBLabel!
+    @IBOutlet weak var updateContentLabel: RBLabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

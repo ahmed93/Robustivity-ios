@@ -79,6 +79,12 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="updateContentLabel" destination="xu8-6I-Ch5" id="xse-kZ-tHU"/>
+                <outlet property="updateTimeLabel" destination="oQE-Jq-DPW" id="HiD-SQ-wri"/>
+                <outlet property="userAvatarImageView" destination="MPC-LG-cCw" id="Ydh-Rr-6C8"/>
+                <outlet property="userNameLabel" destination="dmI-0o-Mln" id="boD-Uy-Uvi"/>
+            </connections>
             <point key="canvasLocation" x="280" y="360.5"/>
         </tableViewCell>
     </objects>

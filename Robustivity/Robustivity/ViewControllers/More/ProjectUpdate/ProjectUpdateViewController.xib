@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectUpdateViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectUpdateViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
+                <outlet property="projectUpdateTableView" destination="3cP-EW-Olt" id="WVy-ey-wNU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +15,47 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3cP-EW-Olt">
+                    <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="600" id="A42-BV-gn3"/>
+                        <constraint firstAttribute="width" constant="600" id="AwM-9w-10L"/>
+                        <constraint firstAttribute="height" constant="600" id="gTS-AY-nky"/>
+                        <constraint firstAttribute="height" constant="506" id="rI7-Ul-QWI"/>
+                        <constraint firstAttribute="height" constant="600" id="uFd-Pl-eYp"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="AwM-9w-10L"/>
+                            <exclude reference="gTS-AY-nky"/>
+                            <exclude reference="uFd-Pl-eYp"/>
+                        </mask>
+                    </variation>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3cP-EW-Olt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="L3i-fE-DKf"/>
+                <constraint firstAttribute="bottomMargin" secondItem="3cP-EW-Olt" secondAttribute="bottom" constant="8" id="OKg-jU-l9x"/>
+                <constraint firstItem="3cP-EW-Olt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="94" id="RLO-6I-aWY"/>
+                <constraint firstItem="3cP-EW-Olt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="8" id="Zbg-lU-l9m"/>
+                <constraint firstAttribute="trailingMargin" secondItem="3cP-EW-Olt" secondAttribute="trailing" constant="8" id="ZcE-2n-h9l"/>
+                <constraint firstItem="3cP-EW-Olt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" constant="8" id="fmq-tJ-l2d"/>
+                <constraint firstItem="3cP-EW-Olt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lye-cs-d6J"/>
+                <constraint firstItem="3cP-EW-Olt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yRp-mt-Gs1"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="L3i-fE-DKf"/>
+                    <exclude reference="OKg-jU-l9x"/>
+                    <exclude reference="Zbg-lU-l9m"/>
+                    <exclude reference="ZcE-2n-h9l"/>
+                    <exclude reference="fmq-tJ-l2d"/>
+                    <exclude reference="yRp-mt-Gs1"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
