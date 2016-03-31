@@ -33,7 +33,7 @@ class BaseTableAdapter: BaseAdapter {
     }
     
     
-    // Dictionary Sample: {"NibName": "IdentifierName"}
+    // Dictionary Sample: ["NibName": "IdentifierName"]
     init(viewController:UIViewController, tableView:UITableView,registerMultipleNibsAndIdenfifers cellsNibs:NSDictionary) {
         super.init()
         multipleIdentifiers = true
