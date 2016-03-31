@@ -76,7 +76,4 @@ class TaskInfoAdapter: BaseTableAdapter{
         return 3
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 114
-    }
 }

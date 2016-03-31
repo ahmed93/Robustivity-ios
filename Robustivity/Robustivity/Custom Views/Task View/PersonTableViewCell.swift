@@ -16,7 +16,7 @@ class PersonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        name.labelType = 3020
+        name.labelType = 3010
         position.labelType = 1000
         avatar.layer.borderWidth = 1.0
         avatar.layer.masksToBounds = false
