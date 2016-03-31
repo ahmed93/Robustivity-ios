@@ -37,14 +37,14 @@ class ProjectUpdateAdapter: BaseTableAdapter {
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? ProjectUpdateTableViewCell
+        let productUpdateTableViewCell = cell as? ProjectUpdateTableViewCell
         
         let currentUpdateData = tableItems.objectAtIndex(indexPath.row) as! ProjectUpdateModel
         
-        _cell?.userNameLabel.text = currentUpdateData.userName as String!
-        _cell?.userAvatarImageView.sd_setImageWithURL(currentUpdateData.userAvatar!);
-        _cell?.updateTimeLabel.text = currentUpdateData.updateTime as String!
-        _cell?.updateContentLabel.text = currentUpdateData.updateContnet as String!
+        productUpdateTableViewCell?.userNameLabel.text = currentUpdateData.userName as String!
+        productUpdateTableViewCell?.userAvatarImageView.sd_setImageWithURL(currentUpdateData.userAvatar!);
+        productUpdateTableViewCell?.updateTimeLabel.text = currentUpdateData.updateTime as String!
+        productUpdateTableViewCell?.updateContentLabel.text = currentUpdateData.updateContnet as String!
         
     }
     
