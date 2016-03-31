@@ -15,6 +15,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="420" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enm-tM-sVV">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="5"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="sGZ-OL-Yhb"/>
+                        </constraints>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stroke 751 + Stroke 752" translatesAutoresizingMaskIntoConstraints="NO" id="MPC-LG-cCw">
                         <rect key="frame" x="12" y="13" width="50" height="50"/>
                         <constraints>
@@ -34,7 +41,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xu8-6I-Ch5" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lorem Ipsom" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xu8-6I-Ch5" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
                         <rect key="frame" x="12" y="71" width="400" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="400" id="EJZ-Sn-dFo"/>
@@ -47,6 +54,11 @@
                                 <integer key="value" value="1030"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EJZ-Sn-dFo"/>
+                            </mask>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQE-Jq-DPW" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
                         <rect key="frame" x="362" y="33" width="50" height="11"/>
@@ -64,8 +76,11 @@
                     <constraint firstItem="dmI-0o-Mln" firstAttribute="centerY" secondItem="MPC-LG-cCw" secondAttribute="centerY" id="3xB-9L-vV1"/>
                     <constraint firstItem="xu8-6I-Ch5" firstAttribute="top" secondItem="MPC-LG-cCw" secondAttribute="bottom" constant="8" id="B2C-bs-Dxp"/>
                     <constraint firstItem="MPC-LG-cCw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="B7c-Oy-RVj"/>
+                    <constraint firstItem="enm-tM-sVV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="Dh4-lF-1cc"/>
                     <constraint firstItem="xu8-6I-Ch5" firstAttribute="leading" secondItem="MPC-LG-cCw" secondAttribute="leading" id="JsU-fX-h3n"/>
                     <constraint firstItem="MPC-LG-cCw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="MeV-Y5-rsY"/>
+                    <constraint firstItem="enm-tM-sVV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="OK6-0o-6wr"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="enm-tM-sVV" secondAttribute="trailing" constant="-8" id="aWG-xu-qzt"/>
                     <constraint firstItem="dmI-0o-Mln" firstAttribute="leading" secondItem="MPC-LG-cCw" secondAttribute="trailing" constant="5" id="peP-lB-xr6"/>
                     <constraint firstItem="oQE-Jq-DPW" firstAttribute="centerY" secondItem="MPC-LG-cCw" secondAttribute="centerY" id="sOA-kX-29c"/>
                     <constraint firstItem="oQE-Jq-DPW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="vnC-1u-Mrc"/>
