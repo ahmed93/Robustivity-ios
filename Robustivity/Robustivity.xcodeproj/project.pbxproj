@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		945D7FAD1CACD54400B204F3 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D7FAB1CACD54400B204F3 /* CommentTableViewCell.swift */; };
+		945D7FAE1CACD54400B204F3 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945D7FAC1CACD54400B204F3 /* CommentTableViewCell.xib */; };
+		94C654F91CACB6DE00FC2C0F /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C654F31CACB6DE00FC2C0F /* DescriptionTableViewCell.swift */; };
+		94C654FA1CACB6DE00FC2C0F /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C654F41CACB6DE00FC2C0F /* DescriptionTableViewCell.xib */; };
+		94C654FB1CACB6DE00FC2C0F /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C654F51CACB6DE00FC2C0F /* PersonTableViewCell.swift */; };
+		94C654FC1CACB6DE00FC2C0F /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C654F61CACB6DE00FC2C0F /* PersonTableViewCell.xib */; };
+		94C654FD1CACB6DE00FC2C0F /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C654F71CACB6DE00FC2C0F /* TaskViewController.swift */; };
+		94C654FE1CACB6DE00FC2C0F /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C654F81CACB6DE00FC2C0F /* TaskViewController.xib */; };
+		94C655011CACB70C00FC2C0F /* TaskInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C654FF1CACB70C00FC2C0F /* TaskInfoAdapter.swift */; };
+		94C655021CACB70C00FC2C0F /* TaskUpdatesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C655001CACB70C00FC2C0F /* TaskUpdatesAdapter.swift */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -125,6 +135,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		945D7FAB1CACD54400B204F3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		945D7FAC1CACD54400B204F3 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		94C654F31CACB6DE00FC2C0F /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		94C654F41CACB6DE00FC2C0F /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		94C654F51CACB6DE00FC2C0F /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		94C654F61CACB6DE00FC2C0F /* PersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
+		94C654F71CACB6DE00FC2C0F /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		94C654F81CACB6DE00FC2C0F /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
+		94C654FF1CACB70C00FC2C0F /* TaskInfoAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoAdapter.swift; sourceTree = "<group>"; };
+		94C655001CACB70C00FC2C0F /* TaskUpdatesAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskUpdatesAdapter.swift; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -222,9 +242,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94C654F21CACB6DE00FC2C0F /* Task View */ = {
+			isa = PBXGroup;
+			children = (
+				94C654F31CACB6DE00FC2C0F /* DescriptionTableViewCell.swift */,
+				94C654F41CACB6DE00FC2C0F /* DescriptionTableViewCell.xib */,
+				94C654F51CACB6DE00FC2C0F /* PersonTableViewCell.swift */,
+				94C654F61CACB6DE00FC2C0F /* PersonTableViewCell.xib */,
+				94C654F71CACB6DE00FC2C0F /* TaskViewController.swift */,
+				94C654F81CACB6DE00FC2C0F /* TaskViewController.xib */,
+				945D7FAB1CACD54400B204F3 /* CommentTableViewCell.swift */,
+				945D7FAC1CACD54400B204F3 /* CommentTableViewCell.xib */,
+			);
+			name = "Task View";
+			path = "Custom Views/Task View";
+			sourceTree = "<group>";
+		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				94C654FF1CACB70C00FC2C0F /* TaskInfoAdapter.swift */,
+				94C655001CACB70C00FC2C0F /* TaskUpdatesAdapter.swift */,
 				A717E5A61CA14D2D00F237DD /* BaseAdapter.swift */,
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
@@ -327,6 +365,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				94C654F21CACB6DE00FC2C0F /* Task View */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -670,6 +709,7 @@
 				A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
+				94C654FE1CACB6DE00FC2C0F /* TaskViewController.xib in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
@@ -677,12 +717,15 @@
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
+				945D7FAE1CACD54400B204F3 /* CommentTableViewCell.xib in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
+				94C654FA1CACB6DE00FC2C0F /* DescriptionTableViewCell.xib in Resources */,
+				94C654FC1CACB6DE00FC2C0F /* PersonTableViewCell.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
 				A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */,
 				A7A94EDA1C9E97B5002B3991 /* ToggleViewController.xib in Resources */,
@@ -696,11 +739,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94C655011CACB70C00FC2C0F /* TaskInfoAdapter.swift in Sources */,
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
 				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
+				94C654FD1CACB6DE00FC2C0F /* TaskViewController.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
@@ -712,6 +757,7 @@
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
+				94C654F91CACB6DE00FC2C0F /* DescriptionTableViewCell.swift in Sources */,
 				A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */,
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
 				A7C480221CA3F1EC00F4FDB7 /* UIImageView+WebCache.m in Sources */,
@@ -720,9 +766,12 @@
 				A7C480151CA3F1EC00F4FDB7 /* NSData+ImageContentType.m in Sources */,
 				A7C480191CA3F1EC00F4FDB7 /* SDWebImageDownloader.m in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
+				945D7FAD1CACD54400B204F3 /* CommentTableViewCell.swift in Sources */,
 				A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
+				94C655021CACB70C00FC2C0F /* TaskUpdatesAdapter.swift in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
 				A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */,
+				94C654FB1CACB6DE00FC2C0F /* PersonTableViewCell.swift in Sources */,
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */,
