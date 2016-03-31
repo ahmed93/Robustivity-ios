@@ -11,6 +11,8 @@ import UIKit
 class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var stopBtn: UIButton!
     @IBOutlet weak var pauseBtn: UIButton!
+    @IBOutlet weak var buttonsView: UIView!
+    @IBOutlet weak var resumeBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var recordedTime: UILabel!
 
@@ -22,7 +24,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     var startDate = NSDate();
     var pausedDate = NSDate();
     var currentTimeInterval = NSTimeInterval();
-    @IBOutlet weak var todoTitle: UITextField!
     var pausedTimeInterval = NSTimeInterval();
     
     var todoProjectPickerDataSource = ["Project name", "Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
@@ -40,16 +41,18 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.playBtn.layer.cornerRadius = 0.5 * self.playBtn.bounds.size.width;
         self.playBtn.backgroundColor = Theme.greenColor();
         self.pauseBtn.layer.cornerRadius = 0.5 * self.pauseBtn.bounds.size.width;
-        self.pauseBtn.backgroundColor = Theme.greenColor();
+        self.pauseBtn.backgroundColor = Theme.lighterBlackColor();
         self.stopBtn.layer.cornerRadius = 0.5 * self.stopBtn.bounds.size.width;
         self.stopBtn.backgroundColor = Theme.redColor();
+        self.resumeBtn.layer.cornerRadius = 0.5 * self.resumeBtn.bounds.size.width;
+        self.resumeBtn.backgroundColor = Theme.greenColor();
+
+        self.buttonsView.hidden = true;
 
         self.recordedTime.text = "00:00:00";
-        self.stopBtn.hidden = true;
-        self.pauseBtn.hidden = true;
         
         self.todoTitleField.backgroundColor = Theme.lightGrayColor();
-        self.todoTitleField.text = "ToDo title"
+        self.todoTitleField.placeholder = "ToDo title"
         self.todoProjectPicker.backgroundColor = Theme.lightGrayColor();
         self.todoProjectPicker.dataSource = self;
         self.todoProjectPicker.delegate = self;
@@ -62,9 +65,10 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true);
         
         self.recordedTime.textColor = Theme.greenColor();
+        Theme.style_8(self.recordedTime)
         self.playBtn.hidden = true;
-        self.pauseBtn.hidden = false;
-        self.stopBtn.hidden = false;
+        self.buttonsView.hidden = false;
+        self.resumeBtn.hidden = true;
         
     }
     
@@ -92,12 +96,12 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.recordedTime.textColor = Theme.blackColor();
         self.pausedTimeInterval = self.currentTimeInterval;
         self.pauseBtn.hidden = true;
-        self.playBtn.hidden = false;
+        self.resumeBtn.hidden = false;
     }
     
     @IBAction func stop(sender: AnyObject) {
         self.pausedDate = NSDate();
-        if(self.todoTitle.text == "") {
+        if(self.todoTitleField.text == "") {
             self.confirmToggleView.toggledTime = self.recordedTime.text!;
             self.navigationController?.pushViewController(self.confirmToggleView, animated: true);
         }
@@ -106,7 +110,16 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.pausedTimeInterval = 0;
         self.stopBtn.hidden = true;
         self.pauseBtn.hidden = true;
+        self.resumeBtn.hidden = true;
         self.playBtn.hidden = false;
+    }
+    
+    @IBAction func resume(sender: AnyObject) {
+        self.resumeBtn.hidden = true;
+        self.pauseBtn.hidden = false;
+        self.startPlay(sender);
+        
+        
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
