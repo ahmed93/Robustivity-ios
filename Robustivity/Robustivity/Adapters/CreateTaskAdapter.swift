@@ -10,9 +10,6 @@ import UIKit
 
 class CreateTaskAdapter : BaseTableAdapter {
     
-    
-    let headerHeight  = CGFloat(50);
-    
      override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
         
@@ -20,61 +17,71 @@ class CreateTaskAdapter : BaseTableAdapter {
     
      func fetchItems() {
         
-        tableItems.addObject([
-            
-            ["textView", "Task Name (required)"],
-            
-            [["label", "Due date"],["textView", "DD.MM.YYYY"]],
-            
-            "textView", "Description (required)"]
-        );
+        tableItems.addObject(["textView":"Task Name (required)", "height":57]);
+        tableItems.addObject(["label":"Due date" , "textView":"DD.MM.YYYY", "height" : 57]);
+        tableItems.addObject(["textView":"Description (required)", "height":159]);
         
+        tableView.separatorColor = Theme.tableBackgroundColor();
         tableView.reloadData();
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return 1;
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return tableItems.objectAtIndex(0)!.count;
+        return tableItems.count;
     }
     
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
         
-        let identifier = "myCell";
+        let cellProperties = tableItems.objectAtIndex(indexPath.section) as! NSDictionary;
         
-        let cellInfo = tableItems.objectAtIndex(indexPath.section) as! NSDictionary;
-        
-        if(cellInfo.count == 1){
+        if(cellProperties.count == 2){
             
-            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! TextViewTaskViewCell
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("textView", forIndexPath: indexPath) as! TextViewTaskViewCell
             
-            cell.textView.text = cellInfo.objectForKey("textView") as! String;
+            cell.textView.text = cellProperties.objectForKey("textView") as! String;
+            cell.textView.autocorrectionType = UITextAutocorrectionType.No;
             
             return cell;
          
         }
         else{
             
-            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! LabelTextTaskViewCell;
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("label", forIndexPath: indexPath) as! LabelTextTaskViewCell;
             
-            cell.label.text = cellInfo.objectForKey("label") as? String;
-            cell.textView.text = cellInfo.objectForKey("textView") as! String;
+            cell.label.text = cellProperties.objectForKey("label") as? String;
+            cell.textView.text = cellProperties.objectForKey("textView") as! String;
+            cell.textView.clearsOnInsertion = true;
             
             return cell;
         }
     
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: viewController.view.frame.width, height: headerHeight))
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return headerView;
+        return CGFloat(5)
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat(0);
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        return UIView(frame: CGRectZero)
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        return UIView(frame: CGRectZero)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CGFloat(200);
+        
+        return CGFloat((tableItems.objectAtIndex(indexPath.section) as! NSDictionary).objectForKey("height") as! Int);
+        
     }
 }
