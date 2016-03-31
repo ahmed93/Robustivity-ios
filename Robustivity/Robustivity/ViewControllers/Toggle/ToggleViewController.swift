@@ -67,6 +67,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         Theme.style_8(self.recordedTime)
         self.playBtn.hidden = true;
         self.buttonsView.hidden = false;
+        self.pauseBtn.hidden = false;
         self.resumeBtn.hidden = true;
         
     }
@@ -101,18 +102,13 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     @IBAction func stop(sender: AnyObject) {
         self.pausedDate = NSDate();
 
-        if(self.todoTitleField.text == "") {
-            let confirmToggleView = ConfirmToggleViewController();
-            confirmToggleView.toggledTime = self.recordedTime.text!;
-            self.navigationController?.pushViewController(confirmToggleView, animated: true);
-
-        }
         timer.invalidate();
         self.recordedTime.text = "00:00:00";
         self.pausedTimeInterval = 0;
-        self.stopBtn.hidden = true;
-        self.pauseBtn.hidden = true;
-        self.resumeBtn.hidden = true;
+        self.buttonsView.hidden = true;
+//        self.stopBtn.hidden = true;
+//        self.pauseBtn.hidden = true;
+//        self.resumeBtn.hidden = true;
         self.playBtn.hidden = false;
     }
     
