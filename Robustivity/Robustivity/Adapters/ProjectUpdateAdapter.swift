@@ -42,7 +42,7 @@ class ProjectUpdateAdapter: BaseTableAdapter {
         let currentUpdateData = tableItems.objectAtIndex(indexPath.row) as! ProjectUpdateModel
         
         productUpdateTableViewCell?.userNameLabel.text = currentUpdateData.userName as String!
-        productUpdateTableViewCell?.userAvatarImageView.sd_setImageWithURL(currentUpdateData.userAvatar!);
+//        productUpdateTableViewCell?.userAvatarImageView.sd_setImageWithURL(currentUpdateData.userAvatar!);
         productUpdateTableViewCell?.updateTimeLabel.text = currentUpdateData.updateTime as String!
         productUpdateTableViewCell?.updateContentLabel.text = currentUpdateData.updateContnet as String!
         
