@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectUpdateViewController" customModule="Robustivity" customModuleProvider="target">
@@ -17,45 +16,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3cP-EW-Olt">
-                    <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write Comment here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O8j-mk-7be">
+                    <rect key="frame" x="0.0" y="506" width="600" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="600" id="A42-BV-gn3"/>
-                        <constraint firstAttribute="width" constant="600" id="AwM-9w-10L"/>
-                        <constraint firstAttribute="height" constant="600" id="gTS-AY-nky"/>
-                        <constraint firstAttribute="height" constant="506" id="rI7-Ul-QWI"/>
-                        <constraint firstAttribute="height" constant="600" id="uFd-Pl-eYp"/>
+                        <constraint firstAttribute="height" constant="50" id="FZX-ll-dcJ"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="AwM-9w-10L"/>
-                            <exclude reference="gTS-AY-nky"/>
-                            <exclude reference="uFd-Pl-eYp"/>
-                        </mask>
-                    </variation>
-                </tableView>
+                    <color key="textColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xJ-th-k5l">
+                    <rect key="frame" x="514" y="516" width="67" height="30"/>
+                    <state key="normal" title="Comment"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="3cP-EW-Olt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="L3i-fE-DKf"/>
-                <constraint firstAttribute="bottomMargin" secondItem="3cP-EW-Olt" secondAttribute="bottom" constant="8" id="OKg-jU-l9x"/>
-                <constraint firstItem="3cP-EW-Olt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="94" id="RLO-6I-aWY"/>
-                <constraint firstItem="3cP-EW-Olt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="8" id="Zbg-lU-l9m"/>
-                <constraint firstAttribute="trailingMargin" secondItem="3cP-EW-Olt" secondAttribute="trailing" constant="8" id="ZcE-2n-h9l"/>
-                <constraint firstItem="3cP-EW-Olt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" constant="8" id="fmq-tJ-l2d"/>
-                <constraint firstItem="3cP-EW-Olt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lye-cs-d6J"/>
-                <constraint firstItem="3cP-EW-Olt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yRp-mt-Gs1"/>
+                <constraint firstAttribute="trailing" secondItem="3cP-EW-Olt" secondAttribute="trailing" id="N3R-kw-DY9"/>
+                <constraint firstItem="3cP-EW-Olt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="O8k-7d-mHa"/>
+                <constraint firstItem="O8j-mk-7be" firstAttribute="width" secondItem="3cP-EW-Olt" secondAttribute="width" id="YzM-FM-FoN"/>
+                <constraint firstItem="O8j-mk-7be" firstAttribute="leading" secondItem="3cP-EW-Olt" secondAttribute="leading" id="dGy-7J-v4q"/>
+                <constraint firstItem="1xJ-th-k5l" firstAttribute="centerY" secondItem="O8j-mk-7be" secondAttribute="centerY" id="hY4-s9-UKX"/>
+                <constraint firstAttribute="trailing" secondItem="1xJ-th-k5l" secondAttribute="trailing" constant="19" id="kLr-jx-De6"/>
+                <constraint firstAttribute="bottom" secondItem="3cP-EW-Olt" secondAttribute="bottom" id="nVG-yA-eqp"/>
+                <constraint firstItem="3cP-EW-Olt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ou4-DL-scP"/>
+                <constraint firstItem="O8j-mk-7be" firstAttribute="bottom" secondItem="3cP-EW-Olt" secondAttribute="bottom" constant="-44" id="sNz-tS-2rJ"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="L3i-fE-DKf"/>
-                    <exclude reference="OKg-jU-l9x"/>
-                    <exclude reference="Zbg-lU-l9m"/>
-                    <exclude reference="ZcE-2n-h9l"/>
-                    <exclude reference="fmq-tJ-l2d"/>
-                    <exclude reference="yRp-mt-Gs1"/>
-                </mask>
-            </variation>
         </view>
     </objects>
 </document>

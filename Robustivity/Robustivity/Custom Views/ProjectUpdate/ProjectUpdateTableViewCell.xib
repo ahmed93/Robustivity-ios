@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="105" id="KGk-i7-Jjw" customClass="ProjectUpdateTableViewCell" customModule="Robustivity" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="420" height="105"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="125" id="KGk-i7-Jjw" customClass="ProjectUpdateTableViewCell" customModule="Robustivity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="420" height="104"/>
+                <rect key="frame" x="0.0" y="0.0" width="420" height="124"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enm-tM-sVV">
@@ -22,16 +22,16 @@
                             <constraint firstAttribute="height" constant="5" id="sGZ-OL-Yhb"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stroke 751 + Stroke 752" translatesAutoresizingMaskIntoConstraints="NO" id="MPC-LG-cCw">
-                        <rect key="frame" x="12" y="13" width="50" height="50"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ahmed" translatesAutoresizingMaskIntoConstraints="NO" id="MPC-LG-cCw">
+                        <rect key="frame" x="12" y="25" width="60" height="60"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="3GR-B4-BTV"/>
-                            <constraint firstAttribute="height" constant="50" id="SPp-Yh-SKJ"/>
+                            <constraint firstAttribute="width" constant="60" id="3GR-B4-BTV"/>
+                            <constraint firstAttribute="height" constant="60" id="SPp-Yh-SKJ"/>
                             <constraint firstAttribute="width" secondItem="MPC-LG-cCw" secondAttribute="height" multiplier="1:1" id="cl2-J6-dxo"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmI-0o-Mln" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="67" y="31" width="45" height="14"/>
+                        <rect key="frame" x="77" y="48" width="45" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -41,8 +41,19 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lorem Ipsom" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xu8-6I-Ch5" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="12" y="71" width="400" height="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQE-Jq-DPW" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="362" y="50" width="50" height="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="1080"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lorem Ipsom" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="xu8-6I-Ch5" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="12" y="93" width="400" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="400" id="EJZ-Sn-dFo"/>
                         </constraints>
@@ -60,31 +71,26 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQE-Jq-DPW" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="362" y="33" width="50" height="11"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
-                                <integer key="value" value="1080"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dmI-0o-Mln" firstAttribute="centerY" secondItem="MPC-LG-cCw" secondAttribute="centerY" id="3xB-9L-vV1"/>
                     <constraint firstItem="xu8-6I-Ch5" firstAttribute="top" secondItem="MPC-LG-cCw" secondAttribute="bottom" constant="8" id="B2C-bs-Dxp"/>
-                    <constraint firstItem="MPC-LG-cCw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="B7c-Oy-RVj"/>
+                    <constraint firstItem="MPC-LG-cCw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="B7c-Oy-RVj"/>
                     <constraint firstItem="enm-tM-sVV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="Dh4-lF-1cc"/>
                     <constraint firstItem="xu8-6I-Ch5" firstAttribute="leading" secondItem="MPC-LG-cCw" secondAttribute="leading" id="JsU-fX-h3n"/>
                     <constraint firstItem="MPC-LG-cCw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="MeV-Y5-rsY"/>
                     <constraint firstItem="enm-tM-sVV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="OK6-0o-6wr"/>
                     <constraint firstAttribute="trailingMargin" secondItem="enm-tM-sVV" secondAttribute="trailing" constant="-8" id="aWG-xu-qzt"/>
                     <constraint firstItem="dmI-0o-Mln" firstAttribute="leading" secondItem="MPC-LG-cCw" secondAttribute="trailing" constant="5" id="peP-lB-xr6"/>
+                    <constraint firstItem="MPC-LG-cCw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="28" id="rur-We-Njr"/>
                     <constraint firstItem="oQE-Jq-DPW" firstAttribute="centerY" secondItem="MPC-LG-cCw" secondAttribute="centerY" id="sOA-kX-29c"/>
                     <constraint firstItem="oQE-Jq-DPW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="vnC-1u-Mrc"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="rur-We-Njr"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="updateContentLabel" destination="xu8-6I-Ch5" id="xse-kZ-tHU"/>
@@ -92,10 +98,10 @@
                 <outlet property="userAvatarImageView" destination="MPC-LG-cCw" id="Ydh-Rr-6C8"/>
                 <outlet property="userNameLabel" destination="dmI-0o-Mln" id="boD-Uy-Uvi"/>
             </connections>
-            <point key="canvasLocation" x="280" y="360.5"/>
+            <point key="canvasLocation" x="280" y="370.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Stroke 751 + Stroke 752" width="96" height="97"/>
+        <image name="ahmed" width="211" height="211"/>
     </resources>
 </document>

@@ -24,16 +24,18 @@ class ProjectUpdateAdapter: BaseTableAdapter {
             tableItems = ListModel()
         }
         
-        tableItems.addObject(ProjectUpdateModel(name: "Ahmed", avatar: NSURL(fileURLWithPath: "image url"), time: "at 3:00 pm", content: "lorem ipsom here"))
+        let fillerText = "Lorem ipsum dolor sit amet, at per verear gubergren signiferumque. Et clita indoctum vel, fabulas iudicabit pro ad. Cum ut iusto mediocrem. Mazim munere deterruisset ea duo, pro no ubique quidam consetetur."
         
-        tableItems.addObject(ProjectUpdateModel(name: "Islam", avatar: NSURL(fileURLWithPath: "image url"), time: "at 2:00 pm", content: "lorem ipsom here"))
+        tableItems.addObject(ProjectUpdateModel(name: "Ahmed", avatar: NSURL(fileURLWithPath: "ahmed") , time: "at 3:00 pm", content: fillerText))
+        
+        tableItems.addObject(ProjectUpdateModel(name: "Islam", avatar: NSURL(fileURLWithPath: "islam"), time: "at 2:00 pm", content: fillerText))
         
         tableView.reloadData()
     }
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CGFloat(150)
+        return CGFloat(170)
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
