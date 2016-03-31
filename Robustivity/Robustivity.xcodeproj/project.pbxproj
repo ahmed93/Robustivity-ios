@@ -13,6 +13,17 @@
 		75D7CD341CAD81F6009C6466 /* WriteExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */; };
 		75D7CD351CAD81F6009C6466 /* WriteExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */; };
 		75D7CD371CAD822B009C6466 /* Adapters in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD361CAD822B009C6466 /* Adapters */; };
+		185FE30F1CAC5FE100B3725E /* ProjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */; };
+		185FE3101CAC5FE100B3725E /* ProjectsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */; };
+		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
+		185FE3161CAC610A00B3725E /* RoundBorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3151CAC610A00B3725E /* RoundBorderedView.swift */; };
+		185FE3191CAC615000B3725E /* CustomProjectsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3171CAC615000B3725E /* CustomProjectsListTableViewCell.swift */; };
+		185FE31A1CAC615000B3725E /* CustomProjectsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185FE3181CAC615000B3725E /* CustomProjectsListTableViewCell.xib */; };
+		229A2D581CAD5329004F8980 /* ProjectMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D561CAD5329004F8980 /* ProjectMemberCell.swift */; };
+		229A2D591CAD5329004F8980 /* ProjectMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229A2D571CAD5329004F8980 /* ProjectMemberCell.xib */; };
+		229A2D5C1CAD5417004F8980 /* ProjectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */; };
+		229A2D5D1CAD5417004F8980 /* ProjectTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */; };
+		229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -137,6 +148,17 @@
 		75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteExcuseViewController.swift; path = Robustivity/ViewControllers/More/WriteExcuseViewController.swift; sourceTree = SOURCE_ROOT; };
 		75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WriteExcuseViewController.xib; path = Robustivity/ViewControllers/More/WriteExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
 		75D7CD361CAD822B009C6466 /* Adapters */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Adapters; path = "../../../../../Robustivity-ios/Robustivity/Robustivity/Adapters"; sourceTree = "<group>"; };
+		185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectsListViewController.swift; path = Robustivity/ViewControllers/More/ProjectsListViewController.swift; sourceTree = SOURCE_ROOT; };
+		185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectsListViewController.xib; path = Robustivity/ViewControllers/More/ProjectsListViewController.xib; sourceTree = SOURCE_ROOT; };
+		185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListAdapter.swift; sourceTree = "<group>"; };
+		185FE3151CAC610A00B3725E /* RoundBorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBorderedView.swift; sourceTree = "<group>"; };
+		185FE3171CAC615000B3725E /* CustomProjectsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomProjectsListTableViewCell.swift; path = "Custom Views/CustomProjectsListTableViewCell.swift"; sourceTree = "<group>"; };
+		185FE3181CAC615000B3725E /* CustomProjectsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomProjectsListTableViewCell.xib; path = "Custom Views/CustomProjectsListTableViewCell.xib"; sourceTree = "<group>"; };
+		229A2D561CAD5329004F8980 /* ProjectMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMemberCell.swift; sourceTree = "<group>"; };
+		229A2D571CAD5329004F8980 /* ProjectMemberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectMemberCell.xib; sourceTree = "<group>"; };
+		229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTeamViewController.swift; sourceTree = SOURCE_ROOT; };
+		229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectTeamViewController.xib; sourceTree = SOURCE_ROOT; };
+		229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectMembersAdapter.swift; path = ../API/ProjectMembersAdapter.swift; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -234,15 +256,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		185FE3131CAC60D500B3725E /* CustomProjectsListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				185FE3171CAC615000B3725E /* CustomProjectsListTableViewCell.swift */,
+				185FE3181CAC615000B3725E /* CustomProjectsListTableViewCell.xib */,
+			);
+			name = CustomProjectsListTableViewCell;
+			sourceTree = "<group>";
+		};
+		185FE3141CAC60ED00B3725E /* UIRoundView */ = {
+			isa = PBXGroup;
+			children = (
+				185FE3151CAC610A00B3725E /* RoundBorderedView.swift */,
+			);
+			name = UIRoundView;
+			sourceTree = "<group>";
+		};
+		229A2D511CAD5287004F8980 /* ProjectMemberTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				229A2D561CAD5329004F8980 /* ProjectMemberCell.swift */,
+				229A2D571CAD5329004F8980 /* ProjectMemberCell.xib */,
+			);
+			name = ProjectMemberTableViewCell;
+			sourceTree = "<group>";
+		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
 				75D7CD361CAD822B009C6466 /* Adapters */,
 				75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */,
+				229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */,
 				A717E5A61CA14D2D00F237DD /* BaseAdapter.swift */,
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
+				185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -306,6 +356,10 @@
 		A72B29141CA2DE7D00C49913 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */,
+				185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */,
+				229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */,
+				229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -345,6 +399,9 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				229A2D511CAD5287004F8980 /* ProjectMemberTableViewCell */,
+				185FE3141CAC60ED00B3725E /* UIRoundView */,
+				185FE3131CAC60D500B3725E /* CustomProjectsListTableViewCell */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -690,12 +747,15 @@
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
+				185FE31A1CAC615000B3725E /* CustomProjectsListTableViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
+				229A2D5D1CAD5417004F8980 /* ProjectTeamViewController.xib in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
 				75D7CD351CAD81F6009C6466 /* WriteExcuseViewController.xib in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
 				75D7CD331CAD81F6009C6466 /* SendExcuseViewController.xib in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
+				185FE3101CAC5FE100B3725E /* ProjectsListViewController.xib in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
@@ -705,6 +765,7 @@
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
+				229A2D591CAD5329004F8980 /* ProjectMemberCell.xib in Resources */,
 				A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */,
 				A7A94EDA1C9E97B5002B3991 /* ToggleViewController.xib in Resources */,
 			);
@@ -743,16 +804,21 @@
 				A7C480191CA3F1EC00F4FDB7 /* SDWebImageDownloader.m in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
+				185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
 				A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */,
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */,
 				A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */,
+				185FE3161CAC610A00B3725E /* RoundBorderedView.swift in Sources */,
 				A7C480171CA3F1EC00F4FDB7 /* SDWebImageCompat.m in Sources */,
 				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,
 				75D7CD321CAD81F6009C6466 /* SendExcuseViewController.swift in Sources */,
 				A7C480141CA3F1EC00F4FDB7 /* MKAnnotationView+WebCache.m in Sources */,
+				229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */,
+				185FE3191CAC615000B3725E /* CustomProjectsListTableViewCell.swift in Sources */,
+				229A2D5C1CAD5417004F8980 /* ProjectTeamViewController.swift in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
 				A7C4801C1CA3F1EC00F4FDB7 /* SDWebImagePrefetcher.m in Sources */,
@@ -763,6 +829,8 @@
 				A7C4801B1CA3F1EC00F4FDB7 /* SDWebImageManager.m in Sources */,
 				A7C480201CA3F1EC00F4FDB7 /* UIImage+WebP.m in Sources */,
 				A717E5AD1CA1567F00F237DD /* RobustivityTabBarController.swift in Sources */,
+				185FE30F1CAC5FE100B3725E /* ProjectsListViewController.swift in Sources */,
+				229A2D581CAD5329004F8980 /* ProjectMemberCell.swift in Sources */,
 				A7C480161CA3F1EC00F4FDB7 /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
