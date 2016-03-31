@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ProjectUpdateViewController: BaseViewController {
+class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
     
     @IBOutlet weak var projectUpdateTableView: UITableView!
     
     @IBOutlet weak var newUpdateTextView: UITextView!
+    let placeholderText = "Write Comment here"
     
     var adapter: ProjectUpdateAdapter!
-    let placeholderText = "Write Comment here"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class ProjectUpdateViewController: BaseViewController {
         // place holder
         self.newUpdateTextView.text = placeholderText
         self.newUpdateTextView.textColor = Theme.lightGrayColor()
+        newUpdateTextView.delegate = self
         
         adapter = ProjectUpdateAdapter(viewController: self, tableView: projectUpdateTableView, registerCellWithNib:"ProjectUpdateTableViewCell", withIdentifier: "projectUpdateCell")
     }
@@ -40,17 +41,18 @@ class ProjectUpdateViewController: BaseViewController {
         super.loadView()
     }
     
-    func textViewDidBeginEditing(textView: UITextView) {
-        if self.newUpdateTextView.textColor == Theme.lightGrayColor() {
-            self.newUpdateTextView.text = nil
-            self.newUpdateTextView.textColor = Theme.blackColor();
+    // handle placeholder
+    func textViewDidBeginEditing(textview: UITextView) {
+        if textview.textColor == Theme.lightGrayColor() {
+            textview.text = nil
+            textview.textColor = UIColor.blackColor()
         }
     }
     
-    func textViewDidEndEditing(textView: UITextView) {
-        if self.newUpdateTextView.text.isEmpty {
-            self.newUpdateTextView.text = placeholderText
-            self.newUpdateTextView.textColor = Theme.lightGrayColor()
+    func textViewDidEndEditing(textview: UITextView) {
+        if textview.text.isEmpty {
+            textview.text = "Placeholder"
+            textview.textColor = UIColor.lightGrayColor()
         }
     }
 
