@@ -29,6 +29,10 @@
 		A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */; };
 		A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */; };
 		A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */; };
+		A750E9781CA97B77009D29BB /* NotificationsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */; };
+		A750E9831CA97C49009D29BB /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */; };
+		A750E9841CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */; };
+		A750E9881CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A750E9871CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib */; };
 		A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */; };
 		A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED11C9E9724002B3991 /* FeedViewController.swift */; };
 		A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */; };
@@ -152,6 +156,10 @@
 		A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_2+Theme.swift"; sourceTree = "<group>"; };
 		A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_3+Theme.swift"; sourceTree = "<group>"; };
 		A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_4+Theme.swift"; sourceTree = "<group>"; };
+		A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsAdapter.swift; sourceTree = "<group>"; };
+		A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsTableViewCell.swift; path = "Custom Views/Notifications/NotificationsTableViewCell.swift"; sourceTree = "<group>"; };
+		A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsSingleLineTableViewCell.xib; path = "Custom Views/Notifications/NotificationsSingleLineTableViewCell.xib"; sourceTree = "<group>"; };
+		A750E9871CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsDoubleLineTableViewCell.xib; path = "Custom Views/Notifications/NotificationsDoubleLineTableViewCell.xib"; sourceTree = "<group>"; };
 		A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		A7A94ED11C9E9724002B3991 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +263,7 @@
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
+				A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -353,9 +362,20 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				A750E9801CA97C13009D29BB /* Notifications */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		A750E9801CA97C13009D29BB /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */,
+				A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */,
+				A750E9871CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib */,
+			);
+			name = Notifications;
 			sourceTree = "<group>";
 		};
 		A7A94EBE1C9E9321002B3991 /* Feed */ = {
@@ -698,6 +718,7 @@
 				A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
+				A750E9881CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
 				41ED59161CAC48B700508474 /* CallCollectionViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
@@ -708,6 +729,7 @@
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
+				A750E9841CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				41ED59111CAC379900508474 /* CallViewController.xib in Resources */,
@@ -732,6 +754,7 @@
 				41ED59101CAC379900508474 /* CallViewController.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
+				A750E9781CA97B77009D29BB /* NotificationsAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
@@ -771,6 +794,7 @@
 				A7C4801B1CA3F1EC00F4FDB7 /* SDWebImageManager.m in Sources */,
 				A7C480201CA3F1EC00F4FDB7 /* UIImage+WebP.m in Sources */,
 				A717E5AD1CA1567F00F237DD /* RobustivityTabBarController.swift in Sources */,
+				A750E9831CA97C49009D29BB /* NotificationsTableViewCell.swift in Sources */,
 				A7C480161CA3F1EC00F4FDB7 /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
