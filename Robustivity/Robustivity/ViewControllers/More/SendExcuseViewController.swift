@@ -23,7 +23,7 @@ class SendExcuseViewController: BaseViewController {
         super.loadView()
     }
 
-    override func viewDidLoad() {
+    override func viewDidLoad() { // setting title and bar buttons and footer for the table view
         super.viewDidLoad()
         self.excusesTableView.tableFooterView = UIView()
         self.title = "Send Excuse";
@@ -34,7 +34,7 @@ class SendExcuseViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
-    func insertExcuse () {
+    func insertExcuse () { // this functions is called when + button is clicked to go to write excuse page
         let rg = WriteExcuseViewController(nibName:"WriteExcuseViewController", bundle: nil)
         presentViewController(UINavigationController(rootViewController: rg), animated: true) { () -> Void in
         }
