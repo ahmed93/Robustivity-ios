@@ -36,24 +36,21 @@ class ProjectsListAdapter: BaseTableAdapter {
   
   
   override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-    let _cell = cell as? CustomProjectsListTableViewCell
+    let projectsListCell = cell as? CustomProjectsListTableViewCell
     
     let currentCellData = tableItems.objectAtIndex(indexPath.row) as! NSDictionary
     
-    _cell?.projectNameLabel.text = currentCellData.objectForKey("proj_name") as? String
-    _cell?.memberLabel.text = currentCellData.objectForKey("member_name") as? String
+    projectsListCell?.projectNameLabel.text = currentCellData.objectForKey("proj_name") as? String
+    projectsListCell?.memberLabel.text = currentCellData.objectForKey("member_name") as? String
     
     switch(currentCellData.objectForKey("type") as! String) {
-    case "1": _cell?.statusUIView.backgroundColor = Theme.greenColor()
-    case "2": _cell?.statusUIView.backgroundColor = Theme.orangeColor()
-    case "3": _cell?.statusUIView.backgroundColor = Theme.lighterBlackColor()
-    default: _cell?.statusUIView.backgroundColor = Theme.greenColor()
+    case "1": projectsListCell?.statusUIView.backgroundColor = Theme.greenColor()
+    case "2": projectsListCell?.statusUIView.backgroundColor = Theme.orangeColor()
+    case "3": projectsListCell?.statusUIView.backgroundColor = Theme.lighterBlackColor()
+    default: projectsListCell?.statusUIView.backgroundColor = Theme.greenColor()
     }
     
-    
-    
-    
-    _cell?.marginUIView.backgroundColor = Theme.tableBackgroundColor()
+    projectsListCell?.marginUIView.backgroundColor = Theme.tableBackgroundColor()
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
