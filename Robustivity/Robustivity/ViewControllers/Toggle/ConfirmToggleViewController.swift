@@ -23,6 +23,20 @@ class ConfirmToggleViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
+
+    @IBAction func confirmInfo(sender: AnyObject) {
+        if(self.todoTitle.text != "") {
+            self.navigationController?.popToRootViewControllerAnimated(true);
+//            self.recordedTime.text = "00:00:00";
+//            self.pausedTimeInterval = 0;
+//            self.stopBtn.hidden = true;
+//            self.pauseBtn.hidden = true;
+//            self.playBtn.hidden = false;
+//            var x : ToggleViewController//= self.presentingViewController :To
+            var x = self.presentingViewController as! ToggleViewController
+//            self.presentingViewController.recordedTime.text = "00:00:00";
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

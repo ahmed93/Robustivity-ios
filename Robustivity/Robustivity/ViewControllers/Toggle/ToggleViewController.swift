@@ -14,7 +14,6 @@ class ToggleViewController: BaseViewController {
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var recordedTime: UILabel!
     
-    var confirmToggleView = ConfirmToggleViewController();
     var timer = NSTimer();
     var startDate = NSDate();
     var pausedDate = NSDate();
@@ -85,15 +84,17 @@ class ToggleViewController: BaseViewController {
     @IBAction func stop(sender: AnyObject) {
         self.pausedDate = NSDate();
         if(self.todoTitle.text == "") {
-            self.confirmToggleView.toggledTime = self.recordedTime.text!;
-            self.navigationController?.pushViewController(self.confirmToggleView, animated: true);
+            let confirmToggleView = ConfirmToggleViewController();
+            confirmToggleView.toggledTime = self.recordedTime.text!;
+            self.navigationController?.pushViewController(confirmToggleView, animated: true);
         }
         timer.invalidate();
-        self.recordedTime.text = "00:00:00";
-        self.pausedTimeInterval = 0;
-        self.stopBtn.hidden = true;
-        self.pauseBtn.hidden = true;
-        self.playBtn.hidden = false;
+        ///MODIFY AND HANDLE THIS PART TO FIT THE BACK CASE
+//        self.recordedTime.text = "00:00:00";
+//        self.pausedTimeInterval = 0;
+//        self.stopBtn.hidden = true;
+//        self.pauseBtn.hidden = true;
+//        self.playBtn.hidden = false;
     }
 
 }
