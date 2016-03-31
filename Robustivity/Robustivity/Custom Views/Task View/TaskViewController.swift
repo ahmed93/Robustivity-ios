@@ -44,19 +44,23 @@ class TaskViewController: BaseViewController {
     func tabChanged(sender:UISegmentedControl){
         switch sender.selectedSegmentIndex{
         case 0:
+            table.separatorStyle = .SingleLine
             let dic:NSDictionary = [
                 "PersonTableViewCell" : "personCell"
                 ,   "DescriptionTableViewCell" : "descriptionCell"]
             infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
+            table.reloadData()
             break
         case 1:
-            updatesAdapter = TaskUpdatesAdapter(viewController: self, tableView: table, registerCellWithNib: "DescriptionTableViewCell", withIdentifier: "descriptionCell")
+            table.separatorStyle = .None
+            updatesAdapter = TaskUpdatesAdapter(viewController: self, tableView: table, registerCellWithNib: "CommentTableViewCell", withIdentifier: "commentCell")
+            table.reloadData()
             break
         default:
             break
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

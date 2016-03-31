@@ -10,9 +10,22 @@ import UIKit
 
 class CommentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var comment: RBLabel!
+    @IBOutlet weak var name: RBLabel!
+    @IBOutlet weak var time: RBLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        comment.labelType = 1030
+        time.labelType = 1080
+        name.labelType = 3020
+        
+        avatar.layer.borderWidth = 1.0
+        avatar.layer.masksToBounds = false
+        avatar.layer.borderColor = Theme.whiteColor().CGColor
+        avatar.layer.cornerRadius = avatar.frame.size.width/2
+        avatar.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
