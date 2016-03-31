@@ -7,11 +7,16 @@
 //
 
 
-
-//    Modified By: Ahmed Elassuty on 31/3/16.
-
 import UIKit
 
+/**
+
+ - Author: 
+    Ahmed Elassuty.
+ - Date  : 
+    31/3/16.
+
+ */
 class PlannerViewController: BaseViewController {
     @IBOutlet weak var tableView:UITableView!
     
@@ -29,7 +34,7 @@ class PlannerViewController: BaseViewController {
         
         // Init segmented control
         let segmentControlItems = ["Tasks", "My ToDos"]
-        initSegmentedControl(segmentControlItems)
+        loadSegmentedControl(segmentControlItems)
         
         // Init Adapter
         adapter = PlannerAdapter(viewController: self, tableView: tableView, registerCellWithNib: "PlannerTableViewCell", withIdentifier: "PlannerCell")
@@ -42,12 +47,19 @@ class PlannerViewController: BaseViewController {
         let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
-        // toggleUserStatus()
-        
     }
     
     //    MARK: Segmented Control
-    func initSegmentedControl(items:[AnyObject]) {
+    
+    /**
+        Loads segmented control to the Planner view controller navigation bar.
+
+        - Author: 
+            Ahmed Elassuty.
+        - Parameter items:
+            Array of AnyObject items that should be shown in the segment control.
+    */
+    func loadSegmentedControl(items:[AnyObject]) {
         segmentedControl = UISegmentedControl(items: items)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: "segmentControlAction:", forControlEvents: .ValueChanged)
@@ -60,14 +72,34 @@ class PlannerViewController: BaseViewController {
         self.navigationItem.titleView = segmentedControl
     }
     
+    // MARK: Segment Control Action
+    
+    /**
+        Segment control action. This method reloades the main tableView cells data.
+    
+        - Author:
+            Ahmed Elassuty.
+        - Note:
+            The implementation of this method may be changed in the development phase.
+    */
     func segmentControlAction(sender: UISegmentedControl) {
         adapter.fetchItems()
     }
     
-    //   MARK: Navigation Bar Actions
+    // MARK: Navigation Bar Items Actions
     
-    // Right Navigation Bar Button item
+    /**
+        Creates new Task or ToDo navigation bar button item action. This method renders the appropriate view controller based on the selected segment.
+
+        - Author: 
+            Ahmed Elassuty
+        - Parameter sender:
+            The right clicked bar button.
+        - TODO:
+            Add the right view controllers upon integration.
+    */
     func createItemAction(sender: UIBarButtonItem) {
+        assertionFailure("Add the right view controllers upon integration.")
         // let viewController:UIViewController;
         
         if segmentedControl.selectedSegmentIndex == 0 {
@@ -82,8 +114,16 @@ class PlannerViewController: BaseViewController {
         
         // self.navigationController?.pushViewController(projectAssignmentViewController, animated: true)
     }
+
+    /**
+        Toggle user status left bar item circle color.
+
+        - Author: Ahmed Elassuty
     
-    // Left Navigation Bar Button item
+        - TODO:
+            - Move this method to baseViewController.
+            - Disable user interaction.
+    */
     func toggleUserStatus() {
         let statusCircle = self.navigationItem.leftBarButtonItem
         if statusCircle!.tintColor!.isEqual(Theme.greenColor()) {
