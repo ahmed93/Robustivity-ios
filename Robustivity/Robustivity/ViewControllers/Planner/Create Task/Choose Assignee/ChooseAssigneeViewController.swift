@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ChooseAssigneeViewController: UIViewController {
+// CreateTask_ChooseAssignee viewController
+class ChooseAssigneeViewController: BaseViewController {
 
     var adapter:UserAdapter!
 

@@ -8,6 +8,11 @@
 
 import UIKit
 
+/* ANY CLASS THAT NEEDS THE 'SWIPE TO TOGGLE FUNCTIONALITY SHOULD EXTEND THIS SUPER CLASS' */
+//SwipableTableViewCell is a TableViewCell that have the 'Swipe To Toggle' functionality. The class allows to swipe the cell left for play/pause, and right for stop toggeling. 
+//You have to ovveride the play/pause/stop action functions
+//You can edit the width via the padding
+
 class SwipableTableViewCell: MGSwipeTableCell {
 
     let playImage : UIImage = UIImage(named:"play.png")!

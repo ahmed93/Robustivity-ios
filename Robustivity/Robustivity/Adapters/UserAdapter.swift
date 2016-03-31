@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+// UserAdapter used to display the User TableViews, using the UserTableViewCell.
+// Remove the tableView Separator from your controller using: self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None 
+
 class UserAdapter: BaseTableAdapter {
     
     var tableItems2:ListModel!
@@ -16,8 +19,6 @@ class UserAdapter: BaseTableAdapter {
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
-        
-        // any extra stuff to be done
     }
     
     
@@ -66,10 +67,6 @@ class UserAdapter: BaseTableAdapter {
         let _cell = cell as? UserTableViewCell
         _cell?.userName.text = tableItems.objectAtIndex(indexPath.row) as? String
         _cell?.userTitle.text = tableItems2.objectAtIndex(indexPath.row) as? String
-        _cell?.separatorInset.right = 20
-        // _cell?.cellSeparator.backgroundColor = Theme.lightGrayColor()
-        //  addSeparatorLine(_cell!, color: Theme.lightGrayColor(), margin: 50)
-        //
     }
     
   }

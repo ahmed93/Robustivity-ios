@@ -8,6 +8,9 @@
 
 import UIKit
 
+//User TableViewCell. Used in the Ping View, ProjectMembers View, CreateTask_ChooseAssignee View, TaskInfo View
+//Used by the UserAdapter to dislay Users TableView
+
 class UserTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellSeparator: UIView!
@@ -16,7 +19,6 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var userAvatar: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.cellSeparator.backgroundColor = Theme.lightGrayColor()
     }
 
