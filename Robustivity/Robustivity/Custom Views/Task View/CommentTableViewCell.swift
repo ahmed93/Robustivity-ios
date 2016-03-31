@@ -1,22 +1,18 @@
 //
-//  DescriptionTableViewCell.swift
+//  CommentTableViewCell.swift
 //  Robustivity
 //
-//  Created by Mohammad Lotfy on 2016-03-30.
+//  Created by Mohammad Lotfy on 2016-03-31.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
 import UIKit
 
-class DescriptionTableViewCell: UITableViewCell {
-
-   
-    @IBOutlet weak var taskDescription: RBLabel!
+class CommentTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        taskDescription.labelType = 1030
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -30,7 +30,9 @@ class TaskInfoAdapter: BaseTableAdapter{
                 as! PersonTableViewCell
             cell.name.text = "Mohamed Lotfy"
             cell.position.text = "CEO and co-founder"
-            return cell
+        
+        return cell
+        
        }
         else{
             let cell = self.tableView.dequeueReusableCellWithIdentifier("descriptionCell", forIndexPath: indexPath)
@@ -44,8 +46,13 @@ class TaskInfoAdapter: BaseTableAdapter{
         return 1
     }
     
-    
-    
+ //for hiding the first section
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if section == 0 {
+//        return 1.0
+//        }
+        return 45.0
+    }
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var sectionName = String()
         switch(section){

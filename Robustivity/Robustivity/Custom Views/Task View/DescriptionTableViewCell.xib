@@ -15,18 +15,24 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnZ-lW-eZp" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="8" y="39" width="304" height="20.5"/>
+                        <rect key="frame" x="8" y="16" width="304" height="43.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="bnZ-lW-eZp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="31" id="BAq-t0-TZs"/>
+                    <constraint firstItem="bnZ-lW-eZp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="99G-D7-hsn"/>
+                    <constraint firstItem="bnZ-lW-eZp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="BAq-t0-TZs"/>
                     <constraint firstAttribute="bottom" secondItem="bnZ-lW-eZp" secondAttribute="bottom" constant="15" id="GUA-fQ-2FZ"/>
                     <constraint firstAttribute="trailing" secondItem="bnZ-lW-eZp" secondAttribute="trailing" constant="8" id="ard-5R-Jko"/>
                     <constraint firstItem="bnZ-lW-eZp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="oOg-gF-s2N"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="BAq-t0-TZs"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="taskDescription" destination="bnZ-lW-eZp" id="KTc-Ly-6ak"/>

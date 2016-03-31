@@ -15,20 +15,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stroke 751 + Stroke 752" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-Jh-f3c">
-                        <rect key="frame" x="17" y="17" width="80" height="80"/>
+                        <rect key="frame" x="14" y="17" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="FHP-Xt-bW8"/>
-                            <constraint firstAttribute="height" constant="80" id="lrX-K1-KpN"/>
+                            <constraint firstAttribute="width" constant="40" id="FHP-Xt-bW8"/>
+                            <constraint firstAttribute="height" constant="40" id="lrX-K1-KpN"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdF-rN-W1K" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="117" y="27" width="42" height="20.5"/>
+                        <rect key="frame" x="64" y="23.5" width="42" height="27.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvA-gF-fk1" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="117" y="62" width="42" height="21"/>
+                        <rect key="frame" x="64" y="58" width="42" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="bWd-iR-tXI"/>
                         </constraints>
@@ -38,13 +38,24 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="RdF-rN-W1K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15.5" id="0r6-1T-Snh"/>
                     <constraint firstItem="tfc-Jh-f3c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="5gJ-L8-sR7"/>
-                    <constraint firstItem="tfc-Jh-f3c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="R7u-sV-hvg"/>
-                    <constraint firstItem="PvA-gF-fk1" firstAttribute="top" secondItem="RdF-rN-W1K" secondAttribute="bottom" constant="14" id="SdS-XC-eCc"/>
-                    <constraint firstItem="RdF-rN-W1K" firstAttribute="leading" secondItem="tfc-Jh-f3c" secondAttribute="trailing" constant="20" id="WTr-xa-rMv"/>
+                    <constraint firstItem="RdF-rN-W1K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="19.5" id="ILg-7j-38E"/>
+                    <constraint firstItem="tfc-Jh-f3c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="R7u-sV-hvg"/>
+                    <constraint firstItem="PvA-gF-fk1" firstAttribute="top" secondItem="RdF-rN-W1K" secondAttribute="bottom" constant="7" id="SdS-XC-eCc"/>
+                    <constraint firstItem="RdF-rN-W1K" firstAttribute="leading" secondItem="tfc-Jh-f3c" secondAttribute="trailing" constant="10" id="WTr-xa-rMv"/>
+                    <constraint firstAttribute="bottom" secondItem="PvA-gF-fk1" secondAttribute="bottom" constant="32.5" id="WZa-i3-V5U"/>
                     <constraint firstAttribute="bottomMargin" secondItem="PvA-gF-fk1" secondAttribute="bottom" constant="20.5" id="fvw-qs-GRl"/>
-                    <constraint firstItem="PvA-gF-fk1" firstAttribute="leading" secondItem="tfc-Jh-f3c" secondAttribute="trailing" constant="20" id="mZK-sL-IPS"/>
+                    <constraint firstItem="PvA-gF-fk1" firstAttribute="leading" secondItem="tfc-Jh-f3c" secondAttribute="trailing" constant="10" id="mZK-sL-IPS"/>
+                    <constraint firstItem="RdF-rN-W1K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23.5" id="vMI-qb-ete"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="0r6-1T-Snh"/>
+                        <exclude reference="ILg-7j-38E"/>
+                        <exclude reference="fvw-qs-GRl"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatar" destination="tfc-Jh-f3c" id="wro-5D-X9j"/>

@@ -16,6 +16,13 @@ class PersonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        name.labelType = 3020
+        position.labelType = 1000
+        avatar.layer.borderWidth = 1.0
+        avatar.layer.masksToBounds = false
+        avatar.layer.borderColor = Theme.whiteColor().CGColor
+        avatar.layer.cornerRadius = avatar.frame.size.width/2
+        avatar.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

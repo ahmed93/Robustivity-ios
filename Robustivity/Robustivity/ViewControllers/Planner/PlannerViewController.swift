@@ -21,6 +21,10 @@ class PlannerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Planner";
+        
+        let a = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
+        self.navigationController?.pushViewController(a, animated: true)
+
     }
     
 }
