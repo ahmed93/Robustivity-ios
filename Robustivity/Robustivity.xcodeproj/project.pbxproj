@@ -251,16 +251,6 @@
 			name = UIRoundView;
 			sourceTree = "<group>";
 		};
-		18D06D191CAD9F0C00C08E01 /* ProjectsList */ = {
-			isa = PBXGroup;
-			children = (
-				185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */,
-				185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */,
-			);
-			name = ProjectsList;
-			path = Robustivity/ViewControllers/More/ProjectsList;
-			sourceTree = SOURCE_ROOT;
-		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,7 +322,8 @@
 		A72B29141CA2DE7D00C49913 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				18D06D191CAD9F0C00C08E01 /* ProjectsList */,
+				185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */,
+				185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
