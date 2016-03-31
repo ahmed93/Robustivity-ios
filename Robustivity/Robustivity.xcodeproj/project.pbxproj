@@ -353,6 +353,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				41ED59121CAC487900508474 /* CallCollectionViewCell */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -558,7 +559,6 @@
 		A7FD4DAC1CA5DE6400BD7332 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				41ED59121CAC487900508474 /* CallCollectionViewCell */,
 				A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */,
 				A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */,
 			);

@@ -13,20 +13,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTa-oW-Dc7">
-                    <rect key="frame" x="239" y="294" width="46" height="30"/>
-                    <state key="normal" title="Goto Call View"/>
-                    <connections>
-                        <action selector="gotoCallViewController:" destination="-1" eventType="touchUpInside" id="C0e-uN-JwE"/>
-                    </connections>
-                </button>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="cTa-oW-Dc7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GiN-aO-E6Q"/>
-                <constraint firstItem="cTa-oW-Dc7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="JrP-Jn-yJP"/>
-            </constraints>
         </view>
     </objects>
 </document>
