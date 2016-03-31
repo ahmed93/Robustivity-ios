@@ -280,6 +280,7 @@
 				229A2D571CAD5329004F8980 /* ProjectMemberCell.xib */,
 			);
 			name = ProjectMemberTableViewCell;
+
 		011083351CAC171200F616DD /* ProjectUpdate */ = {
 			isa = PBXGroup;
 			children = (
