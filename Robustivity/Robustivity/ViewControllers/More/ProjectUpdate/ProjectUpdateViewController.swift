@@ -51,7 +51,7 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
     
     func textViewDidEndEditing(textview: UITextView) {
         if textview.text.isEmpty {
-            textview.text = "Placeholder"
+            textview.text = placeholderText
             textview.textColor = UIColor.lightGrayColor()
         }
     }
