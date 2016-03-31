@@ -17,8 +17,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var recordedTime: UILabel!
 
     @IBOutlet weak var todoTitleField: UITextField!
-    @IBOutlet weak var todoProjectPicker: UIPickerView!
     
+  
+    @IBOutlet weak var todoProjectTextField: UITextField!
     var timer = NSTimer();
     var startDate = NSDate();
     var pausedDate = NSDate();
@@ -26,6 +27,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     var pausedTimeInterval = NSTimeInterval();
     
     var todoProjectPickerDataSource = ["Project name", "Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
+    var todoProjectsName = ["Project name", "Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,6 +39,10 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
+        
+        self.edgesForExtendedLayout = .None; //added to calculate the distance from tthe top of the page after the nav bar
+
+        
         self.playBtn.layer.cornerRadius = 0.5 * self.playBtn.bounds.size.width;
         self.playBtn.backgroundColor = Theme.greenColor();
         self.pauseBtn.layer.cornerRadius = 0.5 * self.pauseBtn.bounds.size.width;
@@ -47,14 +53,23 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.resumeBtn.backgroundColor = Theme.greenColor();
 
         self.buttonsView.hidden = true;
+        Theme.style_5(self.recordedTime);
 
         self.recordedTime.text = "00:00:00";
         
         self.todoTitleField.backgroundColor = Theme.lightGrayColor();
         self.todoTitleField.placeholder = "ToDo title"
-        self.todoProjectPicker.backgroundColor = Theme.lightGrayColor();
-        self.todoProjectPicker.dataSource = self;
-        self.todoProjectPicker.delegate = self;
+        
+        self.todoProjectTextField.backgroundColor = Theme.lightGrayColor();
+        self.todoProjectTextField.placeholder = "Project name";
+
+
+        let projectPicker = UIPickerView();
+        projectPicker.dataSource = self;
+        projectPicker.delegate = self;
+        
+        self.todoProjectTextField.inputView = projectPicker;
+        self.stopBtn.alpha = 0;
 
     }
     
@@ -64,8 +79,15 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true);
         
         self.recordedTime.textColor = Theme.greenColor();
-        Theme.style_8(self.recordedTime)
+        
+//        self.playBtn.hidden = true;
+//        self.stopBtn.hidden = false
         self.playBtn.hidden = true;
+
+        UIView.animateWithDuration(4, animations: {
+            self.stopBtn.alpha = 1
+        })
+//        self.stopBtn.alpha = 1
         self.buttonsView.hidden = false;
         self.pauseBtn.hidden = false;
         self.resumeBtn.hidden = true;
@@ -103,12 +125,10 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.pausedDate = NSDate();
 
         timer.invalidate();
+        self.recordedTime.textColor = Theme.blackColor();
         self.recordedTime.text = "00:00:00";
         self.pausedTimeInterval = 0;
         self.buttonsView.hidden = true;
-//        self.stopBtn.hidden = true;
-//        self.pauseBtn.hidden = true;
-//        self.resumeBtn.hidden = true;
         self.playBtn.hidden = false;
     }
     
@@ -125,10 +145,14 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return todoProjectPickerDataSource.count;
+        return self.todoProjectsName.count;
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.todoProjectTextField.text = self.todoProjectsName[row];
+        self.todoProjectTextField.resignFirstResponder();
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return todoProjectPickerDataSource[row]
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.todoProjectsName[row]
     }
 }
