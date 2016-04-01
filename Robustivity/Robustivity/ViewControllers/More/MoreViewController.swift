@@ -22,9 +22,4 @@ class MoreViewController: BaseViewController {
         self.navigationItem.title = "More";
     }
 
-    
-    @IBAction func gotoCallViewController(sender: AnyObject) {
-        let callViewController = CallViewController(nibName: "CallViewController", bundle: nil) as CallViewController
-        self.navigationController!.pushViewController(callViewController, animated: true)
-    }
 }
