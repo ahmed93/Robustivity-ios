@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
-		75D7CD321CAD81F6009C6466 /* SendExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2E1CAD81F6009C6466 /* SendExcuseViewController.swift */; };
-		75D7CD331CAD81F6009C6466 /* SendExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */; };
-		75D7CD341CAD81F6009C6466 /* WriteExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */; };
-		75D7CD351CAD81F6009C6466 /* WriteExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */; };
-		75D7CD371CAD822B009C6466 /* Adapters in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD361CAD822B009C6466 /* Adapters */; };
 		011083381CAC173500F616DD /* ProjectUpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */; };
 		011083391CAC173500F616DD /* ProjectUpdateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */; };
 		011083481CAC1F1500F616DD /* ProjectUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011083461CAC1F1500F616DD /* ProjectUpdateViewController.swift */; };
@@ -33,6 +27,12 @@
 		229A2D5C1CAD5417004F8980 /* ProjectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */; };
 		229A2D5D1CAD5417004F8980 /* ProjectTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */; };
 		229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */; };
+		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
+		75D7CD321CAD81F6009C6466 /* SendExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2E1CAD81F6009C6466 /* SendExcuseViewController.swift */; };
+		75D7CD331CAD81F6009C6466 /* SendExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */; };
+		75D7CD341CAD81F6009C6466 /* WriteExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */; };
+		75D7CD351CAD81F6009C6466 /* WriteExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */; };
+		75D7CD371CAD822B009C6466 /* Adapters in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD361CAD822B009C6466 /* Adapters */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -151,12 +151,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExcuseAdapter.swift; path = "../../../../../Robustivity-ios/Robustivity/Robustivity/Adapters/ExcuseAdapter.swift"; sourceTree = "<group>"; };
-		75D7CD2E1CAD81F6009C6466 /* SendExcuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendExcuseViewController.swift; path = Robustivity/ViewControllers/More/SendExcuseViewController.swift; sourceTree = SOURCE_ROOT; };
-		75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendExcuseViewController.xib; path = Robustivity/ViewControllers/More/SendExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
-		75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteExcuseViewController.swift; path = Robustivity/ViewControllers/More/WriteExcuseViewController.swift; sourceTree = SOURCE_ROOT; };
-		75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WriteExcuseViewController.xib; path = Robustivity/ViewControllers/More/WriteExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
-		75D7CD361CAD822B009C6466 /* Adapters */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Adapters; path = "../../../../../Robustivity-ios/Robustivity/Robustivity/Adapters"; sourceTree = "<group>"; };
 		011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectUpdateTableViewCell.swift; path = "Custom Views/ProjectUpdate/ProjectUpdateTableViewCell.swift"; sourceTree = "<group>"; };
 		011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectUpdateTableViewCell.xib; path = "Custom Views/ProjectUpdate/ProjectUpdateTableViewCell.xib"; sourceTree = "<group>"; };
 		011083461CAC1F1500F616DD /* ProjectUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectUpdateViewController.swift; path = Robustivity/ViewControllers/More/ProjectUpdate/ProjectUpdateViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -177,6 +171,12 @@
 		229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTeamViewController.swift; sourceTree = SOURCE_ROOT; };
 		229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectTeamViewController.xib; sourceTree = SOURCE_ROOT; };
 		229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectMembersAdapter.swift; path = ../API/ProjectMembersAdapter.swift; sourceTree = "<group>"; };
+		75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuseAdapter.swift; sourceTree = "<group>"; };
+		75D7CD2E1CAD81F6009C6466 /* SendExcuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendExcuseViewController.swift; path = Robustivity/ViewControllers/More/SendExcuseViewController.swift; sourceTree = SOURCE_ROOT; };
+		75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendExcuseViewController.xib; path = Robustivity/ViewControllers/More/SendExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
+		75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteExcuseViewController.swift; path = Robustivity/ViewControllers/More/WriteExcuseViewController.swift; sourceTree = SOURCE_ROOT; };
+		75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WriteExcuseViewController.xib; path = Robustivity/ViewControllers/More/WriteExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
+		75D7CD361CAD822B009C6466 /* Adapters */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Adapters; path = "../../../../../Robustivity-ios/Robustivity/Robustivity/Adapters"; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
