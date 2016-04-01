@@ -30,7 +30,7 @@
                             <constraint firstAttribute="width" secondItem="MPC-LG-cCw" secondAttribute="height" multiplier="1:1" id="cl2-J6-dxo"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmI-0o-Mln" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ahmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmI-0o-Mln" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
                         <rect key="frame" x="77" y="48" width="45" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -41,7 +41,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQE-Jq-DPW" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQE-Jq-DPW" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
                         <rect key="frame" x="362" y="50" width="50" height="11"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -81,6 +81,7 @@
                     <constraint firstItem="MPC-LG-cCw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="MeV-Y5-rsY"/>
                     <constraint firstItem="enm-tM-sVV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="OK6-0o-6wr"/>
                     <constraint firstAttribute="trailingMargin" secondItem="enm-tM-sVV" secondAttribute="trailing" constant="-8" id="aWG-xu-qzt"/>
+                    <constraint firstItem="xu8-6I-Ch5" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="kwm-69-Gaq"/>
                     <constraint firstItem="dmI-0o-Mln" firstAttribute="leading" secondItem="MPC-LG-cCw" secondAttribute="trailing" constant="5" id="peP-lB-xr6"/>
                     <constraint firstItem="MPC-LG-cCw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="28" id="rur-We-Njr"/>
                     <constraint firstItem="oQE-Jq-DPW" firstAttribute="centerY" secondItem="MPC-LG-cCw" secondAttribute="centerY" id="sOA-kX-29c"/>
