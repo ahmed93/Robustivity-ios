@@ -6,16 +6,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToggleViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
-                <outlet property="pauseBtn" destination="9ql-K8-3jW" id="A3T-4i-M8Y"/>
-                <outlet property="pauseBtnCenterX" destination="Cwz-ft-0l1" id="4py-cY-1I3"/>
-                <outlet property="playBtn" destination="IEZ-gZ-iTk" id="IAg-Dm-bxz"/>
-                <outlet property="recordedTime" destination="hIR-dF-U02" id="piK-6u-pwD"/>
-                <outlet property="resumeBtn" destination="ix1-Ee-bsD" id="Nbn-w9-nHf"/>
-                <outlet property="resumeBtnCenterX" destination="Nyz-Hg-2Rs" id="3kI-ra-MTG"/>
-                <outlet property="stopBtn" destination="bsp-tN-ARa" id="9cD-aD-gzj"/>
-                <outlet property="stopBtnCenterX" destination="tZW-GF-spc" id="BuN-5Q-ivo"/>
                 <outlet property="todoProjectTextField" destination="k5Q-NH-kmd" id="02g-Lh-e1A"/>
                 <outlet property="todoTitleField" destination="WvJ-tl-GBe" id="fsI-0i-Jn2"/>
+                <outlet property="togglePauseBtn" destination="9ql-K8-3jW" id="6X1-gm-lzf"/>
+                <outlet property="togglePauseBtnCenterX" destination="Cwz-ft-0l1" id="5ya-gs-LrH"/>
+                <outlet property="togglePlayBtn" destination="IEZ-gZ-iTk" id="W4c-JW-bd1"/>
+                <outlet property="toggleResumeBtn" destination="ix1-Ee-bsD" id="1lH-av-GEi"/>
+                <outlet property="toggleResumeBtnCenterX" destination="Nyz-Hg-2Rs" id="sNV-YJ-mQ8"/>
+                <outlet property="toggleStopBtn" destination="bsp-tN-ARa" id="4ke-g0-w2k"/>
+                <outlet property="toggleStopBtnCenterX" destination="tZW-GF-spc" id="USS-ds-zzj"/>
+                <outlet property="toggledTime" destination="hIR-dF-U02" id="eyO-8J-7fd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,7 +33,7 @@
                     </constraints>
                     <state key="normal" image="play"/>
                     <connections>
-                        <action selector="startPlay:" destination="-1" eventType="touchUpInside" id="EJe-1y-Ug7"/>
+                        <action selector="toggleStartPlay:" destination="-1" eventType="touchUpInside" id="jJP-PJ-jK9"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIR-dF-U02" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
@@ -69,7 +69,7 @@
                     </constraints>
                     <state key="normal" image="stop"/>
                     <connections>
-                        <action selector="stop:" destination="-1" eventType="touchUpInside" id="YLw-cN-MtX"/>
+                        <action selector="toggleStop:" destination="-1" eventType="touchUpInside" id="x16-HP-Yo5"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ix1-Ee-bsD" userLabel="Resume Btn">
@@ -81,8 +81,7 @@
                     </constraints>
                     <state key="normal" image="play"/>
                     <connections>
-                        <action selector="pause:" destination="-1" eventType="touchUpInside" id="7oP-4L-uyI"/>
-                        <action selector="resume:" destination="-1" eventType="touchUpInside" id="PRf-1z-rgS"/>
+                        <action selector="toggleResume:" destination="-1" eventType="touchUpInside" id="DfT-oR-5Xw"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ql-K8-3jW">
@@ -94,7 +93,7 @@
                     </constraints>
                     <state key="normal" image="pause"/>
                     <connections>
-                        <action selector="pause:" destination="-1" eventType="touchUpInside" id="hMx-0X-Zqx"/>
+                        <action selector="togglePause:" destination="-1" eventType="touchUpInside" id="qfB-ev-xrp"/>
                     </connections>
                 </button>
             </subviews>

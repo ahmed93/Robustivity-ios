@@ -9,14 +9,14 @@
 import UIKit
 
 class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    @IBOutlet weak var resumeBtnCenterX: NSLayoutConstraint!
-    @IBOutlet weak var stopBtnCenterX: NSLayoutConstraint!
-    @IBOutlet weak var stopBtn: UIButton!
-    @IBOutlet weak var pauseBtnCenterX: NSLayoutConstraint!
-    @IBOutlet weak var pauseBtn: UIButton!
-    @IBOutlet weak var resumeBtn: UIButton!
-    @IBOutlet weak var playBtn: UIButton!
-    @IBOutlet weak var recordedTime: UILabel!
+    @IBOutlet weak var toggleResumeBtnCenterX: NSLayoutConstraint!
+    @IBOutlet weak var toggleStopBtnCenterX: NSLayoutConstraint!
+    @IBOutlet weak var toggleStopBtn: UIButton!
+    @IBOutlet weak var togglePauseBtnCenterX: NSLayoutConstraint!
+    @IBOutlet weak var togglePauseBtn: UIButton!
+    @IBOutlet weak var toggleResumeBtn: UIButton!
+    @IBOutlet weak var togglePlayBtn: UIButton!
+    @IBOutlet weak var toggledTime: UILabel!
 
     @IBOutlet weak var todoTitleField: UITextField!
     
@@ -48,19 +48,19 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.navigationController?.navigationBar.translucent = false; //added to calculate the distance from the top of the page after the nav bar
         
         /* Add circular shape to buttons*/
-        self.playBtn.layer.cornerRadius = 0.5 * self.playBtn.bounds.size.width;
-        self.playBtn.backgroundColor = Theme.greenColor();
-        self.pauseBtn.layer.cornerRadius = 0.5 * self.pauseBtn.bounds.size.width;
-        self.pauseBtn.backgroundColor = Theme.lighterBlackColor();
-        self.stopBtn.layer.cornerRadius = 0.5 * self.stopBtn.bounds.size.width;
-        self.stopBtn.backgroundColor = Theme.redColor();
-        self.resumeBtn.layer.cornerRadius = 0.5 * self.resumeBtn.bounds.size.width;
-        self.resumeBtn.backgroundColor = Theme.greenColor();
+        self.togglePlayBtn.layer.cornerRadius = 0.5 * self.togglePlayBtn.bounds.size.width;
+        self.togglePlayBtn.backgroundColor = Theme.greenColor();
+        self.togglePauseBtn.layer.cornerRadius = 0.5 * self.togglePauseBtn.bounds.size.width;
+        self.togglePauseBtn.backgroundColor = Theme.lighterBlackColor();
+        self.toggleStopBtn.layer.cornerRadius = 0.5 * self.toggleStopBtn.bounds.size.width;
+        self.toggleStopBtn.backgroundColor = Theme.redColor();
+        self.toggleResumeBtn.layer.cornerRadius = 0.5 * self.toggleResumeBtn.bounds.size.width;
+        self.toggleResumeBtn.backgroundColor = Theme.greenColor();
 
-        Theme.style_5(self.recordedTime); //missing correct font and is not specified in properties
+        Theme.style_5(self.toggledTime); //missing correct font and is not specified in properties
 
-        self.recordedTime.text = "00:00:00";
-        self.recordedTime.textColor = Theme.blackColor();
+        self.toggledTime.text = "00:00:00";
+        self.toggledTime.textColor = Theme.blackColor();
         
         /* Add indentation between text field and inout data*/
         let todoTitlePaddingView = UIView(frame: CGRectMake(0,0,14,20));
@@ -83,46 +83,46 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         projectPicker.delegate = self;
         
         self.todoProjectTextField.inputView = projectPicker; //Assign picker to textfield
-        self.stopBtn.alpha = 0;
-        self.pauseBtn.alpha = 0;
-        self.resumeBtn.alpha = 0;
+        self.toggleStopBtn.alpha = 0;
+        self.togglePauseBtn.alpha = 0;
+        self.toggleResumeBtn.alpha = 0;
 
     }
     
     /*
-    ** startPlay 
+    ** toggleStartPlay
     ** The method is responsible for starting the timer
     */
     
-    @IBAction func startPlay(sender: AnyObject) {
+    @IBAction func toggleStartPlay(sender: AnyObject) {
         let currentDate = NSDate();
         startDate = currentDate;
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true);
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
         
-        self.recordedTime.textColor = Theme.greenColor();
+        self.toggledTime.textColor = Theme.greenColor();
         
         UIView.animateWithDuration(0.5, animations: {
-            self.playBtn.alpha = 0;
-            self.resumeBtn.alpha = 0;
+            self.togglePlayBtn.alpha = 0;
+            self.toggleResumeBtn.alpha = 0;
             
-            self.stopBtn.alpha = 1;
-            self.pauseBtn.alpha = 1;
+            self.toggleStopBtn.alpha = 1;
+            self.togglePauseBtn.alpha = 1;
 
-            self.stopBtnCenterX.constant = 75;
+            self.toggleStopBtnCenterX.constant = 75;
 
-            self.pauseBtnCenterX.constant = -75;
+            self.togglePauseBtnCenterX.constant = -75;
         })
         
     }
     
     /*
-    ** updateCounter
+    ** updateToggledTime
     ** CallBack function for NStimer 
     ** compares users's current time with saved start time and 
     ** update counter accordingly
     */
     
-    func updateCounter() {
+    func updateToggledTime() {
         // Create date from the elapsed time
         let currentDate = NSDate();
         
@@ -136,60 +136,60 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0);
         let timeString = dateFormatter.stringFromDate(timerDate);
         self.currentTimeInterval = timeInterval;
-        self.recordedTime.text = timeString;
+        self.toggledTime.text = timeString;
         
     }
     
     /*
-    ** pause
+    ** togglePause
     ** stop the timer and save the recorded time interval
     ** update view to reflect pause situation
     */
     
-    @IBAction func pause(sender: AnyObject) {
+    @IBAction func togglePause(sender: AnyObject) {
         self.pausedDate = NSDate();
         timer.invalidate(); //stop timer
-        self.recordedTime.textColor = Theme.blackColor();
+        self.toggledTime.textColor = Theme.blackColor();
         self.pausedTimeInterval = self.currentTimeInterval;
         
         UIView.animateWithDuration(0.5, animations: {
-            self.pauseBtn.alpha = 0; //hide button
-            self.resumeBtn.alpha = 1; //show button
-            self.resumeBtnCenterX.constant = -75;
+            self.togglePauseBtn.alpha = 0; //hide button
+            self.toggleResumeBtn.alpha = 1; //show button
+            self.toggleResumeBtnCenterX.constant = -75;
             
         })
     }
     
     /*
-    ** stop 
+    ** toggleStop
     ** stoppes the timer
     ** should submit saved time in the backed ?
     ** reset the view to initial view situation
     */
     
-    @IBAction func stop(sender: AnyObject) {
+    @IBAction func toggleStop(sender: AnyObject) {
         self.pausedDate = NSDate();
 
         timer.invalidate();
-        self.recordedTime.textColor = Theme.blackColor();
-        self.recordedTime.text = "00:00:00";
+        self.toggledTime.textColor = Theme.blackColor();
+        self.toggledTime.text = "00:00:00";
         self.pausedTimeInterval = 0;
         UIView.animateWithDuration(0.5, animations: {
-            self.playBtn.alpha = 1;
-            self.pauseBtn.alpha = 0;
-            self.resumeBtn.alpha = 0;
-            self.stopBtn.alpha = 0;
+            self.togglePlayBtn.alpha = 1;
+            self.togglePauseBtn.alpha = 0;
+            self.toggleResumeBtn.alpha = 0;
+            self.toggleStopBtn.alpha = 0;
         })
         
     }
     
     /*
-    ** resume 
+    ** toggleResume 
     ** resumes the timer
     */
     
-    @IBAction func resume(sender: AnyObject) {
-        self.startPlay(sender);
+    @IBAction func toggleResume(sender: AnyObject) {
+        self.toggleStartPlay(sender);
         
     }
     
