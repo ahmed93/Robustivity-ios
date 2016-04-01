@@ -16,6 +16,14 @@
 		18D7C1551CA747F400F9AEFA /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7C1531CA747F400F9AEFA /* CreateTaskViewController.swift */; };
 		18D7C1561CA747F400F9AEFA /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D7C1541CA747F400F9AEFA /* CreateTaskViewController.xib */; };
 		18F17F8E1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F17F8D1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift */; };
+		1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */; };
+		1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */; };
+		1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */; };
+		1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */; };
+		1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */; };
+		1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */; };
+		1BC4E4691CAD921F008283D3 /* SwipableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */; };
+		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -134,15 +142,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1850ED351CAD84690096B4B3 /* CreateTaskTextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskTextViewDelegate.swift; path = Task/CreateTask/CreateTaskTextViewDelegate.swift; sourceTree = "<group>"; };
+		1850ED351CAD84690096B4B3 /* CreateTaskTextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskTextViewDelegate.swift; path = Robustivity/ViewControllers/Planner/Task/CreateTask/CreateTaskTextViewDelegate.swift; sourceTree = "<group>"; };
 		18CE2A771CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelTextTaskViewCell.swift; path = "Custom Views/Planner/Task/CreateTask/LabelTextTaskViewCell.swift"; sourceTree = "<group>"; };
 		18CE2A781CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelTextTaskViewCell.xib; path = "Custom Views/Planner/Task/CreateTask/LabelTextTaskViewCell.xib"; sourceTree = "<group>"; };
 		18CE2A7F1CAC8AA700FE4A46 /* TextViewTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewTaskViewCell.swift; path = "Custom Views/Planner/Task/CreateTask/TextViewTaskViewCell.swift"; sourceTree = "<group>"; };
 		18CE2A801CAC8AA700FE4A46 /* TextViewTaskViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewTaskViewCell.xib; path = "Custom Views/Planner/Task/CreateTask/TextViewTaskViewCell.xib"; sourceTree = "<group>"; };
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
-		18D7C1531CA747F400F9AEFA /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskViewController.swift; path = Task/CreateTask/CreateTaskViewController.swift; sourceTree = "<group>"; };
-		18D7C1541CA747F400F9AEFA /* CreateTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateTaskViewController.xib; path = Task/CreateTask/CreateTaskViewController.xib; sourceTree = "<group>"; };
-		18F17F8D1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskTextFieldDelegate.swift; path = Task/CreateTask/CreateTaskTextFieldDelegate.swift; sourceTree = "<group>"; };
+		18D7C1531CA747F400F9AEFA /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskViewController.swift; path = Robustivity/ViewControllers/Planner/Task/CreateTask/CreateTaskViewController.swift; sourceTree = "<group>"; };
+		18D7C1541CA747F400F9AEFA /* CreateTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateTaskViewController.xib; path = Robustivity/ViewControllers/Planner/Task/CreateTask/CreateTaskViewController.xib; sourceTree = "<group>"; };
+		18F17F8D1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskTextFieldDelegate.swift; path = Robustivity/ViewControllers/Planner/Task/CreateTask/CreateTaskTextFieldDelegate.swift; sourceTree = "<group>"; };
+		1B0B299A1CAD8968007DC5F3 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAssigneeViewController.swift; sourceTree = "<group>"; };
+		1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseAssigneeViewController.xib; sourceTree = "<group>"; };
+		1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableTableViewCell.swift; sourceTree = "<group>"; };
+		1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -284,6 +302,53 @@
 				18F17F8D1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift */,
 			);
 			name = CreateTask;
+			sourceTree = "<unknown>";
+		};
+		1B0B29991CAD8968007DC5F3 /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				1B0B299A1CAD8968007DC5F3 /* MGSwipeButton.h */,
+				1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */,
+				1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */,
+				1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */,
+			);
+			path = MGSwipeTableCell;
+			sourceTree = "<group>";
+		};
+		1BC4E45C1CAD91EF008283D3 /* Create Task */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4E45D1CAD91EF008283D3 /* Choose Assignee */,
+			);
+			path = "Create Task";
+			sourceTree = "<group>";
+		};
+		1BC4E45D1CAD91EF008283D3 /* Choose Assignee */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */,
+				1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */,
+			);
+			path = "Choose Assignee";
+			sourceTree = "<group>";
+		};
+		1BC4E4621CAD9202008283D3 /* UserTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */,
+				1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */,
+			);
+			name = UserTableViewCell;
+			path = "Custom Views/UserTableViewCell";
+			sourceTree = "<group>";
+		};
+		1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */,
+			);
+			name = BaseSwipableTableCell;
+			path = "Custom Views/BaseSwipableTableCell";
 			sourceTree = "<group>";
 		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
@@ -294,6 +359,7 @@
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
 				18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */,
+				1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -326,6 +392,7 @@
 		A717E5931CA1485000F237DD /* Support Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1B0B29991CAD8968007DC5F3 /* MGSwipeTableCell */,
 				A7C47FF21CA3F1DD00F4FDB7 /* SDWebImage */,
 			);
 			path = "Support Libraries";
@@ -393,6 +460,8 @@
 			isa = PBXGroup;
 			children = (
 				18CE2A6C1CAC891B00FE4A46 /* Planner */,
+				1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */,
+				1BC4E4621CAD9202008283D3 /* UserTableViewCell */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -434,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				18D7C1501CA7475F00F9AEFA /* Task */,
+				1BC4E45C1CAD91EF008283D3 /* Create Task */,
 				A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */,
 				A7A94ED41C9E9753002B3991 /* PlannerViewController.xib */,
 			);
@@ -744,7 +814,9 @@
 				18CE2A821CAC8AA700FE4A46 /* TextViewTaskViewCell.xib in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
+				1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
+				1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				18CE2A7A1CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib in Resources */,
@@ -768,7 +840,9 @@
 			files = (
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
 				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
+				1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
+				1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				1850ED361CAD84690096B4B3 /* CreateTaskTextViewDelegate.swift in Sources */,
 				18F17F8E1CADB0A9007598E4 /* CreateTaskTextFieldDelegate.swift in Sources */,
@@ -780,7 +854,9 @@
 				A7C4801D1CA3F1EC00F4FDB7 /* UIButton+WebCache.m in Sources */,
 				18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */,
 				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
+				1BC4E4691CAD921F008283D3 /* SwipableTableViewCell.swift in Sources */,
 				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
+				1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */,
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				18D7C1551CA747F400F9AEFA /* CreateTaskViewController.swift in Sources */,
@@ -800,6 +876,7 @@
 				A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */,
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
 				18CE2A791CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift in Sources */,
+				1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */,
 				A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */,
@@ -813,6 +890,7 @@
 				A7C4801A1CA3F1EC00F4FDB7 /* SDWebImageDownloaderOperation.m in Sources */,
 				A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */,
 				A7C4801B1CA3F1EC00F4FDB7 /* SDWebImageManager.m in Sources */,
+				1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */,
 				A7C480201CA3F1EC00F4FDB7 /* UIImage+WebP.m in Sources */,
 				A717E5AD1CA1567F00F237DD /* RobustivityTabBarController.swift in Sources */,
 				A7C480161CA3F1EC00F4FDB7 /* SDImageCache.m in Sources */,
