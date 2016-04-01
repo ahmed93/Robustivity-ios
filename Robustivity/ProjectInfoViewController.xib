@@ -20,7 +20,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectInfoViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
+                <outlet property="projectCashProgress" destination="T1G-Wi-G50" id="eZ2-gA-E4x"/>
+                <outlet property="projectCashValueLabel" destination="jYU-PM-ec7" id="Yrg-kl-8Rk"/>
+                <outlet property="projectCustomerSatisfactionProgress" destination="cUm-w1-nJB" id="t4n-hy-ioQ"/>
+                <outlet property="projectCustomerSatisfactionValueLabel" destination="a2Q-3X-vm6" id="3Fk-2d-ajZ"/>
                 <outlet property="projectInfoTableView" destination="LqF-fw-TVg" id="91I-JJ-Xft"/>
+                <outlet property="projectTasksDoneLabel" destination="1gp-8l-rxN" id="kbW-Xj-w1J"/>
+                <outlet property="projectTasksProgress" destination="q50-dF-5HI" id="JwK-OE-4PM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -62,13 +68,11 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="10" id="2yR-AI-6sK"/>
                     </constraints>
-                    <color key="progressTintColor" red="0.19607843137254902" green="0.77647058823529413" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="trackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </progressView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="23/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gp-8l-rxN">
-                    <rect key="frame" x="531" y="372" width="47" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSE-AA-ulk">
+                    <rect key="frame" x="23" y="425" width="39" height="21"/>
                     <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
-                    <color key="textColor" red="0.19607843137254902" green="0.77647058823529413" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.22745098039215686" green="0.58431372549019611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T1G-Wi-G50">
@@ -76,10 +80,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="10" id="chO-6P-5Mv"/>
                     </constraints>
-                    <color key="trackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </progressView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYU-PM-ec7">
-                    <rect key="frame" x="539" y="426" width="39" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYU-PM-ec7">
+                    <rect key="frame" x="539" y="425" width="39" height="21"/>
                     <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
                     <color key="textColor" red="0.22745098039215686" green="0.58431372549019611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -90,15 +93,13 @@
                     <color key="textColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.97999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-w1-nJB">
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-w1-nJB">
                     <rect key="frame" x="23" y="507" width="555" height="10"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="10" id="PRx-I9-1sB"/>
                     </constraints>
-                    <color key="progressTintColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="trackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </progressView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="98%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2Q-3X-vm6">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2Q-3X-vm6">
                     <rect key="frame" x="544" y="472" width="34" height="21"/>
                     <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
                     <color key="textColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -108,10 +109,10 @@
                     <rect key="frame" x="8" y="120" width="570" height="233"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSE-AA-ulk">
-                    <rect key="frame" x="23" y="425" width="39" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gp-8l-rxN">
+                    <rect key="frame" x="531" y="372" width="47" height="21"/>
                     <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
-                    <color key="textColor" red="0.22745098039215686" green="0.58431372549019611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.19607843137254902" green="0.77647058823529413" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

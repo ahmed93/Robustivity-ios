@@ -11,6 +11,12 @@ import UIKit
 class ProjectInfoViewController: BaseViewController {
     
     @IBOutlet weak var projectInfoTableView: UITableView!
+    @IBOutlet weak var projectTasksProgress: UIProgressView!
+    @IBOutlet weak var projectCashProgress: UIProgressView!
+    @IBOutlet weak var projectCustomerSatisfactionProgress: UIProgressView!
+    @IBOutlet weak var projectTasksDoneLabel: UILabel!
+    @IBOutlet weak var projectCashValueLabel: UILabel!
+    @IBOutlet weak var projectCustomerSatisfactionValueLabel: UILabel!
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -33,7 +39,32 @@ class ProjectInfoViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Robustivity Project";
-        // self.navigationItem.title = "Project Info";
+        
+        projectTasksProgress?.tintColor = Theme.greenColor();
+        projectTasksProgress?.trackTintColor = Theme.whiteColor();
+        projectTasksProgress?.setProgress(0.3, animated: true)
+        projectTasksProgress?.layer.borderWidth = 0.5
+        projectTasksProgress?.layer.borderColor = Theme.greenColor().CGColor
+        projectTasksDoneLabel?.text = "23/30"
+        projectTasksDoneLabel?.textColor = Theme.greenColor()
+        
+        projectCashProgress?.tintColor = Theme.blueColor();
+        projectCashProgress?.trackTintColor = Theme.whiteColor();
+        projectCashProgress?.setProgress(0.5, animated: true)
+        projectCashProgress?.layer.borderWidth = 0.5
+        projectCashProgress?.layer.borderColor = Theme.blueColor().CGColor
+        projectCashValueLabel?.text = "$100"
+        projectCashValueLabel?.textColor = Theme.blueColor()
+        
+        projectCustomerSatisfactionProgress?.tintColor = Theme.purpleColor();
+        projectCustomerSatisfactionProgress?.trackTintColor = Theme.whiteColor();
+        projectCustomerSatisfactionProgress?.setProgress(0.5, animated: true)
+        projectCustomerSatisfactionProgress?.layer.borderWidth = 0.5
+        projectCustomerSatisfactionProgress?.layer.borderColor = Theme.purpleColor().CGColor
+        projectCustomerSatisfactionValueLabel?.text = "100%"
+        projectCustomerSatisfactionValueLabel?.textColor = Theme.purpleColor()
+        
+        
         adapter = ProjectInfoAdapter(viewController: self, tableView: projectInfoTableView, registerCellWithNib:"ProjectMemberCell", withIdentifier: "projectMembers")
     }
     
