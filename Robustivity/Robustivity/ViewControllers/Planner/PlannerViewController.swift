@@ -6,12 +6,6 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
-
-enum PlannerViewControllerSegmentControlItem : String {
-    case Left
-    case Right
-}
-
 import UIKit
 
 /**
@@ -25,6 +19,10 @@ import UIKit
 class PlannerViewController: BaseViewController {
     @IBOutlet weak var tableView:UITableView!
     
+    // Constants
+    let segmentControlItems = ["Tasks", "My ToDos"]
+
+    // Variables
     var segmentedControl:UISegmentedControl!
     var adapter:PlannerAdapter!
     
@@ -38,7 +36,6 @@ class PlannerViewController: BaseViewController {
         self.title = "Planner";
         
         // Add segmented control
-        let segmentControlItems = ["Tasks", "My ToDos"]
         addSegmentedControl(segmentControlItems)
         
         // Init Adapter

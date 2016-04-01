@@ -8,7 +8,7 @@
 
 import UIKit
 /**
-    PlannerTableViewCell subclass of UITableViewCell. This cell can be used for both Tasks and My ToDos in the PlannerViewController.
+    PlannerTableViewCell subclass of SwipableTableViewCell. This cell can be used for both Tasks and My ToDos in the PlannerViewController.
     - Author:
         Ahmed Elassuty.
     - Date  :
@@ -16,7 +16,7 @@ import UIKit
     - Note  :
         - This cell is used for both Done and In Progress table sections by setting dueDate label text to an empty string. The cell handles the height automatically by adjusting the bottom constraint of the dueDate label based on the design.
  */
-class PlannerTableViewCell: UITableViewCell {
+class PlannerTableViewCell: SwipableTableViewCell {
     @IBOutlet weak var itemTitle:RBLabel!
     @IBOutlet weak var projectName:RBLabel!
     @IBOutlet weak var toggleTimer:RBLabel!
