@@ -62,97 +62,105 @@
                         <constraint firstAttribute="trailing" secondItem="oGi-Bk-bVS" secondAttribute="trailing" constant="14" id="w5x-kA-kcI"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tasks done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPx-Fe-g5i">
-                    <rect key="frame" x="23" y="372" width="87" height="21"/>
-                    <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
-                    <color key="textColor" red="0.19607843137254902" green="0.77647058823529413" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="q50-dF-5HI">
-                    <rect key="frame" x="23" y="401" width="555" height="10"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="10" id="2yR-AI-6sK"/>
-                    </constraints>
-                </progressView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gp-8l-rxN">
-                    <rect key="frame" x="531" y="372" width="47" height="21"/>
-                    <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
-                    <color key="textColor" red="0.19607843137254902" green="0.77647058823529413" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSE-AA-ulk">
-                    <rect key="frame" x="23" y="425" width="39" height="21"/>
-                    <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
-                    <color key="textColor" red="0.22745098039215686" green="0.58431372549019611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T1G-Wi-G50">
-                    <rect key="frame" x="23" y="454" width="555" height="10"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="10" id="chO-6P-5Mv"/>
-                    </constraints>
-                </progressView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYU-PM-ec7">
-                    <rect key="frame" x="539" y="425" width="39" height="21"/>
-                    <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
-                    <color key="textColor" red="0.22745098039215686" green="0.58431372549019611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Customer Satisfaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7F-6s-SK1">
-                    <rect key="frame" x="23" y="481" width="170" height="18"/>
-                    <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
-                    <color key="textColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-w1-nJB">
-                    <rect key="frame" x="23" y="507" width="555" height="10"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="10" id="PRx-I9-1sB"/>
-                    </constraints>
-                </progressView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LqF-fw-TVg">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LqF-fw-TVg">
                     <rect key="frame" x="8" y="120" width="570" height="233"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2Q-3X-vm6">
-                    <rect key="frame" x="544" y="478" width="34" height="21"/>
-                    <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
-                    <color key="textColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="523-8L-xs7">
+                    <rect key="frame" x="21" y="379" width="560" height="193"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tasks done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPx-Fe-g5i">
+                            <rect key="frame" x="0.0" y="15" width="87" height="21"/>
+                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
+                            <color key="textColor" red="0.19607843137254902" green="0.77647058823529413" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="q50-dF-5HI">
+                            <rect key="frame" x="0.0" y="44" width="555" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="2yR-AI-6sK"/>
+                            </constraints>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSE-AA-ulk">
+                            <rect key="frame" x="0.0" y="62" width="39" height="21"/>
+                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
+                            <color key="textColor" red="0.22745098039215686" green="0.58431372549019611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T1G-Wi-G50">
+                            <rect key="frame" x="0.0" y="97" width="555" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="chO-6P-5Mv"/>
+                            </constraints>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Customer Satisfaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7F-6s-SK1">
+                            <rect key="frame" x="0.0" y="124" width="170" height="18"/>
+                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
+                            <color key="textColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-w1-nJB">
+                            <rect key="frame" x="0.0" y="150" width="555" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="PRx-I9-1sB"/>
+                            </constraints>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2Q-3X-vm6">
+                            <rect key="frame" x="451" y="122" width="104" height="21"/>
+                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
+                            <color key="textColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gp-8l-rxN">
+                            <rect key="frame" x="463" y="15" width="92" height="21"/>
+                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
+                            <color key="textColor" red="0.19607843137254902" green="0.77647058823529413" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYU-PM-ec7">
+                            <rect key="frame" x="463" y="62" width="92" height="21"/>
+                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="12"/>
+                            <color key="textColor" red="0.22745098039215686" green="0.58431372549019611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="q50-dF-5HI" firstAttribute="leading" secondItem="523-8L-xs7" secondAttribute="leading" constant="14" id="0Ti-ka-aeu"/>
+                        <constraint firstItem="eSE-AA-ulk" firstAttribute="top" secondItem="q50-dF-5HI" secondAttribute="bottom" constant="14" id="3uG-JX-Fs4"/>
+                        <constraint firstItem="T1G-Wi-G50" firstAttribute="top" secondItem="jYU-PM-ec7" secondAttribute="bottom" constant="8" id="Chb-Ql-Faa"/>
+                        <constraint firstItem="qPx-Fe-g5i" firstAttribute="top" secondItem="523-8L-xs7" secondAttribute="top" constant="14" id="Fbx-Nd-LRs"/>
+                        <constraint firstItem="cUm-w1-nJB" firstAttribute="top" secondItem="W7F-6s-SK1" secondAttribute="bottom" constant="8" id="G94-df-hWZ"/>
+                        <constraint firstItem="T1G-Wi-G50" firstAttribute="trailing" secondItem="jYU-PM-ec7" secondAttribute="trailing" id="Hf3-rS-Ksv"/>
+                        <constraint firstItem="cUm-w1-nJB" firstAttribute="leading" secondItem="523-8L-xs7" secondAttribute="leading" constant="14" id="QD6-iN-Zs5"/>
+                        <constraint firstItem="T1G-Wi-G50" firstAttribute="top" secondItem="eSE-AA-ulk" secondAttribute="bottom" constant="8" id="QLA-dB-THY"/>
+                        <constraint firstItem="jYU-PM-ec7" firstAttribute="top" secondItem="eSE-AA-ulk" secondAttribute="top" id="Qrm-LJ-6Zt"/>
+                        <constraint firstItem="1gp-8l-rxN" firstAttribute="top" secondItem="qPx-Fe-g5i" secondAttribute="top" id="Se1-sS-dbD"/>
+                        <constraint firstItem="T1G-Wi-G50" firstAttribute="leading" secondItem="eSE-AA-ulk" secondAttribute="leading" id="TkH-sX-KWb"/>
+                        <constraint firstAttribute="trailing" secondItem="T1G-Wi-G50" secondAttribute="trailing" constant="14" id="UOp-c7-DgE"/>
+                        <constraint firstItem="q50-dF-5HI" firstAttribute="top" secondItem="1gp-8l-rxN" secondAttribute="bottom" constant="8" id="Vaf-m0-e09"/>
+                        <constraint firstItem="W7F-6s-SK1" firstAttribute="top" secondItem="T1G-Wi-G50" secondAttribute="bottom" constant="14" id="Ycc-rT-67A"/>
+                        <constraint firstAttribute="trailing" secondItem="cUm-w1-nJB" secondAttribute="trailing" constant="14" id="Yy8-Fx-sin"/>
+                        <constraint firstItem="T1G-Wi-G50" firstAttribute="leading" secondItem="523-8L-xs7" secondAttribute="leading" constant="14" id="dBV-hJ-Hsc"/>
+                        <constraint firstItem="cUm-w1-nJB" firstAttribute="leading" secondItem="W7F-6s-SK1" secondAttribute="leading" id="eJi-WK-L2m"/>
+                        <constraint firstItem="cUm-w1-nJB" firstAttribute="trailing" secondItem="a2Q-3X-vm6" secondAttribute="trailing" id="fIh-KN-V6Z"/>
+                        <constraint firstItem="a2Q-3X-vm6" firstAttribute="top" secondItem="W7F-6s-SK1" secondAttribute="top" id="fkY-Mh-bPN"/>
+                        <constraint firstItem="q50-dF-5HI" firstAttribute="leading" secondItem="qPx-Fe-g5i" secondAttribute="leading" id="mLU-Su-fVh"/>
+                        <constraint firstAttribute="trailing" secondItem="q50-dF-5HI" secondAttribute="trailing" constant="14" id="qQh-Vp-x72"/>
+                        <constraint firstItem="q50-dF-5HI" firstAttribute="trailing" secondItem="1gp-8l-rxN" secondAttribute="trailing" id="z3N-2b-VIz"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="cUm-w1-nJB" firstAttribute="top" secondItem="a2Q-3X-vm6" secondAttribute="bottom" constant="8" id="1Lc-YC-3JD"/>
-                <constraint firstItem="q50-dF-5HI" firstAttribute="top" secondItem="1gp-8l-rxN" secondAttribute="bottom" constant="8" id="1jI-3T-xZg"/>
-                <constraint firstAttribute="trailing" secondItem="T1G-Wi-G50" secondAttribute="trailing" constant="14" id="1kb-tk-FuP"/>
-                <constraint firstItem="cUm-w1-nJB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="4Ip-Tw-DBe"/>
-                <constraint firstItem="a2Q-3X-vm6" firstAttribute="top" secondItem="T1G-Wi-G50" secondAttribute="bottom" constant="14" id="CaI-8b-uFb"/>
-                <constraint firstItem="1gp-8l-rxN" firstAttribute="trailing" secondItem="q50-dF-5HI" secondAttribute="trailing" id="DGC-li-Nn9"/>
-                <constraint firstItem="1gp-8l-rxN" firstAttribute="top" secondItem="LqF-fw-TVg" secondAttribute="bottom" constant="8" id="DgS-ic-xVx"/>
-                <constraint firstItem="q50-dF-5HI" firstAttribute="top" secondItem="qPx-Fe-g5i" secondAttribute="bottom" constant="8" id="Jie-F0-div"/>
+                <constraint firstItem="523-8L-xs7" firstAttribute="top" secondItem="LqF-fw-TVg" secondAttribute="bottom" id="FyC-jX-Bx1"/>
                 <constraint firstItem="LqF-fw-TVg" firstAttribute="top" secondItem="jvs-SL-5jm" secondAttribute="bottom" id="LlP-He-8Am"/>
-                <constraint firstItem="T1G-Wi-G50" firstAttribute="leading" secondItem="eSE-AA-ulk" secondAttribute="leading" id="OPz-0c-oDl"/>
                 <constraint firstItem="jvs-SL-5jm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PdV-ck-Ge2"/>
-                <constraint firstItem="T1G-Wi-G50" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="Pg8-l1-nf1"/>
-                <constraint firstItem="cUm-w1-nJB" firstAttribute="top" secondItem="W7F-6s-SK1" secondAttribute="bottom" constant="8" id="Ra7-EM-ezc"/>
-                <constraint firstItem="T1G-Wi-G50" firstAttribute="top" secondItem="jYU-PM-ec7" secondAttribute="bottom" constant="8" id="SeQ-aF-va8"/>
-                <constraint firstItem="qPx-Fe-g5i" firstAttribute="top" secondItem="LqF-fw-TVg" secondAttribute="bottom" constant="8" id="TFC-uf-T1A"/>
+                <constraint firstItem="523-8L-xs7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QDe-Sf-gKg"/>
                 <constraint firstAttribute="trailing" secondItem="LqF-fw-TVg" secondAttribute="trailing" constant="-8" id="W9X-Rw-U16"/>
-                <constraint firstItem="a2Q-3X-vm6" firstAttribute="trailing" secondItem="cUm-w1-nJB" secondAttribute="trailing" id="ZAp-rI-NMz"/>
-                <constraint firstAttribute="trailing" secondItem="cUm-w1-nJB" secondAttribute="trailing" constant="14" id="bqT-Dh-9xI"/>
-                <constraint firstItem="T1G-Wi-G50" firstAttribute="top" secondItem="eSE-AA-ulk" secondAttribute="bottom" constant="8" id="bs2-GI-g1A"/>
-                <constraint firstItem="cUm-w1-nJB" firstAttribute="leading" secondItem="W7F-6s-SK1" secondAttribute="leading" id="cil-b1-s5p"/>
-                <constraint firstItem="a2Q-3X-vm6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="478" id="das-zb-4Jz"/>
-                <constraint firstItem="jYU-PM-ec7" firstAttribute="top" secondItem="q50-dF-5HI" secondAttribute="bottom" constant="14" id="ejs-MU-XFI"/>
-                <constraint firstItem="q50-dF-5HI" firstAttribute="leading" secondItem="qPx-Fe-g5i" secondAttribute="leading" id="esv-8h-Ml8"/>
-                <constraint firstAttribute="trailing" secondItem="q50-dF-5HI" secondAttribute="trailing" constant="14" id="h6L-F4-paI"/>
-                <constraint firstItem="eSE-AA-ulk" firstAttribute="top" secondItem="q50-dF-5HI" secondAttribute="bottom" constant="14" id="j7R-eu-27F"/>
-                <constraint firstItem="q50-dF-5HI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="kPc-dT-C0P"/>
-                <constraint firstItem="W7F-6s-SK1" firstAttribute="top" secondItem="T1G-Wi-G50" secondAttribute="bottom" constant="14" id="n4P-x2-KHW"/>
                 <constraint firstItem="LqF-fw-TVg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-8" id="oSr-Fx-bOQ"/>
-                <constraint firstItem="jYU-PM-ec7" firstAttribute="trailing" secondItem="T1G-Wi-G50" secondAttribute="trailing" id="sEk-l0-IFM"/>
                 <constraint firstAttribute="trailing" secondItem="jvs-SL-5jm" secondAttribute="trailing" id="toR-R9-rW0"/>
+                <constraint firstAttribute="trailing" secondItem="523-8L-xs7" secondAttribute="trailing" id="wh7-EY-fxX"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>

@@ -21,17 +21,17 @@ class ProjectInfoAdapter: BaseTableAdapter {
         if tableItems == nil {
             tableItems = ListModel()
         }
-        tableItems.addObject(["member_name": "Ahmed Abousafy", "role" : "Account Manager", "type": "1"])
-        tableItems.addObject(["member_name": "Islam Abdelraouf", "role" : "Projec Manager", "type": "1"])
-        tableItems.addObject(["member_name": "Mohamed Fathy", "role" : "Spoc", "type": "2"])
-        tableItems.addObject(["member_name": "$10000", "role" : "Billable Manager", "type": "3"])
+        tableItems.addObject(["name": "Ahmed Abousafy", "role" : "Account Manager", "type": "1"])
+        tableItems.addObject(["name": "Islam Abdelraouf", "role" : "Projec Manager", "type": "1"])
+        tableItems.addObject(["name": "Mohamed Fathy", "role" : "Spoc", "type": "2"])
+        tableItems.addObject(["name": "$10000", "role" : "Billable Manager", "type": "3"])
         tableView.reloadData()
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let projectInfoCell = cell as? ProjectMemberCell
         let currentCellData = tableItems.objectAtIndex(indexPath.row) as! NSDictionary
-        projectInfoCell?.nameLabel.text = currentCellData.objectForKey("member_name") as? String
+        projectInfoCell?.nameLabel.text = currentCellData.objectForKey("name") as? String
         projectInfoCell?.positionLabel.text = currentCellData.objectForKey("role") as? String
         switch(currentCellData.objectForKey("type") as! String) {
         case "1":
@@ -48,7 +48,7 @@ class ProjectInfoAdapter: BaseTableAdapter {
             callButton.translatesAutoresizingMaskIntoConstraints = true
             projectInfoCell!.addSubview(callButton)
         case "3":
-            projectInfoCell?.profileImageView.image = UIImage(named: "Stroke 751 + Stroke 752")
+            projectInfoCell?.profileImageView.image = UIImage(named: "Stroke 2406 + Stroke 2407 + Stroke 2408")
         default: break;
         }
     }
