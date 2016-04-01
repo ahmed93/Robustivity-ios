@@ -57,8 +57,15 @@ class PingAdapter: BaseTableAdapter {
         tableView.reloadData()
     }
     
+    var selectedCell:UITableViewCell?{
+        willSet{
+            selectedCell?.accessoryType = .None
+            newValue?.accessoryType = .Checkmark
+        }
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedCell = self.tableView.cellForRowAtIndexPath(indexPath)
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
