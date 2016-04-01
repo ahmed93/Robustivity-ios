@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="MyriadPro-Regular.otf">
@@ -18,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="flT-ZK-zIf">
-                        <rect key="frame" x="9" y="14" width="308" height="42.5"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="flT-ZK-zIf">
+                        <rect key="frame" x="8" y="14" width="312" height="42.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
@@ -29,6 +30,12 @@
                         </connections>
                     </textView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="flT-ZK-zIf" secondAttribute="bottom" constant="-8" id="MUB-pq-auO"/>
+                    <constraint firstItem="flT-ZK-zIf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="O2t-cv-7Bh"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="flT-ZK-zIf" secondAttribute="trailing" constant="-8" id="ea8-cI-WqV"/>
+                    <constraint firstItem="flT-ZK-zIf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="kuh-vW-GRf"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="textView" destination="flT-ZK-zIf" id="7tK-e9-mFw"/>
