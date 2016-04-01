@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
+		01530AFF1CAB1CA900429264 /* PlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFD1CAB1CA900429264 /* PlannerTableViewCell.swift */; };
+		01530B001CAB1CA900429264 /* PlannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */; };
+		01530B031CAC2C0500429264 /* PlannerHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */; };
+		01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */; };
 		1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */; };
 		1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */; };
 		1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */; };
@@ -133,6 +138,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01530AFA1CAB145A00429264 /* PlannerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerAdapter.swift; sourceTree = "<group>"; };
+		01530AFD1CAB1CA900429264 /* PlannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerTableViewCell.swift; sourceTree = "<group>"; };
+		01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerTableViewCell.xib; sourceTree = "<group>"; };
+		01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		1B0B299A1CAD8968007DC5F3 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -240,6 +250,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01530AFC1CAB1B6C00429264 /* PlannerTableView */ = {
+			isa = PBXGroup;
+			children = (
+				01530AFD1CAB1CA900429264 /* PlannerTableViewCell.swift */,
+				01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */,
+				01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */,
+				01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */,
+			);
+			name = PlannerTableView;
+			path = "Custom Views/PlannerTableView";
+			sourceTree = "<group>";
+		};
 		1B0B29991CAD8968007DC5F3 /* MGSwipeTableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +316,7 @@
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
+				01530AFA1CAB145A00429264 /* PlannerAdapter.swift */,
 				1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */,
 			);
 			path = Adapters;
@@ -394,6 +417,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				01530AFC1CAB1B6C00429264 /* PlannerTableView */,
 				1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */,
 				1BC4E4621CAD9202008283D3 /* UserTableViewCell */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
@@ -741,6 +765,7 @@
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
+				01530B001CAB1CA900429264 /* PlannerTableViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
@@ -749,6 +774,7 @@
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
+				01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
@@ -798,6 +824,7 @@
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
+				01530AFF1CAB1CA900429264 /* PlannerTableViewCell.swift in Sources */,
 				A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */,
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
 				1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */,
@@ -805,11 +832,13 @@
 				A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */,
 				A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */,
 				A7C480171CA3F1EC00F4FDB7 /* SDWebImageCompat.m in Sources */,
+				01530B031CAC2C0500429264 /* PlannerHeaderTableViewCell.swift in Sources */,
 				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,
 				A7C480141CA3F1EC00F4FDB7 /* MKAnnotationView+WebCache.m in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
 				A7C4801C1CA3F1EC00F4FDB7 /* SDWebImagePrefetcher.m in Sources */,
+				01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */,
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				A7C4801A1CA3F1EC00F4FDB7 /* SDWebImageDownloaderOperation.m in Sources */,
 				A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */,
