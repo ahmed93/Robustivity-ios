@@ -11,7 +11,7 @@ import UIKit
 class ProjectSegmentedControlViewController: BaseViewController {
     
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var projectViews: UISegmentedControl!
+    @IBOutlet weak var viewsSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var projectInfoViewController: ProjectInfoViewController!
     @IBOutlet weak var projectTeamViewController: ProjectTeamViewController!
@@ -30,8 +30,12 @@ class ProjectSegmentedControlViewController: BaseViewController {
         self.containerView.addSubview(projectTeamViewController.view)
         
         // load intial subview
-        projectViews.selectedSegmentIndex = 0
+        viewsSegmentedControl.selectedSegmentIndex = 0
         showSubView(0)
+        
+        // style segmented control
+        self.viewsSegmentedControl.backgroundColor = Theme.redColor();
+        self.viewsSegmentedControl.tintColor = Theme.whiteColor();
         
     }
     
