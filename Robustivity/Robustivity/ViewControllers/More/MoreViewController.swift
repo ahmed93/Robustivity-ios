@@ -16,11 +16,14 @@ class MoreViewController: BaseViewController {
     @IBOutlet weak var jobTitle: UILabel!
 
 
+    @IBOutlet weak var checkInTimeLabel: UILabel!
+    @IBOutlet weak var checkInSwitch: UISwitch!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var profileMore: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var checkedInLabel: UILabel!
     var adapter:OptionsTableAdapter!
 
     required init?(coder aDecoder: NSCoder) {
