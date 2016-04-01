@@ -8,14 +8,18 @@
 
 import UIKit
 
-class PingtoViewController: BaseViewController {
+class PingtoViewController: BaseViewController, UITextViewDelegate {
     
  @IBOutlet weak var textView:UITextView?
+    let placeholderText = "Write your message here..."
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Ping To";
         self.navigationItem.title = "Ping To"
+        self.textView!.text = placeholderText
+        self.textView!.textColor = Theme.lightGrayColor()
+        self.textView!.delegate = self
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -23,20 +27,21 @@ class PingtoViewController: BaseViewController {
     }
     
     
-    @IBAction func textViewDidBeginEditing() {
-        if self.textView!.textColor == UIColor.lightGrayColor() {
-            self.textView!.text = nil
-            self.textView!.textColor = UIColor.blackColor()
+    func textViewDidBeginEditing(textview: UITextView) {
+        if textview.textColor == Theme.lightGrayColor() {
+            textview.text = nil
+            textview.textColor = UIColor.blackColor()
         }
     }
     
-    @IBAction func textViewDidEndEditing() {
-        if self.textView!.text.isEmpty {
-            self.textView!.text = "Placeholder"
-            self.textView!.textColor = UIColor.lightGrayColor()
+    func textViewDidEndEditing(textview: UITextView) {
+        if textview.text.isEmpty {
+            textview.text = placeholderText
+            textview.textColor = UIColor.lightGrayColor()
         }
     }
-    /*
+    
+ /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

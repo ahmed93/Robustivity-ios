@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34206EA21CADC5BA00D6A4AB /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA01CADC5BA00D6A4AB /* UserTableViewCell.swift */; };
+		34206EA31CADC5BA00D6A4AB /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34206EA11CADC5BA00D6A4AB /* UserTableViewCell.xib */; };
+		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
 		34A2697C1CAC6BED00CA1E2F /* PingtoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A2697A1CAC6BED00CA1E2F /* PingtoViewController.swift */; };
 		34A2697D1CAC6BED00CA1E2F /* PingtoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A2697B1CAC6BED00CA1E2F /* PingtoViewController.xib */; };
 		34A269841CAC754900CA1E2F /* PingToUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A269821CAC754900CA1E2F /* PingToUsersViewController.swift */; };
@@ -129,6 +132,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34206EA01CADC5BA00D6A4AB /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		34206EA11CADC5BA00D6A4AB /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
 		34A2697A1CAC6BED00CA1E2F /* PingtoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingtoViewController.swift; path = Robustivity/PingtoViewController.swift; sourceTree = SOURCE_ROOT; };
 		34A2697B1CAC6BED00CA1E2F /* PingtoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PingtoViewController.xib; path = Robustivity/PingtoViewController.xib; sourceTree = SOURCE_ROOT; };
 		34A269821CAC754900CA1E2F /* PingToUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingToUsersViewController.swift; path = Robustivity/PingToUsersViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -230,6 +236,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34206E9F1CADC57700D6A4AB /* UserTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				34206EA01CADC5BA00D6A4AB /* UserTableViewCell.swift */,
+				34206EA11CADC5BA00D6A4AB /* UserTableViewCell.xib */,
+			);
+			name = UserTableViewCell;
+			sourceTree = "<group>";
+		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +252,7 @@
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
+				34206EA61CADC80E00D6A4AB /* PingAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -339,6 +355,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				34206E9F1CADC57700D6A4AB /* UserTableViewCell */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -689,6 +706,7 @@
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
+				34206EA31CADC5BA00D6A4AB /* UserTableViewCell.xib in Resources */,
 				34A269851CAC754900CA1E2F /* PingToUsersViewController.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
@@ -740,6 +758,7 @@
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */,
+				34206EA21CADC5BA00D6A4AB /* UserTableViewCell.swift in Sources */,
 				34A269841CAC754900CA1E2F /* PingToUsersViewController.swift in Sources */,
 				A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */,
 				A7C480171CA3F1EC00F4FDB7 /* SDWebImageCompat.m in Sources */,
@@ -752,6 +771,7 @@
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				A7C4801A1CA3F1EC00F4FDB7 /* SDWebImageDownloaderOperation.m in Sources */,
 				A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */,
+				34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */,
 				A7C4801B1CA3F1EC00F4FDB7 /* SDWebImageManager.m in Sources */,
 				A7C480201CA3F1EC00F4FDB7 /* UIImage+WebP.m in Sources */,
 				A717E5AD1CA1567F00F237DD /* RobustivityTabBarController.swift in Sources */,
