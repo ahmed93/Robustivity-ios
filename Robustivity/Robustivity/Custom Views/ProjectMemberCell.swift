@@ -13,6 +13,8 @@ class ProjectMemberCell: UITableViewCell {
     @IBOutlet weak var nameLabel: RBLabel!
     @IBOutlet weak var positionLabel: RBLabel!
     @IBOutlet weak var profileImageView: UIImageView!
+     @IBOutlet weak var marginUIView: UIView!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
