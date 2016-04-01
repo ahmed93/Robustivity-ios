@@ -44,15 +44,15 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
     // handle placeholder
     func textViewDidBeginEditing(textview: UITextView) {
         if textview.textColor == Theme.lightGrayColor() {
-            textview.text = nil
-            textview.textColor = UIColor.blackColor()
+            textview.text = ""
+            textview.textColor = Theme.blackColor()
         }
     }
     
     func textViewDidEndEditing(textview: UITextView) {
         if textview.text.isEmpty {
             textview.text = placeholderText
-            textview.textColor = UIColor.lightGrayColor()
+            textview.textColor = Theme.lightGrayColor()
         }
     }
 
