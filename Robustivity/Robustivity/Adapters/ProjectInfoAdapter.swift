@@ -11,7 +11,6 @@ import UIKit
 
 class ProjectInfoAdapter: BaseTableAdapter {
     
-    
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
@@ -29,17 +28,27 @@ class ProjectInfoAdapter: BaseTableAdapter {
         tableView.reloadData()
     }
     
-    
-    
-    
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let projectInfoCell = cell as? ProjectMemberCell
         let currentCellData = tableItems.objectAtIndex(indexPath.row) as! NSDictionary
-        
         projectInfoCell?.nameLabel.text = currentCellData.objectForKey("member_name") as? String
         projectInfoCell?.positionLabel.text = currentCellData.objectForKey("role") as? String
         switch(currentCellData.objectForKey("type") as! String) {
-        case "3": projectInfoCell?.profileImageView.image = UIImage(named: "Stroke 2406 + Stroke 2407 + Stroke 2408")
+        case "1":
+            projectInfoCell?.profileImageView.image = UIImage(named: "Stroke 751 + Stroke 752")
+        case "2":
+            projectInfoCell?.profileImageView.image = UIImage(named: "Stroke 751 + Stroke 752")
+            let image = UIImage(named: "call_blue")
+            let callButton = UIButton(type: UIButtonType.Custom) as UIButton
+            callButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+            callButton.setImage(image, forState: .Normal)
+            let x = (projectInfoCell?.contentView.bounds.maxX   )! - 34
+            let y = (projectInfoCell?.contentView.center.y)!
+            callButton.center = CGPoint(x:  x, y: y)
+            callButton.translatesAutoresizingMaskIntoConstraints = true
+            projectInfoCell!.addSubview(callButton)
+        case "3":
+            projectInfoCell?.profileImageView.image = UIImage(named: "Stroke 751 + Stroke 752")
         default: break;
         }
     }
@@ -47,7 +56,5 @@ class ProjectInfoAdapter: BaseTableAdapter {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return CGFloat(57)
     }
-    
-    
     
 }

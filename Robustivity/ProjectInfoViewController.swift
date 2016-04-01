@@ -17,15 +17,15 @@ class ProjectInfoViewController: BaseViewController {
     @IBOutlet weak var projectTasksDoneLabel: UILabel!
     @IBOutlet weak var projectCashValueLabel: UILabel!
     @IBOutlet weak var projectCustomerSatisfactionValueLabel: UILabel!
+    @IBOutlet weak var projectStatusLabel: UILabel!
+    @IBOutlet weak var projectDateLabel: UILabel!
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
     var adapter: ProjectInfoAdapter!
-    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -58,12 +58,16 @@ class ProjectInfoViewController: BaseViewController {
         
         projectCustomerSatisfactionProgress?.tintColor = Theme.purpleColor();
         projectCustomerSatisfactionProgress?.trackTintColor = Theme.whiteColor();
-        projectCustomerSatisfactionProgress?.setProgress(0.5, animated: true)
+        projectCustomerSatisfactionProgress?.setProgress(1.0    , animated: true)
         projectCustomerSatisfactionProgress?.layer.borderWidth = 0.5
         projectCustomerSatisfactionProgress?.layer.borderColor = Theme.purpleColor().CGColor
         projectCustomerSatisfactionValueLabel?.text = "100%"
         projectCustomerSatisfactionValueLabel?.textColor = Theme.purpleColor()
         
+        projectStatusLabel?.text = "In Progress"
+        projectStatusLabel?.textColor = Theme.greenColor()
+        projectDateLabel?.text = "Oct 15, 2015"
+        projectDateLabel?.textColor = Theme.redColor()
         
         adapter = ProjectInfoAdapter(viewController: self, tableView: projectInfoTableView, registerCellWithNib:"ProjectMemberCell", withIdentifier: "projectMembers")
     }
@@ -77,5 +81,4 @@ class ProjectInfoViewController: BaseViewController {
     // Pass the selected object to the new view controller.
     }
     */
-    
 }
