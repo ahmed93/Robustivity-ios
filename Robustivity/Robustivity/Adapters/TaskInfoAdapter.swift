@@ -6,6 +6,12 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
+/*
+Table adapter for the task info view
+extends the BaseTableAdapter via multipleNibs constructor
+returns two cell types: UserCell and DescriptionCell
+*/
+
 import UIKit
 class TaskInfoAdapter: BaseTableAdapter{
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs:NSDictionary) {
@@ -26,10 +32,11 @@ class TaskInfoAdapter: BaseTableAdapter{
 
     override func configureViaMultipleIdentifiers(indexPath:NSIndexPath)->UITableViewCell? {
        if indexPath.section == 0 || indexPath.section == 1{
-             let cell = self.tableView.dequeueReusableCellWithIdentifier("personCell", forIndexPath: indexPath)
-                as! PersonTableViewCell
-            cell.name.text = "Mohamed Lotfy"
-            cell.position.text = "CEO and co-founder"
+             let cell = self.tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath)
+                as! UserTableViewCell
+            cell.userName.text = "Mohamed Lotfy"
+            cell.userTitle.text = "CEO and co-founder"
+            cell.cellSeparator.hidden = true
         
         return cell
         

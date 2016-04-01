@@ -6,6 +6,13 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
+/*
+Table adapter for the table in the task updates view
+extends BaseTableAdapter via registerCellWithNib constructor
+returns 1 cell type: commentCell
+the table footer is edited to have a textfield and a button to submit new comments
+*/
+
 import UIKit
 class TaskUpdatesAdapter: BaseTableAdapter{
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {

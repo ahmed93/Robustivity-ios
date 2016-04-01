@@ -6,6 +6,10 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
+/*
+Custom cell for description in task info view
+*/
+
 import UIKit
 
 class DescriptionTableViewCell: UITableViewCell {

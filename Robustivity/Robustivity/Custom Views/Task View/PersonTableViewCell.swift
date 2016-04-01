@@ -6,6 +6,10 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
+/*
+Custom cell for assigned to and assigned by cells in task info view
+*/
+
 import UIKit
 
 class PersonTableViewCell: UITableViewCell {

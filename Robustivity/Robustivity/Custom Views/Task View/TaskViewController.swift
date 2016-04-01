@@ -6,6 +6,12 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
+/*
+view controller for the task view
+extends the BaseViewController
+Adds a Segmented control to the navigation bar to move between task info and task updates
+*/
+
 import UIKit
 
 class TaskViewController: BaseViewController {
@@ -18,7 +24,7 @@ class TaskViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let dic:NSDictionary = [
-            "PersonTableViewCell" : "personCell"
+            "UserTableViewCell" : "userCell"
             ,   "DescriptionTableViewCell" : "descriptionCell"]
         infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
         self.table.backgroundColor = Theme.lightGrayColor()
@@ -46,7 +52,7 @@ class TaskViewController: BaseViewController {
         case 0:
             table.separatorStyle = .SingleLine
             let dic:NSDictionary = [
-                "PersonTableViewCell" : "personCell"
+                "UserTableViewCell" : "userCell"
                 ,   "DescriptionTableViewCell" : "descriptionCell"]
             infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
             table.reloadData()

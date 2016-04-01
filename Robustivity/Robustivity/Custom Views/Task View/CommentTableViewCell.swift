@@ -6,8 +6,11 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
-import UIKit
+/*
+Custom cell for the comment in task updates view
+*/
 
+import UIKit
 class CommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var avatar: UIImageView!
