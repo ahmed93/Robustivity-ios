@@ -28,7 +28,7 @@ class ToggleFeedTableViewCell: SwipableTableViewCell {
     
     /*
     Made by Khaled Elhossiny
-    this function is for updating timer
+    this function is for updating time
     */
     
     func timerDidTick(timer:NSTimer){
