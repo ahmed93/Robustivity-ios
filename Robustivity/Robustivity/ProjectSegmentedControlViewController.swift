@@ -18,15 +18,15 @@ class ProjectSegmentedControlViewController: BaseViewController {
         self.navigationItem.title = "Robustivity Project"
     }
     
-    @IBAction func switchViews(sender: UISegmentedControl) {
+    @IBAction func switchViews(sender: AnyObject) {
         
         switch sender.selectedSegmentIndex {
         case 0:
-            // show info
+            print("info")
         case 1:
-            // show updates
+            print("updates")
         case 2:
-            // show members
+            print("members")
         default:
             break;
         }
