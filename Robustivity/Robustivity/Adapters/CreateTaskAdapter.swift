@@ -9,7 +9,7 @@
 import UIKit
 
 class CreateTaskAdapter : BaseTableAdapter {
-    
+
      override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
         
@@ -19,7 +19,7 @@ class CreateTaskAdapter : BaseTableAdapter {
         
         tableItems.addObject(["textView":"Task Name (required)", "height":57]);
         tableItems.addObject(["label":"Due date" , "textView":"DD.MM.YYYY", "height" : 57]);
-        tableItems.addObject(["textView":"Description (required)", "height":325]);
+        tableItems.addObject(["textView":"Description (required)", "height":355]);
         
         tableView.reloadData();
     }
@@ -62,7 +62,7 @@ class CreateTaskAdapter : BaseTableAdapter {
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return CGFloat(5)
+        return CGFloat(5 * (tableView.frame.width / CGFloat(320.0)));
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -81,7 +81,6 @@ class CreateTaskAdapter : BaseTableAdapter {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return CGFloat((tableItems.objectAtIndex(indexPath.section) as! NSDictionary).objectForKey("height") as! Int);
-        
+        return CGFloat((tableItems.objectAtIndex(indexPath.section) as! NSDictionary).objectForKey("height") as! CGFloat * (tableView.frame.width / CGFloat(320.0)));
     }
 }

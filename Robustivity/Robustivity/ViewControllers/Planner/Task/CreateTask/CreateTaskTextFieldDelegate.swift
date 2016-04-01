@@ -19,9 +19,11 @@ class CreateTaskTextFieldDelegate : BaseViewController, UITextFieldDelegate{
         }
         
         let letters = NSCharacterSet.letterCharacterSet();
-        let number = string.rangeOfCharacterFromSet(letters)?.count;
+        let specialC = NSCharacterSet.alphanumericCharacterSet().invertedSet;
+        let numberL = string.rangeOfCharacterFromSet(letters)?.count;
+        let number = string.rangeOfCharacterFromSet(specialC)?.count;
         
-        if(number >= 1){
+        if(number >= 1 || numberL >= 1){
             return false;
         }
         
