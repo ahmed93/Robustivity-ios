@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckInFeedTableViewCell: UITableViewCell {
+class CheckInFeedTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var checkInTitleLabel: RBLabel!

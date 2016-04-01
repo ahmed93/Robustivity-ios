@@ -21,6 +21,14 @@
 		1BF7AD831CAB4BC30018E2B3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7AD821CAB4BC30018E2B3 /* UserModel.swift */; };
 		1BF7AD861CAB52130018E2B3 /* CheckInFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7AD841CAB52130018E2B3 /* CheckInFeedTableViewCell.swift */; };
 		1BF7AD871CAB52130018E2B3 /* CheckInFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF7AD851CAB52130018E2B3 /* CheckInFeedTableViewCell.xib */; };
+		1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */; };
+		1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */; };
+		1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */; };
+		1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */; };
+		1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */; };
+		1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */; };
+		1BC4E4691CAD921F008283D3 /* SwipableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */; };
+		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -153,6 +161,16 @@
 		1BF7AD821CAB4BC30018E2B3 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1BF7AD841CAB52130018E2B3 /* CheckInFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedTableViewCell.swift; sourceTree = "<group>"; };
 		1BF7AD851CAB52130018E2B3 /* CheckInFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1B0B299A1CAD8968007DC5F3 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAssigneeViewController.swift; sourceTree = "<group>"; };
+		1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseAssigneeViewController.xib; sourceTree = "<group>"; };
+		1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableTableViewCell.swift; sourceTree = "<group>"; };
+		1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -276,6 +294,53 @@
 			name = Feed;
 			sourceTree = "<group>";
 		};
+		1B0B29991CAD8968007DC5F3 /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				1B0B299A1CAD8968007DC5F3 /* MGSwipeButton.h */,
+				1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */,
+				1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */,
+				1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */,
+			);
+			path = MGSwipeTableCell;
+			sourceTree = "<group>";
+		};
+		1BC4E45C1CAD91EF008283D3 /* Create Task */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4E45D1CAD91EF008283D3 /* Choose Assignee */,
+			);
+			path = "Create Task";
+			sourceTree = "<group>";
+		};
+		1BC4E45D1CAD91EF008283D3 /* Choose Assignee */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */,
+				1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */,
+			);
+			path = "Choose Assignee";
+			sourceTree = "<group>";
+		};
+		1BC4E4621CAD9202008283D3 /* UserTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */,
+				1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */,
+			);
+			name = UserTableViewCell;
+			path = "Custom Views/UserTableViewCell";
+			sourceTree = "<group>";
+		};
+		1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */,
+			);
+			name = BaseSwipableTableCell;
+			path = "Custom Views/BaseSwipableTableCell";
+			sourceTree = "<group>";
+		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +348,7 @@
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
+				1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -316,6 +382,7 @@
 		A717E5931CA1485000F237DD /* Support Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1B0B29991CAD8968007DC5F3 /* MGSwipeTableCell */,
 				A7C47FF21CA3F1DD00F4FDB7 /* SDWebImage */,
 			);
 			path = "Support Libraries";
@@ -383,6 +450,8 @@
 			isa = PBXGroup;
 			children = (
 				1BF7AD721CAB03A70018E2B3 /* Feed */,
+				1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */,
+				1BC4E4621CAD9202008283D3 /* UserTableViewCell */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -423,6 +492,7 @@
 		A7A94EC11C9E9321002B3991 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				1BC4E45C1CAD91EF008283D3 /* Create Task */,
 				A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */,
 				A7A94ED41C9E9753002B3991 /* PlannerViewController.xib */,
 			);
@@ -735,7 +805,9 @@
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
 				1B8395001CAB682D000811E3 /* NotificationFeedTableViewCell.xib in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
+				1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
+				1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
@@ -761,7 +833,9 @@
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
 				1BF7AD831CAB4BC30018E2B3 /* UserModel.swift in Sources */,
 				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
+				1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
+				1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
@@ -770,8 +844,10 @@
 				A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */,
 				A7C4801D1CA3F1EC00F4FDB7 /* UIButton+WebCache.m in Sources */,
 				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
+				1BC4E4691CAD921F008283D3 /* SwipableTableViewCell.swift in Sources */,
 				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
 				1BF7AD7F1CAB3DFE0018E2B3 /* BroadcastFeedModel.swift in Sources */,
+				1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */,
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
@@ -792,6 +868,7 @@
 				A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */,
 				1BF7AD7C1CAB3D050018E2B3 /* FeedModel.swift in Sources */,
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
+				1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */,
 				A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */,
@@ -808,6 +885,7 @@
 				A7C4801A1CA3F1EC00F4FDB7 /* SDWebImageDownloaderOperation.m in Sources */,
 				A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */,
 				A7C4801B1CA3F1EC00F4FDB7 /* SDWebImageManager.m in Sources */,
+				1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */,
 				A7C480201CA3F1EC00F4FDB7 /* UIImage+WebP.m in Sources */,
 				1BCB62C11CAD81E70045062E /* Circular+UIImageView.swift in Sources */,
 				A717E5AD1CA1567F00F237DD /* RobustivityTabBarController.swift in Sources */,

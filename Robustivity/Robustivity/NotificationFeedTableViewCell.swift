@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationFeedTableViewCell: UITableViewCell {
+class NotificationFeedTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var notificationTextLabel: RBLabel!
     @IBOutlet weak var timeStampsLabel: RBLabel!

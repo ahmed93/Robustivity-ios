@@ -8,16 +8,15 @@
 
 import UIKit
 
-class ToggleFeedTableViewCell: UITableViewCell {
+class ToggleFeedTableViewCell: SwipableTableViewCell {
 
     @IBOutlet weak var timeLabel: RBLabel!
     var hours:Int = 0
     var minutes:Int = 0
     var seconds:Int = 0
+    var timer:NSTimer = NSTimer()
     override func awakeFromNib() {
         super.awakeFromNib()
-        let timer = NSTimer(timeInterval: 1.0, target: self, selector: "timerDidTick:", userInfo: nil, repeats: true)
-        NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         // Initialization code
     }
 
@@ -27,6 +26,10 @@ class ToggleFeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    /*
+    Made by Khaled Elhossiny
+    this function is for updating timer
+    */
     
     func timerDidTick(timer:NSTimer){
         seconds++
@@ -39,9 +42,38 @@ class ToggleFeedTableViewCell: UITableViewCell {
             minutes = 0
             hours++
         }
-        let time = String(format: "%02d:%02d:%02d", hours,minutes,seconds)
-        timeLabel.text = time
+        updateTimerLabel()
         
+    }
+    
+    func updateTimerLabel(){
+        timeLabel.text = String(format: "%02d:%02d:%02d", hours,minutes,seconds)
+    }
+    
+    func setTimer(){
+        timer = NSTimer(timeInterval: 1.0, target: self, selector: "timerDidTick:", userInfo: nil, repeats: true)
+        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+    }
+    
+    override func playButtonAction() {
+        setTimer()
+    }
+    override func pauseButtonAction() {
+        timer.invalidate()
+        updateTimerLabel()
+        
+    }
+    override func stopButtonAction() {
+        timer.invalidate()
+        resetTime()
+        updateTimerLabel()
+        
+    }
+    
+    func resetTime(){
+        seconds = 0
+        minutes = 0
+        hours = 0
     }
     
 }
