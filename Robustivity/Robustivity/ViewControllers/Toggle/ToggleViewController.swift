@@ -35,14 +35,19 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         NSBundle.mainBundle().loadNibNamed("ToggleViewController", owner: self, options: nil)
     }
     
+    /*
+    ** viewDidLoad
+    ** responsable for setting the up the view
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
+
+        self.navigationController?.navigationBar.translucent = false; //added to calculate the distance from the top of the page after the nav bar
         
-        self.edgesForExtendedLayout = .None; //added to calculate the distance from tthe top of the page after the nav bar
-        
+        /* Add circular shape to buttons*/
         self.playBtn.layer.cornerRadius = 0.5 * self.playBtn.bounds.size.width;
         self.playBtn.backgroundColor = Theme.greenColor();
         self.pauseBtn.layer.cornerRadius = 0.5 * self.pauseBtn.bounds.size.width;
@@ -52,28 +57,42 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.resumeBtn.layer.cornerRadius = 0.5 * self.resumeBtn.bounds.size.width;
         self.resumeBtn.backgroundColor = Theme.greenColor();
 
-        Theme.style_5(self.recordedTime);
+        Theme.style_5(self.recordedTime); //missing correct font and is not specified in properties
 
         self.recordedTime.text = "00:00:00";
         self.recordedTime.textColor = Theme.blackColor();
         
+        /* Add indentation between text field and inout data*/
+        let todoTitlePaddingView = UIView(frame: CGRectMake(0,0,14,20));
+        self.todoTitleField.leftView = todoTitlePaddingView;
+        self.todoTitleField.leftViewMode = UITextFieldViewMode.Always;
+        
+        let todoProjectPaddingView = UIView(frame: CGRectMake(0,0,14,20));
+        self.todoProjectTextField.leftView = todoProjectPaddingView;
+        self.todoProjectTextField.leftViewMode = UITextFieldViewMode.Always;
+
         self.todoTitleField.backgroundColor = Theme.lightGrayColor();
-        self.todoTitleField.placeholder = "ToDo title";
+        self.todoTitleField.attributedPlaceholder = NSAttributedString(string:"ToDo title",
+            attributes:[NSForegroundColorAttributeName: Theme.grayColor()]); //Add Placeholder with custom color
         
         self.todoProjectTextField.backgroundColor = Theme.lightGrayColor();
-        self.todoProjectTextField.placeholder = "Project name";
+        self.todoProjectTextField.attributedPlaceholder = NSAttributedString(string:"Project name", attributes:[NSForegroundColorAttributeName: Theme.grayColor()]); //Add placeholder with custom color
 
-
-        let projectPicker = UIPickerView();
+        let projectPicker = UIPickerView(); //Add picker view to be used in project names
         projectPicker.dataSource = self;
         projectPicker.delegate = self;
         
-        self.todoProjectTextField.inputView = projectPicker;
+        self.todoProjectTextField.inputView = projectPicker; //Assign picker to textfield
         self.stopBtn.alpha = 0;
         self.pauseBtn.alpha = 0;
         self.resumeBtn.alpha = 0;
 
     }
+    
+    /*
+    ** startPlay 
+    ** The method is responsible for starting the timer
+    */
     
     @IBAction func startPlay(sender: AnyObject) {
         let currentDate = NSDate();
@@ -96,6 +115,13 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
     }
     
+    /*
+    ** updateCounter
+    ** CallBack function for NStimer 
+    ** compares users's current time with saved start time and 
+    ** update counter accordingly
+    */
+    
     func updateCounter() {
         // Create date from the elapsed time
         let currentDate = NSDate();
@@ -114,19 +140,32 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
     }
     
+    /*
+    ** pause
+    ** stop the timer and save the recorded time interval
+    ** update view to reflect pause situation
+    */
+    
     @IBAction func pause(sender: AnyObject) {
         self.pausedDate = NSDate();
-        timer.invalidate();
+        timer.invalidate(); //stop timer
         self.recordedTime.textColor = Theme.blackColor();
         self.pausedTimeInterval = self.currentTimeInterval;
         
         UIView.animateWithDuration(0.5, animations: {
-            self.pauseBtn.alpha = 0;
-            self.resumeBtn.alpha = 1;
+            self.pauseBtn.alpha = 0; //hide button
+            self.resumeBtn.alpha = 1; //show button
             self.resumeBtnCenterX.constant = -75;
             
         })
     }
+    
+    /*
+    ** stop 
+    ** stoppes the timer
+    ** should submit saved time in the backed ?
+    ** reset the view to initial view situation
+    */
     
     @IBAction func stop(sender: AnyObject) {
         self.pausedDate = NSDate();
@@ -143,6 +182,11 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         })
         
     }
+    
+    /*
+    ** resume 
+    ** resumes the timer
+    */
     
     @IBAction func resume(sender: AnyObject) {
         self.startPlay(sender);
