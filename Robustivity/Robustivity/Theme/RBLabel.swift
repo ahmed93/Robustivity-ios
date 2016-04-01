@@ -73,7 +73,7 @@ import UIKit
         case 3070:              // 494949, 32
             Theme.style_19(self)
         case 3070:              // 3A95FF, 24
-            Theme.style_19(self)
+            Theme.style_20(self)
         default:
             break;
         }
