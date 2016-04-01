@@ -9,9 +9,11 @@
 import UIKit
 
 class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    @IBOutlet weak var resumeBtnCenterX: NSLayoutConstraint!
+    @IBOutlet weak var stopBtnCenterX: NSLayoutConstraint!
     @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var pauseBtnCenterX: NSLayoutConstraint!
     @IBOutlet weak var pauseBtn: UIButton!
-    @IBOutlet weak var buttonsView: UIView!
     @IBOutlet weak var resumeBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var recordedTime: UILabel!
@@ -25,8 +27,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     var pausedDate = NSDate();
     var currentTimeInterval = NSTimeInterval();
     var pausedTimeInterval = NSTimeInterval();
-    
-    var todoProjectPickerDataSource = ["Project name", "Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
+
     var todoProjectsName = ["Project name", "Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
 
     required init?(coder aDecoder: NSCoder) {
@@ -41,7 +42,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.navigationItem.title = "Toggle";
         
         self.edgesForExtendedLayout = .None; //added to calculate the distance from tthe top of the page after the nav bar
-
         
         self.playBtn.layer.cornerRadius = 0.5 * self.playBtn.bounds.size.width;
         self.playBtn.backgroundColor = Theme.greenColor();
@@ -52,13 +52,13 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.resumeBtn.layer.cornerRadius = 0.5 * self.resumeBtn.bounds.size.width;
         self.resumeBtn.backgroundColor = Theme.greenColor();
 
-        self.buttonsView.hidden = true;
         Theme.style_5(self.recordedTime);
 
         self.recordedTime.text = "00:00:00";
+        self.recordedTime.textColor = Theme.blackColor();
         
         self.todoTitleField.backgroundColor = Theme.lightGrayColor();
-        self.todoTitleField.placeholder = "ToDo title"
+        self.todoTitleField.placeholder = "ToDo title";
         
         self.todoProjectTextField.backgroundColor = Theme.lightGrayColor();
         self.todoProjectTextField.placeholder = "Project name";
@@ -70,6 +70,8 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
         self.todoProjectTextField.inputView = projectPicker;
         self.stopBtn.alpha = 0;
+        self.pauseBtn.alpha = 0;
+        self.resumeBtn.alpha = 0;
 
     }
     
@@ -80,17 +82,17 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
         self.recordedTime.textColor = Theme.greenColor();
         
-//        self.playBtn.hidden = true;
-//        self.stopBtn.hidden = false
-        self.playBtn.hidden = true;
+        UIView.animateWithDuration(0.5, animations: {
+            self.playBtn.alpha = 0;
+            self.resumeBtn.alpha = 0;
+            
+            self.stopBtn.alpha = 1;
+            self.pauseBtn.alpha = 1;
 
-        UIView.animateWithDuration(4, animations: {
-            self.stopBtn.alpha = 1
+            self.stopBtnCenterX.constant = 75;
+
+            self.pauseBtnCenterX.constant = -75;
         })
-//        self.stopBtn.alpha = 1
-        self.buttonsView.hidden = false;
-        self.pauseBtn.hidden = false;
-        self.resumeBtn.hidden = true;
         
     }
     
@@ -117,8 +119,13 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         timer.invalidate();
         self.recordedTime.textColor = Theme.blackColor();
         self.pausedTimeInterval = self.currentTimeInterval;
-        self.pauseBtn.hidden = true;
-        self.resumeBtn.hidden = false;
+        
+        UIView.animateWithDuration(0.5, animations: {
+            self.pauseBtn.alpha = 0;
+            self.resumeBtn.alpha = 1;
+            self.resumeBtnCenterX.constant = -75;
+            
+        })
     }
     
     @IBAction func stop(sender: AnyObject) {
@@ -128,15 +135,17 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.recordedTime.textColor = Theme.blackColor();
         self.recordedTime.text = "00:00:00";
         self.pausedTimeInterval = 0;
-        self.buttonsView.hidden = true;
-        self.playBtn.hidden = false;
+        UIView.animateWithDuration(0.5, animations: {
+            self.playBtn.alpha = 1;
+            self.pauseBtn.alpha = 0;
+            self.resumeBtn.alpha = 0;
+            self.stopBtn.alpha = 0;
+        })
+        
     }
     
     @IBAction func resume(sender: AnyObject) {
-        self.resumeBtn.hidden = true;
-        self.pauseBtn.hidden = false;
         self.startPlay(sender);
-        
         
     }
     
