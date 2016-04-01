@@ -18,6 +18,12 @@
 		229A2D5C1CAD5417004F8980 /* ProjectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */; };
 		229A2D5D1CAD5417004F8980 /* ProjectTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */; };
 		229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */; };
+		011083381CAC173500F616DD /* ProjectUpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */; };
+		011083391CAC173500F616DD /* ProjectUpdateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */; };
+		011083481CAC1F1500F616DD /* ProjectUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011083461CAC1F1500F616DD /* ProjectUpdateViewController.swift */; };
+		011083491CAC1F1500F616DD /* ProjectUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011083471CAC1F1500F616DD /* ProjectUpdateViewController.xib */; };
+		0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */; };
+		0110834F1CAC215A00F616DD /* ProjectUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -147,6 +153,12 @@
 		229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTeamViewController.swift; sourceTree = SOURCE_ROOT; };
 		229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectTeamViewController.xib; sourceTree = SOURCE_ROOT; };
 		229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectMembersAdapter.swift; path = ../API/ProjectMembersAdapter.swift; sourceTree = "<group>"; };
+		011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectUpdateTableViewCell.swift; path = "Custom Views/ProjectUpdate/ProjectUpdateTableViewCell.swift"; sourceTree = "<group>"; };
+		011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectUpdateTableViewCell.xib; path = "Custom Views/ProjectUpdate/ProjectUpdateTableViewCell.xib"; sourceTree = "<group>"; };
+		011083461CAC1F1500F616DD /* ProjectUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectUpdateViewController.swift; path = Robustivity/ViewControllers/More/ProjectUpdate/ProjectUpdateViewController.swift; sourceTree = SOURCE_ROOT; };
+		011083471CAC1F1500F616DD /* ProjectUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectUpdateViewController.xib; path = Robustivity/ViewControllers/More/ProjectUpdate/ProjectUpdateViewController.xib; sourceTree = SOURCE_ROOT; };
+		0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateAdapter.swift; sourceTree = "<group>"; };
+		0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateModel.swift; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -268,6 +280,25 @@
 				229A2D571CAD5329004F8980 /* ProjectMemberCell.xib */,
 			);
 			name = ProjectMemberTableViewCell;
+      sourceTree = "<group>";
+    };
+
+		011083351CAC171200F616DD /* ProjectUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */,
+				011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */,
+			);
+			name = ProjectUpdate;
+			sourceTree = "<group>";
+		};
+		011083451CAC1EF800F616DD /* ProjectUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				011083461CAC1F1500F616DD /* ProjectUpdateViewController.swift */,
+				011083471CAC1F1500F616DD /* ProjectUpdateViewController.xib */,
+			);
+			name = ProjectUpdate;
 			sourceTree = "<group>";
 		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
@@ -279,6 +310,7 @@
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
 				185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */,
+				0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -346,6 +378,7 @@
 				185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */,
 				229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */,
 				229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */,
+				011083451CAC1EF800F616DD /* ProjectUpdate */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -384,6 +417,7 @@
 				229A2D511CAD5287004F8980 /* ProjectMemberTableViewCell */,
 				185FE3141CAC60ED00B3725E /* UIRoundView */,
 				185FE3131CAC60D500B3725E /* CustomProjectsListTableViewCell */,
+				011083351CAC171200F616DD /* ProjectUpdate */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -491,6 +525,7 @@
 			children = (
 				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
+				0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -727,8 +762,10 @@
 				A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
+				011083491CAC1F1500F616DD /* ProjectUpdateViewController.xib in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
 				185FE31A1CAC615000B3725E /* CustomProjectsListTableViewCell.xib in Resources */,
+				011083391CAC173500F616DD /* ProjectUpdateTableViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
 				229A2D5D1CAD5417004F8980 /* ProjectTeamViewController.xib in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
@@ -769,7 +806,9 @@
 				A7C4801D1CA3F1EC00F4FDB7 /* UIButton+WebCache.m in Sources */,
 				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
 				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
+				011083381CAC173500F616DD /* ProjectUpdateTableViewCell.swift in Sources */,
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
+				0110834F1CAC215A00F616DD /* ProjectUpdateModel.swift in Sources */,
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
@@ -781,6 +820,7 @@
 				A7C480151CA3F1EC00F4FDB7 /* NSData+ImageContentType.m in Sources */,
 				A7C480191CA3F1EC00F4FDB7 /* SDWebImageDownloader.m in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
+				011083481CAC1F1500F616DD /* ProjectUpdateViewController.swift in Sources */,
 				A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
@@ -796,6 +836,7 @@
 				229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */,
 				185FE3191CAC615000B3725E /* CustomProjectsListTableViewCell.swift in Sources */,
 				229A2D5C1CAD5417004F8980 /* ProjectTeamViewController.swift in Sources */,
+				0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
 				A7C4801C1CA3F1EC00F4FDB7 /* SDWebImagePrefetcher.m in Sources */,
