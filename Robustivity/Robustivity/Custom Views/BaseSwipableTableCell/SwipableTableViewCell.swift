@@ -20,8 +20,7 @@ class SwipableTableViewCell: MGSwipeTableCell {
     let stopImage : UIImage = UIImage(named:"stop.png")!
 
     var playMode : Bool
-    var playButton : MGSwipeButton
-    var pauseButton : MGSwipeButton
+    var playPauseButton : MGSwipeButton
     var stopButton : MGSwipeButton
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,29 +30,18 @@ class SwipableTableViewCell: MGSwipeTableCell {
         stopButton = MGSwipeButton(title: "", icon: stopImage, backgroundColor: Theme.redColor(),padding: 30)
         
         
-        playButton = MGSwipeButton(title: "", icon: playImage, backgroundColor: Theme.greenColor(),padding: 30)
+        playPauseButton = MGSwipeButton(title: "", icon: playImage, backgroundColor: Theme.greenColor(),padding: 30)
         
-        pauseButton = MGSwipeButton(title: "", icon: pauseImage, backgroundColor: Theme.grayColor(),padding: 30)
-
-       // pauseButton.hidden = true
         super.init(coder: aDecoder)
         self.setButtonsActions()
         self.leftButtons = [stopButton]
-        self.rightButtons = [playButton]
+        self.rightButtons = [playPauseButton]
     }
     
     
     func setButtonsActions() {
         
-        pauseButton.callback = {
-            (sender: MGSwipeTableCell!) -> Bool in
-            // do Stuff
-            self.playMode = true
-            self.pauseButtonConfigure()
-            self.refreshButtons(false)
-            return true
-        }
-        playButton.callback = {
+            playPauseButton.callback = {
             (sender: MGSwipeTableCell!) -> Bool in
             // do Stuff
             self.playMode = false
@@ -73,29 +61,61 @@ class SwipableTableViewCell: MGSwipeTableCell {
     
     func playButtonConfigure() {
         playButtonAction()
-        self.rightButtons = [self.pauseButton]
-        self.leftButtons = [self.stopButton]
+        playPauseButton = MGSwipeButton(title: "", icon: pauseImage, backgroundColor: Theme.grayColor(),padding: 30)
+       
+        playPauseButton.callback = {
+            (sender: MGSwipeTableCell!) -> Bool in
+            // do Stuff
+            self.playMode = false
+            self.pauseButtonConfigure()
+            return true
+        }
+
+        self.rightButtons = [self.playPauseButton]
+        self.refreshButtons(false)
     }
     func pauseButtonConfigure() {
         pauseButtonAction()
-        self.rightButtons = [self.playButton]
-        self.leftButtons = [self.stopButton]
+
+        
+        playPauseButton = MGSwipeButton(title: "", icon: playImage, backgroundColor: Theme.greenColor(),padding: 30)
+        playPauseButton.callback = {
+            (sender: MGSwipeTableCell!) -> Bool in
+            // do Stuff
+            self.playMode = false
+            self.playButtonConfigure()
+            return true
+        }
+
+        self.rightButtons = [self.playPauseButton]
+        self.refreshButtons(false)
     }
     func stopButtonConfigure() {
         stopButtonAction()
-        self.rightButtons = [self.playButton]
-        self.leftButtons = [self.stopButton]
+        
+        playPauseButton = MGSwipeButton(title: "", icon: playImage, backgroundColor: Theme.greenColor(),padding: 30)
+        playPauseButton.callback = {
+            (sender: MGSwipeTableCell!) -> Bool in
+            // do Stuff
+            self.playMode = false
+            self.playButtonConfigure()
+            return true
+        }
+        
+        self.rightButtons = [self.playPauseButton]
+        self.refreshButtons(false)
+
     }
     
     // Empty implementation to be overriden
     func playButtonAction() {
-        assertionFailure("\n======> You didn't Implement playButton func\n")
+        NSLog("Play")
     }
     func pauseButtonAction() {
-        assertionFailure("\n======> You didn't Implement pauseButton func\n")
+        NSLog("Pause")
     }
     func stopButtonAction() {
-        assertionFailure("\n======> You didn't Implement playButton func\n")
+        NSLog("Stop")
     }
     
     
