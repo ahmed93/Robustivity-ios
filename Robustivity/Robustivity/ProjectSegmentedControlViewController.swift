@@ -9,32 +9,50 @@
 import UIKit
 
 class ProjectSegmentedControlViewController: BaseViewController {
-
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var projectViews: UISegmentedControl!
+    
+    @IBOutlet weak var projectInfoViewController: ProjectInfoViewController!
+    @IBOutlet weak var projectTeamViewController: ProjectTeamViewController!
+    @IBOutlet weak var projectUpdateViewController: ProjectUpdateViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
         self.title = "Robustivity Project"
         self.navigationItem.title = "Robustivity Project"
+        
+        // load subviews
+        self.containerView.addSubview(projectInfoViewController.view)
+        self.containerView.addSubview(projectUpdateViewController.view)
+        self.containerView.addSubview(projectTeamViewController.view)
+        
+        // load intial subview
+        projectViews.selectedSegmentIndex = 0
+        showSubView(0)
+        
     }
     
-    @IBAction func switchViews(sender: AnyObject) {
-        
-        switch sender.selectedSegmentIndex {
-        case 0:
-            print("info")
-        case 1:
-            print("updates")
-        case 2:
-            print("members")
-        default:
-            break;
-        }
+    @IBAction func switchViews(sender: UISegmentedControl) {
+        showSubView(sender.selectedSegmentIndex)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // Show subview based on the selected segmentedControl
+    func showSubView(viewIndex: Int)
+    {
+        self.containerView.subviews[viewIndex].hidden = false
+        for var i = 0; i < 3; i++ {
+            if (i != viewIndex) {
+                self.containerView.subviews[i].hidden = true
+            }
+        }
     }
     
 
