@@ -1,8 +1,8 @@
 //
-//  ProjectsListAdapter.swift
+//  OptionsTableAdapter.swift
 //  Robustivity
 //
-//  Created by Mariam Mohamed Fawzy on 3/30/16.
+//  Created by Salma Amr on 1/4/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
@@ -66,44 +66,9 @@ class OptionsTableAdapter: BaseTableAdapter {
         return nil;
         
 }
-    
-//    override func configure(MoreCell: UITableViewCell, indexPath: NSIndexPath) {
-//        let optionsCell = MoreCell as? MoreTableViewCell
-//        Theme.style_13((optionsCell?.label)! );
-//
-//        switch(indexPath.section){
-//        case 0:
-//            switch(indexPath.row)
-//            {
-//               case 0: optionsCell?.label.text = "My Attendance Log";
-//               optionsCell?.imgView.image? = UIImage(named:"Group4")!
-//               case 1: optionsCell?.label.text = "My Projects"
-//               optionsCell?.imgView.image? = UIImage(named:"Group 7")!
-//                default:()
-//            }
-//        case 1: optionsCell?.label.text = "Directory";
-//            optionsCell?.imgView.image? = UIImage(named:"Stroke 749 + Stroke 750")!
-//        case 2:
-//            switch(indexPath.row){
-//            case 0: optionsCell?.label.text = "Send Excuse";
-//                 optionsCell?.imgView.image? = UIImage(named:"Group1")!
-//            case 1: optionsCell?.label.text = "Ping"
-//                 optionsCell?.imgView.image? = UIImage(named:"Group3")!
-//            case 2: optionsCell?.label.text = "Reserve Meeting Room"
-//                 optionsCell?.imgView.image? = UIImage(named:"Stroke 998 + Stroke 999")!
-//            default:()
-//
-//            }
-//        case 3: optionsCell?.label.text = "Robustivity tools"
-//             optionsCell?.imgView.image? = UIImage(named:"Group2")!
-//        default:()
-//            }
-//    }
 
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var x = 0;
-        
         switch(section){
         case 0: x = 2
         case 2: x = 3

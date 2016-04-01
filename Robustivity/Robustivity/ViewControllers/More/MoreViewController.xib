@@ -47,13 +47,13 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-No-D0K">
                             <rect key="frame" x="295" y="80" width="51" height="31"/>
                         </switch>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Checked in at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFG-dG-e80" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Checked in at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFG-dG-e80" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
                             <rect key="frame" x="123" y="75" width="105" height="31"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="09:00 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yR-iB-jnD" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="09:00 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yR-iB-jnD" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
                             <rect key="frame" x="124" y="107" width="74" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,9 +65,11 @@
                         <constraint firstAttribute="trailing" secondItem="0SV-No-D0K" secondAttribute="trailing" constant="61" id="0ox-VB-feV"/>
                         <constraint firstItem="Yb7-1I-j0N" firstAttribute="top" secondItem="rcq-qy-nHh" secondAttribute="top" constant="17" id="Dj6-U1-pJV"/>
                         <constraint firstItem="Yb7-1I-j0N" firstAttribute="leading" secondItem="rcq-qy-nHh" secondAttribute="leading" constant="14" id="NJR-KA-F3v"/>
+                        <constraint firstItem="vFG-dG-e80" firstAttribute="leading" secondItem="Yb7-1I-j0N" secondAttribute="trailing" constant="23" id="NuU-Go-23M"/>
                         <constraint firstItem="MZm-Ii-r0h" firstAttribute="leading" secondItem="Yb7-1I-j0N" secondAttribute="trailing" constant="20" id="Qcq-u4-GNA"/>
                         <constraint firstItem="gEB-6g-sm5" firstAttribute="leading" secondItem="Yb7-1I-j0N" secondAttribute="trailing" constant="20" id="VRj-mV-WOp"/>
                         <constraint firstItem="gEB-6g-sm5" firstAttribute="top" secondItem="rcq-qy-nHh" secondAttribute="top" constant="17" id="aaf-0Z-cTf"/>
+                        <constraint firstItem="1yR-iB-jnD" firstAttribute="leading" secondItem="Yb7-1I-j0N" secondAttribute="trailing" constant="23" id="ywS-Ms-X2R"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EWx-Hw-Kyq">
