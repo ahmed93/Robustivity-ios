@@ -83,6 +83,8 @@
 		A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */; };
 		A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */; };
 		A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */; };
+		E5333BF71CADDA2300C287D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5333BF51CADDA2300C287D2 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E5333BF81CADDA2300C287D2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5333BF61CADDA2300C287D2 /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,6 +237,8 @@
 		A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseTableViewCell.xib; path = "Custom Views/Example/BaseTableViewCell.xib"; sourceTree = "<group>"; };
 		A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Robustivity/Global/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		A7FD4EA81CA5E49500BD7332 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		E5333BF51CADDA2300C287D2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E5333BF61CADDA2300C287D2 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +418,8 @@
 		A7A94EBF1C9E9321002B3991 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E5333BF51CADDA2300C287D2 /* LoginViewController.swift */,
+				E5333BF61CADDA2300C287D2 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5333BF81CADDA2300C287D2 /* LoginViewController.xib in Resources */,
 				A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
@@ -794,6 +801,7 @@
 				A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */,
 				04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */,
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
+				E5333BF71CADDA2300C287D2 /* LoginViewController.swift in Sources */,
 				A7C480221CA3F1EC00F4FDB7 /* UIImageView+WebCache.m in Sources */,
 				A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */,
 				A7A94ED91C9E97B5002B3991 /* ToggleViewController.swift in Sources */,
