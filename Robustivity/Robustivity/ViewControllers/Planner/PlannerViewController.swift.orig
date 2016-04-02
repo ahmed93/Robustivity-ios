@@ -34,14 +34,12 @@ class PlannerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Planner";
-//        
-//                /******Lotfy's and Mansour's code to test subViews********/
-//        let a = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
-//        self.navigationController?.pushViewController(a, animated: true)
-//                /******Lotfy's and Mansour's code to test subViews********/
+        
+<<<<<<< HEAD
+        let a = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
+        self.navigationController?.pushViewController(a, animated: true)
 
-
-            /*    Assuity's Code       */
+=======
         // Add segmented control
         addSegmentedControl(segmentControlItems)
         
@@ -140,7 +138,7 @@ class PlannerViewController: BaseViewController {
         } else {
             statusCircle?.tintColor = Theme.greenColor()
         }
-            /*    Assuity's Code       */   
+>>>>>>> 619af0ec46bf240a211c1ad05fac82f4078286e1
     }
     
 }
