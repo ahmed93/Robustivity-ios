@@ -16,6 +16,9 @@
 		41ED59111CAC379900508474 /* CallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED590F1CAC379900508474 /* CallViewController.xib */; };
 		41ED59151CAC48B700508474 /* CallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */; };
 		41ED59161CAC48B700508474 /* CallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */; };
+		7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */; };
+		7D05C3ED1CAD76FF008F4A83 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */; };
+		7D05C3EE1CAD76FF008F4A83 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -154,6 +157,9 @@
 		41ED590F1CAC379900508474 /* CallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallViewController.xib; sourceTree = "<group>"; };
 		41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallCollectionViewCell.swift; sourceTree = "<group>"; };
 		41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallCollectionViewCell.xib; sourceTree = "<group>"; };
+		7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableAdapter.swift; sourceTree = "<group>"; };
+		7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewCell.swift; path = "Custom Views/Example/MoreTableViewCell.swift"; sourceTree = "<group>"; };
+		7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreTableViewCell.xib; path = "Custom Views/Example/MoreTableViewCell.xib"; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -287,6 +293,15 @@
 				41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */,
 			);
 			name = CallCollectionViewCell;
+        sourceTree = "<group>";
+        };
+		34DF6F8A1CB0104000FD0F34 /* MoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */,
+				7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */,
+			);
+			name = MoreCell;
 			sourceTree = "<group>";
 		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
@@ -299,6 +314,7 @@
 				F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */,
 				04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */,
 				A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */,
+				7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -403,6 +419,7 @@
 				04179F391CAD505900A3513A /* Profile */,
 				41ED59121CAC487900508474 /* CallCollectionViewCell */,
 				A750E9801CA97C13009D29BB /* Notifications */,
+				34DF6F8A1CB0104000FD0F34 /* MoreCell */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -799,6 +816,7 @@
 				41ED59111CAC379900508474 /* CallViewController.xib in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
+				7D05C3EE1CAD76FF008F4A83 /* MoreTableViewCell.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
 				04179F3D1CAD508F00A3513A /* ProfileTableViewCell.xib in Resources */,
 				A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */,
@@ -823,6 +841,7 @@
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				A750E9781CA97B77009D29BB /* NotificationsAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
+				7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
 				A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */,
@@ -844,6 +863,7 @@
 				A7A94ED91C9E97B5002B3991 /* ToggleViewController.swift in Sources */,
 				A7C480151CA3F1EC00F4FDB7 /* NSData+ImageContentType.m in Sources */,
 				A7C480191CA3F1EC00F4FDB7 /* SDWebImageDownloader.m in Sources */,
+				7D05C3ED1CAD76FF008F4A83 /* MoreTableViewCell.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
