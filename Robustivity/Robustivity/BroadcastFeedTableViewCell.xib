@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kER-xt-Bne">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Islam" translatesAutoresizingMaskIntoConstraints="NO" id="kER-xt-Bne">
                         <rect key="frame" x="14" y="9" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="3wG-VF-AUv"/>
@@ -61,4 +61,7 @@
             <point key="canvasLocation" x="325" y="261.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Islam" width="211" height="211"/>
+    </resources>
 </document>

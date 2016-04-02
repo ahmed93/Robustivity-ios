@@ -19,7 +19,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pIl-Oy-YHK">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Islam" translatesAutoresizingMaskIntoConstraints="NO" id="pIl-Oy-YHK">
                         <rect key="frame" x="14" y="9" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="GGd-Q8-neM"/>
@@ -51,4 +51,7 @@
             <point key="canvasLocation" x="527" y="269.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Islam" width="211" height="211"/>
+    </resources>
 </document>

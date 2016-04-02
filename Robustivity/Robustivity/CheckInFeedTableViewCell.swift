@@ -17,7 +17,7 @@ class CheckInFeedTableViewCell: BaseTableViewCell {
         super.awakeFromNib()
         // Initialization code
         setLabelsStyle()
-        avatarImageView.makeCircular()
+        //avatarImageView.makeCircular()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

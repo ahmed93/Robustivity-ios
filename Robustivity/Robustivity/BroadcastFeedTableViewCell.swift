@@ -19,7 +19,7 @@ class BroadcastFeedTableViewCell: BaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setLabelsStyle()
-        avatarImageView.makeCircular()
+        //avatarImageView.makeCircular()
         // Initialization code
     }
 

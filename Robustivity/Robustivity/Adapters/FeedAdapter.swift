@@ -97,7 +97,7 @@ class FeedAdapter: BaseTableAdapter {
     */
     
     static func fillFeedWithDummyData() -> [FeedModel]{
-        let user = UserModel(avatar: NSURL(string: "https://lh5.googleusercontent.com/-ZadaXoUTBfs/AAAAAAAAAAI/AAAAAAAAAGA/19US52OmBqc/photo.jpg")!, name: "Hamada")
+        let user = UserModel(avatar: NSURL(string: "")!, name: "Islam")
         let bf1 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
         let bf2 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
         let bf3 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
@@ -118,9 +118,9 @@ class FeedAdapter: BaseTableAdapter {
         cell.broadcastTextLabel.text = feed.content!
         cell.broadcastTitleLabel.text = feed.title!
         cell.timestampsLabel.text? = feed.timeStamp!
-        let avatarURL:NSURL? = feed.user?.avatar
-        let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
-        cell.avatarImageView.image = avatarImage!
+        //let avatarURL:NSURL? = feed.user?.avatar
+        //let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
+        //cell.avatarImageView.image = avatarImage!
         return cell
         
     }
@@ -160,9 +160,9 @@ class FeedAdapter: BaseTableAdapter {
         let cell = tableView.dequeueReusableCellWithIdentifier("checkInCell") as! CheckInFeedTableViewCell
         cell.checkInTitleLabel.text = feed.content!
         cell.timeStampsLabel.text = feed.timeStamp!
-        let avatarURL:NSURL? = feed.user?.avatar
-        let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
-        cell.avatarImageView.image = avatarImage!
+        //let avatarURL:NSURL? = feed.user?.avatar
+        //let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
+        //cell.avatarImageView.image = avatarImage!
         return cell
         
     }
@@ -183,7 +183,7 @@ class FeedAdapter: BaseTableAdapter {
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0{
-            return 1.0
+            return 0.5
         }
         else{
             return 0.0
