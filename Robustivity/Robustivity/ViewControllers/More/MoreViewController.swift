@@ -89,6 +89,13 @@ class MoreViewController: BaseViewController {
          adapter = OptionsTableAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dict);
     }
     
+    
+    
+    /** This function is supposed to perform Calling functionality **/
+    func callView(){
+    
+    }
+    
 
 
     
