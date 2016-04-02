@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationFeedModel: FeedModel {
+class UpdateFeedModel: FeedModel {
     override init(content:String, timeStamp:String){
         super.init(content: content, timeStamp: timeStamp)
     }

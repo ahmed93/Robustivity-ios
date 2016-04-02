@@ -18,15 +18,15 @@
 		1B8E5D781CAF413800239F1C /* BroadcastFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E5D701CAF413800239F1C /* BroadcastFeedTableViewCell.xib */; };
 		1B8E5D791CAF413800239F1C /* CheckInFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D711CAF413800239F1C /* CheckInFeedTableViewCell.swift */; };
 		1B8E5D7A1CAF413800239F1C /* CheckInFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E5D721CAF413800239F1C /* CheckInFeedTableViewCell.xib */; };
-		1B8E5D7B1CAF413800239F1C /* NotificationFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D731CAF413800239F1C /* NotificationFeedTableViewCell.swift */; };
-		1B8E5D7C1CAF413800239F1C /* NotificationFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E5D741CAF413800239F1C /* NotificationFeedTableViewCell.xib */; };
+		1B8E5D7B1CAF413800239F1C /* UpdateFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D731CAF413800239F1C /* UpdateFeedTableViewCell.swift */; };
+		1B8E5D7C1CAF413800239F1C /* UpdateFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E5D741CAF413800239F1C /* UpdateFeedTableViewCell.xib */; };
 		1B8E5D7D1CAF413800239F1C /* ToggleFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D751CAF413800239F1C /* ToggleFeedTableViewCell.swift */; };
 		1B8E5D7E1CAF413800239F1C /* ToggleFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E5D761CAF413800239F1C /* ToggleFeedTableViewCell.xib */; };
 		1B8E5D801CAF417E00239F1C /* Circular+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D7F1CAF417E00239F1C /* Circular+UIImageView.swift */; };
 		1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */; };
 		1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */; };
 		1B8E5D881CAF41C100239F1C /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D841CAF41C100239F1C /* FeedModel.swift */; };
-		1B8E5D891CAF41C100239F1C /* NotificationFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D851CAF41C100239F1C /* NotificationFeedModel.swift */; };
+		1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D851CAF41C100239F1C /* UpdateFeedModel.swift */; };
 		1B8E5D8B1CAF41D400239F1C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D8A1CAF41D400239F1C /* UserModel.swift */; };
 		1B8E5D8D1CAF420F00239F1C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D8C1CAF420F00239F1C /* FeedViewController.swift */; };
 		1B8E5D8F1CAF423A00239F1C /* FeedAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */; };
@@ -165,15 +165,15 @@
 		1B8E5D701CAF413800239F1C /* BroadcastFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BroadcastFeedTableViewCell.xib; sourceTree = "<group>"; };
 		1B8E5D711CAF413800239F1C /* CheckInFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedTableViewCell.swift; sourceTree = "<group>"; };
 		1B8E5D721CAF413800239F1C /* CheckInFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInFeedTableViewCell.xib; sourceTree = "<group>"; };
-		1B8E5D731CAF413800239F1C /* NotificationFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationFeedTableViewCell.swift; sourceTree = "<group>"; };
-		1B8E5D741CAF413800239F1C /* NotificationFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1B8E5D731CAF413800239F1C /* UpdateFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFeedTableViewCell.swift; sourceTree = "<group>"; };
+		1B8E5D741CAF413800239F1C /* UpdateFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateFeedTableViewCell.xib; sourceTree = "<group>"; };
 		1B8E5D751CAF413800239F1C /* ToggleFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleFeedTableViewCell.swift; sourceTree = "<group>"; };
 		1B8E5D761CAF413800239F1C /* ToggleFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToggleFeedTableViewCell.xib; sourceTree = "<group>"; };
 		1B8E5D7F1CAF417E00239F1C /* Circular+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circular+UIImageView.swift"; sourceTree = "<group>"; };
 		1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D841CAF41C100239F1C /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
-		1B8E5D851CAF41C100239F1C /* NotificationFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationFeedModel.swift; sourceTree = "<group>"; };
+		1B8E5D851CAF41C100239F1C /* UpdateFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D8A1CAF41D400239F1C /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1B8E5D8C1CAF420F00239F1C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedAdapter.swift; sourceTree = "<group>"; };
@@ -308,8 +308,8 @@
 				1B8E5D701CAF413800239F1C /* BroadcastFeedTableViewCell.xib */,
 				1B8E5D711CAF413800239F1C /* CheckInFeedTableViewCell.swift */,
 				1B8E5D721CAF413800239F1C /* CheckInFeedTableViewCell.xib */,
-				1B8E5D731CAF413800239F1C /* NotificationFeedTableViewCell.swift */,
-				1B8E5D741CAF413800239F1C /* NotificationFeedTableViewCell.xib */,
+				1B8E5D731CAF413800239F1C /* UpdateFeedTableViewCell.swift */,
+				1B8E5D741CAF413800239F1C /* UpdateFeedTableViewCell.xib */,
 				1B8E5D751CAF413800239F1C /* ToggleFeedTableViewCell.swift */,
 				1B8E5D761CAF413800239F1C /* ToggleFeedTableViewCell.xib */,
 			);
@@ -322,7 +322,7 @@
 				1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */,
 				1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */,
 				1B8E5D841CAF41C100239F1C /* FeedModel.swift */,
-				1B8E5D851CAF41C100239F1C /* NotificationFeedModel.swift */,
+				1B8E5D851CAF41C100239F1C /* UpdateFeedModel.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -833,7 +833,7 @@
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
-				1B8E5D7C1CAF413800239F1C /* NotificationFeedTableViewCell.xib in Resources */,
+				1B8E5D7C1CAF413800239F1C /* UpdateFeedTableViewCell.xib in Resources */,
 				01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
@@ -874,7 +874,7 @@
 				1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */,
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
-				1B8E5D891CAF41C100239F1C /* NotificationFeedModel.swift in Sources */,
+				1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
 				A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */,
 				1B8E5D791CAF413800239F1C /* CheckInFeedTableViewCell.swift in Sources */,
@@ -904,7 +904,7 @@
 				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,
 				A7C480141CA3F1EC00F4FDB7 /* MKAnnotationView+WebCache.m in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
-				1B8E5D7B1CAF413800239F1C /* NotificationFeedTableViewCell.swift in Sources */,
+				1B8E5D7B1CAF413800239F1C /* UpdateFeedTableViewCell.swift in Sources */,
 				1B8E5D801CAF417E00239F1C /* Circular+UIImageView.swift in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
 				1B8E5D7D1CAF413800239F1C /* ToggleFeedTableViewCell.swift in Sources */,

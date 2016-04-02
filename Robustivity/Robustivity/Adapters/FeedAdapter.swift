@@ -71,7 +71,7 @@ class FeedAdapter: BaseTableAdapter {
                 cell = self.checkInFeedCell(tableView, feed: feed as! CheckInFeedModel)
             }
             else{
-                cell = self.notificationFeedCell(tableView, feed: feed as! NotificationFeedModel)
+                cell = self.notificationFeedCell(tableView, feed: feed as! UpdateFeedModel)
             }
             
             return cell
@@ -101,7 +101,7 @@ class FeedAdapter: BaseTableAdapter {
         let bf1 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
         let bf2 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
         let bf3 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
-        let nf = NotificationFeedModel(content: "Robustivity Project has 4 tasks done.",timeStamp: "Oct 12,2015")
+        let nf = UpdateFeedModel(content: "Robustivity Project has 4 tasks done.",timeStamp: "Oct 12,2015")
         let cif = CheckInFeedModel(user: user, tiemStamp: "now")
         return [bf1,nf,bf2,cif,bf3]
     }
@@ -173,8 +173,8 @@ class FeedAdapter: BaseTableAdapter {
     according to the feed object
     */
     
-    func notificationFeedCell(tableView: UITableView, feed:NotificationFeedModel) -> NotificationFeedTableViewCell{
-        let cell = tableView.dequeueReusableCellWithIdentifier("notificationCell") as! NotificationFeedTableViewCell
+    func notificationFeedCell(tableView: UITableView, feed:UpdateFeedModel) -> UpdateFeedTableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("updateCell") as! UpdateFeedTableViewCell
         cell.notificationTextLabel.text = feed.content!
         cell.timeStampsLabel.text = feed.timeStamp!
         return cell

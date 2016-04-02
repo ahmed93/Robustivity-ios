@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egf-3m-KS4" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="64" y="23" width="42" height="11"/>
+                        <rect key="frame" x="64" y="10" width="42" height="37"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
                     <constraint firstItem="egf-3m-KS4" firstAttribute="centerY" secondItem="pIl-Oy-YHK" secondAttribute="centerY" id="b25-1e-qs9"/>
                     <constraint firstItem="egf-3m-KS4" firstAttribute="leading" secondItem="pIl-Oy-YHK" secondAttribute="trailing" constant="10" id="ezf-iP-hTS"/>
                     <constraint firstItem="pIl-Oy-YHK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="i9Z-G2-rvC"/>
-                    <constraint firstAttribute="bottom" secondItem="egf-3m-KS4" secondAttribute="bottom" constant="22" id="oCc-YZ-uV4"/>
+                    <constraint firstAttribute="bottom" secondItem="egf-3m-KS4" secondAttribute="bottom" constant="9" id="oCc-YZ-uV4"/>
                     <constraint firstItem="ABt-zQ-6Ee" firstAttribute="centerY" secondItem="egf-3m-KS4" secondAttribute="centerY" id="tDQ-T2-NcM"/>
                     <constraint firstAttribute="trailing" secondItem="ABt-zQ-6Ee" secondAttribute="trailing" constant="34" id="zDg-uS-A5H"/>
                 </constraints>
