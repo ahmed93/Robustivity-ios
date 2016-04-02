@@ -12,6 +12,13 @@
 		01530B001CAB1CA900429264 /* PlannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */; };
 		01530B031CAC2C0500429264 /* PlannerHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */; };
 		01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */; };
+		18B8049D1CAF82C3005CACEE /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B804991CAF82C3005CACEE /* CreateTaskViewController.swift */; };
+		18B8049E1CAF82C3005CACEE /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B8049A1CAF82C3005CACEE /* CreateTaskViewController.xib */; };
+		18CE2A791CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A771CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift */; };
+		18CE2A7A1CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CE2A781CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib */; };
+		18CE2A811CAC8AA700FE4A46 /* TextViewTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A7F1CAC8AA700FE4A46 /* TextViewTaskViewCell.swift */; };
+		18CE2A821CAC8AA700FE4A46 /* TextViewTaskViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CE2A801CAC8AA700FE4A46 /* TextViewTaskViewCell.xib */; };
+		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
 		1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */; };
 		1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */; };
 		1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */; };
@@ -143,6 +150,13 @@
 		01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerTableViewCell.xib; sourceTree = "<group>"; };
 		01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		18B804991CAF82C3005CACEE /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTaskViewController.swift; path = CreateTask/CreateTaskViewController.swift; sourceTree = "<group>"; };
+		18B8049A1CAF82C3005CACEE /* CreateTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateTaskViewController.xib; path = CreateTask/CreateTaskViewController.xib; sourceTree = "<group>"; };
+		18CE2A771CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelTextTaskViewCell.swift; path = "Custom Views/Planner/Task/CreateTask/LabelTextTaskViewCell.swift"; sourceTree = "<group>"; };
+		18CE2A781CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelTextTaskViewCell.xib; path = "Custom Views/Planner/Task/CreateTask/LabelTextTaskViewCell.xib"; sourceTree = "<group>"; };
+		18CE2A7F1CAC8AA700FE4A46 /* TextViewTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewTaskViewCell.swift; path = "Custom Views/Planner/Task/CreateTask/TextViewTaskViewCell.swift"; sourceTree = "<group>"; };
+		18CE2A801CAC8AA700FE4A46 /* TextViewTaskViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewTaskViewCell.xib; path = "Custom Views/Planner/Task/CreateTask/TextViewTaskViewCell.xib"; sourceTree = "<group>"; };
+		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
 		1B0B299A1CAD8968007DC5F3 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -262,6 +276,42 @@
 			path = "Custom Views/PlannerTableView";
 			sourceTree = "<group>";
 		};
+		18B8048F1CAF8264005CACEE /* CreateTask */ = {
+			isa = PBXGroup;
+			children = (
+				18B804991CAF82C3005CACEE /* CreateTaskViewController.swift */,
+				18B8049A1CAF82C3005CACEE /* CreateTaskViewController.xib */,
+			);
+			name = CreateTask;
+			sourceTree = "<group>";
+		};
+		18CE2A6C1CAC891B00FE4A46 /* Planner */ = {
+			isa = PBXGroup;
+			children = (
+				18CE2A6D1CAC892A00FE4A46 /* Task */,
+			);
+			name = Planner;
+			sourceTree = "<group>";
+		};
+		18CE2A6D1CAC892A00FE4A46 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				18CE2A6E1CAC893700FE4A46 /* CreateTask */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		18CE2A6E1CAC893700FE4A46 /* CreateTask */ = {
+			isa = PBXGroup;
+			children = (
+				18CE2A771CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift */,
+				18CE2A781CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib */,
+				18CE2A7F1CAC8AA700FE4A46 /* TextViewTaskViewCell.swift */,
+				18CE2A801CAC8AA700FE4A46 /* TextViewTaskViewCell.xib */,
+			);
+			name = CreateTask;
+			sourceTree = "<group>";
+		};
 		1B0B29991CAD8968007DC5F3 /* MGSwipeTableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +326,7 @@
 		1BC4E45C1CAD91EF008283D3 /* Create Task */ = {
 			isa = PBXGroup;
 			children = (
+				18B8048F1CAF8264005CACEE /* CreateTask */,
 				1BC4E45D1CAD91EF008283D3 /* Choose Assignee */,
 			);
 			path = "Create Task";
@@ -316,6 +367,7 @@
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
+				18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */,
 				01530AFA1CAB145A00429264 /* PlannerAdapter.swift */,
 				1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */,
 			);
@@ -417,6 +469,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				18CE2A6C1CAC891B00FE4A46 /* Planner */,
 				01530AFC1CAB1B6C00429264 /* PlannerTableView */,
 				1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */,
 				1BC4E4621CAD9202008283D3 /* UserTableViewCell */,
@@ -766,8 +819,10 @@
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
 				01530B001CAB1CA900429264 /* PlannerTableViewCell.xib in Resources */,
+				18B8049E1CAF82C3005CACEE /* CreateTaskViewController.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
+				18CE2A821CAC8AA700FE4A46 /* TextViewTaskViewCell.xib in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */,
@@ -776,6 +831,7 @@
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
+				18CE2A7A1CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
@@ -802,10 +858,12 @@
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
+				18B8049D1CAF82C3005CACEE /* CreateTaskViewController.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
 				A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */,
 				A7C4801D1CA3F1EC00F4FDB7 /* UIButton+WebCache.m in Sources */,
+				18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */,
 				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
 				1BC4E4691CAD921F008283D3 /* SwipableTableViewCell.swift in Sources */,
 				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
@@ -814,6 +872,7 @@
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
+				18CE2A811CAC8AA700FE4A46 /* TextViewTaskViewCell.swift in Sources */,
 				A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */,
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
 				A7C480221CA3F1EC00F4FDB7 /* UIImageView+WebCache.m in Sources */,
@@ -827,6 +886,7 @@
 				01530AFF1CAB1CA900429264 /* PlannerTableViewCell.swift in Sources */,
 				A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */,
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
+				18CE2A791CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift in Sources */,
 				1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */,
