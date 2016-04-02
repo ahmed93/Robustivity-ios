@@ -1,100 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="toggleCell" rowHeight="116" id="KGk-i7-Jjw" customClass="TaskInfoToggledTableViewCell" customModule="Robustivity" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="toggleCell" rowHeight="115" id="KGk-i7-Jjw" customClass="TaskInfoToggledTableViewCell" customModule="Robustivity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="115"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="357" height="114.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMT-ot-b0I" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="117" y="8" width="86" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="FZf-Zc-cEy"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="FZf-Zc-cEy"/>
-                            </mask>
-                        </variation>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Oct 15, 2015" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAh-Hq-5ad" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="112" y="78.5" width="96.5" height="20.5"/>
+                        <rect key="frame" x="142.5" y="84" width="73" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="1050"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenClock" translatesAutoresizingMaskIntoConstraints="NO" id="o24-f1-NqS">
-                        <rect key="frame" x="79" y="7" width="30" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="36C-Aa-7pS"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="4FJ-BZ-vzo"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="a0b-Tu-fGY"/>
-                            <constraint firstAttribute="width" constant="30" id="aeb-we-NaL"/>
-                            <constraint firstAttribute="height" constant="30" id="nhT-Wh-8KH"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="4FJ-BZ-vzo"/>
-                            </mask>
-                        </variation>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Robustivity Tool" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-v8-MtW" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="99" y="41" width="122" height="29.5"/>
+                        <rect key="frame" x="130" y="41" width="97.5" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="uwl-uI-ZUx"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="3000"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="uwl-uI-ZUx"/>
                             </mask>
                         </variation>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcJ-vq-IEM">
+                        <rect key="frame" x="123" y="8" width="110" height="25"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenClock" translatesAutoresizingMaskIntoConstraints="NO" id="bKD-KT-nuL">
+                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bKD-KT-nuL" secondAttribute="height" multiplier="1:1" id="oEw-QL-Xqv"/>
+                                    <constraint firstAttribute="width" constant="25" id="ppb-LE-j7o"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtI-ra-eIT" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                                <rect key="frame" x="33" y="0.0" width="77" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                        <integer key="value" value="1040"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gtI-ra-eIT" secondAttribute="bottom" id="DBH-TS-Efx"/>
+                            <constraint firstAttribute="trailing" secondItem="gtI-ra-eIT" secondAttribute="trailing" id="FuI-Af-qrI"/>
+                            <constraint firstItem="bKD-KT-nuL" firstAttribute="top" secondItem="JcJ-vq-IEM" secondAttribute="top" id="I8T-IZ-HXx"/>
+                            <constraint firstItem="gtI-ra-eIT" firstAttribute="leading" secondItem="bKD-KT-nuL" secondAttribute="trailing" constant="8" id="LIW-X8-LZc"/>
+                            <constraint firstItem="gtI-ra-eIT" firstAttribute="top" secondItem="JcJ-vq-IEM" secondAttribute="top" id="Oah-AI-d3n"/>
+                            <constraint firstAttribute="bottom" secondItem="bKD-KT-nuL" secondAttribute="bottom" id="lG6-HP-rCC"/>
+                            <constraint firstItem="bKD-KT-nuL" firstAttribute="leading" secondItem="JcJ-vq-IEM" secondAttribute="leading" id="s7e-Qn-G8T"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="o24-f1-NqS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="4xA-sf-Drn"/>
-                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="leading" secondItem="o24-f1-NqS" secondAttribute="trailing" constant="8" id="79l-pT-XAp"/>
-                    <constraint firstAttribute="trailing" secondItem="ZMT-ot-b0I" secondAttribute="trailing" constant="117" id="7eM-pB-Ifa"/>
                     <constraint firstItem="uAh-Hq-5ad" firstAttribute="top" secondItem="PTP-v8-MtW" secondAttribute="bottom" constant="8" id="7sj-cc-x7Z"/>
-                    <constraint firstItem="o24-f1-NqS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="79" id="AU9-e8-OSz"/>
                     <constraint firstAttribute="trailing" secondItem="uAh-Hq-5ad" secondAttribute="trailing" constant="95" id="Hap-VS-CPT"/>
                     <constraint firstItem="uAh-Hq-5ad" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="VE8-IO-wF8"/>
+                    <constraint firstItem="JcJ-vq-IEM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="WUL-hT-ofC"/>
+                    <constraint firstItem="JcJ-vq-IEM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="bTG-Pb-kXh"/>
                     <constraint firstAttribute="bottom" secondItem="uAh-Hq-5ad" secondAttribute="bottom" constant="16.5" id="cS4-qg-Jlq"/>
-                    <constraint firstItem="PTP-v8-MtW" firstAttribute="top" secondItem="o24-f1-NqS" secondAttribute="bottom" constant="4" id="gjf-W7-0df"/>
-                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="iNR-le-ob4"/>
+                    <constraint firstItem="PTP-v8-MtW" firstAttribute="top" secondItem="JcJ-vq-IEM" secondAttribute="bottom" constant="8" id="eif-2q-Kne"/>
                     <constraint firstItem="PTP-v8-MtW" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="lUG-BR-2Oa"/>
                     <constraint firstItem="uAh-Hq-5ad" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="mvn-Uh-TF0"/>
-                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="tO5-hL-371"/>
-                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="leading" secondItem="o24-f1-NqS" secondAttribute="trailing" constant="8" id="vbD-ql-Kom"/>
-                    <constraint firstItem="PTP-v8-MtW" firstAttribute="top" secondItem="ZMT-ot-b0I" secondAttribute="bottom" constant="8" id="wCe-pP-uOQ"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="7eM-pB-Ifa"/>
                         <exclude reference="Hap-VS-CPT"/>
                         <exclude reference="mvn-Uh-TF0"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="taskDate" destination="uAh-Hq-5ad" id="D7z-9Q-TLF"/>
-                <outlet property="taskName" destination="PTP-v8-MtW" id="iMk-es-ZYf"/>
-                <outlet property="timePhoto" destination="o24-f1-NqS" id="gPA-e2-fYv"/>
-                <outlet property="timer" destination="ZMT-ot-b0I" id="92v-eK-eCY"/>
+                <outlet property="taskDate" destination="uAh-Hq-5ad" id="sbw-Pg-fe4"/>
+                <outlet property="taskName" destination="PTP-v8-MtW" id="2EO-UV-VpP"/>
+                <outlet property="timer" destination="gtI-ra-eIT" id="ji9-L2-52z"/>
             </connections>
-            <point key="canvasLocation" x="257" y="295"/>
+            <point key="canvasLocation" x="275.5" y="230.5"/>
         </tableViewCell>
     </objects>
     <resources>

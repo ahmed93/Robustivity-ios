@@ -11,8 +11,6 @@ import UIKit
 class TaskInfoToggledTableViewCell: SwipableTableViewCell {
 
     @IBOutlet weak var taskDate: RBLabel!
-   
-    @IBOutlet weak var timePhoto: UIImageView!
     @IBOutlet weak var taskName: RBLabel!
     @IBOutlet weak var timer: RBLabel!
     
