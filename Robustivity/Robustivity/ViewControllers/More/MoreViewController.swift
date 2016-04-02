@@ -2,12 +2,19 @@
 //  MoreViewController.swift
 //  Robustivity
 //
-//  Created by Mayar ElMohr, Salma Amr, Nouran Mamdouh on 3/31/16.
-
+//  Created by Ahmed Mohamed Fareed on 3/24/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
-//
+
 
 import UIKit
+
+/*
+This Class is controlling the More View page attributes,
+the table view,
+the UI profile view
+
+Edited by: Mayar ElMohr, Salma Amr, Nouran Mamdouh on 3/31/16.
+*/
 
 class MoreViewController: BaseViewController {
 
@@ -40,6 +47,13 @@ class MoreViewController: BaseViewController {
         
         initMore();
     }
+    
+    /*
+    The Method styles the profile UIView and intializes the adapter 
+    to fill the table customized cells.
+    
+    Edited by: Mayar ElMohr, Salma Amr, Nouran Mamdouh on 3/31/16.
+    */
     
     func initMore(){
         

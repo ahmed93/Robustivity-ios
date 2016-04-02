@@ -15,8 +15,15 @@ class OptionsTableAdapter: BaseTableAdapter {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 5
     }
- 
     
+    /*
+    The Method is fills each cell in the table with
+    the corresponding customized cell according 
+    to it's row and section. Adjusts the configuration
+    of each cell.
+    
+    Edited by: Mayar ElMohr, Salma Amr, Nouran Mamdouh
+    */
     override func configureViaMultipleIdentifiers(indexPath:NSIndexPath)->UITableViewCell? {
         let optionsCell = tableView.dequeueReusableCellWithIdentifier("MoreCell", forIndexPath: indexPath) as? MoreTableViewCell
              Theme.style_13((optionsCell?.label)!);
