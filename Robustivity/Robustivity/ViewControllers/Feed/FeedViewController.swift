@@ -35,6 +35,11 @@ class FeedViewController: BaseViewController {
         let values = ["CheckInFeedTableViewCell","BroadcastFeedTableViewCell","UpdateFeedTableViewCell","ToggleFeedTableViewCell"]
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
+        
+        // Add Left navigation item
+        let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
+        userStatusBarButtonItem.tintColor = Theme.greenColor()
+        self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
     }
 
 }
