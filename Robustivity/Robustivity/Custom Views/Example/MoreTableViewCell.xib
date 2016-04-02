@@ -35,12 +35,11 @@
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="YgL-8l-Rmw" firstAttribute="leading" secondItem="jk5-Fg-Phx" secondAttribute="trailing" constant="34" id="5On-Hr-RLX"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="YgL-8l-Rmw" secondAttribute="bottom" constant="17" id="5zw-UZ-bcg"/>
+                    <constraint firstItem="jk5-Fg-Phx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9KX-hB-DeL"/>
                     <constraint firstItem="jk5-Fg-Phx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="Ncl-Er-iLx"/>
                     <constraint firstItem="YgL-8l-Rmw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="TB8-CL-3qy"/>
                     <constraint firstItem="jk5-Fg-Phx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="UIg-nd-unc"/>
                     <constraint firstItem="jk5-Fg-Phx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rOV-jF-rBt"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="jk5-Fg-Phx" secondAttribute="bottom" constant="0.5" id="ulB-Uo-Bde"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
