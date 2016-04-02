@@ -8,14 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
-		01530AFF1CAB1CA900429264 /* PlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFD1CAB1CA900429264 /* PlannerTableViewCell.swift */; };
-		01530B001CAB1CA900429264 /* PlannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */; };
-		01530B031CAC2C0500429264 /* PlannerHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */; };
-		01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */; };
-		18CE2A791CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A771CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift */; };
-		18CE2A7A1CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CE2A781CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib */; };
-		18CE2A811CAC8AA700FE4A46 /* TextViewTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A7F1CAC8AA700FE4A46 /* TextViewTaskViewCell.swift */; };
-		18CE2A821CAC8AA700FE4A46 /* TextViewTaskViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CE2A801CAC8AA700FE4A46 /* TextViewTaskViewCell.xib */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
 		1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */; };
 		1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */; };
@@ -33,14 +25,22 @@
 		1BBA3D7C1CB03D0000FC4609 /* ChooseProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7A1CB03D0000FC4609 /* ChooseProjectViewController.swift */; };
 		1BBA3D7D1CB03D0000FC4609 /* ChooseProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7B1CB03D0000FC4609 /* ChooseProjectViewController.xib */; };
 		1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */; };
-		1BBA3D951CB0501200FC4609 /* BroadcastFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D8A1CB0501200FC4609 /* BroadcastFeedTableViewCell.swift */; };
-		1BBA3D961CB0501200FC4609 /* BroadcastFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D8B1CB0501200FC4609 /* BroadcastFeedTableViewCell.xib */; };
-		1BBA3D971CB0501200FC4609 /* CheckInFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D8D1CB0501200FC4609 /* CheckInFeedTableViewCell.swift */; };
-		1BBA3D981CB0501200FC4609 /* CheckInFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D8E1CB0501200FC4609 /* CheckInFeedTableViewCell.xib */; };
-		1BBA3D991CB0501200FC4609 /* ToggleFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D901CB0501200FC4609 /* ToggleFeedTableViewCell.swift */; };
-		1BBA3D9A1CB0501200FC4609 /* ToggleFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D911CB0501200FC4609 /* ToggleFeedTableViewCell.xib */; };
-		1BBA3D9B1CB0501200FC4609 /* UpdateFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D931CB0501200FC4609 /* UpdateFeedTableViewCell.swift */; };
-		1BBA3D9C1CB0501200FC4609 /* UpdateFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D941CB0501200FC4609 /* UpdateFeedTableViewCell.xib */; };
+		1BBA3DA91CB051C900FC4609 /* LabelTextTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DA51CB051C900FC4609 /* LabelTextTaskViewCell.swift */; };
+		1BBA3DAA1CB051C900FC4609 /* LabelTextTaskViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DA61CB051C900FC4609 /* LabelTextTaskViewCell.xib */; };
+		1BBA3DAB1CB051C900FC4609 /* TextViewTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DA71CB051C900FC4609 /* TextViewTaskViewCell.swift */; };
+		1BBA3DAC1CB051C900FC4609 /* TextViewTaskViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DA81CB051C900FC4609 /* TextViewTaskViewCell.xib */; };
+		1BBA3DB21CB0520800FC4609 /* PlannerHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DAE1CB0520800FC4609 /* PlannerHeaderTableViewCell.swift */; };
+		1BBA3DB31CB0520800FC4609 /* PlannerHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DAF1CB0520800FC4609 /* PlannerHeaderTableViewCell.xib */; };
+		1BBA3DB41CB0520800FC4609 /* PlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DB01CB0520800FC4609 /* PlannerTableViewCell.swift */; };
+		1BBA3DB51CB0520800FC4609 /* PlannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DB11CB0520800FC4609 /* PlannerTableViewCell.xib */; };
+		1BBA3DC21CB0524600FC4609 /* BroadcastFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DB71CB0524600FC4609 /* BroadcastFeedTableViewCell.swift */; };
+		1BBA3DC31CB0524600FC4609 /* BroadcastFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DB81CB0524600FC4609 /* BroadcastFeedTableViewCell.xib */; };
+		1BBA3DC41CB0524600FC4609 /* CheckInFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DBA1CB0524600FC4609 /* CheckInFeedTableViewCell.swift */; };
+		1BBA3DC51CB0524600FC4609 /* CheckInFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DBB1CB0524600FC4609 /* CheckInFeedTableViewCell.xib */; };
+		1BBA3DC61CB0524600FC4609 /* ToggleFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DBD1CB0524600FC4609 /* ToggleFeedTableViewCell.swift */; };
+		1BBA3DC71CB0524600FC4609 /* ToggleFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DBE1CB0524600FC4609 /* ToggleFeedTableViewCell.xib */; };
+		1BBA3DC81CB0524600FC4609 /* UpdateFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DC01CB0524600FC4609 /* UpdateFeedTableViewCell.swift */; };
+		1BBA3DC91CB0524600FC4609 /* UpdateFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DC11CB0524600FC4609 /* UpdateFeedTableViewCell.xib */; };
 		1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */; };
 		1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */; };
 		1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */; };
@@ -163,14 +163,6 @@
 
 /* Begin PBXFileReference section */
 		01530AFA1CAB145A00429264 /* PlannerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerAdapter.swift; sourceTree = "<group>"; };
-		01530AFD1CAB1CA900429264 /* PlannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerTableViewCell.swift; sourceTree = "<group>"; };
-		01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerTableViewCell.xib; sourceTree = "<group>"; };
-		01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerHeaderTableViewCell.xib; sourceTree = "<group>"; };
-		18CE2A771CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelTextTaskViewCell.swift; path = "Custom Views/Planner/Task/CreateTask/LabelTextTaskViewCell.swift"; sourceTree = "<group>"; };
-		18CE2A781CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelTextTaskViewCell.xib; path = "Custom Views/Planner/Task/CreateTask/LabelTextTaskViewCell.xib"; sourceTree = "<group>"; };
-		18CE2A7F1CAC8AA700FE4A46 /* TextViewTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewTaskViewCell.swift; path = "Custom Views/Planner/Task/CreateTask/TextViewTaskViewCell.swift"; sourceTree = "<group>"; };
-		18CE2A801CAC8AA700FE4A46 /* TextViewTaskViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewTaskViewCell.xib; path = "Custom Views/Planner/Task/CreateTask/TextViewTaskViewCell.xib"; sourceTree = "<group>"; };
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
 		1B0B299A1CAD8968007DC5F3 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
@@ -190,14 +182,22 @@
 		1BBA3D7A1CB03D0000FC4609 /* ChooseProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProjectViewController.swift; sourceTree = "<group>"; };
 		1BBA3D7B1CB03D0000FC4609 /* ChooseProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProjectViewController.xib; sourceTree = "<group>"; };
 		1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProjectsAdapter.swift; sourceTree = "<group>"; };
-		1BBA3D8A1CB0501200FC4609 /* BroadcastFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastFeedTableViewCell.swift; sourceTree = "<group>"; };
-		1BBA3D8B1CB0501200FC4609 /* BroadcastFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BroadcastFeedTableViewCell.xib; sourceTree = "<group>"; };
-		1BBA3D8D1CB0501200FC4609 /* CheckInFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedTableViewCell.swift; sourceTree = "<group>"; };
-		1BBA3D8E1CB0501200FC4609 /* CheckInFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInFeedTableViewCell.xib; sourceTree = "<group>"; };
-		1BBA3D901CB0501200FC4609 /* ToggleFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleFeedTableViewCell.swift; sourceTree = "<group>"; };
-		1BBA3D911CB0501200FC4609 /* ToggleFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToggleFeedTableViewCell.xib; sourceTree = "<group>"; };
-		1BBA3D931CB0501200FC4609 /* UpdateFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFeedTableViewCell.swift; sourceTree = "<group>"; };
-		1BBA3D941CB0501200FC4609 /* UpdateFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3DA51CB051C900FC4609 /* LabelTextTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTextTaskViewCell.swift; sourceTree = "<group>"; };
+		1BBA3DA61CB051C900FC4609 /* LabelTextTaskViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTextTaskViewCell.xib; sourceTree = "<group>"; };
+		1BBA3DA71CB051C900FC4609 /* TextViewTaskViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewTaskViewCell.swift; sourceTree = "<group>"; };
+		1BBA3DA81CB051C900FC4609 /* TextViewTaskViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewTaskViewCell.xib; sourceTree = "<group>"; };
+		1BBA3DAE1CB0520800FC4609 /* PlannerHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3DAF1CB0520800FC4609 /* PlannerHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3DB01CB0520800FC4609 /* PlannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3DB11CB0520800FC4609 /* PlannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3DB71CB0524600FC4609 /* BroadcastFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastFeedTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3DB81CB0524600FC4609 /* BroadcastFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BroadcastFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3DBA1CB0524600FC4609 /* CheckInFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3DBB1CB0524600FC4609 /* CheckInFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3DBD1CB0524600FC4609 /* ToggleFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleFeedTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3DBE1CB0524600FC4609 /* ToggleFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToggleFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3DC01CB0524600FC4609 /* UpdateFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFeedTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3DC11CB0524600FC4609 /* UpdateFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateFeedTableViewCell.xib; sourceTree = "<group>"; };
 		1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAssigneeViewController.swift; sourceTree = "<group>"; };
 		1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseAssigneeViewController.xib; sourceTree = "<group>"; };
 		1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -298,43 +298,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01530AFC1CAB1B6C00429264 /* PlannerTableView */ = {
-			isa = PBXGroup;
-			children = (
-				01530AFD1CAB1CA900429264 /* PlannerTableViewCell.swift */,
-				01530AFE1CAB1CA900429264 /* PlannerTableViewCell.xib */,
-				01530B011CAC2C0500429264 /* PlannerHeaderTableViewCell.swift */,
-				01530B021CAC2C0500429264 /* PlannerHeaderTableViewCell.xib */,
-			);
-			name = PlannerTableView;
-			path = "Custom Views/PlannerTableView";
-			sourceTree = "<group>";
-		};
 		18CE2A6C1CAC891B00FE4A46 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				1BBA3DAD1CB051EE00FC4609 /* PlannerTableViewCells */,
 				18CE2A6D1CAC892A00FE4A46 /* Task */,
 			);
 			name = Planner;
+			path = "Custom Views/Planner";
 			sourceTree = "<group>";
 		};
 		18CE2A6D1CAC892A00FE4A46 /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				18CE2A6E1CAC893700FE4A46 /* CreateTask */,
+				1BBA3DA51CB051C900FC4609 /* LabelTextTaskViewCell.swift */,
+				1BBA3DA61CB051C900FC4609 /* LabelTextTaskViewCell.xib */,
+				1BBA3DA71CB051C900FC4609 /* TextViewTaskViewCell.swift */,
+				1BBA3DA81CB051C900FC4609 /* TextViewTaskViewCell.xib */,
 			);
-			name = Task;
-			sourceTree = "<group>";
-		};
-		18CE2A6E1CAC893700FE4A46 /* CreateTask */ = {
-			isa = PBXGroup;
-			children = (
-				18CE2A771CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift */,
-				18CE2A781CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib */,
-				18CE2A7F1CAC8AA700FE4A46 /* TextViewTaskViewCell.swift */,
-				18CE2A801CAC8AA700FE4A46 /* TextViewTaskViewCell.xib */,
-			);
-			name = CreateTask;
+			path = Task;
 			sourceTree = "<group>";
 		};
 		1B0B29991CAD8968007DC5F3 /* MGSwipeTableCell */ = {
@@ -348,16 +330,16 @@
 			path = MGSwipeTableCell;
 			sourceTree = "<group>";
 		};
-		1B8E5D6E1CAF411C00239F1C /* FeedTableViewCells */ = {
+		1B8E5D6E1CAF411C00239F1C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				1BBA3D891CB0501200FC4609 /* BroadcastTableViewCell */,
-				1BBA3D8C1CB0501200FC4609 /* CheckInTableViewCell */,
-				1BBA3D8F1CB0501200FC4609 /* ToggleFeedTableViewCell */,
-				1BBA3D921CB0501200FC4609 /* UpdateFeedTableViewCell */,
+				1BBA3DB61CB0524600FC4609 /* BroadcastTableViewCell */,
+				1BBA3DB91CB0524600FC4609 /* CheckInTableViewCell */,
+				1BBA3DBC1CB0524600FC4609 /* ToggleFeedTableViewCell */,
+				1BBA3DBF1CB0524600FC4609 /* UpdateFeedTableViewCell */,
 			);
-			name = FeedTableViewCells;
-			path = "Custom Views/FeedTableViewCells";
+			name = Feed;
+			path = "Custom Views/Feed";
 			sourceTree = "<group>";
 		};
 		1B8E5D811CAF41A600239F1C /* Feed */ = {
@@ -389,38 +371,49 @@
 			path = "Choose Project";
 			sourceTree = "<group>";
 		};
-		1BBA3D891CB0501200FC4609 /* BroadcastTableViewCell */ = {
+		1BBA3DAD1CB051EE00FC4609 /* PlannerTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				1BBA3D8A1CB0501200FC4609 /* BroadcastFeedTableViewCell.swift */,
-				1BBA3D8B1CB0501200FC4609 /* BroadcastFeedTableViewCell.xib */,
+				1BBA3DAE1CB0520800FC4609 /* PlannerHeaderTableViewCell.swift */,
+				1BBA3DAF1CB0520800FC4609 /* PlannerHeaderTableViewCell.xib */,
+				1BBA3DB01CB0520800FC4609 /* PlannerTableViewCell.swift */,
+				1BBA3DB11CB0520800FC4609 /* PlannerTableViewCell.xib */,
+			);
+			path = PlannerTableViewCells;
+			sourceTree = "<group>";
+		};
+		1BBA3DB61CB0524600FC4609 /* BroadcastTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BBA3DB71CB0524600FC4609 /* BroadcastFeedTableViewCell.swift */,
+				1BBA3DB81CB0524600FC4609 /* BroadcastFeedTableViewCell.xib */,
 			);
 			path = BroadcastTableViewCell;
 			sourceTree = "<group>";
 		};
-		1BBA3D8C1CB0501200FC4609 /* CheckInTableViewCell */ = {
+		1BBA3DB91CB0524600FC4609 /* CheckInTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				1BBA3D8D1CB0501200FC4609 /* CheckInFeedTableViewCell.swift */,
-				1BBA3D8E1CB0501200FC4609 /* CheckInFeedTableViewCell.xib */,
+				1BBA3DBA1CB0524600FC4609 /* CheckInFeedTableViewCell.swift */,
+				1BBA3DBB1CB0524600FC4609 /* CheckInFeedTableViewCell.xib */,
 			);
 			path = CheckInTableViewCell;
 			sourceTree = "<group>";
 		};
-		1BBA3D8F1CB0501200FC4609 /* ToggleFeedTableViewCell */ = {
+		1BBA3DBC1CB0524600FC4609 /* ToggleFeedTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				1BBA3D901CB0501200FC4609 /* ToggleFeedTableViewCell.swift */,
-				1BBA3D911CB0501200FC4609 /* ToggleFeedTableViewCell.xib */,
+				1BBA3DBD1CB0524600FC4609 /* ToggleFeedTableViewCell.swift */,
+				1BBA3DBE1CB0524600FC4609 /* ToggleFeedTableViewCell.xib */,
 			);
 			path = ToggleFeedTableViewCell;
 			sourceTree = "<group>";
 		};
-		1BBA3D921CB0501200FC4609 /* UpdateFeedTableViewCell */ = {
+		1BBA3DBF1CB0524600FC4609 /* UpdateFeedTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				1BBA3D931CB0501200FC4609 /* UpdateFeedTableViewCell.swift */,
-				1BBA3D941CB0501200FC4609 /* UpdateFeedTableViewCell.xib */,
+				1BBA3DC01CB0524600FC4609 /* UpdateFeedTableViewCell.swift */,
+				1BBA3DC11CB0524600FC4609 /* UpdateFeedTableViewCell.xib */,
 			);
 			path = UpdateFeedTableViewCell;
 			sourceTree = "<group>";
@@ -574,9 +567,8 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				1B8E5D6E1CAF411C00239F1C /* FeedTableViewCells */,
+				1B8E5D6E1CAF411C00239F1C /* Feed */,
 				18CE2A6C1CAC891B00FE4A46 /* Planner */,
-				01530AFC1CAB1B6C00429264 /* PlannerTableView */,
 				1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */,
 				1BC4E4621CAD9202008283D3 /* UserTableViewCell */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
@@ -923,31 +915,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
-				1BBA3D9A1CB0501200FC4609 /* ToggleFeedTableViewCell.xib in Resources */,
+				1BBA3DC71CB0524600FC4609 /* ToggleFeedTableViewCell.xib in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				1BBA3D781CB03C4600FC4609 /* CreateTaskViewController.xib in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
-				01530B001CAB1CA900429264 /* PlannerTableViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
-				1BBA3D981CB0501200FC4609 /* CheckInFeedTableViewCell.xib in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
-				1BBA3D9C1CB0501200FC4609 /* UpdateFeedTableViewCell.xib in Resources */,
-				18CE2A821CAC8AA700FE4A46 /* TextViewTaskViewCell.xib in Resources */,
+				1BBA3DC51CB0524600FC4609 /* CheckInFeedTableViewCell.xib in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
-				1BBA3D961CB0501200FC4609 /* BroadcastFeedTableViewCell.xib in Resources */,
+				1BBA3DC91CB0524600FC4609 /* UpdateFeedTableViewCell.xib in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
+				1BBA3DAA1CB051C900FC4609 /* LabelTextTaskViewCell.xib in Resources */,
+				1BBA3DC31CB0524600FC4609 /* BroadcastFeedTableViewCell.xib in Resources */,
+				1BBA3DAC1CB051C900FC4609 /* TextViewTaskViewCell.xib in Resources */,
 				1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */,
+				1BBA3DB31CB0520800FC4609 /* PlannerHeaderTableViewCell.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
-				01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
-				18CE2A7A1CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				1B8E5D911CAF42D100239F1C /* FeedViewController.xib in Resources */,
+				1BBA3DB51CB0520800FC4609 /* PlannerTableViewCell.xib in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
 				A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */,
@@ -967,7 +959,7 @@
 				1B8E5D881CAF41C100239F1C /* FeedModel.swift in Sources */,
 				1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
-				1BBA3D951CB0501200FC4609 /* BroadcastFeedTableViewCell.swift in Sources */,
+				1BBA3DC21CB0524600FC4609 /* BroadcastFeedTableViewCell.swift in Sources */,
 				1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
@@ -986,9 +978,9 @@
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
 				1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
-				18CE2A811CAC8AA700FE4A46 /* TextViewTaskViewCell.swift in Sources */,
 				A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */,
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
+				1BBA3DA91CB051C900FC4609 /* LabelTextTaskViewCell.swift in Sources */,
 				A7C480221CA3F1EC00F4FDB7 /* UIImageView+WebCache.m in Sources */,
 				A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */,
 				A7A94ED91C9E97B5002B3991 /* ToggleViewController.swift in Sources */,
@@ -998,11 +990,9 @@
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
-				01530AFF1CAB1CA900429264 /* PlannerTableViewCell.swift in Sources */,
 				1B8E5D8F1CAF423A00239F1C /* FeedAdapter.swift in Sources */,
 				A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */,
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
-				18CE2A791CAC8A6300FE4A46 /* LabelTextTaskViewCell.swift in Sources */,
 				1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */,
@@ -1010,22 +1000,24 @@
 				1BBA3D7C1CB03D0000FC4609 /* ChooseProjectViewController.swift in Sources */,
 				A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */,
 				1B8E5D8B1CAF41D400239F1C /* UserModel.swift in Sources */,
+				1BBA3DAB1CB051C900FC4609 /* TextViewTaskViewCell.swift in Sources */,
 				A7C480171CA3F1EC00F4FDB7 /* SDWebImageCompat.m in Sources */,
 				1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */,
-				01530B031CAC2C0500429264 /* PlannerHeaderTableViewCell.swift in Sources */,
 				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,
-				1BBA3D9B1CB0501200FC4609 /* UpdateFeedTableViewCell.swift in Sources */,
+				1BBA3DB41CB0520800FC4609 /* PlannerTableViewCell.swift in Sources */,
 				A7C480141CA3F1EC00F4FDB7 /* MKAnnotationView+WebCache.m in Sources */,
+				1BBA3DC81CB0524600FC4609 /* UpdateFeedTableViewCell.swift in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
 				1B8E5D801CAF417E00239F1C /* Circular+UIImageView.swift in Sources */,
-				1BBA3D971CB0501200FC4609 /* CheckInFeedTableViewCell.swift in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
+				1BBA3DC41CB0524600FC4609 /* CheckInFeedTableViewCell.swift in Sources */,
 				A7C4801C1CA3F1EC00F4FDB7 /* SDWebImagePrefetcher.m in Sources */,
 				01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */,
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
+				1BBA3DB21CB0520800FC4609 /* PlannerHeaderTableViewCell.swift in Sources */,
 				1B8E5D8D1CAF420F00239F1C /* FeedViewController.swift in Sources */,
 				A7C4801A1CA3F1EC00F4FDB7 /* SDWebImageDownloaderOperation.m in Sources */,
-				1BBA3D991CB0501200FC4609 /* ToggleFeedTableViewCell.swift in Sources */,
+				1BBA3DC61CB0524600FC4609 /* ToggleFeedTableViewCell.swift in Sources */,
 				A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */,
 				A7C4801B1CA3F1EC00F4FDB7 /* SDWebImageManager.m in Sources */,
 				1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */,
