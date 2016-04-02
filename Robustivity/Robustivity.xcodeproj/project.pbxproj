@@ -34,7 +34,6 @@
 		75D7CD331CAD81F6009C6466 /* SendExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */; };
 		75D7CD341CAD81F6009C6466 /* WriteExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */; };
 		75D7CD351CAD81F6009C6466 /* WriteExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */; };
-		75D7CD371CAD822B009C6466 /* Adapters in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD361CAD822B009C6466 /* Adapters */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -180,7 +179,6 @@
 		75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendExcuseViewController.xib; path = Robustivity/ViewControllers/More/SendExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
 		75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteExcuseViewController.swift; path = Robustivity/ViewControllers/More/WriteExcuseViewController.swift; sourceTree = SOURCE_ROOT; };
 		75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WriteExcuseViewController.xib; path = Robustivity/ViewControllers/More/WriteExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
-		75D7CD361CAD822B009C6466 /* Adapters */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Adapters; path = "../../../../../Robustivity-ios/Robustivity/Robustivity/Adapters"; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				75D7CD361CAD822B009C6466 /* Adapters */,
 				75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */,
 				229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */,
 				A717E5A61CA14D2D00F237DD /* BaseAdapter.swift */,
@@ -791,7 +788,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75D7CD371CAD822B009C6466 /* Adapters in Resources */,
 				A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
