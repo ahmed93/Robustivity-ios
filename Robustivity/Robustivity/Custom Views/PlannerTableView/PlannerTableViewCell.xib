@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="MyriadPro-Regular.otf">
+            <string>MyriadPro-Regular</string>
+            <string>MyriadPro-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="106" id="nZG-LU-gjW" customClass="PlannerTableViewCell" customModule="Robustivity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="nZG-LU-gjW" id="DTC-YJ-cZG">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robustaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="tlT-aC-0Zz">
+                        <rect key="frame" x="10" y="17" width="53" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="tlT-aC-0Zz" secondAttribute="height" multiplier="5:2" id="BzX-we-39b"/>
+                            <constraint firstAttribute="width" constant="53" id="O6J-vP-GAq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:22:12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yh-FX-Z7H" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="268" y="21" width="42" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="2kd-FN-9KR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="1010"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="uVO-54-iHa">
+                        <rect key="frame" x="245" y="18" width="15" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="uVO-54-iHa" secondAttribute="height" multiplier="29:33" id="6we-H9-WlN"/>
+                            <constraint firstAttribute="width" constant="15" id="vUh-ae-PiS"/>
+                        </constraints>
+                    </imageView>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="VO8-Pe-teX">
+                        <rect key="frame" x="75" y="17" width="168" height="58"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="FrontEnd-IOS" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKT-qO-Kmq" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="168" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                        <integer key="value" value="3000"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Robustivity project project project" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuG-wv-mU4" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="46" width="168" height="12"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                        <integer key="value" value="1010"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ZKT-qO-Kmq" firstAttribute="top" secondItem="VO8-Pe-teX" secondAttribute="top" id="Cgt-Of-yTF"/>
+                            <constraint firstAttribute="trailing" secondItem="ZKT-qO-Kmq" secondAttribute="trailing" id="DnJ-mv-b2w"/>
+                            <constraint firstItem="tuG-wv-mU4" firstAttribute="leading" secondItem="VO8-Pe-teX" secondAttribute="leading" id="Lqe-ty-2MK"/>
+                            <constraint firstAttribute="trailing" secondItem="tuG-wv-mU4" secondAttribute="trailing" id="YWD-4f-2nB"/>
+                            <constraint firstItem="tuG-wv-mU4" firstAttribute="top" secondItem="ZKT-qO-Kmq" secondAttribute="bottom" constant="5" id="dwB-EZ-8iH"/>
+                            <constraint firstItem="ZKT-qO-Kmq" firstAttribute="leading" secondItem="VO8-Pe-teX" secondAttribute="leading" id="tjL-ob-MJ1"/>
+                            <constraint firstAttribute="bottom" secondItem="tuG-wv-mU4" secondAttribute="bottom" id="uWS-3A-kgL"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 15,2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z00-Hg-Q5H" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="75" y="82" width="70" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="250" constant="21" id="t0T-I2-OFI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="1050"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raW-2h-dQ3">
+                        <rect key="frame" x="0.0" y="110" width="320" height="3"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="3" id="BVx-a9-U9l"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tlT-aC-0Zz" firstAttribute="leading" secondItem="DTC-YJ-cZG" secondAttribute="leading" constant="10" id="014-0H-vD8"/>
+                    <constraint firstItem="raW-2h-dQ3" firstAttribute="leading" secondItem="DTC-YJ-cZG" secondAttribute="leading" id="9Aa-NU-M4d"/>
+                    <constraint firstItem="raW-2h-dQ3" firstAttribute="top" secondItem="z00-Hg-Q5H" secondAttribute="bottom" constant="14" id="NPt-h5-7qR"/>
+                    <constraint firstItem="VO8-Pe-teX" firstAttribute="top" secondItem="tlT-aC-0Zz" secondAttribute="top" id="OHr-UM-LNf"/>
+                    <constraint firstAttribute="trailing" secondItem="raW-2h-dQ3" secondAttribute="trailing" id="Tcq-iX-rFM"/>
+                    <constraint firstItem="2Yh-FX-Z7H" firstAttribute="centerY" secondItem="tlT-aC-0Zz" secondAttribute="centerY" id="Xfk-Bk-eoW"/>
+                    <constraint firstItem="tlT-aC-0Zz" firstAttribute="top" secondItem="DTC-YJ-cZG" secondAttribute="top" constant="17" id="YHX-yt-4oY"/>
+                    <constraint firstAttribute="trailing" secondItem="2Yh-FX-Z7H" secondAttribute="trailing" constant="10" id="bA2-eR-ZgU"/>
+                    <constraint firstItem="VO8-Pe-teX" firstAttribute="leading" secondItem="tlT-aC-0Zz" secondAttribute="trailing" constant="12" id="bBP-Nh-Eu3"/>
+                    <constraint firstItem="uVO-54-iHa" firstAttribute="leading" secondItem="VO8-Pe-teX" secondAttribute="trailing" constant="2" id="dh9-fR-N6o"/>
+                    <constraint firstItem="z00-Hg-Q5H" firstAttribute="leading" secondItem="VO8-Pe-teX" secondAttribute="leading" id="ebA-KP-7oT"/>
+                    <constraint firstItem="uVO-54-iHa" firstAttribute="centerY" secondItem="2Yh-FX-Z7H" secondAttribute="centerY" id="fbg-3T-IFD"/>
+                    <constraint firstItem="z00-Hg-Q5H" firstAttribute="top" secondItem="VO8-Pe-teX" secondAttribute="bottom" constant="7" id="iIi-Yt-Ldj"/>
+                    <constraint firstAttribute="bottom" secondItem="raW-2h-dQ3" secondAttribute="bottom" id="lqV-zS-bot"/>
+                    <constraint firstItem="2Yh-FX-Z7H" firstAttribute="leading" secondItem="uVO-54-iHa" secondAttribute="trailing" constant="8" id="s8Q-hU-fFc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cellSeparator" destination="raW-2h-dQ3" id="qRd-19-Yq3"/>
+                <outlet property="dueDate" destination="z00-Hg-Q5H" id="UIM-Rr-E7H"/>
+                <outlet property="dueDateBottomMarginLayoutConstraint" destination="NPt-h5-7qR" id="sSE-2y-gR5"/>
+                <outlet property="itemTitle" destination="ZKT-qO-Kmq" id="IrC-F7-Cm7"/>
+                <outlet property="projectName" destination="tuG-wv-mU4" id="th0-N8-Hz8"/>
+                <outlet property="toggleTimer" destination="2Yh-FX-Z7H" id="rvQ-TT-kds"/>
+            </connections>
+            <point key="canvasLocation" x="279" y="286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="clock" width="34" height="39"/>
+        <image name="robustaLogo" width="374" height="98"/>
+    </resources>
+</document>
