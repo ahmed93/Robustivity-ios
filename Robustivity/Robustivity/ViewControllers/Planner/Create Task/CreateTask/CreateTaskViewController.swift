@@ -16,8 +16,6 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     
     override func viewDidLoad() {
         
-        autoreleasepool{
-        
         super.viewDidLoad();
             
         self.title = "Task info";
@@ -26,11 +24,12 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
         //Done button on right
         
         let doneButton = UIBarButtonItem();
-        doneButton.title = "Done";
+        doneButton.title = "Done"
+        doneButton.target = self
+        doneButton.action = NSSelectorFromString("doneButtonPress");
         self.navigationItem.rightBarButtonItem = doneButton;
         
         adapter = CreateTaskAdapter(viewController: self, tableView: tableView!, registerMultipleNibsAndIdenfifers: ["TextViewTaskViewCell":"textViewCell", "LabelTextTaskViewCell":"labelCell"]);
-        }
         
     }
     
@@ -86,6 +85,11 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
         }
         
         return true;
+    }
+    
+    func doneButtonPress(){
+        
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
 
 }
