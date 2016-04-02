@@ -41,10 +41,10 @@
 		1BBA3DC71CB0524600FC4609 /* ToggleFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DBE1CB0524600FC4609 /* ToggleFeedTableViewCell.xib */; };
 		1BBA3DC81CB0524600FC4609 /* UpdateFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DC01CB0524600FC4609 /* UpdateFeedTableViewCell.swift */; };
 		1BBA3DC91CB0524600FC4609 /* UpdateFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DC11CB0524600FC4609 /* UpdateFeedTableViewCell.xib */; };
+		1BBA3DCE1CB053F600FC4609 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DCC1CB053F600FC4609 /* UserTableViewCell.swift */; };
+		1BBA3DCF1CB053F600FC4609 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DCD1CB053F600FC4609 /* UserTableViewCell.xib */; };
 		1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */; };
 		1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */; };
-		1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */; };
-		1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */; };
 		1BC4E4691CAD921F008283D3 /* SwipableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */; };
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
@@ -198,10 +198,10 @@
 		1BBA3DBE1CB0524600FC4609 /* ToggleFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToggleFeedTableViewCell.xib; sourceTree = "<group>"; };
 		1BBA3DC01CB0524600FC4609 /* UpdateFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFeedTableViewCell.swift; sourceTree = "<group>"; };
 		1BBA3DC11CB0524600FC4609 /* UpdateFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3DCC1CB053F600FC4609 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3DCD1CB053F600FC4609 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAssigneeViewController.swift; sourceTree = "<group>"; };
 		1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseAssigneeViewController.xib; sourceTree = "<group>"; };
-		1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableTableViewCell.swift; sourceTree = "<group>"; };
 		1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
@@ -301,6 +301,7 @@
 		18CE2A6C1CAC891B00FE4A46 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				1BBA3DCB1CB053F600FC4609 /* ChooseAssigneeTableViewCell */,
 				1BBA3DAD1CB051EE00FC4609 /* PlannerTableViewCells */,
 				18CE2A6D1CAC892A00FE4A46 /* Task */,
 			);
@@ -418,6 +419,15 @@
 			path = UpdateFeedTableViewCell;
 			sourceTree = "<group>";
 		};
+		1BBA3DCB1CB053F600FC4609 /* ChooseAssigneeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BBA3DCC1CB053F600FC4609 /* UserTableViewCell.swift */,
+				1BBA3DCD1CB053F600FC4609 /* UserTableViewCell.xib */,
+			);
+			path = ChooseAssigneeTableViewCell;
+			sourceTree = "<group>";
+		};
 		1BC4E45C1CAD91EF008283D3 /* Create Task */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,16 +445,6 @@
 				1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */,
 			);
 			path = "Choose Assignee";
-			sourceTree = "<group>";
-		};
-		1BC4E4621CAD9202008283D3 /* UserTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */,
-				1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */,
-			);
-			name = UserTableViewCell;
-			path = "Custom Views/UserTableViewCell";
 			sourceTree = "<group>";
 		};
 		1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */ = {
@@ -570,7 +570,6 @@
 				1B8E5D6E1CAF411C00239F1C /* Feed */,
 				18CE2A6C1CAC891B00FE4A46 /* Planner */,
 				1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */,
-				1BC4E4621CAD9202008283D3 /* UserTableViewCell */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
@@ -930,7 +929,6 @@
 				1BBA3DAC1CB051C900FC4609 /* TextViewTaskViewCell.xib in Resources */,
 				1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
-				1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */,
 				1BBA3DB31CB0520800FC4609 /* PlannerHeaderTableViewCell.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
@@ -938,6 +936,7 @@
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
+				1BBA3DCF1CB053F600FC4609 /* UserTableViewCell.xib in Resources */,
 				1B8E5D911CAF42D100239F1C /* FeedViewController.xib in Resources */,
 				1BBA3DB51CB0520800FC4609 /* PlannerTableViewCell.xib in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
@@ -956,8 +955,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
+				1BBA3DCE1CB053F600FC4609 /* UserTableViewCell.swift in Sources */,
 				1B8E5D881CAF41C100239F1C /* FeedModel.swift in Sources */,
-				1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
 				1BBA3DC21CB0524600FC4609 /* BroadcastFeedTableViewCell.swift in Sources */,
 				1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */,
