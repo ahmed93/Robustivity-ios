@@ -44,6 +44,18 @@
 		1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */; };
 		1BC4E4691CAD921F008283D3 /* SwipableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */; };
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
+		9412C7E71CB036B50096E77D /* TaskInfoToggledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9412C7E51CB036B50096E77D /* TaskInfoToggledTableViewCell.swift */; };
+		9412C7E81CB036B50096E77D /* TaskInfoToggledTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9412C7E61CB036B50096E77D /* TaskInfoToggledTableViewCell.xib */; };
+		94B389021CAE76840024F72F /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B388FA1CAE76840024F72F /* CommentTableViewCell.swift */; };
+		94B389031CAE76840024F72F /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B388FB1CAE76840024F72F /* CommentTableViewCell.xib */; };
+		94B389041CAE76840024F72F /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B388FC1CAE76840024F72F /* DescriptionTableViewCell.swift */; };
+		94B389051CAE76840024F72F /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B388FD1CAE76840024F72F /* DescriptionTableViewCell.xib */; };
+		94B389061CAE76840024F72F /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B388FE1CAE76840024F72F /* PersonTableViewCell.swift */; };
+		94B389071CAE76840024F72F /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B388FF1CAE76840024F72F /* PersonTableViewCell.xib */; };
+		94B389081CAE76840024F72F /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B389001CAE76840024F72F /* TaskViewController.swift */; };
+		94B389091CAE76840024F72F /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B389011CAE76840024F72F /* TaskViewController.xib */; };
+		94C655011CACB70C00FC2C0F /* TaskInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C654FF1CACB70C00FC2C0F /* TaskInfoAdapter.swift */; };
+		94C655021CACB70C00FC2C0F /* TaskUpdatesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C655001CACB70C00FC2C0F /* TaskUpdatesAdapter.swift */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -198,6 +210,18 @@
 		1BC4E4641CAD9202008283D3 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		1BC4E4681CAD921F008283D3 /* SwipableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableTableViewCell.swift; sourceTree = "<group>"; };
 		1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
+		9412C7E51CB036B50096E77D /* TaskInfoToggledTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoToggledTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		9412C7E61CB036B50096E77D /* TaskInfoToggledTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskInfoToggledTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		94B388FA1CAE76840024F72F /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentTableViewCell.swift; path = "Robustivity/Custom Views/Task View/CommentTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		94B388FB1CAE76840024F72F /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentTableViewCell.xib; path = "Robustivity/Custom Views/Task View/CommentTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
+		94B388FC1CAE76840024F72F /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionTableViewCell.swift; path = "Robustivity/Custom Views/Task View/DescriptionTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		94B388FD1CAE76840024F72F /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DescriptionTableViewCell.xib; path = "Robustivity/Custom Views/Task View/DescriptionTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
+		94B388FE1CAE76840024F72F /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonTableViewCell.swift; path = "Robustivity/Custom Views/Task View/PersonTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		94B388FF1CAE76840024F72F /* PersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PersonTableViewCell.xib; path = "Robustivity/Custom Views/Task View/PersonTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
+		94B389001CAE76840024F72F /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskViewController.swift; path = "Robustivity/Custom Views/Task View/TaskViewController.swift"; sourceTree = SOURCE_ROOT; };
+		94B389011CAE76840024F72F /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskViewController.xib; path = "Robustivity/Custom Views/Task View/TaskViewController.xib"; sourceTree = SOURCE_ROOT; };
+		94C654FF1CACB70C00FC2C0F /* TaskInfoAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoAdapter.swift; sourceTree = "<group>"; };
+		94C655001CACB70C00FC2C0F /* TaskUpdatesAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskUpdatesAdapter.swift; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -414,14 +438,33 @@
 			path = "Custom Views/BaseSwipableTableCell";
 			sourceTree = "<group>";
 		};
+		94C654F21CACB6DE00FC2C0F /* Task View */ = {
+			isa = PBXGroup;
+			children = (
+				94B388FA1CAE76840024F72F /* CommentTableViewCell.swift */,
+				94B388FB1CAE76840024F72F /* CommentTableViewCell.xib */,
+				94B388FC1CAE76840024F72F /* DescriptionTableViewCell.swift */,
+				94B388FD1CAE76840024F72F /* DescriptionTableViewCell.xib */,
+				94B388FE1CAE76840024F72F /* PersonTableViewCell.swift */,
+				94B388FF1CAE76840024F72F /* PersonTableViewCell.xib */,
+				94B389001CAE76840024F72F /* TaskViewController.swift */,
+				94B389011CAE76840024F72F /* TaskViewController.xib */,
+				9412C7E51CB036B50096E77D /* TaskInfoToggledTableViewCell.swift */,
+				9412C7E61CB036B50096E77D /* TaskInfoToggledTableViewCell.xib */,
+			);
+			name = "Task View";
+			path = "Custom Views/Task View";
+			sourceTree = "<unknown>";
+		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				94C654FF1CACB70C00FC2C0F /* TaskInfoAdapter.swift */,
+				94C655001CACB70C00FC2C0F /* TaskUpdatesAdapter.swift */,
 				1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */,
 				A717E5A61CA14D2D00F237DD /* BaseAdapter.swift */,
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
-				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
 				18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */,
 				01530AFA1CAB145A00429264 /* PlannerAdapter.swift */,
 				1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */,
@@ -525,6 +568,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				94C654F21CACB6DE00FC2C0F /* Task View */,
 				1B8E5D6E1CAF411C00239F1C /* Feed */,
 				18CE2A6C1CAC891B00FE4A46 /* Planner */,
 				01530AFC1CAB1B6C00429264 /* PlannerTableView */,
@@ -875,15 +919,18 @@
 			files = (
 				1B8E5D7E1CAF413800239F1C /* ToggleFeedTableViewCell.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
+				94B389051CAE76840024F72F /* DescriptionTableViewCell.xib in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
 				01530B001CAB1CA900429264 /* PlannerTableViewCell.xib in Resources */,
 				18B8049E1CAF82C3005CACEE /* CreateTaskViewController.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
+				94B389091CAE76840024F72F /* TaskViewController.xib in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
 				18CE2A821CAC8AA700FE4A46 /* TextViewTaskViewCell.xib in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
+				94B389071CAE76840024F72F /* PersonTableViewCell.xib in Resources */,
 				1B8E5D7A1CAF413800239F1C /* CheckInFeedTableViewCell.xib in Resources */,
 				1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
@@ -895,7 +942,9 @@
 				18CE2A7A1CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
+				94B389031CAE76840024F72F /* CommentTableViewCell.xib in Resources */,
 				1B8E5D781CAF413800239F1C /* BroadcastFeedTableViewCell.xib in Resources */,
+				9412C7E81CB036B50096E77D /* TaskInfoToggledTableViewCell.xib in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				1B8E5D911CAF42D100239F1C /* FeedViewController.xib in Resources */,
@@ -913,6 +962,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94C655011CACB70C00FC2C0F /* TaskInfoAdapter.swift in Sources */,
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
 				1B8E5D881CAF41C100239F1C /* FeedModel.swift in Sources */,
 				1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */,
@@ -929,10 +979,14 @@
 				18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */,
 				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
 				1BC4E4691CAD921F008283D3 /* SwipableTableViewCell.swift in Sources */,
+				94B389021CAE76840024F72F /* CommentTableViewCell.swift in Sources */,
+				94B389081CAE76840024F72F /* TaskViewController.swift in Sources */,
 				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
 				1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */,
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
+				9412C7E71CB036B50096E77D /* TaskInfoToggledTableViewCell.swift in Sources */,
+				94B389041CAE76840024F72F /* DescriptionTableViewCell.swift in Sources */,
 				1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
 				18CE2A811CAC8AA700FE4A46 /* TextViewTaskViewCell.swift in Sources */,
@@ -948,6 +1002,7 @@
 				A7C480191CA3F1EC00F4FDB7 /* SDWebImageDownloader.m in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
+				94C655021CACB70C00FC2C0F /* TaskUpdatesAdapter.swift in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
 				01530AFF1CAB1CA900429264 /* PlannerTableViewCell.swift in Sources */,
 				1B8E5D8F1CAF423A00239F1C /* FeedAdapter.swift in Sources */,
@@ -965,6 +1020,7 @@
 				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,
 				A7C480141CA3F1EC00F4FDB7 /* MKAnnotationView+WebCache.m in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
+				94B389061CAE76840024F72F /* PersonTableViewCell.swift in Sources */,
 				1B8E5D7B1CAF413800239F1C /* UpdateFeedTableViewCell.swift in Sources */,
 				1B8E5D801CAF417E00239F1C /* Circular+UIImageView.swift in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,

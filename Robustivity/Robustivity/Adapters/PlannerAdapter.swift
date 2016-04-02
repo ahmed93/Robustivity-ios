@@ -68,6 +68,11 @@ class PlannerAdapter: BaseTableAdapter {
         }
         return 4
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let taskViewController = TaskViewController()
+        self.viewController.navigationController?.pushViewController(taskViewController, animated: true)
+    }
 
     // MARK: Parent Overridden Functions
     /**
