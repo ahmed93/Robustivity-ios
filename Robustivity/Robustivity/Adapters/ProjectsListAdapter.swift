@@ -11,10 +11,13 @@ import UIKit
 
 class ProjectsListAdapter: BaseTableAdapter {
   
+  var projectsListViewController: ProjectsListViewController!
   
   override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
     super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
     tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+    
+    projectsListViewController = viewController as! ProjectsListViewController;
     // any extra stuff to be done
   }
   
@@ -57,7 +60,24 @@ class ProjectsListAdapter: BaseTableAdapter {
     return CGFloat(57)
   }
   
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let projectSegmentedControlViewController = ProjectSegmentedControlViewController(nibName: "ProjectSegmentedControlViewController", bundle: nil)
+   
+   // projectsListViewController.presentViewController(projectSegmentedControlViewController, animated: true, completion: nil)
+    let nav = projectsListViewController.navigationController
+//    projectsListViewController.dismissViewControllerAnimated(false, completion: nil)
+//    nav?.popToRootViewControllerAnimated(false)
+//    nav?.pushViewController(projectSegmentedControlViewController, animated: true)
+//    nav?.presentViewController(projectSegmentedControlViewController, animated: true, completion: nil)
+//    nav?.popViewControllerAnimated(true)
+//    nav?.pushViewController(projectSegmentedControlViewController, animated: true)
+    // let controller = PingToUsersViewController(nibName: "PingToUsersViewController", bundle: nil)
+    //navigationController?.pushViewController(controller, animated: true)
+    
+      nav?.pushViewController(projectSegmentedControlViewController, animated: true)//([projectSegmentedControlViewController], animated: false)
+    
   
+  }
   
   
   

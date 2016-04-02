@@ -1,23 +1,22 @@
 //
-//  UserTableViewCell.swift
+//  PingToUserTableViewCell.swift
 //  Robustivity
 //
-//  Created by Mahmoud Eldesouky on 3/30/16.
+//  Created by Almgohar on 4/2/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
 import UIKit
 
-class UserTableViewCell: UITableViewCell {
+class PingToUserTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellSeparator: UIView!
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userTitle: UILabel!
-    @IBOutlet weak var userAvatar: UIImageView!
+    @IBOutlet weak var pingUserName: UILabel!
+    @IBOutlet weak var pingUserTitle: UILabel!
+    @IBOutlet weak var pingUserAvatar: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.cellSeparator.backgroundColor = Theme.lightGrayColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -25,4 +24,5 @@ class UserTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 }
