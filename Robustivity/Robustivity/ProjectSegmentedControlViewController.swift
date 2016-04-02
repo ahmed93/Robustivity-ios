@@ -33,10 +33,17 @@ class ProjectSegmentedControlViewController: BaseViewController {
         viewsSegmentedControl.selectedSegmentIndex = 0
         showSubView(0)
         
+        let goBackToProjectsBtn = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "goBackToProjects")
+        self.navigationItem.leftBarButtonItem = goBackToProjectsBtn
+
         // style segmented control
         self.viewsSegmentedControl.backgroundColor = Theme.redColor();
         self.viewsSegmentedControl.tintColor = Theme.whiteColor();
         
+    }
+    
+    func goBackToProjects() {  // this dismisses the view upon click on cancel bar button
+        navigationController!.popViewControllerAnimated(true)
     }
     
     @IBAction func switchViews(sender: UISegmentedControl) {
