@@ -131,7 +131,7 @@ class FeedAdapter: BaseTableAdapter {
     different cells of the tableview
     */
     
-     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    /* func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if indexPath.section > 0{
             cell.contentView.backgroundColor = UIColor.clearColor()
@@ -148,6 +148,7 @@ class FeedAdapter: BaseTableAdapter {
             cell.contentView.sendSubviewToBack(whiteRoundedView)
         }
     }
+*/
     
     /*
     Made by Khaled Elhossiny
