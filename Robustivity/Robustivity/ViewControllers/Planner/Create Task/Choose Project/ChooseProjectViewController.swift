@@ -19,7 +19,7 @@ class ChooseProjectViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Choose Project";
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ChooseProjectViewController.cancelAction(_:)))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action:"cancelAction:")
        
         let backItem = UIBarButtonItem()
         backItem.title = "Projects"
