@@ -8,22 +8,18 @@
 
 import UIKit
 
-class CreateTaskViewController: BaseViewController, UITextViewDelegate{
+class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFieldDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     
     var adapter:CreateTaskAdapter!
-    
-    var textViewDelegate:CreateTaskTextViewDelegate!
-    var textFieldDelegate:CreateTaskTextFieldDelegate!
     
     override func viewDidLoad() {
         
         autoreleasepool{
         
         super.viewDidLoad();
-        self.textViewDelegate = CreateTaskTextViewDelegate();
-        self.textFieldDelegate = CreateTaskTextFieldDelegate();
+            
         self.title = "Task info";
         self.navigationItem.title = "Task info";
         
@@ -36,6 +32,60 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate{
         adapter = CreateTaskAdapter(viewController: self, tableView: tableView!, registerMultipleNibsAndIdenfifers: ["TextViewTaskViewCell":"textView", "LabelTextTaskViewCell":"label"]);
         }
         
+    }
+    
+    //try to save default values for text views
+    
+    var defaultTextViewsValues = Dictionary<UITextView,String>();
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        
+        if(textView.text == defaultTextViewsValues[textView]){
+            
+            textView.text = "";
+        }
+        
+        return true;
+    }
+    
+    func textViewShouldEndEditing(textView: UITextView) -> Bool {
+        
+        if(textView.text.isEmpty){
+            
+            textView.text = defaultTextViewsValues[textView];
+        }
+        
+        return true;
+    }
+    
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let text = textField.text;
+        
+        if(text?.characters.count >= 10 && string.characters.count == 1){
+            return false;
+        }
+        
+        let letters = NSCharacterSet.letterCharacterSet();
+        let specialC = NSCharacterSet.alphanumericCharacterSet().invertedSet;
+        let numberL = string.rangeOfCharacterFromSet(letters)?.count;
+        let number = string.rangeOfCharacterFromSet(specialC)?.count;
+        
+        if(number >= 1 || numberL >= 1){
+            return false;
+        }
+        
+        let numberOfGroups = (text?.componentsSeparatedByString(".").count)! - 1;
+        
+        if(!(text?.isEmpty)! && !(string.isEmpty) && ((text?.characters.count)! - numberOfGroups) % 2 == 0){
+            
+            if(numberOfGroups < 2){
+                textField.text = text! + ".";
+            }
+        }
+        
+        return true;
     }
 
 }
