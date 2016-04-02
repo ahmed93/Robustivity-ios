@@ -38,7 +38,7 @@ class CreateTaskAdapter : BaseTableAdapter {
         
         if(cellProperties.count == 2){
             
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("textView", forIndexPath: indexPath) as! TextViewTaskViewCell
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("textViewCell", forIndexPath: indexPath) as! TextViewTaskViewCell
             
             cell.textView.text = cellProperties.objectForKey("textView") as! String;
             cell.textView.delegate = (self.viewController as! CreateTaskViewController)
@@ -49,7 +49,7 @@ class CreateTaskAdapter : BaseTableAdapter {
         }
         else{
             
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("label", forIndexPath: indexPath) as! LabelTextTaskViewCell;
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("labelCell", forIndexPath: indexPath) as! LabelTextTaskViewCell;
             
             cell.label.text = cellProperties.objectForKey("label") as? String;
             cell.textField.placeholder = cellProperties.objectForKey("textView") as? String;

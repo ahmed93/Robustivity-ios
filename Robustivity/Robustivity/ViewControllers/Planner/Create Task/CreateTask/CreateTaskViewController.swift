@@ -29,7 +29,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
         doneButton.title = "Done";
         self.navigationItem.rightBarButtonItem = doneButton;
         
-        adapter = CreateTaskAdapter(viewController: self, tableView: tableView!, registerMultipleNibsAndIdenfifers: ["TextViewTaskViewCell":"textView", "LabelTextTaskViewCell":"label"]);
+        adapter = CreateTaskAdapter(viewController: self, tableView: tableView!, registerMultipleNibsAndIdenfifers: ["TextViewTaskViewCell":"textViewCell", "LabelTextTaskViewCell":"labelCell"]);
         }
         
     }
