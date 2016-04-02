@@ -16,6 +16,17 @@ class OptionsTableAdapter: BaseTableAdapter {
         return 5
     }
     
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch(indexPath.row,indexPath.section) {
+        case (0,1):
+            viewController.navigationController?.pushViewController(DirectoryViewController(), animated: true)
+        default:()
+            
+        }
+        
+    }
+    
     /*
     The Method is fills each cell in the table with
     the corresponding customized cell according 
@@ -43,9 +54,10 @@ class OptionsTableAdapter: BaseTableAdapter {
             return optionsCell
             default:()
             }
-        case 1: optionsCell?.label.text = "Directory";
-        optionsCell?.imgView.image? = UIImage(named:"Stroke 749 + Stroke 750")!
-        return optionsCell
+        case 1:
+            optionsCell?.label.text = "Directory";
+            optionsCell?.imgView.image? = UIImage(named:"Stroke 749 + Stroke 750")!
+            return optionsCell
         case 2:
             switch(indexPath.row){
             case 0: optionsCell?.label.text = "Send Excuse";

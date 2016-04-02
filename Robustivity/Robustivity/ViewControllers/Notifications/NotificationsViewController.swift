@@ -10,6 +10,9 @@ import UIKit
 
 class NotificationsViewController: BaseViewController {
 
+    @IBOutlet weak var tableView:UITableView?
+    
+    var adapter:NotificationsAdapter!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,6 +23,11 @@ class NotificationsViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "Notifications";
         self.navigationItem.title = "Notifications";
+        
+        
+        adapter = NotificationsAdapter(viewController: self, tableView: tableView!, registerMultipleNibsAndIdenfifers: ["NotificationsSingleLineTableViewCell":"singleLineNotifCell","NotificationsDoubleLineTableViewCell":"doubleLineNotifCell"])
     }
+    
+    
 
 }
