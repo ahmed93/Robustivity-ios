@@ -13,6 +13,8 @@
 		011083491CAC1F1500F616DD /* ProjectUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011083471CAC1F1500F616DD /* ProjectUpdateViewController.xib */; };
 		0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */; };
 		0110834F1CAC215A00F616DD /* ProjectUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */; };
+		01F5EBDE1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5EBDC1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift */; };
+		01F5EBDF1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F5EBDD1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib */; };
 		185FE30F1CAC5FE100B3725E /* ProjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */; };
 		185FE3101CAC5FE100B3725E /* ProjectsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */; };
 		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
@@ -151,6 +153,8 @@
 		011083471CAC1F1500F616DD /* ProjectUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectUpdateViewController.xib; path = Robustivity/ViewControllers/More/ProjectUpdate/ProjectUpdateViewController.xib; sourceTree = SOURCE_ROOT; };
 		0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateAdapter.swift; sourceTree = "<group>"; };
 		0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateModel.swift; sourceTree = "<group>"; };
+		01F5EBDC1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectSegmentedControlViewController.swift; path = Robustivity/ProjectSegmentedControlViewController.swift; sourceTree = SOURCE_ROOT; };
+		01F5EBDD1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectSegmentedControlViewController.xib; path = Robustivity/ProjectSegmentedControlViewController.xib; sourceTree = SOURCE_ROOT; };
 		185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectsListViewController.swift; path = Robustivity/ViewControllers/More/ProjectsListViewController.swift; sourceTree = SOURCE_ROOT; };
 		185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectsListViewController.xib; path = Robustivity/ViewControllers/More/ProjectsListViewController.xib; sourceTree = SOURCE_ROOT; };
 		185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListAdapter.swift; sourceTree = "<group>"; };
@@ -387,6 +391,8 @@
 				229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */,
 				229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */,
 				011083451CAC1EF800F616DD /* ProjectUpdate */,
+				01F5EBDC1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift */,
+				01F5EBDD1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -789,6 +795,7 @@
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				196CDBAC1CAF0BC80092A050 /* ProjectInfoViewController.xib in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
+				01F5EBDF1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
 				229A2D591CAD5329004F8980 /* ProjectMemberCell.xib in Resources */,
 				A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */,
@@ -812,6 +819,7 @@
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
 				A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */,
+				01F5EBDE1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift in Sources */,
 				A7C4801D1CA3F1EC00F4FDB7 /* UIButton+WebCache.m in Sources */,
 				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
 				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
