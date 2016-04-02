@@ -1,14 +1,15 @@
 //
-//  UserTableViewCell.swift
+//  PlannerHeaderTableViewCell.swift
 //  Robustivity
 //
-//  Created by Almgohar on 3/31/16.
+//  Created by Ahmed Elassuty on 3/30/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
 import UIKit
 
-class UserTableViewCell: UITableViewCell {
+class PlannerHeaderTableViewCell: UITableViewCell {
+    @IBOutlet weak var headerLabel:RBLabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

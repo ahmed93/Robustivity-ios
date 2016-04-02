@@ -1,4 +1,11 @@
 //
+//  ListProjectsAdapter.swift
+//  Robustivity
+//
+//  Created by Mahmoud Eldesouky on 4/2/16.
+//  Copyright © 2016 BumbleBee. All rights reserved.
+//
+//
 //  UserAdapter.swift
 //  Robustivity
 //
@@ -10,15 +17,18 @@ import Foundation
 import UIKit
 
 // UserAdapter used to display the User TableViews, using the UserTableViewCell.
-// Remove the tableView Separator from your controller using: self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None 
+// Remove the tableView Separator from your controller using: self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
-class UserAdapter: BaseTableAdapter {
+class ListProjectsAdapter: BaseTableAdapter {
     
     var tableItems2:ListModel!
-    
+    var ChooseProjectController:ChooseProjectViewController!
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
+        
+        ChooseProjectController = viewController as? ChooseProjectViewController
+
     }
     
     
@@ -60,15 +70,33 @@ class UserAdapter: BaseTableAdapter {
     }
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let createTaskViewController = CreateTaskViewController()
-        self.viewController.navigationController?.pushViewController(createTaskViewController, animated: true)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+        if self.ChooseProjectController.respondsToSelector(Selector("getTodo"))
+        {
+            if self.ChooseProjectController.getTodo()
+            {
+                let controller = CreateTaskViewController()
+                viewController.navigationController?.pushViewController(controller, animated: true)
+            }
+            else{
+                let controller = ChooseAssigneeViewController(nibName: "ChooseAssigneeViewController", bundle: nil)
+                viewController.navigationController?.pushViewController(controller, animated: true)
+            }
+        }
+
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? UserTableViewCell
-        _cell?.userName.text = tableItems.objectAtIndex(indexPath.row) as? String
-        _cell?.userTitle.text = tableItems2.objectAtIndex(indexPath.row) as? String
+        let _cell = cell as? CustomProjectsListTableViewCell
+        _cell?.projectNameLabel.text = "Vodafone"
+        _cell?.memberLabel.text = "Vodafone"
+        _cell?.marginUIView.backgroundColor = Theme.tableBackgroundColor()
+
     }
+
     
-  }
+
+    
+}

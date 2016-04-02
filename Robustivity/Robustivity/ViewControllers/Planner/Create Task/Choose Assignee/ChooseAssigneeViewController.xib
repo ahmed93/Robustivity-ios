@@ -4,9 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PingToUsersViewController" customModule="Robustivity" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseAssigneeViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="h6r-Lq-8zp" id="c7K-L9-YhC"/>
+                <outlet property="tableView" destination="eAb-my-kdS" id="y4K-Tl-fMo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,17 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h6r-Lq-8zp">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eAb-my-kdS">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="h6r-Lq-8zp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DCn-pp-R1E"/>
-                <constraint firstItem="h6r-Lq-8zp" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="KkW-Hq-yiL"/>
-                <constraint firstItem="h6r-Lq-8zp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="ZF5-4f-ONW"/>
-                <constraint firstItem="h6r-Lq-8zp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="uKB-1m-Abo"/>
+                <constraint firstItem="eAb-my-kdS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5Dv-Cx-xZL"/>
+                <constraint firstItem="eAb-my-kdS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CoU-9I-0na"/>
+                <constraint firstAttribute="trailing" secondItem="eAb-my-kdS" secondAttribute="trailing" id="Hsh-4w-n0V"/>
+                <constraint firstAttribute="bottom" secondItem="eAb-my-kdS" secondAttribute="bottom" id="k5s-kv-yar"/>
             </constraints>
         </view>
     </objects>
