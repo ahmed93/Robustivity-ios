@@ -22,5 +22,4 @@ class MoreViewController: BaseViewController {
         self.navigationItem.title = "More";
     }
 
-    
 }

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04179F351CAD441600A3513A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F331CAD441600A3513A /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		04179F361CAD441600A3513A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04179F341CAD441600A3513A /* ProfileViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; settings = {ASSET_TAGS = (); }; };
+		04179F3C1CAD508F00A3513A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F3A1CAD508F00A3513A /* ProfileTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		04179F3D1CAD508F00A3513A /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04179F3B1CAD508F00A3513A /* ProfileTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		41ED59101CAC379900508474 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED590E1CAC379900508474 /* CallViewController.swift */; };
+		41ED59111CAC379900508474 /* CallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED590F1CAC379900508474 /* CallViewController.xib */; };
+		41ED59151CAC48B700508474 /* CallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */; };
+		41ED59161CAC48B700508474 /* CallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -25,6 +34,10 @@
 		A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */; };
 		A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */; };
 		A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */; };
+		A750E9781CA97B77009D29BB /* NotificationsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */; };
+		A750E9831CA97C49009D29BB /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */; };
+		A750E9841CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */; };
+		A750E9881CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A750E9871CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib */; };
 		A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */; };
 		A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED11C9E9724002B3991 /* FeedViewController.swift */; };
 		A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */; };
@@ -75,6 +88,8 @@
 		F4E645841CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E645831CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift */; };
 		F4E6AA431CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E6AA411CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift */; };
 		F4E6AA441CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E6AA421CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib */; };
+		E5333BF71CADDA2300C287D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5333BF51CADDA2300C287D2 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E5333BF81CADDA2300C287D2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5333BF61CADDA2300C287D2 /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +145,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04179F331CAD441600A3513A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		04179F341CAD441600A3513A /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
+		04179F3A1CAD508F00A3513A /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = "Custom Views/Profile/ProfileTableViewCell.swift"; sourceTree = "<group>"; };
+		04179F3B1CAD508F00A3513A /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileTableViewCell.xib; path = "Custom Views/Profile/ProfileTableViewCell.xib"; sourceTree = "<group>"; };
+		41ED590E1CAC379900508474 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
+		41ED590F1CAC379900508474 /* CallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallViewController.xib; sourceTree = "<group>"; };
+		41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallCollectionViewCell.swift; sourceTree = "<group>"; };
+		41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallCollectionViewCell.xib; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -149,6 +173,10 @@
 		A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_2+Theme.swift"; sourceTree = "<group>"; };
 		A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_3+Theme.swift"; sourceTree = "<group>"; };
 		A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_4+Theme.swift"; sourceTree = "<group>"; };
+		A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsAdapter.swift; sourceTree = "<group>"; };
+		A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsTableViewCell.swift; path = "Custom Views/Notifications/NotificationsTableViewCell.swift"; sourceTree = "<group>"; };
+		A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsSingleLineTableViewCell.xib; path = "Custom Views/Notifications/NotificationsSingleLineTableViewCell.xib"; sourceTree = "<group>"; };
+		A750E9871CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsDoubleLineTableViewCell.xib; path = "Custom Views/Notifications/NotificationsDoubleLineTableViewCell.xib"; sourceTree = "<group>"; };
 		A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		A7A94ED11C9E9724002B3991 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +247,8 @@
 		F4E645831CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDirectoryAdapter.swift; sourceTree = "<group>"; };
 		F4E6AA411CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDirectoryViewController.swift; sourceTree = "<group>"; };
 		F4E6AA421CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileDirectoryViewController.xib; sourceTree = "<group>"; };
+		E5333BF51CADDA2300C287D2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E5333BF61CADDA2300C287D2 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +262,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04179F391CAD505900A3513A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				04179F3A1CAD508F00A3513A /* ProfileTableViewCell.swift */,
+				04179F3B1CAD508F00A3513A /* ProfileTableViewCell.xib */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		41ED59061CAC377100508474 /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				41ED590E1CAC379900508474 /* CallViewController.swift */,
+				41ED590F1CAC379900508474 /* CallViewController.xib */,
+			);
+			name = Call;
+			sourceTree = "<group>";
+		};
+		41ED59121CAC487900508474 /* CallCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */,
+				41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */,
+			);
+			name = CallCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +297,8 @@
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
 				F4E645831CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift */,
+				04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */,
+				A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -298,6 +357,8 @@
 			children = (
 				F4E6AA411CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift */,
 				F4E6AA421CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib */,
+				04179F331CAD441600A3513A /* ProfileViewController.swift */,
+				04179F341CAD441600A3513A /* ProfileViewController.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -341,9 +402,22 @@
 			isa = PBXGroup;
 			children = (
 				F4E6456F1CA952CC00B579C2 /* ProfileDirectory */,
+				04179F391CAD505900A3513A /* Profile */,
+				41ED59121CAC487900508474 /* CallCollectionViewCell */,
+				A750E9801CA97C13009D29BB /* Notifications */,
 				A7FD4DAC1CA5DE6400BD7332 /* Example */,
 			);
 			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		A750E9801CA97C13009D29BB /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */,
+				A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */,
+				A750E9871CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib */,
+			);
+			name = Notifications;
 			sourceTree = "<group>";
 		};
 		A7A94EBE1C9E9321002B3991 /* Feed */ = {
@@ -358,6 +432,8 @@
 		A7A94EBF1C9E9321002B3991 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E5333BF51CADDA2300C287D2 /* LoginViewController.swift */,
+				E5333BF61CADDA2300C287D2 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -365,6 +441,7 @@
 		A7A94EC01C9E9321002B3991 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				41ED59061CAC377100508474 /* Call */,
 				A72B29131CA2DE7D00C49913 /* Profile */,
 				A72B29181CA2DEA000C49913 /* AttendanceLog */,
 				A72B29121CA2DE7D00C49913 /* Ping */,
@@ -690,10 +767,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5333BF81CADDA2300C287D2 /* LoginViewController.xib in Resources */,
 				A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
+				A750E9881CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
+				41ED59161CAC48B700508474 /* CallCollectionViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
@@ -704,12 +784,16 @@
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				F4E6AA441CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib in Resources */,
+				A750E9841CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
+				41ED59111CAC379900508474 /* CallViewController.xib in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
+				04179F3D1CAD508F00A3513A /* ProfileTableViewCell.xib in Resources */,
 				A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */,
+				04179F361CAD441600A3513A /* ProfileViewController.xib in Resources */,
 				A7A94EDA1C9E97B5002B3991 /* ToggleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,9 +808,11 @@
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
 				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
+				41ED59101CAC379900508474 /* CallViewController.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				F4E6AA431CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
+				A750E9781CA97B77009D29BB /* NotificationsAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
@@ -741,7 +827,9 @@
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
 				A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */,
+				04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */,
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
+				E5333BF71CADDA2300C287D2 /* LoginViewController.swift in Sources */,
 				A7C480221CA3F1EC00F4FDB7 /* UIImageView+WebCache.m in Sources */,
 				A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */,
 				A7A94ED91C9E97B5002B3991 /* ToggleViewController.swift in Sources */,
@@ -763,10 +851,14 @@
 				A7C4801C1CA3F1EC00F4FDB7 /* SDWebImagePrefetcher.m in Sources */,
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				A7C4801A1CA3F1EC00F4FDB7 /* SDWebImageDownloaderOperation.m in Sources */,
+				41ED59151CAC48B700508474 /* CallCollectionViewCell.swift in Sources */,
 				A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */,
 				A7C4801B1CA3F1EC00F4FDB7 /* SDWebImageManager.m in Sources */,
+				04179F3C1CAD508F00A3513A /* ProfileTableViewCell.swift in Sources */,
 				A7C480201CA3F1EC00F4FDB7 /* UIImage+WebP.m in Sources */,
+				04179F351CAD441600A3513A /* ProfileViewController.swift in Sources */,
 				A717E5AD1CA1567F00F237DD /* RobustivityTabBarController.swift in Sources */,
+				A750E9831CA97C49009D29BB /* NotificationsTableViewCell.swift in Sources */,
 				A7C480161CA3F1EC00F4FDB7 /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
