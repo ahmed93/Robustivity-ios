@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */; settings = {ASSET_TAGS = (); }; };
+		7D05C3ED1CAD76FF008F4A83 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		7D05C3EE1CAD76FF008F4A83 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
@@ -125,6 +128,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableAdapter.swift; sourceTree = "<group>"; };
+		7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewCell.swift; path = "Custom Views/Example/MoreTableViewCell.swift"; sourceTree = "<group>"; };
+		7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreTableViewCell.xib; path = "Custom Views/Example/MoreTableViewCell.xib"; sourceTree = "<group>"; };
 		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
+				7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -531,6 +538,8 @@
 		A7FD4DAC1CA5DE6400BD7332 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */,
+				7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */,
 				A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */,
 				A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */,
 			);
@@ -683,6 +692,7 @@
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
+				7D05C3EE1CAD76FF008F4A83 /* MoreTableViewCell.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
 				A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */,
 				A7A94EDA1C9E97B5002B3991 /* ToggleViewController.xib in Resources */,
@@ -702,6 +712,7 @@
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
+				7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
 				A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */,
@@ -719,6 +730,7 @@
 				A7A94ED91C9E97B5002B3991 /* ToggleViewController.swift in Sources */,
 				A7C480151CA3F1EC00F4FDB7 /* NSData+ImageContentType.m in Sources */,
 				A7C480191CA3F1EC00F4FDB7 /* SDWebImageDownloader.m in Sources */,
+				7D05C3ED1CAD76FF008F4A83 /* MoreTableViewCell.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				A7C480211CA3F1EC00F4FDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
