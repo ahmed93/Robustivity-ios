@@ -97,24 +97,18 @@ class PlannerViewController: BaseViewController {
             Ahmed Elassuty.
         - Parameter sender:
             The right clicked bar button.
-        - TODO:
-            Add the right view controllers upon integration.
     */
     func createItemAction(sender: UIBarButtonItem) {
-        assertionFailure("Add the right view controllers upon integration.")
-        // let viewController:UIViewController;
+        let controller = ChooseProjectViewController(nibName:"ChooseProjectViewController",bundle: nil)
         
         if segmentedControl.selectedSegmentIndex == 0 {
-            // [TODO] Create new Task
-            // Replace viewController
-            // projectAssignmentViewController = ProjectAssignmentViewController()
+            controller.isTodo(false)
         } else {
-            // [TODO] Create new ToDo
-            // Replace viewController
-            // projectAssignmentViewController = CREATE TODO View Controller
+            controller.isTodo(true)
         }
         
-        // self.navigationController?.pushViewController(projectAssignmentViewController, animated: true)
+        let navController = UINavigationController(rootViewController: controller)
+        self.navigationController?.presentViewController(navController, animated: true, completion: nil)
     }
 
     /**

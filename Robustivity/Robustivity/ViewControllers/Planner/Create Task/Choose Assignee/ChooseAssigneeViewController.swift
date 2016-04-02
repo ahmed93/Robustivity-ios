@@ -21,6 +21,9 @@ class ChooseAssigneeViewController: BaseViewController {
         adapter = UserAdapter(viewController: self, tableView: tableView, registerCellWithNib:"UserTableViewCell", withIdentifier: "cell")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
+        let backItem = UIBarButtonItem()
+        backItem.title = "Assign"
+        navigationItem.backBarButtonItem = backItem
         // Do any additional setup after loading the view.
     }
 

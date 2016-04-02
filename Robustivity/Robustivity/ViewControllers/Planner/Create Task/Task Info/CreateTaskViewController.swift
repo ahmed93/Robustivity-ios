@@ -88,7 +88,6 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     }
     
     func doneButtonPress(){
-        
         self.dismissViewControllerAnimated(true, completion: nil);
     }
 
