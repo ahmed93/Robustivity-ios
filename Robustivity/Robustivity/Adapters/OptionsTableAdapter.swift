@@ -2,7 +2,7 @@
 //  OptionsTableAdapter.swift
 //  Robustivity
 //
-//  Created by Salma Amr on 1/4/16.
+//  Created by  Created by Mayar ElMohr, Salma Amr, Nouran Mamdouh on 1/4/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 

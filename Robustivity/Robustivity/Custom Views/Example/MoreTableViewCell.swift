@@ -2,7 +2,8 @@
 //  MoreTableViewCell.swift
 //  Robustivity
 //
-//  Created by Mayar ElMohr on 3/31/16.
+//  Created by Mayar ElMohr, Salma Amr, Nouran Mamdouh on 3/31/16.
+
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 

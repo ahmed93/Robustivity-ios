@@ -2,7 +2,8 @@
 //  MoreViewController.swift
 //  Robustivity
 //
-//  Created by Ahmed Mohamed Fareed on 3/20/16.
+//  Created by Mayar ElMohr, Salma Amr, Nouran Mamdouh on 3/31/16.
+
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
@@ -36,10 +37,12 @@ class MoreViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "More";
         self.navigationItem.title = "More";
-        setProfileMore();
+        
+        initMore();
     }
     
-    func setProfileMore(){
+    func initMore(){
+        
         /** Setting backround color **/
         self.profileMore.backgroundColor = Theme.getColor(Color.lightGray);
         
