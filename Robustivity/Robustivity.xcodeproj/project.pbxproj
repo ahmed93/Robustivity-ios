@@ -19,14 +19,6 @@
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
 		1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */; };
 		1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */; };
-		1B8E5D771CAF413800239F1C /* BroadcastFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D6F1CAF413800239F1C /* BroadcastFeedTableViewCell.swift */; };
-		1B8E5D781CAF413800239F1C /* BroadcastFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E5D701CAF413800239F1C /* BroadcastFeedTableViewCell.xib */; };
-		1B8E5D791CAF413800239F1C /* CheckInFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D711CAF413800239F1C /* CheckInFeedTableViewCell.swift */; };
-		1B8E5D7A1CAF413800239F1C /* CheckInFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E5D721CAF413800239F1C /* CheckInFeedTableViewCell.xib */; };
-		1B8E5D7B1CAF413800239F1C /* UpdateFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D731CAF413800239F1C /* UpdateFeedTableViewCell.swift */; };
-		1B8E5D7C1CAF413800239F1C /* UpdateFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E5D741CAF413800239F1C /* UpdateFeedTableViewCell.xib */; };
-		1B8E5D7D1CAF413800239F1C /* ToggleFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D751CAF413800239F1C /* ToggleFeedTableViewCell.swift */; };
-		1B8E5D7E1CAF413800239F1C /* ToggleFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B8E5D761CAF413800239F1C /* ToggleFeedTableViewCell.xib */; };
 		1B8E5D801CAF417E00239F1C /* Circular+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D7F1CAF417E00239F1C /* Circular+UIImageView.swift */; };
 		1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */; };
 		1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */; };
@@ -41,6 +33,14 @@
 		1BBA3D7C1CB03D0000FC4609 /* ChooseProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7A1CB03D0000FC4609 /* ChooseProjectViewController.swift */; };
 		1BBA3D7D1CB03D0000FC4609 /* ChooseProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7B1CB03D0000FC4609 /* ChooseProjectViewController.xib */; };
 		1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */; };
+		1BBA3D951CB0501200FC4609 /* BroadcastFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D8A1CB0501200FC4609 /* BroadcastFeedTableViewCell.swift */; };
+		1BBA3D961CB0501200FC4609 /* BroadcastFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D8B1CB0501200FC4609 /* BroadcastFeedTableViewCell.xib */; };
+		1BBA3D971CB0501200FC4609 /* CheckInFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D8D1CB0501200FC4609 /* CheckInFeedTableViewCell.swift */; };
+		1BBA3D981CB0501200FC4609 /* CheckInFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D8E1CB0501200FC4609 /* CheckInFeedTableViewCell.xib */; };
+		1BBA3D991CB0501200FC4609 /* ToggleFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D901CB0501200FC4609 /* ToggleFeedTableViewCell.swift */; };
+		1BBA3D9A1CB0501200FC4609 /* ToggleFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D911CB0501200FC4609 /* ToggleFeedTableViewCell.xib */; };
+		1BBA3D9B1CB0501200FC4609 /* UpdateFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D931CB0501200FC4609 /* UpdateFeedTableViewCell.swift */; };
+		1BBA3D9C1CB0501200FC4609 /* UpdateFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3D941CB0501200FC4609 /* UpdateFeedTableViewCell.xib */; };
 		1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */; };
 		1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */; };
 		1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */; };
@@ -176,14 +176,6 @@
 		1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
 		1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
-		1B8E5D6F1CAF413800239F1C /* BroadcastFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastFeedTableViewCell.swift; sourceTree = "<group>"; };
-		1B8E5D701CAF413800239F1C /* BroadcastFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BroadcastFeedTableViewCell.xib; sourceTree = "<group>"; };
-		1B8E5D711CAF413800239F1C /* CheckInFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedTableViewCell.swift; sourceTree = "<group>"; };
-		1B8E5D721CAF413800239F1C /* CheckInFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInFeedTableViewCell.xib; sourceTree = "<group>"; };
-		1B8E5D731CAF413800239F1C /* UpdateFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFeedTableViewCell.swift; sourceTree = "<group>"; };
-		1B8E5D741CAF413800239F1C /* UpdateFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateFeedTableViewCell.xib; sourceTree = "<group>"; };
-		1B8E5D751CAF413800239F1C /* ToggleFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleFeedTableViewCell.swift; sourceTree = "<group>"; };
-		1B8E5D761CAF413800239F1C /* ToggleFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToggleFeedTableViewCell.xib; sourceTree = "<group>"; };
 		1B8E5D7F1CAF417E00239F1C /* Circular+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circular+UIImageView.swift"; sourceTree = "<group>"; };
 		1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedModel.swift; sourceTree = "<group>"; };
@@ -198,6 +190,14 @@
 		1BBA3D7A1CB03D0000FC4609 /* ChooseProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProjectViewController.swift; sourceTree = "<group>"; };
 		1BBA3D7B1CB03D0000FC4609 /* ChooseProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseProjectViewController.xib; sourceTree = "<group>"; };
 		1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProjectsAdapter.swift; sourceTree = "<group>"; };
+		1BBA3D8A1CB0501200FC4609 /* BroadcastFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastFeedTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3D8B1CB0501200FC4609 /* BroadcastFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BroadcastFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3D8D1CB0501200FC4609 /* CheckInFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3D8E1CB0501200FC4609 /* CheckInFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3D901CB0501200FC4609 /* ToggleFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleFeedTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3D911CB0501200FC4609 /* ToggleFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToggleFeedTableViewCell.xib; sourceTree = "<group>"; };
+		1BBA3D931CB0501200FC4609 /* UpdateFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFeedTableViewCell.swift; sourceTree = "<group>"; };
+		1BBA3D941CB0501200FC4609 /* UpdateFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateFeedTableViewCell.xib; sourceTree = "<group>"; };
 		1BC4E45E1CAD91EF008283D3 /* ChooseAssigneeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAssigneeViewController.swift; sourceTree = "<group>"; };
 		1BC4E45F1CAD91EF008283D3 /* ChooseAssigneeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseAssigneeViewController.xib; sourceTree = "<group>"; };
 		1BC4E4631CAD9202008283D3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -348,19 +348,16 @@
 			path = MGSwipeTableCell;
 			sourceTree = "<group>";
 		};
-		1B8E5D6E1CAF411C00239F1C /* Feed */ = {
+		1B8E5D6E1CAF411C00239F1C /* FeedTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				1B8E5D6F1CAF413800239F1C /* BroadcastFeedTableViewCell.swift */,
-				1B8E5D701CAF413800239F1C /* BroadcastFeedTableViewCell.xib */,
-				1B8E5D711CAF413800239F1C /* CheckInFeedTableViewCell.swift */,
-				1B8E5D721CAF413800239F1C /* CheckInFeedTableViewCell.xib */,
-				1B8E5D731CAF413800239F1C /* UpdateFeedTableViewCell.swift */,
-				1B8E5D741CAF413800239F1C /* UpdateFeedTableViewCell.xib */,
-				1B8E5D751CAF413800239F1C /* ToggleFeedTableViewCell.swift */,
-				1B8E5D761CAF413800239F1C /* ToggleFeedTableViewCell.xib */,
+				1BBA3D891CB0501200FC4609 /* BroadcastTableViewCell */,
+				1BBA3D8C1CB0501200FC4609 /* CheckInTableViewCell */,
+				1BBA3D8F1CB0501200FC4609 /* ToggleFeedTableViewCell */,
+				1BBA3D921CB0501200FC4609 /* UpdateFeedTableViewCell */,
 			);
-			name = Feed;
+			name = FeedTableViewCells;
+			path = "Custom Views/FeedTableViewCells";
 			sourceTree = "<group>";
 		};
 		1B8E5D811CAF41A600239F1C /* Feed */ = {
@@ -390,6 +387,42 @@
 				1BBA3D7B1CB03D0000FC4609 /* ChooseProjectViewController.xib */,
 			);
 			path = "Choose Project";
+			sourceTree = "<group>";
+		};
+		1BBA3D891CB0501200FC4609 /* BroadcastTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BBA3D8A1CB0501200FC4609 /* BroadcastFeedTableViewCell.swift */,
+				1BBA3D8B1CB0501200FC4609 /* BroadcastFeedTableViewCell.xib */,
+			);
+			path = BroadcastTableViewCell;
+			sourceTree = "<group>";
+		};
+		1BBA3D8C1CB0501200FC4609 /* CheckInTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BBA3D8D1CB0501200FC4609 /* CheckInFeedTableViewCell.swift */,
+				1BBA3D8E1CB0501200FC4609 /* CheckInFeedTableViewCell.xib */,
+			);
+			path = CheckInTableViewCell;
+			sourceTree = "<group>";
+		};
+		1BBA3D8F1CB0501200FC4609 /* ToggleFeedTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BBA3D901CB0501200FC4609 /* ToggleFeedTableViewCell.swift */,
+				1BBA3D911CB0501200FC4609 /* ToggleFeedTableViewCell.xib */,
+			);
+			path = ToggleFeedTableViewCell;
+			sourceTree = "<group>";
+		};
+		1BBA3D921CB0501200FC4609 /* UpdateFeedTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BBA3D931CB0501200FC4609 /* UpdateFeedTableViewCell.swift */,
+				1BBA3D941CB0501200FC4609 /* UpdateFeedTableViewCell.xib */,
+			);
+			path = UpdateFeedTableViewCell;
 			sourceTree = "<group>";
 		};
 		1BC4E45C1CAD91EF008283D3 /* Create Task */ = {
@@ -541,7 +574,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				1B8E5D6E1CAF411C00239F1C /* Feed */,
+				1B8E5D6E1CAF411C00239F1C /* FeedTableViewCells */,
 				18CE2A6C1CAC891B00FE4A46 /* Planner */,
 				01530AFC1CAB1B6C00429264 /* PlannerTableView */,
 				1BC4E4671CAD921F008283D3 /* BaseSwipableTableCell */,
@@ -889,29 +922,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B8E5D7E1CAF413800239F1C /* ToggleFeedTableViewCell.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
+				1BBA3D9A1CB0501200FC4609 /* ToggleFeedTableViewCell.xib in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				1BBA3D781CB03C4600FC4609 /* CreateTaskViewController.xib in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
 				01530B001CAB1CA900429264 /* PlannerTableViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
+				1BBA3D981CB0501200FC4609 /* CheckInFeedTableViewCell.xib in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
+				1BBA3D9C1CB0501200FC4609 /* UpdateFeedTableViewCell.xib in Resources */,
 				18CE2A821CAC8AA700FE4A46 /* TextViewTaskViewCell.xib in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
+				1BBA3D961CB0501200FC4609 /* BroadcastFeedTableViewCell.xib in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
-				1B8E5D7A1CAF413800239F1C /* CheckInFeedTableViewCell.xib in Resources */,
 				1BC4E4611CAD91EF008283D3 /* ChooseAssigneeViewController.xib in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				1BC4E4661CAD9202008283D3 /* UserTableViewCell.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
-				1B8E5D7C1CAF413800239F1C /* UpdateFeedTableViewCell.xib in Resources */,
 				01530B041CAC2C0500429264 /* PlannerHeaderTableViewCell.xib in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				18CE2A7A1CAC8A6300FE4A46 /* LabelTextTaskViewCell.xib in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
-				1B8E5D781CAF413800239F1C /* BroadcastFeedTableViewCell.xib in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				1B8E5D911CAF42D100239F1C /* FeedViewController.xib in Resources */,
@@ -934,6 +967,7 @@
 				1B8E5D881CAF41C100239F1C /* FeedModel.swift in Sources */,
 				1BC4E4651CAD9202008283D3 /* UserTableViewCell.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
+				1BBA3D951CB0501200FC4609 /* BroadcastFeedTableViewCell.swift in Sources */,
 				1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
@@ -954,9 +988,7 @@
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
 				18CE2A811CAC8AA700FE4A46 /* TextViewTaskViewCell.swift in Sources */,
 				A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */,
-				1B8E5D791CAF413800239F1C /* CheckInFeedTableViewCell.swift in Sources */,
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
-				1B8E5D771CAF413800239F1C /* BroadcastFeedTableViewCell.swift in Sources */,
 				A7C480221CA3F1EC00F4FDB7 /* UIImageView+WebCache.m in Sources */,
 				A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */,
 				A7A94ED91C9E97B5002B3991 /* ToggleViewController.swift in Sources */,
@@ -982,17 +1014,18 @@
 				1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */,
 				01530B031CAC2C0500429264 /* PlannerHeaderTableViewCell.swift in Sources */,
 				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,
+				1BBA3D9B1CB0501200FC4609 /* UpdateFeedTableViewCell.swift in Sources */,
 				A7C480141CA3F1EC00F4FDB7 /* MKAnnotationView+WebCache.m in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
-				1B8E5D7B1CAF413800239F1C /* UpdateFeedTableViewCell.swift in Sources */,
 				1B8E5D801CAF417E00239F1C /* Circular+UIImageView.swift in Sources */,
+				1BBA3D971CB0501200FC4609 /* CheckInFeedTableViewCell.swift in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
-				1B8E5D7D1CAF413800239F1C /* ToggleFeedTableViewCell.swift in Sources */,
 				A7C4801C1CA3F1EC00F4FDB7 /* SDWebImagePrefetcher.m in Sources */,
 				01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */,
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				1B8E5D8D1CAF420F00239F1C /* FeedViewController.swift in Sources */,
 				A7C4801A1CA3F1EC00F4FDB7 /* SDWebImageDownloaderOperation.m in Sources */,
+				1BBA3D991CB0501200FC4609 /* ToggleFeedTableViewCell.swift in Sources */,
 				A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */,
 				A7C4801B1CA3F1EC00F4FDB7 /* SDWebImageManager.m in Sources */,
 				1BC4E4601CAD91EF008283D3 /* ChooseAssigneeViewController.swift in Sources */,
