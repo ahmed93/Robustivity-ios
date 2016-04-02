@@ -29,9 +29,7 @@ class TaskViewController: BaseViewController {
         "TaskInfoToggledTableViewCell":"toggleCell"]
         infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
         self.table.backgroundColor = Theme.lightGrayColor()
-    }
-    override func loadView() {
-        super.loadView()
+        
         
         let items = ["Info", "Updates"]
         customSC = UISegmentedControl(items:items)
@@ -39,14 +37,14 @@ class TaskViewController: BaseViewController {
         customSC.backgroundColor = Theme.redColor()
         customSC.tintColor = UIColor.whiteColor()
         customSC.selectedSegmentIndex = 0
-      
+        
         let frame = UIScreen.mainScreen().bounds
         customSC.frame = CGRectMake(frame.minX + 10, frame.minY + 50,
-            frame.width - 140, 30)
+                                    frame.width - 140, 30)
         self.navigationItem.titleView =  customSC
         customSC.addTarget(self, action: "tabChanged:", forControlEvents: .ValueChanged)
-  
-}
+    }
+
     
     func tabChanged(sender:UISegmentedControl){
         switch sender.selectedSegmentIndex{
