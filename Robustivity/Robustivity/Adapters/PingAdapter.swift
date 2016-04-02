@@ -69,9 +69,12 @@ class PingAdapter: BaseTableAdapter {
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? UserTableViewCell
-        _cell?.userName.text = tableItems.objectAtIndex(indexPath.row) as? String
-        _cell?.userTitle.text = tableItems2.objectAtIndex(indexPath.row) as? String
+        
+        let _cell = cell as? PingToUserTableViewCell
+        _cell?.pingUserName.text = tableItems.objectAtIndex(indexPath.row) as? String
+        _cell?.pingUserTitle.text = tableItems2.objectAtIndex(indexPath.row) as? String
     }
+    
+    
     
 }

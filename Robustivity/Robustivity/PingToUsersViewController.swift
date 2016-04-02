@@ -16,7 +16,7 @@ class PingToUsersViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Ping To";
-        adapter = PingAdapter(viewController: self, tableView: tableView, registerCellWithNib:"UserTableViewCell", withIdentifier: "cell")
+        adapter = PingAdapter(viewController: self, tableView: tableView, registerCellWithNib:"PingToUserTableViewCell", withIdentifier: "cell")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         // Do any additional setup after loading the view.

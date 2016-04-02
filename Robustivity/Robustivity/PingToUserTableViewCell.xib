@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PingToUserTableViewCell" customModule="Robustivity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Islam Abdelraouf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTr-ep-eN4" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="82" y="22" width="111" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="3010"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Project Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVd-ox-368" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="82" y="37" width="82.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="1020"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stroke 751 + Stroke 752" translatesAutoresizingMaskIntoConstraints="NO" id="fpI-Gf-OQG">
+                        <rect key="frame" x="22" y="12" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="62f-5j-dRm"/>
+                            <constraint firstAttribute="height" constant="40" id="Rme-mR-6P8"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XVd-ox-368" firstAttribute="leading" secondItem="fpI-Gf-OQG" secondAttribute="trailing" constant="20" id="6kU-qI-Yde"/>
+                    <constraint firstItem="XVd-ox-368" firstAttribute="top" secondItem="RTr-ep-eN4" secondAttribute="bottom" id="VOo-bf-SSU"/>
+                    <constraint firstItem="RTr-ep-eN4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="Wr1-il-2F3"/>
+                    <constraint firstItem="RTr-ep-eN4" firstAttribute="leading" secondItem="fpI-Gf-OQG" secondAttribute="trailing" constant="20" id="hXX-1m-fzs"/>
+                    <constraint firstItem="fpI-Gf-OQG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="kxd-C9-mY5"/>
+                    <constraint firstItem="fpI-Gf-OQG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wmT-Gu-wk6"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="XVd-ox-368" secondAttribute="bottom" constant="14" id="zMC-gM-bVk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="pingUserAvatar" destination="fpI-Gf-OQG" id="ogt-Fq-CdA"/>
+                <outlet property="pingUserName" destination="RTr-ep-eN4" id="7IL-Vn-ACD"/>
+                <outlet property="pingUserTitle" destination="XVd-ox-368" id="F4c-gk-ZtK"/>
+            </connections>
+            <point key="canvasLocation" x="176" y="265"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Stroke 751 + Stroke 752" width="96" height="97"/>
+    </resources>
+</document>
