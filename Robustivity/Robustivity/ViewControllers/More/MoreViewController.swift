@@ -37,6 +37,8 @@ class MoreViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "More";
         self.navigationItem.title = "More";
+        let call = UIBarButtonItem(image: UIImage(named: "call_white"), style: .Plain, target: self, action: NSSelectorFromString("callView"))
+        navigationItem.rightBarButtonItem = call
         
         initMore();
     }
