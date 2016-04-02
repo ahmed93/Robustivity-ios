@@ -76,6 +76,7 @@
 		A7C480231CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C480131CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m */; };
 		A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C480251CA4030900F4FDB7 /* RBLabel.swift */; };
 		A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */; };
+		A7D8435B1CB025DE00E690A0 /* CallCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8435A1CB025DE00E690A0 /* CallCollectionAdapter.swift */; };
 		A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2431CA2EE6E002DB6FE /* MyriadPro-Bold.otf */; };
 		A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2441CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf */; };
 		A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2451CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf */; };
@@ -237,6 +238,7 @@
 		A7C480131CA3F1EC00F4FDB7 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		A7C480251CA4030900F4FDB7 /* RBLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBLabel.swift; sourceTree = "<group>"; };
 		A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedAdapter.swift; sourceTree = "<group>"; };
+		A7D8435A1CB025DE00E690A0 /* CallCollectionAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallCollectionAdapter.swift; sourceTree = "<group>"; };
 		A7E7A2431CA2EE6E002DB6FE /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.otf"; sourceTree = "<group>"; };
 		A7E7A2441CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCond.otf"; sourceTree = "<group>"; };
 		A7E7A2451CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCondIt.otf"; sourceTree = "<group>"; };
@@ -277,6 +279,15 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		34DF6F8A1CB0104000FD0F34 /* MoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */,
+				7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */,
+			);
+			name = MoreCell;
+			sourceTree = "<group>";
+		};
 		41ED59061CAC377100508474 /* Call */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,15 +304,6 @@
 				41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */,
 			);
 			name = CallCollectionViewCell;
-        sourceTree = "<group>";
-        };
-		34DF6F8A1CB0104000FD0F34 /* MoreCell */ = {
-			isa = PBXGroup;
-			children = (
-				7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */,
-				7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */,
-			);
-			name = MoreCell;
 			sourceTree = "<group>";
 		};
 		A717E5891CA1485000F237DD /* Adapters */ = {
@@ -315,6 +317,7 @@
 				04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */,
 				A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */,
 				7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */,
+				A7D8435A1CB025DE00E690A0 /* CallCollectionAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77FBFDC1CAFDEF4000F6EFB /* DirectoryCell.swift in Sources */,
+				A7D8435B1CB025DE00E690A0 /* CallCollectionAdapter.swift in Sources */,
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
 				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,

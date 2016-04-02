@@ -74,7 +74,9 @@ class MoreViewController: BaseViewController {
         /** a Rounded avatar **/
         self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2;
         self.avatar.clipsToBounds = true;
-       
+        avatar.userInteractionEnabled = true
+        avatar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: NSSelectorFromString("showMyProfile")))
+        
         /** Styling labels **/
         Theme.style_2(self.checkedInLabel);
         Theme.style_2(self.checkInTimeLabel);
@@ -93,9 +95,16 @@ class MoreViewController: BaseViewController {
     
     /** This function is supposed to perform Calling functionality **/
     func callView(){
-    
+        presentViewController(UINavigationController(rootViewController: CallViewController()), animated: true, completion: nil)
     }
     
+    
+    func showMyProfile() {
+        let profile = ProfileViewController()
+        profile.myProfile = true
+        
+        presentViewController(UINavigationController(rootViewController: profile), animated: true, completion: nil)
+    }
 
 
 }

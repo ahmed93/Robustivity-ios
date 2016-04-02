@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CallViewController: UIViewController {
+class CallViewController: BaseViewController {
     
     @IBOutlet weak var membersCollectionView: UICollectionView!
-    var collectionViewAdapter:ModifiedBaseCollectionAdapter!
+    var collectionViewAdapter:CallCollectionAdapter!
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,25 +26,15 @@ class CallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Call";
-        collectionViewAdapter = ModifiedBaseCollectionAdapter(viewController: self, collectionView: membersCollectionView, registerCellNib: "CallCollectionViewCell", withIdentifier: "CallCell")
+        collectionViewAdapter = CallCollectionAdapter(viewController: self, collectionView: membersCollectionView, registerCellNib: "CallCollectionViewCell", withIdentifier: "CallCell")
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: NSSelectorFromString("dissmissView"))
+    }
+    
+    
+    func dissmissView() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
-    
-    class ModifiedBaseCollectionAdapter: BaseCollectionAdapter {
-        //Constant added is divided as follows 49 for the tab bar element and 44 for the navigation and 20 for the upper margins
-        //total of 114 that makes the collection view perfect for all screen sizes
-        override func collectionView(collectionView: UICollectionView,
-                                                    layout collectionViewLayout: UICollectionViewLayout,
-                                                           sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-            return CGSize(width: self.viewController.view.frame.width/2, height: (self.viewController.view.frame.height-114)/3)
-            
-        }
-        //This number is just for testing
-        override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 10
-        }
-        override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-            return 2
-        }
-    }
+
 }

@@ -35,11 +35,26 @@ class ProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*
+        Create an instance of the adapter, and set it to the current adapter.
+        Set the values of "myProfile" and "profileEditable" in the adapter, to the current values of "myProfile" and "profileEditable".
+        */
+        
+        adapter = ProfileAdapter(viewController: self, tableView: profileTableView, registerCellWithNib:"ProfileTableViewCell", withIdentifier: "profileCellID")
+        adapter.myProfile = myProfile
+        adapter.profileEditable = profileEditable
+        adapter.reloadItems()
+        
+        setupView()
     }
     
-    override func loadView() {
-        super.loadView()
-        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    func setupView() {
         /*
         Create tap gesture and add it to the table view, so that when the user taps anywhere in the screen the keyboard is dismissed.
         */
@@ -88,19 +103,9 @@ class ProfileViewController: BaseViewController {
             navigationItem.leftBarButtonItem = dismissProfileButton
         }
         
-        /*
-        Create an instance of the adapter, and set it to the current adapter.
-        Set the values of "myProfile" and "profileEditable" in the adapter, to the current values of "myProfile" and "profileEditable".
-        */
-        let profileAdapter = ProfileAdapter(viewController: self, tableView: profileTableView, registerCellWithNib:"ProfileTableViewCell", withIdentifier: "profileCellID")
-        profileAdapter.myProfile = myProfile
-        profileAdapter.profileEditable = profileEditable
-        adapter = profileAdapter
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        adapter.myProfile = myProfile
+        adapter.profileEditable = profileEditable
+        adapter.reloadItems()
     }
     
     /*
@@ -129,17 +134,14 @@ class ProfileViewController: BaseViewController {
         navigationItem.leftBarButtonItem = profileCancelButton
         
         profileEditable = true
-        
-        loadView()
+        setupView()
     }
     
     /*
     Dismiss the profile view when clicking on the "X" button.
     */
     func dismissProfileView() {
-        self.dismissViewControllerAnimated(true) { () -> Void in
-            
-        }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /*
@@ -147,10 +149,8 @@ class ProfileViewController: BaseViewController {
     */
     func updateDataFromEditMode() {
         profileEditable = false
-        
+        setupView()
         // Include here any logic needed to update the database with the new values
-        
-        loadView()
     }
     
     /*
@@ -158,7 +158,7 @@ class ProfileViewController: BaseViewController {
     */
     func disableEditMode() {
         profileEditable = false
-        loadView()
+        setupView()
     }
     
     /*
