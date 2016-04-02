@@ -1,34 +1,22 @@
 //
-//  ListProjectsAdapter.swift
+//  PingAdapter.swift
 //  Robustivity
 //
-//  Created by Mahmoud Eldesouky on 4/2/16.
-//  Copyright © 2016 BumbleBee. All rights reserved.
-//
-//
-//  UserAdapter.swift
-//  Robustivity
-//
-//  Created by Mahmoud Eldesouky on 3/31/16.
+//  Created by Almgohar on 3/31/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-// UserAdapter used to display the User TableViews, using the UserTableViewCell.
-// Remove the tableView Separator from your controller using: self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
-class ListProjectsAdapter: BaseTableAdapter {
+class PingAdapter: BaseTableAdapter {
     
     var tableItems2:ListModel!
-    var ChooseProjectController:ChooseProjectViewController!
+    
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
-        
-        ChooseProjectController = viewController as? ChooseProjectViewController
-
     }
     
     
@@ -69,34 +57,24 @@ class ListProjectsAdapter: BaseTableAdapter {
         tableView.reloadData()
     }
     
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        
-        if self.ChooseProjectController.respondsToSelector(Selector("getTodo"))
-        {
-            if self.ChooseProjectController.getTodo()
-            {
-                let controller = CreateTaskViewController()
-                viewController.navigationController?.pushViewController(controller, animated: true)
-            }
-            else{
-                let controller = ChooseAssigneeViewController(nibName: "ChooseAssigneeViewController", bundle: nil)
-                viewController.navigationController?.pushViewController(controller, animated: true)
-            }
+    var selectedCell:UITableViewCell?{
+        willSet{
+            selectedCell?.accessoryType = .None
+            newValue?.accessoryType = .Checkmark
         }
-
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedCell = self.tableView.cellForRowAtIndexPath(indexPath)
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? CustomProjectsListTableViewCell
-        _cell?.projectNameLabel.text = "Vodafone"
-        _cell?.memberLabel.text = "Vodafone"
-        _cell?.marginUIView.backgroundColor = Theme.tableBackgroundColor()
-
+        
+        let _cell = cell as? PingToUserTableViewCell
+        _cell?.pingUserName.text = tableItems.objectAtIndex(indexPath.row) as? String
+        _cell?.pingUserTitle.text = tableItems2.objectAtIndex(indexPath.row) as? String
     }
-
     
-
+    
     
 }

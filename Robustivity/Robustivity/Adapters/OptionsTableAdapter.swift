@@ -21,6 +21,13 @@ class OptionsTableAdapter: BaseTableAdapter {
         switch(indexPath.row,indexPath.section) {
         case (0,1):
             viewController.navigationController?.pushViewController(DirectoryViewController(), animated: true)
+        case (1,0):
+            viewController.navigationController?.pushViewController(ProjectsListViewController(), animated: true)
+        case (0,2):
+            viewController.navigationController?.pushViewController(SendExcuseViewController(), animated: true)
+        case (1,2):
+            viewController.navigationController?.pushViewController(PingtoViewController(), animated: true)
+            
         default:()
             
         }

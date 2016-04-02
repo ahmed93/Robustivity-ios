@@ -25,7 +25,7 @@ class ChooseProjectViewController: BaseViewController {
         backItem.title = "Projects"
         navigationItem.backBarButtonItem = backItem
         
-        adapter = ListProjectsAdapter(viewController: self, tableView: tableView, registerCellWithNib:"UserTableViewCell", withIdentifier: "cell")
+        adapter = ListProjectsAdapter(viewController: self, tableView: tableView, registerCellWithNib:"CustomProjectsListTableViewCell", withIdentifier: "listProjectCell")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
     }

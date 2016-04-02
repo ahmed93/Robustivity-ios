@@ -7,13 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011083381CAC173500F616DD /* ProjectUpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */; };
+		011083391CAC173500F616DD /* ProjectUpdateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */; };
+		011083481CAC1F1500F616DD /* ProjectUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011083461CAC1F1500F616DD /* ProjectUpdateViewController.swift */; };
+		011083491CAC1F1500F616DD /* ProjectUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011083471CAC1F1500F616DD /* ProjectUpdateViewController.xib */; };
+		0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */; };
+		0110834F1CAC215A00F616DD /* ProjectUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */; };
 		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
+		01F5EBDE1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5EBDC1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift */; };
+		01F5EBDF1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F5EBDD1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib */; };
 		04179F351CAD441600A3513A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F331CAD441600A3513A /* ProfileViewController.swift */; };
 		04179F361CAD441600A3513A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04179F341CAD441600A3513A /* ProfileViewController.xib */; };
 		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
 		04179F3C1CAD508F00A3513A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F3A1CAD508F00A3513A /* ProfileTableViewCell.swift */; };
 		04179F3D1CAD508F00A3513A /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04179F3B1CAD508F00A3513A /* ProfileTableViewCell.xib */; };
+		185FE30F1CAC5FE100B3725E /* ProjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */; };
+		185FE3101CAC5FE100B3725E /* ProjectsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */; };
+		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
+		185FE3161CAC610A00B3725E /* RoundBorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3151CAC610A00B3725E /* RoundBorderedView.swift */; };
+		185FE3191CAC615000B3725E /* CustomProjectsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3171CAC615000B3725E /* CustomProjectsListTableViewCell.swift */; };
+		185FE31A1CAC615000B3725E /* CustomProjectsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185FE3181CAC615000B3725E /* CustomProjectsListTableViewCell.xib */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
+		196CDBAB1CAF0BC80092A050 /* ProjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CDBA91CAF0BC80092A050 /* ProjectInfoViewController.swift */; };
+		196CDBAC1CAF0BC80092A050 /* ProjectInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196CDBAA1CAF0BC80092A050 /* ProjectInfoViewController.xib */; };
+		196CDBAE1CAF0BF60092A050 /* ProjectInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */; };
 		1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */; };
 		1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */; };
 		1B7F8D741CB07A5E007C8005 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8D721CB07A5E007C8005 /* FeedViewController.swift */; };
@@ -43,7 +60,15 @@
 		1B7F8DC61CB07C95007C8005 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DB41CB07C95007C8005 /* UIImageView+HighlightedWebCache.m */; };
 		1B7F8DC71CB07C95007C8005 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DB61CB07C95007C8005 /* UIImageView+WebCache.m */; };
 		1B7F8DC81CB07C95007C8005 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DB81CB07C95007C8005 /* UIView+WebCacheOperation.m */; };
-		1B8E5D801CAF417E00239F1C /* Circular+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D7F1CAF417E00239F1C /* Circular+UIImageView.swift */; };
+		1B7F8DCC1CB07FBD007C8005 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DCA1CB07FBD007C8005 /* MoreViewController.swift */; };
+		1B7F8DCD1CB07FBD007C8005 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7F8DCB1CB07FBD007C8005 /* MoreViewController.xib */; };
+		1B7F8DD31CB08037007C8005 /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DD21CB08037007C8005 /* BaseTableAdapter.swift */; };
+		1B7F8DDB1CB0813C007C8005 /* Circular+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DD51CB0813C007C8005 /* Circular+UIImageView.swift */; };
+		1B7F8DDC1CB0813C007C8005 /* Comp_1+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DD61CB0813C007C8005 /* Comp_1+Theme.swift */; };
+		1B7F8DDD1CB0813C007C8005 /* Comp_2+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DD71CB0813C007C8005 /* Comp_2+Theme.swift */; };
+		1B7F8DDE1CB0813C007C8005 /* Comp_3+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DD81CB0813C007C8005 /* Comp_3+Theme.swift */; };
+		1B7F8DDF1CB0813C007C8005 /* Comp_4+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DD91CB0813C007C8005 /* Comp_4+Theme.swift */; };
+		1B7F8DE01CB0813C007C8005 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8DDA1CB0813C007C8005 /* UIColor.swift */; };
 		1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */; };
 		1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */; };
 		1B8E5D881CAF41C100239F1C /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D841CAF41C100239F1C /* FeedModel.swift */; };
@@ -70,14 +95,32 @@
 		1BBA3DCE1CB053F600FC4609 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3DCC1CB053F600FC4609 /* UserTableViewCell.swift */; };
 		1BBA3DCF1CB053F600FC4609 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA3DCD1CB053F600FC4609 /* UserTableViewCell.xib */; };
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
+		229A2D581CAD5329004F8980 /* ProjectMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D561CAD5329004F8980 /* ProjectMemberCell.swift */; };
+		229A2D591CAD5329004F8980 /* ProjectMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229A2D571CAD5329004F8980 /* ProjectMemberCell.xib */; };
+		229A2D5C1CAD5417004F8980 /* ProjectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */; };
+		229A2D5D1CAD5417004F8980 /* ProjectTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */; };
+		229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */; };
+		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
+		34A2697C1CAC6BED00CA1E2F /* PingtoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A2697A1CAC6BED00CA1E2F /* PingtoViewController.swift */; };
+		34A2697D1CAC6BED00CA1E2F /* PingtoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A2697B1CAC6BED00CA1E2F /* PingtoViewController.xib */; };
+		34A269841CAC754900CA1E2F /* PingToUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A269821CAC754900CA1E2F /* PingToUsersViewController.swift */; };
+		34A269851CAC754900CA1E2F /* PingToUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A269831CAC754900CA1E2F /* PingToUsersViewController.xib */; };
+		34DF6F7E1CAFF87700FD0F34 /* PingToUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DF6F7C1CAFF87700FD0F34 /* PingToUserTableViewCell.swift */; };
+		34DF6F7F1CAFF87700FD0F34 /* PingToUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34DF6F7D1CAFF87700FD0F34 /* PingToUserTableViewCell.xib */; };
 		41ED59101CAC379900508474 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED590E1CAC379900508474 /* CallViewController.swift */; };
 		41ED59111CAC379900508474 /* CallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED590F1CAC379900508474 /* CallViewController.xib */; };
 		41ED59151CAC48B700508474 /* CallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */; };
 		41ED59161CAC48B700508474 /* CallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */; };
+		75ACFE301CAFF27F00A2DE66 /* ExcuseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ACFE2E1CAFF27F00A2DE66 /* ExcuseTableViewCell.swift */; };
+		75ACFE311CAFF27F00A2DE66 /* ExcuseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75ACFE2F1CAFF27F00A2DE66 /* ExcuseTableViewCell.xib */; };
+		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
+		75D7CD321CAD81F6009C6466 /* SendExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2E1CAD81F6009C6466 /* SendExcuseViewController.swift */; };
+		75D7CD331CAD81F6009C6466 /* SendExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */; };
+		75D7CD341CAD81F6009C6466 /* WriteExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */; };
+		75D7CD351CAD81F6009C6466 /* WriteExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */; };
 		7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */; };
 		7D05C3ED1CAD76FF008F4A83 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */; };
 		7D05C3EE1CAD76FF008F4A83 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */; };
-		A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
 		A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58E1CA1485000F237DD /* APIConnector_Module_1.swift */; };
@@ -91,10 +134,6 @@
 		A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A717E5AE1CA1774400F237DD /* Main.storyboard */; };
 		A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E5B21CA17D4000F237DD /* BaseModel.swift */; };
 		A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E5B41CA1816D00F237DD /* ListModel.swift */; };
-		A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC01E1CA469E800A7FDEB /* Comp_1+Theme.swift */; };
-		A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */; };
-		A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */; };
-		A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */; };
 		A750E9781CA97B77009D29BB /* NotificationsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */; };
 		A750E9831CA97C49009D29BB /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */; };
 		A750E9841CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */; };
@@ -107,8 +146,6 @@
 		A7A94EDA1C9E97B5002B3991 /* ToggleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A94ED81C9E97B5002B3991 /* ToggleViewController.xib */; };
 		A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94EDB1C9E97C2002B3991 /* NotificationsViewController.swift */; };
 		A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A94EDC1C9E97C2002B3991 /* NotificationsViewController.xib */; };
-		A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94EDF1C9E97D0002B3991 /* MoreViewController.swift */; };
-		A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A94EE01C9E97D0002B3991 /* MoreViewController.xib */; };
 		A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7AD1C7D8244007870CB /* AppDelegate.swift */; };
 		A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BCE7B41C7D8244007870CB /* Assets.xcassets */; };
 		A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7E71C7DAFBA007870CB /* BaseViewController.swift */; };
@@ -124,7 +161,6 @@
 		A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24A1CA2EE6E002DB6FE /* MyriadPro-Regular.otf */; };
 		A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24B1CA2EE6E002DB6FE /* MyriadPro-Semibold.otf */; };
 		A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */; };
-		A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7A2581CA32524002DB6FE /* UIColor.swift */; };
 		A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */; };
 		A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */; };
 		A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */; };
@@ -186,13 +222,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectUpdateTableViewCell.swift; path = "Custom Views/ProjectUpdate/ProjectUpdateTableViewCell.swift"; sourceTree = "<group>"; };
+		011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectUpdateTableViewCell.xib; path = "Custom Views/ProjectUpdate/ProjectUpdateTableViewCell.xib"; sourceTree = "<group>"; };
+		011083461CAC1F1500F616DD /* ProjectUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectUpdateViewController.swift; path = Robustivity/ViewControllers/More/ProjectUpdate/ProjectUpdateViewController.swift; sourceTree = SOURCE_ROOT; };
+		011083471CAC1F1500F616DD /* ProjectUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectUpdateViewController.xib; path = Robustivity/ViewControllers/More/ProjectUpdate/ProjectUpdateViewController.xib; sourceTree = SOURCE_ROOT; };
+		0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateAdapter.swift; sourceTree = "<group>"; };
+		0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateModel.swift; sourceTree = "<group>"; };
 		01530AFA1CAB145A00429264 /* PlannerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerAdapter.swift; sourceTree = "<group>"; };
+		01F5EBDC1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectSegmentedControlViewController.swift; path = Robustivity/ProjectSegmentedControlViewController.swift; sourceTree = SOURCE_ROOT; };
+		01F5EBDD1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectSegmentedControlViewController.xib; path = Robustivity/ProjectSegmentedControlViewController.xib; sourceTree = SOURCE_ROOT; };
 		04179F331CAD441600A3513A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04179F341CAD441600A3513A /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
 		04179F3A1CAD508F00A3513A /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = "Custom Views/Profile/ProfileTableViewCell.swift"; sourceTree = "<group>"; };
 		04179F3B1CAD508F00A3513A /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileTableViewCell.xib; path = "Custom Views/Profile/ProfileTableViewCell.xib"; sourceTree = "<group>"; };
+		185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectsListViewController.swift; path = Robustivity/ViewControllers/More/ProjectsListViewController.swift; sourceTree = SOURCE_ROOT; };
+		185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectsListViewController.xib; path = Robustivity/ViewControllers/More/ProjectsListViewController.xib; sourceTree = SOURCE_ROOT; };
+		185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListAdapter.swift; sourceTree = "<group>"; };
+		185FE3151CAC610A00B3725E /* RoundBorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBorderedView.swift; sourceTree = "<group>"; };
+		185FE3171CAC615000B3725E /* CustomProjectsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomProjectsListTableViewCell.swift; path = "Custom Views/CustomProjectsListTableViewCell.swift"; sourceTree = "<group>"; };
+		185FE3181CAC615000B3725E /* CustomProjectsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomProjectsListTableViewCell.xib; path = "Custom Views/CustomProjectsListTableViewCell.xib"; sourceTree = "<group>"; };
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
+		196CDBA91CAF0BC80092A050 /* ProjectInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectInfoViewController.swift; path = Robustivity/ViewControllers/More/ProjectInfoViewController.swift; sourceTree = SOURCE_ROOT; };
+		196CDBAA1CAF0BC80092A050 /* ProjectInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectInfoViewController.xib; path = Robustivity/ViewControllers/More/ProjectInfoViewController.xib; sourceTree = SOURCE_ROOT; };
+		196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoAdapter.swift; sourceTree = "<group>"; };
 		1B0B299A1CAD8968007DC5F3 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -241,7 +294,15 @@
 		1B7F8DB61CB07C95007C8005 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		1B7F8DB71CB07C95007C8005 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		1B7F8DB81CB07C95007C8005 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		1B8E5D7F1CAF417E00239F1C /* Circular+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circular+UIImageView.swift"; sourceTree = "<group>"; };
+		1B7F8DCA1CB07FBD007C8005 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		1B7F8DCB1CB07FBD007C8005 /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		1B7F8DD21CB08037007C8005 /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
+		1B7F8DD51CB0813C007C8005 /* Circular+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Circular+UIImageView.swift"; sourceTree = "<group>"; };
+		1B7F8DD61CB0813C007C8005 /* Comp_1+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_1+Theme.swift"; sourceTree = "<group>"; };
+		1B7F8DD71CB0813C007C8005 /* Comp_2+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_2+Theme.swift"; sourceTree = "<group>"; };
+		1B7F8DD81CB0813C007C8005 /* Comp_3+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_3+Theme.swift"; sourceTree = "<group>"; };
+		1B7F8DD91CB0813C007C8005 /* Comp_4+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_4+Theme.swift"; sourceTree = "<group>"; };
+		1B7F8DDA1CB0813C007C8005 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D841CAF41C100239F1C /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
@@ -268,14 +329,32 @@
 		1BBA3DCC1CB053F600FC4609 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		1BBA3DCD1CB053F600FC4609 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
+		229A2D561CAD5329004F8980 /* ProjectMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMemberCell.swift; sourceTree = "<group>"; };
+		229A2D571CAD5329004F8980 /* ProjectMemberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectMemberCell.xib; sourceTree = "<group>"; };
+		229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTeamViewController.swift; sourceTree = SOURCE_ROOT; };
+		229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectTeamViewController.xib; sourceTree = SOURCE_ROOT; };
+		229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectMembersAdapter.swift; path = ../API/ProjectMembersAdapter.swift; sourceTree = "<group>"; };
+		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
+		34A2697A1CAC6BED00CA1E2F /* PingtoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingtoViewController.swift; path = Robustivity/PingtoViewController.swift; sourceTree = SOURCE_ROOT; };
+		34A2697B1CAC6BED00CA1E2F /* PingtoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PingtoViewController.xib; path = Robustivity/PingtoViewController.xib; sourceTree = SOURCE_ROOT; };
+		34A269821CAC754900CA1E2F /* PingToUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingToUsersViewController.swift; path = Robustivity/PingToUsersViewController.swift; sourceTree = SOURCE_ROOT; };
+		34A269831CAC754900CA1E2F /* PingToUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PingToUsersViewController.xib; path = Robustivity/PingToUsersViewController.xib; sourceTree = SOURCE_ROOT; };
+		34DF6F7C1CAFF87700FD0F34 /* PingToUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingToUserTableViewCell.swift; sourceTree = "<group>"; };
+		34DF6F7D1CAFF87700FD0F34 /* PingToUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PingToUserTableViewCell.xib; sourceTree = "<group>"; };
 		41ED590E1CAC379900508474 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		41ED590F1CAC379900508474 /* CallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallViewController.xib; sourceTree = "<group>"; };
 		41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallCollectionViewCell.swift; sourceTree = "<group>"; };
 		41ED59141CAC48B700508474 /* CallCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallCollectionViewCell.xib; sourceTree = "<group>"; };
+		75ACFE2E1CAFF27F00A2DE66 /* ExcuseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExcuseTableViewCell.swift; path = "Custom Views/ExcuseTableViewCell.swift"; sourceTree = "<group>"; };
+		75ACFE2F1CAFF27F00A2DE66 /* ExcuseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExcuseTableViewCell.xib; path = "Custom Views/ExcuseTableViewCell.xib"; sourceTree = "<group>"; };
+		75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuseAdapter.swift; sourceTree = "<group>"; };
+		75D7CD2E1CAD81F6009C6466 /* SendExcuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendExcuseViewController.swift; path = Robustivity/ViewControllers/More/SendExcuseViewController.swift; sourceTree = SOURCE_ROOT; };
+		75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendExcuseViewController.xib; path = Robustivity/ViewControllers/More/SendExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
+		75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WriteExcuseViewController.swift; path = Robustivity/ViewControllers/More/WriteExcuseViewController.swift; sourceTree = SOURCE_ROOT; };
+		75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WriteExcuseViewController.xib; path = Robustivity/ViewControllers/More/WriteExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
 		7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableAdapter.swift; sourceTree = "<group>"; };
 		7D05C3EB1CAD76FF008F4A83 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewCell.swift; path = "Custom Views/Example/MoreTableViewCell.swift"; sourceTree = "<group>"; };
 		7D05C3EC1CAD76FF008F4A83 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreTableViewCell.xib; path = "Custom Views/Example/MoreTableViewCell.xib"; sourceTree = "<group>"; };
-		A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		A717E58E1CA1485000F237DD /* APIConnector_Module_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector_Module_1.swift; sourceTree = "<group>"; };
@@ -290,10 +369,6 @@
 		A717E5AE1CA1774400F237DD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Robustivity/Global/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		A717E5B21CA17D4000F237DD /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		A717E5B41CA1816D00F237DD /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
-		A74EC01E1CA469E800A7FDEB /* Comp_1+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_1+Theme.swift"; sourceTree = "<group>"; };
-		A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_2+Theme.swift"; sourceTree = "<group>"; };
-		A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_3+Theme.swift"; sourceTree = "<group>"; };
-		A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comp_4+Theme.swift"; sourceTree = "<group>"; };
 		A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsAdapter.swift; sourceTree = "<group>"; };
 		A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsTableViewCell.swift; path = "Custom Views/Notifications/NotificationsTableViewCell.swift"; sourceTree = "<group>"; };
 		A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsSingleLineTableViewCell.xib; path = "Custom Views/Notifications/NotificationsSingleLineTableViewCell.xib"; sourceTree = "<group>"; };
@@ -306,8 +381,6 @@
 		A7A94ED81C9E97B5002B3991 /* ToggleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToggleViewController.xib; sourceTree = "<group>"; };
 		A7A94EDB1C9E97C2002B3991 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		A7A94EDC1C9E97C2002B3991 /* NotificationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
-		A7A94EDF1C9E97D0002B3991 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = More/MoreViewController.swift; sourceTree = "<group>"; };
-		A7A94EE01C9E97D0002B3991 /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreViewController.xib; path = More/MoreViewController.xib; sourceTree = "<group>"; };
 		A7BCE7AA1C7D8244007870CB /* Robustivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robustivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BCE7AD1C7D8244007870CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BCE7B41C7D8244007870CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -326,7 +399,6 @@
 		A7E7A24A1CA2EE6E002DB6FE /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
 		A7E7A24B1CA2EE6E002DB6FE /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
 		A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
-		A7E7A2581CA32524002DB6FE /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = "Custom Views/Example/BaseTableViewCell.swift"; sourceTree = "<group>"; };
 		A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseTableViewCell.xib; path = "Custom Views/Example/BaseTableViewCell.xib"; sourceTree = "<group>"; };
 		A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Robustivity/Global/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
@@ -347,6 +419,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011083351CAC171200F616DD /* ProjectUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				011083361CAC173500F616DD /* ProjectUpdateTableViewCell.swift */,
+				011083371CAC173500F616DD /* ProjectUpdateTableViewCell.xib */,
+			);
+			name = ProjectUpdate;
+			sourceTree = "<group>";
+		};
+		011083451CAC1EF800F616DD /* ProjectUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				011083461CAC1F1500F616DD /* ProjectUpdateViewController.swift */,
+				011083471CAC1F1500F616DD /* ProjectUpdateViewController.xib */,
+			);
+			name = ProjectUpdate;
+			sourceTree = "<group>";
+		};
 		04179F391CAD505900A3513A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +444,23 @@
 				04179F3B1CAD508F00A3513A /* ProfileTableViewCell.xib */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		185FE3131CAC60D500B3725E /* CustomProjectsListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				185FE3171CAC615000B3725E /* CustomProjectsListTableViewCell.swift */,
+				185FE3181CAC615000B3725E /* CustomProjectsListTableViewCell.xib */,
+			);
+			name = CustomProjectsListTableViewCell;
+			sourceTree = "<group>";
+		};
+		185FE3141CAC60ED00B3725E /* UIRoundView */ = {
+			isa = PBXGroup;
+			children = (
+				185FE3151CAC610A00B3725E /* RoundBorderedView.swift */,
+			);
+			name = UIRoundView;
 			sourceTree = "<group>";
 		};
 		18CE2A6C1CAC891B00FE4A46 /* Planner */ = {
@@ -475,6 +582,19 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		1B7F8DD41CB08116007C8005 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1B7F8DD51CB0813C007C8005 /* Circular+UIImageView.swift */,
+				1B7F8DD61CB0813C007C8005 /* Comp_1+Theme.swift */,
+				1B7F8DD71CB0813C007C8005 /* Comp_2+Theme.swift */,
+				1B7F8DD81CB0813C007C8005 /* Comp_3+Theme.swift */,
+				1B7F8DD91CB0813C007C8005 /* Comp_4+Theme.swift */,
+				1B7F8DDA1CB0813C007C8005 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		1B8E5D6E1CAF411C00239F1C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,6 +674,24 @@
 			path = ChooseAssigneeTableViewCell;
 			sourceTree = "<group>";
 		};
+		229A2D511CAD5287004F8980 /* ProjectMemberTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				229A2D561CAD5329004F8980 /* ProjectMemberCell.swift */,
+				229A2D571CAD5329004F8980 /* ProjectMemberCell.xib */,
+			);
+			name = ProjectMemberTableViewCell;
+			sourceTree = "<group>";
+		};
+		34DF6F7B1CAFF85600FD0F34 /* PingToUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				34DF6F7C1CAFF87700FD0F34 /* PingToUserTableViewCell.swift */,
+				34DF6F7D1CAFF87700FD0F34 /* PingToUserTableViewCell.xib */,
+			);
+			name = PingToUserCell;
+			sourceTree = "<group>";
+		};
 		34DF6F8A1CB0104000FD0F34 /* MoreCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,15 +722,21 @@
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				1B7F8DD21CB08037007C8005 /* BaseTableAdapter.swift */,
 				1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */,
 				1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */,
+				75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */,
+				229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */,
 				A717E5A61CA14D2D00F237DD /* BaseAdapter.swift */,
-				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */,
 				01530AFA1CAB145A00429264 /* PlannerAdapter.swift */,
 				1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
+				34206EA61CADC80E00D6A4AB /* PingAdapter.swift */,
+				185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */,
+				0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */,
+				196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */,
 				F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */,
 				04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */,
 				A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */,
@@ -613,19 +757,6 @@
 				A717E5911CA1485000F237DD /* APIConnector_Module_4.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		A717E5921CA1485000F237DD /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				1B8E5D7F1CAF417E00239F1C /* Circular+UIImageView.swift */,
-				A7E7A2581CA32524002DB6FE /* UIColor.swift */,
-				A74EC01E1CA469E800A7FDEB /* Comp_1+Theme.swift */,
-				A74EC0201CA46A1800A7FDEB /* Comp_2+Theme.swift */,
-				A74EC0211CA46A1800A7FDEB /* Comp_3+Theme.swift */,
-				A74EC0221CA46A1800A7FDEB /* Comp_4+Theme.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		A717E5931CA1485000F237DD /* Support Libraries */ = {
@@ -649,6 +780,10 @@
 		A72B29121CA2DE7D00C49913 /* Ping */ = {
 			isa = PBXGroup;
 			children = (
+				34A2697A1CAC6BED00CA1E2F /* PingtoViewController.swift */,
+				34A2697B1CAC6BED00CA1E2F /* PingtoViewController.xib */,
+				34A269821CAC754900CA1E2F /* PingToUsersViewController.swift */,
+				34A269831CAC754900CA1E2F /* PingToUsersViewController.xib */,
 			);
 			path = Ping;
 			sourceTree = "<group>";
@@ -665,6 +800,15 @@
 		A72B29141CA2DE7D00C49913 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				196CDBA91CAF0BC80092A050 /* ProjectInfoViewController.swift */,
+				196CDBAA1CAF0BC80092A050 /* ProjectInfoViewController.xib */,
+				185FE30D1CAC5FE100B3725E /* ProjectsListViewController.swift */,
+				185FE30E1CAC5FE100B3725E /* ProjectsListViewController.xib */,
+				229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */,
+				229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */,
+				011083451CAC1EF800F616DD /* ProjectUpdate */,
+				01F5EBDC1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift */,
+				01F5EBDD1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -686,6 +830,10 @@
 		A72B29171CA2DE7D00C49913 /* SendExcuse */ = {
 			isa = PBXGroup;
 			children = (
+				75D7CD2E1CAD81F6009C6466 /* SendExcuseViewController.swift */,
+				75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */,
+				75D7CD301CAD81F6009C6466 /* WriteExcuseViewController.swift */,
+				75D7CD311CAD81F6009C6466 /* WriteExcuseViewController.xib */,
 			);
 			path = SendExcuse;
 			sourceTree = "<group>";
@@ -703,6 +851,11 @@
 				1B7F8D8A1CB07ACE007C8005 /* BaseSwipableCell */,
 				1B8E5D6E1CAF411C00239F1C /* Feed */,
 				18CE2A6C1CAC891B00FE4A46 /* Planner */,
+				34DF6F7B1CAFF85600FD0F34 /* PingToUserCell */,
+				229A2D511CAD5287004F8980 /* ProjectMemberTableViewCell */,
+				185FE3141CAC60ED00B3725E /* UIRoundView */,
+				185FE3131CAC60D500B3725E /* CustomProjectsListTableViewCell */,
+				011083351CAC171200F616DD /* ProjectUpdate */,
 				A77FBFD91CAFDEF4000F6EFB /* Directory */,
 				04179F391CAD505900A3513A /* Profile */,
 				41ED59121CAC487900508474 /* CallCollectionViewCell */,
@@ -763,6 +916,8 @@
 		A7A94EC01C9E9321002B3991 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				1B7F8DCA1CB07FBD007C8005 /* MoreViewController.swift */,
+				1B7F8DCB1CB07FBD007C8005 /* MoreViewController.xib */,
 				A77FBFDE1CAFDFB1000F6EFB /* Directory */,
 				41ED59061CAC377100508474 /* Call */,
 				A72B29131CA2DE7D00C49913 /* Profile */,
@@ -827,8 +982,8 @@
 				A717E5A51CA149DF00F237DD /* Robustivity-Bridging-Header.h */,
 				A717E58B1CA1485000F237DD /* API */,
 				A717E5891CA1485000F237DD /* Adapters */,
-				A717E5921CA1485000F237DD /* Extension */,
 				A74EC0281CA4724300A7FDEB /* Custom Views */,
+				1B7F8DD41CB08116007C8005 /* Extension */,
 				A717E5931CA1485000F237DD /* Support Libraries */,
 				A717E5941CA1485000F237DD /* Theme */,
 				A7BCE7C01C7D834F007870CB /* Models */,
@@ -849,6 +1004,7 @@
 				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
 				1B8E5D8A1CAF41D400239F1C /* UserModel.swift */,
+				0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -863,8 +1019,6 @@
 				A7A94EC21C9E9321002B3991 /* Toggle */,
 				A7A94EC31C9E9342002B3991 /* Notifications */,
 				A7A94EC01C9E9321002B3991 /* More */,
-				A7A94EDF1C9E97D0002B3991 /* MoreViewController.swift */,
-				A7A94EE01C9E97D0002B3991 /* MoreViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -910,6 +1064,8 @@
 			children = (
 				A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */,
 				A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */,
+				75ACFE2E1CAFF27F00A2DE66 /* ExcuseTableViewCell.swift */,
+				75ACFE2F1CAFF27F00A2DE66 /* ExcuseTableViewCell.xib */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -1047,11 +1203,16 @@
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				1BBA3DC71CB0524600FC4609 /* ToggleFeedTableViewCell.xib in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
+				34DF6F7F1CAFF87700FD0F34 /* PingToUserTableViewCell.xib in Resources */,
 				E5333BF81CADDA2300C287D2 /* LoginViewController.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				A77FBFDD1CAFDEF4000F6EFB /* DirectoryCell.xib in Resources */,
 				1B7F8D831CB07A72007C8005 /* ChooseAssigneeViewController.xib in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
+				011083491CAC1F1500F616DD /* ProjectUpdateViewController.xib in Resources */,
+				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
+				185FE31A1CAC615000B3725E /* CustomProjectsListTableViewCell.xib in Resources */,
+				011083391CAC173500F616DD /* ProjectUpdateTableViewCell.xib in Resources */,
 				A750E9881CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
 				41ED59161CAC48B700508474 /* CallCollectionViewCell.xib in Resources */,
@@ -1064,8 +1225,19 @@
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				1BBA3DAA1CB051C900FC4609 /* LabelTextTaskViewCell.xib in Resources */,
 				1BBA3DC31CB0524600FC4609 /* BroadcastFeedTableViewCell.xib in Resources */,
+				1B7F8DCD1CB07FBD007C8005 /* MoreViewController.xib in Resources */,
 				1BBA3DAC1CB051C900FC4609 /* TextViewTaskViewCell.xib in Resources */,
 				1BBA3DB31CB0520800FC4609 /* PlannerHeaderTableViewCell.xib in Resources */,
+				34A2697D1CAC6BED00CA1E2F /* PingtoViewController.xib in Resources */,
+				229A2D5D1CAD5417004F8980 /* ProjectTeamViewController.xib in Resources */,
+				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
+				75D7CD351CAD81F6009C6466 /* WriteExcuseViewController.xib in Resources */,
+				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
+				75D7CD331CAD81F6009C6466 /* SendExcuseViewController.xib in Resources */,
+				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
+				185FE3101CAC5FE100B3725E /* ProjectsListViewController.xib in Resources */,
+				75ACFE311CAFF27F00A2DE66 /* ExcuseTableViewCell.xib in Resources */,
+				34A269851CAC754900CA1E2F /* PingToUsersViewController.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
@@ -1078,12 +1250,15 @@
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				1BBA3DCF1CB053F600FC4609 /* UserTableViewCell.xib in Resources */,
 				1BBA3DB51CB0520800FC4609 /* PlannerTableViewCell.xib in Resources */,
+				196CDBAC1CAF0BC80092A050 /* ProjectInfoViewController.xib in Resources */,
 				A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */,
+				01F5EBDF1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.xib in Resources */,
+				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
+				229A2D591CAD5329004F8980 /* ProjectMemberCell.xib in Resources */,
 				7D05C3EE1CAD76FF008F4A83 /* MoreTableViewCell.xib in Resources */,
 				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
 				04179F3D1CAD508F00A3513A /* ProfileTableViewCell.xib in Resources */,
 				1B7F8D871CB07A72007C8005 /* CreateTaskViewController.xib in Resources */,
-				A7A94EE21C9E97D0002B3991 /* MoreViewController.xib in Resources */,
 				04179F361CAD441600A3513A /* ProfileViewController.xib in Resources */,
 				A7A94EDA1C9E97B5002B3991 /* ToggleViewController.xib in Resources */,
 				1B7F8D751CB07A5E007C8005 /* FeedViewController.xib in Resources */,
@@ -1102,8 +1277,8 @@
 				A7D8435B1CB025DE00E690A0 /* CallCollectionAdapter.swift in Sources */,
 				1BBA3DCE1CB053F600FC4609 /* UserTableViewCell.swift in Sources */,
 				1B8E5D881CAF41C100239F1C /* FeedModel.swift in Sources */,
+				1B7F8DD31CB08037007C8005 /* BaseTableAdapter.swift in Sources */,
 				1B7F8DBF1CB07C95007C8005 /* SDWebImageDownloaderOperation.m in Sources */,
-				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
 				1BBA3DC21CB0524600FC4609 /* BroadcastFeedTableViewCell.swift in Sources */,
 				1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */,
 				41ED59101CAC379900508474 /* CallViewController.swift in Sources */,
@@ -1115,12 +1290,14 @@
 				1B7F8DC21CB07C95007C8005 /* UIButton+WebCache.m in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
-				A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */,
 				1B7F8DBA1CB07C95007C8005 /* NSData+ImageContentType.m in Sources */,
 				18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */,
-				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
-				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
 				1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */,
+				01F5EBDE1CAF140A0098A3C2 /* ProjectSegmentedControlViewController.swift in Sources */,
+				011083381CAC173500F616DD /* ProjectUpdateTableViewCell.swift in Sources */,
+				0110834F1CAC215A00F616DD /* ProjectUpdateModel.swift in Sources */,
+				75ACFE301CAFF27F00A2DE66 /* ExcuseTableViewCell.swift in Sources */,
+				1B7F8DDB1CB0813C007C8005 /* Circular+UIImageView.swift in Sources */,
 				A77FBFE11CAFDFB1000F6EFB /* DirectoryViewController.swift in Sources */,
 				F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */,
 				1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */,
@@ -1131,33 +1308,46 @@
 				1BBA3DA91CB051C900FC4609 /* LabelTextTaskViewCell.swift in Sources */,
 				E5333BF71CADDA2300C287D2 /* LoginViewController.swift in Sources */,
 				1B7F8DC41CB07C95007C8005 /* UIImage+MultiFormat.m in Sources */,
+				75D7CD341CAD81F6009C6466 /* WriteExcuseViewController.swift in Sources */,
+				1B7F8DDF1CB0813C007C8005 /* Comp_4+Theme.swift in Sources */,
 				A7BCE7E91C7DAFBA007870CB /* BaseViewController.swift in Sources */,
 				A7A94ED91C9E97B5002B3991 /* ToggleViewController.swift in Sources */,
+				1B7F8DDC1CB0813C007C8005 /* Comp_1+Theme.swift in Sources */,
 				1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */,
 				7D05C3ED1CAD76FF008F4A83 /* MoreTableViewCell.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
+				011083481CAC1F1500F616DD /* ProjectUpdateViewController.swift in Sources */,
+				185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
 				1B8E5D8F1CAF423A00239F1C /* FeedAdapter.swift in Sources */,
-				A7E7A25B1CA32524002DB6FE /* UIColor.swift in Sources */,
 				1B7F8DBC1CB07C95007C8005 /* SDWebImageCompat.m in Sources */,
+				196CDBAE1CAF0BF60092A050 /* ProjectInfoAdapter.swift in Sources */,
 				A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */,
+				1B7F8DCC1CB07FBD007C8005 /* MoreViewController.swift in Sources */,
 				1B7F8DC11CB07C95007C8005 /* SDWebImagePrefetcher.m in Sources */,
 				1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */,
 				1B7F8DC01CB07C95007C8005 /* SDWebImageManager.m in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */,
-				A74EC01F1CA469E800A7FDEB /* Comp_1+Theme.swift in Sources */,
 				1B8E5D8B1CAF41D400239F1C /* UserModel.swift in Sources */,
 				1B7F8D821CB07A72007C8005 /* ChooseAssigneeViewController.swift in Sources */,
 				1BBA3DAB1CB051C900FC4609 /* TextViewTaskViewCell.swift in Sources */,
 				1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */,
 				1B7F8DBE1CB07C95007C8005 /* SDWebImageDownloader.m in Sources */,
-				A717E59A1CA1485000F237DD /* BaseTableAdapter.swift in Sources */,
 				1BBA3DB41CB0520800FC4609 /* PlannerTableViewCell.swift in Sources */,
 				1BBA3DC81CB0524600FC4609 /* UpdateFeedTableViewCell.swift in Sources */,
+				1B7F8DE01CB0813C007C8005 /* UIColor.swift in Sources */,
+				34A269841CAC754900CA1E2F /* PingToUsersViewController.swift in Sources */,
+				185FE3161CAC610A00B3725E /* RoundBorderedView.swift in Sources */,
+				75D7CD321CAD81F6009C6466 /* SendExcuseViewController.swift in Sources */,
+				34DF6F7E1CAFF87700FD0F34 /* PingToUserTableViewCell.swift in Sources */,
+				34A2697C1CAC6BED00CA1E2F /* PingtoViewController.swift in Sources */,
+				229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */,
+				185FE3191CAC615000B3725E /* CustomProjectsListTableViewCell.swift in Sources */,
+				229A2D5C1CAD5417004F8980 /* ProjectTeamViewController.swift in Sources */,
+				0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
 				1B7F8DBD1CB07C95007C8005 /* SDWebImageDecoder.m in Sources */,
-				1B8E5D801CAF417E00239F1C /* Circular+UIImageView.swift in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
 				1B7F8D841CB07A72007C8005 /* ChooseProjectViewController.swift in Sources */,
 				1B7F8D741CB07A5E007C8005 /* FeedViewController.swift in Sources */,
@@ -1169,12 +1359,19 @@
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				1BBA3DB21CB0520800FC4609 /* PlannerHeaderTableViewCell.swift in Sources */,
 				1B7F8DC71CB07C95007C8005 /* UIImageView+WebCache.m in Sources */,
+				1B7F8DDD1CB0813C007C8005 /* Comp_2+Theme.swift in Sources */,
 				1BBA3DC61CB0524600FC4609 /* ToggleFeedTableViewCell.swift in Sources */,
+				1B7F8DDE1CB0813C007C8005 /* Comp_3+Theme.swift in Sources */,
 				41ED59151CAC48B700508474 /* CallCollectionViewCell.swift in Sources */,
 				1B7F8DC61CB07C95007C8005 /* UIImageView+HighlightedWebCache.m in Sources */,
+				75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */,
+				34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */,
 				04179F3C1CAD508F00A3513A /* ProfileTableViewCell.swift in Sources */,
 				04179F351CAD441600A3513A /* ProfileViewController.swift in Sources */,
 				A717E5AD1CA1567F00F237DD /* RobustivityTabBarController.swift in Sources */,
+				196CDBAB1CAF0BC80092A050 /* ProjectInfoViewController.swift in Sources */,
+				185FE30F1CAC5FE100B3725E /* ProjectsListViewController.swift in Sources */,
+				229A2D581CAD5329004F8980 /* ProjectMemberCell.swift in Sources */,
 				A750E9831CA97C49009D29BB /* NotificationsTableViewCell.swift in Sources */,
 				1B7F8DB91CB07C95007C8005 /* MKAnnotationView+WebCache.m in Sources */,
 				1B7F8D8C1CB07B19007C8005 /* SwipableTableViewCell.swift in Sources */,
