@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04179F351CAD441600A3513A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F331CAD441600A3513A /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		04179F361CAD441600A3513A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04179F341CAD441600A3513A /* ProfileViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; settings = {ASSET_TAGS = (); }; };
-		04179F3C1CAD508F00A3513A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F3A1CAD508F00A3513A /* ProfileTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		04179F3D1CAD508F00A3513A /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04179F3B1CAD508F00A3513A /* ProfileTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		04179F351CAD441600A3513A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F331CAD441600A3513A /* ProfileViewController.swift */; };
+		04179F361CAD441600A3513A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04179F341CAD441600A3513A /* ProfileViewController.xib */; };
+		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
+		04179F3C1CAD508F00A3513A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F3A1CAD508F00A3513A /* ProfileTableViewCell.swift */; };
+		04179F3D1CAD508F00A3513A /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04179F3B1CAD508F00A3513A /* ProfileTableViewCell.xib */; };
 		41ED59101CAC379900508474 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED590E1CAC379900508474 /* CallViewController.swift */; };
 		41ED59111CAC379900508474 /* CallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED590F1CAC379900508474 /* CallViewController.xib */; };
 		41ED59151CAC48B700508474 /* CallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED59131CAC48B700508474 /* CallCollectionViewCell.swift */; };
@@ -38,6 +38,10 @@
 		A750E9831CA97C49009D29BB /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */; };
 		A750E9841CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */; };
 		A750E9881CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A750E9871CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib */; };
+		A77FBFDC1CAFDEF4000F6EFB /* DirectoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FBFDA1CAFDEF4000F6EFB /* DirectoryCell.swift */; };
+		A77FBFDD1CAFDEF4000F6EFB /* DirectoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77FBFDB1CAFDEF4000F6EFB /* DirectoryCell.xib */; };
+		A77FBFE11CAFDFB1000F6EFB /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FBFDF1CAFDFB1000F6EFB /* DirectoryViewController.swift */; };
+		A77FBFE21CAFDFB1000F6EFB /* DirectoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77FBFE01CAFDFB1000F6EFB /* DirectoryViewController.xib */; };
 		A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */; };
 		A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED11C9E9724002B3991 /* FeedViewController.swift */; };
 		A7A94ED51C9E9753002B3991 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */; };
@@ -83,13 +87,9 @@
 		A7FD4DAF1CA5DE9E00BD7332 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */; };
 		A7FD4DB01CA5DE9E00BD7332 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */; };
 		A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */; };
-		F4E6457A1CA9540C00B579C2 /* ProfileDirectoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E645781CA9540C00B579C2 /* ProfileDirectoryCell.swift */; };
-		F4E6457B1CA9540C00B579C2 /* ProfileDirectoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E645791CA9540C00B579C2 /* ProfileDirectoryCell.xib */; };
-		F4E645841CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E645831CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift */; };
-		F4E6AA431CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E6AA411CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift */; };
-		F4E6AA441CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E6AA421CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib */; };
-		E5333BF71CADDA2300C287D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5333BF51CADDA2300C287D2 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		E5333BF81CADDA2300C287D2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5333BF61CADDA2300C287D2 /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		E5333BF71CADDA2300C287D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5333BF51CADDA2300C287D2 /* LoginViewController.swift */; };
+		E5333BF81CADDA2300C287D2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5333BF61CADDA2300C287D2 /* LoginViewController.xib */; };
+		F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +177,10 @@
 		A750E9811CA97C49009D29BB /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsTableViewCell.swift; path = "Custom Views/Notifications/NotificationsTableViewCell.swift"; sourceTree = "<group>"; };
 		A750E9821CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsSingleLineTableViewCell.xib; path = "Custom Views/Notifications/NotificationsSingleLineTableViewCell.xib"; sourceTree = "<group>"; };
 		A750E9871CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsDoubleLineTableViewCell.xib; path = "Custom Views/Notifications/NotificationsDoubleLineTableViewCell.xib"; sourceTree = "<group>"; };
+		A77FBFDA1CAFDEF4000F6EFB /* DirectoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryCell.swift; sourceTree = "<group>"; };
+		A77FBFDB1CAFDEF4000F6EFB /* DirectoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryCell.xib; sourceTree = "<group>"; };
+		A77FBFDF1CAFDFB1000F6EFB /* DirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryViewController.swift; sourceTree = "<group>"; };
+		A77FBFE01CAFDFB1000F6EFB /* DirectoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryViewController.xib; sourceTree = "<group>"; };
 		A7A94ECF1C9E9718002B3991 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		A7A94ED11C9E9724002B3991 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A7A94ED31C9E9753002B3991 /* PlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
@@ -242,13 +246,9 @@
 		A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseTableViewCell.xib; path = "Custom Views/Example/BaseTableViewCell.xib"; sourceTree = "<group>"; };
 		A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Robustivity/Global/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		A7FD4EA81CA5E49500BD7332 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		F4E645781CA9540C00B579C2 /* ProfileDirectoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileDirectoryCell.swift; path = "Custom Views/ProfileDirectoryCell.swift"; sourceTree = "<group>"; };
-		F4E645791CA9540C00B579C2 /* ProfileDirectoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileDirectoryCell.xib; path = "Custom Views/ProfileDirectoryCell.xib"; sourceTree = "<group>"; };
-		F4E645831CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDirectoryAdapter.swift; sourceTree = "<group>"; };
-		F4E6AA411CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDirectoryViewController.swift; sourceTree = "<group>"; };
-		F4E6AA421CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileDirectoryViewController.xib; sourceTree = "<group>"; };
 		E5333BF51CADDA2300C287D2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E5333BF61CADDA2300C287D2 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,7 +296,7 @@
 				A717E58A1CA1485000F237DD /* BaseTableAdapter.swift */,
 				A717E5A81CA14D4800F237DD /* BaseCollectionAdapter.swift */,
 				A7C480271CA4102900F4FDB7 /* FeedAdapter.swift */,
-				F4E645831CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift */,
+				F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */,
 				04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */,
 				A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */,
 			);
@@ -355,8 +355,6 @@
 		A72B29131CA2DE7D00C49913 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				F4E6AA411CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift */,
-				F4E6AA421CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib */,
 				04179F331CAD441600A3513A /* ProfileViewController.swift */,
 				04179F341CAD441600A3513A /* ProfileViewController.xib */,
 			);
@@ -401,7 +399,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				F4E6456F1CA952CC00B579C2 /* ProfileDirectory */,
+				A77FBFD91CAFDEF4000F6EFB /* Directory */,
 				04179F391CAD505900A3513A /* Profile */,
 				41ED59121CAC487900508474 /* CallCollectionViewCell */,
 				A750E9801CA97C13009D29BB /* Notifications */,
@@ -418,6 +416,25 @@
 				A750E9871CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib */,
 			);
 			name = Notifications;
+			sourceTree = "<group>";
+		};
+		A77FBFD91CAFDEF4000F6EFB /* Directory */ = {
+			isa = PBXGroup;
+			children = (
+				A77FBFDA1CAFDEF4000F6EFB /* DirectoryCell.swift */,
+				A77FBFDB1CAFDEF4000F6EFB /* DirectoryCell.xib */,
+			);
+			name = Directory;
+			path = "Custom Views/Directory";
+			sourceTree = "<group>";
+		};
+		A77FBFDE1CAFDFB1000F6EFB /* Directory */ = {
+			isa = PBXGroup;
+			children = (
+				A77FBFDF1CAFDFB1000F6EFB /* DirectoryViewController.swift */,
+				A77FBFE01CAFDFB1000F6EFB /* DirectoryViewController.xib */,
+			);
+			path = Directory;
 			sourceTree = "<group>";
 		};
 		A7A94EBE1C9E9321002B3991 /* Feed */ = {
@@ -441,6 +458,7 @@
 		A7A94EC01C9E9321002B3991 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				A77FBFDE1CAFDFB1000F6EFB /* Directory */,
 				41ED59061CAC377100508474 /* Call */,
 				A72B29131CA2DE7D00C49913 /* Profile */,
 				A72B29181CA2DEA000C49913 /* AttendanceLog */,
@@ -642,15 +660,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F4E6456F1CA952CC00B579C2 /* ProfileDirectory */ = {
-			isa = PBXGroup;
-			children = (
-				F4E645781CA9540C00B579C2 /* ProfileDirectoryCell.swift */,
-				F4E645791CA9540C00B579C2 /* ProfileDirectoryCell.xib */,
-			);
-			name = ProfileDirectory;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -770,6 +779,7 @@
 				E5333BF81CADDA2300C287D2 /* LoginViewController.xib in Resources */,
 				A7A94ED01C9E9718002B3991 /* FeedViewController.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
+				A77FBFDD1CAFDEF4000F6EFB /* DirectoryCell.xib in Resources */,
 				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				A750E9881CA97C85009D29BB /* NotificationsDoubleLineTableViewCell.xib in Resources */,
 				A7A94EDE1C9E97C2002B3991 /* NotificationsViewController.xib in Resources */,
@@ -777,13 +787,12 @@
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
-				F4E6457B1CA9540C00B579C2 /* ProfileDirectoryCell.xib in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
-				F4E6AA441CAD54CC00EB0D0A /* ProfileDirectoryViewController.xib in Resources */,
+				A77FBFE21CAFDFB1000F6EFB /* DirectoryViewController.xib in Resources */,
 				A750E9841CA97C49009D29BB /* NotificationsSingleLineTableViewCell.xib in Resources */,
 				A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
@@ -805,12 +814,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A77FBFDC1CAFDEF4000F6EFB /* DirectoryCell.swift in Sources */,
 				A7C4801E1CA3F1EC00F4FDB7 /* UIImage+GIF.m in Sources */,
 				A7C480281CA4102900F4FDB7 /* FeedAdapter.swift in Sources */,
 				A74EC0231CA46A1800A7FDEB /* Comp_2+Theme.swift in Sources */,
 				41ED59101CAC379900508474 /* CallViewController.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
-				F4E6AA431CAD54CC00EB0D0A /* ProfileDirectoryViewController.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				A750E9781CA97B77009D29BB /* NotificationsAdapter.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
@@ -818,11 +827,11 @@
 				A7A94EDD1C9E97C2002B3991 /* NotificationsViewController.swift in Sources */,
 				A74EC0241CA46A1800A7FDEB /* Comp_3+Theme.swift in Sources */,
 				A7C4801D1CA3F1EC00F4FDB7 /* UIButton+WebCache.m in Sources */,
-				F4E6457A1CA9540C00B579C2 /* ProfileDirectoryCell.swift in Sources */,
 				A74EC0251CA46A1800A7FDEB /* Comp_4+Theme.swift in Sources */,
 				A7A94EE11C9E97D0002B3991 /* MoreViewController.swift in Sources */,
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
-				F4E645841CA95BAC00B579C2 /* ProfileDirectoryAdapter.swift in Sources */,
+				A77FBFE11CAFDFB1000F6EFB /* DirectoryViewController.swift in Sources */,
+				F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */,
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  ProfileDirectoryCell.swift
+//  DirectoryCell.swift
 //  Robustivity
 //
 //  Created by MacBook Pro on 3/28/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileDirectoryCell: UITableViewCell {
+class DirectoryCell: UITableViewCell {
     
     
     
@@ -17,10 +17,10 @@ class ProfileDirectoryCell: UITableViewCell {
     @IBOutlet weak var userName: RBLabel!
     
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        
+//    }
     
 
     override func awakeFromNib() {

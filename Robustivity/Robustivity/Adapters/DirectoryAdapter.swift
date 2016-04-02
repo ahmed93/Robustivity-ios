@@ -1,5 +1,5 @@
 //
-//  ProfileDirectoryAdapter.swift
+//  DirectoryAdapter.swift
 //  Robustivity
 //
 //  Created by MacBook Pro on 3/28/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileDirectoryAdapter: BaseTableAdapter {
+class DirectoryAdapter: BaseTableAdapter {
     
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
@@ -95,7 +95,7 @@ class ProfileDirectoryAdapter: BaseTableAdapter {
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? ProfileDirectoryCell
+        let _cell = cell as? DirectoryCell
         
        // _cell?.userName.text = "Section \(indexPath.section) Row \(indexPath.row)"
          let w =  tableItems.objectAtIndex(indexPath.section)
