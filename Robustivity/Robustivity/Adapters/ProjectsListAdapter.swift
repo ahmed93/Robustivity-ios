@@ -61,8 +61,8 @@ class ProjectsListAdapter: BaseTableAdapter {
   }
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let projectSegmentedControlViewController = ProjectSegmentedControlViewController()
-    
+    let projectSegmentedControlViewController = ProjectSegmentedControlViewController(nibName: "ProjectSegmentedControlViewController", bundle: nil)
+   
    // projectsListViewController.presentViewController(projectSegmentedControlViewController, animated: true, completion: nil)
     let nav = projectsListViewController.navigationController
 //    projectsListViewController.dismissViewControllerAnimated(false, completion: nil)
@@ -71,9 +71,10 @@ class ProjectsListAdapter: BaseTableAdapter {
 //    nav?.presentViewController(projectSegmentedControlViewController, animated: true, completion: nil)
 //    nav?.popViewControllerAnimated(true)
 //    nav?.pushViewController(projectSegmentedControlViewController, animated: true)
+    // let controller = PingToUsersViewController(nibName: "PingToUsersViewController", bundle: nil)
+    //navigationController?.pushViewController(controller, animated: true)
     
-    
-      nav?.setViewControllers([projectSegmentedControlViewController], animated: false)
+      nav?.pushViewController(projectSegmentedControlViewController, animated: true)//([projectSegmentedControlViewController], animated: false)
     
   
   }
