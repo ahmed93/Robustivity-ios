@@ -28,7 +28,7 @@ class SendExcuseViewController: BaseViewController {
         self.excusesTableView.tableFooterView = UIView()
         self.title = "Send Excuse";
         self.navigationItem.title = "Send Excuse";
-        adapter = ExcuseAdapter(viewController: self, tableView: excusesTableView, registerCellWithNib:"BaseTableViewCell", withIdentifier: "cell")
+        adapter = ExcuseAdapter(viewController: self, tableView: excusesTableView, registerCellWithNib:"ExcuseTableViewCell", withIdentifier: "cell")
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertExcuse")
         self.navigationItem.rightBarButtonItem = addButton
         // Do any additional setup after loading the view.

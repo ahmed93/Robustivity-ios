@@ -32,7 +32,7 @@ class ExcuseAdapter: BaseTableAdapter {
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? BaseTableViewCell
+        let _cell = cell as? ExcuseTableViewCell
         
         _cell?.label.text = tableItems.objectAtIndex(indexPath.row) as? String
     }

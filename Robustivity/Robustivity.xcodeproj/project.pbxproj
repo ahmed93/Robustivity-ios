@@ -27,6 +27,8 @@
 		229A2D5C1CAD5417004F8980 /* ProjectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */; };
 		229A2D5D1CAD5417004F8980 /* ProjectTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */; };
 		229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */; };
+		75ACFE301CAFF27F00A2DE66 /* ExcuseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ACFE2E1CAFF27F00A2DE66 /* ExcuseTableViewCell.swift */; };
+		75ACFE311CAFF27F00A2DE66 /* ExcuseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75ACFE2F1CAFF27F00A2DE66 /* ExcuseTableViewCell.xib */; };
 		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
 		75D7CD321CAD81F6009C6466 /* SendExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2E1CAD81F6009C6466 /* SendExcuseViewController.swift */; };
 		75D7CD331CAD81F6009C6466 /* SendExcuseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */; };
@@ -171,6 +173,8 @@
 		229A2D5A1CAD5417004F8980 /* ProjectTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTeamViewController.swift; sourceTree = SOURCE_ROOT; };
 		229A2D5B1CAD5417004F8980 /* ProjectTeamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectTeamViewController.xib; sourceTree = SOURCE_ROOT; };
 		229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectMembersAdapter.swift; path = ../API/ProjectMembersAdapter.swift; sourceTree = "<group>"; };
+		75ACFE2E1CAFF27F00A2DE66 /* ExcuseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExcuseTableViewCell.swift; path = "Custom Views/ExcuseTableViewCell.swift"; sourceTree = "<group>"; };
+		75ACFE2F1CAFF27F00A2DE66 /* ExcuseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExcuseTableViewCell.xib; path = "Custom Views/ExcuseTableViewCell.xib"; sourceTree = "<group>"; };
 		75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuseAdapter.swift; sourceTree = "<group>"; };
 		75D7CD2E1CAD81F6009C6466 /* SendExcuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendExcuseViewController.swift; path = Robustivity/ViewControllers/More/SendExcuseViewController.swift; sourceTree = SOURCE_ROOT; };
 		75D7CD2F1CAD81F6009C6466 /* SendExcuseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendExcuseViewController.xib; path = Robustivity/ViewControllers/More/SendExcuseViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -651,6 +655,8 @@
 			children = (
 				A7FD4DAD1CA5DE9E00BD7332 /* BaseTableViewCell.swift */,
 				A7FD4DAE1CA5DE9E00BD7332 /* BaseTableViewCell.xib */,
+				75ACFE2E1CAFF27F00A2DE66 /* ExcuseTableViewCell.swift */,
+				75ACFE2F1CAFF27F00A2DE66 /* ExcuseTableViewCell.xib */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -801,6 +807,7 @@
 				75D7CD331CAD81F6009C6466 /* SendExcuseViewController.xib in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				185FE3101CAC5FE100B3725E /* ProjectsListViewController.xib in Resources */,
+				75ACFE311CAFF27F00A2DE66 /* ExcuseTableViewCell.xib in Resources */,
 				A7A94ED61C9E9753002B3991 /* PlannerViewController.xib in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
@@ -839,6 +846,7 @@
 				011083381CAC173500F616DD /* ProjectUpdateTableViewCell.swift in Sources */,
 				A7C4801F1CA3F1EC00F4FDB7 /* UIImage+MultiFormat.m in Sources */,
 				0110834F1CAC215A00F616DD /* ProjectUpdateModel.swift in Sources */,
+				75ACFE301CAFF27F00A2DE66 /* ExcuseTableViewCell.swift in Sources */,
 				A7A94ED21C9E9724002B3991 /* FeedViewController.swift in Sources */,
 				A7C480181CA3F1EC00F4FDB7 /* SDWebImageDecoder.m in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
