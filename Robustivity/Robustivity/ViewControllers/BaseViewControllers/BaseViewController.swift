@@ -16,8 +16,6 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("dissmissKeyboard")))
         self.setNavigationBarStyle()
     }
     

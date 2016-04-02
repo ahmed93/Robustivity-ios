@@ -11,26 +11,8 @@ import UIKit
 class ProjectsListViewController: BaseViewController {
 
   @IBOutlet weak var projectsTableView: UITableView!
-  
+    var adapter: ProjectsListAdapter!
 
-    override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-  var adapter: ProjectsListAdapter!
-  
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    NSBundle.mainBundle().loadNibNamed("ProjectsListViewController", owner: self, options: nil)
-  }
-  
-  override func loadView() {
-    super.loadView()
-  }
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()

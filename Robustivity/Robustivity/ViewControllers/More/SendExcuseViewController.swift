@@ -14,15 +14,6 @@ class SendExcuseViewController: BaseViewController {
     var adapter:ExcuseAdapter!
 
 
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        NSBundle.mainBundle().loadNibNamed("SendExcuseViewController", owner: self, options: nil)
-//    }
-    
-    override func loadView() {
-        super.loadView()
-    }
-
     override func viewDidLoad() { // setting title and bar buttons and footer for the table view
         super.viewDidLoad()
         self.excusesTableView.tableFooterView = UIView()
@@ -38,12 +29,6 @@ class SendExcuseViewController: BaseViewController {
         let rg = WriteExcuseViewController(nibName:"WriteExcuseViewController", bundle: nil)
         presentViewController(UINavigationController(rootViewController: rg), animated: true) { () -> Void in
         }
-    }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

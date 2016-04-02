@@ -33,8 +33,8 @@ class ProjectSegmentedControlViewController: BaseViewController {
         viewsSegmentedControl.selectedSegmentIndex = 0
         showSubView(0)
         
-        let goBackToProjectsBtn = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "goBackToProjects")
-        self.navigationItem.leftBarButtonItem = goBackToProjectsBtn
+     //   let goBackToProjectsBtn = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "goBackToProjects")
+    //    self.navigationItem.leftBarButtonItem = goBackToProjectsBtn
 
         // style segmented control
         self.viewsSegmentedControl.backgroundColor = Theme.redColor();
