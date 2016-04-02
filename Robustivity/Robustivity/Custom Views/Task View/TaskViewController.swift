@@ -25,7 +25,8 @@ class TaskViewController: BaseViewController {
         super.viewDidLoad()
         let dic:NSDictionary = [
             "UserTableViewCell" : "userCell"
-            ,   "DescriptionTableViewCell" : "descriptionCell"]
+            ,   "DescriptionTableViewCell" : "descriptionCell",
+        "TaskInfoToggledTableViewCell":"toggleCell"]
         infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
         self.table.backgroundColor = Theme.lightGrayColor()
     }
@@ -53,7 +54,8 @@ class TaskViewController: BaseViewController {
             table.separatorStyle = .SingleLine
             let dic:NSDictionary = [
                 "UserTableViewCell" : "userCell"
-                ,   "DescriptionTableViewCell" : "descriptionCell"]
+                ,   "DescriptionTableViewCell" : "descriptionCell",
+            "TaskInfoToggledTableViewCell":"toggleCell"]
             infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
             table.reloadData()
             break

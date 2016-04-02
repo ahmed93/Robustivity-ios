@@ -24,6 +24,15 @@ class TaskInfoAdapter: BaseTableAdapter{
         
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 0 && indexPath == 0 {
+            return 80
+        }
+        else{
+            return UITableViewAutomaticDimension
+        }
+    }
+    
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let _cell = cell as? BaseTableViewCell
         
@@ -31,7 +40,15 @@ class TaskInfoAdapter: BaseTableAdapter{
     }
 
     override func configureViaMultipleIdentifiers(indexPath:NSIndexPath)->UITableViewCell? {
-       if indexPath.section == 0 || indexPath.section == 1{
+        if indexPath.section == 0 {
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("toggleCell", forIndexPath: indexPath)
+                as! TaskInfoToggledTableViewCell
+            cell.timer.text = "05:22:12"
+            cell.taskName.text = "Robustivity Project"
+            cell.taskDate.text = "Oct 15,2015"
+            return cell
+        }
+        else if indexPath.section == 1 || indexPath.section == 2{
              let cell = self.tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath)
                 as! UserTableViewCell
             cell.userName.text = "Mohamed Lotfy"
@@ -55,32 +72,32 @@ class TaskInfoAdapter: BaseTableAdapter{
     
  //for hiding the first section
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if section == 0 {
-//        return 1.0
-//        }
+        if section == 0 {
+        return 1.0
+        }
         return 45.0
     }
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var sectionName = String()
         switch(section){
         case 0:
-            sectionName =  "Assigned by"
+            sectionName =  ""
             break
         case 1:
-            sectionName = "Assigned to"
+            sectionName = "Assigned by"
             break
         case 2:
-            sectionName = "Description"
+            sectionName = "Assigned to"
             break
         default:
-            sectionName = ""
+            sectionName = "Description"
             break
         }
         return sectionName
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
 }

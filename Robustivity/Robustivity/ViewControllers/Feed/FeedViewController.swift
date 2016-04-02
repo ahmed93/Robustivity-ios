@@ -31,8 +31,10 @@ class FeedViewController: BaseViewController {
         // setting View TabBartitle + navigationBarTitle
         self.title = "Feed";
         self.navigationItem.title = "Feed";
-
-        adapter = FeedAdapter(viewController: self, tableView: tableView, registerCellWithNib:"BaseTableViewCell", withIdentifier: "cell")
+        let keys = ["checkInCell","broadCastCell","updateCell","toggleCell"]
+        let values = ["CheckInFeedTableViewCell","BroadcastFeedTableViewCell","UpdateFeedTableViewCell","ToggleFeedTableViewCell"]
+        let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
+        adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
     }
 
 }
