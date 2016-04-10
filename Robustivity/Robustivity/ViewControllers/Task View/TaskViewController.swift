@@ -46,7 +46,7 @@ class TaskViewController: BaseViewController {
         customSC.frame = CGRectMake(frame.minX + 10, frame.minY + 50,
                                     frame.width - 140, 30)
         customSC.center = self.viewUpper.center
-        customSC.frame.origin.y = customSC.frame.origin.y + 25
+        customSC.frame.origin.y = customSC.frame.origin.y + 30
         viewUpper.addSubview(customSC)
         customSC.addTarget(self, action: "tabChanged:", forControlEvents: .ValueChanged)
         
