@@ -148,6 +148,8 @@
 		9426F51A1CBABC13006BEFA1 /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9426F5181CBABC13006BEFA1 /* TaskViewController.xib */; };
 		9426F51F1CBABD18006BEFA1 /* TaskInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426F51D1CBABD18006BEFA1 /* TaskInfoAdapter.swift */; };
 		9426F5201CBABD18006BEFA1 /* TaskUpdatesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426F51E1CBABD18006BEFA1 /* TaskUpdatesAdapter.swift */; };
+		9426F5251CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426F5231CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.swift */; };
+		9426F5261CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9426F5241CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.xib */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
 		A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58E1CA1485000F237DD /* APIConnector_Module_1.swift */; };
@@ -392,6 +394,8 @@
 		9426F5181CBABC13006BEFA1 /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
 		9426F51D1CBABD18006BEFA1 /* TaskInfoAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoAdapter.swift; sourceTree = "<group>"; };
 		9426F51E1CBABD18006BEFA1 /* TaskUpdatesAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskUpdatesAdapter.swift; sourceTree = "<group>"; };
+		9426F5231CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoToggledTableViewCell.swift; sourceTree = "<group>"; };
+		9426F5241CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskInfoToggledTableViewCell.xib; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		A717E58E1CA1485000F237DD /* APIConnector_Module_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector_Module_1.swift; sourceTree = "<group>"; };
@@ -901,6 +905,8 @@
 		9426F5091CBABBC4006BEFA1 /* Task View */ = {
 			isa = PBXGroup;
 			children = (
+				9426F5231CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.swift */,
+				9426F5241CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.xib */,
 				9426F50A1CBABBE0006BEFA1 /* CommentTableViewCell.swift */,
 				9426F50B1CBABBE0006BEFA1 /* CommentTableViewCell.xib */,
 				9426F50C1CBABBE0006BEFA1 /* DescriptionTableViewCell.swift */,
@@ -1244,6 +1250,7 @@
 				1B7F8E9D1CB09507007C8005 /* PingToUsersViewController.xib in Resources */,
 				1B7F8E381CB094E6007C8005 /* ProjectUpdateTableViewCell.xib in Resources */,
 				1B7F8E9B1CB09507007C8005 /* MoreViewController.xib in Resources */,
+				9426F5261CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.xib in Resources */,
 				1B7F8E911CB09507007C8005 /* FeedViewController.xib in Resources */,
 				1B7F8EB71CB09507007C8005 /* ToggleViewController.xib in Resources */,
 				1B7F8EA51CB09507007C8005 /* ProjectSegmentedControlViewController.xib in Resources */,
@@ -1334,6 +1341,7 @@
 				1B7F8E981CB09507007C8005 /* WriteExcuseViewController.swift in Sources */,
 				F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */,
 				1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */,
+				9426F5251CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.swift in Sources */,
 				1B7F8E371CB094E6007C8005 /* ProjectUpdateTableViewCell.swift in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
 				1B7F8E2A1CB094E6007C8005 /* MoreTableViewCell.swift in Sources */,
