@@ -146,6 +146,8 @@
 		9426F5151CBABBE0006BEFA1 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9426F50F1CBABBE0006BEFA1 /* PersonTableViewCell.xib */; };
 		9426F5191CBABC13006BEFA1 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426F5171CBABC13006BEFA1 /* TaskViewController.swift */; };
 		9426F51A1CBABC13006BEFA1 /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9426F5181CBABC13006BEFA1 /* TaskViewController.xib */; };
+		9426F51F1CBABD18006BEFA1 /* TaskInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426F51D1CBABD18006BEFA1 /* TaskInfoAdapter.swift */; };
+		9426F5201CBABD18006BEFA1 /* TaskUpdatesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426F51E1CBABD18006BEFA1 /* TaskUpdatesAdapter.swift */; };
 		A717E59B1CA1485000F237DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58C1CA1485000F237DD /* API.swift */; };
 		A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58D1CA1485000F237DD /* APIConnector.swift */; };
 		A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E58E1CA1485000F237DD /* APIConnector_Module_1.swift */; };
@@ -388,6 +390,8 @@
 		9426F50F1CBABBE0006BEFA1 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
 		9426F5171CBABC13006BEFA1 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		9426F5181CBABC13006BEFA1 /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
+		9426F51D1CBABD18006BEFA1 /* TaskInfoAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoAdapter.swift; sourceTree = "<group>"; };
+		9426F51E1CBABD18006BEFA1 /* TaskUpdatesAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskUpdatesAdapter.swift; sourceTree = "<group>"; };
 		A717E58C1CA1485000F237DD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A717E58D1CA1485000F237DD /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		A717E58E1CA1485000F237DD /* APIConnector_Module_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector_Module_1.swift; sourceTree = "<group>"; };
@@ -919,6 +923,8 @@
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				9426F51D1CBABD18006BEFA1 /* TaskInfoAdapter.swift */,
+				9426F51E1CBABD18006BEFA1 /* TaskUpdatesAdapter.swift */,
 				1B7F8DD21CB08037007C8005 /* BaseTableAdapter.swift */,
 				1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */,
 				1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */,
@@ -1337,12 +1343,14 @@
 				1B7F8E3B1CB094E6007C8005 /* BroadcastFeedTableViewCell.swift in Sources */,
 				1B7F8EB41CB09507007C8005 /* PlannerViewController.swift in Sources */,
 				1B7F8EB01CB09507007C8005 /* ChooseProjectViewController.swift in Sources */,
+				9426F5201CBABD18006BEFA1 /* TaskUpdatesAdapter.swift in Sources */,
 				1B7F8EAA1CB09507007C8005 /* ProjectUpdateViewController.swift in Sources */,
 				1B7F8E3F1CB094E6007C8005 /* ToggleFeedTableViewCell.swift in Sources */,
 				1B7F8EA61CB09507007C8005 /* ProjectsListViewController.swift in Sources */,
 				1B7F8E921CB09507007C8005 /* CallViewController.swift in Sources */,
 				1B7F8DDF1CB0813C007C8005 /* Comp_4+Theme.swift in Sources */,
 				1B7F8E471CB094E6007C8005 /* PlannerTableViewCell.swift in Sources */,
+				9426F51F1CBABD18006BEFA1 /* TaskInfoAdapter.swift in Sources */,
 				1B7F8DDC1CB0813C007C8005 /* Comp_1+Theme.swift in Sources */,
 				1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */,
 				1B7F8E261CB094E6007C8005 /* DirectoryCell.swift in Sources */,
