@@ -13,6 +13,7 @@ Custom cell for the comment in task updates view
 import UIKit
 class CommentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var separator: UIView!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var comment: RBLabel!
     @IBOutlet weak var name: RBLabel!
@@ -22,13 +23,14 @@ class CommentTableViewCell: UITableViewCell {
         // Initialization code
         comment.labelType = 1030
         time.labelType = 1080
-        name.labelType = 3020
+        name.labelType = 3000
         
         avatar.layer.borderWidth = 1.0
         avatar.layer.masksToBounds = false
         avatar.layer.borderColor = Theme.whiteColor().CGColor
         avatar.layer.cornerRadius = avatar.frame.size.width/2
         avatar.clipsToBounds = true
+        separator.backgroundColor = Theme.lightGrayColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

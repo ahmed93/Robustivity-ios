@@ -19,6 +19,8 @@ class TaskUpdatesAdapter: BaseTableAdapter{
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
         
         // any extra stuff to be done
+        
+        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -36,17 +38,17 @@ class TaskUpdatesAdapter: BaseTableAdapter{
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
         return nil
     }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath)
             as! CommentTableViewCell
         cell.name.text = "Mansour Said Mansour"
-        cell.comment.text = "this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome this task is awesome "
+        cell.comment.text = "This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA"
         cell.time.text = "Yesterday"
         return cell
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-       
         let footerView = UIView(frame:CGRectMake(0,0,320,40))
         footerView.backgroundColor = Theme.lightGrayColor()
         let commentButton = UIButton(type: .Custom)
@@ -62,31 +64,14 @@ class TaskUpdatesAdapter: BaseTableAdapter{
         textfield.placeholder = "   Write Comment Here..."
         textfield.backgroundColor = Theme.whiteColor()
         footerView.addSubview(textfield)
+        
         return footerView
     }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if indexPath.row > 0{
-            cell.contentView.backgroundColor = UIColor.clearColor()
-            
-            let whiteRoundedView : UIView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 5))
-            
-            whiteRoundedView.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [1.0, 1.0, 1.0, 1.0])
-            whiteRoundedView.layer.masksToBounds = false
-            whiteRoundedView.layer.cornerRadius = 2.0
-            whiteRoundedView.layer.shadowOffset = CGSizeMake(-1, 1)
-            whiteRoundedView.layer.shadowOpacity = 0.2
-            
-            cell.contentView.addSubview(whiteRoundedView)
-            cell.contentView.sendSubviewToBack(whiteRoundedView)
-        }
-    }
-    
+
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 51
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
 }

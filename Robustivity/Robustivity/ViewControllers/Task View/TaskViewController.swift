@@ -66,7 +66,7 @@ class TaskViewController: BaseViewController {
     func tabChanged(sender:UISegmentedControl){
         switch sender.selectedSegmentIndex{
         case 0:
-            table.separatorStyle = .SingleLine
+            table.separatorStyle = .None
             let dic:NSDictionary = [
                 "UserTableViewCell" : "userCell"
                 ,   "DescriptionTableViewCell" : "descriptionCell",
