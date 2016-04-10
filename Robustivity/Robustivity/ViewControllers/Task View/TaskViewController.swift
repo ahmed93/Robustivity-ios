@@ -16,6 +16,8 @@ import UIKit
 
 class TaskViewController: BaseViewController {
 
+    
+    @IBOutlet weak var viewUpper: UIView!
     var infoAdapter:TaskInfoAdapter!
     var updatesAdapter:TaskUpdatesAdapter!
     @IBOutlet weak var table: UITableView!
@@ -29,23 +31,36 @@ class TaskViewController: BaseViewController {
         "TaskInfoToggledTableViewCell":"toggleCell"]
         infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
         self.table.backgroundColor = Theme.lightGrayColor()
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     override func loadView() {
         super.loadView()
-        
         let items = ["Info", "Updates"]
         customSC = UISegmentedControl(items:items)
         customSC.layer.cornerRadius = 5.0  // Don't let background bleed
         customSC.backgroundColor = Theme.redColor()
         customSC.tintColor = UIColor.whiteColor()
         customSC.selectedSegmentIndex = 0
-      
+        
         let frame = UIScreen.mainScreen().bounds
         customSC.frame = CGRectMake(frame.minX + 10, frame.minY + 50,
-            frame.width - 140, 30)
-        self.navigationItem.titleView =  customSC
+                                    frame.width - 140, 30)
+        customSC.center = self.viewUpper.center
+        customSC.frame.origin.y = customSC.frame.origin.y + 25
+        viewUpper.addSubview(customSC)
         customSC.addTarget(self, action: "tabChanged:", forControlEvents: .ValueChanged)
-  
+        
+        viewUpper.backgroundColor = self.navigationController?.navigationBar.barTintColor
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        let taskName = RBLabel()
+        taskName.textAlignment = NSTextAlignment.Center
+        taskName.text = "Task 1"
+        taskName.labelType = 1000
+        taskName.textColor = Theme.whiteColor()
+        self.view.addSubview(taskName)
+        self.navigationItem.title =  "iOS Front END part 2"
+
 }
     
     func tabChanged(sender:UISegmentedControl){
