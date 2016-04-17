@@ -81,6 +81,10 @@ class PlannerAdapter: BaseTableAdapter {
             - indexPath:
                 The index path of the current cell.
     */
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let a = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
+        self.viewController.navigationController?.pushViewController(a, animated: true)
+    }
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let plannerCell = cell as! PlannerTableViewCell
 

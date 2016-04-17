@@ -49,6 +49,7 @@ class PlannerViewController: BaseViewController {
         let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
+        
     }
     
     //    MARK: Segmented Control
