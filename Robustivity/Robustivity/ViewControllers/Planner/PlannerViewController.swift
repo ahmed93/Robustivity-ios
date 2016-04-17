@@ -50,10 +50,6 @@ class PlannerViewController: BaseViewController {
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
         
-        
-        let a = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
-        self.navigationController?.pushViewController(a, animated: true)
-        
     }
     
     //    MARK: Segmented Control
