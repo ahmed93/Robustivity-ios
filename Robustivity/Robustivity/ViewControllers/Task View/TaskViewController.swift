@@ -138,7 +138,7 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func keyboardWillShow(sender: NSNotification) {
-        self.view.frame.origin.y = -170
+        self.view.frame.origin.y = -195
         //self.bottomTableConstraint.constant = 150
     }
     
