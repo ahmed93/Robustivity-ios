@@ -38,7 +38,7 @@
                 <constraint firstItem="CI4-gf-wTA" firstAttribute="trailing" secondItem="rZA-XQ-0cs" secondAttribute="trailing" id="zPG-aj-3dv"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="251" y="362"/>
+            <point key="canvasLocation" x="251" y="387"/>
         </view>
     </objects>
 </document>
