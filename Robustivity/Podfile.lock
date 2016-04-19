@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (3.0.1)
   - Google/Core (2.0.4):
     - GoogleInterchangeUtilities (~> 1.0)
     - GoogleNetworkingUtilities (~> 1.0)
@@ -26,9 +27,11 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.0.0)
   - Google/SignIn
 
 SPEC CHECKSUMS:
+  Alamofire: 2457e1b2e6c46bb05c3a598c542b7bfd08893775
   Google: d0932824c5b97c96be489aa6f4e8cd6c294d637d
   GoogleAppUtilities: 974598e8ed618c74ead33541d9caffbc3d144266
   GoogleAuthUtilities: 79e4143c77a08081a480b08df27a066cc8944f43
