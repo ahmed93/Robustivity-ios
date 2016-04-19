@@ -10,6 +10,7 @@
 		0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */; };
 		0110834F1CAC215A00F616DD /* ProjectUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */; };
 		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
+		01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */; };
 		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
 		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
@@ -237,6 +238,7 @@
 		0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateAdapter.swift; sourceTree = "<group>"; };
 		0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateModel.swift; sourceTree = "<group>"; };
 		01530AFA1CAB145A00429264 /* PlannerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerAdapter.swift; sourceTree = "<group>"; };
+		01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
 		185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListAdapter.swift; sourceTree = "<group>"; };
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
@@ -1022,6 +1024,7 @@
 		A7BCE7AC1C7D8244007870CB /* Robustivity */ = {
 			isa = PBXGroup;
 			children = (
+				01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */,
 				A717E5A51CA149DF00F237DD /* Robustivity-Bridging-Header.h */,
 				A717E58B1CA1485000F237DD /* API */,
 				A717E5891CA1485000F237DD /* Adapters */,
@@ -1252,6 +1255,7 @@
 				1B7F8E9B1CB09507007C8005 /* MoreViewController.xib in Resources */,
 				9426F5261CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.xib in Resources */,
 				1B7F8E911CB09507007C8005 /* FeedViewController.xib in Resources */,
+				01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */,
 				1B7F8EB71CB09507007C8005 /* ToggleViewController.xib in Resources */,
 				1B7F8EA51CB09507007C8005 /* ProjectSegmentedControlViewController.xib in Resources */,
 				1B7F8E421CB094E6007C8005 /* UpdateFeedTableViewCell.xib in Resources */,
