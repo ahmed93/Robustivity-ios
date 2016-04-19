@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */; };
 		0110834F1CAC215A00F616DD /* ProjectUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */; };
+		0148F2F81CC69AE400CDAC9B /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */; };
 		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
 		01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */; };
 		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
@@ -186,6 +187,7 @@
 /* Begin PBXFileReference section */
 		0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateAdapter.swift; sourceTree = "<group>"; };
 		0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateModel.swift; sourceTree = "<group>"; };
+		0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		01530AFA1CAB145A00429264 /* PlannerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerAdapter.swift; sourceTree = "<group>"; };
 		01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
@@ -935,6 +937,7 @@
 				A717E58F1CA1485000F237DD /* APIConnector_Module_2.swift */,
 				A717E5901CA1485000F237DD /* APIConnector_Module_3.swift */,
 				A717E5911CA1485000F237DD /* APIConnector_Module_4.swift */,
+				0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1360,6 +1363,7 @@
 				1B7F8EA41CB09507007C8005 /* ProjectSegmentedControlViewController.swift in Sources */,
 				1B7F8DDE1CB0813C007C8005 /* Comp_3+Theme.swift in Sources */,
 				9426F5141CBABBE0006BEFA1 /* PersonTableViewCell.swift in Sources */,
+				0148F2F81CC69AE400CDAC9B /* APIRoutes.swift in Sources */,
 				1B7F8DC61CB07C95007C8005 /* UIImageView+HighlightedWebCache.m in Sources */,
 				75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */,
 				34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */,
