@@ -6,3 +6,5 @@
 2. Move to our project directory and run:
       
         pod install
+
+To open the project in Xcode please run it from 'Robustivity.xcworkspace' file.
