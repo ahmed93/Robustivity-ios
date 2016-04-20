@@ -16,7 +16,7 @@ class API: NSObject {
     
     private static func baseRequest(type: Alamofire.Method, url: String, parameters: [String: AnyObject]?, callback: (success: Bool, response: AnyObject) -> ()) {
         
-        Alamofire.request(type, url, headers: API.headers, parameters: parameters)
+        Alamofire.request(type, APIRoutes.BASE + url, headers: API.headers, parameters: parameters)
             .responseJSON { response in
                 callback(success: response.result.isSuccess, response: response.result.value!)
         }
@@ -73,7 +73,7 @@ class API: NSObject {
         
         Alamofire.upload(
             type,
-            url,
+            APIRoutes.BASE + url,
             headers: headers,
             multipartFormData: prepareParameters,
             encodingCompletion: { encodingResult in
