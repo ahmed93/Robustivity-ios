@@ -49,7 +49,7 @@ class API: NSObject {
     }
     
     // MARK: MULTIPART
-    static func baseMultipartRequest(type: Alamofire.Method, url: String, parameters: [String: AnyObject], callback: (success: Bool, response: AnyObject) -> ()) {
+    private static func baseMultipartRequest(type: Alamofire.Method, url: String, parameters: [String: AnyObject], callback: (success: Bool, response: AnyObject) -> ()) {
         
         func prepareParameters(multipartFormData: MultipartFormData) {
             for parameter in parameters {
