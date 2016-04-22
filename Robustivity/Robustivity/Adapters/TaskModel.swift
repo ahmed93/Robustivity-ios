@@ -12,28 +12,29 @@ import RealmSwift
 
 class TaskModel: Object, Mappable {
     
-    dynamic var taskId = ""
-    dynamic var taskEstimatedTime = ""
-    dynamic var taskRevisedTime = ""
-    dynamic var taskActualTime = ""
+    dynamic var taskId = 0
+    dynamic var taskEstimatedTime = 0
+    dynamic var taskRevisedTime = 0
+    dynamic var taskActualTime = 0
     dynamic var taskName = ""
     dynamic var taskStatus = ""
-    dynamic var taskUserId = ""
-    dynamic var taskCreatorId = ""
+    dynamic var taskUserId = 0
+    dynamic var taskCreatorId = 0
     dynamic var taskCreatedAt = ""
     dynamic var taskUpdatedAt = ""
-    dynamic var taskProjectId = ""
+    dynamic var taskProjectId = 0
     dynamic var taskDescription = ""
-    dynamic var taskGroupId = ""
+    dynamic var taskGroupId = 0
     dynamic var taskStartDate = ""
     dynamic var taskNature = ""
-    dynamic var taskPast = ""
+    dynamic var taskPast = false
     
     required convenience init?(_ map: Map) {
         self.init()
     }
     
     func mapping(map: Map) {
+        
         taskId             <- map["id"]
         taskEstimatedTime  <- map["estimated_time"]
         taskRevisedTime    <- map["revised_time"]
@@ -51,4 +52,6 @@ class TaskModel: Object, Mappable {
         taskNature         <- map["nature"]
         taskPast           <- map["past"]
     }
+    
+    
 }
