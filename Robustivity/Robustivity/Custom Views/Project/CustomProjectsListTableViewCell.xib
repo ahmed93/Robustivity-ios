@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listProjectCell" rowHeight="93" id="KGk-i7-Jjw" customClass="CustomProjectsListTableViewCell" customModule="Robustivity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="421" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="421" height="92.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ru-aa-igv">
+                        <rect key="frame" x="0.0" y="0.0" width="421" height="5"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="HW0-6w-DAE"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xah-cz-Jvm" customClass="RoundBorderedView" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="350" y="36" width="25" height="25"/>
+                        <color key="backgroundColor" red="0.43332292970000003" green="1" blue="0.29720600409999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="IIJ-TZ-p7T"/>
+                            <constraint firstAttribute="width" secondItem="xah-cz-Jvm" secondAttribute="height" multiplier="1:1" id="ikY-iv-dH1"/>
+                            <constraint firstAttribute="height" constant="25" id="is7-Qp-Iiu"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robustaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="sC5-CT-1Df">
+                        <rect key="frame" x="22" y="29" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="sC5-CT-1Df" secondAttribute="height" multiplier="1:1" id="0cD-sy-cec"/>
+                            <constraint firstAttribute="height" constant="40" id="V4z-Hh-eIH"/>
+                            <constraint firstAttribute="width" constant="40" id="eOk-MV-wXY"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robustivity Project" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xX-4K-XGb" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="72" y="33" width="270" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="3020"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hussein Salaheldin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Nx-W8-SR4" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="72" y="55" width="270" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="1000"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="4Ru-aa-igv" secondAttribute="trailing" constant="-8" id="3B5-xp-yOP"/>
+                    <constraint firstItem="2Nx-W8-SR4" firstAttribute="leading" secondItem="0xX-4K-XGb" secondAttribute="leading" id="3Ch-YI-OZJ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xah-cz-Jvm" secondAttribute="trailing" constant="38" id="EVb-dp-4Z5"/>
+                    <constraint firstItem="xah-cz-Jvm" firstAttribute="leading" secondItem="0xX-4K-XGb" secondAttribute="trailing" constant="8" id="Hk3-oH-ku6"/>
+                    <constraint firstItem="0xX-4K-XGb" firstAttribute="width" secondItem="2Nx-W8-SR4" secondAttribute="width" id="IVB-yq-GhE"/>
+                    <constraint firstItem="2Nx-W8-SR4" firstAttribute="bottom" secondItem="sC5-CT-1Df" secondAttribute="bottom" id="OPi-Rf-803"/>
+                    <constraint firstItem="0xX-4K-XGb" firstAttribute="top" secondItem="sC5-CT-1Df" secondAttribute="top" id="PKg-di-kiP"/>
+                    <constraint firstItem="4Ru-aa-igv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="WSr-ah-x5W"/>
+                    <constraint firstItem="0xX-4K-XGb" firstAttribute="leading" secondItem="sC5-CT-1Df" secondAttribute="trailing" constant="10" id="gyV-MT-Vwb"/>
+                    <constraint firstItem="sC5-CT-1Df" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="ieL-vN-mAJ"/>
+                    <constraint firstItem="xah-cz-Jvm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="2" id="nPW-0U-2Ta"/>
+                    <constraint firstItem="2Nx-W8-SR4" firstAttribute="top" secondItem="0xX-4K-XGb" secondAttribute="bottom" constant="5" id="vPG-MW-zt6"/>
+                    <constraint firstItem="4Ru-aa-igv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="wpk-mf-I0l"/>
+                    <constraint firstItem="sC5-CT-1Df" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="2" id="zfc-Rh-M3f"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="PKg-di-kiP"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="marginUIView" destination="4Ru-aa-igv" id="iiz-7k-5cf"/>
+                <outlet property="memberLabel" destination="2Nx-W8-SR4" id="oXh-oL-QkA"/>
+                <outlet property="projectLogoImageView" destination="sC5-CT-1Df" id="TrM-yA-08K"/>
+                <outlet property="projectNameLabel" destination="0xX-4K-XGb" id="cIM-G6-YxO"/>
+                <outlet property="statusUIView" destination="xah-cz-Jvm" id="JSs-xH-UL8"/>
+            </connections>
+            <point key="canvasLocation" x="365.5" y="279.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="robustaLogo" width="374" height="98"/>
+    </resources>
+</document>

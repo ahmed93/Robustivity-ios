@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectSegmentedControlViewController" customModule="Robustivity" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="sqH-de-I3t" id="Q3q-uX-zKP"/>
+                <outlet property="projectInfoViewController" destination="yHO-kD-cPS" id="p4F-0b-1Bh"/>
+                <outlet property="projectTeamViewController" destination="WAF-oZ-fMO" id="5k7-5K-QLf"/>
+                <outlet property="projectUpdateViewController" destination="zns-A2-Sag" id="smy-ig-0Im"/>
+                <outlet property="view" destination="YWD-zX-lZb" id="eNk-ok-HOa"/>
+                <outlet property="viewsSegmentedControl" destination="zG4-aI-2c9" id="6uO-hY-WDG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="YWD-zX-lZb">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArR-ca-ZsS">
+                    <rect key="frame" x="0.0" y="58" width="600" height="54"/>
+                    <color key="backgroundColor" red="0.76470588235294112" green="0.0" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="9Bp-Fr-1Q3"/>
+                    </constraints>
+                </view>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="zG4-aI-2c9">
+                    <rect key="frame" x="0.0" y="72" width="600" height="29"/>
+                    <segments>
+                        <segment title="Info"/>
+                        <segment title="Updates"/>
+                        <segment title="Members"/>
+                    </segments>
+                    <connections>
+                        <action selector="switchViews:" destination="-1" eventType="valueChanged" id="bSP-Oj-fga"/>
+                    </connections>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqH-de-I3t">
+                    <rect key="frame" x="0.0" y="120" width="600" height="488"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zG4-aI-2c9" secondAttribute="trailing" id="33l-Ew-Lcu"/>
+                <constraint firstAttribute="trailing" secondItem="ArR-ca-ZsS" secondAttribute="trailing" id="8oN-tY-kuM"/>
+                <constraint firstItem="zG4-aI-2c9" firstAttribute="top" secondItem="ArR-ca-ZsS" secondAttribute="top" constant="14" id="DTG-bo-U6R"/>
+                <constraint firstItem="ArR-ca-ZsS" firstAttribute="top" secondItem="YWD-zX-lZb" secondAttribute="top" constant="58" id="Dcp-X4-PXp"/>
+                <constraint firstItem="sqH-de-I3t" firstAttribute="leading" secondItem="YWD-zX-lZb" secondAttribute="leading" id="KEe-ci-Kg1"/>
+                <constraint firstItem="sqH-de-I3t" firstAttribute="top" secondItem="ArR-ca-ZsS" secondAttribute="bottom" constant="8" id="NTR-io-dsM"/>
+                <constraint firstItem="ArR-ca-ZsS" firstAttribute="leading" secondItem="YWD-zX-lZb" secondAttribute="leading" id="Nof-3l-OvH"/>
+                <constraint firstItem="sqH-de-I3t" firstAttribute="top" secondItem="ArR-ca-ZsS" secondAttribute="bottom" constant="8" id="OWV-2l-qns"/>
+                <constraint firstItem="zG4-aI-2c9" firstAttribute="top" secondItem="YWD-zX-lZb" secondAttribute="top" constant="72" id="R3R-ng-p5r"/>
+                <constraint firstItem="zG4-aI-2c9" firstAttribute="width" secondItem="ArR-ca-ZsS" secondAttribute="width" id="Rwq-nK-bms"/>
+                <constraint firstAttribute="trailing" secondItem="sqH-de-I3t" secondAttribute="trailing" id="ZS2-VU-bzK"/>
+                <constraint firstItem="sqH-de-I3t" firstAttribute="width" secondItem="ArR-ca-ZsS" secondAttribute="width" id="bHC-3D-HAL"/>
+                <constraint firstAttribute="bottom" secondItem="sqH-de-I3t" secondAttribute="bottom" constant="-8" id="j0f-vt-tj0"/>
+                <constraint firstItem="zG4-aI-2c9" firstAttribute="leading" secondItem="YWD-zX-lZb" secondAttribute="leading" id="zYj-Ab-XCe"/>
+            </constraints>
+        </view>
+        <viewController id="yHO-kD-cPS" customClass="ProjectInfoViewController" customModule="Robustivity" customModuleProvider="target"/>
+        <viewController id="zns-A2-Sag" customClass="ProjectUpdateViewController" customModule="Robustivity" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="8sX-3N-5da"/>
+                <viewControllerLayoutGuide type="bottom" id="Onb-cL-Chm"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="tny-At-MgX">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </view>
+        </viewController>
+        <viewController id="WAF-oZ-fMO" customClass="ProjectTeamViewController" customModule="Robustivity" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="Y3P-VQ-oh9"/>
+                <viewControllerLayoutGuide type="bottom" id="TU2-A9-N4b"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="nZ5-4e-MIT">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </view>
+        </viewController>
+    </objects>
+</document>

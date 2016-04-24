@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="67" id="KGk-i7-Jjw" customClass="UserTableViewCell" customModule="Robustivity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="61.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Islam" translatesAutoresizingMaskIntoConstraints="NO" id="4tY-lu-nUx">
+                        <rect key="frame" x="18" y="8.5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="KJc-me-pV1"/>
+                            <constraint firstAttribute="width" constant="40" id="MCp-5L-R5e"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Islam Abdelrouf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQa-j1-SNq" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="68" y="11" width="103.5" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="3010"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Project Manager" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcZ-Rz-bCK" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="68" y="31" width="82.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="labelType">
+                                <integer key="value" value="1020"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIH-6g-Y7R">
+                        <rect key="frame" x="0.0" y="56.5" width="320" height="5"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="ZNF-Bf-0Ph"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jQa-j1-SNq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="059-nD-yAg"/>
+                    <constraint firstItem="GcZ-Rz-bCK" firstAttribute="leading" secondItem="4tY-lu-nUx" secondAttribute="trailing" constant="10" id="9Q4-sQ-Zx1"/>
+                    <constraint firstItem="HIH-6g-Y7R" firstAttribute="top" secondItem="4tY-lu-nUx" secondAttribute="bottom" constant="8" id="Gig-Zm-EIB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HIH-6g-Y7R" secondAttribute="trailing" constant="-8" id="IEn-1O-ozh"/>
+                    <constraint firstItem="jQa-j1-SNq" firstAttribute="leading" secondItem="4tY-lu-nUx" secondAttribute="trailing" constant="10" id="Ttp-Q4-Eeb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="HIH-6g-Y7R" secondAttribute="bottom" constant="-8" id="cOt-cs-kjI"/>
+                    <constraint firstItem="HIH-6g-Y7R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="dgO-bl-P9L"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="GcZ-Rz-bCK" secondAttribute="bottom" constant="10" id="fJY-VT-cLM"/>
+                    <constraint firstItem="4tY-lu-nUx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fgy-Sr-SVa"/>
+                    <constraint firstItem="4tY-lu-nUx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="siw-4R-NpB"/>
+                    <constraint firstItem="GcZ-Rz-bCK" firstAttribute="top" secondItem="jQa-j1-SNq" secondAttribute="bottom" constant="5" id="vdS-vt-vzb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="cellSeparator" destination="HIH-6g-Y7R" id="iBr-lx-OZ7"/>
+                <outlet property="userAvatar" destination="4tY-lu-nUx" id="1W8-UH-LEZ"/>
+                <outlet property="userName" destination="jQa-j1-SNq" id="Tou-ke-18S"/>
+                <outlet property="userTitle" destination="GcZ-Rz-bCK" id="TNA-Yf-GR8"/>
+            </connections>
+            <point key="canvasLocation" x="150" y="229"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Islam" width="211" height="211"/>
+    </resources>
+</document>
