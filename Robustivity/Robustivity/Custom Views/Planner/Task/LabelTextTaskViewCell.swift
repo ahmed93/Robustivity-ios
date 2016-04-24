@@ -11,5 +11,5 @@ import UIKit
 class LabelTextTaskViewCell: UITableViewCell {
 
     @IBOutlet weak var textField:UITextField!
-    @IBOutlet var label: RBLabel!
+    @IBOutlet weak var label: RBLabel!
 }
