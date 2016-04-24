@@ -11,7 +11,9 @@ class APIRoutes {
 
     private static let BASE = "http://hr.staging.rails.robustastudio.com/api/"
 
-    
-    static let USER_SHOW = BASE + "users/"
+    static let USERS = "users/"
+    static let USER_SHOW = BASE + USERS
     static let USER_PROFILE = USER_SHOW + "profile/"
+    static let TOKEN_CREATE = BASE + USERS + "authenticate"
+    
 }

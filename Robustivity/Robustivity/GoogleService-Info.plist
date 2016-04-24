@@ -24,5 +24,40 @@
 	<string>1:714551560486:ios:fa085f55f3fc85ed</string>
 	<key>PROJECT_ID</key>
 	<string>robustivity</string>
+	<key>CFBundleIdentifier</key>
+	<string>
+abdelrahmansakr [9:42 PM] 
+{
+    &quot;provider&quot;: &quot;google_oauth2&quot;,
+    &quot;uid&quot;: &quot;111005134582920125232&quot;,
+    &quot;info&quot;: {
+        &quot;name&quot;: &quot;iOS GUC&quot;,
+        &quot;email&quot;: &quot;ios.guc@robustastudio.com&quot;,
+        &quot;first_name&quot;: &quot;iOS&quot;,
+        &quot;last_name&quot;: &quot;GUC&quot;,
+        &quot;image&quot;: &quot;https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=50&quot;
+    },
+    &quot;credentials&quot;: {
+        &quot;token&quot;: &quot;ya29..wgIeIQKaw-l6cSTDhwWJJkdvlt2CKoT3I8Ksre8uAPsEmlyPwlqlATNqUOGoknPZkg&quot;,
+        &quot;refresh_token&quot;: &quot;1/lWxeiqRLHwewAg5bHPGeKhjxuiGiEn2O3noifR3SBMUMEudVrK5jSpoR30zcRFq6&quot;,
+        &quot;expires_at&quot;: 1460484463,
+        &quot;expires&quot;: true
+    },
+    &quot;extra&quot;: {
+        &quot;id_token&quot;: &quot;eyJhbGciOiJSUzI1NiIsImtpZCI6IjRjYjFjNDQ2MTliYzk3MmNiNzQ2ZDYwOTVmZTgyYWZjY2U0ZTYyZTkifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXRfaGFzaCI6IjZuTDFEd3AtNjhNd2xtN2tTRGFweGciLCJhdWQiOiIzOTQ3MTEzMDU0ODEtbGhlODVjbmM3ZmpjZTJndHRib2QxdjlpcDFscWdmaGsuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTEwMDUxMzQ1ODI5MjAxMjUyMzIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXpwIjoiMzk0NzExMzA1NDgxLWxoZTg1Y25jN2ZqY2UyZ3R0Ym9kMXY5aXAxbHFnZmhrLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiaGQiOiJyb2J1c3Rhc3R1ZGlvLmNvbSIsImVtYWlsIjoiaW9zLmd1Y0Byb2J1c3Rhc3R1ZGlvLmNvbSIsImlhdCI6MTQ2MDQ4MDg2MywiZXhwIjoxNDYwNDg0NDYzfQ.C2W3gVlhnFkVY-vZbezTEXVPCEuCYOoHgSS0OebI6XBRtJZxfzCObWzjTTg-ECfsZsYh9rs_S7pXYd1SkmM7w1fIaTHLvtgAdKD1_QxJFSFnnW31-ncNAJK_Ll_w9mAZV_zY3OVVciwhF2WqW4bpmUw1W7F99Gw_hltCpWQhtrd5_O1agLz9V-GUHWHmeY4X9FCSttfnRRyFK_ry7RZU8zjLoz7m3aJ0huNH-j0JhVJ-NlEQZbV-eZXBLJqVlk2J1Td2kAutMZ0dWrsqwL1zrFOv48wDkJYnGAFHHodg7H2xv_u2ZfvQTUm9cfY3kQARprW-YwNy4UptkW0VNPW5tQ&quot;,
+        &quot;raw_info&quot;: {
+            &quot;kind&quot;: &quot;plus#personOpenIdConnect&quot;,
+            &quot;sub&quot;: &quot;111005134582920125232&quot;,
+            &quot;name&quot;: &quot;iOS GUC&quot;,
+            &quot;given_name&quot;: &quot;iOS&quot;,
+            &quot;family_name&quot;: &quot;GUC&quot;,
+            &quot;picture&quot;: &quot;https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=50&quot;,
+            &quot;email&quot;: &quot;ios.guc@robustastudio.com&quot;,
+            &quot;email_verified&quot;: &quot;true&quot;,
+            &quot;locale&quot;: &quot;en&quot;,
+            &quot;hd&quot;: &quot;robustastudio.com&quot;
+        }
+    }
+}</string>
 </dict>
 </plist>
