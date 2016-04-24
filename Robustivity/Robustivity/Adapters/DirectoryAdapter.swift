@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import ObjectMapper
+import RealmSwift
 class DirectoryAdapter: BaseTableAdapter {
     
     
@@ -19,12 +20,40 @@ class DirectoryAdapter: BaseTableAdapter {
     
     
     func fetchItems() {
-        if tableItems == nil {
-            tableItems = ListModel()
+        
+        if tableItems.count == 0 {
+            API.get(APIRoutes.USER_STATUS, callback: { (success, response) in
+                if(success){
+                    
+                    //map the jason object to the model and save them
+                    let inOffice = Mapper<TaskModel>().mapArray(response["in_office"])
+                    let outOffice = Mapper<TaskModel>().mapArray(response["left_office"])
+                    let onVacation = Mapper<TaskModel>().mapArray(response["on_vacation"])
+
+                    for user in inOffice! {
+                        self.tableItems.addObject(user)
+                        
+                    }
+                    for user in outOffice! {
+                        self.tableItems.addObject(user)
+                        
+                    }
+                    for user in onVacation! {
+                        self.tableItems.addObject(user)
+                        
+                    }
+                    
+                }
+            })
+            //tableItems = ListModel()
+             tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
         }
-        tableItems.addObject([["name":"Ahmed Abousafy","position":"Account Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Islam Abdelraouf","position":"Project Manager","imagename":"Stroke 751 + Stroke 752"]])
+
+        
+        
+     /*   tableItems.addObject([["name":"Ahmed Abousafy","position":"Account Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Islam Abdelraouf","position":"Project Manager","imagename":"Stroke 751 + Stroke 752"]])
         tableItems.addObject([["name":"Ahmed Abousafy","position":"Account Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Islam Abdelraouf","position":"Project Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Ahmed Abousafy","position":"Account Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Islam Abdelraouf","position":"Project Manager","imagename":"Stroke 751 + Stroke 752"]])
-     
+        tableItems.addObject([["name":"Ahmed Abousafy","position":"Account Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Islam Abdelraouf","position":"Project Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Ahmed Abousafy","position":"Account Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Islam Abdelraouf","position":"Project Manager","imagename":"Stroke 751 + Stroke 752"]])*/
         tableView.reloadData()
     }
     
@@ -46,7 +75,7 @@ class DirectoryAdapter: BaseTableAdapter {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return tableItems.count
+        return 3
     }
    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -55,13 +84,9 @@ class DirectoryAdapter: BaseTableAdapter {
         if section == 1{
         return "  Out of Office"}
         else{
-        return ""
+        return " On Vacation"
         }
     }
-    
-    /*func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50; // space b/w cells
-    }*/
     
     
 
@@ -79,11 +104,30 @@ class DirectoryAdapter: BaseTableAdapter {
             label.font = UIFont.boldSystemFontOfSize(20)
             label.textColor = Theme.lighterBlackColor()
         }
+        else{
+            label.text = "  On Vacation"
+            label.font = UIFont.boldSystemFontOfSize(20)
+            label.textColor = Theme.blueColor();
+            
+        }
         return label
     }
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (tableItems.objectAtIndex(section) as! NSArray).count
+        if section == 0 {
+            // [TODO] replace it by the number of items IN PROGRESS returned from the server.
+            //if selectedSegmentIndex == 0 {
+            //return 3
+            //}
+            return tableItems.count
+        }
+        
+        // Items Done Count.
+        // [TODO] replace it by the number of items DONE returned from the server.
+        //if selectedSegmentIndex == 0 {
+        //return 3
+        //}
+        return tableItems.count
     }
      func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80.0;
@@ -95,53 +139,34 @@ class DirectoryAdapter: BaseTableAdapter {
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? DirectoryCell
+      //  let _cell = cell as? DirectoryCell
+     /*   let _DirectoryCell = cell as? DirectoryCell
         
-       // _cell?.userName.text = "Section \(indexPath.section) Row \(indexPath.row)"
+        let task = tableItems.objectAtIndex(indexPath.row) as! TaskModel
+        _DirectoryCell?.userName.text = task.taskName
+        _DirectoryCell?.userTitle.text = task.taskDescription*/
+        
+    /*
          let w =  tableItems.objectAtIndex(indexPath.section)
-        let x = w?.objectAtIndex(indexPath.row)?.objectForKey("name")
-        let y = w?.objectAtIndex(indexPath.row)?.objectForKey("position")
-        let z = w?.objectAtIndex(indexPath.row)?.objectForKey("imagename")
+        let x = w?.objectAtIndex(indexPath.row).objectForKey("first_name" + "last_name")
+        let y = w?.objectAtIndex(indexPath.row).objectForKey("title")
+        let z = w?.objectAtIndex(indexPath.row).objectForKey("imagename")
         _cell?.userName.text = x as! String
         _cell?.userTitle.text = y as! String
         
-        //let imageName = "Stroke 751 + Stroke 752"
+     
         let image = UIImage(named: z as! String)
         let newImage = resizeImage(image!, toTheSize: CGSizeMake(70, 70))
         var cellImageLayer: CALayer?  = _cell?.userImage.layer
         cellImageLayer!.cornerRadius = cellImageLayer!.frame.size.width / 2
         cellImageLayer!.masksToBounds = true
         _cell?.userImage.image = newImage
-        
+        */
      }
     
     
     
-    /*func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
-    {cell.contentView.backgroundColor=UIColor.clearColor()
-        
-        var whiteRoundedCornerView:UIView!
-        whiteRoundedCornerView=UIView(frame: CGRectMake(5,10,400,70))
-        whiteRoundedCornerView.backgroundColor=UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        whiteRoundedCornerView.layer.masksToBounds=false
-        
-        whiteRoundedCornerView.layer.shadowOpacity = 1.55;
-        
-        
-        
-        whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(1, 0);
-        whiteRoundedCornerView.layer.shadowColor=UIColor(red: 53/255.0, green: 143/255.0, blue: 185/255.0, alpha: 1.0).CGColor
-        
-        
-        
-        whiteRoundedCornerView.layer.cornerRadius=3.0
-        whiteRoundedCornerView.layer.shadowOffset=CGSizeMake(-1, -1)
-        whiteRoundedCornerView.layer.shadowOpacity=0.5
-        cell.contentView.addSubview(whiteRoundedCornerView)
-        cell.contentView.sendSubviewToBack(whiteRoundedCornerView)
-        
-        
-    }*/
+   
 
     
     
