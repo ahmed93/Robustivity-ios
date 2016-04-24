@@ -15,13 +15,14 @@ Anyone creating/pushing an instance of this controller (redirecting to this view
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
+class ProfileViewController: BaseViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet var profileHeader: UIView!
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var profileTableView: UITableView!
     @IBOutlet var profileName: RBLabel!
     @IBOutlet var profileJobTitle: RBLabel!
     @IBOutlet var profileUploadImage: UIButton!
+    var imagePicker = UIImagePickerController()
 
     /*
     Declare variables.
@@ -169,6 +170,30 @@ class ProfileViewController: BaseViewController {
         profileTableView.endEditing(true)
     }
     
+    
+    @IBAction func btnClicked(){
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+            print("Button capture")
+            
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            API.putMultipart(APIRoutes.USER_EDIT, parameters: ["user[profile_picture]" : image]) { (Bool, AnyObject) -> () in
+                //self.profileImage.image = image
+                //self.setupView()
+            }
+        })
+    }
 
     /*
     // MARK: - Navigation
