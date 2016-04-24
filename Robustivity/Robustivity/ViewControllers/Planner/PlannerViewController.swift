@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 /**
     PlannerViewController subclass of BaseViewController
  
@@ -49,6 +49,9 @@ class PlannerViewController: BaseViewController {
         let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
+        
+        //print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
+        
     }
     
     //    MARK: Segmented Control

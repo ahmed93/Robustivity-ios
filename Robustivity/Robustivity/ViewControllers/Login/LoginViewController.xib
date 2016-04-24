@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="MyriadPro-Regular.otf">
-            <string>MyriadPro-Regular</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
+                <outlet property="signInButton" destination="aZw-Oy-sAT" id="K2q-Wk-sOY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +17,6 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robustaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="m4D-Ld-nBX">
                     <rect key="frame" x="83" y="245" width="208" height="44"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="208" id="FD5-Ly-CLf"/>
                         <constraint firstAttribute="height" constant="44" id="Mxv-47-v5l"/>
@@ -29,37 +24,22 @@
                         <constraint firstAttribute="width" constant="208" id="ujw-5U-h8o"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-u1-JGt">
-                    <rect key="frame" x="83" y="351" width="208" height="44"/>
-                    <animations/>
-                    <color key="backgroundColor" red="0.6705882352941176" green="0.17647058823529413" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="7pl-wW-haZ"/>
-                        <constraint firstAttribute="width" constant="208" id="Vcw-jB-NZC"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
-                    <state key="normal" title="Sign in with Google">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google-plus" translatesAutoresizingMaskIntoConstraints="NO" id="ZUg-2e-5hZ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="google-plus" translatesAutoresizingMaskIntoConstraints="NO" id="ZUg-2e-5hZ">
                     <rect key="frame" x="89" y="364" width="22" height="19"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="Kvt-b8-c1B"/>
                         <constraint firstAttribute="width" constant="22" id="UuG-GE-99g"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZw-Oy-sAT" customClass="GIDSignInButton">
+                    <rect key="frame" x="51" y="336" width="267" height="33"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="m4D-Ld-nBX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="245" id="5LC-i9-kIF"/>
-                <constraint firstItem="7A8-u1-JGt" firstAttribute="top" secondItem="m4D-Ld-nBX" secondAttribute="bottom" constant="62" id="AgY-jN-lSJ"/>
                 <constraint firstItem="m4D-Ld-nBX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K6g-T5-No4"/>
-                <constraint firstItem="7A8-u1-JGt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P7L-AH-oS4"/>
-                <constraint firstItem="ZUg-2e-5hZ" firstAttribute="leading" secondItem="7A8-u1-JGt" secondAttribute="leading" constant="6" id="Vie-5r-6XU"/>
-                <constraint firstItem="ZUg-2e-5hZ" firstAttribute="centerY" secondItem="7A8-u1-JGt" secondAttribute="centerY" constant="0.5" id="rAD-ag-tc1"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="312.5" y="417.5"/>

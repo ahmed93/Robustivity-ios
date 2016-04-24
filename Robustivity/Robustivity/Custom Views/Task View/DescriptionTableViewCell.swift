@@ -1,32 +1,32 @@
 //
-//  MoreCustomCellView.swift
+//  DescriptionTableViewCell.swift
 //  Robustivity
 //
-//  Created by Mayar ElMohr on 3/31/16.
+//  Created by Mohammad Lotfy on 2016-03-30.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
+/*
+Custom cell for description in task info view
+*/
+
 import UIKit
 
-class MoreCustomCellView: UITableViewCell {
-    
-    
-    @IBOutlet weak var label: UILabel!
-    
-    @IBOutlet weak var imgView: UIImageView!
-    sub
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-    }
-    
+class DescriptionTableViewCell: UITableViewCell {
+
+   
+    @IBOutlet weak var taskDescription: RBLabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
+        taskDescription.labelType = 1030
     }
-    
+
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
         // Configure the view for the selected state
     }
+    
 }
