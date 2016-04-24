@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileAdapter: BaseTableAdapter {
+class ProfileAdapter: BaseTableAdapter, UITextFieldDelegate {
     
     /*
     Declare variables.
@@ -17,6 +17,7 @@ class ProfileAdapter: BaseTableAdapter {
     */
     var myProfile:Bool?
     var profileEditable:Bool?
+    var profileEditparameters:NSMutableDictionary?
     
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
@@ -59,6 +60,7 @@ class ProfileAdapter: BaseTableAdapter {
         cell?.cellContent.borderStyle = .None
         cell?.cellContent.enabled = false
         cell?.cellContent.font = UIFont(name: "MyriadPro-Regular", size: 16)
+        cell?.cellContent.delegate = self
         let placeholderAttributes = [NSFontAttributeName : UIFont(name: "MyriadPro-Regular", size: 16)!]
         
         /*
@@ -88,6 +90,7 @@ class ProfileAdapter: BaseTableAdapter {
                         cell?.cellContent.enabled = true
                         cell?.cellContent.font = UIFont(name: "MyriadPro-Regular", size: 16)
                         cell?.cellContent.attributedPlaceholder = NSAttributedString(string: "Enter your phone...", attributes: placeholderAttributes)
+                        cell?.cellContent.tag = 1
                     } else if !myProfile! {
                         cell?.cellButton?.setImage(callImageBlue, forState: UIControlState.Normal)
                     }
@@ -120,6 +123,7 @@ class ProfileAdapter: BaseTableAdapter {
                         cell?.cellContent.enabled = true
                         cell?.cellContent.font = UIFont(name: "MyriadPro-Regular", size: 16)
                         cell?.cellContent.attributedPlaceholder = NSAttributedString(string: "Enter your address...", attributes: placeholderAttributes)
+                        cell?.cellContent.tag = 2
                     } else if !myProfile! {
                         cell?.cellButton?.removeFromSuperview()
                     }
@@ -141,6 +145,32 @@ class ProfileAdapter: BaseTableAdapter {
                     cell?.separatorInset = UIEdgeInsetsMake(0, CGRectGetWidth(tableView.bounds)/2.0, 0, CGRectGetWidth(tableView.bounds)/2.0)
             
             default: break
+        }
+    }
+
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        switch textField.tag {
+        case 1:
+            profileEditparameters?.setValue(textField.text!, forKey: "user[mobile_number]")
+            
+        case 2:
+            profileEditparameters?.setValue(textField.text!, forKey: "user[address]")
+
+        default: break
+        }
+    }
+    
+    func updateDataFromEditMode() {
+        profileEditable = false
+
+        var putParameters = [String : AnyObject]()
+        for (key, value) in self.profileEditparameters! {
+            putParameters[key as! String] = (value as! String)
+        }
+        
+        API.put(APIRoutes.USER_EDIT, parameters: putParameters) { (success, response) -> () in
+            (self.viewController as! ProfileViewController).setupView()
         }
     }
 

@@ -22,7 +22,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet var profileName: RBLabel!
     @IBOutlet var profileJobTitle: RBLabel!
     @IBOutlet var profileUploadImage: UIButton!
-    
+
     /*
     Declare variables.
     adapter: the adapter responsible for displaying cells in the table view.
@@ -134,6 +134,7 @@ class ProfileViewController: BaseViewController {
         navigationItem.leftBarButtonItem = profileCancelButton
         
         profileEditable = true
+        self.adapter.profileEditparameters = NSMutableDictionary()
         setupView()
     }
     
@@ -149,8 +150,8 @@ class ProfileViewController: BaseViewController {
     */
     func updateDataFromEditMode() {
         profileEditable = false
-        setupView()
-        // Include here any logic needed to update the database with the new values
+        self.view.endEditing(true)
+        self.adapter.updateDataFromEditMode()
     }
     
     /*
