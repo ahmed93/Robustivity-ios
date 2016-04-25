@@ -21,6 +21,8 @@ class APIRoutes {
     static let TASKS_TIMELOG = TASKS_INDEX + "{task_id}/timelogs/"
     
     static let TASK_TIMELOG_PAUSE = TASKS_TIMELOG + "pause/"
+    static let TASK_TIMELOG_RESUME = TASKS_TIMELOG + "resume/"
+
     
     
    

@@ -29,7 +29,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var todoProjectTextField: UITextField!
     var timer = NSTimer();
     var startDate = NSDate();
-    var pausedDate = NSDate();
+//    var pausedDate = NSDate();
     var currentTimeInterval = NSTimeInterval();
     var pausedTimeInterval = NSTimeInterval();
 
@@ -61,12 +61,11 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
 
     
     override func viewWillAppear(animated: Bool) {
-        print("View Did appear")
+        print("View will appear")
         fetchProjectsList()
         fetchTasks()
         
         if setTaskToCurrentPlayingTask() {
-            print("inside the if condition")
             self.todoTitleField.text = self.toggleTask.taskName
             self.setTodoProjectName(self.toggleTask)
             getToggledTime(self.toggleTask)
@@ -82,24 +81,29 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         let filterString = "timelogTaskId == " + String(task.taskId)
 
         let timelog = self.realm.objects(Timelog).filter(filterString).first
-//
+
         if(timelog != nil) {
             let entryFilterString = "timelogId == " + String(timelog!.timelogId)
-            print(timelog!.timelogId)
             let timeIntervals = self.realm.objects(TimeEntry).filter(entryFilterString)
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat =  "yyyy-MM-dd'T'HH:mm:ss.SSSSSSSZZZZZ"
             var totalTimeInterval = NSTimeInterval();
+            
             for timeInterval in timeIntervals {
-                let entryStartDate = dateFormatter.dateFromString(timeInterval.timeEntryStartedAt)
+                let entryStartDate = dateFormatter.dateFromString(timeInterval.timeEntryStartedAt)!
                 let entryEndDate = dateFormatter.dateFromString(timeInterval.timeEntryEndedAt)
-                let timeDiff = entryEndDate!.timeIntervalSinceDate(entryStartDate!);
-                
+                let timeDiff = entryEndDate!.timeIntervalSinceDate(entryStartDate);
+
                 totalTimeInterval += timeDiff
+                
+
             }
+            
+            print("totla time interval")
+            print(totalTimeInterval)
             self.pausedTimeInterval = totalTimeInterval
-            self.startDate = dateFormatter.dateFromString((timelog?.timelogUpdatedAt)!)!
-//
+
+
         }
 
     }
@@ -200,17 +204,13 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     func setTaskToCurrentPlayingTask()->Bool {
         
-        print("setTaskToCurrentPlayingTask is called")
-        
         let timelog = self.realm.objects(Timelog).filter("timelogStatus == 'playing'").first
         
         if(timelog != nil) {
             let filterString = "taskId == " + String(timelog!.timelogTaskId)
             self.toggleTask = realm.objects(TaskModel).filter(filterString).first!
-            print("will return true")
             return true
         }
-        print("will return false")
 
         return false
     }
@@ -305,6 +305,8 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         let currentDate = NSDate();
         
         var timeInterval = currentDate.timeIntervalSinceDate(self.startDate);
+        print(pausedTimeInterval)
+        print(timeInterval)
         timeInterval += pausedTimeInterval;
 
         let timerDate = NSDate(timeIntervalSince1970: timeInterval);
@@ -330,7 +332,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         let url = APIRoutes.TASK_TIMELOG_PAUSE
         let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(self.toggleTask.taskId))
 
-//        let params:[String:AnyObject?] = ["a": NSNull(), "b": 1]
         let requestParams : [String: AnyObject] = ["task": self.toggleTask] //these params is not needed
 
         API.put(urlWithTaskId, parameters: requestParams, callback: { (success, response) in
@@ -338,22 +339,8 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
                 self.togglePauseAction()
                 //MAKE SURE THE TIMER IS INVALIDATED
                 self.timer.invalidate(); //stop timer
-
-                let filterString = "timelogTaskId == " + String(self.toggleTask.taskId)
-
-                let timelog = self.realm.objects(Timelog).filter(filterString).first
+                self.pausedTimeInterval = (response["total_logged_time"] as? NSTimeInterval)!
                 self.fetchTaskTimelogs(self.toggleTask) //get updated log
-//                var updatedTimelog = Timelog()
-//                updatedTimelog.timelogStatus = "paused"
-//                updatedTimelog.timelogTaskId = (timelog?.timelogTaskId)!
-//                updatedTimelog.timelogId = (timelog?.timelogId)!
-//                updatedTimelog.timelogCreatedAt = (timelog?.timelogCreatedAt)!
-//                updatedTimelog.timelogUpdatedAt = (timelog?.timelogUpdatedAt)!
-//                updatedTimelog.timelogCurrentEntryId = (timelog?.timelogCurrentEntryId)!
-//                updatedTimelog.timelogStartedAt = (timelog?.timelogStartedAt)!
-//                updatedTimelog.timelogStartedAt = (timelog?.timelogEndedAt)!
-//                
-//                self.updateTimelog(updatedTimelog)
 
 
             }
@@ -362,11 +349,8 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
 
     }
     func togglePauseAction() {
-        
-        self.pausedDate = NSDate();
         self.timer.invalidate(); //stop timer
         self.toggledTime.textColor = Theme.blackColor();
-        self.pausedTimeInterval = self.currentTimeInterval;
         
         UIView.animateWithDuration(0.5, animations: {
             self.togglePauseBtn.alpha = 0; //hide button
@@ -386,8 +370,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func toggleStop(sender: AnyObject) {
-        self.pausedDate = NSDate();
-
         timer.invalidate();
         self.toggledTime.textColor = Theme.blackColor();
         self.toggledTime.text = "00:00:00";
@@ -409,13 +391,31 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     @IBAction func toggleResume(sender: AnyObject) {
         
-        toggleResumeAction()
+        let url = APIRoutes.TASK_TIMELOG_RESUME
+        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(self.toggleTask.taskId))
+        
+        let requestParams : [String: AnyObject] = ["task": self.toggleTask] //these params is not needed
+        
+        API.post(urlWithTaskId, parameters: requestParams, callback: { (success, response) in
+            if(success) {
+                
+                self.fetchTaskTimelogs(self.toggleTask) //get updated log
 
+                /******Call those 2methods in pair ******/
+                self.getToggledTime(self.toggleTask)
+                self.toggleResumeAction()
+                /******END******/
+                
+            }
+            
+        })
+        
+        
     }
     
     func toggleResumeAction() {
-//        let currentDate = NSDate();
-//        startDate = currentDate;
+        let currentDate = NSDate();
+        startDate = currentDate;
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
         
         self.toggledTime.textColor = Theme.greenColor();
