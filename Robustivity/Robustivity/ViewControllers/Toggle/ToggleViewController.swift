@@ -9,6 +9,9 @@
 // Class contributors [Aya Amr, Jihan Adel]
 
 import UIKit
+import ObjectMapper
+import RealmSwift
+
 
 class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var toggleResumeBtnCenterX: NSLayoutConstraint!
@@ -30,7 +33,11 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     var currentTimeInterval = NSTimeInterval();
     var pausedTimeInterval = NSTimeInterval();
 
-    var todoProjectsName = ["Project name", "Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
+    var toggleTask:TaskModel = TaskModel()
+    
+    var todoProjectsName = [String]();
+    let realm = try! Realm()
+
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -44,9 +51,177 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewSetup()
+        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
+        /*********START BACKEND TEST **********************/
+        
+       /*To be done save a paused task , if no playing task display the paused one , if no playing and no saved pause display last paused task if no display empty and allow new task creation*/
+    }
+    
+
+    
+    override func viewWillAppear(animated: Bool) {
+        print("View Did appear")
+        fetchProjectsList()
+        fetchTasks()
+        
+        if setTaskToCurrentPlayingTask() {
+            print("inside the if condition")
+            self.todoTitleField.text = self.toggleTask.taskName
+            self.setTodoProjectName(self.toggleTask)
+            getToggledTime(self.toggleTask)
+            toggleResumeAction()
+        
+            
+        }
+
+    }
+    
+    /*Add all timelogs intervals for a specfic task to be able to get previous toggled time*/
+    func getToggledTime(task: TaskModel) {
+        let filterString = "timelogTaskId == " + String(task.taskId)
+
+        let timelog = self.realm.objects(Timelog).filter(filterString).first
+//
+        if(timelog != nil) {
+            let entryFilterString = "timelogId == " + String(timelog!.timelogId)
+            print(timelog!.timelogId)
+            let timeIntervals = self.realm.objects(TimeEntry).filter(entryFilterString)
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat =  "yyyy-MM-dd'T'HH:mm:ss.SSSSSSSZZZZZ"
+            var totalTimeInterval = NSTimeInterval();
+            for timeInterval in timeIntervals {
+                let entryStartDate = dateFormatter.dateFromString(timeInterval.timeEntryStartedAt)
+                let entryEndDate = dateFormatter.dateFromString(timeInterval.timeEntryEndedAt)
+                let timeDiff = entryEndDate!.timeIntervalSinceDate(entryStartDate!);
+                
+                totalTimeInterval += timeDiff
+            }
+            self.pausedTimeInterval = totalTimeInterval
+            self.startDate = dateFormatter.dateFromString((timelog?.timelogUpdatedAt)!)!
+//
+        }
+
+    }
+    
+    func setTodoProjectName(task: TaskModel) {
+        let filterString = "projectId == " + String(task.taskProjectId)
+        let project = self.realm.objects(Project).filter(filterString).first!
+        
+        self.todoProjectTextField.text = project.projectName
+        
+    }
+    
+    
+    func fetchTasks() {
+        API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
+            if(success){
+                    
+                //map the json object to the model and save them
+                let tasks = Mapper<TaskModel>().mapArray(response)
+                for task in tasks! {
+                    self.updateTask(task)
+                    self.fetchTaskTimelogs(task)
+                }
+                    
+            }
+        })
+    }
+    
+    
+    /*Add or update task*/
+    func updateTask(task: TaskModel) {
+        try! self.realm.write {
+            self.realm.add(task, update: true)
+        }
+    }
+    
+    
+    func fetchProjectsList() {
+        API.get(APIRoutes.PROJECTS_INDEX, callback: { (success, response) in
+            if(success){
+                self.todoProjectsName = [String]()
+                //map the json object to the model and save them
+                let projects = Mapper<Project>().mapArray(response)
+                for project in projects! {
+                    self.todoProjectsName.append(project.projectName)
+                    self.updateProject(project)
+                }
+                
+            }
+        })
+        
+    }
+    
+    //save new and update project on disk using realm
+    func updateProject(project: Project) {
+        try! self.realm.write {
+            self.realm.add(project, update: true)
+        }
+    }
+
+    
+    func fetchTaskTimelogs(task: TaskModel) {
+        
+        let url = APIRoutes.TASKS_TIMELOG
+        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(task.taskId))
+        
+        API.get(urlWithTaskId, callback: { (success, response) in
+            if(success){
+                
+                let timelog = Mapper<Timelog>().map(response["time_log"])
+                self.updateTimelog(timelog!)
+                let timeEntries = Mapper<TimeEntry>().mapArray(response["time_entries"])
+                for timeEntry in timeEntries! {
+                    self.updateTimeEntry(timeEntry)
+                }
+                
+            }
+        })
+
+    }
+    
+    /* update time entry (Object) if already exists or save new timeEntry if doesn't exist 
+    on disk using realm */
+    func updateTimeEntry(timeEntry: TimeEntry) {
+        try! self.realm.write {
+            self.realm.add(timeEntry, update: true)
+        }
+
+    }
+    
+    //save new Time log or update existing one on disk using realm
+    func updateTimelog(timelog: Timelog) {
+        try! self.realm.write {
+            self.realm.add(timelog, update: true)
+        }
+
+    }
+    
+    func setTaskToCurrentPlayingTask()->Bool {
+        
+        print("setTaskToCurrentPlayingTask is called")
+        
+        let timelog = self.realm.objects(Timelog).filter("timelogStatus == 'playing'").first
+        
+        if(timelog != nil) {
+            let filterString = "taskId == " + String(timelog!.timelogTaskId)
+            self.toggleTask = realm.objects(TaskModel).filter(filterString).first!
+            print("will return true")
+            return true
+        }
+        print("will return false")
+
+        return false
+    }
+    
+
+
+    func viewSetup() {
+        
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
-
+        
         self.navigationController?.navigationBar.translucent = false; //added to calculate the distance from the top of the page after the nav bar
         
         /* Add circular shape to buttons*/
@@ -58,9 +233,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.toggleStopBtn.backgroundColor = Theme.redColor();
         self.toggleResumeBtn.layer.cornerRadius = 0.5 * self.toggleResumeBtn.bounds.size.width;
         self.toggleResumeBtn.backgroundColor = Theme.greenColor();
-
+        
         Theme.style_5(self.toggledTime); //missing correct font and is not specified in properties
-
+        
         self.toggledTime.text = "00:00:00";
         self.toggledTime.textColor = Theme.blackColor();
         
@@ -72,14 +247,14 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         let todoProjectPaddingView = UIView(frame: CGRectMake(0,0,14,20));
         self.todoProjectTextField.leftView = todoProjectPaddingView;
         self.todoProjectTextField.leftViewMode = UITextFieldViewMode.Always;
-
+        
         self.todoTitleField.backgroundColor = Theme.lightGrayColor();
         self.todoTitleField.attributedPlaceholder = NSAttributedString(string:"ToDo title",
             attributes:[NSForegroundColorAttributeName: Theme.grayColor()]); //Add Placeholder with custom color
         
         self.todoProjectTextField.backgroundColor = Theme.lightGrayColor();
         self.todoProjectTextField.attributedPlaceholder = NSAttributedString(string:"Project name", attributes:[NSForegroundColorAttributeName: Theme.grayColor()]); //Add placeholder with custom color
-
+        
         let projectPicker = UIPickerView(); //Add picker view to be used in project names
         projectPicker.dataSource = self;
         projectPicker.delegate = self;
@@ -88,7 +263,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.toggleStopBtn.alpha = 0;
         self.togglePauseBtn.alpha = 0;
         self.toggleResumeBtn.alpha = 0;
-
+        
     }
     
     /*
@@ -151,8 +326,45 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func togglePause(sender: AnyObject) {
+        
+        let url = APIRoutes.TASK_TIMELOG_PAUSE
+        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(self.toggleTask.taskId))
+
+//        let params:[String:AnyObject?] = ["a": NSNull(), "b": 1]
+        let requestParams : [String: AnyObject] = ["task": self.toggleTask] //these params is not needed
+
+        API.put(urlWithTaskId, parameters: requestParams, callback: { (success, response) in
+            if(success) {
+                self.togglePauseAction()
+                //MAKE SURE THE TIMER IS INVALIDATED
+                self.timer.invalidate(); //stop timer
+
+                let filterString = "timelogTaskId == " + String(self.toggleTask.taskId)
+
+                let timelog = self.realm.objects(Timelog).filter(filterString).first
+                self.fetchTaskTimelogs(self.toggleTask) //get updated log
+//                var updatedTimelog = Timelog()
+//                updatedTimelog.timelogStatus = "paused"
+//                updatedTimelog.timelogTaskId = (timelog?.timelogTaskId)!
+//                updatedTimelog.timelogId = (timelog?.timelogId)!
+//                updatedTimelog.timelogCreatedAt = (timelog?.timelogCreatedAt)!
+//                updatedTimelog.timelogUpdatedAt = (timelog?.timelogUpdatedAt)!
+//                updatedTimelog.timelogCurrentEntryId = (timelog?.timelogCurrentEntryId)!
+//                updatedTimelog.timelogStartedAt = (timelog?.timelogStartedAt)!
+//                updatedTimelog.timelogStartedAt = (timelog?.timelogEndedAt)!
+//                
+//                self.updateTimelog(updatedTimelog)
+
+
+            }
+            
+        })
+
+    }
+    func togglePauseAction() {
+        
         self.pausedDate = NSDate();
-        timer.invalidate(); //stop timer
+        self.timer.invalidate(); //stop timer
         self.toggledTime.textColor = Theme.blackColor();
         self.pausedTimeInterval = self.currentTimeInterval;
         
@@ -162,6 +374,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
             self.toggleResumeBtnCenterX.constant = -75;
             
         })
+        
     }
     
     /*
@@ -195,8 +408,29 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func toggleResume(sender: AnyObject) {
-        self.toggleStartPlay(sender);
         
+        toggleResumeAction()
+
+    }
+    
+    func toggleResumeAction() {
+//        let currentDate = NSDate();
+//        startDate = currentDate;
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+        
+        self.toggledTime.textColor = Theme.greenColor();
+        
+        UIView.animateWithDuration(0.5, animations: {
+            self.togglePlayBtn.alpha = 0;
+            self.toggleResumeBtn.alpha = 0;
+            
+            self.toggleStopBtn.alpha = 1;
+            self.togglePauseBtn.alpha = 1;
+            
+            self.toggleStopBtnCenterX.constant = 75;
+            
+            self.togglePauseBtnCenterX.constant = -75;
+        })
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

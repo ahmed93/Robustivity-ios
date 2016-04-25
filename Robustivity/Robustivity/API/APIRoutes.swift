@@ -16,6 +16,12 @@ class APIRoutes {
     static let USER_SHOW = "users/"
     static let USER_PROFILE = USER_SHOW + "profile/"
     
+    static let PROJECTS_INDEX = "projects/"
+    
+    static let TASKS_TIMELOG = TASKS_INDEX + "{task_id}/timelogs/"
+    
+    static let TASK_TIMELOG_PAUSE = TASKS_TIMELOG + "pause/"
+    
     
    
     

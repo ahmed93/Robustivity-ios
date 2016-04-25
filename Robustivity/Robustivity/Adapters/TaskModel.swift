@@ -32,6 +32,9 @@ class TaskModel: Object, Mappable {
     required convenience init?(_ map: Map) {
         self.init()
     }
+    override static func primaryKey() -> String? {
+        return "taskId"
+    }
     
     func mapping(map: Map) {
         
