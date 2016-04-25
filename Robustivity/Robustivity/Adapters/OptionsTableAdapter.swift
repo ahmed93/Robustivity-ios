@@ -27,6 +27,8 @@ class OptionsTableAdapter: BaseTableAdapter {
             viewController.navigationController?.pushViewController(SendExcuseViewController(), animated: true)
         case (1,2):
             viewController.navigationController?.pushViewController(PingtoViewController(), animated: true)
+        case (2,2):
+            UIApplication.sharedApplication().openURL(NSURL(string:"https://calendar.google.com/calendar/render?tab=cc#main_7")!)
             
         default:()
             
