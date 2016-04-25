@@ -12,9 +12,11 @@ class APIRoutes {
     static let BASE = "http://hr.staging.rails.robustastudio.com/api/"
     
     static let TASKS_INDEX = "tasks/"
-    
+    static let FEED_INDEX = "feeds/"
     static let USER_SHOW = "users/"
     static let USER_PROFILE = USER_SHOW + "profile/"
+    
+    
     
     
    

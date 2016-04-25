@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import ObjectMapper
+import RealmSwift
 
 class FeedAdapter: BaseTableAdapter {
-    static var feed:[FeedModel]?
+  //  static var feed:[FeedModel]?
 
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
@@ -18,12 +20,52 @@ class FeedAdapter: BaseTableAdapter {
     }
     
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
-        FeedAdapter.feed = FeedAdapter.fillFeedWithDummyData()
+      //  FeedAdapter.feed = FeedAdapter.fillFeedWithDummyData()
+        
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
     }
     
     
     func fetchItems() {
+        
+        if tableItems.count == 0 {
+            API.get( APIRoutes.FEED_INDEX, callback: { (success, response) in
+
+                if(success){
+                    let feeds = Mapper<FeedModel>().mapArray(response)
+                    for feed in feeds! {
+                        self.saveNewFeed(feed)
+                        
+                    }
+                }
+            
+
+                }
+            
+
+            
+            )
+            
+          /*  API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
+                if(success){
+                    
+                    //map the json object to the model and save them
+                    let tasks = Mapper<TaskModel>().mapArray(response)
+                    for task in tasks! {
+                        print(task.taskName)
+                    //    self.updateTask(task)
+                    //    self.fetchTaskTimelogs(task)
+                    }
+                    
+                }
+            })*/
+            tableItems = ListModel()
+
+            
+        }
+        tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
+
+/*
         if tableItems == nil {
             tableItems = ListModel()
         }
@@ -34,7 +76,7 @@ class FeedAdapter: BaseTableAdapter {
         tableItems.addObject("new test 5")
         tableItems.addObject("new test 6")
         tableItems.addObject("new test 7")
-        tableView.reloadData()
+        tableView.reloadData()*/
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -62,9 +104,36 @@ class FeedAdapter: BaseTableAdapter {
             return tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell
         }
         else{
-            let feed = FeedAdapter.feed?[indexPath.row]
+            let feed = tableItems.objectAtIndex(indexPath.row)as! FeedModel
             let cell:UITableViewCell?
-            if feed is BroadcastFeedModel{
+            
+            switch feed.type {
+
+            case "broadcast":
+                cell = self.broadCastFeedCell(tableView, feed: feed )
+
+            case "check":
+                cell = self.checkInFeedCell(tableView, feed: feed )
+
+            case "new_task":
+                cell = self.notificationFeedCell(tableView, feed: feed)
+            default:
+                cell = nil
+                print("yalaaaahwy")
+
+
+            }
+
+            
+            
+            
+          /*  if (feed.type == "broadcast"){
+            
+                cell = self.broadCastFeedCell(tableView, feed: feed as! BroadcastFeedModel)
+
+            }
+            
+           if feed?.type =="broadcast" {
                 cell = self.broadCastFeedCell(tableView, feed: feed as! BroadcastFeedModel)
             }
             else if feed is CheckInFeedModel{
@@ -72,7 +141,7 @@ class FeedAdapter: BaseTableAdapter {
             }
             else{
                 cell = self.notificationFeedCell(tableView, feed: feed as! UpdateFeedModel)
-            }
+            }*/
             
             return cell
         }
@@ -83,7 +152,8 @@ class FeedAdapter: BaseTableAdapter {
         if section == 0{
             return 1
         }
-        return (FeedAdapter.feed?.count)!;
+     //   return (FeedAdapter.feed?.count)!;
+        return tableItems.count;
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -96,7 +166,7 @@ class FeedAdapter: BaseTableAdapter {
     note that the image of the imageview is set from a url
     */
     
-    static func fillFeedWithDummyData() -> [FeedModel]{
+   /* static func fillFeedWithDummyData() -> [FeedModel]{
         let user = UserModel(avatar: NSURL(string: "")!, name: "Islam")
         let bf1 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
         let bf2 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
@@ -104,7 +174,7 @@ class FeedAdapter: BaseTableAdapter {
         let nf = UpdateFeedModel(content: "Robustivity Project has 4 tasks done.",timeStamp: "Oct 12,2015")
         let cif = CheckInFeedModel(user: user, tiemStamp: "now")
         return [bf1,nf,bf2,cif,bf3]
-    }
+    }*/
     
     /*
     Made by Khaled Elhossiny
@@ -113,11 +183,11 @@ class FeedAdapter: BaseTableAdapter {
     and imageview according to the feed object
     */
     
-    func broadCastFeedCell(tableView: UITableView, feed:BroadcastFeedModel) -> BroadcastFeedTableViewCell{
+    func broadCastFeedCell(tableView: UITableView, feed:FeedModel) -> BroadcastFeedTableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("broadCastCell") as! BroadcastFeedTableViewCell
-        cell.broadcastTextLabel.text = feed.content!
-        cell.broadcastTitleLabel.text = feed.title!
-        cell.timestampsLabel.text? = feed.timeStamp!
+        cell.broadcastTextLabel.text = feed.content
+        cell.broadcastTitleLabel.text = feed.userName + "sent a broadcast"
+        cell.timestampsLabel.text? = feed.timeStamp
         //let avatarURL:NSURL? = feed.user?.avatar
         //let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
         //cell.avatarImageView.image = avatarImage!
@@ -157,10 +227,10 @@ class FeedAdapter: BaseTableAdapter {
     and imageview according to the feed object
     */
     
-    func checkInFeedCell(tableView: UITableView, feed:CheckInFeedModel) -> CheckInFeedTableViewCell{
+    func checkInFeedCell(tableView: UITableView, feed:FeedModel) -> CheckInFeedTableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("checkInCell") as! CheckInFeedTableViewCell
-        cell.checkInTitleLabel.text = feed.content!
-        cell.timeStampsLabel.text = feed.timeStamp!
+        cell.checkInTitleLabel.text = feed.userName + feed.content
+        cell.timeStampsLabel.text = feed.timeStamp
         //let avatarURL:NSURL? = feed.user?.avatar
         //let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
         //cell.avatarImageView.image = avatarImage!
@@ -174,10 +244,10 @@ class FeedAdapter: BaseTableAdapter {
     according to the feed object
     */
     
-    func notificationFeedCell(tableView: UITableView, feed:UpdateFeedModel) -> UpdateFeedTableViewCell{
+    func notificationFeedCell(tableView: UITableView, feed:FeedModel) -> UpdateFeedTableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("updateCell") as! UpdateFeedTableViewCell
-        cell.notificationTextLabel.text = feed.content!
-        cell.timeStampsLabel.text = feed.timeStamp!
+        cell.notificationTextLabel.text = feed.userName + feed.content
+        cell.timeStampsLabel.text = feed.timeStamp
         return cell
     }
     
@@ -199,6 +269,21 @@ class FeedAdapter: BaseTableAdapter {
     */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
+    }
+    
+    
+    func saveNewFeed(feed: FeedModel) {
+        let realm = try! Realm()
+        let savedfeeds = realm.objects(FeedModel)
+        //check if already exists on the database or not
+        for checkfeed in savedfeeds {
+            if checkfeed.feedId == feed.feedId{
+                return
+            }
+        }
+        try! realm.write {
+            realm.add(feed)
+        }
     }
     
 }

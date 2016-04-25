@@ -7,17 +7,32 @@
 //
 
 import UIKit
+import ObjectMapper
+import RealmSwift
 
-class FeedModel: BaseModel {
-    var content:String?
-    var timeStamp:String?
-    
-    init(content:String, timeStamp:String){
-        self.content = content
-        self.timeStamp = timeStamp
+class FeedModel: Object, Mappable {
+  
+    dynamic var content = ""
+    dynamic var timeStamp = ""
+    dynamic var type = ""
+    dynamic var profilePicture = ""
+    dynamic var userName = ""
+    dynamic var feedId = 0
+
+
+    required convenience init?(_ map: Map) {
+        self.init()
     }
     
-    override init() {
-        super.init()
+    func mapping(map: Map) {
+        content     <- map["message"]
+        timeStamp  <- map["created_at"]
+        type        <- map["type"]
+        userName <- map["user.first_name"]
+        profilePicture    <- map["user.profile_picture.url"]
+        feedId <- map["id"]
+
     }
+    
+
 }
