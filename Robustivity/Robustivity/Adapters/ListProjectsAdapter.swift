@@ -13,9 +13,9 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
-import Foundation
 import UIKit
-
+import ObjectMapper
+import RealmSwift
 // UserAdapter used to display the User TableViews, using the UserTableViewCell.
 // Remove the tableView Separator from your controller using: self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
@@ -36,38 +36,32 @@ class ListProjectsAdapter: BaseTableAdapter {
         if tableItems == nil {
             tableItems = ListModel()
         }
-        tableItems.addObject("Islam Abdelrouf")
-        tableItems.addObject("Ahmed Magdy")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Ahmed Mohamed ElAssuty")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Mohamed Lotfy")
-        tableItems.addObject("Islam Abdelrouf")
-        tableItems.addObject("Ahmed Magdy")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Ahmed Mohamed ElAssuty")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Mohamed Lotfy")
+        API.get(APIRoutes.PROJECTS_MYPROJECTS, callback: { (success, response) in
+            if(success){
+                let projects = Mapper<Project>().mapArray(response)
+                for project in projects! {
+                    self.tableItems.addObject(project)
+                    self.saveNewProject(project)
+                }
+                self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .Bottom)
+                
+            }
+        })
         
-        tableView.reloadData()
-        if tableItems2 == nil {
-            tableItems2 = ListModel()
-        }
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        
-        tableView.reloadData()
     }
+    
+    func saveNewProject(project: Project) {
+        let realm = try! Realm()
+        for db_project in realm.objects(Project) {
+            if db_project.id == project.id{
+                return
+            }
+        }
+        try! realm.write {
+            realm.add(project)
+        }
+    }
+
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
@@ -89,10 +83,11 @@ class ListProjectsAdapter: BaseTableAdapter {
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? CustomProjectsListTableViewCell
-        _cell?.projectNameLabel.text = "Vodafone"
-        _cell?.memberLabel.text = "Vodafone"
-        _cell?.marginUIView.backgroundColor = Theme.tableBackgroundColor()
+        let projectCell = cell as? CustomProjectsListTableViewCell
+        let project = tableItems.objectAtIndex(indexPath.row) as! Project
+        projectCell?.projectNameLabel.text = project.name
+        projectCell?.memberLabel.text = project.name
+        projectCell?.marginUIView.backgroundColor = Theme.tableBackgroundColor()
 
     }
 
