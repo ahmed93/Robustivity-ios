@@ -20,6 +20,7 @@ class Timelog: Object, Mappable {
     dynamic var timelogCurrentEntryId = 0
     dynamic var timelogStartedAt = ""
     dynamic var timelogEndedAt = ""
+    dynamic var timelogDuration = 0
     
     
     required convenience init?(_ map: Map) {
@@ -39,6 +40,7 @@ class Timelog: Object, Mappable {
         timelogCurrentEntryId <- map["current_entry_id"]
         timelogStartedAt <- map["started_at"]
         timelogEndedAt <- map["ended_at"]
+        timelogDuration <- map["duration"]
     }
     
     
