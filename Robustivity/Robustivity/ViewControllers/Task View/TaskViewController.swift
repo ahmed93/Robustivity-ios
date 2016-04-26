@@ -138,8 +138,11 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func keyboardWillShow(sender: NSNotification) {
-        self.view.frame.origin.y = -195
-        //self.bottomTableConstraint.constant = 150
+        let userInfo:NSDictionary = sender.userInfo!
+        let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.CGRectValue()
+        let keyboardHeight = keyboardRectangle.height
+        self.view.frame.origin.y = -keyboardHeight + 50
     }
     
     func keyboardWillHide(sender: NSNotification) {
