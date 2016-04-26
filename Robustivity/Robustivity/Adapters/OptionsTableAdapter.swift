@@ -19,6 +19,8 @@ class OptionsTableAdapter: BaseTableAdapter {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.row,indexPath.section) {
+        case (0,0):
+            viewController.navigationController?.pushViewController(AttendanceLogViewController(), animated: true)
         case (0,1):
             viewController.navigationController?.pushViewController(DirectoryViewController(), animated: true)
         case (1,0):

@@ -16,7 +16,8 @@ class APIRoutes {
     static let USER_SHOW = "users/"
     static let USER_PROFILE = USER_SHOW + "profile/"
     
-    
+    static let WORKING_DAYS = "working_days/"
+    static let ATTENDANCELOG = "working_days/attendance_log/"
    
     
 }
