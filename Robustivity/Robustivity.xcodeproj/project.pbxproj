@@ -182,6 +182,8 @@
 		A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24B1CA2EE6E002DB6FE /* MyriadPro-Semibold.otf */; };
 		A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */; };
 		A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */; };
+		BDB706571CCFD15600ED7D1E /* TaskCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB706561CCFD15600ED7D1E /* TaskCommentModel.swift */; };
+		BDB706591CCFD15C00ED7D1E /* TaskInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB706581CCFD15C00ED7D1E /* TaskInfoModel.swift */; };
 		F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */; };
 		FC5127070B47D983F96C66EE /* Pods_Robustivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */; };
 /* End PBXBuildFile section */
@@ -388,6 +390,8 @@
 		A7E7A24B1CA2EE6E002DB6FE /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
 		A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
 		A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Robustivity/Global/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		BDB706561CCFD15600ED7D1E /* TaskCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCommentModel.swift; sourceTree = "<group>"; };
+		BDB706581CCFD15C00ED7D1E /* TaskInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoModel.swift; sourceTree = "<group>"; };
 		F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1024,6 +1028,7 @@
 		A7BCE7C01C7D834F007870CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BDB706551CCFD0F900ED7D1E /* Task View */,
 				1B8E5D811CAF41A600239F1C /* Feed */,
 				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
@@ -1074,6 +1079,15 @@
 				A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BDB706551CCFD0F900ED7D1E /* Task View */ = {
+			isa = PBXGroup;
+			children = (
+				BDB706581CCFD15C00ED7D1E /* TaskInfoModel.swift */,
+				BDB706561CCFD15600ED7D1E /* TaskCommentModel.swift */,
+			);
+			path = "Task View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1326,6 +1340,7 @@
 				1B7F8DDC1CB0813C007C8005 /* Comp_1+Theme.swift in Sources */,
 				1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */,
 				1B7F8E261CB094E6007C8005 /* DirectoryCell.swift in Sources */,
+				BDB706571CCFD15600ED7D1E /* TaskCommentModel.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				1B7F8EAC1CB09507007C8005 /* NotificationsViewController.swift in Sources */,
 				185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */,
@@ -1351,6 +1366,7 @@
 				1B7F8DBD1CB07C95007C8005 /* SDWebImageDecoder.m in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
 				1B7F8E901CB09507007C8005 /* FeedViewController.swift in Sources */,
+				BDB706591CCFD15C00ED7D1E /* TaskInfoModel.swift in Sources */,
 				1B7F8EB61CB09507007C8005 /* ToggleViewController.swift in Sources */,
 				1B7F8E431CB094E6007C8005 /* UserTableViewCell.swift in Sources */,
 				1B7F8E301CB094E6007C8005 /* NotificationsTableViewCell.swift in Sources */,
