@@ -247,7 +247,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
             
             if(isTaskObject.boolValue){
                 
-                let task  = ["task[name]" : taskName, "task[description]" : taskDesciption, "task[status]" : "newly_created", "task[start_date]" : taskDueDateStringValue, "task[estimated_time]" : estimatedTime, "task[user_id]" : user_id, "task[creator_id]" : creator_id, "task[project_id]" : project_id]
+                let task  = ["task[name]" : taskName, "task[description]" : taskDesciption, "task[status]" : "newly_created", "task[start_date]" : taskDueDateStringValue, "task[estimated_time]" : estimatedTime, "task[user_id]" : user_id, "task[project_id]" : project_id]
                 
                 API.post(APIRoutes.TASKS_CREATE, parameters: task as! [String : AnyObject], callback:{
                     (success, response) in
