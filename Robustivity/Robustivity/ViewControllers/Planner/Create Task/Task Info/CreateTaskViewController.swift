@@ -17,8 +17,8 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     var doneButton:UIBarButtonItem!
     var isTaskObject: Bool!
     var project_id:Int!
-    var user_id = 39
-    var creator_id = 39
+    var user_id:Int!
+    var creator_id:Int!
     var isTaskNameValid:Bool!
     var isTaskDueDateValid:Bool!
     var isTaskDescriptionValid:Bool!
