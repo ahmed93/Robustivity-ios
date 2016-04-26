@@ -15,8 +15,8 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     
     var adapter:CreateTaskAdapter!
     var doneButton:UIBarButtonItem!
-    var isTaskObject = false
-    var project_id = 1
+    var isTaskObject: Bool!
+    var project_id:Int!
     var user_id = 39
     var creator_id = 39
     var isTaskNameValid:Bool!
@@ -245,7 +245,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
             
             let taskDesciption = (self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2)) as! TextViewTaskViewCell).textView.text!
             
-            if(isTaskObject){
+            if(isTaskObject.boolValue){
                 
                 let task  = ["task[name]" : taskName, "task[description]" : taskDesciption, "task[status]" : "newly_created", "task[start_date]" : taskDueDateStringValue, "task[estimated_time]" : estimatedTime, "task[user_id]" : user_id, "task[creator_id]" : creator_id, "task[project_id]" : project_id]
                 
