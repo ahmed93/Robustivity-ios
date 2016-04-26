@@ -13,11 +13,36 @@ returns two cell types: UserCell and DescriptionCell
 */
 
 import UIKit
+import ObjectMapper
+import RealmSwift
+
 class TaskInfoAdapter: BaseTableAdapter{
+    var currentTaskInfo = "2464"
+    var currentTask = TaskModel()
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs:NSDictionary) {
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
         
         // any extra stuff to be done
+    }
+    
+    func fetchItems() {
+        if tableItems.count == 0 {
+            API.get(APIRoutes.TASKS_INDEX+currentTaskInfo, callback: { (success, response) in
+                if(success){
+                    //map the jason object to the model and save them
+                   let responseDictionary = response as! Dictionary<String, AnyObject>
+                    let taskz = responseDictionary["task"]
+                    let task = Mapper<TaskModel>().map(taskz)
+                    self.currentTask = task!
+                    print(self.currentTask.taskDescription)
+                    self.tableItems.addObject(task!)
+                    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .Bottom)
+
+                }
+            })
+            tableItems = ListModel()
+        }
+        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -61,7 +86,9 @@ class TaskInfoAdapter: BaseTableAdapter{
         else{
             let cell = self.tableView.dequeueReusableCellWithIdentifier("descriptionCell", forIndexPath: indexPath)
                 as! DescriptionTableViewCell
-            cell.taskDescription.text = "I have a big task waiting I have a big task waiting I have a big task waiting \n I have a big task waitingI have a big task waitingI have a big task waiting"
+            cell.taskDescription.text = currentTask.taskDescription
+//            
+//            cell.taskDescription.text = "I have a big task waiting I have a big task waiting I have a big task waiting \n I have a big task waitingI have a big task waitingI have a big task waiting"
             return cell
         }
     }
