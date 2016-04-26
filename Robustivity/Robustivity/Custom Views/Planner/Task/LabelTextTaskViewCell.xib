@@ -22,14 +22,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DD.MM.YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTu-CE-Iol">
-                        <rect key="frame" x="78" y="15" width="242" height="30"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DD.MM.YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTu-CE-Iol">
+                        <rect key="frame" x="82" y="15" width="238" height="30"/>
                         <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Due date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3j4-bs-7Cn" userLabel="3010" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="13" y="19" width="62" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3j4-bs-7Cn" userLabel="3010" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="13" y="19" width="59" height="21"/>
                         <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="15"/>
                         <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="3j4-bs-7Cn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="2HN-sM-y4z"/>
-                    <constraint firstItem="yTu-CE-Iol" firstAttribute="leading" secondItem="3j4-bs-7Cn" secondAttribute="trailing" constant="3" id="3WZ-td-SDz"/>
+                    <constraint firstItem="yTu-CE-Iol" firstAttribute="leading" secondItem="3j4-bs-7Cn" secondAttribute="trailing" constant="10" id="3WZ-td-SDz"/>
                     <constraint firstAttribute="trailingMargin" secondItem="yTu-CE-Iol" secondAttribute="trailing" constant="-8" id="9yw-ei-lsE"/>
                     <constraint firstItem="yTu-CE-Iol" firstAttribute="leading" secondItem="3j4-bs-7Cn" secondAttribute="trailing" constant="3" id="ILo-a4-F4P"/>
                     <constraint firstAttribute="bottomMargin" secondItem="yTu-CE-Iol" secondAttribute="bottom" constant="3.5" id="KnW-dV-tgU"/>
@@ -50,6 +50,11 @@
                     <constraint firstAttribute="bottomMargin" secondItem="3j4-bs-7Cn" secondAttribute="bottom" constant="8.5" id="a2X-RJ-WH2"/>
                     <constraint firstItem="3j4-bs-7Cn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="ejp-qO-uZq"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="ILo-a4-F4P"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="label" destination="3j4-bs-7Cn" id="GYD-cY-VJb"/>
