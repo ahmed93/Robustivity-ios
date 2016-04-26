@@ -226,7 +226,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     
     func doneButtonPress(){
         
-        if(isTaskNameValid && isTaskDueDateValid && isTaskDescriptionValid){
+        if(isTaskNameValid.boolValue && isTaskDueDateValid.boolValue && isTaskDescriptionValid.boolValue){
             
             let taskName = (self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! TextViewTaskViewCell).textView.text!
             
@@ -294,7 +294,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     
     func validate(){
         
-        if(isTaskNameValid && isTaskDueDateValid && isTaskDescriptionValid){
+        if(isTaskNameValid.boolValue && isTaskDueDateValid.boolValue && isTaskDescriptionValid.boolValue){
             
             self.doneButton.enabled = true
         }
@@ -319,7 +319,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
             
             taskDueDate = try! dateFormatter.dateFromString(taskDueDateString)
             
-            isTaskDueDateValid = isTaskDueDateValid && (taskDueDate != nil) && (taskDueDate.laterDate(NSDate(timeIntervalSince1970: 30)).isEqualToDate(taskDueDate))
+            isTaskDueDateValid = isTaskDueDateValid.boolValue && (taskDueDate != nil) && (taskDueDate.laterDate(NSDate(timeIntervalSince1970: 30)).isEqualToDate(taskDueDate))
         }
         
         self.validate()
