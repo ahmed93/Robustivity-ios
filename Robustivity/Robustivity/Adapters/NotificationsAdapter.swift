@@ -27,13 +27,13 @@ class NotificationsAdapter: BaseTableAdapter {
                     "type"       	:"notification",
                     "title"      	:"Don't forget to check Out!",
                     "image"      	:"Stroke 751 + Stroke 752",
-                    "timestampe"  	:"01:20 pm"
+                    "timestamp"  	:"01:20 pm"
                 ],[
                     "type"       	:"broadcast",
                     "title"      	:"Don't forget to check Out!",
                     "image"      	:"Stroke 751 + Stroke 752",
                     "description"	:"Dear Team, Please join",
-                    "timestampe"  	:"11:20 am"
+                    "timestamp"  	:"11:20 am"
                 ]]
             ])
         tableItems.addObject(["time":"Yesterday",
@@ -42,35 +42,35 @@ class NotificationsAdapter: BaseTableAdapter {
                     "type"       	:"notification",
                     "title"      	:"Don't forget to check Out!",
                     "image"      	:"Stroke 751 + Stroke 752",
-                    "timestampe"  	:"09:20 pm"
+                    "timestamp"  	:"09:20 pm"
                 ],[
                     "type"       	:"broadcast",
                     "title"      	:"Don't forget to check Out!",
                     "image"      	:"Stroke 751 + Stroke 752",
                     "description"	:"Dear Team, Please join",
-                    "timestampe"  	:"05:20 pm"
+                    "timestamp"  	:"05:20 pm"
                 ],[
                     "type"       	:"notification",
                     "title"      	:"Don't forget to check Out!",
                     "image"      	:"Stroke 751 + Stroke 752",
-                    "timestampe"  	:"04:20 pm"
+                    "timestamp"  	:"04:20 pm"
                 ],[
                     "type"       	:"broadcast",
                     "title"      	:"Don't forget to check Out!",
                     "image"      	:"Stroke 751 + Stroke 752",
                     "description"	:"Dear Team, Please join",
-                    "timestampe"  	:"03:20 pm"
+                    "timestamp"  	:"03:20 pm"
                 ],[
                     "type"       	:"notification",
                     "title"      	:"Don't forget toDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please join check Out!",
                     "image"      	:"Stroke 751 + Stroke 752",
-                    "timestampe"  	:"01:20 pm"
+                    "timestamp"  	:"01:20 pm"
                 ],[
                     "type"       	:"broadcast",
                     "title"      	:"Don't forget to check Out!",
                     "image"      	:"feed",
                     "description"	:"Dear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, PleasPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPleaselease jPlease je joinDear Team, Please joinDear Team, Please joinDear Team, Please join",
-                    "timestampe"  	:"01:20 am"
+                    "timestamp"  	:"01:20 am"
                 ]]
             ])
     }
@@ -113,7 +113,7 @@ class NotificationsAdapter: BaseTableAdapter {
         
         notificationCell.titleLabel.text = notification.objectForKey("title") as? String
         notificationCell.notificationImageView?.image = UIImage(named: (notification.objectForKey("image") as! String) )
-        notificationCell.timeLabel.text = notification.objectForKey("timestampe") as? String
+        notificationCell.timeLabel.text = notification.objectForKey("timestamp") as? String
         
         notificationCell.notificationImageView?.layer.cornerRadius = (notificationCell.imageView?.frame.width)! / 2
         notificationCell.notificationImageView?.clipsToBounds = true
@@ -128,6 +128,8 @@ class NotificationsAdapter: BaseTableAdapter {
         return notificationCell
         
     }
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 
 }

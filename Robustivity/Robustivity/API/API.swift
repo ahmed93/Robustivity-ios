@@ -11,7 +11,7 @@ import Alamofire
 class API: NSObject {
     
     private static var headers = [
-        "Authorization": "Bearer 0d689882b114fffdc65aaa60f9128a63c9f17d8b3c8075553759e0cf2bd09892"
+        "Authorization": "Bearer 596a1e5d050deee34170a72a8d73ad5691e6a255fa677c9f2817af7ccfb5cc22"
     ]
     
     private static func baseRequest(type: Alamofire.Method, url: String, parameters: [String: AnyObject]?, callback: (success: Bool, response: AnyObject) -> ()) {
