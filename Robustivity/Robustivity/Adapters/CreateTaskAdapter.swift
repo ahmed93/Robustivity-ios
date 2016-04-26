@@ -9,18 +9,21 @@
 import UIKit
 
 class CreateTaskAdapter : BaseTableAdapter {
-
+    
      override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
         
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
-        
     }
     
      func fetchItems() {
         
-        tableItems.addObject(["textView":"Task Name (required)", "height":57])
+        tableItems.addObject(["textView":"Task Name (required)", "height":57,
+            "distanceToBottomNormalCase":-3, "distanceToBottomOnWriting":-3 ])
+        
         tableItems.addObject(["label":"Due date" , "textView":"DD.MM.YYYY", "height" : 57])
-        tableItems.addObject(["textView":"Description (required)", "height":375])
+        
+        tableItems.addObject(["textView":"Description (required)", "height":387,
+            "distanceToBottomNormalCase":-3, "distanceToBottomOnWriting":241 ])
         
         tableView.reloadData()
     }
@@ -37,13 +40,18 @@ class CreateTaskAdapter : BaseTableAdapter {
         
         let cellProperties = tableItems.objectAtIndex(indexPath.section) as! NSDictionary
         
-        if(cellProperties.count == 2){
+        if(cellProperties.count == 4){
             
             let cell = self.tableView.dequeueReusableCellWithIdentifier("textViewCell", forIndexPath: indexPath) as! TextViewTaskViewCell
             
             cell.textView.text = cellProperties.objectForKey("textView") as! String
             cell.textView.delegate = (self.viewController as! CreateTaskViewController)
+            
             (cell.textView.delegate as! CreateTaskViewController).defaultTextViewsValues[cell.textView] = cellProperties.objectForKey("textView") as? String
+            
+            (cell.textView.delegate as! CreateTaskViewController).TextViewDistanceTobottomNormalCaseValues[cell.textView] = CGFloat((cellProperties.objectForKey("distanceToBottomNormalCase") as? Int)!) * CGFloat(CGFloat(tableView.frame.height) / CGFloat(565.0))
+            
+            (cell.textView.delegate as! CreateTaskViewController).TextViewDistanceTobottomOnWritingValues[cell.textView] = CGFloat((cellProperties.objectForKey("distanceToBottomOnWriting") as? Int)!) * CGFloat(CGFloat(tableView.frame.height) / CGFloat(565.0))
             
             return cell
          
@@ -54,6 +62,7 @@ class CreateTaskAdapter : BaseTableAdapter {
             
             cell.label.text = cellProperties.objectForKey("label") as? String
             cell.textField.placeholder = cellProperties.objectForKey("textView") as? String
+            cell.textField.addTarget(self.viewController, action: Selector("textFieldDidChange:"), forControlEvents: UIControlEvents.EditingChanged)
             cell.textField.delegate = self.viewController as! CreateTaskViewController
             
             return cell
@@ -63,7 +72,7 @@ class CreateTaskAdapter : BaseTableAdapter {
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return CGFloat(5 * (tableView.frame.height / CGFloat(568.0)))
+        return CGFloat(5 * tableView.frame.height / CGFloat(565.0))
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -82,8 +91,7 @@ class CreateTaskAdapter : BaseTableAdapter {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        NSLog(String(tableView.frame.height))
-        
-        return CGFloat((tableItems.objectAtIndex(indexPath.section) as! NSDictionary).objectForKey("height") as! CGFloat * (tableView.frame.height / CGFloat(562.0)))
+        return CGFloat((tableItems.objectAtIndex(indexPath.section) as! NSDictionary).objectForKey("height")
+            as! CGFloat * (tableView.frame.height / CGFloat(565.0)))
     }
 }
