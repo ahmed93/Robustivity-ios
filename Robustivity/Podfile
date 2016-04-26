@@ -11,6 +11,6 @@ pod 'Google/SignIn'
 pod 'Alamofire',  '~> 3.0.0'
 pod 'ObjectMapper', '~> 1.1.0'
 pod 'RealmSwift'
-pod 'JLToast', '~> 1.3.0’
+pod 'JLToast', '~> 1.4'
 end
 
