@@ -127,7 +127,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     override func viewWillAppear(animated: Bool) {
         print("View will appear")
-//        fetchProjectsList()
         self.fetchTasks()
         var isPlaying = false
         if (currentTaskState.isEqual("playing")) {
@@ -139,18 +138,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         if(isPlaying == false) {
             self.setTaskToCurrentPlayingTask()
         }
-        
-//        if setTaskToCurrentPlayingTask() {
-//            self.todoTitleField.text = self.toggleTask.taskName
-//            self.setTodoProjectName(self.toggleTask)
-//            getToggledTime(self.toggleTask)
-//            toggleResumeAction()
-//        
-//            
-//        }
-        
-        //get current playing task if same as current 
-        //Do nothing else set to the new task
 
     }
     
@@ -194,11 +181,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
                     
                 }
             }
-//
             print("totla time interval")
             print(totalTimeInterval)
             
-//            let previousToggledDuration = NSNumber(integer: (timelog?.timelogDuration)!)
             self.pausedTimeInterval = totalTimeInterval //NSTimeInterval(previousToggledDuration.doubleValue)
 
         }
@@ -315,6 +300,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
             self.todoTitleField.text = self.toggleTask.taskName
             self.setTodoProjectName(self.toggleTask)
             self.getToggledTime(self.toggleTask)
+            self.startDate = self.apiStartDate
             
             toggleResumeAction()
             self.currentTaskState = "playing"
@@ -432,9 +418,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
             if(success) {
                 self.togglePauseAction()
                 self.currentTaskState = "paused"
-                //MAKE SURE THE TIMER IS INVALIDATED
                 self.timer.invalidate(); //stop timer
-//                self.pausedTimeInterval = (response["total_logged_time"] as? NSTimeInterval)!
                 self.fetchTaskTimelogs(self.toggleTask) //get updated log
 
 
