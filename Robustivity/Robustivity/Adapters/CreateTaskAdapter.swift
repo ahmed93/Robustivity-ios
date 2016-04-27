@@ -17,7 +17,7 @@ class CreateTaskAdapter : BaseTableAdapter {
     
      func fetchItems() {
         
-        tableItems.addObject(["textView":"Task Name (required)", "height":57,
+        tableItems.addObject(["textView":"Name (required)", "height":57,
             "distanceToBottomNormalCase":-3, "distanceToBottomOnWriting":-3 ])
         
         tableItems.addObject(["label":"Due date" , "textView":"DD.MM.YYYY", "height" : 57])

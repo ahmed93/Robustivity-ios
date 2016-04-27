@@ -15,7 +15,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     
     var adapter:CreateTaskAdapter!
     var doneButton:UIBarButtonItem!
-    var isTaskObject: Bool!
+    var isTaskObject:Bool!
     var project_id:Int!
     var user_id:Int!
     var isTaskNameValid:Bool!
@@ -25,9 +25,10 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     override func viewDidLoad() {
         
         super.viewDidLoad();
-            
-        self.title = "Task info";
-        self.navigationItem.title = "Task info";
+        
+        let title = (isTaskObject.boolValue ? "Task " : "Todo ") + "info"
+        self.title = title
+        self.navigationItem.title = title
         
         //Done button on right
         
@@ -56,7 +57,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         
         let textViewDefaultText = defaultTextViewsValues[textView]
-        let isTaskName = textViewDefaultText!.containsString("Task Name") ? true : false
+        let isTaskName = textViewDefaultText!.containsString("Name") ? true : false
         
         if(isTaskName){
             
@@ -79,7 +80,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     func textViewDidChange(textView: UITextView) {
         
         let textViewDefaultText = defaultTextViewsValues[textView]
-        let isTaskName = textViewDefaultText!.containsString("Task Name") ? true : false
+        let isTaskName = textViewDefaultText!.containsString("Name") ? true : false
         
         if(textView.text.characters.count > 0){
             
@@ -110,7 +111,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     func textViewShouldEndEditing(textView: UITextView) -> Bool {
         
         let textViewDefaultText = defaultTextViewsValues[textView]
-        let isTaskName = textViewDefaultText!.containsString("Task Name") ? true : false
+        let isTaskName = textViewDefaultText!.containsString("Name") ? true : false
         
         if(isTaskName){
             
@@ -139,13 +140,13 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
                 
                 isTaskNameValid = false
                 
-                errorMessage = "Task name required"
+                errorMessage = (isTaskObject.boolValue ? "Task " : "Todo ") + "name required"
             }
             else{
                 
                 isTaskDescriptionValid = false
                 
-                errorMessage = "Task description required"
+                errorMessage = (isTaskObject.boolValue ? "Task " : "Todo ") + "description required"
             }
             
             let box = JLToast.makeText(errorMessage, duration: JLToastDelay.ShortDelay)
@@ -318,7 +319,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
             
             taskDueDate = try! dateFormatter.dateFromString(taskDueDateString)
             
-            isTaskDueDateValid = isTaskDueDateValid.boolValue && (taskDueDate != nil) && (taskDueDate.laterDate(NSDate(timeIntervalSince1970: 30)).isEqualToDate(taskDueDate))
+            isTaskDueDateValid = isTaskDueDateValid.boolValue && (taskDueDate != nil) && (taskDueDate.laterDate(NSDate()).isEqualToDate(taskDueDate))
         }
         
         self.validate()
