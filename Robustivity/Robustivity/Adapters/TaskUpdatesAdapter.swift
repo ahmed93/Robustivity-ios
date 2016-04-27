@@ -19,7 +19,7 @@ import RealmSwift
 
 class TaskUpdatesAdapter: BaseTableAdapter{
     
-    var taskId = "2464"
+    var taskId = "1"
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
@@ -29,10 +29,8 @@ class TaskUpdatesAdapter: BaseTableAdapter{
     
     func fetchItems() {
         if tableItems.count == 0 {
-            API.get(APIRoutes.TASKS_INDEX + taskId, callback: { (success, response) in
+            API.get(APIRoutes.TASKS_INDEX + taskId + "/updates", callback: { (success, response) in
                 if(success){
-                    
-                    //map the jason object to the model and save them
                     let responseDictionary = response as! Dictionary<String, AnyObject>
                     let commentsArray = responseDictionary["comments"]
                     let comments = Mapper<TaskCommentModel>().mapArray(commentsArray)
@@ -74,6 +72,24 @@ class TaskUpdatesAdapter: BaseTableAdapter{
         return nil
     }
     
+    func offsetFrom(date:NSDate) -> String {
+        
+        let dayHourMinuteSecond: NSCalendarUnit = [.Day, .Hour, .Minute, .Second]
+        let difference = NSCalendar.currentCalendar().components(dayHourMinuteSecond, fromDate: date, toDate: NSDate(), options: [])
+        
+        let seconds = "\(difference.second)s"
+        let minutes = "\(difference.minute)m" + " " + seconds
+        let hours = "\(difference.hour)h" + " " + minutes
+        let days = "\(difference.day)d" + " " + hours
+        
+        if difference.day    > 0 { return days }
+        if difference.hour   > 0 { return hours }
+        if difference.minute > 0 { return minutes }
+        if difference.second > 0 { return seconds }
+        return ""
+    }
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath)
             as! CommentTableViewCell
@@ -82,15 +98,17 @@ class TaskUpdatesAdapter: BaseTableAdapter{
         if (comment.content.isEmpty){
             cell.comment.text = "invalid comment from the server"
         }else{
-        cell.comment.text = comment.content
+            cell.comment.text = comment.content
         }
-        cell.time.text = comment.createdAt
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFormatter.dateFromString(comment.createdAt)
+        cell.time.text = offsetFrom(date!) + " ago"
+        
         let imageUrl:String = "http://hr.staging.rails.robustastudio.com/" + comment.userProfilePicture
-        
         let url = NSURL(string: imageUrl)
-        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+            let data = NSData(contentsOfURL: url!)
             dispatch_async(dispatch_get_main_queue(), {
                 cell.avatar.image = UIImage(data: data!)
             });
@@ -99,7 +117,7 @@ class TaskUpdatesAdapter: BaseTableAdapter{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableItems.count - 120
+        return tableItems.count
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
