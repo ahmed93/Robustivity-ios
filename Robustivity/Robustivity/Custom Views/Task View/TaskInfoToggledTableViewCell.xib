@@ -13,39 +13,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMT-ot-b0I" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="133" y="8" width="86" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="FZf-Zc-cEy"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="FZf-Zc-cEy"/>
-                            </mask>
-                        </variation>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Oct 15, 2015" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAh-Hq-5ad" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="109" y="78.5" width="96.5" height="20.5"/>
+                        <rect key="frame" x="109" y="78" width="96.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Robustivity Tool" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-v8-MtW" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="97" y="41" width="122" height="29.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="uwl-uI-ZUx"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="uwl-uI-ZUx"/>
-                            </mask>
-                        </variation>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_clock" translatesAutoresizingMaskIntoConstraints="NO" id="o24-f1-NqS">
                         <rect key="frame" x="95" y="8" width="30" height="30"/>
@@ -62,24 +34,51 @@
                             </mask>
                         </variation>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Robustivity Tool" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-v8-MtW" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="97" y="41" width="122" height="29.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="uwl-uI-ZUx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="uwl-uI-ZUx"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMT-ot-b0I" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <rect key="frame" x="133" y="10" width="71.5" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="FZf-Zc-cEy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FZf-Zc-cEy"/>
+                            </mask>
+                        </variation>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="o24-f1-NqS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4xA-sf-Drn"/>
                     <constraint firstItem="ZMT-ot-b0I" firstAttribute="leading" secondItem="o24-f1-NqS" secondAttribute="trailing" constant="8" id="79l-pT-XAp"/>
                     <constraint firstAttribute="trailing" secondItem="ZMT-ot-b0I" secondAttribute="trailing" constant="117" id="7eM-pB-Ifa"/>
                     <constraint firstItem="uAh-Hq-5ad" firstAttribute="top" secondItem="PTP-v8-MtW" secondAttribute="bottom" constant="8" id="7sj-cc-x7Z"/>
-                    <constraint firstItem="o24-f1-NqS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="95" id="AU9-e8-OSz"/>
                     <constraint firstAttribute="trailing" secondItem="uAh-Hq-5ad" secondAttribute="trailing" constant="95" id="Hap-VS-CPT"/>
                     <constraint firstItem="uAh-Hq-5ad" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-2.75" id="VE8-IO-wF8"/>
                     <constraint firstAttribute="bottom" secondItem="uAh-Hq-5ad" secondAttribute="bottom" constant="16.5" id="cS4-qg-Jlq"/>
                     <constraint firstItem="PTP-v8-MtW" firstAttribute="top" secondItem="o24-f1-NqS" secondAttribute="bottom" constant="3" id="gjf-W7-0df"/>
-                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="iNR-le-ob4"/>
+                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="iNR-le-ob4"/>
                     <constraint firstItem="PTP-v8-MtW" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-2" id="lUG-BR-2Oa"/>
                     <constraint firstItem="uAh-Hq-5ad" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="mvn-Uh-TF0"/>
-                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="16" id="tDB-9i-TFf"/>
-                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="16" id="tO5-hL-371"/>
+                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="8.75" id="tDB-9i-TFf"/>
+                    <constraint firstItem="ZMT-ot-b0I" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="8.75" id="tO5-hL-371"/>
                     <constraint firstItem="ZMT-ot-b0I" firstAttribute="leading" secondItem="o24-f1-NqS" secondAttribute="trailing" constant="8" id="vbD-ql-Kom"/>
-                    <constraint firstItem="PTP-v8-MtW" firstAttribute="top" secondItem="ZMT-ot-b0I" secondAttribute="bottom" constant="8" id="wCe-pP-uOQ"/>
+                    <constraint firstItem="PTP-v8-MtW" firstAttribute="top" secondItem="ZMT-ot-b0I" secondAttribute="bottom" constant="6" id="wCe-pP-uOQ"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
