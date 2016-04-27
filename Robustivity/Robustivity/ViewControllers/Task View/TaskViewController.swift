@@ -100,13 +100,41 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         self.view.addSubview(taskName)
     }
     
+    func addToast(text:NSString){
+        let toastLabel = UILabel(frame: CGRectMake(self.view.frame.size.width/2 - 150, self.view.frame.size.height-100, 300, 35))
+        toastLabel.backgroundColor = UIColor.blackColor()
+        toastLabel.textColor = UIColor.whiteColor()
+        toastLabel.textAlignment = NSTextAlignment.Center;
+        self.view.addSubview(toastLabel)
+        toastLabel.text = text as String
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        UIView.animateWithDuration(4.0, delay: 0.1, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+            }, completion: nil)
+    }
+    
     func addComment(sender:UIButton!){
-        //self.updatesAdapter.tableData.append(textfield.text!)
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.table.reloadData()
-        })
-        textfield.text = nil
-        view.endEditing(true)
+        let commentText = textfield.text
+        if (commentText!.isEmpty){
+            self.addToast("Empty comment")
+        }else{
+            let comment  = ["comment[content]" : commentText]
+            
+            API.post(APIRoutes.TASKS_INDEX + self.updatesAdapter.taskId + "/updates", parameters: comment as! [String : String], callback:{
+                (success, response) in
+                
+                if(success){
+                    self.updatesAdapter = TaskUpdatesAdapter(viewController: self, tableView: self.table, registerCellWithNib: "CommentTableViewCell", withIdentifier: "commentCell")
+                    self.table.reloadData()
+                    self.textfield.text = nil
+                    self.view.endEditing(true)
+                }else{
+                    self.addToast("Request Failed")
+                }
+            })
+        }
     }
     
     func tabChanged(sender:UISegmentedControl){
