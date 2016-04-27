@@ -41,6 +41,9 @@ class CallCollectionAdapter: BaseCollectionAdapter {
                      self.collectionView.reloadData()
                 }
             })
+        
+            tableItems = ListModel()
+
     }
     
     
@@ -100,12 +103,7 @@ class CallCollectionAdapter: BaseCollectionAdapter {
         let _fullName = _firstName + _LastName
         let url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + (tableItems.objectAtIndex(indexPath.item) as! User).userProfilePictureIconURL)
                 
-        let data = NSData(contentsOfURL: url!)
-        
-        if data != nil {
-            _cell.image.image = UIImage(data:data!)
-        }
-        
+        _cell.image.sd_setImageWithURL(url)
         _cell.nameLabel.text = _fullName
         
         
