@@ -30,15 +30,10 @@ class ExcuseAdapter: BaseTableAdapter {
                     for excuse in excuses! {
                         self.tableItems.addObject(excuse)
                         self.saveNewExcuse(excuse)
-                        
                     }
                     self.tableView.reloadData()
                 }
-                
-                
                 })
-            
-            
         }
     }
     
