@@ -19,7 +19,6 @@ import RealmSwift
 
 class TaskUpdatesAdapter: BaseTableAdapter{
     
-    var tableData = ["This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA"]
     var taskId = "2464"
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
@@ -42,7 +41,6 @@ class TaskUpdatesAdapter: BaseTableAdapter{
                         self.saveNewComment(comment)
                         self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .None)
                     }
-                    
                 }
             })
             tableItems = ListModel()
@@ -81,7 +79,11 @@ class TaskUpdatesAdapter: BaseTableAdapter{
             as! CommentTableViewCell
         let comment = tableItems.objectAtIndex(indexPath.row) as! TaskCommentModel
         cell.name.text = comment.userName
+        if (comment.content.isEmpty){
+            cell.comment.text = "invalid comment from the server"
+        }else{
         cell.comment.text = comment.content
+        }
         cell.time.text = comment.createdAt
         let imageUrl:String = "http://hr.staging.rails.robustastudio.com/" + comment.userProfilePicture
         
@@ -97,7 +99,7 @@ class TaskUpdatesAdapter: BaseTableAdapter{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableItems.count
+        return tableItems.count - 120
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
