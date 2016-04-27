@@ -107,18 +107,25 @@ class ProjectUpdateAdapter: BaseTableAdapter {
     func postUpdate(updateContentString: String)
     {
         var requestParams = [String: AnyObject]()
-        requestParams["comment[content]"] =  updateContentString
+        requestParams["comment[content]"] =  updateContentString as String
         
         API.post(APIRoutes.PROJECT_UPDATE, parameters: requestParams , callback:{
             (success, response) in
             
             if(success){
-                print (response)
+                let projectUpdates = Mapper<ProjectUpdate>().mapArray([response["comment"]])
+                for projectUpdate in projectUpdates! {
+                    self.tableItems.objects.insertObject(projectUpdate, atIndex: 0)
+                    projectUpdate.saveDb()
+                }
+                
             }
             else{
                 print("error \(response)")
             }
         })
+        
+        self.reloadItems()
         
     }
     
