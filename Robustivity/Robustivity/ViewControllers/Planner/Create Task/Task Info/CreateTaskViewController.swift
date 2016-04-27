@@ -57,7 +57,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         
         let textViewDefaultText = defaultTextViewsValues[textView]
-        let isTaskName = textViewDefaultText!.containsString("Task Name") ? true : false
+        let isTaskName = textViewDefaultText!.containsString("Name") ? true : false
         
         if(isTaskName){
             
@@ -80,7 +80,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     func textViewDidChange(textView: UITextView) {
         
         let textViewDefaultText = defaultTextViewsValues[textView]
-        let isTaskName = textViewDefaultText!.containsString("Task Name") ? true : false
+        let isTaskName = textViewDefaultText!.containsString("Name") ? true : false
         
         if(textView.text.characters.count > 0){
             
@@ -111,7 +111,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     func textViewShouldEndEditing(textView: UITextView) -> Bool {
         
         let textViewDefaultText = defaultTextViewsValues[textView]
-        let isTaskName = textViewDefaultText!.containsString("Task Name") ? true : false
+        let isTaskName = textViewDefaultText!.containsString("Name") ? true : false
         
         if(isTaskName){
             
