@@ -84,11 +84,10 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         let frame = UIScreen.mainScreen().bounds
         customSC.frame = CGRectMake(frame.minX + 10, frame.minY + 50,
                                                      frame.width - 140, 30)
-        customSC.center = self.viewUpper.center
-        customSC.frame.origin.y = customSC.frame.origin.y + 30
+        customSC.frame.origin.y = customSC.frame.origin.y + 10
+        customSC.frame.origin.x = viewUpper.frame.size.width/4
         viewUpper.addSubview(customSC)
         customSC.addTarget(self, action: "tabChanged:", forControlEvents: .ValueChanged)
-        
         viewUpper.backgroundColor = self.navigationController?.navigationBar.barTintColor
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
