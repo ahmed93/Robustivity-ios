@@ -43,7 +43,18 @@ class WriteExcuseViewController: BaseViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
     }
     
-    func sendExcuse() {
+    func sendExcuse() {    // here the post request is being called when the sendExcuse button is pressed
+        let excuseBody = self.textView.text
+        var params = [String: AnyObject]()
+        params["excuse[body"] = excuseBody
+        
+        API.post(APIRoutes.EXCUSES_CREATE, parameters: params, callback:{
+            (success, response) in
+            
+            if(success){
+                self.dismissViewControllerAnimated(true, completion: nil);
+            }
+        })
         
     }
     
