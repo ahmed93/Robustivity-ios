@@ -21,12 +21,12 @@ class AttendanceLogTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         corePercentage.layer.cornerRadius = 0.5 * corePercentage.bounds.size.width;
-
+        
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
