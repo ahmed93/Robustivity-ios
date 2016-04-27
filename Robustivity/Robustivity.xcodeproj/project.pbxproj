@@ -13,7 +13,7 @@
 		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
 		01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */; };
 		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
-		04FFFE051CCD0A3800B4DB9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFFE041CCD0A3800B4DB9D /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		04FFFE051CCD0A3800B4DB9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFFE041CCD0A3800B4DB9D /* User.swift */; };
 		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
 		196CDBAE1CAF0BF60092A050 /* ProjectInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */; };
@@ -1114,6 +1114,11 @@
 				TargetAttributes = {
 					A7BCE7A91C7D8244007870CB = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
