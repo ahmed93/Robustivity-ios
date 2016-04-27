@@ -31,10 +31,10 @@ class PlannerAdapter: BaseTableAdapter {
         if tableItems.count == 0 {
             API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
                 if(success){
-                    
-                    //map the jason object to the model and save them
+                    //map the JSON object to the model and save them
                     let tasks:[TaskModel]! = Mapper<TaskModel>().mapArray(response)
                     TaskModel.createOrUpdate(tasks)
+                    
                     self.tableItems.addObjectsFromArray(tasks)
                 }
             })

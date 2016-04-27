@@ -12,6 +12,7 @@
 		0148F2F81CC69AE400CDAC9B /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */; };
 		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
 		01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */; };
+		01C72A431CD0383A002C3513 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C72A421CD0383A002C3513 /* TaskModel.swift */; };
 		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
 		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
@@ -191,6 +192,7 @@
 		0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		01530AFA1CAB145A00429264 /* PlannerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerAdapter.swift; sourceTree = "<group>"; };
 		01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01C72A421CD0383A002C3513 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
 		185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListAdapter.swift; sourceTree = "<group>"; };
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
@@ -1021,6 +1023,7 @@
 		A7BCE7C01C7D834F007870CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				01C72A421CD0383A002C3513 /* TaskModel.swift */,
 				1B8E5D811CAF41A600239F1C /* Feed */,
 				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
@@ -1306,6 +1309,7 @@
 				1B7F8E2A1CB094E6007C8005 /* MoreTableViewCell.swift in Sources */,
 				04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */,
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
+				01C72A431CD0383A002C3513 /* TaskModel.swift in Sources */,
 				1B7F8DC41CB07C95007C8005 /* UIImage+MultiFormat.m in Sources */,
 				1B7F8E3B1CB094E6007C8005 /* BroadcastFeedTableViewCell.swift in Sources */,
 				1B7F8EB41CB09507007C8005 /* PlannerViewController.swift in Sources */,
