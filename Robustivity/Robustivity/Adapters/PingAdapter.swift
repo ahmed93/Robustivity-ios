@@ -8,71 +8,80 @@
 
 import Foundation
 import UIKit
-
+import RealmSwift
+import ObjectMapper
 
 class PingAdapter: BaseTableAdapter {
     
-    var tableItems2:ListModel!
-    
+    let realm = try! Realm()
+    var selectedUsers:Set<Int>!
+    var selectedUsersPics:Set<String>!
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
+        selectedUsers = Set<Int> ()
+        selectedUsersPics = Set<String> ()
     }
     
     
     func fetchItems() {
-        if tableItems == nil {
-            tableItems = ListModel()
+         if tableItems.count == 0 {
+            API.get(APIRoutes.USER_SHOW, callback: { (success, response) in
+                if(success){
+                    //map the json object to the model and save them
+                    let users = Mapper<User>().mapArray(response)
+                    for user in users! {
+                        self.tableItems.objects.addObject(user)
+                    }
+                    
+                }
+                self.tableView.reloadData()
+            })
+            
         }
-        tableItems.addObject("Islam Abdelrouf")
-        tableItems.addObject("Ahmed Magdy")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Ahmed Mohamed ElAssuty")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Mohamed Lotfy")
-        tableItems.addObject("Islam Abdelrouf")
-        tableItems.addObject("Ahmed Magdy")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Ahmed Mohamed ElAssuty")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Mohamed Lotfy")
         
-        tableView.reloadData()
-        if tableItems2 == nil {
-            tableItems2 = ListModel()
-        }
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        
-        tableView.reloadData()
-    }
-    
-    var selectedCell:UITableViewCell?{
-        willSet{
-            selectedCell?.accessoryType = .None
-            newValue?.accessoryType = .Checkmark
-        }
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedCell = self.tableView.cellForRowAtIndexPath(indexPath)
+
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        
         let _cell = cell as? PingToUserTableViewCell
-        _cell?.pingUserName.text = tableItems.objectAtIndex(indexPath.row) as? String
-        _cell?.pingUserTitle.text = tableItems2.objectAtIndex(indexPath.row) as? String
+        let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
+        _cell?.pingUserName.text = currentUser.userFirstName  + " " + currentUser.userLastName
+        _cell?.pingUserTitle.text = currentUser.userTitle
+        _cell?.pingUserAvatar.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + currentUser.userProfilePictureIconURL))
+        _cell?.pingUserAvatar.layer.cornerRadius = (_cell?.pingUserAvatar.frame.size.width)! / 2
+        _cell?.pingUserAvatar.clipsToBounds = true
+        _cell?.userId = currentUser.userId
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
+        self.selectedUsers.insert(currentUser.userId)
+        self.selectedUsersPics.insert(currentUser.userProfilePictureIconURL)
+        
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let _cell = cell as! PingToUserTableViewCell
+        for user in Ping.selectedUsers {
+            if(_cell.userId == user) {
+                _cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.Middle)
+            }
+        }
+
+    }
+    
+        
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
+        let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
+        self.selectedUsers.remove(currentUser.userId)
+        Ping.selectedUsers.remove(currentUser.userId)
+        self.selectedUsersPics.remove(currentUser.userProfilePictureIconURL)
+        Ping.selectedUsersPics.remove(currentUser.userProfilePictureIconURL)
+
     }
     
     
