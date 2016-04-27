@@ -379,6 +379,33 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
     }
     
+    func updateTodo() {
+        
+        var requestParams = [String : AnyObject]()
+        
+        requestParams["task[name]"] = self.todoTitleField.text
+        
+        if self.todoProjectTextField.text != "" {
+            let projectId = self.projectPicker.selectedRowInComponent(0) + 1
+            
+            requestParams["task[project_id]"] = projectId
+            
+        }
+        
+        let taskID : Int = self.toggleTask.taskId
+        let taskIDString = String(taskID)
+        
+        let url = APIRoutes.TASKS_INDEX + taskIDString
+        
+        API.put(url, parameters: requestParams, callback: {(success, response) in
+            if(success){
+                let todo = Mapper<TaskModel>().map(response["task"])
+                
+                self.updateTask(todo!)
+            }
+    })
+}
+
     /*
     ** updateToggledTime
     ** CallBack function for NStimer 
