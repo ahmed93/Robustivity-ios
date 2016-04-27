@@ -14,6 +14,7 @@ class ChooseAssigneeViewController: BaseViewController {
     var adapter:UserAdapter!
 
     @IBOutlet weak var tableView: UITableView!
+    var project_id:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Assign To";
