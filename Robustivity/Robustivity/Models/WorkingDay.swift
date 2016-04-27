@@ -5,6 +5,8 @@
 //  Created by Jihan Adel on 4/26/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
+//  Edited by: Jihan Adel & Majd el shebokshy
+
 
 import Foundation
 import ObjectMapper

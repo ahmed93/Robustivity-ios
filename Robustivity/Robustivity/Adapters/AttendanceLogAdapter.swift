@@ -56,10 +56,10 @@ class AttendanceLogAdapter: BaseTableAdapter {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let day = tableItems.objectAtIndex(indexPath.row) as! WorkingDay
         if day.lateReason!.isEmpty {
-            return 80.0
+            return 70.0
         }
         else {
-            return 115.0
+            return 90.0
         }
     }
     
@@ -79,7 +79,14 @@ class AttendanceLogAdapter: BaseTableAdapter {
             workingDayCell.reason.text = "Reason: " + day.lateReason!
             
         }
-        workingDayCell.corePercentage.progress = (Float(day.cch!) / 100.0)
+        if day.checkOut!.isEmpty {
+            workingDayCell.corePercentage.hidden = true
+            
+        } else {
+            workingDayCell.corePercentage.progress = (Float(day.cch!) / 100.0)
+            
+        }
+        
     }
 
     

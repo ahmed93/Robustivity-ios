@@ -5,6 +5,7 @@
 //  Created by Jihan Adel on 4/25/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
+//  Edited by: Jihan Adel & Majd el shebokshy
 
 import UIKit
 
