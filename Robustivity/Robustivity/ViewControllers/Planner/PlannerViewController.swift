@@ -50,7 +50,7 @@ class PlannerViewController: BaseViewController {
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
         
-        //print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
+        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
         
     }
     

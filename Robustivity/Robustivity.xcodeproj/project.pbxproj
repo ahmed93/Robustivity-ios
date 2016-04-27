@@ -19,7 +19,6 @@
 		196CDBAE1CAF0BF60092A050 /* ProjectInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */; };
 		1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */; };
 		1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */; };
-		1B5E4E5D1CC8308000D1B9F1 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5E4E5C1CC8308000D1B9F1 /* TodoModel.swift */; };
 		1B7F8DB91CB07C95007C8005 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8D991CB07C95007C8005 /* MKAnnotationView+WebCache.m */; };
 		1B7F8DBA1CB07C95007C8005 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8D9B1CB07C95007C8005 /* NSData+ImageContentType.m */; };
 		1B7F8DBB1CB07C95007C8005 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8D9D1CB07C95007C8005 /* SDImageCache.m */; };
@@ -201,7 +200,6 @@
 		1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
 		1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
-		1B5E4E5C1CC8308000D1B9F1 /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		1B7F8D981CB07C95007C8005 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		1B7F8D991CB07C95007C8005 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		1B7F8D9A1CB07C95007C8005 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -1029,7 +1027,6 @@
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
 				1B8E5D8A1CAF41D400239F1C /* UserModel.swift */,
 				0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */,
-				1B5E4E5C1CC8308000D1B9F1 /* TodoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1320,7 +1317,6 @@
 				1B7F8EA61CB09507007C8005 /* ProjectsListViewController.swift in Sources */,
 				1B7F8E921CB09507007C8005 /* CallViewController.swift in Sources */,
 				1B7F8DDF1CB0813C007C8005 /* Comp_4+Theme.swift in Sources */,
-				1B5E4E5D1CC8308000D1B9F1 /* TodoModel.swift in Sources */,
 				1B7F8E471CB094E6007C8005 /* PlannerTableViewCell.swift in Sources */,
 				9426F51F1CBABD18006BEFA1 /* TaskInfoAdapter.swift in Sources */,
 				1B7F8DDC1CB0813C007C8005 /* Comp_1+Theme.swift in Sources */,
