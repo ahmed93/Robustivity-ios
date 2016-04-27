@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ObjectMapper
+import RealmSwift
 
 class ExcuseAdapter: BaseTableAdapter {
     
@@ -18,15 +20,37 @@ class ExcuseAdapter: BaseTableAdapter {
     }
     
     
-    func fetchItems() {
-        if tableItems == nil {
+    func fetchItems() { // fetching the items through a get request
+        if tableItems.count == 0 {
             tableItems = ListModel()
+            API.get( APIRoutes.EXCUSES_INDEX, callback: { (success, response) in
+                
+                if(success){
+                    let excuses = Mapper<Excuse>().mapArray(response)
+                    for excuse in excuses! {
+                        self.tableItems.addObject(excuse)
+                        self.saveNewExcuse(excuse)
+                    }
+                    self.tableView.reloadData()
+                }
+                })
         }
-        tableItems.addObject("I am too tired!")
-        tableItems.addObject("I wanna Sleep!")
-        tableItems.addObject("I have personal stuff!")
-        tableView.reloadData()
     }
+    
+    func saveNewExcuse(excuse: Excuse) { // the save excuses function which stores the new excuses
+        let realm = try! Realm()
+        let savedexcuses = realm.objects(Excuse)
+        //check if already exists on the database or not
+        for checkexcuse in savedexcuses {
+            if checkexcuse.excuseId == excuse.excuseId{
+                return
+            }
+        }
+        try! realm.write {
+            realm.add(excuse)
+        }
+    }
+    
     
     
     var selectedCell:UITableViewCell?{
@@ -41,8 +65,8 @@ class ExcuseAdapter: BaseTableAdapter {
     }
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let _cell = cell as? ExcuseTableViewCell
-        
-        _cell?.label.text = tableItems.objectAtIndex(indexPath.row) as? String
+        let excuse = tableItems.objectAtIndex(indexPath.row) as! Excuse
+        _cell?.label.text = excuse.excuseBody
     }
     
     
