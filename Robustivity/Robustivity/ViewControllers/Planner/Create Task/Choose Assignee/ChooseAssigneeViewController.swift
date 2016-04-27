@@ -12,7 +12,7 @@ import UIKit
 class ChooseAssigneeViewController: BaseViewController {
 
     var adapter:UserAdapter!
-
+    var project_id:Int!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

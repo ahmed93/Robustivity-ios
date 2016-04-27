@@ -20,13 +20,9 @@ import RealmSwift
 // Remove the tableView Separator from your controller using: self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
 class ListProjectsAdapter: BaseTableAdapter {
-    
-    var tableItems2:ListModel!
     var ChooseProjectController:ChooseProjectViewController!
-    
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
-        
         ChooseProjectController = viewController as? ChooseProjectViewController
 
     }
@@ -66,17 +62,20 @@ class ListProjectsAdapter: BaseTableAdapter {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        
+        let selectedProject = tableItems.objectAtIndex(indexPath.row) as! Project
         if self.ChooseProjectController.respondsToSelector(Selector("getTodo"))
         {
             if self.ChooseProjectController.getTodo()
             {
                 let controller = CreateTaskViewController()
                 viewController.navigationController?.pushViewController(controller, animated: true)
+                controller.project_id = selectedProject.id
+                controller.isTaskObject = false
             }
             else{
                 let controller = ChooseAssigneeViewController(nibName: "ChooseAssigneeViewController", bundle: nil)
                 viewController.navigationController?.pushViewController(controller, animated: true)
+                controller.project_id = selectedProject.id
             }
         }
 
