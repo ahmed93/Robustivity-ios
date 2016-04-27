@@ -28,7 +28,6 @@ class ExcuseAdapter: BaseTableAdapter {
                 if(success){
                     let excuses = Mapper<Excuse>().mapArray(response)
                     for excuse in excuses! {
-                        print(excuse.excuseBody)
                         self.tableItems.addObject(excuse)
                         self.saveNewExcuse(excuse)
                         
