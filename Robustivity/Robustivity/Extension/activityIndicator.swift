@@ -38,7 +38,7 @@ public class activityIndicator: UIView {
         }
     }
     
-    @IBInspectable public var fontSize: Float = 30 {
+    @IBInspectable public var fontSize: Float = 17 {
         didSet{
             progressLabel.font = UIFont.systemFontOfSize(CGFloat(fontSize))
         }
