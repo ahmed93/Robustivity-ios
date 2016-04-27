@@ -188,6 +188,7 @@
 		A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */; };
 		BDB706571CCFD15600ED7D1E /* TaskCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB706561CCFD15600ED7D1E /* TaskCommentModel.swift */; };
 		BDB706591CCFD15C00ED7D1E /* TaskInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB706581CCFD15C00ED7D1E /* TaskInfoModel.swift */; };
+		BDB7065B1CCFECF800ED7D1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB7065A1CCFECF800ED7D1E /* User.swift */; };
 		F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */; };
 		FC5127070B47D983F96C66EE /* Pods_Robustivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */; };
 /* End PBXBuildFile section */
@@ -400,6 +401,7 @@
 		A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Robustivity/Global/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		BDB706561CCFD15600ED7D1E /* TaskCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCommentModel.swift; sourceTree = "<group>"; };
 		BDB706581CCFD15C00ED7D1E /* TaskInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoModel.swift; sourceTree = "<group>"; };
+		BDB7065A1CCFECF800ED7D1E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1042,10 +1044,14 @@
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
 				0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */,
 				1B5E4E5C1CC8308000D1B9F1 /* TodoModel.swift */,
+<<<<<<< HEAD
+				BDB7065A1CCFECF800ED7D1E /* User.swift */,
 				94AC8F881CCFF0C300D63024 /* UserModel.swift */,
+=======
 				1B6BA9681CD0FACB00E96835 /* User.swift */,
 				1B6BA96A1CD0FB0900E96835 /* ProfilePicture.swift */,
 				1B6BA96C1CD0FC2700E96835 /* Project.swift */,
+>>>>>>> 89920c71558e18d0198ecd1df96750d65077840d
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1359,6 +1365,7 @@
 				185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
 				1B7F8E281CB094E6007C8005 /* ExcuseTableViewCell.swift in Sources */,
+				BDB7065B1CCFECF800ED7D1E /* User.swift in Sources */,
 				1B8E5D8F1CAF423A00239F1C /* FeedAdapter.swift in Sources */,
 				1B7F8DBC1CB07C95007C8005 /* SDWebImageCompat.m in Sources */,
 				196CDBAE1CAF0BF60092A050 /* ProjectInfoAdapter.swift in Sources */,
@@ -1369,7 +1376,11 @@
 				94AC8F891CCFF0C300D63024 /* UserModel.swift in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */,
+<<<<<<< HEAD
+=======
 				1B6BA96D1CD0FC2700E96835 /* Project.swift in Sources */,
+				1B8E5D8B1CAF41D400239F1C /* UserModel.swift in Sources */,
+>>>>>>> 89920c71558e18d0198ecd1df96750d65077840d
 				1B7F8EAE1CB09507007C8005 /* ChooseAssigneeViewController.swift in Sources */,
 				1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */,
 				1B7F8DBE1CB07C95007C8005 /* SDWebImageDownloader.m in Sources */,

@@ -50,7 +50,7 @@ class PlannerViewController: BaseViewController {
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
         
-        //print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
+        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
         
     }
     
@@ -130,6 +130,10 @@ class PlannerViewController: BaseViewController {
         } else {
             statusCircle?.tintColor = Theme.greenColor()
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
     }
     
 }
