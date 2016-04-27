@@ -25,9 +25,10 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     override func viewDidLoad() {
         
         super.viewDidLoad();
-            
-        self.title = "Task info";
-        self.navigationItem.title = "Task info";
+        
+        let title = (isTaskObject.boolValue ? "Task " : "Todo ") + "info"
+        self.title = title
+        self.navigationItem.title = title
         
         //Done button on right
         
