@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileAdapter: BaseTableAdapter {
+class ProfileAdapter: BaseTableAdapter, UITextFieldDelegate {
     
     /*
     Declare variables.
@@ -17,6 +17,7 @@ class ProfileAdapter: BaseTableAdapter {
     */
     var myProfile:Bool?
     var profileEditable:Bool?
+    var profileEditparameters:NSMutableDictionary?
     
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
@@ -59,6 +60,7 @@ class ProfileAdapter: BaseTableAdapter {
         cell?.cellContent.borderStyle = .None
         cell?.cellContent.enabled = false
         cell?.cellContent.font = UIFont(name: "MyriadPro-Regular", size: 16)
+        cell?.cellContent.delegate = self
         let placeholderAttributes = [NSFontAttributeName : UIFont(name: "MyriadPro-Regular", size: 16)!]
         
         /*
@@ -88,6 +90,7 @@ class ProfileAdapter: BaseTableAdapter {
                         cell?.cellContent.enabled = true
                         cell?.cellContent.font = UIFont(name: "MyriadPro-Regular", size: 16)
                         cell?.cellContent.attributedPlaceholder = NSAttributedString(string: "Enter your phone...", attributes: placeholderAttributes)
+                        cell?.cellContent.tag = 1
                     } else if !myProfile! {
                         cell?.cellButton?.setImage(callImageBlue, forState: UIControlState.Normal)
                     }
@@ -100,11 +103,7 @@ class ProfileAdapter: BaseTableAdapter {
                     If this is my profile and it is in edit mode, then set the text field to be editable with the suitable placeholder text.
                     Else if it is not my profile (other user profile), then display the message button.
                     */
-                    if myProfile! && profileEditable! {
-                        cell?.cellContent.enabled = true
-                        cell?.cellContent.font = UIFont(name: "MyriadPro-Regular", size: 16)
-                        cell?.cellContent.attributedPlaceholder = NSAttributedString(string: "Enter your email...", attributes: placeholderAttributes)
-                    } else if !myProfile! {
+                    if !myProfile! {
                         cell?.cellButton.setImage(mailImageBlue, forState: UIControlState.Normal)
                     }
             
@@ -120,6 +119,7 @@ class ProfileAdapter: BaseTableAdapter {
                         cell?.cellContent.enabled = true
                         cell?.cellContent.font = UIFont(name: "MyriadPro-Regular", size: 16)
                         cell?.cellContent.attributedPlaceholder = NSAttributedString(string: "Enter your address...", attributes: placeholderAttributes)
+                        cell?.cellContent.tag = 2
                     } else if !myProfile! {
                         cell?.cellButton?.removeFromSuperview()
                     }
@@ -141,6 +141,50 @@ class ProfileAdapter: BaseTableAdapter {
                     cell?.separatorInset = UIEdgeInsetsMake(0, CGRectGetWidth(tableView.bounds)/2.0, 0, CGRectGetWidth(tableView.bounds)/2.0)
             
             default: break
+        }
+    }
+
+    /*
+    Author: Abdelrahman Sakr
+    This delegate method is called whenever the textfield has ended editing
+    */
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+        /*
+        Switch case to know which textfield has ended editing.
+        case 1 is the mobile number textfield
+        case 2 is the address textfield
+        Then it appends the current value of the textfield to its corresponding key in the dictionary
+        */
+        switch textField.tag {
+        case 1:
+            profileEditparameters?.setValue(textField.text!, forKey: "user[mobile_number]")
+            
+        case 2:
+            profileEditparameters?.setValue(textField.text!, forKey: "user[address]")
+
+        default: break
+        }
+    }
+    
+    /*
+    Author: Abdelrahman Sakr
+    Gets the values of the textfields, then make an API request out of it to update user's data
+    */
+    func updateDataFromEditMode() {
+        // Set the profileEditable to false to end editing mode
+        profileEditable = false
+        
+        // Convert the NSMutableDictionary to a dictionary of String : AnyObject to pass it as a parameter for the API methods
+        var putParameters = [String : AnyObject]()
+        for (key, value) in self.profileEditparameters! {
+            putParameters[key as! String] = (value as! String)
+        }
+        
+        // Make the API request
+        API.put(APIRoutes.USER_EDIT, parameters: putParameters) { (success, response) -> () in
+            // Call the parent setupView to reload the data and end editing mode
+            (self.viewController as! ProfileViewController).setupView()
         }
     }
 

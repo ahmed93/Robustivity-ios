@@ -15,14 +15,15 @@ Anyone creating/pushing an instance of this controller (redirecting to this view
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
+class ProfileViewController: BaseViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet var profileHeader: UIView!
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var profileTableView: UITableView!
     @IBOutlet var profileName: RBLabel!
     @IBOutlet var profileJobTitle: RBLabel!
     @IBOutlet var profileUploadImage: UIButton!
-    
+    var imagePicker = UIImagePickerController()
+
     /*
     Declare variables.
     adapter: the adapter responsible for displaying cells in the table view.
@@ -89,6 +90,7 @@ class ProfileViewController: BaseViewController {
                 navigationItem.rightBarButtonItem = profileEditButton
             } else {
                 profileUploadImage?.setImage(UIImage(named: "upload_image.png"), forState: UIControlState.Normal)
+                self.profileUploadImage.hidden = false
             }
         } else {
             self.navigationItem.title = "Islam"
@@ -101,6 +103,12 @@ class ProfileViewController: BaseViewController {
             let dismissProfileButton : UIBarButtonItem = UIBarButtonItem(title: "X", style: .Plain, target: self, action: "dismissProfileView")
             
             navigationItem.leftBarButtonItem = dismissProfileButton
+            
+            /*
+            Author: Abdelrahman Sakr
+            Hide the profile upload image if the profile is no longer editable
+            */
+            self.profileUploadImage.hidden = true
         }
         
         adapter.myProfile = myProfile
@@ -134,6 +142,7 @@ class ProfileViewController: BaseViewController {
         navigationItem.leftBarButtonItem = profileCancelButton
         
         profileEditable = true
+        self.adapter.profileEditparameters = NSMutableDictionary()
         setupView()
     }
     
@@ -149,8 +158,8 @@ class ProfileViewController: BaseViewController {
     */
     func updateDataFromEditMode() {
         profileEditable = false
-        setupView()
-        // Include here any logic needed to update the database with the new values
+        self.view.endEditing(true)
+        self.adapter.updateDataFromEditMode()
     }
     
     /*
@@ -168,6 +177,55 @@ class ProfileViewController: BaseViewController {
         profileTableView.endEditing(true)
     }
     
+    /*
+    Author: Abdelrahman Sakr
+    This method opens the iPhone's photo library to allow the user to choose a photo to upload
+    */
+    @IBAction func btnClicked(){
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+            print("Button capture")
+            
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
+    /*
+    Author: Abdelrahman Sakr
+    Choose the picture from the photo library, then start uploading it using the API request
+    */
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+            // Create message overlay
+            let alert = UIAlertController(title: nil, message: "Updating Image...", preferredStyle: .Alert)
+            alert.view.tintColor = UIColor.blackColor()
+            let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(10, 5, 50, 50)) as UIActivityIndicatorView
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            loadingIndicator.startAnimating();
+            
+            // Present message overlay "Upadting Image..."
+            alert.view.addSubview(loadingIndicator)
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            // Update image API request
+            API.putMultipart(APIRoutes.USER_EDIT, parameters: ["user[profile_picture]" : image]) { (Bool, AnyObject) -> () in
+                
+                // Remove overlay when request finishes
+                self.dismissViewControllerAnimated(false, completion: nil)
+                
+                // Call setup view to refresh the data
+                self.setupView()
+            }
+        })
+    }
 
     /*
     // MARK: - Navigation
