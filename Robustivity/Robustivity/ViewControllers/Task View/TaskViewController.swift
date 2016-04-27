@@ -28,6 +28,8 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSegmentControl()
+        addFooterView()
         self.hideKeyboardWhenTappedAround()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
@@ -38,7 +40,13 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
         self.table.backgroundColor = Theme.lightGrayColor()
         self.automaticallyAdjustsScrollViewInsets = false
-        
+    }
+    
+    override func loadView() {
+        super.loadView()
+    }
+    
+    func addFooterView() {
         footerView = UIView(frame:CGRectMake(0,0,320,40))
         footerView.backgroundColor = Theme.lightGrayColor()
         let commentButton = UIButton(type: .Custom)
@@ -62,11 +70,9 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         footerView.hidden = true
         self.view.addSubview(footerView)
         bottomTableConstraint.constant = 52
-        
     }
     
-    override func loadView() {
-        super.loadView()
+    func addSegmentControl(){
         let items = ["Info", "Updates"]
         customSC = UISegmentedControl(items:items)
         customSC.layer.cornerRadius = 5.0  // Don't let background bleed
@@ -92,7 +98,6 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         taskName.textColor = Theme.whiteColor()
         self.view.addSubview(taskName)
         self.navigationItem.title =  "iOS Front END part 2"
-        
     }
     
     func addComment(sender:UIButton!){
