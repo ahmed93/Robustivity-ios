@@ -14,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4tY-lu-nUx">
-                        <rect key="frame" x="18" y="9" width="40" height="40"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tY-lu-nUx">
+                        <rect key="frame" x="18" y="8" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="KJc-me-pV1"/>
                             <constraint firstAttribute="width" constant="40" id="MCp-5L-R5e"/>
@@ -43,8 +43,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HIH-6g-Y7R">
-                        <rect key="frame" x="0.0" y="57" width="320" height="5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIH-6g-Y7R">
+                        <rect key="frame" x="0.0" y="56" width="320" height="5"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="5" id="ZNF-Bf-0Ph"/>

@@ -37,7 +37,7 @@ class ListProjectsAdapter: BaseTableAdapter {
                 let projects = Mapper<Project>().mapArray(response)
                 for project in projects! {
                     self.tableItems.addObject(project)
-                    self.saveNewProject(project)
+                    project.save()
                 }
                 self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .Bottom)
                 
@@ -45,21 +45,6 @@ class ListProjectsAdapter: BaseTableAdapter {
         })
         
     }
-    
-    func saveNewProject(project: Project) {
-        let realm = try! Realm()
-        for db_project in realm.objects(Project) {
-            if db_project.id == project.id{
-                return
-            }
-        }
-        try! realm.write {
-            realm.add(project)
-        }
-    }
-
-    
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let selectedProject = tableItems.objectAtIndex(indexPath.row) as! Project

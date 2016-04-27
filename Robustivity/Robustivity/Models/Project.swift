@@ -55,6 +55,18 @@ class Project: Object, Mappable {
         slug                    <- map["slug"]
         accounting_project_number   <- map["accounting_project_number"]
     }
+    
+    func save(){
+        let realm = try! Realm()
+        for db_project in realm.objects(Project) {
+            if db_project.id == self.id{
+                return
+            }
+        }
+        try! realm.write {
+            realm.add(self)
+        }
+    }
 
 
 }

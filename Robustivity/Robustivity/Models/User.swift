@@ -89,6 +89,18 @@ class User: Object, Mappable {
         profile_picture   <- map["profile_picture"]
     }
     
+    func save(){
+        let realm = try! Realm()
+        for db_user in realm.objects(User) {
+            if db_user.id == self.id{
+                return
+            }
+        }
+        try! realm.write {
+            realm.add(self)
+        }
+    }
+    
     
 }
 
