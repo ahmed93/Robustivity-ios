@@ -24,6 +24,8 @@ class TaskCommentModel: Object, Mappable {
     dynamic var attachementName = ""
     dynamic var milestoneName = ""
     dynamic var sprintName = ""
+    dynamic var userName = ""
+    dynamic var userProfilePicture = ""
     
     required convenience init?(_ map: Map) {
         self.init()
@@ -43,5 +45,7 @@ class TaskCommentModel: Object, Mappable {
         attachementName     <- map["attachment_name"]
         milestoneName       <- map["milestone_name"]
         sprintName          <- map["sprint_name"]
+        userName            <- map["user_name"]
+        userProfilePicture  <- map["user_profile_picture"]
     }
 }

@@ -37,7 +37,7 @@ class TaskInfoAdapter: BaseTableAdapter{
                     let task = Mapper<TaskModel>().map(taskz)
                     self.currentTask = task!
                     self.tableItems.addObject(task!)
-                    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .Bottom)
+                    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .Bottom)
                 }
             })
             
