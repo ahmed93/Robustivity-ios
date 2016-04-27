@@ -38,6 +38,9 @@ class TaskModel: Object, Mappable {
     required convenience init?(_ map: Map) {
         self.init()
     }
+    override static func primaryKey() -> String? {
+        return "taskId"
+    }
     
     func mapping(map: Map) {
         
@@ -64,6 +67,10 @@ class TaskModel: Object, Mappable {
         creatorAvatar         <- map["creator_profile_picture"]
         creatorTitle        <- map["creator_title"]
     }
-    
-    
+    static func createOrUpdate(tasks: [TaskModel]){
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(tasks, update: true)
+        }
+    }
 }

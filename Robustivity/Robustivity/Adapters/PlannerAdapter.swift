@@ -33,35 +33,16 @@ class PlannerAdapter: BaseTableAdapter {
                 if(success){
                     
                     //map the jason object to the model and save them
-                    let tasks = Mapper<TaskModel>().mapArray(response)
-                    for task in tasks! {
-                        self.tableItems.addObject(task)
-                        self.saveNewTask(task)
-                    }
-                    
+                    let tasks:[TaskModel]! = Mapper<TaskModel>().mapArray(response)
+                    TaskModel.createOrUpdate(tasks)
+                    self.tableItems.addObjectsFromArray(tasks)
                 }
             })
-            tableItems = ListModel()
+            //tableItems = ListModel()
         }
         tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
     }
     
-    //save new task on disk using realm
-    func saveNewTask(task: TaskModel) {
-        let realm = try! Realm()
-        //let savedTasks =
-        
-        //check if is present or not
-        for checktask in    realm.objects(TaskModel) {
-            if checktask.taskId == task.taskId{
-                return
-            }
-        }
-        try! realm.write {
-            realm.add(task)
-        }
-    }
-
     
     // MARK: Table view delegate and datasource
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
