@@ -15,6 +15,7 @@
 
 import Foundation
 import UIKit
+import ObjectMapper
 
 // UserAdapter used to display the User TableViews, using the UserTableViewCell.
 // Remove the tableView Separator from your controller using: self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
@@ -36,42 +37,23 @@ class ListProjectsAdapter: BaseTableAdapter {
         if tableItems == nil {
             tableItems = ListModel()
         }
-        tableItems.addObject("Islam Abdelrouf")
-        tableItems.addObject("Ahmed Magdy")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Ahmed Mohamed ElAssuty")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Mohamed Lotfy")
-        tableItems.addObject("Islam Abdelrouf")
-        tableItems.addObject("Ahmed Magdy")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Ahmed Mohamed ElAssuty")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Mohamed Lotfy")
+        API.get(APIRoutes.PROJECTS_MYPROJECTS, callback: { (success, response) in
+            if(success){
+                let projects = Mapper<Project>().mapArray(response)
+                for project in projects! {
+                    self.tableItems.addObject(project)
+                    project.save()
+                }
+                self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .Bottom)
+                
+            }
+        })
         
-        tableView.reloadData()
-        if tableItems2 == nil {
-            tableItems2 = ListModel()
-        }
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        
-        tableView.reloadData()
     }
-    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        let selectedProject = tableItems.objectAtIndex(indexPath.row) as! Project
         
         if self.ChooseProjectController.respondsToSelector(Selector("getTodo"))
         {
@@ -79,21 +61,25 @@ class ListProjectsAdapter: BaseTableAdapter {
             {
                 let controller = CreateTaskViewController()
                 viewController.navigationController?.pushViewController(controller, animated: true)
+                controller.project_id = selectedProject.id
+                controller.isTaskObject = false
             }
             else{
                 let controller = ChooseAssigneeViewController(nibName: "ChooseAssigneeViewController", bundle: nil)
                 viewController.navigationController?.pushViewController(controller, animated: true)
+                controller.project_id = selectedProject.id
             }
         }
 
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? CustomProjectsListTableViewCell
-        _cell?.projectNameLabel.text = "Vodafone"
-        _cell?.memberLabel.text = "Vodafone"
-        _cell?.marginUIView.backgroundColor = Theme.tableBackgroundColor()
-
+        let projectCell = cell as? CustomProjectsListTableViewCell
+        let project = tableItems.objectAtIndex(indexPath.row) as! Project
+        projectCell?.projectNameLabel.text = project.name
+        projectCell?.memberLabel.text = project.slug
+        projectCell?.marginUIView.backgroundColor = Theme.tableBackgroundColor()
+        
     }
 
     
