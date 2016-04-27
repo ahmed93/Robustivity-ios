@@ -18,7 +18,7 @@ class APIRoutes {
     
     static let PROJECTS_INDEX = "projects/"
     
-    static let PROJECT_UPDATE_SHOW = PROJECTS_INDEX + "1/updates"
+    static let PROJECT_UPDATE = PROJECTS_INDEX + "1/updates"
     
 
 }

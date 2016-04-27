@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
     
@@ -14,6 +15,8 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
     
     @IBOutlet weak var newUpdateTextView: UITextView!
     let placeholderText = "Write Comment here"
+    
+    @IBOutlet weak var textAreaBottomConstraint: NSLayoutConstraint!
     
     var adapter: ProjectUpdateAdapter!
 
@@ -30,6 +33,11 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
         newUpdateTextView.delegate = self
         
         adapter = ProjectUpdateAdapter(viewController: self, tableView: projectUpdateTableView, registerCellWithNib:"ProjectUpdateTableViewCell", withIdentifier: "projectUpdateCell")
+        
+        // observer for keyboard
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillAppear:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillDisappear:", name: UIKeyboardWillHideNotification, object: nil)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,7 +49,14 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
         super.loadView()
     }
     
-    // handle placeholder
+    // MARK - send update to backend
+    @IBAction func submitUpdate(sender: UIButton) {
+        adapter.postUpdate(self.newUpdateTextView.text)
+        self.newUpdateTextView.endEditing(true)
+        self.adapter.reloadItems()
+    }
+    
+    // MARK - handle placeholder
     func textViewDidBeginEditing(textview: UITextView) {
         if textview.textColor == Theme.lightGrayColor() {
             textview.text = ""
@@ -54,6 +69,23 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
             textview.text = placeholderText
             textview.textColor = Theme.lightGrayColor()
         }
+    }
+    
+    
+    // MARK - keyboard observer
+    func keyboardWillAppear(notification: NSNotification){
+        // update constraint
+        let userInfo:NSDictionary = notification.userInfo!
+        let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.CGRectValue()
+        let keyboardHeight = keyboardRectangle.height
+        
+        self.textAreaBottomConstraint.constant = -166 - keyboardHeight
+    }
+    
+    func keyboardWillDisappear(notification: NSNotification){
+        // update constraint
+        self.textAreaBottomConstraint.constant = -166
     }
 
     override func didReceiveMemoryWarning() {

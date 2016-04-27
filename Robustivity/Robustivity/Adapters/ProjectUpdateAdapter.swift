@@ -25,7 +25,7 @@ class ProjectUpdateAdapter: BaseTableAdapter {
     
     func fetchItems() {
         if tableItems.count == 0 {
-            API.get(APIRoutes.PROJECT_UPDATE_SHOW, callback: { (success, response) in
+            API.get(APIRoutes.PROJECT_UPDATE, callback: { (success, response) in
                 if(success){
                     
                     //map the json object to the model and save them
@@ -101,6 +101,25 @@ class ProjectUpdateAdapter: BaseTableAdapter {
                 }
             }
         }
+    }
+    
+    // MARK - send update to backend
+    func postUpdate(updateContentString: String)
+    {
+        var requestParams = [String: AnyObject]()
+        requestParams["comments[content]"] =  updateContentString
+        
+        API.post(APIRoutes.PROJECT_UPDATE, parameters: requestParams , callback:{
+            (success, response) in
+            
+            if(success){
+                print (response)
+            }
+            else{
+                print("error \(response)")
+            }
+        })
+        
     }
     
     
