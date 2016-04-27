@@ -17,9 +17,8 @@ import ObjectMapper
 import RealmSwift
 
 class TaskInfoAdapter: BaseTableAdapter{
-    var currentTaskInfo = "2464"
+    var currentTaskInfo = "2465"
     var currentTask = TaskModel()
-    var user = User()
     
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs:NSDictionary) {
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
@@ -37,22 +36,9 @@ class TaskInfoAdapter: BaseTableAdapter{
                     let task = Mapper<TaskModel>().map(taskz)
                     self.currentTask = task!
                     self.tableItems.addObject(task!)
-                    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .Bottom)
+                    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .Bottom)
                 }
             })
-            
-//            //getting user
-//            var uid = "\(currentTask.taskUserId)"
-//            API.get(APIRoutes.USER_SHOW+uid, callback: { (success, response) in
-//                if(success){
-//                    //map the jason object to the model and save them
-//                    let user = Mapper<User>().map(response)
-//                    self.user = user!
-//                    print (user?.userFirstName)
-//                    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .Bottom)
-//                }
-//            })
-            
             tableItems = ListModel()
         }
         
@@ -81,7 +67,7 @@ class TaskInfoAdapter: BaseTableAdapter{
         if indexPath.section == 0 {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("toggleCell", forIndexPath: indexPath)
                 as! TaskInfoToggledTableViewCell
-            cell.timer.text = "05:22:12"
+            cell.timer.text = "00:00:00"
             cell.taskName.text = "Robustivity Project"
             cell.taskDate.text = "Oct 15,2015"
             return cell
@@ -90,8 +76,25 @@ class TaskInfoAdapter: BaseTableAdapter{
              let cell = self.tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath)
                 as! UserTableViewCell
             
-            cell.userName.text = "Mohamed Lotfy"
-            cell.userTitle.text = "CEO and co-founder"
+            let CUSTOM_BASE:String = "http://hr.staging.rails.robustastudio.com/"
+            
+            if(currentTask.taskCreatorId == currentTask.taskUserId){
+                let url = NSURL(string: CUSTOM_BASE + currentTask.userAvatar)
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                    let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+                    dispatch_async(dispatch_get_main_queue(), {
+                        cell.userAvatar.image = UIImage(data: data!)
+                    });
+                }
+            }
+            if(currentTask.creatorName.isEmpty){
+                cell.userName.text = "Unknown task creator name"
+            }
+            else{
+                cell.userName.text = self.currentTask.creatorName
+            }
+            cell.userTitle.text = "Assignee Static Title"
             cell.cellSeparator.hidden = true
         
         return cell
@@ -100,11 +103,14 @@ class TaskInfoAdapter: BaseTableAdapter{
         else if indexPath.section == 2 {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath)
                 as! UserTableViewCell
-            cell.userName.text = self.currentTask.userName
+            if(currentTask.userName.isEmpty){
+                cell.userName.text = "Unknown user assignee name"
+            }
+            else{
+               cell.userName.text = self.currentTask.userName
+            }
             let CUSTOM_BASE:String = "http://hr.staging.rails.robustastudio.com/"
-            
             let url = NSURL(string: CUSTOM_BASE + currentTask.userAvatar)
-            
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                 let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
                 dispatch_async(dispatch_get_main_queue(), {
@@ -112,7 +118,7 @@ class TaskInfoAdapter: BaseTableAdapter{
                 });
             }
             
-            cell.userTitle.text = "Senior Software Engineer"
+            cell.userTitle.text = "Assignee Static Title"
             cell.cellSeparator.hidden = true
             
             return cell
@@ -120,9 +126,12 @@ class TaskInfoAdapter: BaseTableAdapter{
         else{
             let cell = self.tableView.dequeueReusableCellWithIdentifier("descriptionCell", forIndexPath: indexPath)
                 as! DescriptionTableViewCell
-            cell.taskDescription.text = currentTask.taskDescription
-//            
-//            cell.taskDescription.text = "I have a big task waiting I have a big task waiting I have a big task waiting \n I have a big task waitingI have a big task waitingI have a big task waiting"
+            if currentTask.taskDescription.isEmpty{
+                cell.taskDescription.text = "No description for this task."
+                
+            }else{
+             cell.taskDescription.text = currentTask.taskDescription
+            }
             return cell
         }
     }
