@@ -37,6 +37,7 @@ class TaskInfoAdapter: BaseTableAdapter{
                     self.currentTask = task!
                     self.tableItems.addObject(task!)
                     self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .Bottom)
+                        self.viewController.navigationItem.title = self.currentTask.taskName
                 }
                 else{
                     let toastLabel = UILabel(frame: CGRectMake(self.tableView.frame.size.width/2 - 150, self.tableView.frame.size.height-100, 300, 35))
