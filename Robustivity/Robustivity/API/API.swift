@@ -11,13 +11,14 @@ import Alamofire
 class API: NSObject {
     
     private static var headers = [
-        "Authorization": "Bearer 0d689882b114fffdc65aaa60f9128a63c9f17d8b3c8075553759e0cf2bd09892"
+        "Authorization": "Bearer 1ea023ab3416e37cafae178b3da0887d27939344991afd2f96dfa3e2afde22c0"
     ]
     
     private static func baseRequest(type: Alamofire.Method, url: String, parameters: [String: AnyObject]?, callback: (success: Bool, response: AnyObject) -> ()) {
         
         Alamofire.request(type, APIRoutes.BASE + url, headers: API.headers, parameters: parameters)
             .responseJSON { response in
+                
                 callback(success: response.result.isSuccess, response: response.result.value!)
         }
     }
@@ -57,17 +58,17 @@ class API: NSObject {
                 switch (parameter.1) {
                 case let param as String:
                     multipartFormData.appendBodyPart(data: param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name: parameter.0)
-
+                    
                 case let param as NSData:
                     multipartFormData.appendBodyPart(data: param, name: parameter.0)
-
+                    
                 case let param as UIImage:
                     let imgData = UIImageJPEGRepresentation(param, 0.0);
                     multipartFormData.appendBodyPart(data: imgData!, name: parameter.0)
                     
                 default: break
                 }
-            
+                
             }
         }
         
@@ -87,7 +88,7 @@ class API: NSObject {
                 }
             }
         )
-
+        
     }
     
     static func postMultipart(url: String, parameters: [String : AnyObject], callback: (Bool, AnyObject) -> ()) {
