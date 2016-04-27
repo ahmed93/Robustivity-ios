@@ -140,13 +140,13 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
                 
                 isTaskNameValid = false
                 
-                errorMessage = "Task name required"
+                errorMessage = (isTaskObject.boolValue ? "Task " : "Todo ") + "name required"
             }
             else{
                 
                 isTaskDescriptionValid = false
                 
-                errorMessage = "Task description required"
+                errorMessage = (isTaskObject.boolValue ? "Task " : "Todo ") + "description required"
             }
             
             let box = JLToast.makeText(errorMessage, duration: JLToastDelay.ShortDelay)
