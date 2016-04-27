@@ -7,13 +7,10 @@
 //
 
 import UIKit
-import ObjectMapper
-import RealmSwift
 
 class NotificationsViewController: BaseViewController {
 
     @IBOutlet weak var tableView:UITableView?
-    let notifications:NSMutableArray = [];
     
     
     var adapter:NotificationsAdapter!
@@ -28,19 +25,12 @@ class NotificationsViewController: BaseViewController {
         self.title = "Notifications";
         self.navigationItem.title = "Notifications";
         
-        API.get(APIRoutes.NOTIFICATIONS, callback:{ success,response in
-            if(success){
-                
-                for i in 0  ..< response.count  {
-                self.notifications.addObject(Mapper<NotificationModel>().map(response[i])!)
-                }
-            }
-            print((self.notifications[2]as! NotificationModel).notificationActorName)
-            
-        })
-        
-        
         adapter = NotificationsAdapter(viewController: self, tableView: tableView!, registerMultipleNibsAndIdenfifers: ["NotificationsSingleLineTableViewCell":"singleLineNotifCell","NotificationsDoubleLineTableViewCell":"doubleLineNotifCell"])
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
+        tableView?.reloadData()
     }
     
     

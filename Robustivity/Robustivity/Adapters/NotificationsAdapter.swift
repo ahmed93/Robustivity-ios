@@ -7,80 +7,62 @@
 //
 
 import UIKit
+import ObjectMapper
+
 
 class NotificationsAdapter: BaseTableAdapter {
     
     let broadCastNotification = "doubleLineNotifCell"
     let normalNotification    = "singleLineNotifCell"
     
-    let headerHeight = CGFloat(50)
+    let notifications:NSMutableArray = [];
+    
+    let headerHeight = CGFloat(40)
     
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
+
+        
     }
+    
+    
+
     
     
     func fetchItems() {
-        tableItems.addObject(["time":"Today",
-            "data":[
-                [
-                    "type"       	:"notification",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "timestamp"  	:"01:20 pm"
-                ],[
-                    "type"       	:"broadcast",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "description"	:"Dear Team, Please join",
-                    "timestamp"  	:"11:20 am"
-                ]]
-            ])
-        tableItems.addObject(["time":"Yesterday",
-            "data":[
-                [
-                    "type"       	:"notification",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "timestamp"  	:"09:20 pm"
-                ],[
-                    "type"       	:"broadcast",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "description"	:"Dear Team, Please join",
-                    "timestamp"  	:"05:20 pm"
-                ],[
-                    "type"       	:"notification",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "timestamp"  	:"04:20 pm"
-                ],[
-                    "type"       	:"broadcast",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "description"	:"Dear Team, Please join",
-                    "timestamp"  	:"03:20 pm"
-                ],[
-                    "type"       	:"notification",
-                    "title"      	:"Don't forget toDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please join check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "timestamp"  	:"01:20 pm"
-                ],[
-                    "type"       	:"broadcast",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"feed",
-                    "description"	:"Dear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, PleasPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPleaselease jPlease je joinDear Team, Please joinDear Team, Please joinDear Team, Please join",
-                    "timestamp"  	:"01:20 am"
-                ]]
-            ])
+        
+        API.get(APIRoutes.NOTIFICATIONS, callback:{ success,response in
+            if(success){
+                if (response.count == 0){
+                    self.notifications.removeAllObjects()
+                }
+                else{
+                    for i in 0  ..< response.count  {
+                        self.notifications.addObject(Mapper<NotificationModel>().map(response[i])!)
+                    }
+                    API.put(APIRoutes.NOTIFICATIONS+APIRoutes.NOTIFICATIONS_MARK_READ, parameters: [:], callback: {
+                        success,response in
+                    })
+                }
+            }
+            
+        })
     }
     
+    override func reloadItems() {
+        fetchItems();
+        super.reloadItems()
+    }
+    
+    
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerTitle = (tableItems.objectAtIndex(section) as! NSDictionary).objectForKey("time") as! String
+        
+        //Hardcoded Stuff
+        let headerTitle = "All Notifications"
         
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: viewController.view.frame.width, height: headerHeight))
         
-        let headerLabel = RBLabel(frame: CGRect(x: 10, y: 25, width: headerView.frame.width - 30, height: 20))
+        let headerLabel = RBLabel(frame: CGRect(x: 10, y: 10, width: headerView.frame.width - 30, height: 20))
         headerLabel.labelType = 3020
         
         headerLabel.text = headerTitle
@@ -95,31 +77,42 @@ class NotificationsAdapter: BaseTableAdapter {
     }
     
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return tableItems.count
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int{
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ((tableItems.objectAtIndex(section) as! NSDictionary).objectForKey("data")?.count)!
+        return notifications.count
     }
     
 
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
-        let notification = ((tableItems.objectAtIndex(indexPath.section) as! NSDictionary).objectForKey("data") as! NSArray).objectAtIndex(indexPath.row) as! NSDictionary
+        fetchItems()
+        let notification = notifications.objectAtIndex(indexPath.row) as! NotificationModel
         
-        let identifer = (notification.objectForKey("type")?.isEqualToString("broadcast"))! ? broadCastNotification : normalNotification
+        
+        let identifer = (notification.notificationType == "messages") ? broadCastNotification : normalNotification
        
         let notificationCell = tableView.dequeueReusableCellWithIdentifier(identifer, forIndexPath: indexPath) as! NotificationsTableViewCell
+
+        notificationCell.titleLabel.text = notification.notificationBody.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: nil)
         
-        notificationCell.titleLabel.text = notification.objectForKey("title") as? String
-        notificationCell.notificationImageView?.image = UIImage(named: (notification.objectForKey("image") as! String) )
-        notificationCell.timeLabel.text = notification.objectForKey("timestamp") as? String
+        let url = NSURL(string:APIRoutes.BASE_NOTIFICATIONS+notification.notificationActorProfilePictureURL)
+        let data = NSData(contentsOfURL: url!)
+        if data != nil {
+        
+            notificationCell.notificationImageView?.image = UIImage(data: data!)
+        }
+        else{
+            notificationCell.notificationImageView?.image = UIImage(named: "Stroke 751 + Stroke 752")
+        }
+        notificationCell.timeLabel.text = notification.notificationCreationDate
         
         notificationCell.notificationImageView?.layer.cornerRadius = (notificationCell.imageView?.frame.width)! / 2
         notificationCell.notificationImageView?.clipsToBounds = true
         //        notificationCell.imageView?.backgroundColor = UIColor.blackColor()
         if identifer == broadCastNotification {
-            notificationCell.descriptionLabel.text = notification.objectForKey("description") as? String
+//            notificationCell.descriptionLabel.text = notification.objectForKey("description") as? String
             notificationCell.descriptionLabel.lineBreakMode =  .ByTruncatingTail
             notificationCell.descriptionLabel.numberOfLines = 5
             
@@ -128,6 +121,7 @@ class NotificationsAdapter: BaseTableAdapter {
         return notificationCell
         
     }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
