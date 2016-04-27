@@ -15,7 +15,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
     
     var adapter:CreateTaskAdapter!
     var doneButton:UIBarButtonItem!
-    var isTaskObject: Bool!
+    var isTaskObject:Bool!
     var project_id:Int!
     var user_id:Int!
     var isTaskNameValid:Bool!
@@ -318,7 +318,7 @@ class CreateTaskViewController: BaseViewController, UITextViewDelegate, UITextFi
             
             taskDueDate = try! dateFormatter.dateFromString(taskDueDateString)
             
-            isTaskDueDateValid = isTaskDueDateValid.boolValue && (taskDueDate != nil) && (taskDueDate.laterDate(NSDate(timeIntervalSince1970: 30)).isEqualToDate(taskDueDate))
+            isTaskDueDateValid = isTaskDueDateValid.boolValue && (taskDueDate != nil) && (taskDueDate.laterDate(NSDate()).isEqualToDate(taskDueDate))
         }
         
         self.validate()
