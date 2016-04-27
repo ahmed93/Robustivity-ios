@@ -107,7 +107,7 @@ class ProjectUpdateAdapter: BaseTableAdapter {
     func postUpdate(updateContentString: String)
     {
         var requestParams = [String: AnyObject]()
-        requestParams["comments[content]"] =  updateContentString
+        requestParams["comment[content]"] =  updateContentString
         
         API.post(APIRoutes.PROJECT_UPDATE, parameters: requestParams , callback:{
             (success, response) in
