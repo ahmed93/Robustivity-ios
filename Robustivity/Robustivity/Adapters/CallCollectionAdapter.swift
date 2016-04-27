@@ -25,14 +25,10 @@ class CallCollectionAdapter: BaseCollectionAdapter {
             
     }
     
-    var ok:Int=0
-    var cancel:Int=0
-    
     //created by Menna ElKharbotly
     
     func fetchItems() {
         
-        if tableItems.count == 0 {
             API.get(APIRoutes.USER_SHOW, callback: { (success, response) in
                 if(success){
                     
@@ -42,14 +38,9 @@ class CallCollectionAdapter: BaseCollectionAdapter {
                         self.tableItems.addObject(user)
                         
                     }
+                     self.collectionView.reloadData()
                 }
-                self.collectionView.reloadData()
-                
             })
-            
-            tableItems = ListModel()
-        }
-        
     }
     
     
@@ -76,26 +67,21 @@ class CallCollectionAdapter: BaseCollectionAdapter {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let name = (tableItems.objectAtIndex(indexPath.item) as! User).userFirstName + (tableItems.objectAtIndex(indexPath.item) as! User).userLastName
-        print("kalmni")
         let telephone = (tableItems.objectAtIndex(indexPath.item) as! User).userMobileNumber
-        print("hhhh",telephone)
-        
         
         let alertController = UIAlertController(title: "Calling..", message:
             "Are you sure you want to call " + name, preferredStyle: UIAlertControllerStyle.Alert)
         
         
         alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
-            print("Handle Ok logic here")
             self.callNumber(telephone)
         }))
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
-            print("Handle Cancel logic here")
         }))
         
         self.viewController.presentViewController(alertController, animated: true, completion: nil)
-        
+
         
     }
     
@@ -108,18 +94,19 @@ class CallCollectionAdapter: BaseCollectionAdapter {
         
         let _cell = cell as! CallCollectionViewCell
         
-        let _s = (tableItems.objectAtIndex(indexPath.item) as! User).userLastName
-        let _x = (tableItems.objectAtIndex(indexPath.item) as! User).userFirstName
-        let _name = _x + _s
-        let url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + (tableItems.objectAtIndex(indexPath.item) as! User).userProfilePictureIconURL)
         
+        let _firstName = (tableItems.objectAtIndex(indexPath.item) as! User).userFirstName
+        let _LastName = (tableItems.objectAtIndex(indexPath.item) as! User).userLastName
+        let _fullName = _firstName + _LastName
+        let url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + (tableItems.objectAtIndex(indexPath.item) as! User).userProfilePictureIconURL)
+                
         let data = NSData(contentsOfURL: url!)
         
         if data != nil {
             _cell.image.image = UIImage(data:data!)
         }
         
-        _cell.nameLabel.text = _name
+        _cell.nameLabel.text = _fullName
         
         
         
