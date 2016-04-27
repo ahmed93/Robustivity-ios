@@ -17,7 +17,7 @@ import ObjectMapper
 import RealmSwift
 
 class TaskInfoAdapter: BaseTableAdapter{
-    var currentTaskInfo = "2465"
+    var currentTaskInfo = "2464"
     var currentTask = TaskModel()
     
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs:NSDictionary) {
@@ -37,6 +37,20 @@ class TaskInfoAdapter: BaseTableAdapter{
                     self.currentTask = task!
                     self.tableItems.addObject(task!)
                     self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .Bottom)
+                }
+                else{
+                    let toastLabel = UILabel(frame: CGRectMake(self.tableView.frame.size.width/2 - 150, self.tableView.frame.size.height-100, 300, 35))
+                    toastLabel.backgroundColor = UIColor.blackColor()
+                    toastLabel.textColor = UIColor.whiteColor()
+                    toastLabel.textAlignment = NSTextAlignment.Center;
+                    self.tableView.addSubview(toastLabel)
+                    toastLabel.text = "Internal Server Error"
+                    toastLabel.alpha = 1.0
+                    toastLabel.layer.cornerRadius = 10;
+                    toastLabel.clipsToBounds  =  true
+                    UIView.animateWithDuration(4.0, delay: 0.1, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                        toastLabel.alpha = 0.0
+                        }, completion: nil)
                 }
             })
             tableItems = ListModel()
@@ -78,15 +92,14 @@ class TaskInfoAdapter: BaseTableAdapter{
             
             let CUSTOM_BASE:String = "http://hr.staging.rails.robustastudio.com/"
             
-            if(currentTask.taskCreatorId == currentTask.taskUserId){
-                let url = NSURL(string: CUSTOM_BASE + currentTask.userAvatar)
+                let url = NSURL(string: CUSTOM_BASE + currentTask.creatorAvatar)
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                     let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
                     dispatch_async(dispatch_get_main_queue(), {
                         cell.userAvatar.image = UIImage(data: data!)
                     });
-                }
+                
             }
             if(currentTask.creatorName.isEmpty){
                 cell.userName.text = "Unknown task creator name"
@@ -94,7 +107,12 @@ class TaskInfoAdapter: BaseTableAdapter{
             else{
                 cell.userName.text = self.currentTask.creatorName
             }
-            cell.userTitle.text = "Assignee Static Title"
+            if currentTask.creatorTitle.isEmpty{
+                cell.userTitle.text = "Unknown Title"
+            }
+            else{
+                cell.userTitle.text = currentTask.creatorTitle
+            }
             cell.cellSeparator.hidden = true
         
         return cell
@@ -118,7 +136,12 @@ class TaskInfoAdapter: BaseTableAdapter{
                 });
             }
             
-            cell.userTitle.text = "Assignee Static Title"
+            if(currentTask.userTitle.isEmpty){
+                cell.userTitle.text = "Unknown Title"
+            }
+            else{
+                cell.userTitle.text = currentTask.userTitle
+            }
             cell.cellSeparator.hidden = true
             
             return cell

@@ -30,7 +30,10 @@ class TaskModel: Object, Mappable {
     dynamic var taskPast = false
     dynamic var userName = ""
     dynamic var userAvatar = ""
+    dynamic var userTitle = ""
     dynamic var creatorName = ""
+    dynamic var creatorAvatar = ""
+    dynamic var creatorTitle = ""
     
     required convenience init?(_ map: Map) {
         self.init()
@@ -56,7 +59,10 @@ class TaskModel: Object, Mappable {
         taskPast           <- map["past"]
         userName           <- map["user_name"]
         userAvatar         <- map["user_profile_picture"]
+        userTitle          <- map["user_title"]
         creatorName         <- map["creator_name"]
+        creatorAvatar         <- map["creator_profile_picture"]
+        creatorTitle        <- map["creator_title"]
     }
     
     
