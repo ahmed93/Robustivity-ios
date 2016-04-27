@@ -21,6 +21,7 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var viewUpper: UIView!
     var infoAdapter:TaskInfoAdapter!
     var updatesAdapter:TaskUpdatesAdapter!
+    var tableAdapter:BaseTableAdapter!
     var footerView:UIView!
     var textfield:UITextField!
     @IBOutlet weak var table: UITableView!
@@ -97,11 +98,10 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         taskName.labelType = 1000
         taskName.textColor = Theme.whiteColor()
         self.view.addSubview(taskName)
-        self.navigationItem.title =  "iOS Front END part 2"
     }
     
     func addComment(sender:UIButton!){
-        self.updatesAdapter.tableData.append(textfield.text!)
+        //self.updatesAdapter.tableData.append(textfield.text!)
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.table.reloadData()
         })
@@ -165,7 +165,7 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
-        self.updatesAdapter.tableData.append(textfield.text!)
+        //self.updatesAdapter.tableData.append(textfield.text!)
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.table.reloadData()
         })
