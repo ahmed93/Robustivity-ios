@@ -90,6 +90,7 @@ class ProfileViewController: BaseViewController, UINavigationControllerDelegate,
                 navigationItem.rightBarButtonItem = profileEditButton
             } else {
                 profileUploadImage?.setImage(UIImage(named: "upload_image.png"), forState: UIControlState.Normal)
+                self.profileUploadImage.hidden = false
             }
         } else {
             self.navigationItem.title = "Islam"
@@ -102,6 +103,12 @@ class ProfileViewController: BaseViewController, UINavigationControllerDelegate,
             let dismissProfileButton : UIBarButtonItem = UIBarButtonItem(title: "X", style: .Plain, target: self, action: "dismissProfileView")
             
             navigationItem.leftBarButtonItem = dismissProfileButton
+            
+            /*
+            Author: Abdelrahman Sakr
+            Hide the profile upload image if the profile is no longer editable
+            */
+            self.profileUploadImage.hidden = true
         }
         
         adapter.myProfile = myProfile
@@ -170,7 +177,10 @@ class ProfileViewController: BaseViewController, UINavigationControllerDelegate,
         profileTableView.endEditing(true)
     }
     
-    
+    /*
+    Author: Abdelrahman Sakr
+    This method opens the iPhone's photo library to allow the user to choose a photo to upload
+    */
     @IBAction func btnClicked(){
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
@@ -186,11 +196,33 @@ class ProfileViewController: BaseViewController, UINavigationControllerDelegate,
         
     }
     
+    /*
+    Author: Abdelrahman Sakr
+    Choose the picture from the photo library, then start uploading it using the API request
+    */
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+            // Create message overlay
+            let alert = UIAlertController(title: nil, message: "Updating Image...", preferredStyle: .Alert)
+            alert.view.tintColor = UIColor.blackColor()
+            let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(10, 5, 50, 50)) as UIActivityIndicatorView
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            loadingIndicator.startAnimating();
+            
+            // Present message overlay "Upadting Image..."
+            alert.view.addSubview(loadingIndicator)
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            // Update image API request
             API.putMultipart(APIRoutes.USER_EDIT, parameters: ["user[profile_picture]" : image]) { (Bool, AnyObject) -> () in
-                //self.profileImage.image = image
-                //self.setupView()
+                
+                // Remove overlay when request finishes
+                self.dismissViewControllerAnimated(false, completion: nil)
+                
+                // Call setup view to refresh the data
+                self.setupView()
             }
         })
     }
