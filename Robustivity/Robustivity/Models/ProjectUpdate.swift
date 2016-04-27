@@ -24,6 +24,8 @@ class ProjectUpdate: Object, Mappable {
     dynamic var attachmentName = ""
     dynamic var milestoneName = ""
     dynamic var sprintName = ""
+    dynamic var userName = ""
+    dynamic var userAvatar = ""
     
     
     required convenience init?(_ map: Map) {
@@ -34,18 +36,31 @@ class ProjectUpdate: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        updateId <- map["comments.id"]
-        userId <- map["comments.user_id"]
-        updateContent <- map["comments.content"]
-        taskId <- map["comments.task_id"]
-        updateCreatedAt <- map["comments.created_at"]
-        updateUpdatedAt <- map["comments.updated_at"]
-        projectId <- map["comments.project_id"]
-        updateNature <- map["comments.nature"]
-        taskName <- map["comments.task_name"]
-        attachmentName <- map["comments.attachment_name"]
-        milestoneName <- map["comments.milestone_name"]
-        sprintName <- map["comments.sprint_name"]
+
+        updateId <- map["id"]
+        userId <- map["user_id"]
+        updateContent <- map["content"]
+        taskId <- map["task_id"]
+        updateCreatedAt <- map["created_at"]
+        updateUpdatedAt <- map["updated_at"]
+        projectId <- map["project_id"]
+        updateNature <- map["nature"]
+        taskName <- map["task_name"]
+        attachmentName <- map["attachment_name"]
+        milestoneName <- map["milestone_name"]
+        sprintName <- map["sprint_name"]
+        userName <- map["user_name"]
+        userAvatar <- map["user_profile_picture"]
+        
+    }
+    
+    //save new projectUpdate on disk using realm
+    func saveDb() {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(self, update: true)
+        }
         
     }
     
