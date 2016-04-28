@@ -11,17 +11,9 @@ import UIKit
 class WriteExcuseViewController: BaseViewController, UITextViewDelegate {
     
     @IBOutlet weak var textView: UITextView!
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        NSBundle.mainBundle().loadNibNamed("WriteExcuseViewController", owner: self, options: nil)
-//    }
     
     override func loadView() {
         super.loadView()
-
-
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,8 +35,16 @@ class WriteExcuseViewController: BaseViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
     }
     
-    func sendExcuse() {
-        
+    func sendExcuse() {    // here the post request is being called when the sendExcuse button is pressed
+        let excuseBody = self.textView.text
+        var params = [String: AnyObject]()
+        params["excuse[body]"] = excuseBody
+        API.post(APIRoutes.EXCUSES_CREATE, parameters: params, callback:{
+            (success, response) in
+            if(success){
+                self.dismissViewControllerAnimated(true, completion: nil);
+            }
+        })
     }
     
     func cancelExcuse() {  // this dismisses the view upon click on cancel bar button
