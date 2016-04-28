@@ -138,6 +138,7 @@
 		1B8E5D8F1CAF423A00239F1C /* FeedAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */; };
 		1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */; };
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
+		3404BCAD1CD245F600D661BE /* MyProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404BCAC1CD245F600D661BE /* MyProject.swift */; };
 		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
 		348741C51CD2273000C75B69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C41CD2273000C75B69 /* User.swift */; };
 		348741C71CD23EA200C75B69 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */; };
@@ -340,6 +341,7 @@
 		1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProjectsAdapter.swift; sourceTree = "<group>"; };
 		1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
 		22319D545BBACB8BF580C2B3 /* Pods-Robustivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.debug.xcconfig"; sourceTree = "<group>"; };
+		3404BCAC1CD245F600D661BE /* MyProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProject.swift; sourceTree = "<group>"; };
 		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
 		348741C41CD2273000C75B69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Project/User.swift; sourceTree = "<group>"; };
 		348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMembersAdapter.swift; sourceTree = "<group>"; };
@@ -1028,6 +1030,7 @@
 		A7BCE7C01C7D834F007870CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3404BCAC1CD245F600D661BE /* MyProject.swift */,
 				1B8E5D811CAF41A600239F1C /* Feed */,
 				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
@@ -1351,6 +1354,7 @@
 				1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */,
 				1B7F8DBE1CB07C95007C8005 /* SDWebImageDownloader.m in Sources */,
 				1B7F8DE01CB0813C007C8005 /* UIColor.swift in Sources */,
+				3404BCAD1CD245F600D661BE /* MyProject.swift in Sources */,
 				0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
 				1B7F8DBD1CB07C95007C8005 /* SDWebImageDecoder.m in Sources */,
