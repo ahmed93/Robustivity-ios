@@ -14,14 +14,10 @@ import ObjectMapper
 class PingAdapter: BaseTableAdapter {
     
     let realm = try! Realm()
-    var selectedUsers:Set<Int>!
-    var selectedUsersPics:Set<String>!
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
-        selectedUsers = Set<Int> ()
-        selectedUsersPics = Set<String> ()
-    }
+          }
     
     
     func fetchItems() {
@@ -57,8 +53,8 @@ class PingAdapter: BaseTableAdapter {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
         let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
-        self.selectedUsers.insert(currentUser.userId)
-        self.selectedUsersPics.insert(currentUser.userProfilePictureIconURL)
+        Ping.selectedUsers.insert(currentUser.userId)
+        Ping.selectedUsersPics.insert(currentUser.userProfilePictureIconURL)
         
     }
     
@@ -77,9 +73,7 @@ class PingAdapter: BaseTableAdapter {
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
         let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
-        self.selectedUsers.remove(currentUser.userId)
         Ping.selectedUsers.remove(currentUser.userId)
-        self.selectedUsersPics.remove(currentUser.userProfilePictureIconURL)
         Ping.selectedUsersPics.remove(currentUser.userProfilePictureIconURL)
 
     }

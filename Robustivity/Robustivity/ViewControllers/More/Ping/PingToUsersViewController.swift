@@ -27,18 +27,6 @@ class PingToUsersViewController: BaseViewController {
     }
     
     func makeChoice() {
-        if(Ping.selectedUsers.isEmpty && Ping.selectedUsersPics.isEmpty) {
-            Ping.selectedUsers = adapter.selectedUsers
-            Ping.selectedUsersPics = adapter.selectedUsersPics
-        } else {
-            for user in adapter.selectedUsers {
-                Ping.selectedUsers.insert(user)
-            }
-            for userPic in adapter.selectedUsersPics {
-                Ping.selectedUsersPics.insert(userPic)
-            }
-        }
-        print(Ping.selectedUsers)
         navigationController?.popViewControllerAnimated(true)
 
     }

@@ -51,32 +51,25 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     }
     
     func addChosenUsers() {
-        
-        
+        print(Ping.selectedUsers)
         if(!Ping.selectedUsersPics.isEmpty) {
-          //  if(!Ping.selectedUsersPics.contains(firstUserToPing.sd_imageURL().absoluteString.substringFromIndex(base.endIndex))){
-                firstUserToPing.image = nil
-        //    }
-        //    if(!Ping.selectedUsersPics.contains(secondUserToPing.sd_imageURL().absoluteString.substringFromIndex(base.endIndex))){
-       //         secondUserToPing.image = nil
-       //     }
-              //for userPic in Ping.selectedUsersPics {
-            firstUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsersPics.popFirst()!))
+            firstUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsersPics.first!))
             firstUserToPing.layer.cornerRadius = (firstUserToPing.frame.size.width) / 2
             firstUserToPing.clipsToBounds = true
             firstUserToPing.hidden = false
-
-            secondUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsersPics.popFirst()!))
-            secondUserToPing.layer.cornerRadius = (secondUserToPing.frame.size.width) / 2
-            secondUserToPing.clipsToBounds = true
-            secondUserToPing.hidden = false
             
-              if(!Ping.selectedUsersPics.contains(firstUserToPing.sd_imageURL().absoluteString.substringFromIndex(base.endIndex))){
-            firstUserToPing.image = nil
-                }
-                if(!Ping.selectedUsersPics.contains(secondUserToPing.sd_imageURL().absoluteString.substringFromIndex(base.endIndex))){
-                     secondUserToPing.image = nil
-                 }
+            if(Ping.selectedUsersPics.count > 1){
+                secondUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsersPics[Ping.selectedUsersPics.startIndex.advancedBy(1)]))
+                secondUserToPing.layer.cornerRadius = (secondUserToPing.frame.size.width) / 2
+                secondUserToPing.clipsToBounds = true
+                secondUserToPing.hidden = false
+            } else{
+                secondUserToPing.hidden = true
+            }
+            
+        } else {
+            firstUserToPing.hidden = true
+            secondUserToPing.hidden = true
         }
     }
     
