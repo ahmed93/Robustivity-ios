@@ -35,6 +35,10 @@ class ListModel: NSObject {
     func removeObjectAtIndex(index:Int) {
         objects.removeObjectAtIndex(index)
     }
+    func reverse() {
+        self.objects = objects.reverse() as! NSMutableArray
+        
+    }
     
     func addObject(object:AnyObject) {
         objects.addObject(object)

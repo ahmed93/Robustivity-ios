@@ -130,10 +130,7 @@
 		1B7F8EB51CB09507007C8005 /* PlannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7F8E881CB09507007C8005 /* PlannerViewController.xib */; };
 		1B7F8EB61CB09507007C8005 /* ToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8E8A1CB09507007C8005 /* ToggleViewController.swift */; };
 		1B7F8EB71CB09507007C8005 /* ToggleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7F8E8B1CB09507007C8005 /* ToggleViewController.xib */; };
-		1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */; };
-		1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */; };
 		1B8E5D881CAF41C100239F1C /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D841CAF41C100239F1C /* FeedModel.swift */; };
-		1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D851CAF41C100239F1C /* UpdateFeedModel.swift */; };
 		1B8E5D8B1CAF41D400239F1C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D8A1CAF41D400239F1C /* UserModel.swift */; };
 		1B8E5D8F1CAF423A00239F1C /* FeedAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */; };
 		1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */; };
@@ -336,10 +333,7 @@
 		1B7F8E881CB09507007C8005 /* PlannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerViewController.xib; sourceTree = "<group>"; };
 		1B7F8E8A1CB09507007C8005 /* ToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleViewController.swift; sourceTree = "<group>"; };
 		1B7F8E8B1CB09507007C8005 /* ToggleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToggleViewController.xib; sourceTree = "<group>"; };
-		1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastFeedModel.swift; sourceTree = "<group>"; };
-		1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D841CAF41C100239F1C /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
-		1B8E5D851CAF41C100239F1C /* UpdateFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D8A1CAF41D400239F1C /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedAdapter.swift; sourceTree = "<group>"; };
 		1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProjectsAdapter.swift; sourceTree = "<group>"; };
@@ -629,8 +623,8 @@
 		1B7F8E0D1CB094E6007C8005 /* CheckInTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				1B7F8E0E1CB094E6007C8005 /* CheckInFeedTableViewCell.swift */,
 				1B7F8E0F1CB094E6007C8005 /* CheckInFeedTableViewCell.xib */,
+				1B7F8E0E1CB094E6007C8005 /* CheckInFeedTableViewCell.swift */,
 			);
 			path = CheckInTableViewCell;
 			sourceTree = "<group>";
@@ -878,10 +872,7 @@
 		1B8E5D811CAF41A600239F1C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */,
-				1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */,
 				1B8E5D841CAF41C100239F1C /* FeedModel.swift */,
-				1B8E5D851CAF41C100239F1C /* UpdateFeedModel.swift */,
 				1B27A1101CC6C94E0062A74A /* TaskModel.swift */,
 			);
 			name = Feed;
@@ -1346,7 +1337,6 @@
 				1B7F8E311CB094E6007C8005 /* ProfileTableViewCell.swift in Sources */,
 				1B7F8E981CB09507007C8005 /* WriteExcuseViewController.swift in Sources */,
 				F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */,
-				1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */,
 				9426F5251CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.swift in Sources */,
 				1B7F8E371CB094E6007C8005 /* ProjectUpdateTableViewCell.swift in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
@@ -1368,7 +1358,6 @@
 				1B7F8E471CB094E6007C8005 /* PlannerTableViewCell.swift in Sources */,
 				9426F51F1CBABD18006BEFA1 /* TaskInfoAdapter.swift in Sources */,
 				1B7F8DDC1CB0813C007C8005 /* Comp_1+Theme.swift in Sources */,
-				1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */,
 				1B7F8E261CB094E6007C8005 /* DirectoryCell.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				1B7F8EAC1CB09507007C8005 /* NotificationsViewController.swift in Sources */,
@@ -1383,7 +1372,6 @@
 				1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */,
 				1B7F8DC01CB07C95007C8005 /* SDWebImageManager.m in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
-				1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */,
 				1B8E5D8B1CAF41D400239F1C /* UserModel.swift in Sources */,
 				1B7F8EAE1CB09507007C8005 /* ChooseAssigneeViewController.swift in Sources */,
 				1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */,
