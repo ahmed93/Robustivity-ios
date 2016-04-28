@@ -26,15 +26,15 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VH2-ib-Kta">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KCM-LX-nap">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stroke 751 + Stroke 752" translatesAutoresizingMaskIntoConstraints="NO" id="KCM-LX-nap">
                             <rect key="frame" x="14" y="17" width="90" height="90"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="90" id="2aF-GB-ctA"/>
                                 <constraint firstAttribute="width" constant="90" id="4nV-MP-Gru"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRu-Ia-GVO" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                            <rect key="frame" x="112" y="63" width="32" height="14"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRu-Ia-GVO" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                            <rect key="frame" x="112" y="63" width="48.5" height="14"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -44,8 +44,8 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-kK-SUV" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                            <rect key="frame" x="112" y="38" width="40.5" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-kK-SUV" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                            <rect key="frame" x="112" y="38" width="75" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -100,4 +100,7 @@
             <point key="canvasLocation" x="279.5" y="332.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="Stroke 751 + Stroke 752" width="96" height="97"/>
+    </resources>
 </document>

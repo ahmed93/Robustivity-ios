@@ -45,6 +45,10 @@ class ProfileViewController: BaseViewController, MFMailComposeViewControllerDele
         */
         print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)")
         
+        /*
+        Setup the layout of the view to start below the navigation bar.
+        */
+        edgesForExtendedLayout = .None
         
         /*
         If this is my profile then set the request URL to the API request of show My profile (GET).
@@ -102,11 +106,6 @@ class ProfileViewController: BaseViewController, MFMailComposeViewControllerDele
         */
         let profileViewTapScreenAnywhere : UITapGestureRecognizer  = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         profileTableView.addGestureRecognizer(profileViewTapScreenAnywhere)
-        
-        /*
-        Setup the layout of the view to start below the navigation bar.
-        */
-        edgesForExtendedLayout = .None
         
         /*
         Calls customizeProfileHeader() method, that is described below.
