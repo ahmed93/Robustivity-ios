@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
     var locationManager = CLLocationManager()
-    var timer:NSTimer?
+    var status = false
     //        let robustaRegin = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 29.999966133078818, longitude: 31.41594702178736), radius: 200, identifier: "Robusta")
     let robustaRegin = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 31.475328, longitude: 30.041010), radius: 200, identifier: "Robusta")
     
@@ -27,13 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.distanceFilter = 100
-        locationManager.startMonitoringSignificantLocationChanges()
+        startSignificantLocation()
     }
     
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        startUpdatingLocation()
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
@@ -47,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         locationManager.delegate = self
-        //        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.pausesLocationUpdatesAutomatically = true
         locationManager.allowsBackgroundLocationUpdates = true
         
@@ -99,8 +97,7 @@ extension AppDelegate: CLLocationManagerDelegate {
         case .AuthorizedWhenInUse:
             break
         case .AuthorizedAlways:
-            manager.startMonitoringForRegion(robustaRegin)
-            manager.startUpdatingLocation()
+            startUpdatingLocation()
             break
         case .NotDetermined:
             manager.requestAlwaysAuthorization()
@@ -127,52 +124,76 @@ extension AppDelegate: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if robustaRegin.containsCoordinate((locations.last?.coordinate)!) {
-            checkIn()
-            manager.stopUpdatingLocation()
-            print(locations)            
+            if !status {
+                print("checkedIn")
+                checkIn()
+            }
+        }else {
+            if status {
+                print("checkedOut")
+                checkOut()
+            }
         }
     }
     
     
-    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
-        print("Error Failed To Monitor:\n\t\(error)")
-    }
-    
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 1
-        locationManager.startUpdatingLocation()
-        print("Location Status: in")
+        checkIn()
     }
     
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("Location Status: out")
+        checkOut()
     }
     
+    
+    
+    
     func checkIn() {
-        API.put("\(APIRoutes.BASE)working_days/checkin", parameters: NSDictionary() as! [String : AnyObject]) { (success, response) -> () in
-            if success {
-                print("checkedIn")
+        if !status {
+            API.put("working_days/checkin", parameters:["":""]) { (success:Bool, response: AnyObject) -> () in
+                if success {
+                    print("checkedIn_wwww")
+                    self.status = true
+                }
+                print(success)
             }
-            //            }else {
-            //                //                if loginStatus
-            //                self.timer = NSTimer(timeInterval: 20, target: self, selector: NSSelectorFromString("checkIn"), userInfo: nil, repeats: false)
-            //                self.timer?.fire()
-            //            }
         }
     }
     
     func checkOut() {
-        API.put("\(APIRoutes.BASE)working_days/checkout", parameters: NSDictionary() as! [String : AnyObject]) { (success, response) -> () in
-            if success {
-                print("checkedOut")
+        if status {
+            API.put("working_days/checkout", parameters: ["":""]) { (success, response) -> () in
+                if success {
+                    print("checkedOut_wwww")
+                    self.status = false
+                }
+                print(success)
             }
-//            else {
-//                self.timer = NSTimer(timeInterval: 20, target: self, selector: NSSelectorFromString("checkOut"), userInfo: nil, repeats: false)
-//                self.timer?.fire()
-//            }
         }
     }
     
+    func startSignificantLocation() {
+        locationManager.distanceFilter = 100
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        if CLLocationManager.significantLocationChangeMonitoringAvailable() {
+            locationManager.stopUpdatingLocation()
+            locationManager.startMonitoringForRegion(robustaRegin)
+            locationManager.startMonitoringSignificantLocationChanges()
+        }else {
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
+    
+    func startUpdatingLocation() {
+        locationManager.distanceFilter = 10
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.stopMonitoringForRegion(robustaRegin)
+            locationManager.stopMonitoringSignificantLocationChanges()
+            locationManager.startUpdatingLocation()
+        }else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
 }
 
