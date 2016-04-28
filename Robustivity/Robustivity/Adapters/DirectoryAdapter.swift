@@ -51,7 +51,7 @@ class DirectoryAdapter: BaseTableAdapter {
                 }
                
                  self.tableView.reloadData()
-                 print(self.tableItems.count)
+                
             })
             self.tableItems = ListModel()
         
@@ -99,17 +99,17 @@ class DirectoryAdapter: BaseTableAdapter {
         
         let label : UILabel = UILabel()
         if section == 0{
-            label.text = "  In Office"
+            label.text = "  In Office                                                       \((tableItems.objectAtIndex(section)!).count) "
             label.font = UIFont.boldSystemFontOfSize(20)
             label.textColor = Theme.greenColor()
         } else if section == 1{
             
-            label.text = "  Out of Office"
+            label.text = "  Out of Office                                               \((tableItems.objectAtIndex(section)!).count) "
             label.font = UIFont.boldSystemFontOfSize(20)
             label.textColor = Theme.lighterBlackColor()
         }
         else{
-            label.text = "  On Vacation"
+            label.text = "  On Vacation                                                \((tableItems.objectAtIndex(section)!).count) "
             label.font = UIFont.boldSystemFontOfSize(20)
             label.textColor = Theme.blueColor();
             
@@ -118,8 +118,9 @@ class DirectoryAdapter: BaseTableAdapter {
     }
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
-       
+        if (tableItems.objectAtIndex(section)!).count < 1 {
+            return 1
+        }
         return (tableItems.objectAtIndex(section)!).count
    
     }
@@ -135,22 +136,44 @@ class DirectoryAdapter: BaseTableAdapter {
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
       
         let _DirectoryCell = cell as? DirectoryCell
-
+        
+        if (tableItems.objectAtIndex(indexPath.section)!).count < 1 {
+            if indexPath.section == 0{
+                cell.textLabel!.text = "No one is In office"
+            } else if indexPath.section == 1{
+                cell.textLabel!.text = "No one is Out of Office"
+            }
+            else{
+                cell.textLabel!.text = "No one is On Vacation"
+            }
+            
+            cell.textLabel?.textAlignment = .Center
+            _DirectoryCell?.userImage.hidden = true
+            _DirectoryCell?.userName.text = ""
+            _DirectoryCell?.userTitle.text = ""
+            return
+        }
+        
+       cell.textLabel!.text = ""
         let w =  tableItems.objectAtIndex(indexPath.section)
         let users = w?.objectAtIndex(indexPath.row) as! User
          _DirectoryCell?.userName.text = users.userFirstName + " " + users.userLastName
         _DirectoryCell?.userTitle.text = users.userTitle
       
         
-      let url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + users.userProfilePictureNotificationURL)
+        var url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + users.userProfilePictureNotificationURL)
      
         
-        
+        if url == nil {
+           url = NSURL(string:"http://hr.staging.rails.robustastudio.com/uploads/users/39/profile_picture/notifications_img_user.png")
+         }
         
         _DirectoryCell?.userImage.sd_setImageWithURL(url)
         let imageSize = 50 as CGFloat
         _DirectoryCell?.userImage.layer.cornerRadius = imageSize / 2.0
         _DirectoryCell?.userImage.clipsToBounds = true
+        
+        
         
    
      }
