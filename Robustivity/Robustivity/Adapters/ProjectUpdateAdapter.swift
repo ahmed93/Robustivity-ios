@@ -38,13 +38,14 @@ class ProjectUpdateAdapter: BaseTableAdapter {
                         }
                     }
                     
+                    self.tableView.reloadData()
                 }
             })
             
-            tableItems = ListModel()
+//            tableItems = ListModel()
         }
 
-        tableView.reloadData()
+        
     }
     
     
@@ -119,13 +120,15 @@ class ProjectUpdateAdapter: BaseTableAdapter {
                     projectUpdate.saveDb()
                 }
                 
+                self.tableView.reloadData()
+                
             }
             else{
                 print("error \(response)")
             }
         })
         
-        self.reloadItems()
+//        self.reloadItems()
         
     }
     
