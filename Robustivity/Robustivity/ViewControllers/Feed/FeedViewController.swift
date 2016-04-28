@@ -14,6 +14,8 @@ class FeedViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var adapter:FeedAdapter!
+    let toggleHelper = ToggleHelper.sharedInstance
+    
 
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,11 +37,30 @@ class FeedViewController: BaseViewController {
         let values = ["CheckInFeedTableViewCell","BroadcastFeedTableViewCell","UpdateFeedTableViewCell","ToggleFeedTableViewCell"]
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
-        
         // Add Left navigation item
         let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
+        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pauseTimerNotification", name:"pauseTimerNotification", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
+        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopTimerNotification", name:"stopTimerNotification", object: nil)
     }
+    
+    func updateToggledTimeNotification() {
+        var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+        toggleCell.timeLabel.text = toggleHelper.toggledTime
+    }
+    
+    func resumeTimerNotification() {
+        var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+        toggleCell.taskName.text = toggleHelper.toggleTask.taskName
+        toggleCell.projectName.text = toggleHelper.toggleTask.taskProjectName
+    }
+
 
 }

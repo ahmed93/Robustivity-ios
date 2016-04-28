@@ -173,7 +173,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
         API.post(urlWithToggleStart, parameters: requestParams , callback: { (success, response) in
             if(success) {
+                print(response)
                 let todo = Mapper<TaskModel>().map(response["task"])
+                print(todo)
                 todo?.updateTask()
                 self.toggleHelper.toggleTask = todo!
                 self.toggleHelper.startDate = NSDate()
