@@ -54,4 +54,17 @@ class User: Object, Mappable {
         userProfilePictureNotificationURL   <- map["profile_picture.notifications.url"]
         userCity                            <- map["city"]
     }
+    
+    override static func primaryKey() -> String? {
+        return "userId"
+    }
+    
+    static func updateOrSaveUser(user: User) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(user, update: true)
+        }
+        
+    }
 }

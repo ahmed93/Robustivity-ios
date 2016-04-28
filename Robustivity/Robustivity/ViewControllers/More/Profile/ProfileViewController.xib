@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Robustivity" customModuleProvider="target">
@@ -33,7 +33,7 @@
                                 <constraint firstAttribute="width" constant="90" id="4nV-MP-Gru"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRu-Ia-GVO" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRu-Ia-GVO" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
                             <rect key="frame" x="112" y="63" width="32" height="14"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -44,8 +44,8 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-kK-SUV" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                            <rect key="frame" x="112" y="38" width="41" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-kK-SUV" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                            <rect key="frame" x="112" y="38" width="40.5" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -66,10 +66,12 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="ZRu-Ia-GVO" firstAttribute="top" secondItem="eHs-kK-SUV" secondAttribute="bottom" constant="8" id="4uM-cE-sQw"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZRu-Ia-GVO" secondAttribute="trailing" constant="20" id="7cI-aS-7bE"/>
                         <constraint firstItem="KCM-LX-nap" firstAttribute="centerY" secondItem="VH2-ib-Kta" secondAttribute="centerY" id="IDV-Iw-HKq"/>
                         <constraint firstAttribute="height" constant="124" id="M9S-Wl-UDh"/>
                         <constraint firstItem="eHs-kK-SUV" firstAttribute="top" secondItem="VH2-ib-Kta" secondAttribute="top" constant="38" id="MaA-hV-xFq"/>
                         <constraint firstItem="J8M-ft-R5n" firstAttribute="top" secondItem="KCM-LX-nap" secondAttribute="bottom" constant="1" id="On1-tj-ian"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eHs-kK-SUV" secondAttribute="trailing" constant="20" id="Sbo-mi-9IP"/>
                         <constraint firstAttribute="bottom" secondItem="J8M-ft-R5n" secondAttribute="bottom" constant="2" id="ce7-rJ-QBw"/>
                         <constraint firstItem="ZRu-Ia-GVO" firstAttribute="leading" secondItem="KCM-LX-nap" secondAttribute="trailing" constant="8" id="fgP-Yr-CPX"/>
                         <constraint firstItem="eHs-kK-SUV" firstAttribute="leading" secondItem="KCM-LX-nap" secondAttribute="trailing" constant="8" id="gvd-kx-bEy"/>
