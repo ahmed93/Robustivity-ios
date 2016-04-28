@@ -44,10 +44,11 @@ class PlannerAdapter: BaseTableAdapter {
     }
     
     func fetchFromDatabase() -> (Results<TaskModel>, Results<TaskModel>) {
-        let type:TaskType = ( selectedSegmentIndex == 0 ) ? .Task : .Todo
+        let type:TaskType! = selectedSegmentIndex == 0 ? .Task : .Todo
+        let config = TaskStatus.configurationOf(type)
 
-        let inProgress = TaskModel.recent(type, status: .InProgress)
-        let done = TaskModel.recent(type, status: .Completed)
+        let inProgress = TaskModel.recent(type, status: config!.inProgress)
+        let done = TaskModel.recent(type, status: config!.done)
 
         return (inProgress, done)
     }
@@ -112,12 +113,13 @@ class PlannerAdapter: BaseTableAdapter {
         let item = tasks[indexPath.row]
         plannerCell.itemTitle.text = item.taskName
         plannerCell.projectName.text = item.taskDescription
-        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
         
         if indexPath.section == 0 {
             // [TODO] In Progress cell configurations
             
-            plannerCell.dueDate.text = "Oct 15, 2016"
+            plannerCell.dueDate.text = dateFormatter.stringFromDate(item.taskStartDate!)
             plannerCell.dueDateBottomMarginLayoutConstraint.constant = 14
         } else {
             // [TODO] Done cell configurations

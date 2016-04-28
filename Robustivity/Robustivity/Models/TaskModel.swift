@@ -10,21 +10,44 @@ import Foundation
 import ObjectMapper
 import RealmSwift
 
+// Ahmed Elassuty
 enum TaskType: String {
     case Task = "task"
     case Todo = "todo"
 }
 
+// Ahmed Elassuty
+// Should be refactored to be global on the application
 enum TaskStatus: String {
-    case  NewlyCreated = "newly_created1"
-    case  InProgress = "in_progress"
-    case  Pending_Customer = "pending_customer"
-    case  Completed = "completed"
-    case  Closed = "closed"
-    case  Reopened = "reopened"
+    case  NewlyCreated = "newly_created"
+    case  InProgress   = "in_progress"
+    case  Paused       = "paused"
+    case  Closed       = "closed"
+    case  TodoItem     = "todo_item"
+    
+    
+    static func configurationOf(type: TaskType) -> (inProgress: [TaskStatus], done: [TaskStatus])? {
+        switch type {
+        case .Task:
+            return TaskConfigurations()
+        case .Todo:
+            return TodoConfigurations()
+        }
+    }
+    
+    private static func TaskConfigurations () -> (inProgress: [TaskStatus], done: [TaskStatus]) {
+        return ([.NewlyCreated, .InProgress, .Paused], [.Closed])
+    }
+    
+    private static func TodoConfigurations () -> (inProgress: [TaskStatus], done: [TaskStatus]) {
+        return ([.TodoItem, .InProgress, .Paused], [.Closed])
+    }
 }
 
+// Ahmed Elassuty
+// Class Name should be changed to accomodate Tasks and Todos
 class TaskModel: Object, Mappable {
+    // Should be global on the app
     static let dateFormatter = NSDateFormatter()
 
     dynamic var taskId = 0
@@ -83,13 +106,7 @@ class TaskModel: Object, Mappable {
         }
     }
     
-    static func recent(type: TaskType, status: TaskStatus...) -> Results<TaskModel> {
-        var inAttr = status.reduce("{") { (str, value) -> String in
-            str + "\'\(value.rawValue)\',"
-        }
-        inAttr = inAttr.substringToIndex(inAttr.endIndex.predecessor()) + "}"
-        
-        
+    static func recent(type: TaskType, status: [TaskStatus]!) -> Results<TaskModel> {
         let realm = try! Realm()
         let predicate = NSPredicate(format: "taskNature = %@ AND taskStatus IN %@", type.rawValue, status.map { $0.rawValue })
         let result = realm.objects(self).filter(predicate).sorted("taskUpdatedAt", ascending: false)
