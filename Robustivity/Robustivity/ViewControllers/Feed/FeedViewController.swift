@@ -15,6 +15,8 @@ class FeedViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var adapter:FeedAdapter!
+    var adapter1:OptionsTableAdapter!
+    var control: MoreViewController!
 
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,11 +39,11 @@ class FeedViewController: BaseViewController {
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
         
+        
         // Add Left navigation item
         let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
-        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
     }
 
 }
