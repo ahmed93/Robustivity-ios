@@ -56,7 +56,8 @@ class PlannerAdapter: BaseTableAdapter {
         tableItems = ListModel()
         tableItems.addObject(data.0)
         tableItems.addObject(data.1)
-        tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
+//        tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
+        tableView.reloadData()
     }
     
     // MARK: Table view delegate and datasource
@@ -79,14 +80,18 @@ class PlannerAdapter: BaseTableAdapter {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let items = tableItems.objectAtIndex(section) as! Results<TaskModel>
-        let limit = 10
-        
-        if items.count < limit {
-            return items.count
+        if tableItems.count > 0 {
+            let items = tableItems.objectAtIndex(section) as! Results<TaskModel>
+            let limit = 10
+            
+            if items.count < limit {
+                return items.count
+            }
+            
+            return limit
         }
-
-        return limit
+        
+        return 0
     }
     
     // MARK: Parent Overridden Functions
@@ -104,9 +109,9 @@ class PlannerAdapter: BaseTableAdapter {
         let plannerCell = cell as! PlannerTableViewCell
         
         let tasks = tableItems.objectAtIndex(indexPath.section) as! Results<TaskModel>
-        let task = tasks[indexPath.row]
-        plannerCell.itemTitle.text = task.taskName
-        plannerCell.projectName.text = task.taskDescription
+        let item = tasks[indexPath.row]
+        plannerCell.itemTitle.text = item.taskName
+        plannerCell.projectName.text = item.taskDescription
         
         
         if indexPath.section == 0 {

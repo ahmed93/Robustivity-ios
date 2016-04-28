@@ -17,9 +17,9 @@ enum TaskType: String {
 
 enum TaskStatus: String {
     case  NewlyCreated = "newly_created1"
-    case  InProgress = "newly_created"
+    case  InProgress = "in_progress"
     case  Pending_Customer = "pending_customer"
-    case  Completed = "paused"
+    case  Completed = "completed"
     case  Closed = "closed"
     case  Reopened = "reopened"
 }
