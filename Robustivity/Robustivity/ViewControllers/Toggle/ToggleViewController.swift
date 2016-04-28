@@ -145,11 +145,25 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     func createTodo() {
         var requestParams = [String : AnyObject]()
         
-        requestParams["task[name]"] = self.todoTitleField.text
-        
-        if self.todoProjectTextField.text != "" {
-            let projectId = self.projectPicker.selectedRowInComponent(0) + 1
+        if self.todoTitleField.text == "" {
+            requestParams["task[name]"] = "iOS Noname"
+
+        }else{
             
+            requestParams["task[name]"] = self.todoTitleField.text
+
+        }
+        
+        
+        if self.todoProjectTextField.text == "" {
+            self.projectPicker.selectRow(0, inComponent: 0, animated: false)
+            self.todoProjectTextField.text = "miscellaneous"
+            requestParams["task[project_id]"] = 1
+            
+        }else{
+            
+            let projectId = self.projectPicker.selectedRowInComponent(0) + 1
+            print(projectId)
             requestParams["task[project_id]"] = projectId
             
         }
@@ -285,7 +299,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     }
     
     func textFieldDidChange(textField: UITextField) {
-       /* uncomment when api fixed
         if((self.toggleHelper.currentTaskState == "playing" ||  self.toggleHelper.currentTaskState == "paused") && (self.todoTitleField.text != self.toggleHelper.toggleTask.taskName || self.todoProjectTextField.text != self.toggleHelper.toggleTask.taskProjectName)) {
             //Send update request
             
@@ -307,11 +320,15 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
                 if(success) {
                     
                     //Pending API modification to avoid empty response
+                    let todo = Mapper<TaskModel>().map(response)
+                    todo?.updateTask()
+                    self.toggleHelper.toggleTask = todo!
+                    
                 }
                 
             })
         }
-        */
+
         
         print("I have been changed")
     }
