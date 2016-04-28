@@ -50,6 +50,10 @@ class ProfileViewController: BaseViewController, MFMailComposeViewControllerDele
         */
         edgesForExtendedLayout = .None
         
+        customizeProfileHeaderBackground()
+        
+        addDismissProfileButton()
+        
         /*
         If this is my profile then set the request URL to the API request of show My profile (GET).
         Else if this is not my profile (other user's profile), set the request URL to the API request of show user profile (GET)
@@ -139,9 +143,7 @@ class ProfileViewController: BaseViewController, MFMailComposeViewControllerDele
         If the profile is not in edit mode or this is not my profile, then display a close button "X" at the top left of the navigation bar that dismisses the view.
         */
         if !profileEditable || !myProfile! {
-            let dismissProfileButton : UIBarButtonItem = UIBarButtonItem(title: "X", style: .Plain, target: self, action: "dismissProfileView")
-            
-            navigationItem.leftBarButtonItem = dismissProfileButton
+            addDismissProfileButton()
         }
         
         adapter.myProfile = myProfile
@@ -150,15 +152,32 @@ class ProfileViewController: BaseViewController, MFMailComposeViewControllerDele
         adapter.reloadItems()
     }
     
+    
     /*
-    Setup the view holding the image of the user, his/her name, and the job title.
+    Add Profile dismiss button
     */
-    func customizeProfileHeader() {
+    func addDismissProfileButton() {
+        let dismissProfileButton : UIBarButtonItem = UIBarButtonItem(title: "X", style: .Plain, target: self, action: "dismissProfileView")
+        
+        navigationItem.leftBarButtonItem = dismissProfileButton
+    }
+    
+    /*
+    Setup the background of the view holding the image of the user, his/her name, and the job title.
+    */
+    func customizeProfileHeaderBackground() {
         profileHeader.backgroundColor = Theme.lightGrayColor()
         profileHeader.layer.shadowColor = UIColor.blackColor().CGColor
         profileHeader.layer.shadowOpacity = 1
         profileHeader.layer.shadowOffset = CGSizeZero
         profileHeader.layer.shadowRadius = 3
+    }
+    
+    /*
+    Setup the view holding the image of the user, his/her name, and the job title.
+    */
+    func customizeProfileHeader() {
+        customizeProfileHeaderBackground()
         
         profileName.text = user.userFirstName + " " + user.userLastName
         profileJobTitle.text = user.userTitle
