@@ -24,6 +24,8 @@ class PlannerViewController: BaseViewController {
 
     // Variables
     var segmentedControl:UISegmentedControl!
+    var refreshControl:UIRefreshControl!
+
     var adapter:PlannerAdapter!
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,6 +40,8 @@ class PlannerViewController: BaseViewController {
         // Add segmented control
         addSegmentedControl(segmentControlItems)
         
+        addRefreshControl()
+        
         // Init Adapter
         adapter = PlannerAdapter(viewController: self, tableView: tableView, registerCellWithNib: "PlannerTableViewCell", withIdentifier: "PlannerCell")
         tableView.registerNib(UINib(nibName: "PlannerHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "PlannerHeader")
@@ -51,6 +55,8 @@ class PlannerViewController: BaseViewController {
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
         
         print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
+        
+        
         
     }
     
@@ -77,6 +83,12 @@ class PlannerViewController: BaseViewController {
         self.navigationItem.titleView = segmentedControl
     }
     
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "startRefreshControl", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
     // MARK: Segment Control Action
     
     /**
@@ -90,6 +102,15 @@ class PlannerViewController: BaseViewController {
     func segmentControlAction(sender: UISegmentedControl) {
         let data = adapter.fetchFromDatabase()
         adapter.refreshTable(data)
+    }
+    
+    // MARK: Refresh Control Action
+    func startRefreshControl() {
+        adapter.fetchFromServer()
+    }
+    
+    func stopRefreshControl() {
+        refreshControl.endRefreshing()
     }
     
     // MARK: Navigation Bar Items Actions

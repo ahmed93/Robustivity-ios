@@ -37,6 +37,10 @@ class PlannerAdapter: BaseTableAdapter {
                 let dataResponse:[TaskModel]! = Mapper<TaskModel>().mapArray(response)
                 TaskModel.createOrUpdate(dataResponse)
 
+                if self.viewController.respondsToSelector("stopRefreshControl") {
+                    self.viewController.performSelector("stopRefreshControl")
+                }
+
                 let data = self.fetchFromDatabase()
                 self.refreshTable(data)
             }
