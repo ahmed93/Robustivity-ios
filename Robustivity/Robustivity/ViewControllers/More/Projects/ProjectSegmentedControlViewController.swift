@@ -17,12 +17,20 @@ class ProjectSegmentedControlViewController: BaseViewController {
     @IBOutlet weak var projectTeamViewController: ProjectTeamViewController!
     @IBOutlet weak var projectUpdateViewController: ProjectUpdateViewController!
     
+    var project_id:Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "Robustivity Project"
         self.navigationItem.title = "Robustivity Project"
+        
+        
+        // load project_id in each view
+//        self.projectInfoViewController.project_id = self.project_id
+        self.projectUpdateViewController.project_id = self.project_id
+//        self.projectTeamViewController.project_id = self.project_id
         
         // load subviews
         self.containerView.addSubview(projectInfoViewController.view)

@@ -19,6 +19,7 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
     @IBOutlet weak var textAreaBottomConstraint: NSLayoutConstraint!
     
     var adapter: ProjectUpdateAdapter!
+    var project_id: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
