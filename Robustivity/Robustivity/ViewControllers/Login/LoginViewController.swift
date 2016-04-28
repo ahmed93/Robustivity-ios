@@ -8,10 +8,15 @@
 
 import UIKit
 import Google
+import Alamofire
+
 
 class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     @IBOutlet weak var signInButton: GIDSignInButton!
+    var access_token = ""
+    var expires_in = ""
+    var refresh_token = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,27 +51,39 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             print(error)
         }
         else {
-            print("######################")
-            print(GIDSignIn.sharedInstance().currentUser.userID)
+    
 
-            print(GIDSignIn.sharedInstance().currentUser.authentication)
-
-            print(GIDSignIn.sharedInstance().currentUser.profile.name)
-
-            print(GIDSignIn.sharedInstance().currentUser.profile.givenName)
-
-            print(GIDSignIn.sharedInstance().currentUser.profile.givenName)
+           
+             let params = ["info": ["name": GIDSignIn.sharedInstance().currentUser.profile.name,"email": GIDSignIn.sharedInstance().currentUser.profile.email,"first_name": GIDSignIn.sharedInstance().currentUser.profile.givenName,"last_name": GIDSignIn.sharedInstance().currentUser.profile.familyName,"image": GIDSignIn.sharedInstance().currentUser.profile.imageURLWithDimension(3).absoluteString],"credentials": ["token": GIDSignIn.sharedInstance().currentUser.authentication.accessToken,"refresh_token": GIDSignIn.sharedInstance().currentUser.authentication.refreshToken,"expires_at": GIDSignIn.sharedInstance().currentUser.authentication.accessTokenExpirationDate.timeIntervalSince1970,"expires": true]]
+            
+            
+            Alamofire.request(.POST, APIRoutes.TOKEN_CREATE, headers: nil, parameters: params, encoding:.JSON)
+                .responseJSON { response in switch response.result {
+                case .Success(let JSON):
+                    print("Success with JSON: \(JSON)")
+                    let response = JSON as! NSDictionary
+                    if ((response.objectForKey("access_token")) != nil){
+                        // the key exists in the dictionary
+                   
+                    self.access_token = response.objectForKey("access_token")! as! String
+                    self.expires_in = response.objectForKey("expires_in")! as! String
+                    self.refresh_token = response.objectForKey("refresh_token")! as! String
+                        }
+                case .Failure(let error):
+                    print("Request failed with error: \(error)")
+                    }}
+                    
+                    if(self.access_token != ""){
+                          performSegueWithIdentifier("LoginSegue", sender: self)
+                    }
             
 
-
             
-            print("######################")
-
-            performSegueWithIdentifier("LoginSegue", sender: self)
-        }
+            }
+   
     }
-    
-    
+  
+
     func signIn(signIn: GIDSignIn!, didDisconnectWithUser user: GIDGoogleUser!, withError error: NSError!) {
         
     }
