@@ -87,8 +87,9 @@ class PlannerAdapter: BaseTableAdapter {
      Ahmed Elassuty.
      */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let a = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
-        self.viewController.navigationController?.pushViewController(a, animated: true)
+        let taskViewController = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
+        taskViewController.taskId = "2465"
+        self.viewController.navigationController?.pushViewController(taskViewController, animated: true)
     }
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let plannerCell = cell as! PlannerTableViewCell

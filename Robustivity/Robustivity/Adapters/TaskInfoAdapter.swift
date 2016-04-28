@@ -17,7 +17,6 @@ import ObjectMapper
 import RealmSwift
 
 class TaskInfoAdapter: BaseTableAdapter{
-    var currentTaskInfo = "2464"
     var currentTask = TaskModel()
     
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs:NSDictionary) {
@@ -27,16 +26,15 @@ class TaskInfoAdapter: BaseTableAdapter{
     }
     
     func fetchItems() {
-        if tableItems.count == 0 {
-            API.get(APIRoutes.TASKS_INDEX+currentTaskInfo, callback: { (success, response) in
+        let controller = self.viewController as! TaskViewController
+            API.get(APIRoutes.TASKS_INDEX+controller.taskId, callback: { (success, response) in
                 if(success){
                     //map the jason object to the model and save them
                    let responseDictionary = response as! Dictionary<String, AnyObject>
                     let taskz = responseDictionary["task"]
                     let task = Mapper<TaskModel>().map(taskz)
                     self.currentTask = task!
-                    self.tableItems.addObject(task!)
-                    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .Bottom)
+                    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .None)
                         self.viewController.navigationItem.title = self.currentTask.taskName
                 }
                 else{
@@ -54,9 +52,6 @@ class TaskInfoAdapter: BaseTableAdapter{
                         }, completion: nil)
                 }
             })
-            tableItems = ListModel()
-        }
-        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -82,9 +77,9 @@ class TaskInfoAdapter: BaseTableAdapter{
         if indexPath.section == 0 {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("toggleCell", forIndexPath: indexPath)
                 as! TaskInfoToggledTableViewCell
-            cell.timer.text = "00:00:00"
-            cell.taskName.text = "Robustivity Project"
-            cell.taskDate.text = "Oct 15,2015"
+            cell.timer.text = currentTask.taskStartDate
+            cell.taskName.text = currentTask.taskName
+            cell.taskDate.text = currentTask.taskStartDate
             return cell
         }
         else if indexPath.section == 1{
