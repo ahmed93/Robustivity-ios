@@ -99,17 +99,17 @@ class DirectoryAdapter: BaseTableAdapter {
         
         let label : UILabel = UILabel()
         if section == 0{
-            label.text = "  In Office                                                       \((tableItems.objectAtIndex(section)!).count) "
+            label.text = "  In Office (\(tableItems.objectAtIndex(section)!.count))"
             label.font = UIFont.boldSystemFontOfSize(20)
             label.textColor = Theme.greenColor()
         } else if section == 1{
             
-            label.text = "  Out of Office                                               \((tableItems.objectAtIndex(section)!).count) "
+            label.text = "  Out of Office (\(tableItems.objectAtIndex(section)!.count))"
             label.font = UIFont.boldSystemFontOfSize(20)
             label.textColor = Theme.lighterBlackColor()
         }
         else{
-            label.text = "  On Vacation                                                \((tableItems.objectAtIndex(section)!).count) "
+            label.text = "  On Vacation (\(tableItems.objectAtIndex(section)!.count))"
             label.font = UIFont.boldSystemFontOfSize(20)
             label.textColor = Theme.blueColor();
             
