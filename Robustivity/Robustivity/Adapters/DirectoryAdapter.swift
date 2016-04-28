@@ -77,23 +77,7 @@ class DirectoryAdapter: BaseTableAdapter {
     }
     
   
-    func resizeImage(image:UIImage, toTheSize size:CGSize)->UIImage{
-        
-        
-        let scale = CGFloat(max(size.width/image.size.width,
-            size.height/image.size.height))
-        let width:CGFloat  = image.size.width * scale
-        let height:CGFloat = image.size.height * scale;
-        
-        let rr:CGRect = CGRectMake( 0, 0, width, height);
-        
-        UIGraphicsBeginImageContextWithOptions(size, false, 0);
-        image.drawInRect(rr)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext();
-        return newImage
-    }
-    
+   
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return tableItems.count
     }
@@ -159,17 +143,14 @@ class DirectoryAdapter: BaseTableAdapter {
       
         
       let url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + users.userProfilePictureNotificationURL)
-       let data = NSData(contentsOfURL: url!)
-        print(url)
-       if data != nil {
-            let image = UIImage(data: data!)
-            let newImage = resizeImage(image!, toTheSize: CGSizeMake(70, 70))
-            let cellImageLayer: CALayer?  =  _DirectoryCell?.userImage.layer
-            cellImageLayer!.cornerRadius = cellImageLayer!.frame.size.width / 2
-            cellImageLayer!.masksToBounds = true
-            _DirectoryCell?.userImage.image = newImage
+     
         
-        }
+        
+        
+        _DirectoryCell?.userImage.sd_setImageWithURL(url)
+        let imageSize = 50 as CGFloat
+        _DirectoryCell?.userImage.layer.cornerRadius = imageSize / 2.0
+        _DirectoryCell?.userImage.clipsToBounds = true
         
    
      }
