@@ -26,6 +26,7 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     var textfield:UITextField!
     @IBOutlet weak var table: UITableView!
     var customSC:UISegmentedControl!
+    var taskId:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,11 +122,11 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         }else{
             let comment  = ["comment[content]" : commentText]
             
-            API.post(APIRoutes.TASKS_INDEX + self.updatesAdapter.taskId + "/updates", parameters: comment as! [String : String], callback:{
+            API.post(APIRoutes.TASKS_INDEX + self.taskId + "/updates", parameters: comment as! [String : String], callback:{
                 (success, response) in
                 
                 if(success){
-                    self.updatesAdapter = TaskUpdatesAdapter(viewController: self, tableView: self.table, registerCellWithNib: "CommentTableViewCell", withIdentifier: "commentCell")
+                    self.updatesAdapter.fetchItems()
                     self.table.reloadData()
                     self.textfield.text = nil
                     self.view.endEditing(true)

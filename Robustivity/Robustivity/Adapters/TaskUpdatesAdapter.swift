@@ -19,8 +19,6 @@ import RealmSwift
 
 class TaskUpdatesAdapter: BaseTableAdapter{
     
-    var taskId = "1"
-    
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
         
@@ -28,8 +26,8 @@ class TaskUpdatesAdapter: BaseTableAdapter{
     }
     
     func fetchItems() {
-        if tableItems.count == 0 {
-            API.get(APIRoutes.TASKS_INDEX + taskId + "/updates", callback: { (success, response) in
+        let controller = self.viewController as! TaskViewController
+            API.get(APIRoutes.TASKS_INDEX + controller.taskId + "/updates", callback: { (success, response) in
                 if(success){
                     let responseDictionary = response as! Dictionary<String, AnyObject>
                     let commentsArray = responseDictionary["comments"]
@@ -41,9 +39,7 @@ class TaskUpdatesAdapter: BaseTableAdapter{
                     }
                 }
             })
-            tableItems = ListModel()
-        }
-        
+            tableItems = ListModel()        
     }
     
     //save new task on disk using realm
@@ -104,15 +100,7 @@ class TaskUpdatesAdapter: BaseTableAdapter{
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormatter.dateFromString(comment.createdAt)
         cell.time.text = offsetFrom(date!) + " ago"
-        
-        let imageUrl:String = "http://hr.staging.rails.robustastudio.com/" + comment.userProfilePicture
-        let url = NSURL(string: imageUrl)
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            let data = NSData(contentsOfURL: url!)
-            dispatch_async(dispatch_get_main_queue(), {
-                cell.avatar.image = UIImage(data: data!)
-            });
-        }
+        cell.avatar.downloadImageFromUrl("http://hr.staging.rails.robustastudio.com/" + comment.userProfilePicture)
         return cell
     }
     
