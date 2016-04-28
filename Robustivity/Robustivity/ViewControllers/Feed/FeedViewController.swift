@@ -44,7 +44,6 @@ class FeedViewController: BaseViewController {
         let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
-        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
     }
 
 }

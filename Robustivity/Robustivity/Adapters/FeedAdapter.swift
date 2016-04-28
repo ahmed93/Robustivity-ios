@@ -250,7 +250,10 @@ class FeedAdapter: BaseTableAdapter {
         let days = NSInteger(hours/24);
         
         let mins = NSInteger((diff % 3600) / 60);
-        if(hours>=24){
+        if(diff == 0){
+            timeOutput = "Just now"
+        }
+        else if(hours>=24){
             timeOutput = "\(days) days ago"
         }
         else if(hours == 0){

@@ -37,6 +37,7 @@ class ListModel: NSObject {
     }
     func reverse() {
         self.objects = objects.reverse() as! NSMutableArray
+        
     }
     
     func addObject(object:AnyObject) {
