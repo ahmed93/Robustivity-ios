@@ -24,22 +24,24 @@
                         <constraint firstAttribute="width" constant="208" id="ujw-5U-h8o"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="google-plus" translatesAutoresizingMaskIntoConstraints="NO" id="ZUg-2e-5hZ">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZw-Oy-sAT" customClass="GIDSignInButton">
+                    <rect key="frame" x="51" y="336" width="267" height="33"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google-plus" translatesAutoresizingMaskIntoConstraints="NO" id="ZUg-2e-5hZ">
                     <rect key="frame" x="89" y="364" width="22" height="19"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="Kvt-b8-c1B"/>
                         <constraint firstAttribute="width" constant="22" id="UuG-GE-99g"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZw-Oy-sAT" customClass="GIDSignInButton">
-                    <rect key="frame" x="51" y="336" width="267" height="33"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="m4D-Ld-nBX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="245" id="5LC-i9-kIF"/>
+                <constraint firstItem="ZUg-2e-5hZ" firstAttribute="top" secondItem="m4D-Ld-nBX" secondAttribute="bottom" constant="75" id="6BQ-Eh-S7A"/>
                 <constraint firstItem="m4D-Ld-nBX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K6g-T5-No4"/>
+                <constraint firstItem="ZUg-2e-5hZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="89" id="ahp-MK-NpE"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="312.5" y="417.5"/>
