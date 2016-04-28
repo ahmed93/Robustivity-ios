@@ -21,18 +21,14 @@ class ProjectMembersAdapter: BaseTableAdapter{
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let projectmembercell = cell as? ProjectMemberCell
         let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
-       // print(currentUser)
 
         projectmembercell?.nameLabel.text = currentUser.userFirstName  + " " + currentUser.userLastName
-        print(currentUser.userTitle)
-//        projectmembercell?.positionLabel.text  = "asd"
         if(currentUser.userTitle != ""){
            projectmembercell?.positionLabel.text = currentUser.userTitle
         }
         else {
             projectmembercell?.positionLabel.text = "No title"
         }
-//        projectmembercell?.positionLabel.text = currentUser.userTitle
         projectmembercell?.profileImageView.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + currentUser.userProfilePictureIconURL))
         
         projectmembercell?.profileImageView.layer.cornerRadius = (projectmembercell?.profileImageView.frame.size.width)! / 2

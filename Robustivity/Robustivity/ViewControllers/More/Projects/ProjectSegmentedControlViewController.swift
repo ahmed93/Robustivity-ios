@@ -28,10 +28,7 @@ class ProjectSegmentedControlViewController: BaseViewController {
         self.title = "Robustivity Project"
         self.navigationItem.title = "Robustivity Project"
 
-        //self.projectInfoViewController.project_id = self.project_id
-        //self.projectUpdateViewController.project_id = self.project_id
-        //self.projectTeamViewController.project_id = self.project_id
-        // load subviews
+               // load subviews
         self.containerView.addSubview(projectInfoViewController.view)
         self.containerView.addSubview(projectUpdateViewController.view)
         self.containerView.addSubview(projectTeamViewController.view)
@@ -39,8 +36,7 @@ class ProjectSegmentedControlViewController: BaseViewController {
         // load intial subview
         viewsSegmentedControl.selectedSegmentIndex = 0
         showSubView(0)
-     //   let goBackToProjectsBtn = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "goBackToProjects")
-    //    self.navigationItem.leftBarButtonItem = goBackToProjectsBtn
+    
 
         // style segmented control
         self.viewsSegmentedControl.backgroundColor = Theme.redColor();
@@ -57,9 +53,7 @@ class ProjectSegmentedControlViewController: BaseViewController {
                 for member in projectTeam! {
                     self.projectTeamViewController.adapter.tableItems.addObject(member)
                 }
-                print(self.projectTeamViewController.adapter.tableItems.count)
                 self.projectTeamViewController.adapter.tableView.reloadData()
-                print(self.projectTeamViewController.adapter.tableItems.count)
 
 
                 
