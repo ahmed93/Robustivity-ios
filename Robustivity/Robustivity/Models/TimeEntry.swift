@@ -37,5 +37,13 @@ class TimeEntry: Object, Mappable {
         timeEntryEndedAt <- map["ended_at"]
     }
     
+    func updateTimeEntry() {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(self, update: true)
+        }
+    }
+    
     
 }

@@ -143,6 +143,7 @@
 		37AA68031CCD3354002F509E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA68021CCD3354002F509E /* Project.swift */; };
 		37AA68071CCD66C9002F509E /* Timelog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA68061CCD66C9002F509E /* Timelog.swift */; };
 		37AA68091CCD6B48002F509E /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA68081CCD6B48002F509E /* TimeEntry.swift */; };
+		37AA680E1CD01198002F509E /* ToggleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA680D1CD01198002F509E /* ToggleHelper.swift */; };
 		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
 		7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */; };
 		9426F5101CBABBE0006BEFA1 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426F50A1CBABBE0006BEFA1 /* CommentTableViewCell.swift */; };
@@ -346,6 +347,7 @@
 		37AA68021CCD3354002F509E /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		37AA68061CCD66C9002F509E /* Timelog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelog.swift; sourceTree = "<group>"; };
 		37AA68081CCD6B48002F509E /* TimeEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
+		37AA680D1CD01198002F509E /* ToggleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleHelper.swift; sourceTree = "<group>"; };
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		623433517E01C7895A187FE7 /* Pods-Robustivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.release.xcconfig"; sourceTree = "<group>"; };
 		75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuseAdapter.swift; sourceTree = "<group>"; };
@@ -878,6 +880,14 @@
 			name = Feed;
 			sourceTree = "<group>";
 		};
+		37AA680C1CD01160002F509E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				37AA680D1CD01198002F509E /* ToggleHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		5803F72F02119C95C89B4787 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1008,6 +1018,7 @@
 		A7BCE7AC1C7D8244007870CB /* Robustivity */ = {
 			isa = PBXGroup;
 			children = (
+				37AA680C1CD01160002F509E /* Helpers */,
 				01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */,
 				A717E5A51CA149DF00F237DD /* Robustivity-Bridging-Header.h */,
 				A717E58B1CA1485000F237DD /* API */,
@@ -1298,6 +1309,7 @@
 				1B7F8EA21CB09507007C8005 /* ProjectInfoViewController.swift in Sources */,
 				1B27A1111CC6C94E0062A74A /* TaskModel.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
+				37AA680E1CD01198002F509E /* ToggleHelper.swift in Sources */,
 				1B7F8DBA1CB07C95007C8005 /* NSData+ImageContentType.m in Sources */,
 				18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */,
 				1B7F8E961CB09507007C8005 /* SendExcuseViewController.swift in Sources */,

@@ -25,6 +25,7 @@ class APIRoutes {
     static let TASK_TIMELOG_STOP = TASKS_TIMELOG + "stop/"
     
     static let TODO_CREATE = "todos/"
+    static let PROJECT_UPDATE = PROJECTS_INDEX + "1/updates"
 
 
     

@@ -43,5 +43,13 @@ class Timelog: Object, Mappable {
         timelogDuration <- map["duration"]
     }
     
+    func updateTimelog() {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(self, update: true)
+        }
+    }
+    
     
 }

@@ -28,6 +28,8 @@ class TaskModel: Object, Mappable {
     dynamic var taskStartDate = ""
     dynamic var taskNature = ""
     dynamic var taskPast = false
+    dynamic var taskDuration = 0
+    dynamic var taskProjectName = ""
     
     required convenience init?(_ map: Map) {
         self.init()
@@ -54,7 +56,16 @@ class TaskModel: Object, Mappable {
         taskStartDate      <- map["start_date"]
         taskNature         <- map["nature"]
         taskPast           <- map["past"]
+        taskDuration       <- map["duration"]
+        taskProjectName    <- map["project_name"]
     }
     
+    func updateTask() {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(self, update: true)
+        }
+    }
     
 }

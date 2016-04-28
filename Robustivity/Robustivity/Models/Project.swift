@@ -32,6 +32,7 @@ class Project: Object, Mappable {
     dynamic var projectNature = ""
     dynamic var projectSlug = ""
     dynamic var projectAccountingNumber = 0
+
     
     
     required convenience init?(_ map: Map) {
@@ -63,6 +64,15 @@ class Project: Object, Mappable {
         projectNature <- map["nature"]
         projectSlug <- map["slug"]
         projectAccountingNumber <- map["accounting_project_number"]
+    }
+    
+    //save new and update project on disk using realm
+    func updateProject() {
+        let realm = try! Realm()
+
+        try! realm.write {
+            realm.add(self, update: true)
+        }
     }
     
     
