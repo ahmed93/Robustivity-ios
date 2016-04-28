@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import ObjectMapper
 
 class ProjectSegmentedControlViewController: BaseViewController {
     
@@ -17,13 +19,18 @@ class ProjectSegmentedControlViewController: BaseViewController {
     @IBOutlet weak var projectTeamViewController: ProjectTeamViewController!
     @IBOutlet weak var projectUpdateViewController: ProjectUpdateViewController!
     
+    var project_id:Int = 1
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "Robustivity Project"
         self.navigationItem.title = "Robustivity Project"
-        
+
+        //self.projectInfoViewController.project_id = self.project_id
+        //self.projectUpdateViewController.project_id = self.project_id
+        //self.projectTeamViewController.project_id = self.project_id
         // load subviews
         self.containerView.addSubview(projectInfoViewController.view)
         self.containerView.addSubview(projectUpdateViewController.view)
@@ -32,7 +39,6 @@ class ProjectSegmentedControlViewController: BaseViewController {
         // load intial subview
         viewsSegmentedControl.selectedSegmentIndex = 0
         showSubView(0)
-        
      //   let goBackToProjectsBtn = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "goBackToProjects")
     //    self.navigationItem.leftBarButtonItem = goBackToProjectsBtn
 
@@ -40,6 +46,25 @@ class ProjectSegmentedControlViewController: BaseViewController {
         self.viewsSegmentedControl.backgroundColor = Theme.redColor();
         self.viewsSegmentedControl.tintColor = Theme.whiteColor();
         
+        requestProject()
+    }
+    
+    func requestProject() {
+        API.get(APIRoutes.SHOW_PROJECT + String(project_id), callback: { (success, response) in
+            if(success){
+                //map the json object to the model and save them
+                let projectTeam = Mapper<User>().mapArray(response["members"])
+                for member in projectTeam! {
+                    self.projectTeamViewController.adapter.tableItems.addObject(member)
+                }
+                print(self.projectTeamViewController.adapter.tableItems.count)
+                self.projectTeamViewController.adapter.tableView.reloadData()
+                print(self.projectTeamViewController.adapter.tableItems.count)
+
+
+                
+            }
+        })
     }
     
     func goBackToProjects() {  // this dismisses the view upon click on cancel bar button
