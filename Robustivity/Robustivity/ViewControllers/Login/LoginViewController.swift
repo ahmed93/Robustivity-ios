@@ -62,10 +62,13 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                 case .Success(let JSON):
                     print("Success with JSON: \(JSON)")
                     let response = JSON as! NSDictionary
+                    if ((response.objectForKey("access_token")) != nil){
+                        // the key exists in the dictionary
+                   
                     self.access_token = response.objectForKey("access_token")! as! String
                     self.expires_in = response.objectForKey("expires_in")! as! String
                     self.refresh_token = response.objectForKey("refresh_token")! as! String
-                    
+                        }
                 case .Failure(let error):
                     print("Request failed with error: \(error)")
                     }}
