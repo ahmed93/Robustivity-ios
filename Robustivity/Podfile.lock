@@ -25,7 +25,7 @@ PODS:
   - GoogleSymbolUtilities (1.1.0)
   - GoogleUtilities (1.3.0):
     - GoogleSymbolUtilities (~> 1.0)
-  - ObjectMapper (1.1.5)
+  - ObjectMapper (1.2.0)
   - Realm (0.98.8):
     - Realm/Headers (= 0.98.8)
   - Realm/Headers (0.98.8)
@@ -35,7 +35,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.0.0)
   - Google/SignIn
-  - ObjectMapper (~> 1.1.0)
+  - ObjectMapper (~> 1.1)
   - RealmSwift
 
 SPEC CHECKSUMS:
@@ -48,7 +48,7 @@ SPEC CHECKSUMS:
   GoogleSignIn: 3d571172b8603be39dcb1705d8217146bb76fe62
   GoogleSymbolUtilities: eb3965ea12710569c7b80db198a39e39b18613f7
   GoogleUtilities: 5c653f7df2eedf0ce0efdfe5afe4f831f375fd7a
-  ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
   Realm: 0e293bb62999730599efc3048896bbd4f2e43bcd
   RealmSwift: 064262d38113f23ff3508fb20a0a922e696bec01
 
