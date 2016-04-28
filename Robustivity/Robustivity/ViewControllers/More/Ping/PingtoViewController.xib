@@ -11,7 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PingtoViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
+                <outlet property="ButtonConstrains" destination="fU0-IR-zJ0" id="Aj9-6d-DxG"/>
                 <outlet property="addUsersToPingButton" destination="2wh-gV-Lcq" id="9Mm-5K-9ri"/>
+                <outlet property="firstUserToPing" destination="tMS-VU-ZZ8" id="Ujx-28-05C"/>
+                <outlet property="secondUserToPing" destination="h9C-F7-7Fv" id="J0k-zB-3uR"/>
                 <outlet property="textView" destination="0lF-tb-43A" id="ykV-bF-FHc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -45,13 +48,31 @@
                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tMS-VU-ZZ8">
+                    <rect key="frame" x="227" y="93" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="acc-Mt-Icm"/>
+                        <constraint firstAttribute="height" constant="40" id="f7l-vT-XaT"/>
+                    </constraints>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h9C-F7-7Fv">
+                    <rect key="frame" x="172" y="93" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="XAl-2F-7fY"/>
+                        <constraint firstAttribute="width" constant="40" id="sry-vg-Rm5"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="tMS-VU-ZZ8" firstAttribute="leading" secondItem="h9C-F7-7Fv" secondAttribute="trailing" constant="15" id="4ee-e7-Tcc"/>
                 <constraint firstItem="0lF-tb-43A" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="AdS-WX-03n"/>
+                <constraint firstItem="tMS-VU-ZZ8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="CBX-4d-buy"/>
                 <constraint firstItem="0lF-tb-43A" firstAttribute="top" secondItem="2wh-gV-Lcq" secondAttribute="bottom" constant="28" id="JPC-nL-rPi"/>
+                <constraint firstItem="h9C-F7-7Fv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="Oib-Fj-N5v"/>
                 <constraint firstItem="2wh-gV-Lcq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="Vl9-Yl-1xo"/>
-                <constraint firstItem="2wh-gV-Lcq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" priority="250" id="fU0-IR-zJ0"/>
+                <constraint firstItem="2wh-gV-Lcq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" priority="1" id="fU0-IR-zJ0"/>
+                <constraint firstItem="2wh-gV-Lcq" firstAttribute="leading" secondItem="tMS-VU-ZZ8" secondAttribute="trailing" constant="13" id="lbe-I5-Mcu"/>
                 <constraint firstItem="0lF-tb-43A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="qxk-SN-3ld"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

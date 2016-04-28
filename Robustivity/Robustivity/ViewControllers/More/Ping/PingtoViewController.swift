@@ -10,8 +10,12 @@ import UIKit
 
 class PingtoViewController: BaseViewController, UITextViewDelegate {
     
+    @IBOutlet weak var firstUserToPing: UIImageView!
+    @IBOutlet weak var secondUserToPing: UIImageView!
+    @IBOutlet weak var ButtonConstrains: NSLayoutConstraint!
     @IBOutlet weak var textView:UITextView?
     @IBOutlet weak var addUsersToPingButton:UIButton?
+    var base = "http://hr.staging.rails.robustastudio.com"
     var placeholderText = "Write your message here..."
     
     override func viewDidLoad() {
@@ -37,6 +41,8 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     
     func cancelPing() {  // this dismisses the view upon click on cancel bar button
         navigationController!.popViewControllerAnimated(true)
+        Ping.selectedUsers.removeAll()
+        Ping.selectedUsersPics.removeAll()
     }
     
     @IBAction func chooseUsersToPing() {
@@ -45,18 +51,32 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     }
     
     func addChosenUsers() {
+        
+        
         if(!Ping.selectedUsersPics.isEmpty) {
-            let y = self.addUsersToPingButton?.frame.minY
-            var x = self.addUsersToPingButton?.frame.minX
-            for userPic in Ping.selectedUsersPics {
-                x = x! + 50
-                let imageView = UIImageView()
-                imageView.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + userPic))
-                imageView.frame = CGRect(x: x!, y: y!, width: 40, height: 40)
-                imageView.layer.cornerRadius = (imageView.frame.size.width) / 2
-                imageView.clipsToBounds = true
-                view.addSubview(imageView)
-            }
+          //  if(!Ping.selectedUsersPics.contains(firstUserToPing.sd_imageURL().absoluteString.substringFromIndex(base.endIndex))){
+                firstUserToPing.image = nil
+        //    }
+        //    if(!Ping.selectedUsersPics.contains(secondUserToPing.sd_imageURL().absoluteString.substringFromIndex(base.endIndex))){
+       //         secondUserToPing.image = nil
+       //     }
+              //for userPic in Ping.selectedUsersPics {
+            firstUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsersPics.popFirst()!))
+            firstUserToPing.layer.cornerRadius = (firstUserToPing.frame.size.width) / 2
+            firstUserToPing.clipsToBounds = true
+            firstUserToPing.hidden = false
+
+            secondUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsersPics.popFirst()!))
+            secondUserToPing.layer.cornerRadius = (secondUserToPing.frame.size.width) / 2
+            secondUserToPing.clipsToBounds = true
+            secondUserToPing.hidden = false
+            
+              if(!Ping.selectedUsersPics.contains(firstUserToPing.sd_imageURL().absoluteString.substringFromIndex(base.endIndex))){
+            firstUserToPing.image = nil
+                }
+                if(!Ping.selectedUsersPics.contains(secondUserToPing.sd_imageURL().absoluteString.substringFromIndex(base.endIndex))){
+                     secondUserToPing.image = nil
+                 }
         }
     }
     
