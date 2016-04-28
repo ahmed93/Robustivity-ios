@@ -18,6 +18,7 @@ class APIRoutes {
     static let EXCUSES_INDEX = "excuses/"
     static let EXCUSES_CREATE = "excuses/"
     
+    static let MY_PROJECTS = "projects/my_projects/";
     
    
     
