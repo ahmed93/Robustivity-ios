@@ -20,6 +20,7 @@ class FeedModel: Object, Mappable {
     dynamic var feedId = 0
 
 
+
     required convenience init?(_ map: Map) {
         self.init()
     }

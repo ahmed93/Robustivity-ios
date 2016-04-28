@@ -11,7 +11,7 @@ import ObjectMapper
 import RealmSwift
 
 class FeedAdapter: BaseTableAdapter {
-  //  static var feed:[FeedModel]?
+
 
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
@@ -21,7 +21,6 @@ class FeedAdapter: BaseTableAdapter {
     
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
       //  FeedAdapter.feed = FeedAdapter.fillFeedWithDummyData()
-        
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
     }
     
@@ -29,41 +28,28 @@ class FeedAdapter: BaseTableAdapter {
     func fetchItems() {
         
         if tableItems.count == 0 {
+            tableItems = ListModel()
+
             API.get( APIRoutes.FEED_INDEX, callback: { (success, response) in
 
                 if(success){
                     let feeds = Mapper<FeedModel>().mapArray(response)
+                    
+
+                    
                     for feed in feeds! {
                         self.saveNewFeed(feed)
-                        
+                        self.tableItems.addObject(feed)
                     }
-                }
-            
 
+                    self.tableView.reloadData()
                 }
+                
             
-
-            
-            )
-            
-          /*  API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
-                if(success){
-                    
-                    //map the json object to the model and save them
-                    let tasks = Mapper<TaskModel>().mapArray(response)
-                    for task in tasks! {
-                        print(task.taskName)
-                    //    self.updateTask(task)
-                    //    self.fetchTaskTimelogs(task)
-                    }
-                    
-                }
-            })*/
-            tableItems = ListModel()
-
+                })
             
         }
-        tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
+       // tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
 
 /*
         if tableItems == nil {
@@ -108,41 +94,15 @@ class FeedAdapter: BaseTableAdapter {
             let cell:UITableViewCell?
             
             switch feed.type {
-
             case "broadcast":
                 cell = self.broadCastFeedCell(tableView, feed: feed )
-
             case "check":
                 cell = self.checkInFeedCell(tableView, feed: feed )
-
             case "new_task":
                 cell = self.notificationFeedCell(tableView, feed: feed)
             default:
                 cell = nil
-                print("yalaaaahwy")
-
-
             }
-
-            
-            
-            
-          /*  if (feed.type == "broadcast"){
-            
-                cell = self.broadCastFeedCell(tableView, feed: feed as! BroadcastFeedModel)
-
-            }
-            
-           if feed?.type =="broadcast" {
-                cell = self.broadCastFeedCell(tableView, feed: feed as! BroadcastFeedModel)
-            }
-            else if feed is CheckInFeedModel{
-                cell = self.checkInFeedCell(tableView, feed: feed as! CheckInFeedModel)
-            }
-            else{
-                cell = self.notificationFeedCell(tableView, feed: feed as! UpdateFeedModel)
-            }*/
-            
             return cell
         }
         
@@ -152,7 +112,6 @@ class FeedAdapter: BaseTableAdapter {
         if section == 0{
             return 1
         }
-     //   return (FeedAdapter.feed?.count)!;
         return tableItems.count;
     }
     
@@ -186,11 +145,13 @@ class FeedAdapter: BaseTableAdapter {
     func broadCastFeedCell(tableView: UITableView, feed:FeedModel) -> BroadcastFeedTableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("broadCastCell") as! BroadcastFeedTableViewCell
         cell.broadcastTextLabel.text = feed.content
-        cell.broadcastTitleLabel.text = feed.userName + "sent a broadcast"
-        cell.timestampsLabel.text? = feed.timeStamp
-        //let avatarURL:NSURL? = feed.user?.avatar
-        //let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
-        //cell.avatarImageView.image = avatarImage!
+        cell.broadcastTitleLabel.text = feed.userName + " sent a broadcast"
+        cell.timestampsLabel.text? = self.getTimeDifference(feed.timeStamp)
+
+        
+        let avatarURL:NSURL? = NSURL(string: APIRoutes.URL + feed.profilePicture)
+        let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
+        cell.avatarImageView.image = avatarImage!
         return cell
         
     }
@@ -229,11 +190,11 @@ class FeedAdapter: BaseTableAdapter {
     
     func checkInFeedCell(tableView: UITableView, feed:FeedModel) -> CheckInFeedTableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("checkInCell") as! CheckInFeedTableViewCell
-        cell.checkInTitleLabel.text = feed.userName + feed.content
-        cell.timeStampsLabel.text = feed.timeStamp
-        //let avatarURL:NSURL? = feed.user?.avatar
-        //let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
-        //cell.avatarImageView.image = avatarImage!
+        cell.checkInTitleLabel.text = feed.userName + self.updateFeedContent(feed.content)
+        cell.timeStampsLabel.text = self.getTimeDifference(feed.timeStamp)
+        let avatarURL:NSURL? = NSURL(string: APIRoutes.URL + feed.profilePicture)
+        let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
+        cell.avatarImageView.image = avatarImage!
         return cell
         
     }
@@ -246,8 +207,11 @@ class FeedAdapter: BaseTableAdapter {
     
     func notificationFeedCell(tableView: UITableView, feed:FeedModel) -> UpdateFeedTableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("updateCell") as! UpdateFeedTableViewCell
-        cell.notificationTextLabel.text = feed.userName + feed.content
-        cell.timeStampsLabel.text = feed.timeStamp
+        cell.updateLabel.text = feed.userName + " had a task done"
+        cell.timeStampsLabel.text = self.getTimeDifference(feed.timeStamp)
+        let avatarURL:NSURL? = NSURL(string: APIRoutes.URL + feed.profilePicture)
+        let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
+        cell.avatarImageView.image = avatarImage!
         return cell
     }
     
@@ -271,16 +235,77 @@ class FeedAdapter: BaseTableAdapter {
         return 2
     }
     
+    func updateFeedContent(content :String)-> String{
+    
+        let split = content.componentsSeparatedByString(" ")
+        return String(" " + split[0] + " " + split[1])
+    
+    }
+    
+    
+
+    
+  
+    
+    func getTimeInterval(time: String) -> NSTimeInterval{
+        
+        let formatter = NSDateFormatter();
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
+        let currentTime =  formatter.dateFromString(formatter.stringFromDate(NSDate()))
+        print("given time is \(time)")
+        
+        let givenDate = formatter.dateFromString(time)
+        
+        print("given Date is \(givenDate)")
+        
+        let diff = currentTime!.timeIntervalSinceDate(givenDate!)
+        
+        return diff
+        
+        
+    }
+
+    func getTimeDifference(time: String) -> String{
+        var timeOutput:String = ""
+        
+        
+
+        let diff = self.getTimeInterval(time)
+        
+        //transform difference in xx hours ago
+        let hours = NSInteger(diff/3600);
+        let days = NSInteger(hours/24);
+        
+        let mins = NSInteger((diff % 3600) / 60);
+        
+        if(hours>=24){
+        
+            timeOutput = "\(days) days ago"
+        
+        }
+        else if(hours == 0){
+            timeOutput = "\(mins) minutes ago"
+        }
+        else{
+        
+            timeOutput = "\(hours) hours ago"
+        }
+            return timeOutput
+    
+    }
     
     func saveNewFeed(feed: FeedModel) {
         let realm = try! Realm()
         let savedfeeds = realm.objects(FeedModel)
-        //check if already exists on the database or not
+
         for checkfeed in savedfeeds {
-            if checkfeed.feedId == feed.feedId{
+            if checkfeed.feedId == feed.feedId {
                 return
             }
         }
+        
+        
+        
         try! realm.write {
             realm.add(feed)
         }
