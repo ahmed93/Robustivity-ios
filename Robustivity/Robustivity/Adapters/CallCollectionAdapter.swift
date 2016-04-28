@@ -68,6 +68,7 @@ class CallCollectionAdapter: BaseCollectionAdapter {
         }
     }
     //created by Menna ElKharbotly
+    // when a user selects a friend to call, an alert window pops up to notify the user that he wants to call. the user can either accept or reject. if He presses ok then the call will be done. if he presses cancel the call will not be done and the pop up window will disappear in both cases.
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let name = (tableItems.objectAtIndex(indexPath.item) as! User).userFirstName + (tableItems.objectAtIndex(indexPath.item) as! User).userLastName
