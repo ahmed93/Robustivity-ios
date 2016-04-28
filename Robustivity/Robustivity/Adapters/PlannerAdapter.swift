@@ -18,6 +18,8 @@ import RealmSwift
  31/3/16.
  */
 class PlannerAdapter: BaseTableAdapter {
+    let numberOfItemsPerSection = 10
+    
     var selectedSegmentIndex: Int! {
         return (viewController as! PlannerViewController).segmentedControl.selectedSegmentIndex
     }
@@ -73,7 +75,7 @@ class PlannerAdapter: BaseTableAdapter {
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerLabelType = [3040, 3070]
         let headerLabelText = ["In Progress", "Done"]
-        
+
         let headerCell = tableView.dequeueReusableCellWithIdentifier("PlannerHeader") as! PlannerHeaderTableViewCell
         headerCell.headerLabel.labelType = headerLabelType[section]
         headerCell.headerLabel.text = headerLabelText[section]
@@ -87,13 +89,12 @@ class PlannerAdapter: BaseTableAdapter {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableItems.count > 0 {
             let items = tableItems.objectAtIndex(section) as! Results<TaskModel>
-            let limit = 10
             
-            if items.count < limit {
+            if items.count < numberOfItemsPerSection {
                 return items.count
             }
             
-            return limit
+            return numberOfItemsPerSection
         }
         
         return 0
