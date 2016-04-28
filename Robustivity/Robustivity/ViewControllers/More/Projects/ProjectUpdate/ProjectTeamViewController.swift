@@ -12,6 +12,7 @@ class ProjectTeamViewController: BaseViewController {
 
     @IBOutlet weak var membersTableView: UITableView!
     
+    var project_id = 1
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,12 +35,13 @@ class ProjectTeamViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         // setting View TabBartitle + navigationBarTitle
         self.title = "Project Members";
         self.navigationItem.title = "Project Members";
-        
         adapter = ProjectMembersAdapter(viewController: self, tableView: membersTableView!, registerCellWithNib:"ProjectMemberCell", withIdentifier: "projectMembers")
-    }
+         }
 
     /*
     // MARK: - Navigation
