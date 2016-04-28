@@ -17,8 +17,4 @@ class APIRoutes {
     static let USER_PROFILE = USER_SHOW + "profile/"
     
     
-    
-    
-   
-    
 }

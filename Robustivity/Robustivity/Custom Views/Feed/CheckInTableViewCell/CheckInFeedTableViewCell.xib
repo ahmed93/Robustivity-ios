@@ -21,7 +21,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABt-zQ-6Ee" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="524" y="18" width="42" height="21"/>
+                        <rect key="frame" x="538" y="18" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                     <constraint firstItem="pIl-Oy-YHK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jLw-Ad-ORd"/>
                     <constraint firstAttribute="bottom" secondItem="egf-3m-KS4" secondAttribute="bottom" constant="18" id="oCc-YZ-uV4"/>
                     <constraint firstItem="ABt-zQ-6Ee" firstAttribute="centerY" secondItem="egf-3m-KS4" secondAttribute="centerY" id="tDQ-T2-NcM"/>
-                    <constraint firstAttribute="trailing" secondItem="ABt-zQ-6Ee" secondAttribute="trailing" constant="34" id="zDg-uS-A5H"/>
+                    <constraint firstAttribute="trailing" secondItem="ABt-zQ-6Ee" secondAttribute="trailing" constant="20" id="zDg-uS-A5H"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

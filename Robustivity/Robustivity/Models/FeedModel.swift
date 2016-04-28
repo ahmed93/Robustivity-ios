@@ -11,16 +11,16 @@ import ObjectMapper
 import RealmSwift
 
 class FeedModel: Object, Mappable {
-  
+    
     dynamic var content = ""
     dynamic var timeStamp = ""
     dynamic var type = ""
     dynamic var profilePicture = ""
     dynamic var userName = ""
     dynamic var feedId = 0
-
-
-
+    
+    
+    
     required convenience init?(_ map: Map) {
         self.init()
     }
@@ -32,8 +32,8 @@ class FeedModel: Object, Mappable {
         userName <- map["user.first_name"]
         profilePicture    <- map["user.profile_picture.url"]
         feedId <- map["id"]
-
+        
     }
     
-
+    
 }
