@@ -88,7 +88,8 @@ class PlannerViewController: BaseViewController {
             The implementation of this method may be changed in the development phase.
     */
     func segmentControlAction(sender: UISegmentedControl) {
-        adapter.fetchItems()
+        let data = adapter.fetchFromDatabase()
+        adapter.refreshTable(data)
     }
     
     // MARK: Navigation Bar Items Actions

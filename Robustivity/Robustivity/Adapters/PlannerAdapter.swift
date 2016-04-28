@@ -28,21 +28,36 @@ class PlannerAdapter: BaseTableAdapter {
     
     // MARK: Base Adapter Delegate methods
     func fetchItems() {
-        if tableItems.count == 0 {
-            API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
-                if(success){
-                    //map the JSON object to the model and save them
-                    let tasks:[TaskModel]! = Mapper<TaskModel>().mapArray(response)
-                    TaskModel.createOrUpdate(tasks)
-                    
-                    self.tableItems.addObjectsFromArray(tasks)
-                }
-            })
-            //tableItems = ListModel()
-        }
-        tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
+        fetchFromServer()
     }
     
+    func fetchFromServer() {
+        API.get(APIRoutes.TASKS_INDEX) { (success, response) -> () in
+            if success {
+                let dataResponse:[TaskModel]! = Mapper<TaskModel>().mapArray(response)
+                TaskModel.createOrUpdate(dataResponse)
+
+                let data = self.fetchFromDatabase()
+                self.refreshTable(data)
+            }
+        }
+    }
+    
+    func fetchFromDatabase() -> (Results<TaskModel>, Results<TaskModel>) {
+        let type:TaskType = ( selectedSegmentIndex == 0 ) ? .Task : .Todo
+
+        let inProgress = TaskModel.recent(type, status: .InProgress)
+        let done = TaskModel.recent(type, status: .Completed)
+
+        return (inProgress, done)
+    }
+    
+    func refreshTable(data: (Results<TaskModel>, Results<TaskModel>)){
+        tableItems = ListModel()
+        tableItems.addObject(data.0)
+        tableItems.addObject(data.1)
+        tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
+    }
     
     // MARK: Table view delegate and datasource
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -64,20 +79,14 @@ class PlannerAdapter: BaseTableAdapter {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            // [TODO] replace it by the number of items IN PROGRESS returned from the server.
-            //if selectedSegmentIndex == 0 {
-                //return 3
-            //}
-            return tableItems.count
-        }
+        let items = tableItems.objectAtIndex(section) as! Results<TaskModel>
+        let limit = 10
         
-        // Items Done Count.
-        // [TODO] replace it by the number of items DONE returned from the server.
-        //if selectedSegmentIndex == 0 {
-            //return 3
-        //}
-        return tableItems.count
+        if items.count < limit {
+            return items.count
+        }
+
+        return limit
     }
     
     // MARK: Parent Overridden Functions
@@ -87,13 +96,15 @@ class PlannerAdapter: BaseTableAdapter {
      Ahmed Elassuty.
      */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let a = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
-        self.viewController.navigationController?.pushViewController(a, animated: true)
+        let taskViewController = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
+        self.viewController.navigationController?.pushViewController(taskViewController, animated: true)
     }
+
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let plannerCell = cell as! PlannerTableViewCell
         
-        let task = tableItems.objectAtIndex(indexPath.row) as! TaskModel
+        let tasks = tableItems.objectAtIndex(indexPath.section) as! Results<TaskModel>
+        let task = tasks[indexPath.row]
         plannerCell.itemTitle.text = task.taskName
         plannerCell.projectName.text = task.taskDescription
         

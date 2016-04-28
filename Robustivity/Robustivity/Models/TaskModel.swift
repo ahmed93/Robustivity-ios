@@ -10,9 +10,18 @@ import Foundation
 import ObjectMapper
 import RealmSwift
 
-enum TaskType {
-    case Task
-    case ToDo
+enum TaskType: String {
+    case Task = "task"
+    case Todo = "todo"
+}
+
+enum TaskStatus: String {
+    case  NewlyCreated = "newly_created1"
+    case  InProgress = "newly_created"
+    case  Pending_Customer = "pending_customer"
+    case  Completed = "paused"
+    case  Closed = "closed"
+    case  Reopened = "reopened"
 }
 
 class TaskModel: Object, Mappable {
@@ -32,7 +41,7 @@ class TaskModel: Object, Mappable {
     dynamic var taskDescription = ""
     dynamic var taskGroupId = 0
     dynamic var taskStartDate:NSDate? = nil
-    dynamic var taskNature = 0
+    dynamic var taskNature = ""
     dynamic var taskPast = false
     
     required convenience init?(_ map: Map) {
@@ -74,10 +83,17 @@ class TaskModel: Object, Mappable {
         }
     }
     
-    static func recent(type: TaskType) -> Results<TaskModel> {
+    static func recent(type: TaskType, status: TaskStatus...) -> Results<TaskModel> {
+        var inAttr = status.reduce("{") { (str, value) -> String in
+            str + "\'\(value.rawValue)\',"
+        }
+        inAttr = inAttr.substringToIndex(inAttr.endIndex.predecessor()) + "}"
+        
+        
         let realm = try! Realm()
-        let predicate = NSPredicate(format: "taskNature = %@", type.hashValue)
+        let predicate = NSPredicate(format: "taskNature = %@ AND taskStatus IN %@", type.rawValue, status.map { $0.rawValue })
         let result = realm.objects(self).filter(predicate).sorted("taskUpdatedAt", ascending: false)
         return result;
     }
+
 }
