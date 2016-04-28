@@ -16,6 +16,7 @@ class APIRoutes {
     static let USER_SHOW = "users/"
     static let USER_PROFILE = USER_SHOW + "profile/"
     
+    static let MY_PROJECTS = "projects/my_projects/";
     
    
     
