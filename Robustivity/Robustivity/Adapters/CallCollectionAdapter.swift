@@ -32,6 +32,8 @@ class CallCollectionAdapter: BaseCollectionAdapter {
             API.get(APIRoutes.USER_SHOW, callback: { (success, response) in
                 if(success){
                     
+                    self.tableItems = ListModel()
+
                     //map the jason object to the model and save them
                     let users = Mapper<User>().mapArray(response)
                     for user in users! {
@@ -42,7 +44,6 @@ class CallCollectionAdapter: BaseCollectionAdapter {
                 }
             })
         
-            tableItems = ListModel()
 
     }
     
