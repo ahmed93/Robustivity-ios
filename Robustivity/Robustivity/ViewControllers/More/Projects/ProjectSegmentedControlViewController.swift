@@ -15,11 +15,13 @@ class ProjectSegmentedControlViewController: BaseViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var viewsSegmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var projectInfoViewController: ProjectInfoViewController!
-    @IBOutlet weak var projectTeamViewController: ProjectTeamViewController!
-    @IBOutlet weak var projectUpdateViewController: ProjectUpdateViewController!
+    var projectInfoViewController:ProjectInfoViewController?
+    var projectTeamViewController:ProjectTeamViewController?
+    var projectUpdateViewController:ProjectUpdateViewController?
     
-    var project_id:Int = 1
+    var data = NSMutableArray()
+    
+    var project_id = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,39 +29,36 @@ class ProjectSegmentedControlViewController: BaseViewController {
         // Do any additional setup after loading the view.
         self.title = "Robustivity Project"
         self.navigationItem.title = "Robustivity Project"
-
-               // load subviews
-        self.containerView.addSubview(projectInfoViewController.view)
-        self.containerView.addSubview(projectUpdateViewController.view)
-        self.containerView.addSubview(projectTeamViewController.view)
         
+        requestProject()
+
         // load intial subview
         viewsSegmentedControl.selectedSegmentIndex = 0
-        showSubView(0)
+        
     
 
         // style segmented control
         self.viewsSegmentedControl.backgroundColor = Theme.redColor();
         self.viewsSegmentedControl.tintColor = Theme.whiteColor();
         
-        requestProject()
+
     }
     
     func requestProject() {
         API.get(APIRoutes.SHOW_PROJECT + String(project_id), callback: { (success, response) in
             if(success){
+                
                 //map the json object to the model and save them
                 let projectTeam = Mapper<User>().mapArray(response["members"])
-                for member in projectTeam! {
-                    self.projectTeamViewController.adapter.tableItems.addObject(member)
-                }
-                self.projectTeamViewController.adapter.tableView.reloadData()
+                self.data.addObjectsFromArray(projectTeam!)
+                self.showSubView(0)
 
-
-                
             }
         })
     }
+    
+    
+    
     
     func goBackToProjects() {  // this dismisses the view upon click on cancel bar button
         navigationController!.popViewControllerAnimated(true)
@@ -77,12 +76,40 @@ class ProjectSegmentedControlViewController: BaseViewController {
     // Show subview based on the selected segmentedControl
     func showSubView(viewIndex: Int)
     {
-        self.containerView.subviews[viewIndex].hidden = false
-        for var i = 0; i < 3; i++ {
-            if (i != viewIndex) {
-                self.containerView.subviews[i].hidden = true
+        switch viewIndex {
+        case 0:
+            if projectInfoViewController == nil {
+                projectInfoViewController = ProjectInfoViewController(nibName:"ProjectInfoViewController", bundle: nil)
             }
+            
+            projectInfoViewController!.view.frame = self.containerView.frame
+            self.containerView.addSubview(projectInfoViewController!.view)
+        case 1:
+            if projectUpdateViewController == nil {
+                projectUpdateViewController  = ProjectUpdateViewController(nibName:"ProjectUpdateViewController", bundle: nil)
+            }
+            projectUpdateViewController!.view.frame = self.containerView.frame
+            projectUpdateViewController?.setProjectID(project_id)
+            self.containerView.addSubview(projectUpdateViewController!.view)
+        case 2:
+            if projectTeamViewController == nil {
+                projectTeamViewController  = ProjectTeamViewController(nibName:"ProjectTeamViewController", bundle: nil)
+            }
+            projectTeamViewController?.data = data
+            projectTeamViewController!.view.frame = self.containerView.frame
+            self.containerView.addSubview(projectTeamViewController!.view)
+            
+            default:
+            break
         }
+        
+//        
+//        self.containerView.subviews[viewIndex].hidden = false
+//        for var i = 0; i < 3; i++ {
+//            if (i != viewIndex) {
+//                self.containerView.subviews[i].hidden = true
+//            }
+//        }
     }
     
 

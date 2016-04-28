@@ -19,7 +19,6 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
     @IBOutlet weak var textAreaBottomConstraint: NSLayoutConstraint!
     
     var adapter: ProjectUpdateAdapter!
-    var project_id: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +32,22 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
         self.newUpdateTextView.textColor = Theme.lightGrayColor()
         newUpdateTextView.delegate = self
         
-        adapter = ProjectUpdateAdapter(viewController: self, tableView: projectUpdateTableView, registerCellWithNib:"ProjectUpdateTableViewCell", withIdentifier: "projectUpdateCell")
+        adapter = ProjectUpdateAdapter(viewController: self, tableView: projectUpdateTableView, registerCellWithNib:"ProjectUpdateTableViewCell", withIdentifier: "projectUpdate Cell")
         
-        // observer for keyboard
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillAppear:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillDisappear:", name: UIKeyboardWillHideNotification, object: nil)
-        
+//        // observer for keyboard
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillAppear:", name: UIKeyboardWillShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillDisappear:", name: UIKeyboardWillHideNotification, object: nil)
+//
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("ProjectUpdateViewController", owner: self, options: nil)
+    func setProjectID(pid:Int) {
+        adapter.setProjectID(pid)
     }
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        NSBundle.mainBundle().loadNibNamed("ProjectUpdateViewController", owner: self, options: nil)
+//    }
     
     override func loadView() {
         super.loadView()
