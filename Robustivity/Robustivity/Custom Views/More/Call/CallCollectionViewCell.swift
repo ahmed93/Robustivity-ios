@@ -12,6 +12,7 @@ class CallCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: RBLabel!
     
+    @IBOutlet var image: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
