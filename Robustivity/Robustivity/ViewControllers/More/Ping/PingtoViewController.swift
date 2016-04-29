@@ -45,12 +45,7 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     
     
     override func viewWillAppear(animated: Bool) {
-        super.tabBarController?.tabBar.hidden = true
         addChosenUsers()
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.tabBarController?.tabBar.hidden = false
     }
     
     func sendPing() {
