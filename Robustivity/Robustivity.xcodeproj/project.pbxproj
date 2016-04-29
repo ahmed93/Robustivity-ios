@@ -16,6 +16,7 @@
 		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
 		196CDBAE1CAF0BF60092A050 /* ProjectInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */; };
+		199BEBBF1CD28E5F00D0B455 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199BEBBE1CD28E5F00D0B455 /* Project.swift */; };
 		1B0B299E1CAD8968007DC5F3 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */; };
 		1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B299D1CAD8968007DC5F3 /* MGSwipeTableCell.m */; };
 		1B27A1111CC6C94E0062A74A /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27A1101CC6C94E0062A74A /* TaskModel.swift */; };
@@ -138,10 +139,11 @@
 		1B8E5D8F1CAF423A00239F1C /* FeedAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */; };
 		1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */; };
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
-		3404BCAD1CD245F600D661BE /* MyProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404BCAC1CD245F600D661BE /* MyProject.swift */; };
 		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
 		348741C51CD2273000C75B69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C41CD2273000C75B69 /* User.swift */; };
 		348741C71CD23EA200C75B69 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */; };
+		34D74D8B1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D74D8A1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift */; };
+		34D74D8D1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D74D8C1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib */; };
 		75006FA11CD02E1D007D0846 /* Excuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75006FA01CD02E1D007D0846 /* Excuse.swift */; };
 		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
 		7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */; };
@@ -199,6 +201,7 @@
 		185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListAdapter.swift; sourceTree = "<group>"; };
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
 		196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoAdapter.swift; sourceTree = "<group>"; };
+		199BEBBE1CD28E5F00D0B455 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		1B0B299A1CAD8968007DC5F3 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		1B0B299B1CAD8968007DC5F3 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		1B0B299C1CAD8968007DC5F3 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -341,10 +344,11 @@
 		1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProjectsAdapter.swift; sourceTree = "<group>"; };
 		1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
 		22319D545BBACB8BF580C2B3 /* Pods-Robustivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.debug.xcconfig"; sourceTree = "<group>"; };
-		3404BCAC1CD245F600D661BE /* MyProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProject.swift; sourceTree = "<group>"; };
 		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
 		348741C41CD2273000C75B69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Project/User.swift; sourceTree = "<group>"; };
 		348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMembersAdapter.swift; sourceTree = "<group>"; };
+		34D74D8A1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoTableSectionFooter.swift; sourceTree = "<group>"; };
+		34D74D8C1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectInfoTableSectionFooter.xib; sourceTree = "<group>"; };
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		623433517E01C7895A187FE7 /* Pods-Robustivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.release.xcconfig"; sourceTree = "<group>"; };
 		75006FA01CD02E1D007D0846 /* Excuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Excuse.swift; sourceTree = "<group>"; };
@@ -566,6 +570,8 @@
 				1B7F8DFF1CB094E6007C8005 /* CustomProjectsListTableViewCell.xib */,
 				1B7F8E001CB094E6007C8005 /* Member */,
 				1B7F8E031CB094E6007C8005 /* Update */,
+				34D74D8A1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift */,
+				34D74D8C1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -1030,7 +1036,6 @@
 		A7BCE7C01C7D834F007870CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3404BCAC1CD245F600D661BE /* MyProject.swift */,
 				1B8E5D811CAF41A600239F1C /* Feed */,
 				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
@@ -1039,6 +1044,7 @@
 				019B9A8F1CCF844C0098A344 /* ProjectUpdate.swift */,
 				348741C41CD2273000C75B69 /* User.swift */,
 				75006FA01CD02E1D007D0846 /* Excuse.swift */,
+				199BEBBE1CD28E5F00D0B455 /* Project.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1198,6 +1204,7 @@
 				9426F5111CBABBE0006BEFA1 /* CommentTableViewCell.xib in Resources */,
 				1B7F8E3C1CB094E6007C8005 /* BroadcastFeedTableViewCell.xib in Resources */,
 				9426F5131CBABBE0006BEFA1 /* DescriptionTableViewCell.xib in Resources */,
+				34D74D8D1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				1B7F8EA11CB09507007C8005 /* ProfileViewController.xib in Resources */,
@@ -1350,15 +1357,16 @@
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
 				1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */,
 				1B8E5D8B1CAF41D400239F1C /* UserModel.swift in Sources */,
+				199BEBBF1CD28E5F00D0B455 /* Project.swift in Sources */,
 				1B7F8EAE1CB09507007C8005 /* ChooseAssigneeViewController.swift in Sources */,
 				1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */,
 				1B7F8DBE1CB07C95007C8005 /* SDWebImageDownloader.m in Sources */,
 				1B7F8DE01CB0813C007C8005 /* UIColor.swift in Sources */,
-				3404BCAD1CD245F600D661BE /* MyProject.swift in Sources */,
 				0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */,
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
 				1B7F8DBD1CB07C95007C8005 /* SDWebImageDecoder.m in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
+				34D74D8B1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift in Sources */,
 				1B7F8E901CB09507007C8005 /* FeedViewController.swift in Sources */,
 				1B7F8EB61CB09507007C8005 /* ToggleViewController.swift in Sources */,
 				1B7F8E431CB094E6007C8005 /* UserTableViewCell.swift in Sources */,
