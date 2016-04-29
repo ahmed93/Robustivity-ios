@@ -72,6 +72,7 @@ class TaskModel: Object, Mappable {
     dynamic var creatorName = ""
     dynamic var creatorAvatar = ""
     dynamic var creatorTitle = ""
+    dynamic var taskProjectName = ""
 
     
     required convenience init?(_ map: Map) {
@@ -107,9 +108,10 @@ class TaskModel: Object, Mappable {
         userName           <- map["user_name"]
         userAvatar         <- map["user_profile_picture"]
         userTitle          <- map["user_title"]
-        creatorName         <- map["creator_name"]
-        creatorAvatar         <- map["creator_profile_picture"]
-        creatorTitle        <- map["creator_title"]
+        creatorName        <- map["creator_name"]
+        creatorAvatar      <- map["creator_profile_picture"]
+        creatorTitle       <- map["creator_title"]
+        taskProjectName    <- map["project_name"]
     }
 
     static func createOrUpdate(tasks: [TaskModel]){

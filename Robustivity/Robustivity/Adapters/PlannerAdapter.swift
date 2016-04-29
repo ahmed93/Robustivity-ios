@@ -143,7 +143,7 @@ class PlannerAdapter: BaseTableAdapter {
         let tasks = tableItems.objectAtIndex(indexPath.section) as! Results<TaskModel>
         let item = tasks[indexPath.row]
         plannerCell.itemTitle.text = item.taskName
-        plannerCell.projectName.text = item.taskDescription
+        plannerCell.projectName.text = item.taskProjectName
         
         // Should be a singletone over the app
         let dateFormatter = NSDateFormatter()
