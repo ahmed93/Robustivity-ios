@@ -8,8 +8,8 @@
 
 class APIRoutes {
     
-
-    static let BASE = "http://hr.staging.rails.robustastudio.com/api/"
+    static let URL = "http://hr.staging.rails.robustastudio.com"
+    static let BASE = URL + "/api/"
     
     static let TASKS_INDEX = "tasks/"
     
