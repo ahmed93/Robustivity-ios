@@ -43,14 +43,13 @@ class ProjectsListAdapter: BaseTableAdapter {
         API.get(APIRoutes.MY_PROJECTS, callback: { (success, response) in
             if(success){
                 //map the Jason object to the model and save them
-                let projects = Mapper<MyProject>().mapArray(response);
+                let projects = Mapper<Project>().mapArray(response);
                 
                 for project in projects! {
                     
                     self.tableItems.addObject(["proj_id": project.projectId,"proj_name": project.projectName, "member_name" : project.projectManagerName, "type": project.projectStatus])
                     
                     self.saveNewProject(project)
-                    print(project.projectId)
                 }
                 self.tableView.reloadData()
             }
@@ -58,9 +57,9 @@ class ProjectsListAdapter: BaseTableAdapter {
         })
     }
     
-    func saveNewProject(project: MyProject) {
+    func saveNewProject(project: Project) {
         let realm = try! Realm()
-        let savedProjects = realm.objects(MyProject)
+        let savedProjects = realm.objects(Project)
         
         for checkProject in savedProjects {
             if checkProject.projectId == project.projectId{ return

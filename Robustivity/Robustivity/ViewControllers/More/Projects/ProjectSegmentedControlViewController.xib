@@ -7,9 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectSegmentedControlViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="sqH-de-I3t" id="Q3q-uX-zKP"/>
-                <outlet property="projectInfoViewController" destination="yHO-kD-cPS" id="p4F-0b-1Bh"/>
-                <outlet property="projectTeamViewController" destination="WAF-oZ-fMO" id="5k7-5K-QLf"/>
-                <outlet property="projectUpdateViewController" destination="zns-A2-Sag" id="smy-ig-0Im"/>
                 <outlet property="view" destination="YWD-zX-lZb" id="eNk-ok-HOa"/>
                 <outlet property="viewsSegmentedControl" destination="zG4-aI-2c9" id="6uO-hY-WDG"/>
             </connections>
@@ -51,37 +48,12 @@
                 <constraint firstItem="sqH-de-I3t" firstAttribute="leading" secondItem="YWD-zX-lZb" secondAttribute="leading" id="KEe-ci-Kg1"/>
                 <constraint firstItem="sqH-de-I3t" firstAttribute="top" secondItem="ArR-ca-ZsS" secondAttribute="bottom" constant="8" id="NTR-io-dsM"/>
                 <constraint firstItem="ArR-ca-ZsS" firstAttribute="leading" secondItem="YWD-zX-lZb" secondAttribute="leading" id="Nof-3l-OvH"/>
-                <constraint firstItem="sqH-de-I3t" firstAttribute="top" secondItem="ArR-ca-ZsS" secondAttribute="bottom" constant="8" id="OWV-2l-qns"/>
                 <constraint firstItem="zG4-aI-2c9" firstAttribute="top" secondItem="YWD-zX-lZb" secondAttribute="top" constant="72" id="R3R-ng-p5r"/>
-                <constraint firstItem="zG4-aI-2c9" firstAttribute="width" secondItem="ArR-ca-ZsS" secondAttribute="width" id="Rwq-nK-bms"/>
                 <constraint firstAttribute="trailing" secondItem="sqH-de-I3t" secondAttribute="trailing" id="ZS2-VU-bzK"/>
-                <constraint firstItem="sqH-de-I3t" firstAttribute="width" secondItem="ArR-ca-ZsS" secondAttribute="width" id="bHC-3D-HAL"/>
                 <constraint firstAttribute="bottom" secondItem="sqH-de-I3t" secondAttribute="bottom" constant="-8" id="j0f-vt-tj0"/>
                 <constraint firstItem="zG4-aI-2c9" firstAttribute="leading" secondItem="YWD-zX-lZb" secondAttribute="leading" id="zYj-Ab-XCe"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
-        <viewController id="yHO-kD-cPS" customClass="ProjectInfoViewController" customModule="Robustivity" customModuleProvider="target"/>
-        <viewController id="zns-A2-Sag" customClass="ProjectUpdateViewController" customModule="Robustivity" customModuleProvider="target">
-            <layoutGuides>
-                <viewControllerLayoutGuide type="top" id="8sX-3N-5da"/>
-                <viewControllerLayoutGuide type="bottom" id="Onb-cL-Chm"/>
-            </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="tny-At-MgX">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            </view>
-        </viewController>
-        <viewController id="WAF-oZ-fMO" customClass="ProjectTeamViewController" customModule="Robustivity" customModuleProvider="target">
-            <layoutGuides>
-                <viewControllerLayoutGuide type="top" id="Y3P-VQ-oh9"/>
-                <viewControllerLayoutGuide type="bottom" id="TU2-A9-N4b"/>
-            </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="nZ5-4e-MIT">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            </view>
-        </viewController>
     </objects>
 </document>
