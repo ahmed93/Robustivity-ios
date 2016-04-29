@@ -36,15 +36,37 @@ class WriteExcuseViewController: BaseViewController, UITextViewDelegate {
     }
     
     func sendExcuse() {    // here the post request is being called when the sendExcuse button is pressed
+        let sentAlert = UIAlertController(title: "Success", message: "Your excuse has been sent.", preferredStyle: UIAlertControllerStyle.Alert)
+        let errorAlert = UIAlertController(title: "Failure", message: "The excuse was not sent, please try again", preferredStyle: UIAlertControllerStyle.Alert)
+        let emptyAlert = UIAlertController(title: "Empty", message: "Sorry, you cannot send an empty excuse.", preferredStyle: UIAlertControllerStyle.Alert)
+        sentAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            self.dismissViewControllerAnimated(true, completion: nil);
+        }))
+        errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        emptyAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
         let excuseBody = self.textView.text
         var params = [String: AnyObject]()
         params["excuse[body]"] = excuseBody
-        API.post(APIRoutes.EXCUSES_CREATE, parameters: params, callback:{
-            (success, response) in
-            if(success){
-                self.dismissViewControllerAnimated(true, completion: nil);
-            }
-        })
+        if(excuseBody != "" && self.textView.textColor != Theme.grayColor()) {
+            API.post(APIRoutes.EXCUSES_CREATE, parameters: params, callback:{
+                (success, response) in
+                if(success){
+                    self.presentViewController(sentAlert, animated: true, completion: nil)
+                    //self.dismissViewControllerAnimated(true, completion: nil);
+                }
+                else {
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+                    //self.dismissViewControllerAnimated(true, completion: nil);
+                }
+            })
+        }
+        else {
+            self.presentViewController(emptyAlert, animated: true, completion: nil)
+        }
     }
     
     func cancelExcuse() {  // this dismisses the view upon click on cancel bar button
