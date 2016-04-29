@@ -61,7 +61,6 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
         title: "OK", style: UIAlertActionStyle.Default) { (action) in
             self.navigationController!.popViewControllerAnimated(true)
             Ping.selectedUsers.removeAll()
-            Ping.selectedUsersPics.removeAll()
 
         }
         
@@ -72,7 +71,7 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
         var requestParams = [String: AnyObject]()
         
         requestParams["body"] =  body! as String
-        requestParams["recipient_ids[]"] = Ping.selectedUsers
+        requestParams["recipient_ids[]"] = Array(Ping.selectedUsers.keys)
         API.post(APIRoutes.PING_CREATE, parameters: requestParams , callback:{
             (success, response) in
             
@@ -83,28 +82,22 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
         })
         }
     
-    func cancelPing() {  // this dismisses the view upon click on cancel bar button
-        navigationController!.popViewControllerAnimated(true)
-        Ping.selectedUsers.removeAll()
-        Ping.selectedUsersPics.removeAll()
-    }
     
     @IBAction func chooseUsersToPing() {
         let controller = PingToUsersViewController(nibName: "PingToUsersViewController", bundle: nil)
-        navigationController?.pushViewController(controller, animated: true)
+        navigationController?.presentViewController(UINavigationController(rootViewController:controller), animated: true, completion: nil)
     }
     
     func addChosenUsers() {
-        if(!Ping.selectedUsersPics.isEmpty) {
-            firstUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsersPics[0]))
+        if(!Ping.selectedUsers.isEmpty) {
+            firstUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsers.first!.1))
             firstUserToPing.layer.cornerRadius = (firstUserToPing.frame.size.width) / 2
             firstUserToPing.clipsToBounds = true
             firstUserToPing.hidden = false
             ButtonConstrains.constant = 25
             firstUserToPingConstraints.constant = -40
-
             if(Ping.selectedUsers.count > 1) {
-                secondUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsersPics[1]))
+                secondUserToPing.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + Ping.selectedUsers[Ping.selectedUsers.startIndex.advancedBy(1)].1))
                 secondUserToPing.layer.cornerRadius = (secondUserToPing.frame.size.width) / 2
                 secondUserToPing.clipsToBounds = true
                 secondUserToPing.hidden = false

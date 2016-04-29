@@ -14,10 +14,9 @@ import ObjectMapper
 class PingAdapter: BaseTableAdapter {
     
     let realm = try! Realm()
-    var selectedUsers:Array<Int> = []
-    var selectedUsersPics:Array<String> = []
-    var deselectedUsers:Array<Int> = []
-    var deselectedUsersPics:Array<String> = []
+    var selectedUsers:Dictionary<Int, String> = [:]
+    var deselectedUsers:Dictionary<Int,String> = [:]
+
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
@@ -59,21 +58,16 @@ class PingAdapter: BaseTableAdapter {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
         let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
-        self.selectedUsersPics.append(currentUser.userProfilePictureIconURL)
-        self.selectedUsers.append(currentUser.userId)
-        if(self.deselectedUsers.contains(currentUser.userId)) {
-            self.deselectedUsers.removeAtIndex(self.deselectedUsers.indexOf(currentUser.userId)!)
+        self.selectedUsers[currentUser.userId] = currentUser.userProfilePictureURL
+
+        if(self.deselectedUsers[currentUser.userId] != nil) {
+            self.deselectedUsers.removeValueForKey(currentUser.userId)
         }
-        
-        if(self.deselectedUsersPics.contains(currentUser.userProfilePictureURL)) {
-            self.deselectedUsersPics.removeAtIndex(self.deselectedUsersPics.indexOf(currentUser.userProfilePictureURL)!)
-        }
-        
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         let _cell = cell as! PingToUserTableViewCell
-        for user in Ping.selectedUsers {
+        for user in Ping.selectedUsers.keys {
             if(_cell.userId == user) {
                 _cell.accessoryType = UITableViewCellAccessoryType.Checkmark
                 tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.Middle)
@@ -86,17 +80,12 @@ class PingAdapter: BaseTableAdapter {
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
         let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
-        if(self.selectedUsersPics.contains(currentUser.userProfilePictureURL)) {
-            self.selectedUsersPics.removeAtIndex(self.selectedUsersPics.indexOf(currentUser.userProfilePictureIconURL)!)
+        if(self.selectedUsers[currentUser.userId] != nil) {
+            self.selectedUsers.removeValueForKey(currentUser.userId)
         }
-        if(self.selectedUsers.contains(currentUser.userId)) {
-            self.selectedUsers.removeAtIndex(self.selectedUsers.indexOf(currentUser.userId)!)
-        }
-        if(!self.deselectedUsers.contains(currentUser.userId)) {
-            self.deselectedUsers.append(currentUser.userId)
-        }
-        if(!self.deselectedUsersPics.contains(currentUser.userProfilePictureURL)) {
-            self.deselectedUsersPics.append(currentUser.userProfilePictureURL)
+        
+        if(self.deselectedUsers[currentUser.userId] == nil) {
+            self.deselectedUsers[currentUser.userId] = currentUser.userProfilePictureURL
         }
     }
     

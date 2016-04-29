@@ -17,7 +17,8 @@ class PingToUsersViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Ping To";
+        self.title = "Ping To"
+        self.edgesForExtendedLayout = .None
         adapter = PingAdapter(viewController: self, tableView: tableView, registerCellWithNib:"PingToUserTableViewCell", withIdentifier: "cell")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLineEtched
         self.tableView.allowsMultipleSelection = true
@@ -26,54 +27,33 @@ class PingToUsersViewController: BaseViewController {
        
         let cancelPingButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelSelection")
         self.navigationItem.leftBarButtonItem = cancelPingButton
+        
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.tabBarController?.tabBar.hidden = true
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.tabBarController?.tabBar.hidden = true
     }
     
     func makeChoice() {
         for user in adapter.selectedUsers {
-            if(!Ping.selectedUsers.contains(user)) {
-                Ping.selectedUsers.append(user)
+            if(Ping.selectedUsers[user.0] == nil) {
+                Ping.selectedUsers[user.0] = user.1
             }
         }
         
-        for userPic in adapter.selectedUsersPics {
-            if(!Ping.selectedUsersPics.contains(userPic)) {
-                print(userPic)
-                Ping.selectedUsersPics.append(userPic)
-            }
-        }
         
         for deselectedUser in adapter.deselectedUsers {
-            if(Ping.selectedUsers.contains(deselectedUser)) {
-                Ping.selectedUsers.removeAtIndex(Ping.selectedUsers.indexOf(deselectedUser)!)
+            if(Ping.selectedUsers[deselectedUser.0] != nil) {
+                Ping.selectedUsers.removeValueForKey(deselectedUser.0)
             }
         }
         
-        for deselectedUserPic in adapter.deselectedUsersPics {
-            if(Ping.selectedUsersPics.contains(deselectedUserPic)) {
-                Ping.selectedUsersPics.removeAtIndex(Ping.selectedUsersPics.indexOf(deselectedUserPic)!)
-            }
-        }
+       
         
-        print(adapter.selectedUsersPics)
-        navigationController?.popViewControllerAnimated(true)
-
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
     func cancelSelection() {
         adapter.selectedUsers.removeAll()
-        adapter.selectedUsersPics.removeAll()
-        adapter.deselectedUsersPics.removeAll()
         adapter.deselectedUsers.removeAll()
-        navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(false, completion: nil)
 
     }
     override func didReceiveMemoryWarning() {
