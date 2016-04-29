@@ -123,7 +123,8 @@ class ProjectUpdateAdapter: BaseTableAdapter {
             (success, response) in
             
             if(success){
-                let projectUpdates = Mapper<ProjectUpdate>().mapArray(response["comment"])
+                print(response)
+                let projectUpdates = Mapper<ProjectUpdate>().mapArray([response["comment"]])
                 for projectUpdate in projectUpdates! {
                     self.tableItems.objects.insertObject(projectUpdate, atIndex: 0)
                     projectUpdate.saveDb()
