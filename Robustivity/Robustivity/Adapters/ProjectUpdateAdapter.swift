@@ -69,6 +69,8 @@ class ProjectUpdateAdapter: BaseTableAdapter {
         productUpdateTableViewCell?.userNameLabel.text = currentUpdateData.userName as String!
         
          productUpdateTableViewCell?.userAvatarImageView.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + currentUpdateData.userAvatar));
+        productUpdateTableViewCell?.userAvatarImageView.layer.cornerRadius = (productUpdateTableViewCell?.userAvatarImageView.frame.size.width)! / 2
+        productUpdateTableViewCell?.userAvatarImageView.clipsToBounds = true
 
         productUpdateTableViewCell?.updateTimeLabel.text = self.calUpdateTimestamp(currentUpdateData.updateUpdatedAt)
 
@@ -130,8 +132,8 @@ class ProjectUpdateAdapter: BaseTableAdapter {
                 let projectUpdate = Mapper<ProjectUpdate>().map(response["comment"])!
                 
                     // set user image from shared preference
-                    if self.preferences.objectForKey("icon_url") != nil {
-                        projectUpdate.userAvatar = self.preferences.objectForKey("icon_url") as! String
+                    if self.preferences.objectForKey("picture_icon_url") != nil {
+                        projectUpdate.userAvatar = self.preferences.objectForKey("picture_icon_url") as! String
                     }
                     
                     // set user name from shared preference
