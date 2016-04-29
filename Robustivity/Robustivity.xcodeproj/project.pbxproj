@@ -13,6 +13,7 @@
 		019B9A901CCF844C0098A344 /* ProjectUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B9A8F1CCF844C0098A344 /* ProjectUpdate.swift */; };
 		01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */; };
 		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
+		04FFFE051CCD0A3800B4DB9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFFE041CCD0A3800B4DB9D /* User.swift */; };
 		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
 		196CDBAE1CAF0BF60092A050 /* ProjectInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */; };
@@ -140,8 +141,15 @@
 		1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */; };
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
 		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
+		34841B391CD3C89E00F7A74F /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24A1CA2EE6E002DB6FE /* MyriadPro-Regular.otf */; };
+		34841B3A1CD3C89E00F7A74F /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24B1CA2EE6E002DB6FE /* MyriadPro-Semibold.otf */; };
+		34841B3B1CD3C89E00F7A74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BCE7B41C7D8244007870CB /* Assets.xcassets */; };
+		34841B3C1CD3C89E00F7A74F /* MyriadPro-Cond.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2471CA2EE6E002DB6FE /* MyriadPro-Cond.otf */; };
+		34841B3D1CD3C89E00F7A74F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */; };
+		34841B3E1CD3C89E00F7A74F /* MyriadPro-BoldCondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2451CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf */; };
 		348741C51CD2273000C75B69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C41CD2273000C75B69 /* User.swift */; };
 		348741C71CD23EA200C75B69 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */; };
+		34E742661CD0051F00576F88 /* Ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742651CD0051F00576F88 /* Ping.swift */; };
 		34D74D8B1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D74D8A1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift */; };
 		34D74D8D1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D74D8C1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib */; };
 		75006FA11CD02E1D007D0846 /* Excuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75006FA01CD02E1D007D0846 /* Excuse.swift */; };
@@ -173,20 +181,14 @@
 		A717E5B51CA1816D00F237DD /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717E5B41CA1816D00F237DD /* ListModel.swift */; };
 		A750E9781CA97B77009D29BB /* NotificationsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A750E9771CA97B77009D29BB /* NotificationsAdapter.swift */; };
 		A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCE7AD1C7D8244007870CB /* AppDelegate.swift */; };
-		A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BCE7B41C7D8244007870CB /* Assets.xcassets */; };
 		A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C480251CA4030900F4FDB7 /* RBLabel.swift */; };
 		A7D8435B1CB025DE00E690A0 /* CallCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8435A1CB025DE00E690A0 /* CallCollectionAdapter.swift */; };
 		A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2431CA2EE6E002DB6FE /* MyriadPro-Bold.otf */; };
 		A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2441CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf */; };
-		A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2451CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf */; };
 		A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2461CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf */; };
-		A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2471CA2EE6E002DB6FE /* MyriadPro-Cond.otf */; };
 		A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2481CA2EE6E002DB6FE /* MyriadPro-CondIt.otf */; };
 		A7E7A2531CA2EE6E002DB6FE /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A2491CA2EE6E002DB6FE /* MyriadPro-It.otf */; };
-		A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24A1CA2EE6E002DB6FE /* MyriadPro-Regular.otf */; };
-		A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24B1CA2EE6E002DB6FE /* MyriadPro-Semibold.otf */; };
 		A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7E7A24C1CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf */; };
-		A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FD4DB91CA5DFC100BD7332 /* LaunchScreen.storyboard */; };
 		F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E645831CA95BAC00B579C2 /* DirectoryAdapter.swift */; };
 		FC5127070B47D983F96C66EE /* Pods_Robustivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */; };
 /* End PBXBuildFile section */
@@ -198,6 +200,7 @@
 		019B9A8F1CCF844C0098A344 /* ProjectUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdate.swift; sourceTree = "<group>"; };
 		01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
+		04FFFE041CCD0A3800B4DB9D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListAdapter.swift; sourceTree = "<group>"; };
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
 		196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoAdapter.swift; sourceTree = "<group>"; };
@@ -347,6 +350,7 @@
 		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
 		348741C41CD2273000C75B69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Project/User.swift; sourceTree = "<group>"; };
 		348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMembersAdapter.swift; sourceTree = "<group>"; };
+		34E742651CD0051F00576F88 /* Ping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ping.swift; path = Ping/Ping.swift; sourceTree = "<group>"; };
 		34D74D8A1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoTableSectionFooter.swift; sourceTree = "<group>"; };
 		34D74D8C1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectInfoTableSectionFooter.xib; sourceTree = "<group>"; };
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1042,8 +1046,9 @@
 				1B8E5D8A1CAF41D400239F1C /* UserModel.swift */,
 				1B5E4E5C1CC8308000D1B9F1 /* TodoModel.swift */,
 				019B9A8F1CCF844C0098A344 /* ProjectUpdate.swift */,
-				348741C41CD2273000C75B69 /* User.swift */,
+				34E742651CD0051F00576F88 /* Ping.swift */,
 				75006FA01CD02E1D007D0846 /* Excuse.swift */,
+				04FFFE041CCD0A3800B4DB9D /* User.swift */,
 				199BEBBE1CD28E5F00D0B455 /* Project.swift */,
 			);
 			path = Models;
@@ -1121,11 +1126,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = BumbleBee;
 				TargetAttributes = {
 					A7BCE7A91C7D8244007870CB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2Q3PXCD4CK;
 					};
 				};
 			};
@@ -1152,16 +1158,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
+				34841B391CD3C89E00F7A74F /* MyriadPro-Regular.otf in Resources */,
 				1B7F8EA91CB09507007C8005 /* ProjectTeamViewController.xib in Resources */,
 				9426F5151CBABBE0006BEFA1 /* PersonTableViewCell.xib in Resources */,
-				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
+				34841B3E1CD3C89E00F7A74F /* MyriadPro-BoldCondIt.otf in Resources */,
 				1B7F8E971CB09507007C8005 /* SendExcuseViewController.xib in Resources */,
 				9426F51A1CBABC13006BEFA1 /* TaskViewController.xib in Resources */,
 				1B7F8E461CB094E6007C8005 /* PlannerHeaderTableViewCell.xib in Resources */,
 				1B7F8EAF1CB09507007C8005 /* ChooseAssigneeViewController.xib in Resources */,
 				1B7F8E361CB094E6007C8005 /* ProjectMemberCell.xib in Resources */,
-				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				1B7F8EAB1CB09507007C8005 /* ProjectUpdateViewController.xib in Resources */,
 				1B7F8EB31CB09507007C8005 /* CreateTaskViewController.xib in Resources */,
 				1B7F8E3E1CB094E6007C8005 /* CheckInFeedTableViewCell.xib in Resources */,
@@ -1171,10 +1176,9 @@
 				1B7F8E2D1CB094E6007C8005 /* PingToUserTableViewCell.xib in Resources */,
 				1B7F8E2E1CB094E6007C8005 /* NotificationsDoubleLineTableViewCell.xib in Resources */,
 				1B7F8E9F1CB09507007C8005 /* PingtoViewController.xib in Resources */,
-				A7E7A24F1CA2EE6E002DB6FE /* MyriadPro-BoldCondIt.otf in Resources */,
 				1B7F8E4A1CB094E6007C8005 /* LabelTextTaskViewCell.xib in Resources */,
 				A7E7A2561CA2EE6E002DB6FE /* MyriadPro-SemiboldIt.otf in Resources */,
-				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
+				34841B3B1CD3C89E00F7A74F /* Assets.xcassets in Resources */,
 				1B7F8E9D1CB09507007C8005 /* PingToUsersViewController.xib in Resources */,
 				1B7F8E381CB094E6007C8005 /* ProjectUpdateTableViewCell.xib in Resources */,
 				1B7F8E9B1CB09507007C8005 /* MoreViewController.xib in Resources */,
@@ -1185,13 +1189,10 @@
 				1B7F8EA51CB09507007C8005 /* ProjectSegmentedControlViewController.xib in Resources */,
 				1B7F8E421CB094E6007C8005 /* UpdateFeedTableViewCell.xib in Resources */,
 				1B7F8EA71CB09507007C8005 /* ProjectsListViewController.xib in Resources */,
-				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
-				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
+				34841B3D1CD3C89E00F7A74F /* LaunchScreen.storyboard in Resources */,
+				34841B3A1CD3C89E00F7A74F /* MyriadPro-Semibold.otf in Resources */,
 				1B7F8EB11CB09507007C8005 /* ChooseProjectViewController.xib in Resources */,
-				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
-				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
 				1B7F8E341CB094E6007C8005 /* CustomProjectsListTableViewCell.xib in Resources */,
-				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				A7E7A24D1CA2EE6E002DB6FE /* MyriadPro-Bold.otf in Resources */,
 				1B7F8E291CB094E6007C8005 /* ExcuseTableViewCell.xib in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
@@ -1212,9 +1213,8 @@
 				1B7F8E931CB09507007C8005 /* CallViewController.xib in Resources */,
 				1B7F8E2F1CB094E6007C8005 /* NotificationsSingleLineTableViewCell.xib in Resources */,
 				1B7F8E251CB094E6007C8005 /* CallCollectionViewCell.xib in Resources */,
-				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
+				34841B3C1CD3C89E00F7A74F /* MyriadPro-Cond.otf in Resources */,
 				1B7F8EAD1CB09507007C8005 /* NotificationsViewController.xib in Resources */,
-				A7E7A2511CA2EE6E002DB6FE /* MyriadPro-Cond.otf in Resources */,
 				1B7F8E2B1CB094E6007C8005 /* MoreTableViewCell.xib in Resources */,
 				1B7F8E951CB09507007C8005 /* DirectoryViewController.xib in Resources */,
 				1B7F8E3A1CB094E6007C8005 /* BaseTableViewCell.xib in Resources */,
@@ -1286,6 +1286,7 @@
 				1B7F8E8E1CB09507007C8005 /* BaseViewController.swift in Sources */,
 				1B7F8DBF1CB07C95007C8005 /* SDWebImageDownloaderOperation.m in Sources */,
 				1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */,
+				04FFFE051CCD0A3800B4DB9D /* User.swift in Sources */,
 				1B7F8EA01CB09507007C8005 /* ProfileViewController.swift in Sources */,
 				1B7F8EA81CB09507007C8005 /* ProjectTeamViewController.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
@@ -1379,12 +1380,12 @@
 				1B7F8E2C1CB094E6007C8005 /* PingToUserTableViewCell.swift in Sources */,
 				1B7F8E491CB094E6007C8005 /* LabelTextTaskViewCell.swift in Sources */,
 				1B7F8DC51CB07C95007C8005 /* UIImage+WebP.m in Sources */,
+				34E742661CD0051F00576F88 /* Ping.swift in Sources */,
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				1B7F8DE41CB0948D007C8005 /* RoundBorderedView.swift in Sources */,
 				1B7F8DC71CB07C95007C8005 /* UIImageView+WebCache.m in Sources */,
 				75006FA11CD02E1D007D0846 /* Excuse.swift in Sources */,
 				1B7F8EB21CB09507007C8005 /* CreateTaskViewController.swift in Sources */,
-				348741C51CD2273000C75B69 /* User.swift in Sources */,
 				1B7F8DDD1CB0813C007C8005 /* Comp_2+Theme.swift in Sources */,
 				1B7F8E8C1CB09507007C8005 /* LoginViewController.swift in Sources */,
 				1B7F8E3D1CB094E6007C8005 /* CheckInFeedTableViewCell.swift in Sources */,
@@ -1492,11 +1493,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Robustivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BumbleBee.Robustivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Robustivity/Robustivity-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1508,12 +1512,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Robustivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BumbleBee.Robustivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Robustivity/Robustivity-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};

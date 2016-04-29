@@ -13,6 +13,7 @@ import RealmSwift
 class ProjectUpdateAdapter: BaseTableAdapter {
     
     let realm = try! Realm()
+    let preferences = NSUserDefaults.standardUserDefaults()
     
     var projectId:Int?
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
@@ -35,7 +36,6 @@ class ProjectUpdateAdapter: BaseTableAdapter {
             
             API.get(url, callback: { (success, response) in
                 if(success){
-                    print(response)
                     //map the json object to the model and save them
                     let projectUpdates = Mapper<ProjectUpdate>().mapArray(response["comments"])
                     for projectUpdate in projectUpdates! {
@@ -69,6 +69,8 @@ class ProjectUpdateAdapter: BaseTableAdapter {
         productUpdateTableViewCell?.userNameLabel.text = currentUpdateData.userName as String!
         
          productUpdateTableViewCell?.userAvatarImageView.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + currentUpdateData.userAvatar));
+        productUpdateTableViewCell?.userAvatarImageView.layer.cornerRadius = (productUpdateTableViewCell?.userAvatarImageView.frame.size.width)! / 2
+        productUpdateTableViewCell?.userAvatarImageView.clipsToBounds = true
 
         productUpdateTableViewCell?.updateTimeLabel.text = self.calUpdateTimestamp(currentUpdateData.updateUpdatedAt)
 
@@ -88,25 +90,29 @@ class ProjectUpdateAdapter: BaseTableAdapter {
         
         let diffSeconds = now.timeIntervalSinceDate(updateTimeDate)
         
-        if(diffSeconds <= 59)
+        if(diffSeconds <= 59 && diffSeconds > 0)
         {
             return String(format: "%.0f seconds ago", diffSeconds)
         }
         else {
             let diffMin = round(diffSeconds / 60)
-            if(diffMin <= 59)
+            if(diffMin <= 59 && diffMin > 0)
             {
                 return String(format: "%.0f mins ago", diffMin)
             }
             else {
                 let diffHours = round(diffMin / 60)
-                if(diffHours <= 24)
+                if(diffHours <= 24 && diffHours > 0)
                 {
                     return String(format: "%.0f hrs ago", diffHours)
                 }
                 else {
                     let diffDays = round(diffHours / 24)
-                    return String(format: "%.0f days ago", diffDays)
+                    if(diffDays > 0) {
+                        return String(format: "%.0f days ago", diffDays)
+                    } else {
+                        return "Just Now"
+                    }
                 }
             }
         }
@@ -123,11 +129,25 @@ class ProjectUpdateAdapter: BaseTableAdapter {
             (success, response) in
             
             if(success){
-                let projectUpdates = Mapper<ProjectUpdate>().mapArray(response["comment"])
-                for projectUpdate in projectUpdates! {
+                let projectUpdate = Mapper<ProjectUpdate>().map(response["comment"])!
+                
+                    // set user image from shared preference
+                    if self.preferences.objectForKey("picture_icon_url") != nil {
+                        projectUpdate.userAvatar = self.preferences.objectForKey("picture_icon_url") as! String
+                    }
+                    
+                    // set user name from shared preference
+                    let userFirstName = self.preferences.objectForKey("first_name") as? String
+                    let userLastName = self.preferences.objectForKey("last_name") as? String
+                    if(userFirstName != nil){
+                        projectUpdate.userName = userFirstName!
+                    }
+                    if(userLastName != nil){
+                        projectUpdate.userName += " " + userLastName!
+                    }
+                    
                     self.tableItems.objects.insertObject(projectUpdate, atIndex: 0)
                     projectUpdate.saveDb()
-                }
                 
                 self.tableView.reloadData()
                 

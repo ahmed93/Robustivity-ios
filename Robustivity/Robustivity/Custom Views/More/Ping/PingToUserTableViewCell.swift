@@ -13,6 +13,7 @@ class PingToUserTableViewCell: UITableViewCell {
     @IBOutlet weak var pingUserName: UILabel!
     @IBOutlet weak var pingUserTitle: UILabel!
     @IBOutlet weak var pingUserAvatar: UIImageView!
+    var userId:Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()

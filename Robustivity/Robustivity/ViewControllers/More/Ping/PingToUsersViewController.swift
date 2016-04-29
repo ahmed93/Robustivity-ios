@@ -11,17 +11,27 @@ import UIKit
 class PingToUsersViewController: BaseViewController {
 
     var adapter:PingAdapter!
+    var model:Ping?
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Ping To";
         adapter = PingAdapter(viewController: self, tableView: tableView, registerCellWithNib:"PingToUserTableViewCell", withIdentifier: "cell")
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLineEtched
+        self.tableView.allowsMultipleSelection = true
+        let doneChooseButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "makeChoice")
+        self.navigationItem.leftBarButtonItem = doneChooseButton
+       
         // Do any additional setup after loading the view.
     }
     
+    func makeChoice() {
+        navigationController?.popViewControllerAnimated(true)
+
+    }
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -58,15 +58,23 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
     
     // MARK - send update to backend
     @IBAction func submitUpdate(sender: UIButton) {
-        adapter.postUpdate(self.newUpdateTextView.text)
         
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.projectUpdateTableView.reloadData()
-        })
-        
-        self.newUpdateTextView.endEditing(true)
-        self.newUpdateTextView.text = placeholderText
-        self.newUpdateTextView.textColor = Theme.lightGrayColor()
+        let newUpdateText = self.newUpdateTextView.text
+        if ( newUpdateText != self.placeholderText && newUpdateText != "" )
+        {
+            adapter.postUpdate(newUpdateText)
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.projectUpdateTableView.reloadData()
+            })
+            
+            self.newUpdateTextView.endEditing(true)
+            self.newUpdateTextView.text = placeholderText
+            self.newUpdateTextView.textColor = Theme.lightGrayColor()
+        }
+        else{
+            print("empty comment")
+        }
     }
     
     // MARK - handle placeholder
@@ -93,12 +101,14 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
         let keyboardRectangle = keyboardFrame.CGRectValue()
         let keyboardHeight = keyboardRectangle.height
         
-        self.textAreaBottomConstraint.constant = -166 - keyboardHeight
+        print(self.textAreaBottomConstraint.constant)
+        self.textAreaBottomConstraint.constant  = ((-1*keyboardHeight)+70)
+        print(self.textAreaBottomConstraint.constant)
     }
     
     func keyboardWillDisappear(notification: NSNotification){
         // update constraint
-        self.textAreaBottomConstraint.constant = -166
+        self.textAreaBottomConstraint.constant = 0
     }
 
     override func didReceiveMemoryWarning() {
