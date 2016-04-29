@@ -39,6 +39,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="textView" destination="flT-ZK-zIf" id="7tK-e9-mFw"/>
+                <outlet property="textViewDistanceToBottom" destination="MUB-pq-auO" id="H56-IO-MP8"/>
             </connections>
         </tableViewCell>
     </objects>

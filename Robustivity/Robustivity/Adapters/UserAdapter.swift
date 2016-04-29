@@ -8,67 +8,54 @@
 
 import Foundation
 import UIKit
+import ObjectMapper
 
 // UserAdapter used to display the User TableViews, using the UserTableViewCell.
 // Remove the tableView Separator from your controller using: self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None 
 
 class UserAdapter: BaseTableAdapter {
-    
-    var tableItems2:ListModel!
-    
+    var project_id:Int!
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
+        self.project_id = (viewController as! ChooseAssigneeViewController).project_id
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
     }
-    
     
     func fetchItems() {
         if tableItems == nil {
             tableItems = ListModel()
         }
-        tableItems.addObject("Islam Abdelrouf")
-        tableItems.addObject("Ahmed Magdy")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Ahmed Mohamed ElAssuty")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Mohamed Lotfy")
-        tableItems.addObject("Islam Abdelrouf")
-        tableItems.addObject("Ahmed Magdy")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Ahmed Mohamed ElAssuty")
-        tableItems.addObject("Mahmoud Eldesouky")
-        tableItems.addObject("Mohamed Lotfy")
+        API.get(APIRoutes.PROJECTS_SHOW + String(project_id), callback: { (success, response) in
+            if(success){
+                let users = Mapper<User>().mapArray(response.objectForKey("members"))
+                for user in users! {
+                    self.tableItems.addObject(user)
+                    user.save()
+                }
+                self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .Bottom)
+                
+            }
+        })
         
-        tableView.reloadData()
-        if tableItems2 == nil {
-            tableItems2 = ListModel()
-        }
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("Project Manager")
-        tableItems2.addObject("UI Designer")
-        tableItems2.addObject("iOS Developer")
-        tableItems2.addObject("iOS Developer")
-        
-        tableView.reloadData()
     }
     
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let user =  tableItems.objectAtIndex(indexPath.row) as! User
         let createTaskViewController = CreateTaskViewController()
         self.viewController.navigationController?.pushViewController(createTaskViewController, animated: true)
+        createTaskViewController.user_id = user.id
+        createTaskViewController.project_id = project_id
+        createTaskViewController.isTaskObject = true
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? UserTableViewCell
-        _cell?.userName.text = tableItems.objectAtIndex(indexPath.row) as? String
-        _cell?.userTitle.text = tableItems2.objectAtIndex(indexPath.row) as? String
+        let userCell = cell as! UserTableViewCell
+        let user = tableItems.objectAtIndex(indexPath.row) as! User
+        userCell.userName.text = user.first_name + " " + user.last_name
+        userCell.userTitle.text = user.title
+        userCell.userAvatar.downloadImageFromUrl(APIRoutes.BASE_IMGS + user.profile_picture.square)
+        userCell.userAvatar.makeCircular()
+        
     }
     
   }
