@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
     
-  
+    
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -47,9 +47,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().delegate = self
         
+        // Configuring UserDefaults
+        let preferences = NSUserDefaults.standardUserDefaults()
+        
+        preferences.setInteger(21, forKey: "id")
+        preferences.setObject("jihan.elmarakby@robustastudio.com", forKey: "email")
+        preferences.setObject("Jihan", forKey: "first_name")
+        preferences.setObject("Adel", forKey: "last_name")
+        preferences.setObject("01060679458", forKey: "mobile_number")
+        preferences.setObject("Yasmine compound, first settlement, new cairo", forKey: "address")
+        preferences.setObject("Web Developer", forKey: "title")
+        preferences.setObject("Ahmed Adel", forKey: "contact_person_name")
+        preferences.setObject("01004467995", forKey: "contact_person_phone")
+        preferences.setObject("Brother", forKey: "contact_person_relation")
+        preferences.setObject("Yasmine compound, first settlement, new cairo", forKey: "contact_person_address")
+        preferences.setObject("/uploads/users/21/profile_picture/profile_11874124_10153598278534343_481294197_n.jpg", forKey: "picture_url")
+        preferences.setObject("/uploads/users/21/profile_picture/square_11874124_10153598278534343_481294197_n.jpg", forKey: "picture_square_url")
+        preferences.setObject("/uploads/users/21/profile_picture/icon_11874124_10153598278534343_481294197_n.jpg", forKey: "picture_icon_url")
+        preferences.setObject("/uploads/users/21/profile_picture/notifications_11874124_10153598278534343_481294197_n.jpg", forKey: "picture_notifications_url")
+        preferences.setObject("Cairo", forKey: "city")
+        preferences.setBool(true, forKey: "checkedIn")
+        
+        preferences.synchronize()
+        
         return true
     }
-   
+    
     func application(application: UIApplication,
         openURL url: NSURL, options: [String: AnyObject]) -> Bool {
             return GIDSignIn.sharedInstance().handleURL(url,
@@ -70,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         withError error: NSError!) {
             if (error == nil) {
                 // Perform any operations on signed in user here.
-            
+                
                 // ...
             } else {
                 print("\(error.localizedDescription)")

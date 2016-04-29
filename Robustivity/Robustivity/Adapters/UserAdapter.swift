@@ -43,7 +43,7 @@ class UserAdapter: BaseTableAdapter {
         let user =  tableItems.objectAtIndex(indexPath.row) as! User
         let createTaskViewController = CreateTaskViewController()
         self.viewController.navigationController?.pushViewController(createTaskViewController, animated: true)
-        createTaskViewController.user_id = user.id
+        createTaskViewController.user_id = user.userId
         createTaskViewController.project_id = project_id
         createTaskViewController.isTaskObject = true
     }
@@ -51,9 +51,9 @@ class UserAdapter: BaseTableAdapter {
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let userCell = cell as! UserTableViewCell
         let user = tableItems.objectAtIndex(indexPath.row) as! User
-        userCell.userName.text = user.first_name + " " + user.last_name
-        userCell.userTitle.text = user.title
-        userCell.userAvatar.downloadImageFromUrl(APIRoutes.BASE_IMGS + user.profile_picture.square)
+        userCell.userName.text = user.userFirstName + " " + user.userLastName
+        userCell.userTitle.text = user.userTitle
+        userCell.userAvatar.downloadImageFromUrl(APIRoutes.BASE_IMGS + user.userProfilePictureSquareURL)
         userCell.userAvatar.makeCircular()
         
     }
