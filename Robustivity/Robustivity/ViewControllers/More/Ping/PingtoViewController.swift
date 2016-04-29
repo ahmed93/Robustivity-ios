@@ -67,7 +67,7 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
         
         requestParams["body"] =  body! as String
         requestParams["recipient_ids[]"] = Ping.selectedUsers
-        API.post(APIRoutes.PING, parameters: requestParams , callback:{
+        API.post(APIRoutes.PING_CREATE, parameters: requestParams , callback:{
             (success, response) in
             
             if(success){
