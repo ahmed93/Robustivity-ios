@@ -108,6 +108,8 @@ class PlannerAdapter: BaseTableAdapter {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let a = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
         self.viewController.navigationController?.pushViewController(a, animated: true)
+        print("selected row at index")
+        print(indexPath)
     }
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let plannerCell = cell as! PlannerTableViewCell
@@ -115,7 +117,7 @@ class PlannerAdapter: BaseTableAdapter {
         let task = tableItems.objectAtIndex(indexPath.row) as! TaskModel
         plannerCell.itemTitle.text = task.taskName
         plannerCell.projectName.text = task.taskDescription
-        
+        plannerCell.plannerCellTask = task // Aya
         
         if indexPath.section == 0 {
             // [TODO] In Progress cell configurations

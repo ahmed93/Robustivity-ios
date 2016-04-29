@@ -42,6 +42,9 @@ class FeedViewController: BaseViewController {
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
         
+//        var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+//        toggleCell.pauseButtonConfigure()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
         
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pauseTimerNotification", name:"pauseTimerNotification", object: nil)
@@ -53,6 +56,7 @@ class FeedViewController: BaseViewController {
     
     func updateToggledTimeNotification() {
         var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+        toggleCell.playButtonCellSetup()
         toggleCell.timeLabel.text = toggleHelper.toggledTime
     }
     
