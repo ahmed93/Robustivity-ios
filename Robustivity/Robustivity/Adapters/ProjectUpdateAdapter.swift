@@ -14,6 +14,7 @@ class ProjectUpdateAdapter: BaseTableAdapter {
     
     let realm = try! Realm()
     
+    var projectId:Int?
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
@@ -22,12 +23,19 @@ class ProjectUpdateAdapter: BaseTableAdapter {
         // any extra stuff to be done
     }
     
+    func setProjectID(projectId:Int) {
+        self.projectId = projectId
+        fetchItems()
+    }
     
     func fetchItems() {
-        if tableItems.count == 0 {
-            API.get(APIRoutes.PROJECT_UPDATE, callback: { (success, response) in
+        
+        if tableItems.count == 0  && projectId != nil {
+            let url = "\(APIRoutes.PROJECTS_INDEX)\(self.projectId!)/updates"
+            
+            API.get(url, callback: { (success, response) in
                 if(success){
-                    
+                    print(response)
                     //map the json object to the model and save them
                     let projectUpdates = Mapper<ProjectUpdate>().mapArray(response["comments"])
                     for projectUpdate in projectUpdates! {
@@ -109,12 +117,13 @@ class ProjectUpdateAdapter: BaseTableAdapter {
     {
         var requestParams = [String: AnyObject]()
         requestParams["comment[content]"] =  updateContentString as String
-        
-        API.post(APIRoutes.PROJECT_UPDATE, parameters: requestParams , callback:{
+        let url = "\(APIRoutes.PROJECTS_INDEX)\(self.projectId!)/updates"
+
+        API.post(url, parameters: requestParams , callback:{
             (success, response) in
             
             if(success){
-                let projectUpdates = Mapper<ProjectUpdate>().mapArray([response["comment"]])
+                let projectUpdates = Mapper<ProjectUpdate>().mapArray(response["comment"])
                 for projectUpdate in projectUpdates! {
                     self.tableItems.objects.insertObject(projectUpdate, atIndex: 0)
                     projectUpdate.saveDb()

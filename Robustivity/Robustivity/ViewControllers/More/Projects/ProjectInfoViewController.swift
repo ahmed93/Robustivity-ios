@@ -25,12 +25,14 @@ class ProjectInfoViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     var adapter: ProjectInfoAdapter!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("ProjectInfoViewController", owner: self, options: nil)
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        NSBundle.mainBundle().loadNibNamed("ProjectInfoViewController", owner: self, options: nil)
+//    }
     
     override func loadView() {
         super.loadView()

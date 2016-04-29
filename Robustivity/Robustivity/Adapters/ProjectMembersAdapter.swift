@@ -42,5 +42,11 @@ class ProjectMembersAdapter: BaseTableAdapter{
         return CGFloat(57)
     }
     
+    
+    func setProjectData(data:NSMutableArray) {
+        tableItems.objects = data
+        tableView.reloadData()
+    }
+    
 }
 

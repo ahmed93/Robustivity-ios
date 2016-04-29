@@ -50,7 +50,6 @@ class ProjectsListAdapter: BaseTableAdapter {
                     self.tableItems.addObject(["proj_id": project.projectId,"proj_name": project.projectName, "member_name" : project.projectManagerName, "type": project.projectStatus])
                     
                     self.saveNewProject(project)
-                    print(project.projectId)
                 }
                 self.tableView.reloadData()
             }
