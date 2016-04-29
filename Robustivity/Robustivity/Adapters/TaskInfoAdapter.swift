@@ -77,9 +77,19 @@ class TaskInfoAdapter: BaseTableAdapter{
         if indexPath.section == 0 {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("toggleCell", forIndexPath: indexPath)
                 as! TaskInfoToggledTableViewCell
-            cell.timer.text = currentTask.taskStartDate
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = .MediumStyle
+            let x:String
+            if let date = currentTask.taskStartDate {
+                x = dateFormatter.stringFromDate(date)
+            } else {
+                x = ""
+            }
+
+            cell.timer.text = x
             cell.taskName.text = currentTask.taskName
-            cell.taskDate.text = currentTask.taskStartDate
+            cell.taskDate.text = x
             return cell
         }
         else if indexPath.section == 1{
