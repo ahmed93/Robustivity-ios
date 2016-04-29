@@ -16,14 +16,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RAh-xm-XcW">
-                    <rect key="frame" x="-8" y="-100" width="616" height="650"/>
+                    <rect key="frame" x="-8" y="-100" width="616" height="500"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="RAh-xm-XcW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-8" id="Tal-y4-f4r" userLabel="Table View.leading = leading "/>
-                <constraint firstAttribute="bottom" secondItem="RAh-xm-XcW" secondAttribute="bottom" constant="50" id="aHt-6S-f8O"/>
+                <constraint firstAttribute="bottom" secondItem="RAh-xm-XcW" secondAttribute="bottom" constant="200" id="aHt-6S-f8O"/>
                 <constraint firstAttribute="trailing" secondItem="RAh-xm-XcW" secondAttribute="trailing" constant="-8" id="bj7-zK-oNE" userLabel="trailing = Table View.trailing"/>
                 <constraint firstItem="RAh-xm-XcW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-100" id="oK0-hJ-dMz" userLabel="Table View.top = top "/>
             </constraints>
