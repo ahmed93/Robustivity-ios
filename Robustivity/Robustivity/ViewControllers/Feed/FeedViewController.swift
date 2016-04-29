@@ -9,18 +9,18 @@
 import UIKit
 
 class FeedViewController: BaseViewController {
-
+    
     
     @IBOutlet weak var tableView: UITableView!
     
     var adapter:FeedAdapter!
-
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("FeedViewController", owner: self, options: nil)
     }
-
+    
     override func loadView() {
         super.loadView()
     }
@@ -36,10 +36,18 @@ class FeedViewController: BaseViewController {
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
         
+        
+        
         // Add Left navigation item
         let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
+        
+        self.view.addGestureRecognizer(UIGestureRecognizer(target: self, action: NSSelectorFromString("dissmiss")))
+        self.view.endEditing(true)
     }
-
+    
+    
+    
+    
 }

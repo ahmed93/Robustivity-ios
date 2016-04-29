@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     //        let robustaRegin = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 29.999966133078818, longitude: 31.41594702178736), radius: 200, identifier: "Robusta")
     let robustaRegin = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 31.475328, longitude: 30.041010), radius: 200, identifier: "Robusta")
     
+    let preferences = NSUserDefaults.standardUserDefaults()
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -60,8 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
         // Configuring UserDefaults
-        let preferences = NSUserDefaults.standardUserDefaults()
-        
         preferences.setInteger(21, forKey: "id")
         preferences.setObject("jihan.elmarakby@robustastudio.com", forKey: "email")
         preferences.setObject("Jihan", forKey: "first_name")
@@ -78,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         preferences.setObject("/uploads/users/21/profile_picture/icon_11874124_10153598278534343_481294197_n.jpg", forKey: "picture_icon_url")
         preferences.setObject("/uploads/users/21/profile_picture/notifications_11874124_10153598278534343_481294197_n.jpg", forKey: "picture_notifications_url")
         preferences.setObject("Cairo", forKey: "city")
-        preferences.setBool(true, forKey: "checkedIn")
+        preferences.setBool(status, forKey: "checkedIn")
         
         preferences.synchronize()
         
@@ -147,6 +146,7 @@ extension AppDelegate: CLLocationManagerDelegate {
     
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        status = preferences.boolForKey("checkedIn")
         if robustaRegin.containsCoordinate((locations.last?.coordinate)!) {
             if !status {
                 print("checkedIn")
@@ -173,11 +173,13 @@ extension AppDelegate: CLLocationManagerDelegate {
     
     
     func checkIn() {
+        status = preferences.boolForKey("checkedIn")
         if !status {
             API.put("working_days/checkin", parameters:["":""]) { (success:Bool, response: AnyObject) -> () in
                 if success {
                     print("checkedIn_wwww")
-                    self.status = true
+                    self.preferences.setBool(true, forKey: "checkedIn")
+                    self.preferences.synchronize()
                 }
                 print(success)
             }
@@ -185,11 +187,14 @@ extension AppDelegate: CLLocationManagerDelegate {
     }
     
     func checkOut() {
+        status = preferences.boolForKey("checkedIn")
         if status {
             API.put("working_days/checkout", parameters: ["":""]) { (success, response) -> () in
                 if success {
                     print("checkedOut_wwww")
-                    self.status = false
+                    
+                    self.preferences.setBool(false, forKey: "checkedIn")
+                    self.preferences.synchronize()
                 }
                 print(success)
             }
@@ -219,5 +224,6 @@ extension AppDelegate: CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
         }
     }
+    
 }
 
