@@ -23,8 +23,4 @@ class APIRoutes {
 
     static let MY_PROJECTS = "projects/my_projects/";
 
-    static let MY_PROJECTS = "projects/my_projects/"
-    
-    
-
 }
