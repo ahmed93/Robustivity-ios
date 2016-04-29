@@ -133,7 +133,7 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     
     
     func textViewDidBeginEditing(textview: UITextView) {
-        if textview.textColor == Theme.lightGrayColor() {
+        if (textview.textColor == Theme.lightGrayColor() || textView!.text == placeholderText){
             textview.text = nil
             textview.textColor = UIColor.blackColor()
         }
@@ -142,7 +142,7 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     func textViewDidEndEditing(textview: UITextView) {
         if textview.text.isEmpty {
             textview.text = placeholderText
-            sendPingButton?.enabled = true
+            sendPingButton?.enabled = false
             textview.textColor = UIColor.lightGrayColor()
         } else {
             if(Ping.selectedUsers.count > 0){
