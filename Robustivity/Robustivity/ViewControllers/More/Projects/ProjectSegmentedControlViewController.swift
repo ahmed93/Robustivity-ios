@@ -62,7 +62,7 @@ class ProjectSegmentedControlViewController: BaseViewController {
                 project?.projectNumberOfTasks = response["number_of_tasks"] as! Int
                 project?.projectTasksDone = response["number_of_completed_tasks"] as! Int
                 self.projectInfoViewController?.adapter.saveNewProject(project!)
-                self.projectInfoViewController?.setData(project!)
+                self.projectInfoViewController?.adapter.project = project!
                 let projectManagerName:String = (project?.projectManagerName)!
                 let projectAccountManagerName:String = (project?.projectAccountManagerName)!
                 let projectManagerAvatar:String = (project?.projectManagerAvatar)!

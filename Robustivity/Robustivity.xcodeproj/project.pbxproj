@@ -142,6 +142,8 @@
 		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
 		348741C51CD2273000C75B69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C41CD2273000C75B69 /* User.swift */; };
 		348741C71CD23EA200C75B69 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */; };
+		34D74D8B1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D74D8A1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift */; };
+		34D74D8D1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D74D8C1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib */; };
 		75006FA11CD02E1D007D0846 /* Excuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75006FA01CD02E1D007D0846 /* Excuse.swift */; };
 		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
 		7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */; };
@@ -345,6 +347,8 @@
 		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
 		348741C41CD2273000C75B69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Project/User.swift; sourceTree = "<group>"; };
 		348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMembersAdapter.swift; sourceTree = "<group>"; };
+		34D74D8A1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoTableSectionFooter.swift; sourceTree = "<group>"; };
+		34D74D8C1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectInfoTableSectionFooter.xib; sourceTree = "<group>"; };
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		623433517E01C7895A187FE7 /* Pods-Robustivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.release.xcconfig"; sourceTree = "<group>"; };
 		75006FA01CD02E1D007D0846 /* Excuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Excuse.swift; sourceTree = "<group>"; };
@@ -566,6 +570,8 @@
 				1B7F8DFF1CB094E6007C8005 /* CustomProjectsListTableViewCell.xib */,
 				1B7F8E001CB094E6007C8005 /* Member */,
 				1B7F8E031CB094E6007C8005 /* Update */,
+				34D74D8A1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift */,
+				34D74D8C1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -1198,6 +1204,7 @@
 				9426F5111CBABBE0006BEFA1 /* CommentTableViewCell.xib in Resources */,
 				1B7F8E3C1CB094E6007C8005 /* BroadcastFeedTableViewCell.xib in Resources */,
 				9426F5131CBABBE0006BEFA1 /* DescriptionTableViewCell.xib in Resources */,
+				34D74D8D1CD393FE0052C2AE /* ProjectInfoTableSectionFooter.xib in Resources */,
 				A717E5AF1CA1774400F237DD /* Main.storyboard in Resources */,
 				A7E7A2501CA2EE6E002DB6FE /* MyriadPro-BoldIt.otf in Resources */,
 				1B7F8EA11CB09507007C8005 /* ProfileViewController.xib in Resources */,
@@ -1359,6 +1366,7 @@
 				A7BCE7AE1C7D8244007870CB /* AppDelegate.swift in Sources */,
 				1B7F8DBD1CB07C95007C8005 /* SDWebImageDecoder.m in Sources */,
 				A717E5A11CA1485000F237DD /* Theme.swift in Sources */,
+				34D74D8B1CD393B90052C2AE /* ProjectInfoTableSectionFooter.swift in Sources */,
 				1B7F8E901CB09507007C8005 /* FeedViewController.swift in Sources */,
 				1B7F8EB61CB09507007C8005 /* ToggleViewController.swift in Sources */,
 				1B7F8E431CB094E6007C8005 /* UserTableViewCell.swift in Sources */,

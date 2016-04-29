@@ -12,6 +12,8 @@ import RealmSwift
 
 class ProjectInfoAdapter: BaseTableAdapter {
     
+    var project:Project?
+    
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
@@ -87,6 +89,22 @@ class ProjectInfoAdapter: BaseTableAdapter {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return CGFloat(57)
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        // Here, we use NSFetchedResultsController
+        // And we simply use the section name as title
+        
+        // Dequeue with the reuse identifier
+        let cell = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier("ProjectInfoTableSectionFooter")
+        let footer = cell as? ProjectInfoTableSectionFooter
+        footer?.customizeUI()
+        footer?.setData(self.project!)
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 200
     }
     
     
