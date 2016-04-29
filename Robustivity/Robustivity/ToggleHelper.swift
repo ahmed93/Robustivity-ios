@@ -56,7 +56,6 @@ class ToggleHelper {
     }
     
     func fetchTasks() {
-        print("Tasks will fetch")
         API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
             if(success){
                 
@@ -107,7 +106,6 @@ class ToggleHelper {
                 self.timer.invalidate(); //stop timer
                 self.currentTaskState = "paused"
                 self.timer.invalidate(); //stop timer
-//                self.fetchTaskTimelogs(self.toggleTask) //get updated log
                 self.pausedTimeInterval = self.currentTimeInterval
                 NSNotificationCenter.defaultCenter().postNotificationName("pauseTimerNotification", object: nil)
                 
@@ -127,15 +125,10 @@ class ToggleHelper {
         API.post(urlWithTaskId, parameters: requestParams, callback: { (success, response) in
             if(success) {
                 
-//                self.fetchTaskTimelogs(self.toggleTask) //get updated log
-//                self.getToggledTime(self.toggleTask)
-                
                 let task = Mapper<TaskModel>().map(response["task"])
 
                 task?.updateTask()
                 self.toggleTask = task!
-//                let currentDate = NSDate();
-//                self.startDate = currentDate;
                 
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
@@ -216,61 +209,5 @@ class ToggleHelper {
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
-    /*Add all timelogs intervals for a specfic task to be able to get previous toggled time*/
-//    func getToggledTime(task: TaskModel) {
-//        let filterString = "timelogTaskId == " + String(task.taskId)
-//        
-//        let timelog = self.realm.objects(Timelog).filter(filterString).first
-//        
-//        if(timelog != nil) {
-//            let entryFilterString = "timelogId == " + String(timelog!.timelogId)
-//            let timeIntervals = self.realm.objects(TimeEntry).filter(entryFilterString)
-//            let dateFormatter = NSDateFormatter()
-//            dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
-//            
-//            var totalTimeInterval = NSTimeInterval();
-//            
-//            for timeInterval in timeIntervals {
-//                let entryStartDate = dateFormatter.dateFromString(timeInterval.timeEntryStartedAt)
-//                let entryEndDate = dateFormatter.dateFromString(timeInterval.timeEntryEndedAt)
-//                
-//                let timeDiff = entryEndDate!.timeIntervalSinceDate(entryStartDate!);
-//                
-//                totalTimeInterval += timeDiff
-//                
-//                if(entryStartDate!.isEqualToDate(entryEndDate!)) {
-//                    self.apiStartDate = entryStartDate!
-//                    
-//                }
-//            }
-//            print("totla time interval")
-//            print(totalTimeInterval)
-//            
-//            self.pausedTimeInterval = totalTimeInterval
-//            
-//        }
-//        
-//    }
-//    
-//    func fetchTaskTimelogs(task: TaskModel) {
-//        
-//        let url = APIRoutes.TASKS_TIMELOG
-//        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(task.taskId))
-//        
-//        API.get(urlWithTaskId, callback: { (success, response) in
-//            if(success){
-//                
-//                let timelog = Mapper<Timelog>().map(response["time_log"])
-//                //                self.updateTimelog(timelog!)
-//                timelog?.updateTimelog()
-//                let timeEntries = Mapper<TimeEntry>().mapArray(response["time_entries"])
-//                for timeEntry in timeEntries! {
-//                    timeEntry.updateTimeEntry()
-//                }
-//                
-//            }
-//        })
-//        
-//    }
     
 }
