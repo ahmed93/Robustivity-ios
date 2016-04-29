@@ -24,13 +24,14 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.title = "Ping To";
         self.navigationItem.title = "Ping To"
         sendPingButton = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Plain, target: self, action: "sendPing")
         sendPingButton?.enabled = false
         self.navigationItem.rightBarButtonItem = sendPingButton
-        let cancelPingButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelPing")
-        self.navigationItem.leftBarButtonItem = cancelPingButton
+    //    let cancelPingButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelPing")
+    //    self.navigationItem.leftBarButtonItem = cancelPingButton
         
         self.textView!.text = placeholderText
         self.textView!.textColor = Theme.lightGrayColor()
@@ -44,7 +45,12 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     
     
     override func viewWillAppear(animated: Bool) {
+        super.tabBarController?.tabBar.hidden = true
         addChosenUsers()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.tabBarController?.tabBar.hidden = false
     }
     
     func sendPing() {

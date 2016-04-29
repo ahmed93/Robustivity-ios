@@ -14,6 +14,10 @@ import ObjectMapper
 class PingAdapter: BaseTableAdapter {
     
     let realm = try! Realm()
+    var selectedUsers:Array<Int> = []
+    var selectedUsersPics:Array<String> = []
+    var deselectedUsers:Array<Int> = []
+    var deselectedUsersPics:Array<String> = []
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
@@ -55,8 +59,15 @@ class PingAdapter: BaseTableAdapter {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
         let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
-        Ping.selectedUsersPics.append(currentUser.userProfilePictureIconURL)
-        Ping.selectedUsers.append(currentUser.userId)
+        self.selectedUsersPics.append(currentUser.userProfilePictureIconURL)
+        self.selectedUsers.append(currentUser.userId)
+        if(self.deselectedUsers.contains(currentUser.userId)) {
+            self.deselectedUsers.removeAtIndex(self.deselectedUsers.indexOf(currentUser.userId)!)
+        }
+        
+        if(self.deselectedUsersPics.contains(currentUser.userProfilePictureURL)) {
+            self.deselectedUsersPics.removeAtIndex(self.deselectedUsersPics.indexOf(currentUser.userProfilePictureURL)!)
+        }
         
     }
     
@@ -75,10 +86,20 @@ class PingAdapter: BaseTableAdapter {
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
         let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
-        Ping.selectedUsersPics.removeAtIndex(Ping.selectedUsersPics.indexOf(currentUser.userProfilePictureIconURL)!)
-        Ping.selectedUsers.removeAtIndex(Ping.selectedUsers.indexOf(currentUser.userId)!)
-
+        if(self.selectedUsersPics.contains(currentUser.userProfilePictureURL)) {
+            self.selectedUsersPics.removeAtIndex(self.selectedUsersPics.indexOf(currentUser.userProfilePictureIconURL)!)
+        }
+        if(self.selectedUsers.contains(currentUser.userId)) {
+            self.selectedUsers.removeAtIndex(self.selectedUsers.indexOf(currentUser.userId)!)
+        }
+        if(!self.deselectedUsers.contains(currentUser.userId)) {
+            self.deselectedUsers.append(currentUser.userId)
+        }
+        if(!self.deselectedUsersPics.contains(currentUser.userProfilePictureURL)) {
+            self.deselectedUsersPics.append(currentUser.userProfilePictureURL)
+        }
     }
+    
     
     
     

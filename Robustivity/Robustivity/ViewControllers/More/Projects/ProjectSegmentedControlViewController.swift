@@ -101,6 +101,11 @@ class ProjectSegmentedControlViewController: BaseViewController {
     // Show subview based on the selected segmentedControl
     func showSubView(viewIndex: Int)
     {
+
+        if self.containerView.subviews.count > 0{
+            self.containerView.subviews[0].removeFromSuperview()
+        }
+        
         switch viewIndex {
         case 0:
             if projectInfoViewController == nil {
