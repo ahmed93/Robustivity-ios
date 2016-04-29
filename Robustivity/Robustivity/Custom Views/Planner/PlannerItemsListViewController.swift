@@ -31,7 +31,11 @@ class PlannerItemsListViewController: BaseViewController, UISearchControllerDele
         
         self.navigationController?.hidesBarsOnSwipe = true
     }
-    
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+    }
     
     // MARK: RefreshControl
     func addRefreshControl() {
