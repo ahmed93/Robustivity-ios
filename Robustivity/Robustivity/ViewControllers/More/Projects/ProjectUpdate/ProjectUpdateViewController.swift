@@ -58,15 +58,23 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
     
     // MARK - send update to backend
     @IBAction func submitUpdate(sender: UIButton) {
-        adapter.postUpdate(self.newUpdateTextView.text)
         
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.projectUpdateTableView.reloadData()
-        })
-        
-        self.newUpdateTextView.endEditing(true)
-        self.newUpdateTextView.text = placeholderText
-        self.newUpdateTextView.textColor = Theme.lightGrayColor()
+        let newUpdateText = self.newUpdateTextView.text
+        if ( newUpdateText != self.placeholderText && newUpdateText != "" )
+        {
+            adapter.postUpdate(newUpdateText)
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.projectUpdateTableView.reloadData()
+            })
+            
+            self.newUpdateTextView.endEditing(true)
+            self.newUpdateTextView.text = placeholderText
+            self.newUpdateTextView.textColor = Theme.lightGrayColor()
+        }
+        else{
+            print("empty comment")
+        }
     }
     
     // MARK - handle placeholder
