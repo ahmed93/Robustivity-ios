@@ -18,14 +18,15 @@ import RealmSwift
  31/3/16.
  */
 class PlannerAdapter: BaseTableAdapter {
-    let numberOfItemsPerSection = 10
+    var numberOfItemsPerSection = 10
     
-    var selectedSegmentIndex: Int! {
-        return (viewController as! PlannerViewController).segmentedControl.selectedSegmentIndex
+    var itemType: TaskType! {
+        let index = (viewController as! PlannerViewController).segmentedControl.selectedSegmentIndex
+        return index == 0 ? .Task : .Todo
     }
     
-    override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
-        super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
+    override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
+        super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
     }
     
     // MARK: Base Adapter Delegate methods
@@ -50,11 +51,10 @@ class PlannerAdapter: BaseTableAdapter {
     }
     
     func fetchFromDatabase() -> (Results<TaskModel>, Results<TaskModel>) {
-        let type:TaskType! = selectedSegmentIndex == 0 ? .Task : .Todo
-        let config = TaskStatus.configurationOf(type)
+        let config = TaskStatus.configurationOf(itemType)
         
-        let inProgress = TaskModel.recent(type, status: config!.inProgress)
-        let done = TaskModel.recent(type, status: config!.done)
+        let inProgress = TaskModel.recent(itemType, status: config!.inProgress)
+        let done = TaskModel.recent(itemType, status: config!.done)
         
         return (inProgress, done)
     }
@@ -63,12 +63,17 @@ class PlannerAdapter: BaseTableAdapter {
         tableItems = ListModel()
         tableItems.addObject(data.0)
         tableItems.addObject(data.1)
+        
         UIView.transitionWithView(tableView,
             duration: 0.35,
             options: animationOptions,
             animations: { () -> Void in
                 self.tableView.reloadData()
             }, completion: nil)
+    }
+    
+    func isSeeAllCell(indexPath: NSIndexPath) -> Bool {
+        return indexPath.row == numberOfItemsPerSection
     }
     
     // MARK: Table view delegate and datasource
@@ -98,7 +103,7 @@ class PlannerAdapter: BaseTableAdapter {
                 return items.count
             }
             
-            return numberOfItemsPerSection
+            return numberOfItemsPerSection + 1
         }
         
         return 0
@@ -111,31 +116,47 @@ class PlannerAdapter: BaseTableAdapter {
     Ahmed Elassuty.
     */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        // See All Table View Cell
+        if isSeeAllCell(indexPath) {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            let itemsListViewController = PlannerItemsListViewController()
+            itemsListViewController.itemType = itemType
+            itemsListViewController.itemSection = indexPath.section
+
+            viewController.navigationController?.pushViewController(itemsListViewController, animated: true)
+            return
+        }
+        
         let taskViewController = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
         self.viewController.navigationController?.pushViewController(taskViewController, animated: true)
     }
     
-    override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let plannerCell = cell as! PlannerTableViewCell
+    override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
+        if isSeeAllCell(indexPath) {
+            let seeAllCell = tableView.dequeueReusableCellWithIdentifier("PlannerSeeAllCell")
+            return seeAllCell
+        }
         
+        let plannerCell = tableView.dequeueReusableCellWithIdentifier("PlannerCell") as! PlannerTableViewCell
         let tasks = tableItems.objectAtIndex(indexPath.section) as! Results<TaskModel>
         let item = tasks[indexPath.row]
         plannerCell.itemTitle.text = item.taskName
         plannerCell.projectName.text = item.taskDescription
+        
+        // Should be a singletone over the app
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .MediumStyle
         
         if indexPath.section == 0 {
-            // [TODO] In Progress cell configurations
-            
             plannerCell.dueDate.text = dateFormatter.stringFromDate(item.taskStartDate!)
             plannerCell.dueDateBottomMarginLayoutConstraint.constant = 14
         } else {
-            // [TODO] Done cell configurations
-            
             plannerCell.dueDate.text = ""
             plannerCell.dueDateBottomMarginLayoutConstraint.constant = 7
         }
+        
+        return plannerCell
     }
     
     

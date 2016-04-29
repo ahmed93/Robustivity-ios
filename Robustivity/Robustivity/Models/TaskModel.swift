@@ -112,5 +112,13 @@ class TaskModel: Object, Mappable {
         let result = realm.objects(self).filter(predicate).sorted("taskUpdatedAt", ascending: false)
         return result;
     }
+    
+    static func filterAll(type: TaskType, startsWith text: String) -> Results<TaskModel> {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "taskNature = %@ AND taskName CONTAINS[c] %@", type.rawValue, text)
+        let result = realm.objects(self).filter(predicate).sorted("taskUpdatedAt", ascending: false)
+        return result;
+        
+    }
 
 }
