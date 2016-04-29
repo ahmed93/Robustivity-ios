@@ -11,7 +11,7 @@ import UIKit
 class WriteExcuseViewController: BaseViewController, UITextViewDelegate {
     
     @IBOutlet weak var textView: UITextView!
-    
+    var sendButton:UIBarButtonItem?
     override func loadView() {
         super.loadView()
     }
@@ -25,7 +25,8 @@ class WriteExcuseViewController: BaseViewController, UITextViewDelegate {
         super.viewDidLoad()
         self.title = "Write Excuse";
         self.navigationItem.title = "Write Excuse";
-        let sendButton = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Plain, target: self, action: "sendExcuse")
+         sendButton = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Plain, target: self, action: "sendExcuse")
+        self.sendButton?.enabled = false
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelExcuse")
         self.navigationItem.rightBarButtonItem = sendButton
         self.navigationItem.leftBarButtonItem = cancelButton
@@ -80,6 +81,7 @@ class WriteExcuseViewController: BaseViewController, UITextViewDelegate {
         if textview.textColor == Theme.grayColor() {
             textview.text = nil
             textview.textColor = Theme.blackColor()
+            self.sendButton?.enabled = true
         }
     }
     

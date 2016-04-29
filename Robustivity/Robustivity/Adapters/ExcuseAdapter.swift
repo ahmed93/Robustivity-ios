@@ -62,10 +62,11 @@ class ExcuseAdapter: BaseTableAdapter {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedCell = self.tableView.cellForRowAtIndexPath(indexPath)
-        var refreshAlert = UIAlertController(title: "Confirmation", message: "Are you sure that you want to send this excuse?", preferredStyle: UIAlertControllerStyle.Alert)
+        let refreshAlert = UIAlertController(title: "Confirmation", message: "Are you sure that you want to send this excuse?", preferredStyle: UIAlertControllerStyle.Alert)
         let sentAlert = UIAlertController(title: "Success", message: "Your excuse has been sent.", preferredStyle: UIAlertControllerStyle.Alert)
         let errorAlert = UIAlertController(title: "Failure", message: "The excuse was not sent, please try again", preferredStyle: UIAlertControllerStyle.Alert)
         sentAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            self.viewController.navigationController!.popViewControllerAnimated(true)
             
         }))
         errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
