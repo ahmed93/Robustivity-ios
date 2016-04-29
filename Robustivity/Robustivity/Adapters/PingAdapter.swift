@@ -48,13 +48,15 @@ class PingAdapter: BaseTableAdapter {
         _cell?.pingUserAvatar.layer.cornerRadius = (_cell?.pingUserAvatar.frame.size.width)! / 2
         _cell?.pingUserAvatar.clipsToBounds = true
         _cell?.userId = currentUser.userId
+        _cell?.accessoryType = UITableViewCellAccessoryType.None
+
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
         let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
-        Ping.selectedUsers.insert(currentUser.userId)
-        Ping.selectedUsersPics.insert(currentUser.userProfilePictureIconURL)
+        Ping.selectedUsersPics.append(currentUser.userProfilePictureIconURL)
+        Ping.selectedUsers.append(currentUser.userId)
         
     }
     
@@ -73,8 +75,8 @@ class PingAdapter: BaseTableAdapter {
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
         let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
-        Ping.selectedUsers.remove(currentUser.userId)
-        Ping.selectedUsersPics.remove(currentUser.userProfilePictureIconURL)
+        Ping.selectedUsersPics.removeAtIndex(Ping.selectedUsersPics.indexOf(currentUser.userProfilePictureIconURL)!)
+        Ping.selectedUsers.removeAtIndex(Ping.selectedUsers.indexOf(currentUser.userId)!)
 
     }
     

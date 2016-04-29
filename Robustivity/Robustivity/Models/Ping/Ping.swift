@@ -11,7 +11,7 @@ import Foundation
 
 
 class Ping {
-    static var selectedUsers:Set<Int> = []
-    static var selectedUsersPics:Set<String> = []
+    static var selectedUsers:Array<Int> = []
+    static var selectedUsersPics:Array<String> = []
 
 }
