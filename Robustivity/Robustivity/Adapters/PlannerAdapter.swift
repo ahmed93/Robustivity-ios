@@ -116,7 +116,6 @@ class PlannerAdapter: BaseTableAdapter {
     Ahmed Elassuty.
     */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
         // See All Table View Cell
         if isSeeAllCell(indexPath) {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -129,6 +128,8 @@ class PlannerAdapter: BaseTableAdapter {
         }
         
         let taskViewController = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
+        taskViewController.taskId = String((tableItems.objectAtIndex(indexPath.section) as! Results<TaskModel>)[indexPath.row].taskId)
+
         self.viewController.navigationController?.pushViewController(taskViewController, animated: true)
     }
     
