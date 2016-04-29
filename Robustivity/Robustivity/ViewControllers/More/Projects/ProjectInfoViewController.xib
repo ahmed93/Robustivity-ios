@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="MyriadPro-Regular.otf">
@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectInfoViewController" customModule="Robustivity" customModuleProvider="target">
             <connections>
+                <outlet property="footerView" destination="523-8L-xs7" id="b2Y-qe-PTC"/>
                 <outlet property="projectCashProgress" destination="T1G-Wi-G50" id="eZ2-gA-E4x"/>
                 <outlet property="projectCashValueLabel" destination="jYU-PM-ec7" id="Yrg-kl-8Rk"/>
                 <outlet property="projectCustomerSatisfactionProgress" destination="cUm-w1-nJB" id="t4n-hy-ioQ"/>
@@ -29,6 +30,7 @@
                 <outlet property="projectStatusLabel" destination="2wc-2K-C00" id="FUZ-pZ-Aia"/>
                 <outlet property="projectTasksDoneLabel" destination="1gp-8l-rxN" id="kbW-Xj-w1J"/>
                 <outlet property="projectTasksProgress" destination="q50-dF-5HI" id="JwK-OE-4PM"/>
+                <outlet property="tableView" destination="LqF-fw-TVg" id="HbQ-h2-zsd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,7 +39,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-SL-5jm">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-SL-5jm" userLabel="Top View">
                     <rect key="frame" x="8" y="66" width="577" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGi-Bk-bVS">
@@ -66,7 +68,7 @@
                     <rect key="frame" x="8" y="120" width="570" height="233"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="523-8L-xs7">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="523-8L-xs7" userLabel="Bottom View">
                     <rect key="frame" x="21" y="379" width="560" height="193"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tasks done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPx-Fe-g5i">
@@ -157,7 +159,7 @@
                 <constraint firstItem="LqF-fw-TVg" firstAttribute="top" secondItem="jvs-SL-5jm" secondAttribute="bottom" id="LlP-He-8Am"/>
                 <constraint firstItem="jvs-SL-5jm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PdV-ck-Ge2"/>
                 <constraint firstItem="523-8L-xs7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QDe-Sf-gKg"/>
-                <constraint firstItem="jvs-SL-5jm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tdu-JX-MrQ"/>
+                <constraint firstItem="jvs-SL-5jm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-120" id="Tdu-JX-MrQ"/>
                 <constraint firstAttribute="trailing" secondItem="LqF-fw-TVg" secondAttribute="trailing" constant="-8" id="W9X-Rw-U16"/>
                 <constraint firstItem="LqF-fw-TVg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-8" id="oSr-Fx-bOQ"/>
                 <constraint firstAttribute="trailing" secondItem="jvs-SL-5jm" secondAttribute="trailing" id="toR-R9-rW0"/>
