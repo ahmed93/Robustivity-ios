@@ -51,10 +51,10 @@ class CallCollectionAdapter: BaseCollectionAdapter {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.tableItems.count/2
+        return self.tableItems.count
     }
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     //created by Menna ElKharbotly
     
