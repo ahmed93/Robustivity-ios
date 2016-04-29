@@ -93,7 +93,7 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
         let keyboardRectangle = keyboardFrame.CGRectValue()
         let keyboardHeight = keyboardRectangle.height
         
-        self.textAreaBottomConstraint.constant = -166 - keyboardHeight
+        self.textAreaBottomConstraint.constant = -125 - keyboardHeight
     }
     
     func keyboardWillDisappear(notification: NSNotification){
