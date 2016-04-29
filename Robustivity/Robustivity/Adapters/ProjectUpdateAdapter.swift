@@ -13,6 +13,7 @@ import RealmSwift
 class ProjectUpdateAdapter: BaseTableAdapter {
     
     let realm = try! Realm()
+    let preferences = NSUserDefaults.standardUserDefaults()
     
     var projectId:Int?
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
@@ -124,6 +125,22 @@ class ProjectUpdateAdapter: BaseTableAdapter {
             if(success){
                 let projectUpdates = Mapper<ProjectUpdate>().mapArray([response["comment"]])
                 for projectUpdate in projectUpdates! {
+                    
+                    // set user image from shared preference
+                    if self.preferences.objectForKey("icon_url") != nil {
+                        projectUpdate.userAvatar = self.preferences.objectForKey("icon_url") as! String
+                    }
+                    
+                    // set user name from shared preference
+                    let userFirstName = self.preferences.objectForKey("first_name") as? String
+                    let userLastName = self.preferences.objectForKey("last_name") as? String
+                    if(userFirstName != nil){
+                        projectUpdate.userName = userFirstName!
+                    }
+                    if(userLastName != nil){
+                        projectUpdate.userName += " " + userLastName!
+                    }
+                    
                     self.tableItems.objects.insertObject(projectUpdate, atIndex: 0)
                     projectUpdate.saveDb()
                 }
