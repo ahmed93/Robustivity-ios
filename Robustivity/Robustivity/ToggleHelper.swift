@@ -56,6 +56,7 @@ class ToggleHelper {
     }
     
     func fetchTasks() {
+        print("Tasks will fetch")
         API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
             if(success){
                 
@@ -74,7 +75,6 @@ class ToggleHelper {
                         self.pausedTimeInterval = interval
                         let dateFormatter = NSDateFormatter()
                         dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
-                        dateFormatter.timeZone = NSTimeZone(abbreviation: "EST")
                         self.startDate = dateFormatter.dateFromString(task.taskUpdatedAt)!
 //                        self.startDate = self.startDate.dateByAddingTimeInterval(-1*60*60) //Add to compansate server time
                         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
@@ -190,9 +190,13 @@ class ToggleHelper {
     @objc func updateToggledTime() {
         // Create date from the elapsed time
         let currentDate = NSDate();
+        print("startDate")
         print(self.startDate)
+        print("current Date")
         print(currentDate)
         
+        print("paused time interval")
+        print(pausedTimeInterval)
         var timeInterval = currentDate.timeIntervalSinceDate(self.startDate);
         print(timeInterval)
         timeInterval += pausedTimeInterval;
