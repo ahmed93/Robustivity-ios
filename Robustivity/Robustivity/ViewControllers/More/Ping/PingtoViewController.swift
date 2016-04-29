@@ -21,14 +21,15 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     var base = "http://hr.staging.rails.robustastudio.com"
     var placeholderText = "Write your message here..."
     var sendPingButton:UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Ping To";
         self.navigationItem.title = "Ping To"
-        sendPingButton = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PingtoViewController.sendPing))
+        sendPingButton = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Plain, target: self, action: "sendPing")
         sendPingButton?.enabled = false
         self.navigationItem.rightBarButtonItem = sendPingButton
-        let cancelPingButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PingtoViewController.cancelPing))
+        let cancelPingButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelPing")
         self.navigationItem.leftBarButtonItem = cancelPingButton
         
         self.textView!.text = placeholderText

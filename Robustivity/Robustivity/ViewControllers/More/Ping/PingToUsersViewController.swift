@@ -20,7 +20,7 @@ class PingToUsersViewController: BaseViewController {
         adapter = PingAdapter(viewController: self, tableView: tableView, registerCellWithNib:"PingToUserTableViewCell", withIdentifier: "cell")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLineEtched
         self.tableView.allowsMultipleSelection = true
-        let doneChooseButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(makeChoice))
+        let doneChooseButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "makeChoice")
         self.navigationItem.leftBarButtonItem = doneChooseButton
        
         // Do any additional setup after loading the view.
