@@ -2,16 +2,17 @@
 //  User.swift
 //  Robustivity
 //
-//  Created by Almgohar on 4/27/16.
+//  Created by Nariman El-Samadoni on 4/24/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import ObjectMapper
 import RealmSwift
 
 class User: Object, Mappable {
-    
+
     dynamic var userId = 0
     dynamic var userEmail = ""
     dynamic var userFirstName = ""
@@ -54,4 +55,5 @@ class User: Object, Mappable {
         userProfilePictureNotificationURL   <- map["profile_picture.notifications.url"]
         userCity                            <- map["city"]
     }
+
 }
