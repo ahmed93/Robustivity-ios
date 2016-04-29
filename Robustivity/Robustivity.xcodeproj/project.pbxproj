@@ -12,9 +12,9 @@
 		0148F2F81CC69AE400CDAC9B /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */; };
 		014A868B1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A86891CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift */; };
 		014A868C1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014A868A1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib */; };
-		014A86911CD2EDA70050BB09 /* PlannerItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A868F1CD2EDA70050BB09 /* PlannerItemsListViewController.swift */; };
-		014A86921CD2EDA70050BB09 /* PlannerItemsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014A86901CD2EDA70050BB09 /* PlannerItemsListViewController.xib */; };
 		014A86941CD39CB30050BB09 /* PlannerItemsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A86931CD39CB30050BB09 /* PlannerItemsListAdapter.swift */; };
+		014A8DB71CD3E0050050BB09 /* PlannerItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A8DB51CD3E0050050BB09 /* PlannerItemsListViewController.swift */; };
+		014A8DB81CD3E0050050BB09 /* PlannerItemsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014A8DB61CD3E0050050BB09 /* PlannerItemsListViewController.xib */; };
 		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
 		01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */; };
 		01C72A431CD0383A002C3513 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C72A421CD0383A002C3513 /* TaskModel.swift */; };
@@ -202,9 +202,9 @@
 		0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		014A86891CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerSeeAllTableViewCell.swift; sourceTree = "<group>"; };
 		014A868A1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerSeeAllTableViewCell.xib; sourceTree = "<group>"; };
-		014A868F1CD2EDA70050BB09 /* PlannerItemsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerItemsListViewController.swift; sourceTree = "<group>"; };
-		014A86901CD2EDA70050BB09 /* PlannerItemsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerItemsListViewController.xib; sourceTree = "<group>"; };
 		014A86931CD39CB30050BB09 /* PlannerItemsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerItemsListAdapter.swift; sourceTree = "<group>"; };
+		014A8DB51CD3E0050050BB09 /* PlannerItemsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerItemsListViewController.swift; sourceTree = "<group>"; };
+		014A8DB61CD3E0050050BB09 /* PlannerItemsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerItemsListViewController.xib; sourceTree = "<group>"; };
 		01530AFA1CAB145A00429264 /* PlannerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerAdapter.swift; sourceTree = "<group>"; };
 		01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01C72A421CD0383A002C3513 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
@@ -670,8 +670,6 @@
 				1B7F8E1E1CB094E6007C8005 /* Task */,
 				014A86891CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift */,
 				014A868A1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib */,
-				014A868F1CD2EDA70050BB09 /* PlannerItemsListViewController.swift */,
-				014A86901CD2EDA70050BB09 /* PlannerItemsListViewController.xib */,
 			);
 			path = Planner;
 			sourceTree = "<group>";
@@ -832,6 +830,8 @@
 		1B7F8E7C1CB09507007C8005 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				014A8DB51CD3E0050050BB09 /* PlannerItemsListViewController.swift */,
+				014A8DB61CD3E0050050BB09 /* PlannerItemsListViewController.xib */,
 				1B7F8E7D1CB09507007C8005 /* Create Task */,
 				1B7F8E871CB09507007C8005 /* PlannerViewController.swift */,
 				1B7F8E881CB09507007C8005 /* PlannerViewController.xib */,
@@ -1212,7 +1212,7 @@
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
 				1B7F8EB11CB09507007C8005 /* ChooseProjectViewController.xib in Resources */,
 				A7BCE7B51C7D8244007870CB /* Assets.xcassets in Resources */,
-				014A86921CD2EDA70050BB09 /* PlannerItemsListViewController.xib in Resources */,
+				014A8DB81CD3E0050050BB09 /* PlannerItemsListViewController.xib in Resources */,
 				A7FD4DBA1CA5DFC100BD7332 /* LaunchScreen.storyboard in Resources */,
 				1B7F8E341CB094E6007C8005 /* CustomProjectsListTableViewCell.xib in Resources */,
 				A7E7A2551CA2EE6E002DB6FE /* MyriadPro-Semibold.otf in Resources */,
@@ -1340,7 +1340,6 @@
 				1B7F8E4B1CB094E6007C8005 /* TextViewTaskViewCell.swift in Sources */,
 				0110834F1CAC215A00F616DD /* ProjectUpdateModel.swift in Sources */,
 				1B7F8E331CB094E6007C8005 /* CustomProjectsListTableViewCell.swift in Sources */,
-				014A86911CD2EDA70050BB09 /* PlannerItemsListViewController.swift in Sources */,
 				1B7F8DDB1CB0813C007C8005 /* Circular+UIImageView.swift in Sources */,
 				1B7F8E311CB094E6007C8005 /* ProfileTableViewCell.swift in Sources */,
 				1B7F8E981CB09507007C8005 /* WriteExcuseViewController.swift in Sources */,
@@ -1399,6 +1398,7 @@
 				BDB706591CCFD15C00ED7D1E /* TaskInfoModel.swift in Sources */,
 				1B7F8EB61CB09507007C8005 /* ToggleViewController.swift in Sources */,
 				1B7F8E431CB094E6007C8005 /* UserTableViewCell.swift in Sources */,
+				014A8DB71CD3E0050050BB09 /* PlannerItemsListViewController.swift in Sources */,
 				1B7F8E301CB094E6007C8005 /* NotificationsTableViewCell.swift in Sources */,
 				1B7F8DC81CB07C95007C8005 /* UIView+WebCacheOperation.m in Sources */,
 				01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */,
