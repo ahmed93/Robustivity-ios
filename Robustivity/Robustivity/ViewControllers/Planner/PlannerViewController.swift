@@ -104,7 +104,7 @@ class PlannerViewController: BaseViewController {
     */
     func segmentControlAction(sender: UISegmentedControl) {
         let data = adapter.fetchFromDatabase()
-        adapter.refreshTable(data)
+        adapter.refreshTable(data, animationOptions: .TransitionFlipFromLeft)
     }
     
     // MARK: Refresh Control Action
