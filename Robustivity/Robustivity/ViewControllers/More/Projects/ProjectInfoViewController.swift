@@ -23,6 +23,7 @@ class ProjectInfoViewController: BaseViewController {
     @IBOutlet weak var projectDateLabel: UILabel!
     var projectSponserNumber:String = ""
     
+    @IBOutlet var bottomView: UIView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -86,6 +87,8 @@ class ProjectInfoViewController: BaseViewController {
         projectCustomerSatisfactionProgress?.layer.borderColor = Theme.purpleColor().CGColor
         projectCustomerSatisfactionValueLabel?.textColor = Theme.purpleColor()
         
+
+        adapter.bottomView = self.bottomView
 //        projectStatusLabel?.textColor = Theme.greenColor()
 //        projectDateLabel?.textColor = Theme.redColor()
 //        
