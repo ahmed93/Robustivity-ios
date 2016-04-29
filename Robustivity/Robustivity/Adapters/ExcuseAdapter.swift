@@ -62,6 +62,36 @@ class ExcuseAdapter: BaseTableAdapter {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedCell = self.tableView.cellForRowAtIndexPath(indexPath)
+        let refreshAlert = UIAlertController(title: "Confirmation", message: "Are you sure that you want to send this excuse?", preferredStyle: UIAlertControllerStyle.Alert)
+        let sentAlert = UIAlertController(title: "Success", message: "Your excuse has been sent.", preferredStyle: UIAlertControllerStyle.Alert)
+        let errorAlert = UIAlertController(title: "Failure", message: "The excuse was not sent, please try again", preferredStyle: UIAlertControllerStyle.Alert)
+        sentAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            self.viewController.navigationController!.popViewControllerAnimated(true)
+            
+        }))
+        errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        refreshAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            let excuse = self.tableItems.objectAtIndex(indexPath.row) as! Excuse
+            let excuseBody = excuse.excuseBody
+            var params = [String: AnyObject]()
+            params["excuse[body]"] = excuseBody
+            API.post(APIRoutes.EXCUSES_CREATE, parameters: params, callback:{
+                (success, response) in
+                if(success){
+                    UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(sentAlert, animated: true, completion: nil)
+                }
+                else {
+                    UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(errorAlert, animated: true, completion: nil)
+                }
+            })
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(refreshAlert, animated: true, completion: nil)
     }
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let _cell = cell as? ExcuseTableViewCell
