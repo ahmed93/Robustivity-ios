@@ -101,12 +101,14 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
         let keyboardRectangle = keyboardFrame.CGRectValue()
         let keyboardHeight = keyboardRectangle.height
         
-        self.textAreaBottomConstraint.constant = -125 - keyboardHeight
+        print(self.textAreaBottomConstraint.constant)
+        self.textAreaBottomConstraint.constant  = ((-1*keyboardHeight)+70)
+        print(self.textAreaBottomConstraint.constant)
     }
     
     func keyboardWillDisappear(notification: NSNotification){
         // update constraint
-        self.textAreaBottomConstraint.constant = -166
+        self.textAreaBottomConstraint.constant = 0
     }
 
     override func didReceiveMemoryWarning() {
