@@ -101,7 +101,7 @@ class MoreViewController: BaseViewController {
     
     func showMyProfile() {
         let profile = ProfileViewController()
-        profile.myProfile = false
+        profile.myProfile = true
         
         presentViewController(UINavigationController(rootViewController: profile), animated: true, completion: nil)
     }

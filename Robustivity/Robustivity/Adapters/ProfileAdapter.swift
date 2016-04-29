@@ -8,8 +8,9 @@
 
 import UIKit
 import ObjectMapper
+import RealmSwift
 
-class ProfileAdapter: BaseTableAdapter {
+class ProfileAdapter: BaseTableAdapter, UITextFieldDelegate {
     
     /*
     Declare variables.
@@ -18,11 +19,14 @@ class ProfileAdapter: BaseTableAdapter {
     */
     var myProfile:Bool?
     var profileEditable:Bool?
+    var profileEditparameters:NSMutableDictionary?
     var user:User?
+    var activeField: UITextField?
     
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
+        registerForKeyboardNotifications()
     }
     
     /*
@@ -63,6 +67,7 @@ class ProfileAdapter: BaseTableAdapter {
         cell?.cellContent.borderStyle = .None
         cell?.cellContent.enabled = false
         cell?.cellContent.font = UIFont(name: "MyriadPro-Regular", size: 16)
+        cell?.cellContent.delegate = self
         let placeholderAttributes = [NSFontAttributeName : UIFont(name: "MyriadPro-Regular", size: 16)!]
         
         /*
@@ -91,6 +96,7 @@ class ProfileAdapter: BaseTableAdapter {
                     if myProfile! && profileEditable! {
                         cell?.cellContent.enabled = true
                         cell?.cellContent.attributedPlaceholder = NSAttributedString(string: "Enter your phone...", attributes: placeholderAttributes)
+                        cell?.cellContent.tag = 1
                     } else if !myProfile! {
                         cell?.cellButton?.setImage(callImageBlue, forState: UIControlState.Normal)
                         cell?.cellButton?.addTarget(self.viewController, action: "userCallButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -104,17 +110,14 @@ class ProfileAdapter: BaseTableAdapter {
                     If this is my profile and it is in edit mode, then set the text field to be editable with the suitable placeholder text.
                     Else if it is not my profile (other user profile), then display the message button and attach to it the action method that will be called when it is clicked.
                     */
-                    if myProfile! && profileEditable! {
-                        cell?.cellContent.enabled = true
-                        cell?.cellContent.attributedPlaceholder = NSAttributedString(string: "Enter your email...", attributes: placeholderAttributes)
-                    } else if !myProfile! {
+                    if !myProfile! {
                         cell?.cellButton.setImage(mailImageBlue, forState: UIControlState.Normal)
                         cell?.cellButton?.addTarget(self.viewController, action: "userSendMailButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
                     }
             
             
             case 2: cell?.cellTitle.text = "Address"
-                    cell?.cellContent.text = userProfileData.userAddress + ". " + userProfileData.userCity
+                    cell?.cellContent.text = userProfileData.userAddress
 
                     /*
                     If this is my profile and it is in edit mode, then set the text field to be editable with the suitable placeholder text.
@@ -123,6 +126,7 @@ class ProfileAdapter: BaseTableAdapter {
                     if myProfile! && profileEditable! {
                         cell?.cellContent.enabled = true
                         cell?.cellContent.attributedPlaceholder = NSAttributedString(string: "Enter your address...", attributes: placeholderAttributes)
+                        cell?.cellContent.tag = 2
                     } else if !myProfile! {
                         cell?.cellButton?.removeFromSuperview()
                     }
@@ -164,4 +168,124 @@ class ProfileAdapter: BaseTableAdapter {
             default: break
         }
     }
+
+    /*
+    Author: Abdelrahman Sakr
+    This delegate method is called whenever the textfield has ended editing
+    */
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+        /*
+        Switch case to know which textfield has ended editing.
+        case 1 is the mobile number textfield
+        case 2 is the address textfield
+        Then it appends the current value of the textfield to its corresponding key in the dictionary
+        */
+        let user:User = (self.viewController as! ProfileViewController).user
+        activeField = nil
+        
+        switch textField.tag {
+        case 1:
+            profileEditparameters?.setValue(textField.text!, forKey: "user[mobile_number]")
+            user.realm?.beginWrite()
+            user.userMobileNumber = textField.text!
+            try?user.realm?.commitWrite()
+            
+        case 2:
+            profileEditparameters?.setValue(textField.text!, forKey: "user[address]")
+            user.realm?.beginWrite()
+            user.userAddress = textField.text!
+            try?user.realm?.commitWrite()
+
+        default: break
+        }
+    }
+    
+    /*
+    Author: Abdelrahman Sakr
+    Gets the values of the textfields, then make an API request out of it to update user's data
+    */
+    func updateDataFromEditMode() {
+        // Set the profileEditable to false to end editing mode
+        profileEditable = false
+        
+        // Convert the NSMutableDictionary to a dictionary of String : AnyObject to pass it as a parameter for the API methods
+        var putParameters = [String : AnyObject]()
+        for (key, value) in self.profileEditparameters! {
+            putParameters[key as! String] = (value as! String)
+        }
+        
+        let profileViewController:ProfileViewController = (self.viewController as! ProfileViewController)
+        
+        // Show "Updating Data..." message overlay
+        profileViewController.presentMessageOverlay("Updating Data...")
+        
+        // Make the API request
+        API.put(APIRoutes.USER_EDIT, parameters: putParameters) { (success, response) -> () in
+            // Call the parent setupView to reload the data and end editing mode
+            profileViewController.dismissViewControllerAnimated(false, completion: nil)
+            profileViewController.setupView()
+        }
+    }
+    
+    
+    //MARK: Methods to handle shifting up the view when the keyboard is opened to allow editing
+    /*
+    Author: Abdelrahman Sakr
+    */
+    
+    func registerForKeyboardNotifications()
+    {
+        //Adding notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    
+    func deregisterFromKeyboardNotifications()
+    {
+        //Removing notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification)
+    {
+        //Need to calculate keyboard exact size due to Apple suggestions
+        self.tableView.scrollEnabled = true
+        let info : NSDictionary = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.tableView.contentInset = contentInsets
+        self.tableView.scrollIndicatorInsets = contentInsets
+        
+        var aRect : CGRect = self.viewController.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if let _ = activeField
+        {
+            if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
+            {
+                self.tableView.scrollRectToVisible(activeField!.frame, animated: true)
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification)
+    {
+        //Once keyboard disappears, restore original positions
+        let info : NSDictionary = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        self.tableView.contentInset = contentInsets
+        self.tableView.scrollIndicatorInsets = contentInsets
+        self.viewController.view.endEditing(true)
+        self.tableView.scrollEnabled = false
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField)
+    {
+        activeField = textField
+    }
+
 }
