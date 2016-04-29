@@ -35,7 +35,6 @@ class ProjectUpdateAdapter: BaseTableAdapter {
             
             API.get(url, callback: { (success, response) in
                 if(success){
-                    print(response)
                     //map the json object to the model and save them
                     let projectUpdates = Mapper<ProjectUpdate>().mapArray(response["comments"])
                     for projectUpdate in projectUpdates! {
@@ -123,7 +122,6 @@ class ProjectUpdateAdapter: BaseTableAdapter {
             (success, response) in
             
             if(success){
-                print(response)
                 let projectUpdates = Mapper<ProjectUpdate>().mapArray([response["comment"]])
                 for projectUpdate in projectUpdates! {
                     self.tableItems.objects.insertObject(projectUpdate, atIndex: 0)
