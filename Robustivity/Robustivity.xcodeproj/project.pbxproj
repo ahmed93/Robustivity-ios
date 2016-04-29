@@ -140,6 +140,8 @@
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
 		3404BCAD1CD245F600D661BE /* MyProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404BCAC1CD245F600D661BE /* MyProject.swift */; };
 		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
+		34E742661CD0051F00576F88 /* Ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742651CD0051F00576F88 /* Ping.swift */; };
+		34E7426A1CD0D5B500576F88 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742691CD0D5B500576F88 /* User.swift */; };
 		348741C51CD2273000C75B69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C41CD2273000C75B69 /* User.swift */; };
 		348741C71CD23EA200C75B69 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */; };
 		75006FA11CD02E1D007D0846 /* Excuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75006FA01CD02E1D007D0846 /* Excuse.swift */; };
@@ -343,6 +345,8 @@
 		22319D545BBACB8BF580C2B3 /* Pods-Robustivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.debug.xcconfig"; sourceTree = "<group>"; };
 		3404BCAC1CD245F600D661BE /* MyProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProject.swift; sourceTree = "<group>"; };
 		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
+		34E742651CD0051F00576F88 /* Ping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ping.swift; path = Ping/Ping.swift; sourceTree = "<group>"; };
+		34E742691CD0D5B500576F88 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Ping/User.swift; sourceTree = "<group>"; };
 		348741C41CD2273000C75B69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Project/User.swift; sourceTree = "<group>"; };
 		348741C61CD23EA200C75B69 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMembersAdapter.swift; sourceTree = "<group>"; };
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1037,6 +1041,7 @@
 				1B8E5D8A1CAF41D400239F1C /* UserModel.swift */,
 				0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */,
 				1B5E4E5C1CC8308000D1B9F1 /* TodoModel.swift */,
+				34E742651CD0051F00576F88 /* Ping.swift */,
 				348741C41CD2273000C75B69 /* User.swift */,
 				75006FA01CD02E1D007D0846 /* Excuse.swift */,
 			);
@@ -1120,6 +1125,7 @@
 				TargetAttributes = {
 					A7BCE7A91C7D8244007870CB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2Q3PXCD4CK;
 					};
 				};
 			};
@@ -1371,6 +1377,7 @@
 				1B7F8E2C1CB094E6007C8005 /* PingToUserTableViewCell.swift in Sources */,
 				1B7F8E491CB094E6007C8005 /* LabelTextTaskViewCell.swift in Sources */,
 				1B7F8DC51CB07C95007C8005 /* UIImage+WebP.m in Sources */,
+				34E742661CD0051F00576F88 /* Ping.swift in Sources */,
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				1B7F8DE41CB0948D007C8005 /* RoundBorderedView.swift in Sources */,
 				1B7F8DC71CB07C95007C8005 /* UIImageView+WebCache.m in Sources */,
@@ -1484,11 +1491,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Robustivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BumbleBee.Robustivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Robustivity/Robustivity-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1500,11 +1510,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Robustivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BumbleBee.Robustivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Robustivity/Robustivity-Bridging-Header.h";
 			};
 			name = Release;
