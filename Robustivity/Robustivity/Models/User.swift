@@ -13,7 +13,7 @@ import ObjectMapper
 import RealmSwift
 
 class User: Object, Mappable {
-    
+
     dynamic var userId = 0
     dynamic var userEmail = ""
     dynamic var userFirstName = ""

@@ -11,17 +11,51 @@ import UIKit
 class PingToUsersViewController: BaseViewController {
 
     var adapter:PingAdapter!
+    var model:Ping?
+
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Ping To";
+        self.title = "Ping To"
+        self.edgesForExtendedLayout = .None
         adapter = PingAdapter(viewController: self, tableView: tableView, registerCellWithNib:"PingToUserTableViewCell", withIdentifier: "cell")
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLineEtched
+        self.tableView.allowsMultipleSelection = true
+        let doneChooseButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "makeChoice")
+        self.navigationItem.rightBarButtonItem = doneChooseButton
+       
+        let cancelPingButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelSelection")
+        self.navigationItem.leftBarButtonItem = cancelPingButton
         
         // Do any additional setup after loading the view.
     }
     
+    func makeChoice() {
+        for user in adapter.selectedUsers {
+            if(Ping.selectedUsers[user.0] == nil) {
+                Ping.selectedUsers[user.0] = user.1
+            }
+        }
+        
+        
+        for deselectedUser in adapter.deselectedUsers {
+            if(Ping.selectedUsers[deselectedUser.0] != nil) {
+                Ping.selectedUsers.removeValueForKey(deselectedUser.0)
+            }
+        }
+        
+       
+        
+        self.dismissViewControllerAnimated(false, completion: nil)
+    }
+    
+    func cancelSelection() {
+        adapter.selectedUsers.removeAll()
+        adapter.deselectedUsers.removeAll()
+        self.dismissViewControllerAnimated(false, completion: nil)
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

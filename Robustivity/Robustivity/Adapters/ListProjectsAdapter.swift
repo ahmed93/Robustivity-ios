@@ -61,13 +61,13 @@ class ListProjectsAdapter: BaseTableAdapter {
             {
                 let controller = CreateTaskViewController()
                 viewController.navigationController?.pushViewController(controller, animated: true)
-                controller.project_id = selectedProject.id
+                controller.project_id = selectedProject.projectId
                 controller.isTaskObject = false
             }
             else{
                 let controller = ChooseAssigneeViewController(nibName: "ChooseAssigneeViewController", bundle: nil)
                 viewController.navigationController?.pushViewController(controller, animated: true)
-                controller.project_id = selectedProject.id
+                controller.project_id = selectedProject.projectId
             }
         }
 
@@ -76,8 +76,8 @@ class ListProjectsAdapter: BaseTableAdapter {
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let projectCell = cell as? CustomProjectsListTableViewCell
         let project = tableItems.objectAtIndex(indexPath.row) as! Project
-        projectCell?.projectNameLabel.text = project.name
-        projectCell?.memberLabel.text = project.slug
+        projectCell?.projectNameLabel.text = project.projectName
+        projectCell?.memberLabel.text = project.projectSlug
         projectCell?.marginUIView.backgroundColor = Theme.tableBackgroundColor()
         
     }

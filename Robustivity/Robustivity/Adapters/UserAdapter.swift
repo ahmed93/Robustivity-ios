@@ -25,7 +25,7 @@ class UserAdapter: BaseTableAdapter {
         if tableItems == nil {
             tableItems = ListModel()
         }
-        API.get(APIRoutes.PROJECTS_SHOW + String(project_id), callback: { (success, response) in
+        API.get(APIRoutes.PROJECTS_INDEX + String(project_id), callback: { (success, response) in
             if(success){
                 let users = Mapper<User>().mapArray(response.objectForKey("members"))
                 for user in users! {

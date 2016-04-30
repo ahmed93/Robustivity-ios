@@ -21,9 +21,10 @@ class APIRoutes {
     static let USER_PROFILE = USER_SHOW + "profile/"
     
     static let PROJECTS_MYPROJECTS = "projects/my_projects/"
-    static let PROJECTS_SHOW = "projects/"
     
-    
-   
-    
+    static let PING_CREATE = "messages/"
+    static let EXCUSES_INDEX = "excuses/"
+    static let EXCUSES_CREATE = "excuses/"
+    static let PROJECTS_INDEX = "projects/"
+
 }
