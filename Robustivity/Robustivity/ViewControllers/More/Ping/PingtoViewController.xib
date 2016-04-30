@@ -43,10 +43,10 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0lF-tb-43A">
-                    <rect key="frame" x="20" y="161" width="600" height="439"/>
+                    <rect key="frame" x="20" y="161" width="600" height="388"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" priority="750" constant="439" id="szR-50-DS5"/>
+                        <constraint firstAttribute="height" priority="750" constant="388" id="szR-50-DS5"/>
                     </constraints>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
@@ -89,10 +89,11 @@
                 <constraint firstItem="2wh-gV-Lcq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="Vl9-Yl-1xo"/>
                 <constraint firstItem="BG7-tb-6Js" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="Xtj-Zh-tYv"/>
                 <constraint firstItem="2wh-gV-Lcq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" priority="750" id="fU0-IR-zJ0"/>
-                <constraint firstAttribute="bottom" secondItem="0lF-tb-43A" secondAttribute="bottom" id="mf3-4a-xtz"/>
+                <constraint firstAttribute="bottom" secondItem="0lF-tb-43A" secondAttribute="bottom" constant="51" id="mf3-4a-xtz"/>
                 <constraint firstItem="0lF-tb-43A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="qxk-SN-3ld"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
         </view>
     </objects>
     <resources>
