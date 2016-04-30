@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import ObjectMapper
 
 
 class ProjectsListAdapter: BaseTableAdapter {
@@ -21,19 +23,50 @@ class ProjectsListAdapter: BaseTableAdapter {
     // any extra stuff to be done
   }
   
-  func fetchItems() {
-    if tableItems == nil {
-      tableItems = ListModel()
+    func fetchItems() {
+        if tableItems == nil {
+            tableItems = ListModel()
+        }
+        //    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "1"])
+        //    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "1"])
+        //    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "2"])
+        //    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "2"])
+        //    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "3"])
+        //    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "3"])
+        
+        getMyProjectsListFromUrl()
+        
     }
-    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "1"])
-    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "1"])
-    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "2"])
-    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "2"])
-    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "3"])
-    tableItems.addObject(["proj_name": "Robustivity Project", "member_name" : "Hussein Mohieldin", "type": "3"])
     
-    tableView.reloadData()
-  }
+    func getMyProjectsListFromUrl() {
+        
+        API.get(APIRoutes.MY_PROJECTS, callback: { (success, response) in
+            if(success){
+                //map the Jason object to the model and save them
+                let projects = Mapper<Project>().mapArray(response);
+                
+                for project in projects! {
+                    
+                    self.tableItems.addObject(["proj_id": project.projectId,"proj_name": project.projectName, "member_name" : project.projectManagerName, "type": project.projectStatus])
+                    
+                    self.saveNewProject(project)
+                }
+                self.tableView.reloadData()
+            }
+            
+        })
+    }
+    
+    func saveNewProject(project: Project) {
+        let realm = try! Realm()
+        let savedProjects = realm.objects(Project)
+        
+        for checkProject in savedProjects {
+            if checkProject.projectId == project.projectId{ return
+            }
+        }
+        try! realm.write { realm.add(project)}
+    }
   
   
   
@@ -47,9 +80,9 @@ class ProjectsListAdapter: BaseTableAdapter {
     projectsListCell?.memberLabel.text = currentCellData.objectForKey("member_name") as? String
     
     switch(currentCellData.objectForKey("type") as! String) {
-    case "1": projectsListCell?.statusUIView.backgroundColor = Theme.greenColor()
-    case "2": projectsListCell?.statusUIView.backgroundColor = Theme.orangeColor()
-    case "3": projectsListCell?.statusUIView.backgroundColor = Theme.lighterBlackColor()
+    case "0": projectsListCell?.statusUIView.backgroundColor = Theme.greenColor()
+    case "1": projectsListCell?.statusUIView.backgroundColor = Theme.orangeColor()
+    case "2": projectsListCell?.statusUIView.backgroundColor = Theme.lighterBlackColor()
     default: projectsListCell?.statusUIView.backgroundColor = Theme.greenColor()
     }
     
@@ -62,6 +95,9 @@ class ProjectsListAdapter: BaseTableAdapter {
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let projectSegmentedControlViewController = ProjectSegmentedControlViewController(nibName: "ProjectSegmentedControlViewController", bundle: nil)
+    
+    let currentProject = self.tableItems.objectAtIndex(indexPath.row) as! NSDictionary
+    projectSegmentedControlViewController.project_id = currentProject.objectForKey("proj_id") as! Int
    
    // projectsListViewController.presentViewController(projectSegmentedControlViewController, animated: true, completion: nil)
     let nav = projectsListViewController.navigationController

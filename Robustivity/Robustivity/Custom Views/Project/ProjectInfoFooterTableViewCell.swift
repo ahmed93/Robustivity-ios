@@ -1,22 +1,15 @@
 //
-//  ProjectMemberCell.swift
+//  ProjectInfoFooterTableViewCell.swift
 //  Robustivity
 //
-//  Created by Abdelrahman Zaky on 3/30/16.
+//  Created by Almgohar on 4/29/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
 import UIKit
 
-class ProjectMemberCell: UITableViewCell {
-    
-    @IBOutlet weak var nameLabel: RBLabel!
-    @IBOutlet weak var positionLabel: RBLabel!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var marginUIView: UIView!
+class ProjectInfoFooterTableViewCell: UITableViewCell {
 
-    var userId = -1
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
