@@ -29,7 +29,7 @@ class PlannerItemsListViewController: BaseViewController, UISearchControllerDele
         addSearchController()
         addRefreshControl()
         
-        self.navigationController?.hidesBarsOnSwipe = true
+//        self.navigationController?.hidesBarsOnSwipe = true
     }
 
     override func viewWillAppear(animated: Bool) {
