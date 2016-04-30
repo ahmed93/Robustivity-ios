@@ -15,6 +15,9 @@ class ToggleFeedTableViewCell: SwipableTableViewCell {
     
     @IBOutlet weak var projectName: UILabel!
     
+    var toggleCellTask:TaskModel = TaskModel() //Aya
+
+    
     let toggleHelper = ToggleHelper.sharedInstance
 
     override func awakeFromNib() {

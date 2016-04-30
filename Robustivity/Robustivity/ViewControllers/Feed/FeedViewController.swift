@@ -47,28 +47,25 @@ class FeedViewController: BaseViewController {
         userStatusBarButtonItem.tintColor = Theme.greenColor()
         self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
         
-//        var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
-//        toggleCell.pauseButtonConfigure()
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
-        
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pauseTimerNotification", name:"pauseTimerNotification", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopTimerNotification", name:"stopTimerNotification", object: nil)
     }
     
     func updateToggledTimeNotification() {
         var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
         toggleCell.playButtonCellSetup()
         toggleCell.timeLabel.text = toggleHelper.toggledTime
+        toggleCell.toggleCellTask = toggleHelper.toggleTask
     }
     
     func resumeTimerNotification() {
         var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
         toggleCell.taskName.text = toggleHelper.toggleTask.taskName
         toggleCell.projectName.text = toggleHelper.toggleTask.taskProjectName
+        toggleCell.toggleCellTask = toggleHelper.toggleTask
+
     }
 
 
