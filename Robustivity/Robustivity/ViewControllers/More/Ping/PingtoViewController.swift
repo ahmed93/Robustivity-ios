@@ -10,6 +10,7 @@ import UIKit
 
 class PingtoViewController: BaseViewController, UITextViewDelegate {
    
+    @IBOutlet var textviewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var remainingUsersLabel: UILabel!
     @IBOutlet var firstUserToPingConstraints: NSLayoutConstraint!
     @IBOutlet var secondUserToPingConstraint: NSLayoutConstraint!
@@ -24,7 +25,11 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let center: NSNotificationCenter = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
         self.title = "Ping To";
         self.navigationItem.title = "Ping To"
         sendPingButton = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Plain, target: self, action: "sendPing")
@@ -43,6 +48,25 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
         remainingUsersLabel!.layer.borderColor = Theme.grayColor().CGColor
     }
     
+    
+    func keyboardWillShow(notification: NSNotification) {
+        let info:NSDictionary = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        
+        let keyboardHeight: CGFloat = keyboardSize.height
+        
+        self.textviewHeightConstraint.constant = keyboardHeight + 20
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.textviewHeightConstraint.constant = 0
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
     
     override func viewWillAppear(animated: Bool) {
         addChosenUsers()

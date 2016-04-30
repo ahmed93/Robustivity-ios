@@ -19,6 +19,7 @@
                 <outlet property="secondUserToPing" destination="h9C-F7-7Fv" id="J0k-zB-3uR"/>
                 <outlet property="secondUserToPingConstraint" destination="4ee-e7-Tcc" id="ZpV-7i-Aqr"/>
                 <outlet property="textView" destination="0lF-tb-43A" id="ykV-bF-FHc"/>
+                <outlet property="textviewHeightConstraint" destination="mf3-4a-xtz" id="wbE-mN-MUV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,10 +43,10 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0lF-tb-43A">
-                    <rect key="frame" x="20" y="161" width="600" height="33"/>
+                    <rect key="frame" x="20" y="161" width="600" height="439"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="33" id="szR-50-DS5"/>
+                        <constraint firstAttribute="height" priority="750" constant="439" id="szR-50-DS5"/>
                     </constraints>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
@@ -88,6 +89,7 @@
                 <constraint firstItem="2wh-gV-Lcq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="Vl9-Yl-1xo"/>
                 <constraint firstItem="BG7-tb-6Js" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="Xtj-Zh-tYv"/>
                 <constraint firstItem="2wh-gV-Lcq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" priority="750" id="fU0-IR-zJ0"/>
+                <constraint firstAttribute="bottom" secondItem="0lF-tb-43A" secondAttribute="bottom" id="mf3-4a-xtz"/>
                 <constraint firstItem="0lF-tb-43A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="qxk-SN-3ld"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
