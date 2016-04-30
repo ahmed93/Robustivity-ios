@@ -25,8 +25,8 @@ class WriteExcuseViewController: BaseViewController, UITextViewDelegate {
     override func viewDidLoad() { // setting title and bar buttons and placeholders
         super.viewDidLoad()
         let center: NSNotificationCenter = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        center.addObserver(self, selector: NSSelectorFromString("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: NSSelectorFromString("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
 
         self.title = "Write Excuse";
         self.navigationItem.title = "Write Excuse";

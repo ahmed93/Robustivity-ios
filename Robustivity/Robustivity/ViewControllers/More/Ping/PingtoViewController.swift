@@ -27,8 +27,8 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         let center: NSNotificationCenter = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        center.addObserver(self, selector: NSSelectorFromString("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: NSSelectorFromString("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         
         self.title = "Ping To";
         self.navigationItem.title = "Ping To"

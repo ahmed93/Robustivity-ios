@@ -35,8 +35,8 @@ class ProjectUpdateViewController: BaseViewController, UITextViewDelegate {
         adapter = ProjectUpdateAdapter(viewController: self, tableView: projectUpdateTableView, registerCellWithNib:"ProjectUpdateTableViewCell", withIdentifier: "projectUpdate Cell")
         
 //        // observer for keyboard
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillAppear:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillDisappear:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:NSSelectorFromString("keyboardWillAppear:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:NSSelectorFromString("keyboardWillDisappear:"), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func setProjectID(pid:Int) {
