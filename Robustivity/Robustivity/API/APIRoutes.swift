@@ -22,6 +22,10 @@ class APIRoutes {
     
     static let USER_STATUS = USER_SHOW + "users_status/"
     
+    static let BASE_NOTIFICATIONS = "http://hr.staging.rails.robustastudio.com"
+    static let NOTIFICATIONS = "notifications/"
+    static let NOTIFICATIONS_MARK_READ = "mark_as_read/"
+    static let NOTIFICATIONS_RESET_MARK_READ = "reset_all/"
    
     
     

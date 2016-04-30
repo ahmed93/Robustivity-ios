@@ -13,7 +13,6 @@
 		01530AFB1CAB145A00429264 /* PlannerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01530AFA1CAB145A00429264 /* PlannerAdapter.swift */; };
 		01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */; };
 		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
-		04FFFE051CCD0A3800B4DB9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFFE041CCD0A3800B4DB9D /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
 		196CDBAE1CAF0BF60092A050 /* ProjectInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */; };
@@ -141,6 +140,8 @@
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
 		229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */; };
 		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
+		411A8B1B1CD4EEA3006048DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411A8B1A1CD4EEA3006048DE /* User.swift */; };
+		41BA18A41CCF9FD900B0A062 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA18A31CCF9FD900B0A062 /* NotificationModel.swift */; };
 		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
 		7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */; };
 		9426F5101CBABBE0006BEFA1 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426F50A1CBABBE0006BEFA1 /* CommentTableViewCell.swift */; };
@@ -194,7 +195,6 @@
 		01530AFA1CAB145A00429264 /* PlannerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerAdapter.swift; sourceTree = "<group>"; };
 		01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
-		04FFFE041CCD0A3800B4DB9D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListAdapter.swift; sourceTree = "<group>"; };
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
 		196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoAdapter.swift; sourceTree = "<group>"; };
@@ -343,6 +343,8 @@
 		229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectMembersAdapter.swift; path = ../API/ProjectMembersAdapter.swift; sourceTree = "<group>"; };
 		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		411A8B1A1CD4EEA3006048DE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		41BA18A31CCF9FD900B0A062 /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = SOURCE_ROOT; };
 		623433517E01C7895A187FE7 /* Pods-Robustivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.release.xcconfig"; sourceTree = "<group>"; };
 		75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuseAdapter.swift; sourceTree = "<group>"; };
 		7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableAdapter.swift; sourceTree = "<group>"; };
@@ -1026,13 +1028,14 @@
 		A7BCE7C01C7D834F007870CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				411A8B1A1CD4EEA3006048DE /* User.swift */,
 				1B8E5D811CAF41A600239F1C /* Feed */,
+				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
 				1B8E5D8A1CAF41D400239F1C /* UserModel.swift */,
 				0110834E1CAC215A00F616DD /* ProjectUpdateModel.swift */,
 				1B5E4E5C1CC8308000D1B9F1 /* TodoModel.swift */,
-				A717E5B41CA1816D00F237DD /* ListModel.swift */,
-				04FFFE041CCD0A3800B4DB9D /* User.swift */,
+				41BA18A31CCF9FD900B0A062 /* NotificationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1273,7 +1276,6 @@
 				1B7F8E8E1CB09507007C8005 /* BaseViewController.swift in Sources */,
 				1B7F8DBF1CB07C95007C8005 /* SDWebImageDownloaderOperation.m in Sources */,
 				1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */,
-				04FFFE051CCD0A3800B4DB9D /* User.swift in Sources */,
 				1B7F8EA01CB09507007C8005 /* ProfileViewController.swift in Sources */,
 				1B7F8EA81CB09507007C8005 /* ProjectTeamViewController.swift in Sources */,
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
@@ -1368,7 +1370,9 @@
 				A717E59B1CA1485000F237DD /* API.swift in Sources */,
 				1B7F8DE41CB0948D007C8005 /* RoundBorderedView.swift in Sources */,
 				1B7F8DC71CB07C95007C8005 /* UIImageView+WebCache.m in Sources */,
+				41BA18A41CCF9FD900B0A062 /* NotificationModel.swift in Sources */,
 				1B7F8EB21CB09507007C8005 /* CreateTaskViewController.swift in Sources */,
+				411A8B1B1CD4EEA3006048DE /* User.swift in Sources */,
 				1B7F8DDD1CB0813C007C8005 /* Comp_2+Theme.swift in Sources */,
 				1B7F8E8C1CB09507007C8005 /* LoginViewController.swift in Sources */,
 				1B7F8E3D1CB094E6007C8005 /* CheckInFeedTableViewCell.swift in Sources */,
@@ -1476,14 +1480,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Robustivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BumbleBee.Robustivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Robustivity/Robustivity-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1495,14 +1496,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Robustivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BumbleBee.Robustivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Robustivity/Robustivity-Bridging-Header.h";
 			};
 			name = Release;
