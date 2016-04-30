@@ -18,50 +18,63 @@ import RealmSwift
  31/3/16.
  */
 class PlannerAdapter: BaseTableAdapter {
-    var selectedSegmentIndex: Int! {
-        return (viewController as! PlannerViewController).segmentedControl.selectedSegmentIndex
+    var numberOfItemsPerSection = 10
+    
+    var itemType: TaskType! {
+        let index = (viewController as! PlannerViewController).segmentedControl.selectedSegmentIndex
+        return index == 0 ? .Task : .Todo
     }
     
-    override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
-        super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
+    override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
+        super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
     }
     
     // MARK: Base Adapter Delegate methods
     func fetchItems() {
-        if tableItems.count == 0 {
-            API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
-                if(success){
-                    
-                    //map the jason object to the model and save them
-                    let tasks = Mapper<TaskModel>().mapArray(response)
-                    for task in tasks! {
-                        self.tableItems.addObject(task)
-                        self.saveNewTask(task)
-                    }
-                    
-                }
-            })
-            tableItems = ListModel()
-        }
-        tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 2)), withRowAnimation: .Bottom)
+        fetchFromServer()
     }
     
-    //save new task on disk using realm
-    func saveNewTask(task: TaskModel) {
-        let realm = try! Realm()
-        //let savedTasks =
-        
-        //check if is present or not
-        for checktask in    realm.objects(TaskModel) {
-            if checktask.taskId == task.taskId{
-                return
+    func fetchFromServer() {
+        API.get(APIRoutes.TASKS_INDEX) { (success, response) -> () in
+            if success {
+                let dataResponse:[TaskModel]! = Mapper<TaskModel>().mapArray(response)
+                TaskModel.createOrUpdate(dataResponse)
+                
+                if self.viewController.respondsToSelector("stopRefreshControl") {
+                    self.viewController.performSelector("stopRefreshControl")
+                }
+                
+                let data = self.fetchFromDatabase()
+                self.refreshTable(data, animationOptions: .TransitionCrossDissolve)
             }
         }
-        try! realm.write {
-            realm.add(task)
-        }
     }
-
+    
+    func fetchFromDatabase() -> (Results<TaskModel>, Results<TaskModel>) {
+        let config = TaskStatus.configurationOf(itemType)
+        
+        let inProgress = TaskModel.recent(itemType, status: config!.inProgress)
+        let done = TaskModel.recent(itemType, status: config!.done)
+        
+        return (inProgress, done)
+    }
+    
+    func refreshTable(data: (Results<TaskModel>, Results<TaskModel>), animationOptions: UIViewAnimationOptions) {
+        tableItems = ListModel()
+        tableItems.addObject(data.0)
+        tableItems.addObject(data.1)
+        
+        UIView.transitionWithView(tableView,
+            duration: 0.35,
+            options: animationOptions,
+            animations: { () -> Void in
+                self.tableView.reloadData()
+            }, completion: nil)
+    }
+    
+    func isSeeAllCell(indexPath: NSIndexPath) -> Bool {
+        return indexPath.row == numberOfItemsPerSection
+    }
     
     // MARK: Table view delegate and datasource
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -83,51 +96,68 @@ class PlannerAdapter: BaseTableAdapter {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            // [TODO] replace it by the number of items IN PROGRESS returned from the server.
-            //if selectedSegmentIndex == 0 {
-                //return 3
-            //}
-            return tableItems.count
+        if tableItems.count > 0 {
+            let items = tableItems.objectAtIndex(section) as! Results<TaskModel>
+            
+            if items.count < numberOfItemsPerSection {
+                return items.count
+            }
+            
+            return numberOfItemsPerSection + 1
         }
         
-        // Items Done Count.
-        // [TODO] replace it by the number of items DONE returned from the server.
-        //if selectedSegmentIndex == 0 {
-            //return 3
-        //}
-        return tableItems.count
+        return 0
     }
     
     // MARK: Parent Overridden Functions
     /**
-     Overrides method configure of the parent class to layout the input cell.
-     - Author:
-     Ahmed Elassuty.
-     */
+    Overrides method configure of the parent class to layout the input cell.
+    - Author:
+    Ahmed Elassuty.
+    */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let a = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
-        self.viewController.navigationController?.pushViewController(a, animated: true)
+        // See All Table View Cell
+        if isSeeAllCell(indexPath) {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            let itemsListViewController = PlannerItemsListViewController()
+            itemsListViewController.itemType = itemType
+            itemsListViewController.itemSection = indexPath.section
+
+            viewController.navigationController?.pushViewController(itemsListViewController, animated: true)
+            return
+        }
+        
+        let taskViewController = TaskViewController(nibName: "TaskViewController", bundle: NSBundle.mainBundle())
+        taskViewController.taskId = String((tableItems.objectAtIndex(indexPath.section) as! Results<TaskModel>)[indexPath.row].taskId)
+
+        self.viewController.navigationController?.pushViewController(taskViewController, animated: true)
     }
-    override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let plannerCell = cell as! PlannerTableViewCell
+    
+    override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
+        if isSeeAllCell(indexPath) {
+            let seeAllCell = tableView.dequeueReusableCellWithIdentifier("PlannerSeeAllCell")
+            return seeAllCell
+        }
         
-        let task = tableItems.objectAtIndex(indexPath.row) as! TaskModel
-        plannerCell.itemTitle.text = task.taskName
-        plannerCell.projectName.text = task.taskDescription
+        let plannerCell = tableView.dequeueReusableCellWithIdentifier("PlannerCell") as! PlannerTableViewCell
+        let tasks = tableItems.objectAtIndex(indexPath.section) as! Results<TaskModel>
+        let item = tasks[indexPath.row]
+        plannerCell.itemTitle.text = item.taskName
+        plannerCell.projectName.text = item.taskProjectName
         
+        // Should be a singletone over the app
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
         
         if indexPath.section == 0 {
-            // [TODO] In Progress cell configurations
-            
-            plannerCell.dueDate.text = "Oct 15, 2016"
+            plannerCell.dueDate.text = dateFormatter.stringFromDate(item.taskStartDate!)
             plannerCell.dueDateBottomMarginLayoutConstraint.constant = 14
         } else {
-            // [TODO] Done cell configurations
-            
             plannerCell.dueDate.text = ""
             plannerCell.dueDateBottomMarginLayoutConstraint.constant = 7
         }
+        
+        return plannerCell
     }
     
     

@@ -40,7 +40,7 @@ class ProjectsListAdapter: BaseTableAdapter {
     
     func getMyProjectsListFromUrl() {
         
-        API.get(APIRoutes.MY_PROJECTS, callback: { (success, response) in
+        API.get(APIRoutes.PROJECTS_MYPROJECTS, callback: { (success, response) in
             if(success){
                 //map the Jason object to the model and save them
                 let projects = Mapper<Project>().mapArray(response);

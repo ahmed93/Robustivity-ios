@@ -2,15 +2,17 @@
 //  Project.swift
 //  Robustivity
 //
-//  Created by Abanoub Aziz on 4/27/16.
+//  Created by khaled elhossiny & Abanoub Aziz on 4/26/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
+
 
 import Foundation
 import ObjectMapper
 import RealmSwift
 
 class Project: Object, Mappable {
+    
     dynamic var projectId = 0
     dynamic var projectName:String = ""
     dynamic var projectEndDate:String = ""
@@ -30,10 +32,18 @@ class Project: Object, Mappable {
     dynamic var projectCustomerStatisfaction = ""
     dynamic var projectActualCost = 0
     dynamic var projectPlannedCost = 0
+    dynamic var projectStartDate = ""
+    dynamic var projectCreatedAt = ""
+    dynamic var projectUpdatedAt = ""
+    dynamic var projectManagerId = 0
+    dynamic var projectAccountManagerId = 0
+    dynamic var projectAccountId = 0
+    dynamic var projectHourlyRate = 0
+    dynamic var projectHasSprints = false
+    dynamic var projectNature = ""
+    dynamic var projectSlug = ""
+    dynamic var projectAccountingProjectNumber = 0
     
-    required convenience init?(_ map: Map) {
-        self.init()
-    }
     
     func mapping(map: Map) {
         projectId                           <- map["id"]
@@ -52,6 +62,35 @@ class Project: Object, Mappable {
         projectCustomerStatisfaction        <- map["customer_statisfaction"]
         projectActualCost                   <- map["actual_cost"]
         projectPlannedCost                  <- map["planned_cost"]
+        projectStartDate                    <- map["start_date"]
+        projectCreatedAt                    <- map["created_at"]
+        projectUpdatedAt                    <- map["updated_at"]
+        projectManagerId                    <- map["project_manager_id"]
+        projectAccountManagerId             <- map["account_manager_id"]
+        projectAccountId                    <- map["account_id"]
+        projectHourlyRate                   <- map["hourly_rate"]
+        projectHasSprints                   <- map["has_sprints"]
+        projectNature                       <- map["nature"]
+        projectSlug                         <- map["slug"]
+        projectAccountingProjectNumber      <- map["accounting_project_number"]
     }
     
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+    
+    func save(){
+        let realm = try! Realm()
+        for db_project in realm.objects(Project) {
+            if db_project.projectId == self.projectId {
+                return
+            }
+        }
+        try! realm.write {
+            realm.add(self)
+        }
+    }
+    
+    
 }
+

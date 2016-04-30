@@ -48,7 +48,7 @@ class ProjectSegmentedControlViewController: BaseViewController {
     }
     
     func requestProject() {
-        API.get(APIRoutes.SHOW_PROJECT + String(project_id), callback: { (success, response) in
+        API.get(APIRoutes.PROJECTS_INDEX + String(project_id), callback: { (success, response) in
             if(success){
                 
                 //map the json object to the model and save them

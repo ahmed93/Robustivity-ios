@@ -27,7 +27,7 @@ class ProjectMembersAdapter: BaseTableAdapter{
            projectmembercell?.positionLabel.text = currentUser.userTitle
         }
         else {
-            projectmembercell?.positionLabel.text = "No title"
+            projectmembercell?.positionLabel.text = "No Title"
         }
         projectmembercell?.profileImageView.sd_setImageWithURL(NSURL(string: "http://hr.staging.rails.robustastudio.com" + currentUser.userProfilePictureIconURL))
         
