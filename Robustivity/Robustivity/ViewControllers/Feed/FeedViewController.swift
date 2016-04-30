@@ -27,6 +27,8 @@ class FeedViewController: BaseViewController {
     
     
     override func viewDidLoad() {
+        self.wantsUserCheckInStatus = true
+        
         super.viewDidLoad()
         // setting View TabBartitle + navigationBarTitle
         self.title = "Feed";
@@ -36,12 +38,6 @@ class FeedViewController: BaseViewController {
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
         
-        
-        
-        // Add Left navigation item
-        let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
-        userStatusBarButtonItem.tintColor = Theme.greenColor()
-        self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
         
         self.view.addGestureRecognizer(UIGestureRecognizer(target: self, action: NSSelectorFromString("dissmiss")))
         self.view.endEditing(true)

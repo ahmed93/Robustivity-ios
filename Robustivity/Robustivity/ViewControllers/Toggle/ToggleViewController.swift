@@ -19,19 +19,19 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var toggleResumeBtn: UIButton!
     @IBOutlet weak var togglePlayBtn: UIButton!
     @IBOutlet weak var toggledTime: UILabel!
-
+    
     @IBOutlet weak var todoTitleField: UITextField!
     
-  
+    
     @IBOutlet weak var todoProjectTextField: UITextField!
     var timer = NSTimer();
     var startDate = NSDate();
     var pausedDate = NSDate();
     var currentTimeInterval = NSTimeInterval();
     var pausedTimeInterval = NSTimeInterval();
-
+    
     var todoProjectsName = ["Project name", "Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("ToggleViewController", owner: self, options: nil)
@@ -43,11 +43,13 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     override func viewDidLoad() {
+        self.wantsUserCheckInStatus = true
         super.viewDidLoad()
+        self.edgesForExtendedLayout = .Bottom
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
-
-        self.navigationController?.navigationBar.translucent = false; //added to calculate the distance from the top of the page after the nav bar
+        
+        //        self.navigationController?.navigationBar.translucent = tr; //added to calculate the distance from the top of the page after the nav bar
         
         /* Add circular shape to buttons*/
         self.togglePlayBtn.layer.cornerRadius = 0.5 * self.togglePlayBtn.bounds.size.width;
@@ -58,9 +60,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.toggleStopBtn.backgroundColor = Theme.redColor();
         self.toggleResumeBtn.layer.cornerRadius = 0.5 * self.toggleResumeBtn.bounds.size.width;
         self.toggleResumeBtn.backgroundColor = Theme.greenColor();
-
+        
         Theme.style_5(self.toggledTime); //missing correct font and is not specified in properties
-
+        
         self.toggledTime.text = "00:00:00";
         self.toggledTime.textColor = Theme.blackColor();
         
@@ -72,14 +74,14 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         let todoProjectPaddingView = UIView(frame: CGRectMake(0,0,14,20));
         self.todoProjectTextField.leftView = todoProjectPaddingView;
         self.todoProjectTextField.leftViewMode = UITextFieldViewMode.Always;
-
+        
         self.todoTitleField.backgroundColor = Theme.lightGrayColor();
         self.todoTitleField.attributedPlaceholder = NSAttributedString(string:"ToDo title",
             attributes:[NSForegroundColorAttributeName: Theme.grayColor()]); //Add Placeholder with custom color
         
         self.todoProjectTextField.backgroundColor = Theme.lightGrayColor();
         self.todoProjectTextField.attributedPlaceholder = NSAttributedString(string:"Project name", attributes:[NSForegroundColorAttributeName: Theme.grayColor()]); //Add placeholder with custom color
-
+        
         let projectPicker = UIPickerView(); //Add picker view to be used in project names
         projectPicker.dataSource = self;
         projectPicker.delegate = self;
@@ -88,7 +90,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.toggleStopBtn.alpha = 0;
         self.togglePauseBtn.alpha = 0;
         self.toggleResumeBtn.alpha = 0;
-
+        
     }
     
     /*
@@ -110,9 +112,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
             
             self.toggleStopBtn.alpha = 1;
             self.togglePauseBtn.alpha = 1;
-
+            
             self.toggleStopBtnCenterX.constant = 75;
-
+            
             self.togglePauseBtnCenterX.constant = -75;
         })
         
@@ -131,9 +133,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
         var timeInterval = currentDate.timeIntervalSinceDate(self.startDate);
         timeInterval += pausedTimeInterval;
-
+        
         let timerDate = NSDate(timeIntervalSince1970: timeInterval);
-         // Create a date formatter
+        // Create a date formatter
         let dateFormatter = NSDateFormatter();
         dateFormatter.dateFormat = "HH:mm:ss";
         dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0);
@@ -174,7 +176,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     @IBAction func toggleStop(sender: AnyObject) {
         self.pausedDate = NSDate();
-
+        
         timer.invalidate();
         self.toggledTime.textColor = Theme.blackColor();
         self.toggledTime.text = "00:00:00";

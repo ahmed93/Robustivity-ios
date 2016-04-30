@@ -178,8 +178,10 @@ extension AppDelegate: CLLocationManagerDelegate {
             API.put("working_days/checkin", parameters:["":""]) { (success:Bool, response: AnyObject) -> () in
                 if success {
                     print("checkedIn_wwww")
+                    self.preferences.setObject(NSDate(), forKey: "checkInDate")
                     self.preferences.setBool(true, forKey: "checkedIn")
                     self.preferences.synchronize()
+                    
                 }
                 print(success)
             }
@@ -192,7 +194,7 @@ extension AppDelegate: CLLocationManagerDelegate {
             API.put("working_days/checkout", parameters: ["":""]) { (success, response) -> () in
                 if success {
                     print("checkedOut_wwww")
-                    
+                    self.preferences.setObject(NSDate(), forKey: "checkInDate")                    
                     self.preferences.setBool(false, forKey: "checkedIn")
                     self.preferences.synchronize()
                 }
