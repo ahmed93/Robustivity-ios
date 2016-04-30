@@ -35,6 +35,8 @@ class PlannerTableViewCell: SwipableTableViewCell {
         cellSeparator.backgroundColor = Theme.tableBackgroundColor()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "pauseTimerNotification", name:"pauseTimerNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopTimerNotification", name:"stopTimerNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -43,14 +45,24 @@ class PlannerTableViewCell: SwipableTableViewCell {
         // Configure the view for the selected state
     }
     
+    func resumeTimerNotification() {
+        if self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId {
+            self.playButtonCellSetup()
+        }
+    }
     func stopTimerNotification() {
-        stopButtonCellSetup()
+        if self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId {
+            self.stopButtonCellSetup()
+        }
     }
     
     
     func pauseTimerNotification() {
-        print("pause Notification")
-        self.pauseButtonCellSetup()
+        if self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId {
+            print("pause Notification")
+            self.pauseButtonCellSetup()
+        }
+
     }
     
     override func playButtonAction() {

@@ -284,6 +284,8 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     func toggleResumeViewSetup() {
         
         self.todoTitleField.text = self.toggleHelper.toggleTask.taskName
+        print(self.toggleHelper.toggleTask.taskProjectName)
+        self.todoProjectTextField.text = self.toggleHelper.toggleTask.taskProjectName
         self.projectPicker.selectRow(self.toggleHelper.toggleTask.taskProjectId - 1, inComponent: 0, animated: false)
         self.toggledTime.textColor = Theme.greenColor();
         self.toggleResumeBtn.enabled = true

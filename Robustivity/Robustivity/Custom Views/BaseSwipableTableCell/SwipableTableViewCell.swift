@@ -41,7 +41,7 @@ class SwipableTableViewCell: MGSwipeTableCell {
     
     func setButtonsActions() {
         
-            playPauseButton.callback = {
+        playPauseButton.callback = {
             (sender: MGSwipeTableCell!) -> Bool in
             // do Stuff
             self.playMode = false
