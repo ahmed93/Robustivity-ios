@@ -35,8 +35,6 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
         sendPingButton = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Plain, target: self, action: "sendPing")
         sendPingButton?.enabled = false
         self.navigationItem.rightBarButtonItem = sendPingButton
-    //    let cancelPingButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelPing")
-    //    self.navigationItem.leftBarButtonItem = cancelPingButton
         
         self.textView!.text = placeholderText
         self.textView!.textColor = Theme.lightGrayColor()
@@ -48,6 +46,12 @@ class PingtoViewController: BaseViewController, UITextViewDelegate {
         remainingUsersLabel!.layer.borderColor = Theme.grayColor().CGColor
     }
     
+    
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        if parent == nil {
+            Ping.selectedUsers.removeAll()
+        }
+    }
     
     func keyboardWillShow(notification: NSNotification) {
         let info:NSDictionary = notification.userInfo!
