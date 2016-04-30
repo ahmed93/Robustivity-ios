@@ -140,6 +140,7 @@
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
 		229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */; };
 		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
+		411A8B1B1CD4EEA3006048DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411A8B1A1CD4EEA3006048DE /* User.swift */; };
 		41BA18A41CCF9FD900B0A062 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BA18A31CCF9FD900B0A062 /* NotificationModel.swift */; };
 		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
 		7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */; };
@@ -342,6 +343,7 @@
 		229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectMembersAdapter.swift; path = ../API/ProjectMembersAdapter.swift; sourceTree = "<group>"; };
 		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		411A8B1A1CD4EEA3006048DE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		41BA18A31CCF9FD900B0A062 /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = SOURCE_ROOT; };
 		623433517E01C7895A187FE7 /* Pods-Robustivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.release.xcconfig"; sourceTree = "<group>"; };
 		75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuseAdapter.swift; sourceTree = "<group>"; };
@@ -1026,6 +1028,7 @@
 		A7BCE7C01C7D834F007870CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				411A8B1A1CD4EEA3006048DE /* User.swift */,
 				1B8E5D811CAF41A600239F1C /* Feed */,
 				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
@@ -1369,6 +1372,7 @@
 				1B7F8DC71CB07C95007C8005 /* UIImageView+WebCache.m in Sources */,
 				41BA18A41CCF9FD900B0A062 /* NotificationModel.swift in Sources */,
 				1B7F8EB21CB09507007C8005 /* CreateTaskViewController.swift in Sources */,
+				411A8B1B1CD4EEA3006048DE /* User.swift in Sources */,
 				1B7F8DDD1CB0813C007C8005 /* Comp_2+Theme.swift in Sources */,
 				1B7F8E8C1CB09507007C8005 /* LoginViewController.swift in Sources */,
 				1B7F8E3D1CB094E6007C8005 /* CheckInFeedTableViewCell.swift in Sources */,

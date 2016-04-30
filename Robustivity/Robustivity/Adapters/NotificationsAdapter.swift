@@ -121,9 +121,5 @@ class NotificationsAdapter: BaseTableAdapter {
         return notificationCell
         
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
 
 }
