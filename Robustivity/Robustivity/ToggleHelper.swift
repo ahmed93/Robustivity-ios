@@ -47,7 +47,7 @@ class ToggleHelper {
                 let projects = Mapper<Project>().mapArray(response)
                 for project in projects! {
                     self.todoProjectsName.append(project.projectName)
-                    project.updateProject()
+                    project.save()
                 }
                 
             }
@@ -74,7 +74,9 @@ class ToggleHelper {
                         self.pausedTimeInterval = interval
                         let dateFormatter = NSDateFormatter()
                         dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
-                        self.startDate = dateFormatter.dateFromString(task.taskUpdatedAt)!
+//                        self.startDate = dateFormatter.dateFromString(task.taskUpdatedAt)!
+                        self.startDate = task.taskUpdatedAt!
+
 //                        self.startDate = self.startDate.dateByAddingTimeInterval(-1*60*60) //Add to compansate server time
                         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
                         NSNotificationCenter.defaultCenter().postNotificationName("resumeTimerNotification", object: nil)
@@ -132,9 +134,11 @@ class ToggleHelper {
                 
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
-                dateFormatter.dateFromString(self.toggleTask.taskUpdatedAt)
+//                dateFormatter.dateFromString(self.toggleTask.taskUpdatedAt)
                 
-                self.startDate = dateFormatter.dateFromString(self.toggleTask.taskUpdatedAt)!
+//                self.startDate = dateFormatter.dateFromString(self.toggleTask.taskUpdatedAt)!
+                self.startDate = self.toggleTask.taskUpdatedAt!
+
 //                self.startDate = self.startDate.dateByAddingTimeInterval(-1*60*60) //Add to compansate server time
 
                 let interval:NSTimeInterval = Double(self.toggleTask.taskDuration)

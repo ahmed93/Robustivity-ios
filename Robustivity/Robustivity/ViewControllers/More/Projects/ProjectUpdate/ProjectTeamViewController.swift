@@ -12,6 +12,9 @@ class ProjectTeamViewController: BaseViewController {
 
     @IBOutlet weak var membersTableView: UITableView!
     
+    var project_id:Int!
+    
+    var data:NSMutableArray!
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -21,12 +24,7 @@ class ProjectTeamViewController: BaseViewController {
     
     var adapter: ProjectMembersAdapter!
     
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("ProjectTeamViewController", owner: self, options: nil)
-    }
-    
+
     override func loadView() {
         super.loadView()
     }
@@ -34,12 +32,16 @@ class ProjectTeamViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         // setting View TabBartitle + navigationBarTitle
         self.title = "Project Members";
         self.navigationItem.title = "Project Members";
-        
         adapter = ProjectMembersAdapter(viewController: self, tableView: membersTableView!, registerCellWithNib:"ProjectMemberCell", withIdentifier: "projectMembers")
+        adapter.setProjectData(data)
     }
+    
+    
 
     /*
     // MARK: - Navigation

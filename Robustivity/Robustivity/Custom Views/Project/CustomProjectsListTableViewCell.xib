@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -32,7 +32,7 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robustaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="sC5-CT-1Df">
-                        <rect key="frame" x="22" y="29" width="40" height="40"/>
+                        <rect key="frame" x="22" y="26" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="sC5-CT-1Df" secondAttribute="height" multiplier="1:1" id="0cD-sy-cec"/>
                             <constraint firstAttribute="height" constant="40" id="V4z-Hh-eIH"/>
@@ -40,9 +40,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robustivity Project" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xX-4K-XGb" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="72" y="33" width="270" height="17"/>
+                        <rect key="frame" x="72" y="38" width="270" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="labelType">
@@ -51,9 +51,9 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hussein Salaheldin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Nx-W8-SR4" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="72" y="55" width="270" height="14"/>
+                        <rect key="frame" x="72" y="60" width="270" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="labelType">
@@ -68,21 +68,15 @@
                     <constraint firstAttribute="trailingMargin" secondItem="xah-cz-Jvm" secondAttribute="trailing" constant="38" id="EVb-dp-4Z5"/>
                     <constraint firstItem="xah-cz-Jvm" firstAttribute="leading" secondItem="0xX-4K-XGb" secondAttribute="trailing" constant="8" id="Hk3-oH-ku6"/>
                     <constraint firstItem="0xX-4K-XGb" firstAttribute="width" secondItem="2Nx-W8-SR4" secondAttribute="width" id="IVB-yq-GhE"/>
-                    <constraint firstItem="2Nx-W8-SR4" firstAttribute="bottom" secondItem="sC5-CT-1Df" secondAttribute="bottom" id="OPi-Rf-803"/>
-                    <constraint firstItem="0xX-4K-XGb" firstAttribute="top" secondItem="sC5-CT-1Df" secondAttribute="top" id="PKg-di-kiP"/>
+                    <constraint firstItem="0xX-4K-XGb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IX7-Up-xHk" userLabel="Project Name Label.centerY = centerY"/>
                     <constraint firstItem="4Ru-aa-igv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="WSr-ah-x5W"/>
                     <constraint firstItem="0xX-4K-XGb" firstAttribute="leading" secondItem="sC5-CT-1Df" secondAttribute="trailing" constant="10" id="gyV-MT-Vwb"/>
                     <constraint firstItem="sC5-CT-1Df" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="ieL-vN-mAJ"/>
                     <constraint firstItem="xah-cz-Jvm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="2" id="nPW-0U-2Ta"/>
+                    <constraint firstItem="sC5-CT-1Df" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sNa-xh-aaA"/>
                     <constraint firstItem="2Nx-W8-SR4" firstAttribute="top" secondItem="0xX-4K-XGb" secondAttribute="bottom" constant="5" id="vPG-MW-zt6"/>
                     <constraint firstItem="4Ru-aa-igv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="wpk-mf-I0l"/>
-                    <constraint firstItem="sC5-CT-1Df" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="2" id="zfc-Rh-M3f"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="PKg-di-kiP"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="marginUIView" destination="4Ru-aa-igv" id="iiz-7k-5cf"/>

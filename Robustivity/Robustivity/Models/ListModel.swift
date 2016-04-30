@@ -47,5 +47,8 @@ class ListModel: NSObject {
     func hasMorePages()->Bool {
         return currentPage < lastPage
     }
+    func addObjectsFromArray(newObjects: [AnyObject]){
+        objects.addObjectsFromArray(newObjects)
+    }
         
 }

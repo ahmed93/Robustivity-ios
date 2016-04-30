@@ -14,9 +14,10 @@
  */
 
 import UIKit
+import ObjectMapper
+import RealmSwift
+
 class TaskUpdatesAdapter: BaseTableAdapter{
-    
-    var tableData = ["This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA","This task is so awesome that I am doing it 2 times in a row. I am happy, smiling and blessed. god bless MURICA"]
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
@@ -24,26 +25,86 @@ class TaskUpdatesAdapter: BaseTableAdapter{
         // any extra stuff to be done
     }
     
-    override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? BaseTableViewCell
+    func fetchItems() {
+        let controller = self.viewController as! TaskViewController
+            API.get(APIRoutes.TASKS_INDEX + controller.taskId + "/updates", callback: { (success, response) in
+                if(success){
+                    let responseDictionary = response as! Dictionary<String, AnyObject>
+                    let commentsArray = responseDictionary["comments"]
+                    let comments = Mapper<TaskCommentModel>().mapArray(commentsArray)
+                    for comment in comments! {
+                        self.tableItems.objects.insertObject(comment, atIndex: 0)
+                       // self.saveNewComment(comment)
+//                        self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .None)
+                    }
+                    self.tableView.reloadData()
+                }
+            })
+    }
+    
+    //save new task on disk using realm
+    func saveNewComment(comment: TaskCommentModel) {
+        let realm = try! Realm()
+        //let savedTasks =
         
-        _cell?.label.text = tableItems.objectAtIndex(indexPath.row) as? String
+        //check if is present or not
+        for storedComment in    realm.objects(TaskCommentModel) {
+            if storedComment.commentId == comment.taskId{
+                return
+            }
+        }
+        try! realm.write {
+            realm.add(comment)
+        }
+    }
+    
+    override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
+        let _cell = cell as? CommentTableViewCell
+        let comment = tableItems.objectAtIndex(indexPath.row) as! TaskCommentModel
+        _cell!.name.text = comment.userName
+        if (comment.content.isEmpty){
+            _cell!.comment.text = "invalid comment from the server"
+        }else{
+            _cell!.comment.text = comment.content
+        }
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFormatter.dateFromString(comment.createdAt)
+        _cell!.time.text = offsetFrom(date!)
+        _cell!.avatar.downloadImageFromUrl("http://hr.staging.rails.robustastudio.com/" + comment.userProfilePicture)
+        _cell!.avatar.layer.cornerRadius = (_cell!.avatar.frame.size.width) / 2
+        _cell!.avatar.clipsToBounds = true
+
+
     }
     
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
         return nil
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath)
-            as! CommentTableViewCell
-        cell.name.text = "Mansour Said Mansour"
-        cell.comment.text = tableData[indexPath.row]
-        cell.time.text = "Yesterday"
-        return cell
+    func offsetFrom(date:NSDate) -> String {
+        
+        let dayHourMinuteSecond: NSCalendarUnit = [.Day, .Hour, .Minute, .Second]
+        let difference = NSCalendar.currentCalendar().components(dayHourMinuteSecond, fromDate: date, toDate: NSDate(), options: [])
+        
+        let seconds = "\(difference.second)s"
+        let minutes = "\(difference.minute)m" + " " + seconds
+        let hours = "\(difference.hour)h" + " " + minutes
+        let days = "\(difference.day)d" + " " + hours
+        
+        if difference.day    > 0 { return days  + " ago"}
+        if difference.hour   > 0 { return hours + " ago"}
+        if difference.minute > 0 { return minutes + " ago"}
+        if difference.second > 0 { return seconds + " ago"}
+        return "Just Now"
     }
     
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
+        return tableItems.count
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
 }
