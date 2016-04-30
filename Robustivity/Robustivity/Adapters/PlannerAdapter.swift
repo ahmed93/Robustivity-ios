@@ -144,6 +144,8 @@ class PlannerAdapter: BaseTableAdapter {
         let item = tasks[indexPath.row]
         plannerCell.itemTitle.text = item.taskName
         plannerCell.projectName.text = item.taskProjectName
+        plannerCell.plannerCellTask = item // Aya
+
         
         // Should be a singletone over the app
         let dateFormatter = NSDateFormatter()

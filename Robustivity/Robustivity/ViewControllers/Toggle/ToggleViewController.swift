@@ -6,9 +6,12 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
-// Class contributors [Aya Amr, Jihan Adel]
+// Class contributors [Aya Amr, Jihan Adel, Nouran Mamdouh]
 
 import UIKit
+import ObjectMapper
+import RealmSwift
+
 
 class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var toggleResumeBtnCenterX: NSLayoutConstraint!
@@ -24,13 +27,12 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
   
     @IBOutlet weak var todoProjectTextField: UITextField!
-    var timer = NSTimer();
-    var startDate = NSDate();
-    var pausedDate = NSDate();
-    var currentTimeInterval = NSTimeInterval();
-    var pausedTimeInterval = NSTimeInterval();
 
-    var todoProjectsName = ["Project name", "Farmraiser", "LMS", "Innovation Portal", "Maill buddy"];
+    let toggleHelper = ToggleHelper.sharedInstance
+    let realm = try! Realm()
+
+    let projectPicker = UIPickerView(); //Add picker view to be used in project names
+
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -44,9 +46,28 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewSetup()
+        self.toggleHelper.currentTaskState = "intial"
+        self.toggleHelper.fetchTasks()
+
+//        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
+        
+        toggleHelper.fetchProjectsList()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pauseTimerNotification", name:"pauseTimerNotification", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopTimerNotification", name:"stopTimerNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
+        
+
+    }
+    
+    func viewSetup() {
+        
         self.title = "Toggle";
         self.navigationItem.title = "Toggle";
-
+        
         self.navigationController?.navigationBar.translucent = false; //added to calculate the distance from the top of the page after the nav bar
         
         /* Add circular shape to buttons*/
@@ -58,13 +79,13 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.toggleStopBtn.backgroundColor = Theme.redColor();
         self.toggleResumeBtn.layer.cornerRadius = 0.5 * self.toggleResumeBtn.bounds.size.width;
         self.toggleResumeBtn.backgroundColor = Theme.greenColor();
-
+        
         Theme.style_5(self.toggledTime); //missing correct font and is not specified in properties
-
+        
         self.toggledTime.text = "00:00:00";
         self.toggledTime.textColor = Theme.blackColor();
         
-        /* Add indentation between text field and inout data*/
+        /* Add indentation between text field and input data*/
         let todoTitlePaddingView = UIView(frame: CGRectMake(0,0,14,20));
         self.todoTitleField.leftView = todoTitlePaddingView;
         self.todoTitleField.leftViewMode = UITextFieldViewMode.Always;
@@ -72,24 +93,42 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         let todoProjectPaddingView = UIView(frame: CGRectMake(0,0,14,20));
         self.todoProjectTextField.leftView = todoProjectPaddingView;
         self.todoProjectTextField.leftViewMode = UITextFieldViewMode.Always;
-
+        
         self.todoTitleField.backgroundColor = Theme.lightGrayColor();
         self.todoTitleField.attributedPlaceholder = NSAttributedString(string:"ToDo title",
             attributes:[NSForegroundColorAttributeName: Theme.grayColor()]); //Add Placeholder with custom color
         
         self.todoProjectTextField.backgroundColor = Theme.lightGrayColor();
         self.todoProjectTextField.attributedPlaceholder = NSAttributedString(string:"Project name", attributes:[NSForegroundColorAttributeName: Theme.grayColor()]); //Add placeholder with custom color
-
-        let projectPicker = UIPickerView(); //Add picker view to be used in project names
-        projectPicker.dataSource = self;
-        projectPicker.delegate = self;
+        self.projectPicker.dataSource = self;
+        self.projectPicker.delegate = self;
         
         self.todoProjectTextField.inputView = projectPicker; //Assign picker to textfield
         self.toggleStopBtn.alpha = 0;
         self.togglePauseBtn.alpha = 0;
         self.toggleResumeBtn.alpha = 0;
+        
+        //Track input fields change
+        self.todoTitleField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingDidEnd)
+        
+        self.todoProjectTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingDidEnd)
+
+        
+        //Add tab gesture to dismiss keyboard
+        let tapGesture = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        self.view.addGestureRecognizer(tapGesture)
+        
+    }
+    
+
+    
+    override func viewWillAppear(animated: Bool) {
+        print("View will appear")
+        self.toggleHelper.fetchTasks()
+
 
     }
+    
     
     /*
     ** toggleStartPlay
@@ -98,50 +137,58 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func toggleStartPlay(sender: AnyObject) {
-        let currentDate = NSDate();
-        startDate = currentDate;
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
         
-        self.toggledTime.textColor = Theme.greenColor();
+        createTodo()
         
-        UIView.animateWithDuration(0.5, animations: {
-            self.togglePlayBtn.alpha = 0;
-            self.toggleResumeBtn.alpha = 0;
+    }
+
+    func createTodo() {
+        var requestParams = [String : AnyObject]()
+        
+        if self.todoTitleField.text == "" {
+            requestParams["task[name]"] = "iOS Noname"
+
+        }else{
             
-            self.toggleStopBtn.alpha = 1;
-            self.togglePauseBtn.alpha = 1;
+            requestParams["task[name]"] = self.todoTitleField.text
 
-            self.toggleStopBtnCenterX.constant = 75;
-
-            self.togglePauseBtnCenterX.constant = -75;
+        }
+        
+        
+        if self.todoProjectTextField.text == "" {
+            self.projectPicker.selectRow(0, inComponent: 0, animated: false)
+            self.todoProjectTextField.text = "miscellaneous"
+            requestParams["task[project_id]"] = 1
+            
+        }else{
+            
+            let projectId = self.projectPicker.selectedRowInComponent(0) + 1
+            print(projectId)
+            requestParams["task[project_id]"] = projectId
+            
+        }
+        
+        let url = APIRoutes.TODO_CREATE
+        let urlWithToggleStart = url + "?toggl=1"
+        
+        API.post(urlWithToggleStart, parameters: requestParams , callback: { (success, response) in
+            if(success) {
+                print(response)
+                let todo = Mapper<TaskModel>().map(response["task"])
+                print(todo)
+                todo?.updateTask()
+                self.toggleHelper.toggleTask = todo!
+                self.toggleHelper.startDate = NSDate()
+                self.toggleResumeViewSetup()
+                self.toggleHelper.currentTaskState = "playing"
+                self.toggleHelper.startTimer()
+                
+            }
+            
         })
         
     }
     
-    /*
-    ** updateToggledTime
-    ** CallBack function for NStimer 
-    ** compares users's current time with saved start time and 
-    ** update counter accordingly
-    */
-    
-    func updateToggledTime() {
-        // Create date from the elapsed time
-        let currentDate = NSDate();
-        
-        var timeInterval = currentDate.timeIntervalSinceDate(self.startDate);
-        timeInterval += pausedTimeInterval;
-
-        let timerDate = NSDate(timeIntervalSince1970: timeInterval);
-         // Create a date formatter
-        let dateFormatter = NSDateFormatter();
-        dateFormatter.dateFormat = "HH:mm:ss";
-        dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0);
-        let timeString = dateFormatter.stringFromDate(timerDate);
-        self.currentTimeInterval = timeInterval;
-        self.toggledTime.text = timeString;
-        
-    }
     
     /*
     ** togglePause
@@ -151,10 +198,12 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func togglePause(sender: AnyObject) {
-        self.pausedDate = NSDate();
-        timer.invalidate(); //stop timer
+        
+        self.toggleHelper.togglePauseAction()
+    }
+    
+    func pauseTimerNotification() {
         self.toggledTime.textColor = Theme.blackColor();
-        self.pausedTimeInterval = self.currentTimeInterval;
         
         UIView.animateWithDuration(0.5, animations: {
             self.togglePauseBtn.alpha = 0; //hide button
@@ -162,6 +211,18 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
             self.toggleResumeBtnCenterX.constant = -75;
             
         })
+        
+    }
+    func togglePauseViewSetup() {
+        self.toggledTime.textColor = Theme.blackColor();
+        
+        UIView.animateWithDuration(0.5, animations: {
+            self.togglePauseBtn.alpha = 0; //hide button
+            self.toggleResumeBtn.alpha = 1; //show button
+            self.toggleResumeBtnCenterX.constant = -75;
+            
+        })
+        
     }
     
     /*
@@ -173,19 +234,30 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func toggleStop(sender: AnyObject) {
-        self.pausedDate = NSDate();
+        
+        self.toggleHelper.toggleStopAction()
+        
+    }
+    
+    //StopNotificationHandler
+    func stopTimerNotification() {
+        self.toggleStopViewSetup()
+    }
+    
+    //Front end setup for the action
 
-        timer.invalidate();
+    func toggleStopViewSetup() {
         self.toggledTime.textColor = Theme.blackColor();
+        self.todoProjectTextField.text = ""
+        self.todoTitleField.text = ""
         self.toggledTime.text = "00:00:00";
-        self.pausedTimeInterval = 0;
+        self.toggleHelper.pausedTimeInterval = 0;
         UIView.animateWithDuration(0.5, animations: {
             self.togglePlayBtn.alpha = 1;
             self.togglePauseBtn.alpha = 0;
             self.toggleResumeBtn.alpha = 0;
             self.toggleStopBtn.alpha = 0;
         })
-        
     }
     
     /*
@@ -195,23 +267,105 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func toggleResume(sender: AnyObject) {
-        self.toggleStartPlay(sender);
+
+        self.toggleResumeBtn.enabled = false
+        self.toggleHelper.toggleResumeAction()
+        
         
     }
+    
+    /*Handle the resumeNotification*/
+    func resumeTimerNotification() {
+        
+        self.toggleResumeViewSetup()
+    }
+    
+    /*Change view setup to resume setup*/
+    func toggleResumeViewSetup() {
+        
+        self.todoTitleField.text = self.toggleHelper.toggleTask.taskName
+        print(self.toggleHelper.toggleTask.taskProjectName)
+        self.todoProjectTextField.text = self.toggleHelper.toggleTask.taskProjectName
+        if(self.toggleHelper.toggleTask.taskProjectName == "") {
+            self.todoProjectTextField.text = "miscellaneous"
+        }
+        self.projectPicker.selectRow(self.toggleHelper.toggleTask.taskProjectId - 1, inComponent: 0, animated: false)
+        self.toggledTime.textColor = Theme.greenColor();
+        self.toggleResumeBtn.enabled = true
+        UIView.animateWithDuration(0.5, animations: {
+            self.togglePlayBtn.alpha = 0;
+            self.toggleResumeBtn.alpha = 0;
+            
+            self.toggleStopBtn.alpha = 1;
+            self.togglePauseBtn.alpha = 1;
+            
+            self.toggleStopBtnCenterX.constant = 75;
+            
+            self.togglePauseBtnCenterX.constant = -75;
+        })
+    }
+    
+    func textFieldDidChange(textField: UITextField) {
+        if((self.toggleHelper.currentTaskState == "playing" ||  self.toggleHelper.currentTaskState == "paused") && (self.todoTitleField.text != self.toggleHelper.toggleTask.taskName || self.todoProjectTextField.text != self.toggleHelper.toggleTask.taskProjectName)) {
+            //Send update request
+            
+            var requestParams = [String : AnyObject]()
+            
+            requestParams["task[name]"] = self.todoTitleField.text
+            
+            if self.todoProjectTextField.text != "" {
+                let projectId = self.projectPicker.selectedRowInComponent(0) + 1
+                
+                requestParams["task[project_id]"] = projectId
+                
+            }
+            
+            let url = APIRoutes.TASKS_INDEX
+            let urlWithTaskId = url + String(self.toggleHelper.toggleTask.taskId)
+            
+            API.put(urlWithTaskId, parameters: requestParams , callback: { (success, response) in
+                if(success) {
+                    
+                    //Pending API modification to avoid empty response
+                    let todo = Mapper<TaskModel>().map(response)
+                    todo?.updateTask()
+                    self.toggleHelper.toggleTask = todo!
+                    
+                }
+                
+            })
+        }
+
+        
+        print("I have been changed")
+    }
+    
+    //Gesture handler
+    func dismissKeyboard() {
+        self.todoTitleField.resignFirstResponder()
+        self.todoProjectTextField.resignFirstResponder()
+        
+    }
+    
+    func updateToggledTimeNotification() {
+        print("Notification recived")
+        self.toggledTime.text = self.toggleHelper.toggledTime
+    }
+
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.todoProjectsName.count;
+        return self.toggleHelper.todoProjectsName.count;
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.todoProjectTextField.text = self.todoProjectsName[row];
+        self.todoProjectTextField.text = self.toggleHelper.todoProjectsName[row];
         self.todoProjectTextField.resignFirstResponder();
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.todoProjectsName[row]
+        return self.toggleHelper.todoProjectsName[row]
     }
 }

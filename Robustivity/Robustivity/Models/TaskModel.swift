@@ -73,6 +73,7 @@ class TaskModel: Object, Mappable {
     dynamic var creatorAvatar = ""
     dynamic var creatorTitle = ""
     dynamic var taskProjectName = ""
+    dynamic var taskDuration = 0
 
     
     required convenience init?(_ map: Map) {
@@ -112,6 +113,7 @@ class TaskModel: Object, Mappable {
         creatorAvatar      <- map["creator_profile_picture"]
         creatorTitle       <- map["creator_title"]
         taskProjectName    <- map["project_name"]
+        taskDuration       <- map["duration"]
     }
 
     static func createOrUpdate(tasks: [TaskModel]){
@@ -120,6 +122,14 @@ class TaskModel: Object, Mappable {
             realm.add(tasks, update: true)
         }
     }
+    func updateTask() {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(self, update: true)
+        }
+    }
+
     
     static func recent(type: TaskType, status: [TaskStatus]!) -> Results<TaskModel> {
         let realm = try! Realm()

@@ -6,7 +6,6 @@
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
 
-
 import Foundation
 import ObjectMapper
 import RealmSwift
@@ -14,6 +13,7 @@ import RealmSwift
 class Project: Object, Mappable {
     
     dynamic var projectId = 0
+
     dynamic var projectName:String = ""
     dynamic var projectEndDate:String = ""
     dynamic var projectIsBillable:Bool = false
@@ -78,19 +78,18 @@ class Project: Object, Mappable {
     required convenience init?(_ map: Map) {
         self.init()
     }
+    override static func primaryKey() -> String? {
+        return "projectId"
+    }
     
     func save(){
         let realm = try! Realm()
-        for db_project in realm.objects(Project) {
-            if db_project.projectId == self.projectId {
-                return
-            }
-        }
+        
         try! realm.write {
-            realm.add(self)
+            
+            realm.add(self, update: true)
         }
     }
-    
-    
-}
 
+
+}
