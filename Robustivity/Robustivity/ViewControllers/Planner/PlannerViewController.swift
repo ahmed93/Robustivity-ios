@@ -66,12 +66,12 @@ class PlannerViewController: BaseViewController {
         self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
-        self.navigationController?.hidesBarsOnSwipe = false
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        self.navigationController?.hidesBarsOnSwipe = false
+//        self.navigationController?.setNavigationBarHidden(false, animated: true)
+//    }
     
     //    MARK: Segmented Control
     
