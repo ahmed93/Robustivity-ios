@@ -42,7 +42,6 @@ class FeedViewController: BaseViewController {
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
         
-        
         // Add Left navigation item
         let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
         userStatusBarButtonItem.tintColor = Theme.greenColor()
@@ -66,6 +65,8 @@ class FeedViewController: BaseViewController {
         toggleCell.taskName.text = toggleHelper.toggleTask.taskName
         toggleCell.projectName.text = toggleHelper.toggleTask.taskProjectName
         toggleCell.toggleCellTask = toggleHelper.toggleTask
+        toggleCell.playPauseButton.enabled = true
+
 
     }
 

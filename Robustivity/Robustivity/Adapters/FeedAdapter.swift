@@ -71,7 +71,10 @@ class FeedAdapter: BaseTableAdapter {
     
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
         if(indexPath.section == 0){
-            return tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell
+            var toggleCell = tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell
+            toggleCell.playPauseButton.enabled = false
+            return toggleCell
+//            return tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell
         }
         else{
             let feed = tableItems.objectAtIndex(indexPath.row)as! FeedModel
