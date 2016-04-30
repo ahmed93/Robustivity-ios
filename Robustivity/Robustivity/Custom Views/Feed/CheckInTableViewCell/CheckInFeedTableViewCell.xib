@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
+                <rect key="frame" x="0.0" y="0.0" width="600" height="57.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Islam" translatesAutoresizingMaskIntoConstraints="NO" id="pIl-Oy-YHK">
@@ -21,7 +21,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABt-zQ-6Ee" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                        <rect key="frame" x="524" y="18" width="42" height="21"/>
+                        <rect key="frame" x="538" y="18" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                     <constraint firstItem="pIl-Oy-YHK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jLw-Ad-ORd"/>
                     <constraint firstAttribute="bottom" secondItem="egf-3m-KS4" secondAttribute="bottom" constant="18" id="oCc-YZ-uV4"/>
                     <constraint firstItem="ABt-zQ-6Ee" firstAttribute="centerY" secondItem="egf-3m-KS4" secondAttribute="centerY" id="tDQ-T2-NcM"/>
-                    <constraint firstAttribute="trailing" secondItem="ABt-zQ-6Ee" secondAttribute="trailing" constant="34" id="zDg-uS-A5H"/>
+                    <constraint firstAttribute="trailing" secondItem="ABt-zQ-6Ee" secondAttribute="trailing" constant="20" id="zDg-uS-A5H"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

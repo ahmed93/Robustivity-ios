@@ -140,6 +140,13 @@
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
 		229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */; };
 		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
+		34E742801CD136EF00576F88 /* AttendanceLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7427E1CD136EF00576F88 /* AttendanceLogViewController.swift */; };
+		34E742811CD136EF00576F88 /* AttendanceLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E7427F1CD136EF00576F88 /* AttendanceLogViewController.xib */; };
+		34E742831CD1370400576F88 /* AttendanceLogAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742821CD1370400576F88 /* AttendanceLogAdapter.swift */; };
+		34E742851CD1370E00576F88 /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742841CD1370E00576F88 /* activityIndicator.swift */; };
+		34E742871CD1372C00576F88 /* WorkingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742861CD1372C00576F88 /* WorkingDay.swift */; };
+		34E7428B1CD1374B00576F88 /* AttendanceLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742891CD1374B00576F88 /* AttendanceLogTableViewCell.swift */; };
+		34E7428C1CD1374B00576F88 /* AttendanceLogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E7428A1CD1374B00576F88 /* AttendanceLogTableViewCell.xib */; };
 		37AA68031CCD3354002F509E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA68021CCD3354002F509E /* Project.swift */; };
 		37AA680E1CD01198002F509E /* ToggleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA680D1CD01198002F509E /* ToggleHelper.swift */; };
 		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
@@ -342,6 +349,13 @@
 		22319D545BBACB8BF580C2B3 /* Pods-Robustivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.debug.xcconfig"; sourceTree = "<group>"; };
 		229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectMembersAdapter.swift; path = ../API/ProjectMembersAdapter.swift; sourceTree = "<group>"; };
 		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
+		34E7427E1CD136EF00576F88 /* AttendanceLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceLogViewController.swift; sourceTree = "<group>"; };
+		34E7427F1CD136EF00576F88 /* AttendanceLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendanceLogViewController.xib; sourceTree = "<group>"; };
+		34E742821CD1370400576F88 /* AttendanceLogAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceLogAdapter.swift; sourceTree = "<group>"; };
+		34E742841CD1370E00576F88 /* activityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
+		34E742861CD1372C00576F88 /* WorkingDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingDay.swift; sourceTree = "<group>"; };
+		34E742891CD1374B00576F88 /* AttendanceLogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceLogTableViewCell.swift; sourceTree = "<group>"; };
+		34E7428A1CD1374B00576F88 /* AttendanceLogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendanceLogTableViewCell.xib; sourceTree = "<group>"; };
 		37AA68021CCD3354002F509E /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		37AA680D1CD01198002F509E /* ToggleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleHelper.swift; sourceTree = "<group>"; };
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -470,6 +484,7 @@
 		1B7F8DD41CB08116007C8005 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				34E742841CD1370E00576F88 /* activityIndicator.swift */,
 				1B7F8DE31CB0948D007C8005 /* RoundBorderedView.swift */,
 				1B7F8DD51CB0813C007C8005 /* Circular+UIImageView.swift */,
 				1B7F8DD61CB0813C007C8005 /* Comp_1+Theme.swift */,
@@ -618,8 +633,8 @@
 		1B7F8E0D1CB094E6007C8005 /* CheckInTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				1B7F8E0E1CB094E6007C8005 /* CheckInFeedTableViewCell.swift */,
 				1B7F8E0F1CB094E6007C8005 /* CheckInFeedTableViewCell.xib */,
+				1B7F8E0E1CB094E6007C8005 /* CheckInFeedTableViewCell.swift */,
 			);
 			path = CheckInTableViewCell;
 			sourceTree = "<group>";
@@ -876,6 +891,24 @@
 			name = Feed;
 			sourceTree = "<group>";
 		};
+		34E7427D1CD136EF00576F88 /* AttendanceLog */ = {
+			isa = PBXGroup;
+			children = (
+				34E7427E1CD136EF00576F88 /* AttendanceLogViewController.swift */,
+				34E7427F1CD136EF00576F88 /* AttendanceLogViewController.xib */,
+			);
+			path = AttendanceLog;
+			sourceTree = "<group>";
+		};
+		34E742881CD1374B00576F88 /* AttendanceLog */ = {
+			isa = PBXGroup;
+			children = (
+				34E742891CD1374B00576F88 /* AttendanceLogTableViewCell.swift */,
+				34E7428A1CD1374B00576F88 /* AttendanceLogTableViewCell.xib */,
+			);
+			path = AttendanceLog;
+			sourceTree = "<group>";
+		};
 		37AA680C1CD01160002F509E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -919,6 +952,7 @@
 		A717E5891CA1485000F237DD /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				34E742821CD1370400576F88 /* AttendanceLogAdapter.swift */,
 				9426F51D1CBABD18006BEFA1 /* TaskInfoAdapter.swift */,
 				9426F51E1CBABD18006BEFA1 /* TaskUpdatesAdapter.swift */,
 				1B7F8DD21CB08037007C8005 /* BaseTableAdapter.swift */,
@@ -980,6 +1014,7 @@
 		A74EC0281CA4724300A7FDEB /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				34E742881CD1374B00576F88 /* AttendanceLog */,
 				9426F5091CBABBC4006BEFA1 /* Task View */,
 				1B7F8DE51CB094E6007C8005 /* BaseSwipableTableCell */,
 				1B7F8DE71CB094E6007C8005 /* More */,
@@ -1037,6 +1072,7 @@
 		A7BCE7C01C7D834F007870CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				34E742861CD1372C00576F88 /* WorkingDay.swift */,
 				1B8E5D811CAF41A600239F1C /* Feed */,
 				A717E5B41CA1816D00F237DD /* ListModel.swift */,
 				A717E5B21CA17D4000F237DD /* BaseModel.swift */,
@@ -1051,6 +1087,7 @@
 		A7BCE7C41C7D834F007870CB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				34E7427D1CD136EF00576F88 /* AttendanceLog */,
 				9426F5161CBABC06006BEFA1 /* Task View */,
 				1B7F8E4D1CB09507007C8005 /* Login */,
 				1B7F8E501CB09507007C8005 /* BaseViewControllers */,
@@ -1159,6 +1196,7 @@
 				9426F51A1CBABC13006BEFA1 /* TaskViewController.xib in Resources */,
 				1B7F8E461CB094E6007C8005 /* PlannerHeaderTableViewCell.xib in Resources */,
 				1B7F8EAF1CB09507007C8005 /* ChooseAssigneeViewController.xib in Resources */,
+				34E7428C1CD1374B00576F88 /* AttendanceLogTableViewCell.xib in Resources */,
 				1B7F8E361CB094E6007C8005 /* ProjectMemberCell.xib in Resources */,
 				A7E7A2541CA2EE6E002DB6FE /* MyriadPro-Regular.otf in Resources */,
 				1B7F8EAB1CB09507007C8005 /* ProjectUpdateViewController.xib in Resources */,
@@ -1195,6 +1233,7 @@
 				1B7F8E291CB094E6007C8005 /* ExcuseTableViewCell.xib in Resources */,
 				A7E7A24E1CA2EE6E002DB6FE /* MyriadPro-BoldCond.otf in Resources */,
 				1B7F8EA31CB09507007C8005 /* ProjectInfoViewController.xib in Resources */,
+				34E742811CD136EF00576F88 /* AttendanceLogViewController.xib in Resources */,
 				A7E7A2521CA2EE6E002DB6FE /* MyriadPro-CondIt.otf in Resources */,
 				1B7F8E991CB09507007C8005 /* WriteExcuseViewController.xib in Resources */,
 				1B7F8EB51CB09507007C8005 /* PlannerViewController.xib in Resources */,
@@ -1289,9 +1328,13 @@
 				A717E59C1CA1485000F237DD /* APIConnector.swift in Sources */,
 				A717E5A71CA14D2D00F237DD /* BaseAdapter.swift in Sources */,
 				1B7F8E391CB094E6007C8005 /* BaseTableViewCell.swift in Sources */,
+				34E742831CD1370400576F88 /* AttendanceLogAdapter.swift in Sources */,
+				34E7428B1CD1374B00576F88 /* AttendanceLogTableViewCell.swift in Sources */,
 				A750E9781CA97B77009D29BB /* NotificationsAdapter.swift in Sources */,
+				34E742871CD1372C00576F88 /* WorkingDay.swift in Sources */,
 				1B7F8E941CB09507007C8005 /* DirectoryViewController.swift in Sources */,
 				A717E5B31CA17D4000F237DD /* BaseModel.swift in Sources */,
+				34E742801CD136EF00576F88 /* AttendanceLogViewController.swift in Sources */,
 				1B7F8E9A1CB09507007C8005 /* MoreViewController.swift in Sources */,
 				7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */,
 				1B7F8E8F1CB09507007C8005 /* RobustivityTabBarController.swift in Sources */,
@@ -1328,6 +1371,7 @@
 				A717E59E1CA1485000F237DD /* APIConnector_Module_2.swift in Sources */,
 				1B7F8DC41CB07C95007C8005 /* UIImage+MultiFormat.m in Sources */,
 				1B7F8E3B1CB094E6007C8005 /* BroadcastFeedTableViewCell.swift in Sources */,
+				34E742851CD1370E00576F88 /* activityIndicator.swift in Sources */,
 				1B7F8EB41CB09507007C8005 /* PlannerViewController.swift in Sources */,
 				1B7F8EB01CB09507007C8005 /* ChooseProjectViewController.swift in Sources */,
 				9426F5201CBABD18006BEFA1 /* TaskUpdatesAdapter.swift in Sources */,

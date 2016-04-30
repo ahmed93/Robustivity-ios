@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FeedViewController: BaseViewController {
 
@@ -14,6 +15,8 @@ class FeedViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var adapter:FeedAdapter!
+    var adapter1:OptionsTableAdapter!
+    var control: MoreViewController!
     let toggleHelper = ToggleHelper.sharedInstance
     
 
@@ -37,6 +40,8 @@ class FeedViewController: BaseViewController {
         let values = ["CheckInFeedTableViewCell","BroadcastFeedTableViewCell","UpdateFeedTableViewCell","ToggleFeedTableViewCell"]
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
+        
+        
         // Add Left navigation item
         let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
         userStatusBarButtonItem.tintColor = Theme.greenColor()

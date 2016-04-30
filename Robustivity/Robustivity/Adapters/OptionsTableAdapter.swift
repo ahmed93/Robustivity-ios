@@ -19,6 +19,8 @@ class OptionsTableAdapter: BaseTableAdapter {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.row,indexPath.section) {
+        case (0,0):
+            viewController.navigationController?.pushViewController(AttendanceLogViewController(), animated: true)
         case (0,1):
             viewController.navigationController?.pushViewController(DirectoryViewController(), animated: true)
         case (1,0):
@@ -27,6 +29,8 @@ class OptionsTableAdapter: BaseTableAdapter {
             viewController.navigationController?.pushViewController(SendExcuseViewController(), animated: true)
         case (1,2):
             viewController.navigationController?.pushViewController(PingtoViewController(), animated: true)
+        case (2,2):
+            UIApplication.sharedApplication().openURL(NSURL(string:"https://calendar.google.com/calendar/render?tab=cc#main_7")!)
             
         default:()
             

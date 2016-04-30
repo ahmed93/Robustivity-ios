@@ -18,7 +18,7 @@ class BroadcastFeedTableViewCell: BaseTableViewCell {
     @IBOutlet weak var broadcastTextLabel: RBLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        setLabelsStyle()
+        setStyle()
         //avatarImageView.makeCircular()
         // Initialization code
     }
@@ -29,11 +29,16 @@ class BroadcastFeedTableViewCell: BaseTableViewCell {
         // Configure the view for the selected state
     }
     
-    func setLabelsStyle(){
+    func setStyle(){
         self.timestampsLabel.labelType = 1080
         self.broadcastTextLabel.labelType = 1020
         self.broadcastTitleLabel.labelType = 3000
+        self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width / 2;
+        self.avatarImageView.clipsToBounds = true;
+  
+            
+        }
         
-    }
     
+
 }

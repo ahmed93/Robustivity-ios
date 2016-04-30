@@ -16,7 +16,7 @@ class CheckInFeedTableViewCell: BaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        setLabelsStyle()
+        setStyle()
         //avatarImageView.makeCircular()
     }
 
@@ -25,7 +25,9 @@ class CheckInFeedTableViewCell: BaseTableViewCell {
 
         // Configure the view for the selected state
     }
-    func setLabelsStyle(){
+    func setStyle(){
+        self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width / 2;
+        self.avatarImageView.clipsToBounds = true;
         self.timeStampsLabel.labelType = 1080
         self.checkInTitleLabel.labelType = 3000
         
