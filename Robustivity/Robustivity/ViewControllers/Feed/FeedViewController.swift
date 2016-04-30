@@ -33,6 +33,7 @@ class FeedViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
         // setting View TabBartitle + navigationBarTitle
         self.title = "Feed";
         self.navigationItem.title = "Feed";

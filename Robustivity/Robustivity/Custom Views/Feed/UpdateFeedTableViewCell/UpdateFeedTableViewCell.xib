@@ -20,7 +20,7 @@
                             <constraint firstAttribute="height" constant="40" id="ytl-K2-xWh"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGf-x3-gvN" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGf-x3-gvN" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
                         <rect key="frame" x="64" y="18" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,6 +49,7 @@
                     <constraint firstAttribute="trailing" secondItem="dk6-XC-yYZ" secondAttribute="trailing" constant="15" id="kKH-05-bz1"/>
                     <constraint firstItem="QGf-x3-gvN" firstAttribute="centerY" secondItem="lAj-UV-iwb" secondAttribute="centerY" id="nAO-Yh-pYW"/>
                     <constraint firstAttribute="trailing" secondItem="zHV-Kq-y2E" secondAttribute="trailing" constant="20" id="oTN-ar-cLn"/>
+                    <constraint firstItem="zHV-Kq-y2E" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QGf-x3-gvN" secondAttribute="trailing" constant="10" id="qS8-G6-nYn"/>
                     <constraint firstItem="dk6-XC-yYZ" firstAttribute="top" secondItem="lAj-UV-iwb" secondAttribute="bottom" constant="13" id="zHU-Ih-3tN"/>
                 </constraints>
             </tableViewCellContentView>
