@@ -47,8 +47,16 @@ class PlannerItemsListAdapter  : BaseTableAdapter {
                     self.viewController.performSelector("stopRefreshControl")
                 }
                 
-                let data = self.fetchFromDatabase()
-                self.refreshTable(data, animationOptions: .TransitionCrossDissolve)
+                if self.viewController.respondsToSelector("updateSearchResultsForSearchController:") {
+                    let searchController = (self.viewController as! PlannerItemsListViewController).searchController
+                    self.viewController.performSelector("updateSearchResultsForSearchController:", withObject: searchController)
+                } else {
+                    // Will never be executed unless this adapter is used without a search controller
+                    // for another view controller
+                    let data = self.fetchFromDatabase()
+                    self.refreshTable(data, animationOptions: .TransitionCrossDissolve)
+                }
+                
             }
         }
     }
