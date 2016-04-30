@@ -52,7 +52,11 @@ class UserAdapter: BaseTableAdapter {
         let userCell = cell as! UserTableViewCell
         let user = tableItems.objectAtIndex(indexPath.row) as! User
         userCell.userName.text = user.userFirstName + " " + user.userLastName
-        userCell.userTitle.text = user.userTitle
+        if(user.userTitle != "") {
+            userCell.userTitle.text = user.userTitle
+        } else {
+            userCell.userTitle.text = "No Title"
+        }
         userCell.userAvatar.downloadImageFromUrl(APIRoutes.BASE_IMGS + user.userProfilePictureSquareURL)
         userCell.userAvatar.makeCircular()
         

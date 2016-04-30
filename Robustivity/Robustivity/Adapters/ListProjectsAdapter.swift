@@ -51,6 +51,10 @@ class ListProjectsAdapter: BaseTableAdapter {
         
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return CGFloat(57)
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let selectedProject = tableItems.objectAtIndex(indexPath.row) as! Project
