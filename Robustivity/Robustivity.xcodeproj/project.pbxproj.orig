@@ -130,16 +130,17 @@
 		1B7F8EB51CB09507007C8005 /* PlannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7F8E881CB09507007C8005 /* PlannerViewController.xib */; };
 		1B7F8EB61CB09507007C8005 /* ToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F8E8A1CB09507007C8005 /* ToggleViewController.swift */; };
 		1B7F8EB71CB09507007C8005 /* ToggleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7F8E8B1CB09507007C8005 /* ToggleViewController.xib */; };
-		1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */; };
-		1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */; };
 		1B8E5D881CAF41C100239F1C /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D841CAF41C100239F1C /* FeedModel.swift */; };
-		1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D851CAF41C100239F1C /* UpdateFeedModel.swift */; };
 		1B8E5D8B1CAF41D400239F1C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D8A1CAF41D400239F1C /* UserModel.swift */; };
 		1B8E5D8F1CAF423A00239F1C /* FeedAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */; };
 		1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */; };
 		1BC4E46D1CAD92E6008283D3 /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC4E46C1CAD92E6008283D3 /* UserAdapter.swift */; };
 		229A2D5F1CAD555A004F8980 /* ProjectMembersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */; };
 		34206EA71CADC80E00D6A4AB /* PingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34206EA61CADC80E00D6A4AB /* PingAdapter.swift */; };
+<<<<<<< HEAD
+		37AA68031CCD3354002F509E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA68021CCD3354002F509E /* Project.swift */; };
+		37AA680E1CD01198002F509E /* ToggleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA680D1CD01198002F509E /* ToggleHelper.swift */; };
+=======
 		34E742801CD136EF00576F88 /* AttendanceLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7427E1CD136EF00576F88 /* AttendanceLogViewController.swift */; };
 		34E742811CD136EF00576F88 /* AttendanceLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E7427F1CD136EF00576F88 /* AttendanceLogViewController.xib */; };
 		34E742831CD1370400576F88 /* AttendanceLogAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742821CD1370400576F88 /* AttendanceLogAdapter.swift */; };
@@ -147,8 +148,7 @@
 		34E742871CD1372C00576F88 /* WorkingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742861CD1372C00576F88 /* WorkingDay.swift */; };
 		34E7428B1CD1374B00576F88 /* AttendanceLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742891CD1374B00576F88 /* AttendanceLogTableViewCell.swift */; };
 		34E7428C1CD1374B00576F88 /* AttendanceLogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E7428A1CD1374B00576F88 /* AttendanceLogTableViewCell.xib */; };
-		37AA68031CCD3354002F509E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA68021CCD3354002F509E /* Project.swift */; };
-		37AA680E1CD01198002F509E /* ToggleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA680D1CD01198002F509E /* ToggleHelper.swift */; };
+>>>>>>> origin/Salma_backend
 		75D7CD2B1CAD7EB2009C6466 /* ExcuseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */; };
 		7D05C3E61CAD66B5008F4A83 /* OptionsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05C3E51CAD66B5008F4A83 /* OptionsTableAdapter.swift */; };
 		9426F5101CBABBE0006BEFA1 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426F50A1CBABBE0006BEFA1 /* CommentTableViewCell.swift */; };
@@ -338,10 +338,7 @@
 		1B7F8E881CB09507007C8005 /* PlannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerViewController.xib; sourceTree = "<group>"; };
 		1B7F8E8A1CB09507007C8005 /* ToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleViewController.swift; sourceTree = "<group>"; };
 		1B7F8E8B1CB09507007C8005 /* ToggleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToggleViewController.xib; sourceTree = "<group>"; };
-		1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastFeedModel.swift; sourceTree = "<group>"; };
-		1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D841CAF41C100239F1C /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
-		1B8E5D851CAF41C100239F1C /* UpdateFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFeedModel.swift; sourceTree = "<group>"; };
 		1B8E5D8A1CAF41D400239F1C /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1B8E5D8E1CAF423A00239F1C /* FeedAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedAdapter.swift; sourceTree = "<group>"; };
 		1BBA3D7E1CB03D6700FC4609 /* ListProjectsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProjectsAdapter.swift; sourceTree = "<group>"; };
@@ -349,6 +346,10 @@
 		22319D545BBACB8BF580C2B3 /* Pods-Robustivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.debug.xcconfig"; sourceTree = "<group>"; };
 		229A2D5E1CAD555A004F8980 /* ProjectMembersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectMembersAdapter.swift; path = ../API/ProjectMembersAdapter.swift; sourceTree = "<group>"; };
 		34206EA61CADC80E00D6A4AB /* PingAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingAdapter.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		37AA68021CCD3354002F509E /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		37AA680D1CD01198002F509E /* ToggleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleHelper.swift; sourceTree = "<group>"; };
+=======
 		34E7427E1CD136EF00576F88 /* AttendanceLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceLogViewController.swift; sourceTree = "<group>"; };
 		34E7427F1CD136EF00576F88 /* AttendanceLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendanceLogViewController.xib; sourceTree = "<group>"; };
 		34E742821CD1370400576F88 /* AttendanceLogAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceLogAdapter.swift; sourceTree = "<group>"; };
@@ -356,8 +357,7 @@
 		34E742861CD1372C00576F88 /* WorkingDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingDay.swift; sourceTree = "<group>"; };
 		34E742891CD1374B00576F88 /* AttendanceLogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceLogTableViewCell.swift; sourceTree = "<group>"; };
 		34E7428A1CD1374B00576F88 /* AttendanceLogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendanceLogTableViewCell.xib; sourceTree = "<group>"; };
-		37AA68021CCD3354002F509E /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		37AA680D1CD01198002F509E /* ToggleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleHelper.swift; sourceTree = "<group>"; };
+>>>>>>> origin/Salma_backend
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		623433517E01C7895A187FE7 /* Pods-Robustivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robustivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Robustivity/Pods-Robustivity.release.xcconfig"; sourceTree = "<group>"; };
 		75D7CD2A1CAD7EB2009C6466 /* ExcuseAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuseAdapter.swift; sourceTree = "<group>"; };
@@ -882,15 +882,20 @@
 		1B8E5D811CAF41A600239F1C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				1B8E5D821CAF41C100239F1C /* BroadcastFeedModel.swift */,
-				1B8E5D831CAF41C100239F1C /* CheckInFeedModel.swift */,
 				1B8E5D841CAF41C100239F1C /* FeedModel.swift */,
-				1B8E5D851CAF41C100239F1C /* UpdateFeedModel.swift */,
 				1B27A1101CC6C94E0062A74A /* TaskModel.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+		37AA680C1CD01160002F509E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				37AA680D1CD01198002F509E /* ToggleHelper.swift */,
+			);
+			name = Helpers;
+=======
 		34E7427D1CD136EF00576F88 /* AttendanceLog */ = {
 			isa = PBXGroup;
 			children = (
@@ -907,14 +912,7 @@
 				34E7428A1CD1374B00576F88 /* AttendanceLogTableViewCell.xib */,
 			);
 			path = AttendanceLog;
-			sourceTree = "<group>";
-		};
-		37AA680C1CD01160002F509E /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				37AA680D1CD01198002F509E /* ToggleHelper.swift */,
-			);
-			name = Helpers;
+>>>>>>> origin/Salma_backend
 			sourceTree = "<group>";
 		};
 		5803F72F02119C95C89B4787 /* Frameworks */ = {
@@ -1361,7 +1359,6 @@
 				1B7F8E311CB094E6007C8005 /* ProfileTableViewCell.swift in Sources */,
 				1B7F8E981CB09507007C8005 /* WriteExcuseViewController.swift in Sources */,
 				F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */,
-				1B8E5D891CAF41C100239F1C /* UpdateFeedModel.swift in Sources */,
 				9426F5251CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.swift in Sources */,
 				37AA68031CCD3354002F509E /* Project.swift in Sources */,
 				1B7F8E371CB094E6007C8005 /* ProjectUpdateTableViewCell.swift in Sources */,
@@ -1384,7 +1381,6 @@
 				1B7F8E471CB094E6007C8005 /* PlannerTableViewCell.swift in Sources */,
 				9426F51F1CBABD18006BEFA1 /* TaskInfoAdapter.swift in Sources */,
 				1B7F8DDC1CB0813C007C8005 /* Comp_1+Theme.swift in Sources */,
-				1B8E5D871CAF41C100239F1C /* CheckInFeedModel.swift in Sources */,
 				1B7F8E261CB094E6007C8005 /* DirectoryCell.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
 				1B7F8EAC1CB09507007C8005 /* NotificationsViewController.swift in Sources */,
@@ -1399,7 +1395,6 @@
 				1B0B299F1CAD8968007DC5F3 /* MGSwipeTableCell.m in Sources */,
 				1B7F8DC01CB07C95007C8005 /* SDWebImageManager.m in Sources */,
 				A717E5A01CA1485000F237DD /* APIConnector_Module_4.swift in Sources */,
-				1B8E5D861CAF41C100239F1C /* BroadcastFeedModel.swift in Sources */,
 				1B8E5D8B1CAF41D400239F1C /* UserModel.swift in Sources */,
 				1B7F8EAE1CB09507007C8005 /* ChooseAssigneeViewController.swift in Sources */,
 				1BBA3D7F1CB03D6700FC4609 /* ListProjectsAdapter.swift in Sources */,

@@ -24,12 +24,19 @@ class PlannerTableViewCell: SwipableTableViewCell {
     @IBOutlet weak var cellSeparator: UIView!
 
     @IBOutlet weak var dueDateBottomMarginLayoutConstraint: NSLayoutConstraint!
-
+//    
+    var plannerCellTask:TaskModel = TaskModel() //Aya
+    var toggleHelper = ToggleHelper.sharedInstance
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
 
         cellSeparator.backgroundColor = Theme.tableBackgroundColor()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pauseTimerNotification", name:"pauseTimerNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopTimerNotification", name:"stopTimerNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -37,5 +44,43 @@ class PlannerTableViewCell: SwipableTableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func resumeTimerNotification() {
+        if self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId {
+            self.playButtonCellSetup()
+        }
+    }
+    func stopTimerNotification() {
+        if self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId {
+            self.stopButtonCellSetup()
+        }
+    }
+    
+    
+    func pauseTimerNotification() {
+        if self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId {
+            print("pause Notification")
+            self.pauseButtonCellSetup()
+        }
+
+    }
+    
+    override func playButtonAction() {
+        print("play")
+        self.toggleHelper.toggleTask = self.plannerCellTask
+        self.toggleHelper.toggleResumeAction()
+        
+    }
+    override func pauseButtonAction() {
+        print("pause")
+        self.toggleHelper.togglePauseAction()
+        
+    }
+    override func stopButtonAction() {
+        print("stop")
+        self.toggleHelper.toggleStopAction()
+        
+    }
+    
     
 }
