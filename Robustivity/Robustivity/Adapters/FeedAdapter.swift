@@ -170,7 +170,7 @@ class FeedAdapter: BaseTableAdapter {
      and imageview according to the feed object
      */
     
-    func checkInFeedCell(tableView: UITableView, feed:FeedModel) -> CheckInFeedTableViewCell{
+    func checkInFeedCell(tableView: UITableView, feed:FeedModel) -> CheckInFeedTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("checkInCell") as! CheckInFeedTableViewCell
         cell.checkInTitleLabel.text = feed.userName + " has" + self.updateCheckInFeedContent(feed.content)
         cell.timeStampsLabel.text = self.getTimeDifference(feed.timeStamp)
