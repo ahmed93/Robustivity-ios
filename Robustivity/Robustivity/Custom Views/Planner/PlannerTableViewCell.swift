@@ -73,12 +73,17 @@ class PlannerTableViewCell: SwipableTableViewCell {
     }
     override func pauseButtonAction() {
         print("pause")
-        self.toggleHelper.togglePauseAction()
+        if(self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
+            self.toggleHelper.togglePauseAction()
+
+        }
         
     }
     override func stopButtonAction() {
         print("stop")
-        self.toggleHelper.toggleStopAction()
+        if(self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
+            self.toggleHelper.toggleStopAction()            
+        }
         
     }
     
