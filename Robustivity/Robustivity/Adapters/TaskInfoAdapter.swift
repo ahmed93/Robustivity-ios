@@ -34,7 +34,8 @@ class TaskInfoAdapter: BaseTableAdapter{
                     let taskz = responseDictionary["task"]
                     let task = Mapper<TaskModel>().map(taskz)
                     self.currentTask = task!
-                    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .None)
+                //    self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 4)), withRowAnimation: .None)
+                    self.tableView.reloadData()
                         self.viewController.navigationItem.title = self.currentTask.taskName
                 }
                 else{
@@ -47,9 +48,9 @@ class TaskInfoAdapter: BaseTableAdapter{
                     toastLabel.alpha = 1.0
                     toastLabel.layer.cornerRadius = 10;
                     toastLabel.clipsToBounds  =  true
-                    UIView.animateWithDuration(4.0, delay: 0.1, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-                        toastLabel.alpha = 0.0
-                        }, completion: nil)
+//                    UIView.animateWithDuration(4.0, delay: 0.1, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+//                        toastLabel.alpha = 0.0
+//                        }, completion: nil)
                 }
             })
     }

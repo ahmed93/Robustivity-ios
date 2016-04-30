@@ -13,6 +13,8 @@
  */
 
 import UIKit
+import ObjectMapper
+import RealmSwift
 
 class TaskViewController: BaseViewController, UITextFieldDelegate {
     
@@ -27,6 +29,8 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var table: UITableView!
     var customSC:UISegmentedControl!
     var taskId:String!
+    let preferences = NSUserDefaults.standardUserDefaults()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,9 +114,9 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds  =  true
-        UIView.animateWithDuration(4.0, delay: 0.1, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-            }, completion: nil)
+  //      UIView.animateWithDuration(4.0, delay: 0.1, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+    //        toastLabel.alpha = 0.0
+    //        }, completion: nil)
     }
     
     func addComment(sender:UIButton!){
@@ -124,15 +128,25 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
             
             API.post(APIRoutes.TASKS_INDEX + self.taskId + "/updates", parameters: comment as! [String : String], callback:{
                 (success, response) in
-                
                 if(success){
-                    self.updatesAdapter.fetchItems()
+                    let comment = Mapper<TaskCommentModel>().map(response["comment"])!
+                    if(comment.userName == "") {
+                        comment.userName = (self.preferences.objectForKey("first_name") as? String)! + (self.preferences.objectForKey("last_name") as? String)!
+                    }
+                    
+                    if(comment.userProfilePicture == "") {
+                        comment.userProfilePicture = self.preferences.objectForKey("picture_icon_url") as! String
+
+                    }
+                    self.updatesAdapter.tableItems.objects.insertObject(comment, atIndex: 0)
                     self.table.reloadData()
+
                     self.textfield.text = nil
                     self.view.endEditing(true)
                 }else{
                     self.addToast("Request Failed")
                 }
+
             })
         }
     }

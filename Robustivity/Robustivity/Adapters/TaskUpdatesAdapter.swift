@@ -33,13 +33,13 @@ class TaskUpdatesAdapter: BaseTableAdapter{
                     let commentsArray = responseDictionary["comments"]
                     let comments = Mapper<TaskCommentModel>().mapArray(commentsArray)
                     for comment in comments! {
-                        self.tableItems.addObject(comment)
-                        self.saveNewComment(comment)
-                        self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .None)
+                        self.tableItems.objects.insertObject(comment, atIndex: 0)
+                       // self.saveNewComment(comment)
+//                        self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, 1)), withRowAnimation: .None)
                     }
+                    self.tableView.reloadData()
                 }
             })
-            tableItems = ListModel()        
     }
     
     //save new task on disk using realm
@@ -59,9 +59,23 @@ class TaskUpdatesAdapter: BaseTableAdapter{
     }
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? BaseTableViewCell
-        
-        _cell?.label.text = tableItems.objectAtIndex(indexPath.row) as? String
+        let _cell = cell as? CommentTableViewCell
+        let comment = tableItems.objectAtIndex(indexPath.row) as! TaskCommentModel
+        _cell!.name.text = comment.userName
+        if (comment.content.isEmpty){
+            _cell!.comment.text = "invalid comment from the server"
+        }else{
+            _cell!.comment.text = comment.content
+        }
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFormatter.dateFromString(comment.createdAt)
+        _cell!.time.text = offsetFrom(date!)
+        _cell!.avatar.downloadImageFromUrl("http://hr.staging.rails.robustastudio.com/" + comment.userProfilePicture)
+        _cell!.avatar.layer.cornerRadius = (_cell!.avatar.frame.size.width) / 2
+        _cell!.avatar.clipsToBounds = true
+
+
     }
     
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
@@ -78,31 +92,13 @@ class TaskUpdatesAdapter: BaseTableAdapter{
         let hours = "\(difference.hour)h" + " " + minutes
         let days = "\(difference.day)d" + " " + hours
         
-        if difference.day    > 0 { return days }
-        if difference.hour   > 0 { return hours }
-        if difference.minute > 0 { return minutes }
-        if difference.second > 0 { return seconds }
-        return ""
+        if difference.day    > 0 { return days  + " ago"}
+        if difference.hour   > 0 { return hours + " ago"}
+        if difference.minute > 0 { return minutes + " ago"}
+        if difference.second > 0 { return seconds + " ago"}
+        return "Just Now"
     }
     
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath)
-            as! CommentTableViewCell
-        let comment = tableItems.objectAtIndex(indexPath.row) as! TaskCommentModel
-        cell.name.text = comment.userName
-        if (comment.content.isEmpty){
-            cell.comment.text = "invalid comment from the server"
-        }else{
-            cell.comment.text = comment.content
-        }
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let date = dateFormatter.dateFromString(comment.createdAt)
-        cell.time.text = offsetFrom(date!) + " ago"
-        cell.avatar.downloadImageFromUrl("http://hr.staging.rails.robustastudio.com/" + comment.userProfilePicture)
-        return cell
-    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableItems.count
