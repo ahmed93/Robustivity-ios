@@ -78,6 +78,33 @@ class NotificationsAdapter: BaseTableAdapter {
     
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int{
+        if(notifications.count == 0){
+            
+            
+            let emptyNotifications = RBLabel(frame: CGRect(x: 100, y: 100, width: 200, height: 100))
+            emptyNotifications.labelType = 3020
+            emptyNotifications.text = "You're done for today"
+            emptyNotifications.textAlignment = NSTextAlignment.Center
+            emptyNotifications.translatesAutoresizingMaskIntoConstraints = false
+            
+            let widthConstraint = NSLayoutConstraint(item: emptyNotifications, attribute: .Width, relatedBy: .Equal,
+                                                     toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 250)
+            emptyNotifications.addConstraint(widthConstraint)
+            
+            let heightConstraint = NSLayoutConstraint(item: emptyNotifications, attribute: .Height, relatedBy: .Equal,
+                                                      toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 100)
+            emptyNotifications.addConstraint(heightConstraint)
+            viewController.view.addSubview(emptyNotifications)
+            
+            let xConstraint = NSLayoutConstraint(item: emptyNotifications, attribute: .CenterX, relatedBy: .Equal, toItem: self.viewController.view, attribute: .CenterX, multiplier: 1, constant: 0)
+            let yConstraint = NSLayoutConstraint(item: emptyNotifications, attribute: .CenterY, relatedBy: .Equal, toItem: self.viewController.view, attribute: .CenterY, multiplier: 1, constant: 0)
+            
+            self.viewController.view.addConstraints([xConstraint,yConstraint])
+
+
+            
+           return 0
+        }
         return 1
     }
     
@@ -87,7 +114,9 @@ class NotificationsAdapter: BaseTableAdapter {
     
 
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
-        fetchItems()
+        
+        
+        
         let notification = notifications.objectAtIndex(indexPath.row) as! NotificationModel
         
         
@@ -111,12 +140,12 @@ class NotificationsAdapter: BaseTableAdapter {
         notificationCell.notificationImageView?.layer.cornerRadius = (notificationCell.imageView?.frame.width)! / 2
         notificationCell.notificationImageView?.clipsToBounds = true
         //        notificationCell.imageView?.backgroundColor = UIColor.blackColor()
-        if identifer == broadCastNotification {
-//            notificationCell.descriptionLabel.text = notification.objectForKey("description") as? String
-            notificationCell.descriptionLabel.lineBreakMode =  .ByTruncatingTail
-            notificationCell.descriptionLabel.numberOfLines = 5
-            
-        }
+//        if identifer == broadCastNotification {
+////            notificationCell.descriptionLabel.text = notification.objectForKey("description") as? String
+//            notificationCell.descriptionLabel.lineBreakMode =  .ByTruncatingTail
+//            notificationCell.descriptionLabel.numberOfLines = 5
+//            
+//        }
         
         return notificationCell
         

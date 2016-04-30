@@ -30,7 +30,6 @@ class NotificationsViewController: BaseViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(true)
-        tableView?.reloadData()
     }
     
     
