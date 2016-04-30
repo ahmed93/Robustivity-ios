@@ -97,6 +97,9 @@ class ToggleHelper {
     }
     
     func togglePauseAction() {
+        if(self.toggleTask.taskId == 0) {
+            return
+        }
         
         let url = APIRoutes.TASK_TIMELOG_PAUSE
         let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(self.toggleTask.taskId))
@@ -118,6 +121,9 @@ class ToggleHelper {
     }
     
     func toggleResumeAction() {
+        if(self.toggleTask.taskId == 0) {
+            return
+        }
         self.timer.invalidate()
         let url = APIRoutes.TASK_TIMELOG_RESUME
         let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(self.toggleTask.taskId))
@@ -156,6 +162,9 @@ class ToggleHelper {
     }
     
     func toggleStopAction() {
+        if(self.toggleTask.taskId == 0) {
+            return
+        }
         let url = APIRoutes.TASK_TIMELOG_STOP
         let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(self.toggleTask.taskId))
         
