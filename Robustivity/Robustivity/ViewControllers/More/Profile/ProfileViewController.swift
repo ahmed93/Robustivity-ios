@@ -225,6 +225,7 @@ class ProfileViewController: BaseViewController, UINavigationControllerDelegate,
         profileEditable = false
         self.view.endEditing(true)
         self.adapter.updateDataFromEditMode()
+        self.adapter.updateCellValues()
     }
     
     /*

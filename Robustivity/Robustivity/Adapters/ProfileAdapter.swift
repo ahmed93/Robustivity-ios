@@ -181,23 +181,41 @@ class ProfileAdapter: BaseTableAdapter, UITextFieldDelegate {
         case 2 is the address textfield
         Then it appends the current value of the textfield to its corresponding key in the dictionary
         */
-        let user:User = (self.viewController as! ProfileViewController).user
         activeField = nil
         
         switch textField.tag {
         case 1:
             profileEditparameters?.setValue(textField.text!, forKey: "user[mobile_number]")
-            user.realm?.beginWrite()
-            user.userMobileNumber = textField.text!
-            try?user.realm?.commitWrite()
             
         case 2:
             profileEditparameters?.setValue(textField.text!, forKey: "user[address]")
-            user.realm?.beginWrite()
-            user.userAddress = textField.text!
-            try?user.realm?.commitWrite()
 
         default: break
+        }
+    }
+    
+    /*
+    Author: Abdelrahman Sakr
+    This method is used to update textfields values after editing
+    */
+    func updateCellValues() {
+        for view in self.tableView!.visibleCells as! [ProfileTableViewCell] {
+            if let textField = view.cellContent as? UITextField {
+                let user:User = (self.viewController as! ProfileViewController).user
+                switch textField.tag {
+                case 1:
+                    user.realm?.beginWrite()
+                    user.userMobileNumber = textField.text!
+                    try?user.realm?.commitWrite()
+                    
+                case 2:
+                    user.realm?.beginWrite()
+                    user.userAddress = textField.text!
+                    try?user.realm?.commitWrite()
+                    
+                default: break
+                }
+            }
         }
     }
     
