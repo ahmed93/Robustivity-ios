@@ -36,6 +36,7 @@ class ProfileViewController: BaseViewController, UINavigationControllerDelegate,
     var adapter:ProfileAdapter!
     var myProfile:Bool?
     var profileEditable:Bool = false
+    var userId:Int?
     var user:User = User()
 
     override func viewDidLoad() {
@@ -63,7 +64,7 @@ class ProfileViewController: BaseViewController, UINavigationControllerDelegate,
         if (myProfile!) {
             requestURL = APIRoutes.USER_PROFILE;
         } else {
-            requestURL = APIRoutes.USER_SHOW + "/2";
+            requestURL = APIRoutes.USER_SHOW + String(userId!);
         }
         
         /*
