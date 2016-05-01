@@ -32,6 +32,7 @@ class MoreViewController: BaseViewController {
     
     @IBOutlet weak var checkedInLabel: UILabel!
     var adapter:OptionsTableAdapter!
+    let preferences = NSUserDefaults.standardUserDefaults()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -57,7 +58,25 @@ class MoreViewController: BaseViewController {
     
     func initMore(){
         
-        /** Adding Call Button **/ 
+        /* set username and job title from shared preference */
+        let userFirstName = self.preferences.objectForKey("first_name") as? String
+        let userLastName = self.preferences.objectForKey("last_name") as? String
+        let userJobTitle = self.preferences.objectForKey("title") as? String
+        if(userFirstName != nil){
+            self.name.text = userFirstName!
+        }
+        if(userLastName != nil){
+            self.name.text! += " " + userLastName!
+        }
+        if(userJobTitle != nil){
+            self.jobTitle.text = userJobTitle!
+        }
+        else {
+            self.jobTitle.text = "No Title"
+        }
+
+        
+        /** Adding Call Button **/
         let call = UIBarButtonItem(image: UIImage(named: "call_white"), style: .Plain, target: self, action: NSSelectorFromString("callView"))
         navigationItem.rightBarButtonItem = call
         
@@ -73,6 +92,10 @@ class MoreViewController: BaseViewController {
         
         
         /** a Rounded avatar **/
+        if self.preferences.objectForKey("picture_url") != nil {
+            let image_url = self.preferences.objectForKey("picture_url") as! String
+            self.avatar.sd_setImageWithURL(NSURL(string:"http://hr.staging.rails.robustastudio.com" + image_url))
+        }
         self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2;
         self.avatar.clipsToBounds = true;
         avatar.userInteractionEnabled = true
