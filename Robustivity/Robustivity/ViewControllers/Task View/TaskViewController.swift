@@ -45,7 +45,7 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
                 "TaskInfoToggledTableViewCell":"toggleCell"]
         infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
         self.table.backgroundColor = Theme.lightGrayColor()
-        self.automaticallyAdjustsScrollViewInsets = false
+        self.automaticallyAdjustsScrollViewInsets = false   
     }
     
     override func loadView() {

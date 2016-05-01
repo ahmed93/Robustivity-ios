@@ -87,10 +87,13 @@ class TaskInfoAdapter: BaseTableAdapter{
             } else {
                 x = ""
             }
-
-            cell.timer.text = x
+            let toggleHelper = ToggleHelper.sharedInstance
+            let toggledTime = toggleHelper.stringFromTimeInterval(Double(currentTask.taskDuration))
+            cell.timer.text = toggledTime
             cell.taskName.text = currentTask.taskName
             cell.taskDate.text = x
+            cell.toggleCellTask = currentTask
+            
             return cell
         }
         else if indexPath.section == 1{

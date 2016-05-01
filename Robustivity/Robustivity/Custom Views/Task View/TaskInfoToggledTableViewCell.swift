@@ -16,10 +16,10 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
     @IBOutlet weak var taskName: RBLabel!
     @IBOutlet weak var timer: RBLabel!
     
-    var hours:Int = 0
-    var minutes:Int = 0
-    var seconds:Int = 0
-    var realTimer:NSTimer = NSTimer()
+    var toggleCellTask:TaskModel = TaskModel() //Aya
+    let toggleHelper = ToggleHelper.sharedInstance
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,56 +29,46 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
         taskDate.textColor = Theme.redColor()
         taskName.labelType = 3020
         
-}
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
+        
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
-    func timerDidTick(timer:NSTimer){
-        seconds++
-        if seconds == 60 {
-            minutes++
-            seconds = 0
-        }
+    func updateToggledTimeNotification() {
         
-        if minutes == 60{
-            minutes = 0
-            hours++
+        if (self.toggleHelper.toggleTask.taskId != self.toggleCellTask.taskId) {
+            return
         }
-        updateTimerLabel()
-        
+        playButtonCellSetup()
+        self.timer.text = toggleHelper.toggledTime
     }
-    
-    func updateTimerLabel(){
-        timer.text = String(format: "%02d:%02d:%02d", hours,minutes,seconds)
-    }
-    
-    func setTimer(){
-        realTimer = NSTimer(timeInterval: 1.0, target: self, selector: "timerDidTick:", userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(realTimer, forMode: NSRunLoopCommonModes)
-    }
+
     
     override func playButtonAction() {
-        setTimer()
+        print("play")
+        if(self.toggleHelper.toggleTask.taskId == 0) {
+            return
+        }
+        self.toggleHelper.toggleTask = self.toggleCellTask
+        self.toggleHelper.toggleResumeAction()
     }
     override func pauseButtonAction() {
-        realTimer.invalidate()
-        updateTimerLabel()
-        
+        print("pause")
+        if(self.toggleHelper.toggleTask.taskId == 0) {
+            return
+        }
+        self.toggleHelper.togglePauseAction()
     }
     override func stopButtonAction() {
-        realTimer.invalidate()
-        resetTime()
-        updateTimerLabel()
-        
+        print("stop")
+        if(self.toggleHelper.toggleTask.taskId == 0) {
+            return
+        }
+        self.toggleHelper.toggleStopAction()
     }
     
-    func resetTime(){
-        seconds = 0
-        minutes = 0
-        hours = 0
-    }
 }
