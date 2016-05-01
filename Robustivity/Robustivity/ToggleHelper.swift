@@ -194,6 +194,7 @@ class ToggleHelper {
     ** update counter accordingly
     */
     
+    
     @objc func updateToggledTime() {
         // Create date from the elapsed time
         let currentDate = NSDate();
