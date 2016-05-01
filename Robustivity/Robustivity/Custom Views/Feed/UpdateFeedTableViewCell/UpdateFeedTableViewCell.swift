@@ -10,10 +10,15 @@ import UIKit
 
 class UpdateFeedTableViewCell: BaseTableViewCell {
 
-    @IBOutlet weak var notificationTextLabel: RBLabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var updateLabel: RBLabel!
     @IBOutlet weak var timeStampsLabel: RBLabel!
+    @IBOutlet weak var taskLabel: RBLabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        setStyle()
+
         // Initialization code
     }
 
@@ -21,5 +26,14 @@ class UpdateFeedTableViewCell: BaseTableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setStyle(){
+        self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width / 2;
+        self.avatarImageView.clipsToBounds = true;
+        self.timeStampsLabel.labelType = 1080
+        self.taskLabel.labelType = 1020
+        self.updateLabel.labelType = 3000
+        
     }
 }
