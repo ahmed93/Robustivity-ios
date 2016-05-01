@@ -16,6 +16,9 @@ import RealmSwift
  - Date  :
  3/31/16.
  */
+ 
+ // MISSING Views
+ // EMPTY STATE OF SECTION
 class PlannerViewController: BaseViewController {
     @IBOutlet weak var tableView:UITableView!
     
@@ -24,6 +27,8 @@ class PlannerViewController: BaseViewController {
     
     // Variables
     var segmentedControl:UISegmentedControl!
+    var refreshControl:UIRefreshControl!
+    
     var adapter:PlannerAdapter!
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,27 +40,40 @@ class PlannerViewController: BaseViewController {
         self.wantsUserCheckInStatus = true
         super.viewDidLoad()
         self.title = "Planner";
-        
+
         // Add segmented control
         addSegmentedControl(segmentControlItems)
         
+        addRefreshControl()
+        
         // Init Adapter
-        adapter = PlannerAdapter(viewController: self, tableView: tableView, registerCellWithNib: "PlannerTableViewCell", withIdentifier: "PlannerCell")
-        tableView.registerNib(UINib(nibName: "PlannerHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "PlannerHeader")
+        let cellIdentifiers = ["PlannerTableViewCell": "PlannerCell", "PlannerSeeAllTableViewCell": "PlannerSeeAllCell", "PlannerHeaderTableViewCell": "PlannerHeader"]
+        adapter = PlannerAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: cellIdentifiers)
         
         // Add Right navigation item
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .Plain, target: self, action: "createItemAction:")
         
         //print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
-        
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+    }
+    
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        self.navigationController?.hidesBarsOnSwipe = false
+//        self.navigationController?.setNavigationBarHidden(false, animated: true)
+//    }
     
     //    MARK: Segmented Control
     
     /**
     Loads segmented control to the Planner view controller navigation bar.
     
-    - Author: 
+    - Author:
     Ahmed Elassuty.
     - Parameter items:
     Array of AnyObject items that should be shown in the segment control.
@@ -73,6 +91,12 @@ class PlannerViewController: BaseViewController {
         self.navigationItem.titleView = segmentedControl
     }
     
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "startRefreshControl", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
     // MARK: Segment Control Action
     
     /**
@@ -84,7 +108,18 @@ class PlannerViewController: BaseViewController {
     The implementation of this method may be changed in the development phase.
     */
     func segmentControlAction(sender: UISegmentedControl) {
-        adapter.fetchItems()
+        let data = adapter.fetchFromDatabase()
+        adapter.refreshTable(data, animationOptions: .TransitionFlipFromLeft)
+    }
+    
+    // MARK: Refresh Control Action
+    // Should be implemented as interface
+    func startRefreshControl() {
+        adapter.fetchFromServer()
+    }
+    
+    func stopRefreshControl() {
+        refreshControl.endRefreshing()
     }
     
     // MARK: Navigation Bar Items Actions
@@ -92,13 +127,13 @@ class PlannerViewController: BaseViewController {
     /**
     Creates new Task or ToDo navigation bar button item action. This method renders the appropriate view controller based on the selected segment.
     
-    - Author: 
+    - Author:
     Ahmed Elassuty.
     - Parameter sender:
     The right clicked bar button.
     */
     func createItemAction(sender: UIBarButtonItem) {
-        let controller = ChooseProjectViewController(nibName:"ChooseProjectViewController",bundle: nil)
+        let controller = ChooseProjectViewController(nibName:"ChooseProjectViewController", bundle: nil)
         
         if segmentedControl.selectedSegmentIndex == 0 {
             controller.isTodo(false)
@@ -113,7 +148,7 @@ class PlannerViewController: BaseViewController {
     /**
      Toggle user status left bar item circle color.
      
-     - Author: 
+     - Author:
      Ahmed Elassuty.
      - TODO:
      - Move this method to baseViewController.
@@ -127,5 +162,5 @@ class PlannerViewController: BaseViewController {
             statusCircle?.tintColor = Theme.greenColor()
         }
     }
-    
+
 }

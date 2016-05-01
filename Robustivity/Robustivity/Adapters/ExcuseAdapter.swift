@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ObjectMapper
+import RealmSwift
 
 class ExcuseAdapter: BaseTableAdapter {
     
@@ -18,15 +20,37 @@ class ExcuseAdapter: BaseTableAdapter {
     }
     
     
-    func fetchItems() {
-        if tableItems == nil {
+    func fetchItems() { // fetching the items through a get request
+        if tableItems.count == 0 {
             tableItems = ListModel()
+            API.get( APIRoutes.EXCUSES_INDEX, callback: { (success, response) in
+                
+                if(success){
+                    let excuses = Mapper<Excuse>().mapArray(response)
+                    for excuse in excuses! {
+                        self.tableItems.addObject(excuse)
+                        self.saveNewExcuse(excuse)
+                    }
+                    self.tableView.reloadData()
+                }
+                })
         }
-        tableItems.addObject("I am too tired!")
-        tableItems.addObject("I wanna Sleep!")
-        tableItems.addObject("I have personal stuff!")
-        tableView.reloadData()
     }
+    
+    func saveNewExcuse(excuse: Excuse) { // the save excuses function which stores the new excuses
+        let realm = try! Realm()
+        let savedexcuses = realm.objects(Excuse)
+        //check if already exists on the database or not
+        for checkexcuse in savedexcuses {
+            if checkexcuse.excuseId == excuse.excuseId{
+                return
+            }
+        }
+        try! realm.write {
+            realm.add(excuse)
+        }
+    }
+    
     
     
     var selectedCell:UITableViewCell?{
@@ -38,11 +62,41 @@ class ExcuseAdapter: BaseTableAdapter {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedCell = self.tableView.cellForRowAtIndexPath(indexPath)
+        let refreshAlert = UIAlertController(title: "Confirmation", message: "Are you sure that you want to send this excuse?", preferredStyle: UIAlertControllerStyle.Alert)
+        let sentAlert = UIAlertController(title: "Success", message: "Your excuse has been sent.", preferredStyle: UIAlertControllerStyle.Alert)
+        let errorAlert = UIAlertController(title: "Failure", message: "The excuse was not sent, please try again", preferredStyle: UIAlertControllerStyle.Alert)
+        sentAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            self.viewController.navigationController!.popViewControllerAnimated(true)
+            
+        }))
+        errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        refreshAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            let excuse = self.tableItems.objectAtIndex(indexPath.row) as! Excuse
+            let excuseBody = excuse.excuseBody
+            var params = [String: AnyObject]()
+            params["excuse[body]"] = excuseBody
+            API.post(APIRoutes.EXCUSES_CREATE, parameters: params, callback:{
+                (success, response) in
+                if(success){
+                    UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(sentAlert, animated: true, completion: nil)
+                }
+                else {
+                    UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(errorAlert, animated: true, completion: nil)
+                }
+            })
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(refreshAlert, animated: true, completion: nil)
     }
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let _cell = cell as? ExcuseTableViewCell
-        
-        _cell?.label.text = tableItems.objectAtIndex(indexPath.row) as? String
+        let excuse = tableItems.objectAtIndex(indexPath.row) as! Excuse
+        _cell?.label.text = excuse.excuseBody
     }
     
     

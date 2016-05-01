@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FeedViewController: BaseViewController {
     
@@ -14,6 +15,9 @@ class FeedViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var adapter:FeedAdapter!
+    var adapter1:OptionsTableAdapter!
+    var control: MoreViewController!
+    let toggleHelper = ToggleHelper.sharedInstance
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,6 +34,7 @@ class FeedViewController: BaseViewController {
         self.wantsUserCheckInStatus = true
         
         super.viewDidLoad()
+        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
         // setting View TabBartitle + navigationBarTitle
         self.title = "Feed";
         self.navigationItem.title = "Feed";
@@ -37,13 +42,29 @@ class FeedViewController: BaseViewController {
         let values = ["CheckInFeedTableViewCell","BroadcastFeedTableViewCell","UpdateFeedTableViewCell","ToggleFeedTableViewCell"]
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
+    
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
         
-        self.view.addGestureRecognizer(UIGestureRecognizer(target: self, action: NSSelectorFromString("dissmiss")))
-        self.view.endEditing(true)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
+        
     }
     
+    func updateToggledTimeNotification() {
+        var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+        toggleCell.playButtonCellSetup()
+        toggleCell.timeLabel.text = toggleHelper.toggledTime
+        toggleCell.toggleCellTask = toggleHelper.toggleTask
+    }
     
-    
-    
+    func resumeTimerNotification() {
+        var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+        toggleCell.taskName.text = toggleHelper.toggleTask.taskName
+        toggleCell.projectName.text = toggleHelper.toggleTask.taskProjectName
+        toggleCell.toggleCellTask = toggleHelper.toggleTask
+        toggleCell.playPauseButton.enabled = true
+
+
+    }
+
 }

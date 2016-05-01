@@ -11,6 +11,7 @@ import UIKit
 class TextViewTaskViewCell: UITableViewCell{
 
     @IBOutlet weak var textView:UITextView!
+    @IBOutlet weak var textViewDistanceToBottom: NSLayoutConstraint!
     
 }
 

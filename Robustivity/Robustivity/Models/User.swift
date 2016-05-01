@@ -2,6 +2,7 @@
 //  User.swift
 //  Robustivity
 //
+//  Created by khaled elhossiny on 4/26/16.
 //  Created by Nariman El-Samadoni on 4/24/16.
 //  Copyright © 2016 BumbleBee. All rights reserved.
 //
@@ -12,6 +13,7 @@ import ObjectMapper
 import RealmSwift
 
 class User: Object, Mappable {
+
     dynamic var userId = 0
     dynamic var userEmail = ""
     dynamic var userFirstName = ""
@@ -29,12 +31,12 @@ class User: Object, Mappable {
     dynamic var userProfilePictureIconURL = ""
     dynamic var userProfilePictureNotificationURL = ""
     dynamic var userCity = ""
-    
+    dynamic var userCreatedAt = ""
+    dynamic var userUpdatedAt = ""
     
     required convenience init?(_ map: Map) {
         self.init()
     }
-    
     func mapping(map: Map) {
         userId                              <- map["id"]
         userEmail                           <- map["email"]
@@ -53,5 +55,20 @@ class User: Object, Mappable {
         userProfilePictureIconURL           <- map["profile_picture.icon.url"]
         userProfilePictureNotificationURL   <- map["profile_picture.notifications.url"]
         userCity                            <- map["city"]
+        userCreatedAt                       <- map["created_at"]
+        userUpdatedAt                       <- map["updated_at"]
+        
     }
+    override static func primaryKey() -> String? {
+        return "userId"
+    }
+    
+    func save(){
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(self, update: true)
+        }
+    }
+    
+    
 }

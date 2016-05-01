@@ -41,7 +41,7 @@ class SwipableTableViewCell: MGSwipeTableCell {
     
     func setButtonsActions() {
         
-            playPauseButton.callback = {
+        playPauseButton.callback = {
             (sender: MGSwipeTableCell!) -> Bool in
             // do Stuff
             self.playMode = false
@@ -61,8 +61,13 @@ class SwipableTableViewCell: MGSwipeTableCell {
     
     func playButtonConfigure() {
         playButtonAction()
+        playButtonCellSetup()
+
+    }
+    func playButtonCellSetup() {
+        
         playPauseButton = MGSwipeButton(title: "", icon: pauseImage, backgroundColor: Theme.grayColor(),padding: 30)
-       
+        
         playPauseButton.callback = {
             (sender: MGSwipeTableCell!) -> Bool in
             // do Stuff
@@ -70,13 +75,17 @@ class SwipableTableViewCell: MGSwipeTableCell {
             self.pauseButtonConfigure()
             return true
         }
-
+        
         self.rightButtons = [self.playPauseButton]
         self.refreshButtons(false)
+        
     }
     func pauseButtonConfigure() {
         pauseButtonAction()
-
+        pauseButtonCellSetup()
+        
+    }
+    func pauseButtonCellSetup() {
         
         playPauseButton = MGSwipeButton(title: "", icon: playImage, backgroundColor: Theme.greenColor(),padding: 30)
         playPauseButton.callback = {
@@ -86,13 +95,18 @@ class SwipableTableViewCell: MGSwipeTableCell {
             self.playButtonConfigure()
             return true
         }
-
+        
         self.rightButtons = [self.playPauseButton]
         self.refreshButtons(false)
+        
     }
     func stopButtonConfigure() {
         stopButtonAction()
-        
+        stopButtonCellSetup()
+
+    }
+    
+    func stopButtonCellSetup() {
         playPauseButton = MGSwipeButton(title: "", icon: playImage, backgroundColor: Theme.greenColor(),padding: 30)
         playPauseButton.callback = {
             (sender: MGSwipeTableCell!) -> Bool in
@@ -104,7 +118,7 @@ class SwipableTableViewCell: MGSwipeTableCell {
         
         self.rightButtons = [self.playPauseButton]
         self.refreshButtons(false)
-
+        
     }
     
     // Empty implementation to be overriden

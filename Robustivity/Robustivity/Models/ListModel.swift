@@ -35,6 +35,10 @@ class ListModel: NSObject {
     func removeObjectAtIndex(index:Int) {
         objects.removeObjectAtIndex(index)
     }
+    func reverse() {
+        self.objects = objects.reverse() as! NSMutableArray
+        
+    }
     
     func addObject(object:AnyObject) {
         objects.addObject(object)
@@ -42,6 +46,9 @@ class ListModel: NSObject {
     
     func hasMorePages()->Bool {
         return currentPage < lastPage
+    }
+    func addObjectsFromArray(newObjects: [AnyObject]){
+        objects.addObjectsFromArray(newObjects)
     }
         
 }
