@@ -9,8 +9,9 @@
 import UIKit
 
 class NotificationsViewController: BaseViewController {
-
+    
     @IBOutlet weak var tableView:UITableView?
+    
     
     var adapter:NotificationsAdapter!
     
@@ -20,14 +21,18 @@ class NotificationsViewController: BaseViewController {
     }
     
     override func viewDidLoad() {
+        self.wantsUserCheckInStatus = true
         super.viewDidLoad()
         self.title = "Notifications";
         self.navigationItem.title = "Notifications";
         
-        
         adapter = NotificationsAdapter(viewController: self, tableView: tableView!, registerMultipleNibsAndIdenfifers: ["NotificationsSingleLineTableViewCell":"singleLineNotifCell","NotificationsDoubleLineTableViewCell":"doubleLineNotifCell"])
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
+    }
     
-
+    
+    
 }

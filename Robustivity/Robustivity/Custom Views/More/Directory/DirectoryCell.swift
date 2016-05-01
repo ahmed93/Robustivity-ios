@@ -15,7 +15,7 @@ class DirectoryCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userTitle: RBLabel!
     @IBOutlet weak var userName: RBLabel!
-    
+    var user:User?
     
 //    required init?(coder aDecoder: NSCoder) {
 //        super.init(coder: aDecoder)

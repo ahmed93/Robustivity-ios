@@ -7,80 +7,62 @@
 //
 
 import UIKit
+import ObjectMapper
+
 
 class NotificationsAdapter: BaseTableAdapter {
     
     let broadCastNotification = "doubleLineNotifCell"
     let normalNotification    = "singleLineNotifCell"
     
-    let headerHeight = CGFloat(50)
+    let notifications:NSMutableArray = [];
+    
+    let headerHeight = CGFloat(40)
     
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs: NSDictionary) {
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
+
+        
     }
+    
+    
+
     
     
     func fetchItems() {
-        tableItems.addObject(["time":"Today",
-            "data":[
-                [
-                    "type"       	:"notification",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "timestampe"  	:"01:20 pm"
-                ],[
-                    "type"       	:"broadcast",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "description"	:"Dear Team, Please join",
-                    "timestampe"  	:"11:20 am"
-                ]]
-            ])
-        tableItems.addObject(["time":"Yesterday",
-            "data":[
-                [
-                    "type"       	:"notification",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "timestampe"  	:"09:20 pm"
-                ],[
-                    "type"       	:"broadcast",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "description"	:"Dear Team, Please join",
-                    "timestampe"  	:"05:20 pm"
-                ],[
-                    "type"       	:"notification",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "timestampe"  	:"04:20 pm"
-                ],[
-                    "type"       	:"broadcast",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "description"	:"Dear Team, Please join",
-                    "timestampe"  	:"03:20 pm"
-                ],[
-                    "type"       	:"notification",
-                    "title"      	:"Don't forget toDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please join check Out!",
-                    "image"      	:"Stroke 751 + Stroke 752",
-                    "timestampe"  	:"01:20 pm"
-                ],[
-                    "type"       	:"broadcast",
-                    "title"      	:"Don't forget to check Out!",
-                    "image"      	:"feed",
-                    "description"	:"Dear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, Please joinDear Team, PleasPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPlease jPleaselease jPlease je joinDear Team, Please joinDear Team, Please joinDear Team, Please join",
-                    "timestampe"  	:"01:20 am"
-                ]]
-            ])
+        
+        API.get(APIRoutes.NOTIFICATIONS, callback:{ success,response in
+            if(success){
+                if (response.count == 0){
+                    self.notifications.removeAllObjects()
+                }
+                else{
+                    for i in 0  ..< response.count  {
+                        self.notifications.addObject(Mapper<NotificationModel>().map(response[i])!)
+                    }
+                    API.put(APIRoutes.NOTIFICATIONS+APIRoutes.NOTIFICATIONS_MARK_READ, parameters: [:], callback: {
+                        success,response in
+                    })
+                }
+            }
+            
+        })
     }
     
+    override func reloadItems() {
+        fetchItems();
+        super.reloadItems()
+    }
+    
+    
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerTitle = (tableItems.objectAtIndex(section) as! NSDictionary).objectForKey("time") as! String
+        
+        //Hardcoded Stuff
+        let headerTitle = "All Notifications"
         
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: viewController.view.frame.width, height: headerHeight))
         
-        let headerLabel = RBLabel(frame: CGRect(x: 10, y: 25, width: headerView.frame.width - 30, height: 20))
+        let headerLabel = RBLabel(frame: CGRect(x: 10, y: 10, width: headerView.frame.width - 30, height: 20))
         headerLabel.labelType = 3020
         
         headerLabel.text = headerTitle
@@ -95,39 +77,78 @@ class NotificationsAdapter: BaseTableAdapter {
     }
     
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return tableItems.count
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int{
+        if(notifications.count == 0){
+            
+            
+            let emptyNotifications = RBLabel(frame: CGRect(x: 100, y: 100, width: 200, height: 100))
+            emptyNotifications.labelType = 3020
+            emptyNotifications.text = "You're done for today"
+            emptyNotifications.textAlignment = NSTextAlignment.Center
+            emptyNotifications.translatesAutoresizingMaskIntoConstraints = false
+            
+            let widthConstraint = NSLayoutConstraint(item: emptyNotifications, attribute: .Width, relatedBy: .Equal,
+                                                     toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 250)
+            emptyNotifications.addConstraint(widthConstraint)
+            
+            let heightConstraint = NSLayoutConstraint(item: emptyNotifications, attribute: .Height, relatedBy: .Equal,
+                                                      toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 100)
+            emptyNotifications.addConstraint(heightConstraint)
+            viewController.view.addSubview(emptyNotifications)
+            
+            let xConstraint = NSLayoutConstraint(item: emptyNotifications, attribute: .CenterX, relatedBy: .Equal, toItem: self.viewController.view, attribute: .CenterX, multiplier: 1, constant: 0)
+            let yConstraint = NSLayoutConstraint(item: emptyNotifications, attribute: .CenterY, relatedBy: .Equal, toItem: self.viewController.view, attribute: .CenterY, multiplier: 1, constant: 0)
+            
+            self.viewController.view.addConstraints([xConstraint,yConstraint])
+
+
+            
+           return 0
+        }
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ((tableItems.objectAtIndex(section) as! NSDictionary).objectForKey("data")?.count)!
+        return notifications.count
     }
     
 
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
-        let notification = ((tableItems.objectAtIndex(indexPath.section) as! NSDictionary).objectForKey("data") as! NSArray).objectAtIndex(indexPath.row) as! NSDictionary
         
-        let identifer = (notification.objectForKey("type")?.isEqualToString("broadcast"))! ? broadCastNotification : normalNotification
+        
+        
+        let notification = notifications.objectAtIndex(indexPath.row) as! NotificationModel
+        
+        
+        let identifer = (notification.notificationType == "messages") ? broadCastNotification : normalNotification
        
         let notificationCell = tableView.dequeueReusableCellWithIdentifier(identifer, forIndexPath: indexPath) as! NotificationsTableViewCell
+
+        notificationCell.titleLabel.text = notification.notificationBody.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: nil)
         
-        notificationCell.titleLabel.text = notification.objectForKey("title") as? String
-        notificationCell.notificationImageView?.image = UIImage(named: (notification.objectForKey("image") as! String) )
-        notificationCell.timeLabel.text = notification.objectForKey("timestampe") as? String
+        let url = NSURL(string:APIRoutes.BASE_NOTIFICATIONS+notification.notificationActorProfilePictureURL)
+        let data = NSData(contentsOfURL: url!)
+        if data != nil {
+        
+            notificationCell.notificationImageView?.image = UIImage(data: data!)
+        }
+        else{
+            notificationCell.notificationImageView?.image = UIImage(named: "Stroke 751 + Stroke 752")
+        }
+        notificationCell.timeLabel.text = notification.notificationCreationDate
         
         notificationCell.notificationImageView?.layer.cornerRadius = (notificationCell.imageView?.frame.width)! / 2
         notificationCell.notificationImageView?.clipsToBounds = true
         //        notificationCell.imageView?.backgroundColor = UIColor.blackColor()
-        if identifer == broadCastNotification {
-            notificationCell.descriptionLabel.text = notification.objectForKey("description") as? String
-            notificationCell.descriptionLabel.lineBreakMode =  .ByTruncatingTail
-            notificationCell.descriptionLabel.numberOfLines = 5
-            
-        }
+//        if identifer == broadCastNotification {
+////            notificationCell.descriptionLabel.text = notification.objectForKey("description") as? String
+//            notificationCell.descriptionLabel.lineBreakMode =  .ByTruncatingTail
+//            notificationCell.descriptionLabel.numberOfLines = 5
+//            
+//        }
         
         return notificationCell
         
     }
-    
 
 }

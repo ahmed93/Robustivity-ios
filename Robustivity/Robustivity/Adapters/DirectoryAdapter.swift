@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import ObjectMapper
+import RealmSwift
 class DirectoryAdapter: BaseTableAdapter {
-    
+    let preferences = NSUserDefaults.standardUserDefaults()
+
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
@@ -19,32 +21,64 @@ class DirectoryAdapter: BaseTableAdapter {
     
     
     func fetchItems() {
-        if tableItems == nil {
-            tableItems = ListModel()
+        
+        if tableItems.count == 0 {
+            API.get(APIRoutes.USER_STATUS, callback: { (success, response) in
+                if(success){
+                    
+                    //map the json object to the model and save them
+                    let inOffice = Mapper<User>().mapArray(response["in_office"])
+                    let outOffice = Mapper<User>().mapArray(response["left_office"])
+                    let onVacation = Mapper<User>().mapArray(response["on_vacation"])
+                   
+                
+                    self.tableItems.addObject(inOffice!)
+                    self.tableItems.addObject(outOffice!)
+                    self.tableItems.addObject(onVacation!)
+                    for user in inOffice! {
+                   
+                        self.saveNewTask(user)
+                    }
+                    for user in outOffice! {
+                        
+                        self.saveNewTask(user)
+                    }
+                    for user in onVacation! {
+                        
+                        self.saveNewTask(user)
+                    }
+                    
+                    
+                }
+               
+                 self.tableView.reloadData()
+                
+            })
+            self.tableItems = ListModel()
+        
+            
         }
-        tableItems.addObject([["name":"Ahmed Abousafy","position":"Account Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Islam Abdelraouf","position":"Project Manager","imagename":"Stroke 751 + Stroke 752"]])
-        tableItems.addObject([["name":"Ahmed Abousafy","position":"Account Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Islam Abdelraouf","position":"Project Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Ahmed Abousafy","position":"Account Manager","imagename":"Stroke 751 + Stroke 752"],["name":"Islam Abdelraouf","position":"Project Manager","imagename":"Stroke 751 + Stroke 752"]])
-     
-        tableView.reloadData()
+
     }
     
-    func resizeImage(image:UIImage, toTheSize size:CGSize)->UIImage{
+    //save new array of new users on disk using realm
+    func saveNewTask(ArrayOfUsers: User) {
+        let realm = try! Realm()
         
         
-        let scale = CGFloat(max(size.width/image.size.width,
-            size.height/image.size.height))
-        let width:CGFloat  = image.size.width * scale
-        let height:CGFloat = image.size.height * scale;
-        
-        let rr:CGRect = CGRectMake( 0, 0, width, height);
-        
-        UIGraphicsBeginImageContextWithOptions(size, false, 0);
-        image.drawInRect(rr)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext();
-        return newImage
+        //check if is present or not
+        for user in    realm.objects(User) {
+            if user.userId == ArrayOfUsers.userId{
+                return
+            }
+        }
+        try! realm.write {
+            realm.add(ArrayOfUsers)
+        }
     }
     
+  
+   
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return tableItems.count
     }
@@ -55,13 +89,9 @@ class DirectoryAdapter: BaseTableAdapter {
         if section == 1{
         return "  Out of Office"}
         else{
-        return ""
+        return " On Vacation"
         }
     }
-    
-    /*func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50; // space b/w cells
-    }*/
     
     
 
@@ -70,79 +100,97 @@ class DirectoryAdapter: BaseTableAdapter {
         
         let label : UILabel = UILabel()
         if section == 0{
-            label.text = "  In Office"
+            label.text = "  In Office (\(tableItems.objectAtIndex(section)!.count))"
             label.font = UIFont.boldSystemFontOfSize(20)
             label.textColor = Theme.greenColor()
         } else if section == 1{
             
-            label.text = "  Out of Office"
+            label.text = "  Out of Office (\(tableItems.objectAtIndex(section)!.count))"
             label.font = UIFont.boldSystemFontOfSize(20)
             label.textColor = Theme.lighterBlackColor()
+        }
+        else{
+            label.text = "  On Vacation (\(tableItems.objectAtIndex(section)!.count))"
+            label.font = UIFont.boldSystemFontOfSize(20)
+            label.textColor = Theme.blueColor();
+            
         }
         return label
     }
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (tableItems.objectAtIndex(section) as! NSArray).count
+        if (tableItems.objectAtIndex(section)!).count < 1 {
+            return 1
+        }
+        return (tableItems.objectAtIndex(section)!).count
+   
     }
      func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80.0;
     }
     
     
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    }
-    
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let _cell = cell as? DirectoryCell
+      
+        let _ProjectMemberCell = cell as? ProjectMemberCell
         
-       // _cell?.userName.text = "Section \(indexPath.section) Row \(indexPath.row)"
-         let w =  tableItems.objectAtIndex(indexPath.section)
-        let x = w?.objectAtIndex(indexPath.row)?.objectForKey("name")
-        let y = w?.objectAtIndex(indexPath.row)?.objectForKey("position")
-        let z = w?.objectAtIndex(indexPath.row)?.objectForKey("imagename")
-        _cell?.userName.text = x as! String
-        _cell?.userTitle.text = y as! String
+        if (tableItems.objectAtIndex(indexPath.section)!).count < 1 {
+            if indexPath.section == 0{
+                cell.textLabel!.text = "No one is In office"
+            } else if indexPath.section == 1{
+                cell.textLabel!.text = "No one is Out of Office"
+            }
+            else{
+                cell.textLabel!.text = "No one is On Vacation"
+            }
+            
+            cell.textLabel?.textAlignment = .Center
+            _ProjectMemberCell?.profileImageView.hidden = true
+            _ProjectMemberCell?.nameLabel.text = ""
+            _ProjectMemberCell?.positionLabel.text = ""
+            return
+        }
         
-        //let imageName = "Stroke 751 + Stroke 752"
-        let image = UIImage(named: z as! String)
-        let newImage = resizeImage(image!, toTheSize: CGSizeMake(70, 70))
-        var cellImageLayer: CALayer?  = _cell?.userImage.layer
-        cellImageLayer!.cornerRadius = cellImageLayer!.frame.size.width / 2
-        cellImageLayer!.masksToBounds = true
-        _cell?.userImage.image = newImage
+       cell.textLabel!.text = ""
+        let w =  tableItems.objectAtIndex(indexPath.section)
+        let users = w?.objectAtIndex(indexPath.row) as! User
+        _ProjectMemberCell?.user = users
+         _ProjectMemberCell?.nameLabel.text = users.userFirstName + " " + users.userLastName
+        _ProjectMemberCell?.positionLabel.text = users.userTitle
+      
         
+        var url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + users.userProfilePictureIconURL)
+     
+        
+//        if url == nil {
+//           url = NSURL(string:"http://hr.staging.rails.robustastudio.com/uploads/users/39/profile_picture/notifications_img_user.png")
+//         }
+        
+        _ProjectMemberCell?.profileImageView.sd_setImageWithURL(url)
+        _ProjectMemberCell?.profileImageView.layer.cornerRadius =  (_ProjectMemberCell?.profileImageView.frame.width)! / 2.0
+        _ProjectMemberCell?.profileImageView.clipsToBounds = true
+        
+        
+        
+   
      }
     
-    
-    
-    /*func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
-    {cell.contentView.backgroundColor=UIColor.clearColor()
-        
-        var whiteRoundedCornerView:UIView!
-        whiteRoundedCornerView=UIView(frame: CGRectMake(5,10,400,70))
-        whiteRoundedCornerView.backgroundColor=UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        whiteRoundedCornerView.layer.masksToBounds=false
-        
-        whiteRoundedCornerView.layer.shadowOpacity = 1.55;
-        
-        
-        
-        whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(1, 0);
-        whiteRoundedCornerView.layer.shadowColor=UIColor(red: 53/255.0, green: 143/255.0, blue: 185/255.0, alpha: 1.0).CGColor
-        
-        
-        
-        whiteRoundedCornerView.layer.cornerRadius=3.0
-        whiteRoundedCornerView.layer.shadowOffset=CGSizeMake(-1, -1)
-        whiteRoundedCornerView.layer.shadowOpacity=0.5
-        cell.contentView.addSubview(whiteRoundedCornerView)
-        cell.contentView.sendSubviewToBack(whiteRoundedCornerView)
-        
-        
-    }*/
 
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: NSBundle.mainBundle())
+        //  var adapter:ProfileAdapter!
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? ProjectMemberCell
+        if cell!.user != nil{
+            profileViewController.userId = cell!.user!.userId
+            if(self.preferences.integerForKey("id") == cell!.user!.userId) {
+                profileViewController.myProfile = true
+            }else {
+                profileViewController.myProfile = false
+            }
+            self.viewController.navigationController?.presentViewController(UINavigationController(rootViewController:profileViewController),animated: true, completion: nil)
+        }else{
+            tableView.cellForRowAtIndexPath(indexPath)?.selectionStyle = UITableViewCellSelectionStyle.None
+        }
+    }
     
 }

@@ -39,6 +39,7 @@ class ProjectTeamViewController: BaseViewController {
         self.navigationItem.title = "Project Members";
         adapter = ProjectMembersAdapter(viewController: self, tableView: membersTableView!, registerCellWithNib:"ProjectMemberCell", withIdentifier: "projectMembers")
         adapter.setProjectData(data)
+
     }
     
     

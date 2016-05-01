@@ -9,7 +9,7 @@
 import UIKit
 
 class ProjectMembersAdapter: BaseTableAdapter{
-    
+    let preferences = NSUserDefaults.standardUserDefaults()
 
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
@@ -36,6 +36,8 @@ class ProjectMembersAdapter: BaseTableAdapter{
         
         projectmembercell?.userId = currentUser.userId
         
+        projectmembercell?.user = currentUser
+        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -47,6 +49,19 @@ class ProjectMembersAdapter: BaseTableAdapter{
         tableItems.objects = data
         tableView.reloadData()
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: NSBundle.mainBundle())
+        //  var adapter:ProfileAdapter!
+        let currentUser = tableItems.objectAtIndex(indexPath.row) as! User
+            profileViewController.userId = currentUser.userId
+            if(self.preferences.integerForKey("id") == currentUser.userId) {
+                profileViewController.myProfile = true
+            }else {
+                profileViewController.myProfile = false
+            }
+            self.viewController.navigationController?.presentViewController(UINavigationController(rootViewController:profileViewController),animated: true, completion: nil)
+           }
     
 }
 
