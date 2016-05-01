@@ -101,7 +101,7 @@ class CallCollectionAdapter: BaseCollectionAdapter {
         
         let _firstName = (tableItems.objectAtIndex(indexPath.item) as! User).userFirstName
         let _LastName = (tableItems.objectAtIndex(indexPath.item) as! User).userLastName
-        let _fullName = _firstName + _LastName
+        let _fullName = _firstName + "\n" + _LastName
         let url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + (tableItems.objectAtIndex(indexPath.item) as! User).userProfilePictureIconURL)
         
         _cell.image.sd_setImageWithURL(url)
