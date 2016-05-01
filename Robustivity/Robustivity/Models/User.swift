@@ -37,6 +37,7 @@ class User: Object, Mappable {
     required convenience init?(_ map: Map) {
         self.init()
     }
+    
     func mapping(map: Map) {
         userId                              <- map["id"]
         userEmail                           <- map["email"]
@@ -59,16 +60,23 @@ class User: Object, Mappable {
         userUpdatedAt                       <- map["updated_at"]
         
     }
+    
     override static func primaryKey() -> String? {
         return "userId"
     }
     
+    static func updateOrSaveUser(user: User) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(user, update: true)
+        }
+        
+    }
     func save(){
         let realm = try! Realm()
         try! realm.write {
             realm.add(self, update: true)
         }
     }
-    
-    
 }

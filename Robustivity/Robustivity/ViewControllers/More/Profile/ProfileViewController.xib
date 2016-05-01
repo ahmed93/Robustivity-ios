@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Robustivity" customModuleProvider="target">
@@ -26,17 +26,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VH2-ib-Kta">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KCM-LX-nap">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stroke 751 + Stroke 752" translatesAutoresizingMaskIntoConstraints="NO" id="KCM-LX-nap">
                             <rect key="frame" x="14" y="17" width="90" height="90"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="90" id="2aF-GB-ctA"/>
                                 <constraint firstAttribute="width" constant="90" id="4nV-MP-Gru"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRu-Ia-GVO" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                            <rect key="frame" x="112" y="63" width="32" height="14"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Job Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRu-Ia-GVO" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                            <rect key="frame" x="112" y="63" width="49" height="14"/>
+                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="labelType">
@@ -44,10 +46,11 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-kK-SUV" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
-                            <rect key="frame" x="112" y="38" width="41" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-kK-SUV" customClass="RBLabel" customModule="Robustivity" customModuleProvider="target">
+                            <rect key="frame" x="112" y="38" width="75" height="17"/>
+                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="labelType">
@@ -57,19 +60,26 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8M-ft-R5n">
                             <rect key="frame" x="50" y="108" width="18" height="14"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="14" id="pEs-oA-Bg0"/>
                                 <constraint firstAttribute="width" constant="18" id="yTe-KF-Bod"/>
                             </constraints>
+                            <connections>
+                                <action selector="btnClicked" destination="-1" eventType="touchUpInside" id="E5Z-m7-uzu"/>
+                            </connections>
                         </button>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="ZRu-Ia-GVO" firstAttribute="top" secondItem="eHs-kK-SUV" secondAttribute="bottom" constant="8" id="4uM-cE-sQw"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZRu-Ia-GVO" secondAttribute="trailing" constant="20" id="7cI-aS-7bE"/>
                         <constraint firstItem="KCM-LX-nap" firstAttribute="centerY" secondItem="VH2-ib-Kta" secondAttribute="centerY" id="IDV-Iw-HKq"/>
                         <constraint firstAttribute="height" constant="124" id="M9S-Wl-UDh"/>
                         <constraint firstItem="eHs-kK-SUV" firstAttribute="top" secondItem="VH2-ib-Kta" secondAttribute="top" constant="38" id="MaA-hV-xFq"/>
                         <constraint firstItem="J8M-ft-R5n" firstAttribute="top" secondItem="KCM-LX-nap" secondAttribute="bottom" constant="1" id="On1-tj-ian"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eHs-kK-SUV" secondAttribute="trailing" constant="20" id="Sbo-mi-9IP"/>
                         <constraint firstAttribute="bottom" secondItem="J8M-ft-R5n" secondAttribute="bottom" constant="2" id="ce7-rJ-QBw"/>
                         <constraint firstItem="ZRu-Ia-GVO" firstAttribute="leading" secondItem="KCM-LX-nap" secondAttribute="trailing" constant="8" id="fgP-Yr-CPX"/>
                         <constraint firstItem="eHs-kK-SUV" firstAttribute="leading" secondItem="KCM-LX-nap" secondAttribute="trailing" constant="8" id="gvd-kx-bEy"/>
@@ -79,11 +89,13 @@
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tvc-Wx-hPv">
                     <rect key="frame" x="0.0" y="129" width="375" height="538"/>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                     <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Tvc-Wx-hPv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="36u-Oz-jaD"/>
@@ -98,4 +110,7 @@
             <point key="canvasLocation" x="279.5" y="332.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="Stroke 751 + Stroke 752" width="96" height="97"/>
+    </resources>
 </document>

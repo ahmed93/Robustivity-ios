@@ -12,6 +12,7 @@ class NotificationsViewController: BaseViewController {
     
     @IBOutlet weak var tableView:UITableView?
     
+    
     var adapter:NotificationsAdapter!
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,8 +26,11 @@ class NotificationsViewController: BaseViewController {
         self.title = "Notifications";
         self.navigationItem.title = "Notifications";
         
-        
         adapter = NotificationsAdapter(viewController: self, tableView: tableView!, registerMultipleNibsAndIdenfifers: ["NotificationsSingleLineTableViewCell":"singleLineNotifCell","NotificationsDoubleLineTableViewCell":"doubleLineNotifCell"])
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
     }
     
     
