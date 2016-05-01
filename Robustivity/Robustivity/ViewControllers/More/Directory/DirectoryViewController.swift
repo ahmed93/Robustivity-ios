@@ -22,7 +22,7 @@ class DirectoryViewController: BaseViewController {
         self.navigationItem.title = "Directory";
         
         
-        adapter = DirectoryAdapter(viewController: self, tableView: tableView, registerCellWithNib:"DirectoryCell", withIdentifier: "cell")
+        adapter = DirectoryAdapter(viewController: self, tableView: tableView, registerCellWithNib:"ProjectMemberCell", withIdentifier: "projectMembers")
         self.tableView.allowsMultipleSelection = false
 
     }

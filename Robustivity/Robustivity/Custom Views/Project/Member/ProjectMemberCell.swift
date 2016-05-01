@@ -14,7 +14,7 @@ class ProjectMemberCell: UITableViewCell {
     @IBOutlet weak var positionLabel: RBLabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var marginUIView: UIView!
-
+    var user:User?
     var userId = -1
     
     override func awakeFromNib() {
