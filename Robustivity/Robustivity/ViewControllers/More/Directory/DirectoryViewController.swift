@@ -17,13 +17,15 @@ class DirectoryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // setting View TabBartitle + navigationBarTitle
-        
+
         self.title = "More";
         self.navigationItem.title = "Directory";
         
         
         adapter = DirectoryAdapter(viewController: self, tableView: tableView, registerCellWithNib:"DirectoryCell", withIdentifier: "cell")
+        self.tableView.allowsMultipleSelection = false
+
     }
-        
+    
         
 }

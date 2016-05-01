@@ -10,7 +10,8 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 class DirectoryAdapter: BaseTableAdapter {
-    
+    let preferences = NSUserDefaults.standardUserDefaults()
+
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
@@ -129,10 +130,6 @@ class DirectoryAdapter: BaseTableAdapter {
     }
     
     
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    }
-    
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
       
         let _DirectoryCell = cell as? DirectoryCell
@@ -157,20 +154,20 @@ class DirectoryAdapter: BaseTableAdapter {
        cell.textLabel!.text = ""
         let w =  tableItems.objectAtIndex(indexPath.section)
         let users = w?.objectAtIndex(indexPath.row) as! User
+        _DirectoryCell?.user = users
          _DirectoryCell?.userName.text = users.userFirstName + " " + users.userLastName
         _DirectoryCell?.userTitle.text = users.userTitle
       
         
-        var url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + users.userProfilePictureNotificationURL)
+        var url = NSURL(string: "http://hr.staging.rails.robustastudio.com" + users.userProfilePictureIconURL)
      
         
-        if url == nil {
-           url = NSURL(string:"http://hr.staging.rails.robustastudio.com/uploads/users/39/profile_picture/notifications_img_user.png")
-         }
+//        if url == nil {
+//           url = NSURL(string:"http://hr.staging.rails.robustastudio.com/uploads/users/39/profile_picture/notifications_img_user.png")
+//         }
         
         _DirectoryCell?.userImage.sd_setImageWithURL(url)
-        let imageSize = 50 as CGFloat
-        _DirectoryCell?.userImage.layer.cornerRadius = imageSize / 2.0
+        _DirectoryCell?.userImage.layer.cornerRadius =  (_DirectoryCell?.userImage.frame.width)! / 2.0
         _DirectoryCell?.userImage.clipsToBounds = true
         
         
@@ -179,5 +176,21 @@ class DirectoryAdapter: BaseTableAdapter {
      }
     
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: NSBundle.mainBundle())
+        //  var adapter:ProfileAdapter!
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? DirectoryCell
+        if cell!.user != nil{
+            profileViewController.userId = cell!.user!.userId
+            if(self.preferences.integerForKey("id") == cell!.user!.userId) {
+                profileViewController.myProfile = true
+            }else {
+                profileViewController.myProfile = false
+            }
+            self.viewController.navigationController?.pushViewController(profileViewController, animated: true)
+        }else{
+            tableView.cellForRowAtIndexPath(indexPath)?.selectionStyle = UITableViewCellSelectionStyle.None
+        }
+    }
     
 }
