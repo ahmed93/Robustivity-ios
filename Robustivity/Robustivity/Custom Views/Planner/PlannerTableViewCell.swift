@@ -61,7 +61,6 @@ class PlannerTableViewCell: SwipableTableViewCell {
     
     func pauseTimerNotification() {
         if self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId {
-            print("pause Notification")
             self.pauseButtonCellSetup()
         }
 

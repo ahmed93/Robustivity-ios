@@ -346,7 +346,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     }
     
     func updateToggledTimeNotification() {
-        print("Notification recived")
         self.toggledTime.text = self.toggleHelper.toggledTime
     }
 
