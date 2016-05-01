@@ -9,7 +9,7 @@
 import UIKit
 
 class NotificationsViewController: BaseViewController {
-
+    
     @IBOutlet weak var tableView:UITableView?
     
     
@@ -21,6 +21,7 @@ class NotificationsViewController: BaseViewController {
     }
     
     override func viewDidLoad() {
+        self.wantsUserCheckInStatus = true
         super.viewDidLoad()
         self.title = "Notifications";
         self.navigationItem.title = "Notifications";
@@ -33,5 +34,5 @@ class NotificationsViewController: BaseViewController {
     }
     
     
-
+    
 }

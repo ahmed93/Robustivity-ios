@@ -17,13 +17,12 @@ Edited by: Mayar ElMohr, Salma Amr, Nouran Mamdouh on 3/31/16.
 */
 
 class MoreViewController: BaseViewController {
-
-
+    
+    
     @IBOutlet weak var logOut: UIButton!
     
     @IBOutlet weak var jobTitle: UILabel!
-
-
+    
     @IBOutlet weak var checkInTimeLabel: UILabel!
     @IBOutlet weak var checkInSwitch: UISwitch!
     @IBOutlet weak var name: UILabel!
@@ -33,17 +32,19 @@ class MoreViewController: BaseViewController {
     
     @IBOutlet weak var checkedInLabel: UILabel!
     var adapter:OptionsTableAdapter!
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("MoreViewController", owner: self, options: nil)
     }
-
+    
     
     override func viewDidLoad() {
+        self.wantsUserCheckInStatus = true
         super.viewDidLoad()
         self.title = "More";
         self.navigationItem.title = "More";
+        
         initMore();
     }
     
@@ -64,12 +65,12 @@ class MoreViewController: BaseViewController {
         self.profileMore.backgroundColor = Theme.getColor(Color.lightGray);
         
         /** Creating a shadow after the UIView **/
-
+        
         self.profileMore.clipsToBounds = false;
         self.profileMore.layer.shadowColor = Theme.getColor(Color.black).CGColor;
         self.profileMore.layer.shadowOffset = CGSizeMake(0,3);
         self.profileMore.layer.shadowOpacity = 0.5;
-
+        
         
         /** a Rounded avatar **/
         self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2;
@@ -82,13 +83,13 @@ class MoreViewController: BaseViewController {
         Theme.style_2(self.checkInTimeLabel);
         Theme.style_13(self.name);
         Theme.style_1(self.jobTitle);
-       
+        
         /** To hide margin in tableView **/
         self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0);
-
+        
         /** Add cells to the tableView **/
         let dict:NSDictionary = ["MoreTableViewCell":"MoreCell", "BaseTableViewCell":"cell" ];
-         adapter = OptionsTableAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dict);
+        adapter = OptionsTableAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dict);
     }
     
     
@@ -105,6 +106,17 @@ class MoreViewController: BaseViewController {
         
         presentViewController(UINavigationController(rootViewController: profile), animated: true, completion: nil)
     }
-
-
+    
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+        if keyPath == "checkedIn" {
+            if NSUserDefaults.standardUserDefaults().boolForKey("checkedIn") {
+                //                checkInStatusImageView.backgroundColor = Theme.greenColor()
+            }else {
+                //                checkInStatusImageView.backgroundColor = Theme.grayColor()
+            }
+        }
+    }
+    
 }

@@ -22,17 +22,15 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var toggleResumeBtn: UIButton!
     @IBOutlet weak var togglePlayBtn: UIButton!
     @IBOutlet weak var toggledTime: UILabel!
-
+    
     @IBOutlet weak var todoTitleField: UITextField!
     
-  
+    
     @IBOutlet weak var todoProjectTextField: UITextField!
 
     let toggleHelper = ToggleHelper.sharedInstance
     let realm = try! Realm()
-
     let projectPicker = UIPickerView(); //Add picker view to be used in project names
-
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -45,7 +43,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     override func viewDidLoad() {
+        self.wantsUserCheckInStatus = true
         super.viewDidLoad()
+        self.edgesForExtendedLayout = .Bottom
         viewSetup()
         self.toggleHelper.currentTaskState = "intial"
         self.toggleHelper.fetchTasks()
@@ -125,8 +125,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     override func viewWillAppear(animated: Bool) {
         print("View will appear")
         self.toggleHelper.fetchTasks()
-
-
     }
     
     
@@ -139,7 +137,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     @IBAction func toggleStartPlay(sender: AnyObject) {
         
         createTodo()
-        
     }
 
     func createTodo() {
@@ -147,11 +144,11 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
         if self.todoTitleField.text == "" {
             requestParams["task[name]"] = "iOS Noname"
-
+            
         }else{
             
             requestParams["task[name]"] = self.todoTitleField.text
-
+            
         }
         
         
@@ -234,6 +231,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func toggleStop(sender: AnyObject) {
+
         
         self.toggleHelper.toggleStopAction()
         

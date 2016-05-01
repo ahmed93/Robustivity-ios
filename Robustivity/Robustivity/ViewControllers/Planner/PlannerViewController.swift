@@ -37,6 +37,7 @@ class PlannerViewController: BaseViewController {
     }
     
     override func viewDidLoad() {
+        self.wantsUserCheckInStatus = true
         super.viewDidLoad()
         self.title = "Planner";
 
@@ -52,13 +53,7 @@ class PlannerViewController: BaseViewController {
         // Add Right navigation item
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .Plain, target: self, action: "createItemAction:")
         
-        // Add Left navigation item
-        let userStatusBarButtonItem = UIBarButtonItem(image: UIImage(named: "circle"), style: .Plain, target: self, action: nil)
-        userStatusBarButtonItem.tintColor = Theme.greenColor()
-        self.navigationItem.leftBarButtonItem = userStatusBarButtonItem
-        
-        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
-
+        //print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
     }
     
     override func viewWillAppear(animated: Bool) {
