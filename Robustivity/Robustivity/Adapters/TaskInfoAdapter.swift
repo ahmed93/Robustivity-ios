@@ -88,7 +88,7 @@ class TaskInfoAdapter: BaseTableAdapter{
                 x = ""
             }
 
-            cell.timer.text = x
+            cell.timer.text = ToggleHelper.sharedInstance.stringFromTimeInterval(Double(currentTask.taskDuration))
             cell.taskName.text = currentTask.taskName
             cell.taskDate.text = x
             cell.toggleCellTask = currentTask

@@ -129,11 +129,12 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
         self.toggleHelper.delegate = self
         
-        self.toggleHelper.fetchTasks({ () in
-            self.toggleResumeViewSetup()
-        })
+//        self.toggleHelper.fetchTasks({ () in
+//            self.toggleResumeViewSetup()
+//        })
     }
     
+    // Assuty
     func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String) {
         toggledTime.text = didUpdateTimerWithValue
     }
