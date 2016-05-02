@@ -93,11 +93,19 @@ class PlannerItemsListAdapter  : BaseTableAdapter {
     
     override func configure(cell: UITableViewCell, indexPath: NSIndexPath) {
         let plannerCell = cell as! PlannerTableViewCell
+        plannerCell.tableView = tableView
 
         let tasks = tableItems.objectAtIndex(0) as! Results<TaskModel>
         let item = tasks[indexPath.row]
         plannerCell.itemTitle.text = item.taskName
         plannerCell.projectName.text = item.taskProjectName
+        
+        // Fix cell swipe actions
+        if PlannerTableViewCell.pauseButtonCellConfiguration().contains(item.taskStatus) {
+            plannerCell.playButtonCellSetup()
+        } else {
+            plannerCell.pauseButtonCellSetup()
+        }
         
         // Should be a singletone over the app
         let dateFormatter = NSDateFormatter()

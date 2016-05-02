@@ -14,7 +14,8 @@ import UIKit
 //You can edit the width via the padding
 
 class SwipableTableViewCell: MGSwipeTableCell {
-
+    weak var tableView:UITableView?
+    
     let playImage : UIImage = UIImage(named:"play.png")!
     let pauseImage : UIImage = UIImage(named:"pause.png")!
     let stopImage : UIImage = UIImage(named:"stop.png")!
