@@ -133,6 +133,10 @@ class PlannerAdapter: BaseTableAdapter {
         self.viewController.navigationController?.pushViewController(taskViewController, animated: true)
     }
     
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        tableView.reloadData()
+    }
+    
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
         if isSeeAllCell(indexPath) {
             let seeAllCell = tableView.dequeueReusableCellWithIdentifier("PlannerSeeAllCell")
@@ -140,6 +144,8 @@ class PlannerAdapter: BaseTableAdapter {
         }
         
         let plannerCell = tableView.dequeueReusableCellWithIdentifier("PlannerCell") as! PlannerTableViewCell
+        plannerCell.tableView = tableView
+
         let tasks = tableItems.objectAtIndex(indexPath.section) as! Results<TaskModel>
         let item = tasks[indexPath.row]
         plannerCell.itemTitle.text = item.taskName
@@ -159,6 +165,14 @@ class PlannerAdapter: BaseTableAdapter {
             plannerCell.dueDateBottomMarginLayoutConstraint.constant = 7
         }
         
+        
+        // Fix cell swipe actions
+        if PlannerTableViewCell.pauseButtonCellConfiguration().contains(item.taskStatus) {
+            plannerCell.playButtonCellSetup()
+        } else {
+            plannerCell.pauseButtonCellSetup()
+        }
+
         return plannerCell
     }
     

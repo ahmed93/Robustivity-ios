@@ -70,8 +70,9 @@ class PlannerTableViewCell: SwipableTableViewCell {
     override func playButtonAction() {
         print("play")
         self.toggleHelper.toggleTask = self.plannerCellTask
-        self.toggleHelper.toggleResumeAction({ () in
-            self.playButtonCellSetup()
+        self.toggleHelper.toggleResumeAction({ [unowned self]() in
+//            self.playButtonCellSetup()
+            self.tableView?.reloadData()
         })
         
     }
@@ -98,5 +99,11 @@ class PlannerTableViewCell: SwipableTableViewCell {
         
     }
     
+    static func playButtonCellConfiguration() -> [String] {
+        return [TaskStatus.NewlyCreated.rawValue, TaskStatus.Paused.rawValue, TaskStatus.TodoItem.rawValue, TaskStatus.Closed.rawValue]
+    }
     
+    static func pauseButtonCellConfiguration() -> [String] {
+        return [TaskStatus.InProgress.rawValue]
+    }
 }
