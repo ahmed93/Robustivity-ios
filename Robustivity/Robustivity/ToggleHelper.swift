@@ -55,7 +55,7 @@ class ToggleHelper {
         
     }
     
-    func fetchTasks() {
+    func fetchTasks(onNewRunningTaskExists:()->()) {
         API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
             if(success){
                 
@@ -63,23 +63,21 @@ class ToggleHelper {
                 let tasks = Mapper<TaskModel>().mapArray(response)
                 for task in tasks! {
                     task.updateTask()
-                    if( task.taskStatus == "in_progress" && task.taskId == self.toggleTask.taskId && self.currentTaskState == "playing" ) {
-                        return
-                    }
-                    if ( (task.taskStatus == "in_progress" ) ) {
+//                    if( task.taskStatus == "in_progress" && task.taskId == self.toggleTask.taskId && self.currentTaskState == "playing" ) {
+//                        return
+//                    }
+                    if ( (task.taskStatus == "in_progress") ) {
                         self.timer.invalidate()
                         self.toggleTask = task
                         self.currentTaskState = "playing"
                         let interval:NSTimeInterval = Double(task.taskDuration)
                         self.pausedTimeInterval = interval
-                        let dateFormatter = NSDateFormatter()
-                        dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
+//                        let dateFormatter = NSDateFormatter()
+//                        dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
 //                        self.startDate = dateFormatter.dateFromString(task.taskUpdatedAt)!
                         self.startDate = task.taskUpdatedAt!
-
-//                        self.startDate = self.startDate.dateByAddingTimeInterval(-1*60*60) //Add to compansate server time
+                        onNewRunningTaskExists()
                         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
-                        NSNotificationCenter.defaultCenter().postNotificationName("resumeTimerNotification", object: nil)
                         
                     }
                     
@@ -96,7 +94,7 @@ class ToggleHelper {
         
     }
     
-    func togglePauseAction() {
+    func togglePauseAction(onSuccess: ()->()) {
         if(self.toggleTask.taskId == 0) {
             return
         }
@@ -112,7 +110,7 @@ class ToggleHelper {
                 self.currentTaskState = "paused"
                 self.timer.invalidate(); //stop timer
                 self.pausedTimeInterval = self.currentTimeInterval
-                NSNotificationCenter.defaultCenter().postNotificationName("pauseTimerNotification", object: nil)
+                onSuccess()
                 
             }
             
@@ -120,7 +118,7 @@ class ToggleHelper {
         
     }
     
-    func toggleResumeAction() {
+    func toggleResumeAction(onSuccess:()->()) {
         if(self.toggleTask.taskId == 0) {
             return
         }
@@ -139,30 +137,24 @@ class ToggleHelper {
                 task?.updateTask()
                 self.toggleTask = task!
                 
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
+//                let dateFormatter = NSDateFormatter()
+//                dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
 //                dateFormatter.dateFromString(self.toggleTask.taskUpdatedAt)
-                
-//                self.startDate = dateFormatter.dateFromString(self.toggleTask.taskUpdatedAt)!
                 self.startDate = self.toggleTask.taskUpdatedAt!
-
-//                self.startDate = self.startDate.dateByAddingTimeInterval(-1*60*60) //Add to compansate server time
-
                 let interval:NSTimeInterval = Double(self.toggleTask.taskDuration)
                 self.pausedTimeInterval = interval
                 self.currentTaskState = "playing"
                 
                 self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
                 //Send Notification
-                NSNotificationCenter.defaultCenter().postNotificationName("resumeTimerNotification", object: nil)
-                
+                onSuccess()
                 
             }
         })
         
     }
     
-    func toggleStopAction() {
+    func toggleStopAction(onSuccess: ()->()) {
         if(self.toggleTask.taskId == 0) {
             return
         }
@@ -177,10 +169,7 @@ class ToggleHelper {
                 //sendstopnotification
                 self.timer.invalidate();
                 self.currentTaskState = "stopped"
-                
-                NSNotificationCenter.defaultCenter().postNotificationName("stopTimerNotification", object: nil)
-                
-                
+                onSuccess()
                 
             }
             

@@ -37,7 +37,7 @@ class ToggleFeedTableViewCell: SwipableTableViewCell {
         if(self.toggleHelper.toggleTask.taskId == 0) {
             return
         }
-        self.toggleHelper.toggleResumeAction()
+//        self.toggleHelper.toggleResumeAction()
         
     }
     override func pauseButtonAction() {
@@ -45,7 +45,7 @@ class ToggleFeedTableViewCell: SwipableTableViewCell {
         if(self.toggleHelper.toggleTask.taskId == 0) {
             return
         }
-        self.toggleHelper.togglePauseAction()
+//        self.toggleHelper.togglePauseAction()
         
     }
     override func stopButtonAction() {
@@ -53,7 +53,7 @@ class ToggleFeedTableViewCell: SwipableTableViewCell {
         if(self.toggleHelper.toggleTask.taskId == 0) {
             return
         }
-        self.toggleHelper.toggleStopAction()
+//        self.toggleHelper.toggleStopAction()
         
     }
     

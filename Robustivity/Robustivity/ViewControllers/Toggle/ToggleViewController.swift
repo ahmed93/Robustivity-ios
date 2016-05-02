@@ -48,16 +48,17 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.edgesForExtendedLayout = .Bottom
         viewSetup()
         self.toggleHelper.currentTaskState = "intial"
-        self.toggleHelper.fetchTasks()
-
+        self.toggleHelper.fetchTasks({ () in
+            self.toggleResumeViewSetup()
+        })
 //        print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
         
         toggleHelper.fetchProjectsList()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pauseTimerNotification", name:"pauseTimerNotification", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pauseTimerNotification", name:"pauseTimerNotification", object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopTimerNotification", name:"stopTimerNotification", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopTimerNotification", name:"stopTimerNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
         
 
@@ -124,7 +125,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     override func viewWillAppear(animated: Bool) {
         print("View will appear")
-        self.toggleHelper.fetchTasks()
+        self.toggleHelper.fetchTasks({ () in
+            self.toggleResumeViewSetup()
+        })
     }
     
     
@@ -170,9 +173,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
         API.post(urlWithToggleStart, parameters: requestParams , callback: { (success, response) in
             if(success) {
-                print(response)
                 let todo = Mapper<TaskModel>().map(response["task"])
-                print(todo)
                 todo?.updateTask()
                 self.toggleHelper.toggleTask = todo!
                 self.toggleHelper.startDate = NSDate()
@@ -196,20 +197,22 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     @IBAction func togglePause(sender: AnyObject) {
         
-        self.toggleHelper.togglePauseAction()
+        self.toggleHelper.togglePauseAction({ () in
+            self.togglePauseViewSetup()
+        })
     }
     
-    func pauseTimerNotification() {
-        self.toggledTime.textColor = Theme.blackColor();
-        
-        UIView.animateWithDuration(0.5, animations: {
-            self.togglePauseBtn.alpha = 0; //hide button
-            self.toggleResumeBtn.alpha = 1; //show button
-            self.toggleResumeBtnCenterX.constant = -75;
-            
-        })
-        
-    }
+//    func pauseTimerNotification() {
+//        self.toggledTime.textColor = Theme.blackColor();
+//        
+//        UIView.animateWithDuration(0.5, animations: {
+//            self.togglePauseBtn.alpha = 0; //hide button
+//            self.toggleResumeBtn.alpha = 1; //show button
+//            self.toggleResumeBtnCenterX.constant = -75;
+//            
+//        })
+//        
+//    }
     func togglePauseViewSetup() {
         self.toggledTime.textColor = Theme.blackColor();
         
@@ -232,15 +235,16 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     @IBAction func toggleStop(sender: AnyObject) {
 
-        
-        self.toggleHelper.toggleStopAction()
+        self.toggleHelper.toggleStopAction({ () in
+            self.toggleStopViewSetup()
+        })
         
     }
     
     //StopNotificationHandler
-    func stopTimerNotification() {
-        self.toggleStopViewSetup()
-    }
+//    func stopTimerNotification() {
+//        self.toggleStopViewSetup()
+//    }
     
     //Front end setup for the action
 
@@ -267,16 +271,16 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     @IBAction func toggleResume(sender: AnyObject) {
 
         self.toggleResumeBtn.enabled = false
-        self.toggleHelper.toggleResumeAction()
-        
-        
+        self.toggleHelper.toggleResumeAction({ () in
+            self.toggleResumeViewSetup()
+        })
     }
     
     /*Handle the resumeNotification*/
-    func resumeTimerNotification() {
-        
-        self.toggleResumeViewSetup()
-    }
+//    func resumeTimerNotification()->() {
+//        
+//        self.toggleResumeViewSetup()
+//    }
     
     /*Change view setup to resume setup*/
     func toggleResumeViewSetup() {
@@ -334,8 +338,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
             })
         }
 
-        
-        print("I have been changed")
     }
     
     //Gesture handler
@@ -346,7 +348,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     }
     
     func updateToggledTimeNotification() {
-        print("Notification recived")
         self.toggledTime.text = self.toggleHelper.toggledTime
     }
 
