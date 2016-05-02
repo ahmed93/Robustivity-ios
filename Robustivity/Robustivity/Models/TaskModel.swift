@@ -86,6 +86,7 @@ class TaskModel: Object, Mappable {
     
     func mapping(map: Map) {
         TaskModel.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        TaskModel.dateFormatter.timeZone = NSTimeZone(name: "EET")
 
         taskId             <- map["id"]
         taskEstimatedTime  <- map["estimated_time"]
