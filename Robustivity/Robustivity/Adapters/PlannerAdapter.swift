@@ -133,10 +133,6 @@ class PlannerAdapter: BaseTableAdapter {
         self.viewController.navigationController?.pushViewController(taskViewController, animated: true)
     }
     
-    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-        tableView.reloadData()
-    }
-    
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
         if isSeeAllCell(indexPath) {
             let seeAllCell = tableView.dequeueReusableCellWithIdentifier("PlannerSeeAllCell")
