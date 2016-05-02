@@ -174,6 +174,12 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
         API.post(urlWithToggleStart, parameters: requestParams , callback: { (success, response) in
             if(success) {
+                let playingTasks = self.realm.objects(TaskModel).filter("taskStatus = 'in_progress'")
+                for playingTask in playingTasks {
+                    try! self.realm.write {
+                        playingTask.taskStatus = "paused"
+                    }
+                }
                 let todo = Mapper<TaskModel>().map(response["task"])
                 todo?.updateTask()
                 self.toggleHelper.toggleTask = todo!
