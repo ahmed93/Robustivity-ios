@@ -146,9 +146,10 @@ class PlannerAdapter: BaseTableAdapter {
         let item = tasks[indexPath.row]
         plannerCell.itemTitle.text = item.taskName
         plannerCell.projectName.text = item.taskProjectName
-        plannerCell.plannerCellTask = item // Aya
 
+        plannerCell.plannerCellTask = item // Aya
         
+        plannerCell.toggleTimer.text = plannerCell.toggleHelper.stringFromTimeInterval(Double(item.taskDuration))
         // Should be a singletone over the app
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .MediumStyle
