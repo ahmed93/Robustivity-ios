@@ -43,28 +43,40 @@ class FeedViewController: BaseViewController {
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
     
-        
+        updateStickyToggleCell ()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
         
     }
     
     func updateToggledTimeNotification() {
-        var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
-        toggleCell.playButtonCellSetup()
-        toggleCell.timeLabel.text = toggleHelper.toggledTime
-        toggleCell.toggleCellTask = toggleHelper.toggleTask
+//        let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+//        toggleCell.playButtonCellSetup()
+//        toggleCell.timeLabel.text = toggleHelper.toggledTime
+//        toggleCell.toggleCellTask = toggleHelper.toggleTask
+        updateStickyToggleCell ()
     }
     
-    func resumeTimerNotification() {
-        var toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        updateStickyToggleCell ()
+
+    }
+    
+    func updateStickyToggleCell () {
+        if (toggleHelper.toggleTask.taskId == 0) {
+            return
+
+        }
+        let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
         toggleCell.taskName.text = toggleHelper.toggleTask.taskName
         toggleCell.projectName.text = toggleHelper.toggleTask.taskProjectName
         toggleCell.toggleCellTask = toggleHelper.toggleTask
+        toggleCell.timeLabel.text = toggleHelper.toggledTime
         toggleCell.playPauseButton.enabled = true
-
-
+        
     }
+    
 
 }

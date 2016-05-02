@@ -135,6 +135,13 @@ class ToggleHelper {
         API.post(urlWithTaskId, parameters: requestParams, callback: { (success, response) in
             if(success) {
                 
+                let playingTasks = self.realm.objects(TaskModel).filter("taskStatus = 'in_progress'")
+                for playingTask in playingTasks {
+                    try! self.realm.write {
+                        playingTask.taskStatus = "paused"
+                    }
+                }
+                
                 let task = Mapper<TaskModel>().map(response["task"])
 
                 task?.updateTask()
@@ -147,6 +154,8 @@ class ToggleHelper {
                 let interval:NSTimeInterval = Double(self.toggleTask.taskDuration)
                 self.pausedTimeInterval = interval
                 self.currentTaskState = "playing"
+                
+                
                 
                 self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
                 //Send Notification
