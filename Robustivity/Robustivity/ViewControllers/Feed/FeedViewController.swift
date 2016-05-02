@@ -60,7 +60,7 @@ class FeedViewController: BaseViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.toggleHelper.delegate = self.adapter
+        self.toggleHelper.delegate = self.adapter // Assuty
         
         updateStickyToggleCell ()
         

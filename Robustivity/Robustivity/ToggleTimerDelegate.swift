@@ -8,7 +8,8 @@
 
 import Foundation
 
-
-protocol ToggleTimerDelegate : AnyObject {
-    func toggleTimer(timer: NSTimer)
+@objc protocol ToggleTimerDelegate : AnyObject {
+    optional func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String)
+    optional func toggleTimer(timer: NSTimer, didStartTimer: String)
+    optional func toggleTimer(timer: NSTimer, didPauseTimer: Bool)
 }

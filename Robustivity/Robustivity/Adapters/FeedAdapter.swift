@@ -12,8 +12,6 @@ import RealmSwift
 
 class FeedAdapter: BaseTableAdapter, ToggleTimerDelegate {
     
-    
-    
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
         // any extra stuff to be done
@@ -48,12 +46,11 @@ class FeedAdapter: BaseTableAdapter, ToggleTimerDelegate {
         }
     }
     
-    
-    func toggleTimer(timer: NSTimer) {
-        ToggleHelper.sharedInstance.updateToggledTime()
+    // Assuty
+    func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String) {
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
-        cell.timeLabel.text = ToggleHelper.sharedInstance.toggledTime
+        cell.timeLabel.text = didUpdateTimerWithValue
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
