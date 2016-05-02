@@ -16,7 +16,6 @@ class FeedViewController: BaseViewController {
     
     var adapter:FeedAdapter!
     var adapter1:OptionsTableAdapter!
-    var control: MoreViewController!
     let toggleHelper = ToggleHelper.sharedInstance
     
     
@@ -42,32 +41,35 @@ class FeedViewController: BaseViewController {
         let values = ["CheckInFeedTableViewCell","BroadcastFeedTableViewCell","UpdateFeedTableViewCell","ToggleFeedTableViewCell"]
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
-    
+        
         updateStickyToggleCell ()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
+        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
         
     }
     
     func updateToggledTimeNotification() {
-//        let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
-//        toggleCell.playButtonCellSetup()
-//        toggleCell.timeLabel.text = toggleHelper.toggledTime
-//        toggleCell.toggleCellTask = toggleHelper.toggleTask
+        //        let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+        //        toggleCell.playButtonCellSetup()
+        //        toggleCell.timeLabel.text = toggleHelper.toggledTime
+        //        toggleCell.toggleCellTask = toggleHelper.toggleTask
         updateStickyToggleCell ()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        
+        self.toggleHelper.delegate = self.adapter
+        
         updateStickyToggleCell ()
-
+        
     }
     
     func updateStickyToggleCell () {
         if (toggleHelper.toggleTask.taskId == 0) {
             return
-
+            
         }
         let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
         toggleCell.taskName.text = toggleHelper.toggleTask.taskName
@@ -78,5 +80,5 @@ class FeedViewController: BaseViewController {
         
     }
     
-
+    
 }

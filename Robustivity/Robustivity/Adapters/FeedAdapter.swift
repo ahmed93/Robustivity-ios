@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
-class FeedAdapter: BaseTableAdapter {
+class FeedAdapter: BaseTableAdapter, ToggleTimerDelegate {
     
     
     
@@ -46,6 +46,16 @@ class FeedAdapter: BaseTableAdapter {
             })
             
         }
+    }
+    
+    
+    func toggleTimer(timer: NSTimer) {
+        ToggleHelper.sharedInstance.updateToggledTime()
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
+        cell.timeLabel.text = ToggleHelper.sharedInstance.toggledTime
+        print("here")
+        tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .None)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

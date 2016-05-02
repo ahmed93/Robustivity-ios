@@ -37,8 +37,8 @@ class ToggleHelper {
     let realm = try! Realm()
     var toggledTime = "00:00:00"
     
-    
-    
+    var delegate: ToggleTimerDelegate? // Assuty
+
     func fetchProjectsList() {
         API.get(APIRoutes.PROJECTS_INDEX, callback: { (success, response) in
             if(success){
@@ -77,8 +77,15 @@ class ToggleHelper {
 //                        self.startDate = dateFormatter.dateFromString(task.taskUpdatedAt)!
                         self.startDate = task.taskUpdatedAt!
                         onNewRunningTaskExists()
-                        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
                         
+//                        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+                        
+                        // Assuty
+                        if let tem = self.delegate {
+                            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: tem, selector: Selector("toggleTimer:"), userInfo: nil, repeats: true);
+                        } else {
+                            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+                        }
                     }
                     
                 }
@@ -89,7 +96,11 @@ class ToggleHelper {
     }
     
     func startTimer() {
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+        if let tem = self.delegate {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: tem, selector: Selector("toggleTimer:"), userInfo: nil, repeats: true);
+        } else {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+        }
         NSNotificationCenter.defaultCenter().postNotificationName("resumeTimerNotification", object: nil)
         
     }
@@ -157,7 +168,16 @@ class ToggleHelper {
                 
                 
                 
-                self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+//                self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+                
+                
+                // Assuty
+                if let tem = self.delegate {
+                    self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: tem, selector: Selector("toggleTimer:"), userInfo: nil, repeats: true);
+                } else {
+                    self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+                }
+                
                 //Send Notification
                 onSuccess()
                 
@@ -207,7 +227,7 @@ class ToggleHelper {
         
         self.currentTimeInterval = timeInterval;
         self.toggledTime = stringFromTimeInterval(timeInterval)
-        NSNotificationCenter.defaultCenter().postNotificationName("updateToggledTimeNotification", object: nil)
+//        NSNotificationCenter.defaultCenter().postNotificationName("updateToggledTimeNotification", object: nil)
         
     }
     

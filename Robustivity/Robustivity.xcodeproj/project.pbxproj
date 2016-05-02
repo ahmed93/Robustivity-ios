@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */; };
+		0147DB2B1CD701FB0039B5E5 /* ToggleTimerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0147DB2A1CD701FB0039B5E5 /* ToggleTimerDelegate.swift */; };
 		0148F2F81CC69AE400CDAC9B /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */; };
 		014A868B1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A86891CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift */; };
 		014A868C1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014A868A1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib */; };
@@ -19,7 +20,6 @@
 		01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */; };
 		01C72A431CD0383A002C3513 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C72A421CD0383A002C3513 /* TaskModel.swift */; };
 		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
-		04FFFE051CCD0A3800B4DB9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFFE041CCD0A3800B4DB9D /* User.swift */; };
 		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
 		196CDBAE1CAF0BF60092A050 /* ProjectInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CDBAD1CAF0BF60092A050 /* ProjectInfoAdapter.swift */; };
@@ -213,6 +213,7 @@
 
 /* Begin PBXFileReference section */
 		0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateAdapter.swift; sourceTree = "<group>"; };
+		0147DB2A1CD701FB0039B5E5 /* ToggleTimerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTimerDelegate.swift; sourceTree = "<group>"; };
 		0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		014A86891CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerSeeAllTableViewCell.swift; sourceTree = "<group>"; };
 		014A868A1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerSeeAllTableViewCell.xib; sourceTree = "<group>"; };
@@ -939,6 +940,7 @@
 			isa = PBXGroup;
 			children = (
 				37AA680D1CD01198002F509E /* ToggleHelper.swift */,
+				0147DB2A1CD701FB0039B5E5 /* ToggleTimerDelegate.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1214,12 +1216,12 @@
 				TargetAttributes = {
 					A7BCE7A91C7D8244007870CB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = CTDLNV2NUV;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 						};
-						DevelopmentTeam = CTDLNV2NUV;
 					};
 				};
 			};
@@ -1443,6 +1445,7 @@
 				1B7F8E261CB094E6007C8005 /* DirectoryCell.swift in Sources */,
 				BDB706571CCFD15600ED7D1E /* TaskCommentModel.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
+				0147DB2B1CD701FB0039B5E5 /* ToggleTimerDelegate.swift in Sources */,
 				1B7F8EAC1CB09507007C8005 /* NotificationsViewController.swift in Sources */,
 				185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
