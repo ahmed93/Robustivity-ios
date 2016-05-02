@@ -157,11 +157,6 @@ class ToggleHelper {
                 self.pausedTimeInterval = interval
                 self.currentTaskState = "playing"
                 
-                
-                
-//                self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
-                
-                
                 // Assuty
                 self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
                 
@@ -216,8 +211,6 @@ class ToggleHelper {
         self.toggledTime = stringFromTimeInterval(timeInterval)
         
         self.delegate?.toggleTimer!(timer, didUpdateTimerWithValue: self.toggledTime) // Assuty
-        
-//        NSNotificationCenter.defaultCenter().postNotificationName("updateToggledTimeNotification", object: nil)
     }
     
     func stringFromTimeInterval(interval: NSTimeInterval) -> String {
