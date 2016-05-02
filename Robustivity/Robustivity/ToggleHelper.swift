@@ -110,6 +110,9 @@ class ToggleHelper {
                 self.currentTaskState = "paused"
                 self.timer.invalidate(); //stop timer
                 self.pausedTimeInterval = self.currentTimeInterval
+                try! self.realm.write {
+                    self.toggleTask.taskStatus = "paused"
+                }
                 onSuccess()
                 
             }
@@ -165,6 +168,9 @@ class ToggleHelper {
         
         API.put(urlWithTaskId, parameters: requestParams, callback: { (success, response) in
             if(success) {
+                try! self.realm.write {
+                    self.toggleTask.taskStatus = "paused"
+                }
                 
                 //sendstopnotification
                 self.timer.invalidate();
