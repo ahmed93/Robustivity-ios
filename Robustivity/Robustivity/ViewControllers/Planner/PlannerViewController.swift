@@ -59,6 +59,7 @@ class PlannerViewController: BaseViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+        tableView.reloadData()
     }
     
 //    override func viewDidAppear(animated: Bool) {

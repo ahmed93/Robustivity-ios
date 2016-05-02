@@ -100,7 +100,7 @@ class PlannerItemsListAdapter  : BaseTableAdapter {
         plannerCell.itemTitle.text = item.taskName
         plannerCell.projectName.text = item.taskProjectName
         plannerCell.plannerCellTask = item
-
+        
         // Fix cell swipe actions
         if PlannerTableViewCell.pauseButtonCellConfiguration().contains(item.taskStatus) {
             plannerCell.playButtonCellSetup()
