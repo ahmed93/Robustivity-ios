@@ -13,7 +13,7 @@ import ObjectMapper
 import RealmSwift
 
 
-class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate, ToggleTimerDelegate {
     @IBOutlet weak var toggleResumeBtnCenterX: NSLayoutConstraint!
     @IBOutlet weak var toggleStopBtnCenterX: NSLayoutConstraint!
     @IBOutlet weak var toggleStopBtn: UIButton!
@@ -126,9 +126,16 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     override func viewWillAppear(animated: Bool) {
         print("View will appear")
+        
+        self.toggleHelper.delegate = self
+        
         self.toggleHelper.fetchTasks({ () in
             self.toggleResumeViewSetup()
         })
+    }
+    
+    func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String) {
+        toggledTime.text = didUpdateTimerWithValue
     }
     
     
