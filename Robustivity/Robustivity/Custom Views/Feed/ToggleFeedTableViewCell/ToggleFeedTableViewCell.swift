@@ -63,5 +63,13 @@ class ToggleFeedTableViewCell: SwipableTableViewCell {
         
     }
     
+    static func playButtonCellConfiguration() -> [String] {
+        return [TaskStatus.NewlyCreated.rawValue, TaskStatus.Paused.rawValue, TaskStatus.TodoItem.rawValue, TaskStatus.Closed.rawValue]
+    }
+    
+    static func pauseButtonCellConfiguration() -> [String] {
+        return [TaskStatus.InProgress.rawValue]
+    }
+    
     
 }

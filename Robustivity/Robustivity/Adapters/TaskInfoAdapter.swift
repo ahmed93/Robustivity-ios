@@ -91,6 +91,7 @@ class TaskInfoAdapter: BaseTableAdapter{
             cell.timer.text = x
             cell.taskName.text = currentTask.taskName
             cell.taskDate.text = x
+            cell.toggleCellTask = currentTask
             return cell
         }
         else if indexPath.section == 1{

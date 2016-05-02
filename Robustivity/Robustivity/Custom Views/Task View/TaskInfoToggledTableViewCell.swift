@@ -16,10 +16,10 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
     @IBOutlet weak var taskName: RBLabel!
     @IBOutlet weak var timer: RBLabel!
     
-    var hours:Int = 0
-    var minutes:Int = 0
-    var seconds:Int = 0
-    var realTimer:NSTimer = NSTimer()
+    let toggleHelper = ToggleHelper.sharedInstance
+    
+    var toggleCellTask:TaskModel = TaskModel() //Aya
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,48 +37,35 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
         // Configure the view for the selected state
     }
     
-    func timerDidTick(timer:NSTimer){
-        seconds++
-        if seconds == 60 {
-            minutes++
-            seconds = 0
-        }
-        
-        if minutes == 60{
-            minutes = 0
-            hours++
-        }
-        updateTimerLabel()
-        
-    }
-    
-    func updateTimerLabel(){
-        timer.text = String(format: "%02d:%02d:%02d", hours,minutes,seconds)
-    }
-    
-    func setTimer(){
-        realTimer = NSTimer(timeInterval: 1.0, target: self, selector: "timerDidTick:", userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(realTimer, forMode: NSRunLoopCommonModes)
-    }
-    
     override func playButtonAction() {
-        setTimer()
+        print("play")
+        self.toggleHelper.toggleTask = self.toggleCellTask
+        self.toggleHelper.toggleResumeAction({ () in
+            self.playButtonCellSetup()
+        })
+        
     }
     override func pauseButtonAction() {
-        realTimer.invalidate()
-        updateTimerLabel()
+        print("pause")
+        
+        if(self.toggleCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
+            self.toggleHelper.togglePauseAction({ () in
+                self.pauseButtonAction()
+            })
+            
+        }
         
     }
     override func stopButtonAction() {
-        realTimer.invalidate()
-        resetTime()
-        updateTimerLabel()
+        print("stop")
+        if(self.toggleCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
+            
+            self.toggleHelper.toggleStopAction({ () in
+                self.stopButtonCellSetup()
+            })
+            
+        }
         
     }
-    
-    func resetTime(){
-        seconds = 0
-        minutes = 0
-        hours = 0
-    }
+ 
 }
