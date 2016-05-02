@@ -187,20 +187,11 @@ class ToggleHelper {
     @objc func updateToggledTime() {
         // Create date from the elapsed time
         let currentDate = NSDate();
-        print("startDate")
-        print(self.startDate)
-        print("current Date")
-        print(currentDate)
-        
-        print("paused time interval")
-        print(pausedTimeInterval)
         var timeInterval = currentDate.timeIntervalSinceDate(self.startDate);
-        print(timeInterval)
         timeInterval += pausedTimeInterval;
         
         self.currentTimeInterval = timeInterval;
         self.toggledTime = stringFromTimeInterval(timeInterval)
-        print(toggledTime)
         NSNotificationCenter.defaultCenter().postNotificationName("updateToggledTimeNotification", object: nil)
         
     }
