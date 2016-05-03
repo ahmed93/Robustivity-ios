@@ -241,6 +241,7 @@ class FeedAdapter: BaseTableAdapter, ToggleTimerDelegate {
         
         let formatter = NSDateFormatter();
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
+        formatter.timeZone = NSTimeZone(name: "EET");
         let currentTime =  formatter.dateFromString(formatter.stringFromDate(NSDate()))
         let givenDate = formatter.dateFromString(time)
         let diff = currentTime!.timeIntervalSinceDate(givenDate!)
