@@ -81,7 +81,8 @@ class ToggleHelper {
 //                        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
                         
                         // Assuty
-                        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+//                        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+                        self.startTimer()
                     }
                     
                 }
@@ -93,6 +94,8 @@ class ToggleHelper {
     
     func startTimer() {
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+        self.delegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime) // Aya
+
 //        NSNotificationCenter.defaultCenter().postNotificationName("resumeTimerNotification", object: nil)
     }
     
@@ -158,7 +161,8 @@ class ToggleHelper {
                 self.currentTaskState = "playing"
                 
                 // Assuty
-                self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+//                self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+                self.startTimer()
                 
                 //Send Notification
                 onSuccess()

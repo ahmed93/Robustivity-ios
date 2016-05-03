@@ -138,6 +138,15 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String) {
         toggledTime.text = didUpdateTimerWithValue
     }
+    func toggleTimer(timer: NSTimer, didStartTimer: String) {
+        //update project details
+        self.todoTitleField.text = self.toggleHelper.toggleTask.taskName;
+        self.todoProjectTextField.text = self.toggleHelper.toggleTask.taskProjectName;
+        //setup the view
+        self.toggleResumeViewSetup()
+
+    }
+
     
     
     /*
