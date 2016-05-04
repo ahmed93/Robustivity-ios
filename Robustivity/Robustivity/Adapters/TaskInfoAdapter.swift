@@ -16,7 +16,7 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
-class TaskInfoAdapter: BaseTableAdapter{
+class TaskInfoAdapter: BaseTableAdapter, ToggleTimerDelegate{
     var currentTask = TaskModel()
     
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs:NSDictionary) {
@@ -55,6 +55,29 @@ class TaskInfoAdapter: BaseTableAdapter{
             })
     }
     
+    func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String) {
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! TaskInfoToggledTableViewCell
+        let toggleHelper = ToggleHelper.sharedInstance
+        //update cell of running task only
+        if(cell.toggleCellTask.taskId == toggleHelper.toggleTask.taskId) {
+            cell.timer.text = didUpdateTimerWithValue
+
+        }
+    }
+    
+    func toggleTimer(timer: NSTimer, didStartTimer: String) {
+        print("Did Start Timer")
+        
+    }
+//
+    func toggleTimer(timer: NSTimer, didPauseTimer: Bool) {
+        if(didPauseTimer) {
+            
+        }
+    }
+
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
@@ -92,6 +115,12 @@ class TaskInfoAdapter: BaseTableAdapter{
             cell.taskName.text = currentTask.taskName
             cell.taskDate.text = x
             cell.toggleCellTask = currentTask
+            // Fix cell swipe actions
+            if TaskInfoToggledTableViewCell.pauseButtonCellConfiguration().contains(currentTask.taskStatus) {
+                cell.playButtonCellSetup()
+            } else {
+                cell.pauseButtonCellSetup()
+            }
             return cell
         }
         else if indexPath.section == 1{

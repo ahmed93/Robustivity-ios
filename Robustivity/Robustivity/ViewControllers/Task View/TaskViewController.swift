@@ -30,6 +30,7 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     var customSC:UISegmentedControl!
     var taskId:String!
     let preferences = NSUserDefaults.standardUserDefaults()
+    let toggleHelper = ToggleHelper.sharedInstance
 
     
     override func viewDidLoad() {
@@ -46,6 +47,11 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
         self.table.backgroundColor = Theme.lightGrayColor()
         self.automaticallyAdjustsScrollViewInsets = false
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.toggleHelper.delegate = self.infoAdapter // Assuty
+
     }
     
     override func loadView() {

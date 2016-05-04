@@ -50,7 +50,7 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
         
         if(self.toggleCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
             self.toggleHelper.togglePauseAction({ () in
-                self.pauseButtonAction()
+                self.pauseButtonCellSetup()
             })
             
         }
@@ -66,6 +66,14 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
             
         }
         
+    }
+    
+    static func playButtonCellConfiguration() -> [String] {
+        return [TaskStatus.NewlyCreated.rawValue, TaskStatus.Paused.rawValue, TaskStatus.TodoItem.rawValue, TaskStatus.Closed.rawValue]
+    }
+    
+    static func pauseButtonCellConfiguration() -> [String] {
+        return [TaskStatus.InProgress.rawValue]
     }
  
 }
