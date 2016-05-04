@@ -67,12 +67,25 @@ class TaskInfoAdapter: BaseTableAdapter, ToggleTimerDelegate{
     }
     
     func toggleTimer(timer: NSTimer, didStartTimer: String) {
-        print("Did Start Timer")
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! TaskInfoToggledTableViewCell
+        let toggleHelper = ToggleHelper.sharedInstance
+        if(cell.toggleCellTask.taskId == toggleHelper.toggleTask.taskId) {
+            cell.playButtonCellSetup()
+            
+        }
         
     }
-//
+
     func toggleTimer(timer: NSTimer, didPauseTimer: Bool) {
         if(didPauseTimer) {
+            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! TaskInfoToggledTableViewCell
+            let toggleHelper = ToggleHelper.sharedInstance
+            if(cell.toggleCellTask.taskId == toggleHelper.toggleTask.taskId) {
+                cell.pauseButtonCellSetup()
+                
+            }
             
         }
     }

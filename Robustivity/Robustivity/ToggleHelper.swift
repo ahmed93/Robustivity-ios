@@ -37,8 +37,10 @@ class ToggleHelper {
     let realm = try! Realm()
     var toggledTime = "00:00:00"
     
-    var delegate: ToggleTimerDelegate? // Assuty
+    var timerDelegate: ToggleTimerDelegate? // Assuty
     var toggleViewDelegate: ToggleTimerDelegate? //Aya
+    var taskInfoViewDelegate: ToggleTimerDelegate?
+    var feedViewDelegate: ToggleTimerDelegate?
 
     func fetchProjectsList() {
         API.get(APIRoutes.PROJECTS_INDEX, callback: { (success, response) in
@@ -64,25 +66,14 @@ class ToggleHelper {
                 let tasks = Mapper<TaskModel>().mapArray(response)
                 for task in tasks! {
                     task.updateTask()
-//                    if( task.taskStatus == "in_progress" && task.taskId == self.toggleTask.taskId && self.currentTaskState == "playing" ) {
-//                        return
-//                    }
                     if ( (task.taskStatus == "in_progress") ) {
                         self.timer.invalidate()
                         self.toggleTask = task
                         self.currentTaskState = "playing"
                         let interval:NSTimeInterval = Double(task.taskDuration)
                         self.pausedTimeInterval = interval
-//                        let dateFormatter = NSDateFormatter()
-//                        dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
-//                        self.startDate = dateFormatter.dateFromString(task.taskUpdatedAt)!
                         self.startDate = task.taskUpdatedAt!
                         onNewRunningTaskExists()
-                        
-//                        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
-                        
-                        // Assuty
-//                        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
                         self.startTimer()
                     }
                     
@@ -95,11 +86,12 @@ class ToggleHelper {
     
     func startTimer() {
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
-        self.delegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime) // Aya
+//        self.delegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime) // Aya
         self.toggleViewDelegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime) // Aya
+        self.taskInfoViewDelegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime)
+        self.feedViewDelegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime)
 
 
-//        NSNotificationCenter.defaultCenter().postNotificationName("resumeTimerNotification", object: nil)
     }
     
     func togglePauseAction(onSuccess: ()->()) {
@@ -121,8 +113,12 @@ class ToggleHelper {
                     self.toggleTask.taskStatus = "paused"
                 }
                 
-                self.delegate?.toggleTimer!(self.timer, didPauseTimer: true)
+//                self.delegate?.toggleTimer!(self.timer, didPauseTimer: true)
                 self.toggleViewDelegate?.toggleTimer!(self.timer, didPauseTimer: true)
+                self.taskInfoViewDelegate?.toggleTimer!(self.timer, didPauseTimer: true)
+                self.feedViewDelegate?.toggleTimer!(self.timer, didPauseTimer: true)
+
+
 
                 onSuccess()
                 
@@ -157,19 +153,12 @@ class ToggleHelper {
 
                 task?.updateTask()
                 self.toggleTask = task!
-                
-//                let dateFormatter = NSDateFormatter()
-//                dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss"
-//                dateFormatter.dateFromString(self.toggleTask.taskUpdatedAt)
                 self.startDate = self.toggleTask.taskUpdatedAt!
                 let interval:NSTimeInterval = Double(self.toggleTask.taskDuration)
                 self.pausedTimeInterval = interval
                 self.currentTaskState = "playing"
                 
-                // Assuty
-//                self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
                 self.startTimer()
-                
                 //Send Notification
                 onSuccess()
                 
@@ -222,7 +211,7 @@ class ToggleHelper {
         self.currentTimeInterval = timeInterval;
         self.toggledTime = stringFromTimeInterval(timeInterval)
         
-        self.delegate?.toggleTimer!(timer, didUpdateTimerWithValue: self.toggledTime) // Assuty
+        self.timerDelegate?.toggleTimer!(timer, didUpdateTimerWithValue: self.toggledTime) // Assuty
     }
     
     func stringFromTimeInterval(interval: NSTimeInterval) -> String {

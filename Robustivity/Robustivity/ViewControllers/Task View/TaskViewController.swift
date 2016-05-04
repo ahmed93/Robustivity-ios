@@ -47,10 +47,12 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
         infoAdapter = TaskInfoAdapter(viewController: self, tableView: table, registerMultipleNibsAndIdenfifers: dic)
         self.table.backgroundColor = Theme.lightGrayColor()
         self.automaticallyAdjustsScrollViewInsets = false
+        self.toggleHelper.taskInfoViewDelegate = self.infoAdapter
+
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        self.toggleHelper.delegate = self.infoAdapter // Assuty
+        self.toggleHelper.timerDelegate = self.infoAdapter // Assuty
 
     }
     

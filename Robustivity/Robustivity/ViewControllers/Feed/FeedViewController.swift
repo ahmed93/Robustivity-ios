@@ -41,26 +41,16 @@ class FeedViewController: BaseViewController {
         let values = ["CheckInFeedTableViewCell","BroadcastFeedTableViewCell","UpdateFeedTableViewCell","ToggleFeedTableViewCell"]
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
-        
+        self.toggleHelper.feedViewDelegate = self.adapter
+
         updateStickyToggleCell ()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateToggledTimeNotification", name:"updateToggledTimeNotification", object: nil)
         
-        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeTimerNotification", name:"resumeTimerNotification", object: nil)
-        
-    }
-    
-    func updateToggledTimeNotification() {
-        //        let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
-        //        toggleCell.playButtonCellSetup()
-        //        toggleCell.timeLabel.text = toggleHelper.toggledTime
-        //        toggleCell.toggleCellTask = toggleHelper.toggleTask
-        updateStickyToggleCell ()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.toggleHelper.delegate = self.adapter // Assuty
+        self.toggleHelper.timerDelegate = self.adapter // Assuty
         
         updateStickyToggleCell ()
         
