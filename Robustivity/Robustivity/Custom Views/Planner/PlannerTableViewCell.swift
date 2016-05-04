@@ -81,7 +81,7 @@ class PlannerTableViewCell: SwipableTableViewCell {
 
         if(self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
             self.toggleHelper.togglePauseAction({ () in
-                self.pauseButtonAction()
+                self.pauseButtonCellSetup()
             })
 
         }

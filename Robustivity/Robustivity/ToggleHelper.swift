@@ -38,6 +38,7 @@ class ToggleHelper {
     var toggledTime = "00:00:00"
     
     var delegate: ToggleTimerDelegate? // Assuty
+    var toggleViewDelegate: ToggleTimerDelegate? //Aya
 
     func fetchProjectsList() {
         API.get(APIRoutes.PROJECTS_INDEX, callback: { (success, response) in
@@ -95,6 +96,8 @@ class ToggleHelper {
     func startTimer() {
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
         self.delegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime) // Aya
+        self.toggleViewDelegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime) // Aya
+
 
 //        NSNotificationCenter.defaultCenter().postNotificationName("resumeTimerNotification", object: nil)
     }
@@ -113,11 +116,14 @@ class ToggleHelper {
             if(success) {
                 self.timer.invalidate(); //stop timer
                 self.currentTaskState = "paused"
-                self.timer.invalidate(); //stop timer
                 self.pausedTimeInterval = self.currentTimeInterval
                 try! self.realm.write {
                     self.toggleTask.taskStatus = "paused"
                 }
+                
+                self.delegate?.toggleTimer!(self.timer, didPauseTimer: true)
+                self.toggleViewDelegate?.toggleTimer!(self.timer, didPauseTimer: true)
+
                 onSuccess()
                 
             }
@@ -190,6 +196,8 @@ class ToggleHelper {
                 //sendstopnotification
                 self.timer.invalidate();
                 self.currentTaskState = "stopped"
+                self.toggleViewDelegate?.toggleTimer!(self.timer, didStopTimer: true)
+
                 onSuccess()
                 
             }

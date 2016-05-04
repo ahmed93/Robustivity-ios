@@ -49,6 +49,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.edgesForExtendedLayout = .Bottom
         viewSetup()
         self.toggleHelper.currentTaskState = "intial"
+        self.toggleHelper.toggleViewDelegate = self
         self.toggleHelper.fetchTasks({ () in
             self.toggleResumeViewSetup()
         })
@@ -135,18 +136,32 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     }
     
     // Assuty
+    // ToggleTimer Delegate functions
     func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String) {
         toggledTime.text = didUpdateTimerWithValue
     }
+    
     func toggleTimer(timer: NSTimer, didStartTimer: String) {
-        //update project details
-        self.todoTitleField.text = self.toggleHelper.toggleTask.taskName;
-        self.todoProjectTextField.text = self.toggleHelper.toggleTask.taskProjectName;
+        print("Toggle view delegate Start")
+//        //update project details
+//        self.todoTitleField.text = self.toggleHelper.toggleTask.taskName;
+//        self.todoProjectTextField.text = self.toggleHelper.toggleTask.taskProjectName;
         //setup the view
         self.toggleResumeViewSetup()
 
     }
+    
+    func toggleTimer(timer: NSTimer, didPauseTimer: Bool) {
+        if(didPauseTimer) {
+            self.togglePauseViewSetup()
+        }
+    }
 
+    func toggleTimer(timer: NSTimer, didStopTimer: Bool) {
+        if(didStopTimer) {
+            self.toggleStopViewSetup()
+        }
+    }
     
     
     /*

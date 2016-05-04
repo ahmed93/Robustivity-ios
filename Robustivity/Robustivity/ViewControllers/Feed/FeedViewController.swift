@@ -77,7 +77,12 @@ class FeedViewController: BaseViewController {
         toggleCell.toggleCellTask = toggleHelper.toggleTask
         toggleCell.timeLabel.text = toggleHelper.toggledTime
         toggleCell.playPauseButton.enabled = true
-        
+        // Fix cell swipe actions
+        if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(toggleHelper.toggleTask.taskStatus) {
+            toggleCell.playButtonCellSetup()
+        } else {
+            toggleCell.pauseButtonCellSetup()
+        }
     }
     
     

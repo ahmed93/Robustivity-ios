@@ -12,4 +12,6 @@ import Foundation
     optional func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String)
     optional func toggleTimer(timer: NSTimer, didStartTimer: String)
     optional func toggleTimer(timer: NSTimer, didPauseTimer: Bool)
+    optional func toggleTimer(timer: NSTimer, didStopTimer: Bool)
+
 }
