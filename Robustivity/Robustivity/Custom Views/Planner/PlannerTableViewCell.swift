@@ -46,11 +46,9 @@ class PlannerTableViewCell: SwipableTableViewCell {
     override func playButtonAction() {
         print("play")
         
-        
-        
         toggleManager.playNewTask(self.plannerCellTask, onSuccess: { [unowned self]() in
             self.tableView?.reloadData()
-            })
+        })
         
     }
     override func pauseButtonAction() {

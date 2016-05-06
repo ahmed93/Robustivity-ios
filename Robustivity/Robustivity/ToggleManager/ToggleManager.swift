@@ -179,8 +179,17 @@ import RealmSwift
             resumeCurrentTask(onSuccess, onFailure: onFailure)
             return
         }
-
-        // Handle new task logic
+        
+        func startNewTask() {
+            toggledTask = task
+            resumeCurrentTask(onSuccess, onFailure: onFailure)
+        }
+        
+        guard let _ = toggledTask else {
+            startNewTask()
+            return
+        }
+        stopCurrentTask(startNewTask)
     }
     
     // MARK: Helper Methods
