@@ -33,8 +33,15 @@ import RealmSwift
     var pausedTimeInterval = NSTimeInterval();
     
     var toggledTask:TaskModel? {
+        willSet{
+            guard let toggledTask = toggledTask else { return }
+            guard let newValue = newValue else { return }
+            delegate?.toggleManager?(self, willChangeToggledTask: toggledTask, newTask: newValue, toggledTime: toggledTime)
+        }
+        
         didSet {
-            delegate?.toggleManager(self, didChangeToggledTask: toggledTask!, toggledTime: toggledTime)
+            guard let toggledTask = toggledTask else { return }
+            delegate?.toggleManager(self, didChangeToggledTask: toggledTask, toggledTime: toggledTime)
         }
     }
     
@@ -49,24 +56,21 @@ import RealmSwift
         }
     }
     
-    func fetchTasks(onNewRunningTaskExists:()->()) {
-        guard let task = TaskModel.inProgress() else {return}
-
-        self.timer.invalidate()
+    
+    func fetchInProgressTask() {
+        guard let task = TaskModel.inProgress() else { return }
+        
         self.toggledTask = task
-//        self.currentTaskState = "playing"
         let interval:NSTimeInterval = Double(task.taskDuration)
         self.pausedTimeInterval = interval
         self.startDate = task.taskUpdatedAt!
-        onNewRunningTaskExists()
         self.startTimer()
-
     }
     
+    
+    // Mark: Timer Actions
     private func startTimer() {
-        guard let toggledTask = toggledTask else {
-            return
-        }
+        guard let toggledTask = toggledTask else { return }
 
         self.delegate?.toggleManager?(self, willStartTimer: toggledTime, forTask: toggledTask)
         
@@ -79,20 +83,22 @@ import RealmSwift
         guard let toggledTask = toggledTask else {
             return
         }
+
         self.delegate?.toggleManager?(self, willPauseTimer: toggledTime, forTask: toggledTask)
         self.timer.invalidate()
         self.delegate?.toggleManager?(self, didPauseTimer: toggledTime, forTask: toggledTask)
-
     }
+
     private func stopTimer() {
         guard let toggledTask = toggledTask else {
             return
         }
+
         self.delegate?.toggleManager?(self, willStopTimer: toggledTime, forTask: toggledTask)
         self.timer.invalidate()
         self.delegate?.toggleManager?(self, didStopTimer: toggledTime, forTask: toggledTask)
-  
     }
+    
     
     func togglePauseAction(onSuccess: (()->())?) {
         guard let toggledTask = toggledTask else { return }
