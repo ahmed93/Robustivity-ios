@@ -69,9 +69,7 @@ import RealmSwift
         guard let toggledTask = toggledTask else { return }
 
         self.delegate?.toggleManager?(self, willStartTimer: toggledTime, forTask: toggledTask)
-        
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
-
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
         self.delegate?.toggleManager?(self, didStartTimer: toggledTime, forTask: toggledTask)
     }
     
@@ -215,12 +213,8 @@ import RealmSwift
         let currentDate = NSDate();
         var timeInterval = currentDate.timeIntervalSinceDate(self.startDate);
         timeInterval += pausedTimeInterval;
-        
         self.currentTimeInterval = timeInterval;
         self.toggledTime = stringFromTimeInterval(timeInterval)
-        
-    
-        guard let _ = toggledTask else { return }
         self.delegate?.toggleManager?(self, didUpdateTimer: self.toggledTime) // Assuty
     }
     
