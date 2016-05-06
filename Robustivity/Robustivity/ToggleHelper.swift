@@ -10,9 +10,7 @@ import Foundation
 import ObjectMapper
 import RealmSwift
 
-let toggleNotificationKey = "com.robustivity.toggleNotificationKey"
-
-class ToggleHelper {
+@objc class ToggleHelper : NSObject {
     class var sharedInstance: ToggleHelper {
         struct Static {
             static var instance: ToggleHelper?
@@ -27,20 +25,29 @@ class ToggleHelper {
     }
     
     var todoProjectsName = [String]()
+
     var timer = NSTimer();
     var startDate = NSDate();
     var apiStartDate = NSDate();
     var currentTimeInterval = NSTimeInterval();
     var pausedTimeInterval = NSTimeInterval();
-    var currentTaskState = "intial"
-    var toggleTask:TaskModel = TaskModel()
+    
+    var toggledTask:TaskModel? {
+        didSet {
+            delegate?.toggleManager(self, didChangeToggledTask: toggledTask!, toggledTime: toggledTime)
+        }
+    }
+    
     let realm = try! Realm()
     var toggledTime = "00:00:00"
     
-    var timerDelegate: ToggleTimerDelegate? // Assuty
-    var toggleViewDelegate: ToggleTimerDelegate? //Aya
-    var taskInfoViewDelegate: ToggleTimerDelegate?
-    var feedViewDelegate: ToggleTimerDelegate?
+    // Assuty
+    var delegate: ToggleTimerDelegate? {
+        didSet {
+            guard let toggledTask = toggledTask else { return }
+            delegate?.toggleManager(self, hasTask: toggledTask, toggledTime: toggledTime)
+        }
+    }
 
     func fetchProjectsList() {
         API.get(APIRoutes.PROJECTS_INDEX, callback: { (success, response) in
@@ -59,89 +66,98 @@ class ToggleHelper {
     }
     
     func fetchTasks(onNewRunningTaskExists:()->()) {
-        API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
-            if(success){
-                
-                //map the json object to the model and save them
-                let tasks = Mapper<TaskModel>().mapArray(response)
-                for task in tasks! {
-                    task.updateTask()
-                    if ( (task.taskStatus == "in_progress") ) {
-                        self.timer.invalidate()
-                        self.toggleTask = task
-                        self.currentTaskState = "playing"
-                        let interval:NSTimeInterval = Double(task.taskDuration)
-                        self.pausedTimeInterval = interval
-                        self.startDate = task.taskUpdatedAt!
-                        onNewRunningTaskExists()
-                        self.startTimer()
-                    }
-                    
-                }
-                
-            }
-            
-        })
+        guard let task = TaskModel.inProgress() else {return}
+
+        self.timer.invalidate()
+        self.toggledTask = task
+//        self.currentTaskState = "playing"
+        let interval:NSTimeInterval = Double(task.taskDuration)
+        self.pausedTimeInterval = interval
+        self.startDate = task.taskUpdatedAt!
+        onNewRunningTaskExists()
+        self.startTimer()
+
+        
+
+        
+//        
+//        API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
+//            if(success){
+//                
+//                //map the json object to the model and save them
+//                let tasks = Mapper<TaskModel>().mapArray(response)
+//                for task in tasks! {
+//                    task.updateTask()
+//                    if ( (task.taskStatus == "in_progress") ) {
+//                        self.timer.invalidate()
+//                        self.toggledTask = task
+//                        self.currentTaskState = "playing"
+//                        let interval:NSTimeInterval = Double(task.taskDuration)
+//                        self.pausedTimeInterval = interval
+//                        self.startDate = task.taskUpdatedAt!
+//                        onNewRunningTaskExists()
+//                        self.startTimer()
+//                    }
+//                    
+//                }
+//                
+//            }
+//        })
     }
     
     func startTimer() {
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
-//        self.delegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime) // Aya
-        self.toggleViewDelegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime) // Aya
-        self.taskInfoViewDelegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime)
-        self.feedViewDelegate?.toggleTimer!(self.timer, didStartTimer: self.toggledTime)
-
-
-    }
-    
-    func togglePauseAction(onSuccess: ()->()) {
-        if(self.toggleTask.taskId == 0) {
+        guard let toggledTask = toggledTask else {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
             return
         }
+
+        self.delegate?.toggleManager?(self, willStartTimer: toggledTime, forTask: toggledTask)
+        
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+
+        self.delegate?.toggleManager?(self, didStartTimer: toggledTime, forTask: toggledTask)
+    }
+    
+    func togglePauseAction(onSuccess: (()->())?) {
+        guard let toggledTask = toggledTask else { return }
         
         let url = APIRoutes.TASK_TIMELOG_PAUSE
-        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(self.toggleTask.taskId))
+        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(toggledTask.taskId))
         
-        let requestParams : [String: AnyObject] = ["task": self.toggleTask] //these params is not needed
+        let requestParams : [String: AnyObject] = ["task": toggledTask] //these params is not needed
         
+        self.timer.invalidate(); //stop timer
         API.put(urlWithTaskId, parameters: requestParams, callback: { (success, response) in
             if(success) {
-                self.timer.invalidate(); //stop timer
-                self.currentTaskState = "paused"
                 self.pausedTimeInterval = self.currentTimeInterval
                 try! self.realm.write {
-                    self.toggleTask.taskStatus = "paused"
+                    toggledTask.taskStatus = "paused"
                 }
                 
-//                self.delegate?.toggleTimer!(self.timer, didPauseTimer: true)
-                self.toggleViewDelegate?.toggleTimer!(self.timer, didPauseTimer: true)
-                self.taskInfoViewDelegate?.toggleTimer!(self.timer, didPauseTimer: true)
-                self.feedViewDelegate?.toggleTimer!(self.timer, didPauseTimer: true)
+                self.delegate?.toggleManager?(self, didPauseTimer: self.toggledTime, forTask: toggledTask)
 
-
-
-                onSuccess()
-                
+                onSuccess?()
+            } else {
+                self.startTimer()
             }
-            
         })
         
     }
     
-    func toggleResumeAction(onSuccess:()->()) {
-        if(self.toggleTask.taskId == 0) {
-            return
-        }
-
-        self.timer.invalidate()
+    func toggleResumeAction(){
+        toggleResumeAction(toggledTask!) { }
+    }
+    
+    func toggleResumeAction(newTask: TaskModel, onSuccess:()->()) {
         let url = APIRoutes.TASK_TIMELOG_RESUME
-        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(self.toggleTask.taskId))
+        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(newTask.taskId))
         
-        let requestParams : [String: AnyObject] = ["task": self.toggleTask] //these params is not needed
+        let requestParams : [String: AnyObject] = ["task": newTask] //these params is not needed
         
+        self.timer.invalidate()
         API.post(urlWithTaskId, parameters: requestParams, callback: { (success, response) in
             if(success) {
-                
+                // ***probably wrong log time for old task
                 let playingTasks = self.realm.objects(TaskModel).filter("taskStatus = 'in_progress'")
                 for playingTask in playingTasks {
                     try! self.realm.write {
@@ -152,45 +168,43 @@ class ToggleHelper {
                 let task = Mapper<TaskModel>().map(response["task"])
 
                 task?.updateTask()
-                self.toggleTask = task!
-                self.startDate = self.toggleTask.taskUpdatedAt!
-                let interval:NSTimeInterval = Double(self.toggleTask.taskDuration)
+                self.toggledTask = task!
+                self.startDate = self.toggledTask!.taskUpdatedAt!
+                let interval:NSTimeInterval = Double(self.toggledTask!.taskDuration)
                 self.pausedTimeInterval = interval
-                self.currentTaskState = "playing"
                 
                 self.startTimer()
-                //Send Notification
+
                 onSuccess()
                 
+            } else {
+                self.startTimer()
             }
         })
         
     }
     
     func toggleStopAction(onSuccess: ()->()) {
-        if(self.toggleTask.taskId == 0) {
-            return
-        }
+        guard let toggledTask = toggledTask else { return }
+        
         let url = APIRoutes.TASK_TIMELOG_STOP
-        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(self.toggleTask.taskId))
+        let urlWithTaskId = (url as NSString).stringByReplacingOccurrencesOfString("{task_id}", withString: String(toggledTask.taskId))
         
-        let requestParams : [String: AnyObject] = ["task": self.toggleTask] //these params is not needed
-        
+        let requestParams : [String: AnyObject] = ["task": toggledTask] //these params is not needed
+
+        self.timer.invalidate();
         API.put(urlWithTaskId, parameters: requestParams, callback: { (success, response) in
             if(success) {
                 try! self.realm.write {
-                    self.toggleTask.taskStatus = "paused"
+                    toggledTask.taskStatus = "paused"
                 }
                 
-                //sendstopnotification
-                self.timer.invalidate();
-                self.currentTaskState = "stopped"
-                self.toggleViewDelegate?.toggleTimer!(self.timer, didStopTimer: true)
-
-                onSuccess()
+                self.delegate?.toggleManager?(self, didStopTimer: self.toggledTime, forTask: toggledTask)
                 
+                onSuccess()
+            } else {
+                self.startTimer()
             }
-            
         })
     }
     
@@ -201,7 +215,6 @@ class ToggleHelper {
     ** update counter accordingly
     */
     
-    
     @objc func updateToggledTime() {
         // Create date from the elapsed time
         let currentDate = NSDate();
@@ -211,7 +224,9 @@ class ToggleHelper {
         self.currentTimeInterval = timeInterval;
         self.toggledTime = stringFromTimeInterval(timeInterval)
         
-        self.timerDelegate?.toggleTimer!(timer, didUpdateTimerWithValue: self.toggledTime) // Assuty
+    
+        guard let _ = toggledTask else { return }
+        self.delegate?.toggleManager?(self, didUpdateTimer: self.toggledTime) // Assuty
     }
     
     func stringFromTimeInterval(interval: NSTimeInterval) -> String {
@@ -220,6 +235,14 @@ class ToggleHelper {
         let minutes = (interval / 60) % 60
         let hours = (interval / 3600)
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
+    func changeToggledTask(task: TaskModel) {
+        print(task)
+        print("------------------------")
+        toggledTask = task
+        startDate = NSDate()
+        startTimer()
     }
     
     

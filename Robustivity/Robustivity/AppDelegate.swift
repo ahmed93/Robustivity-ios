@@ -81,6 +81,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         preferences.synchronize()
         
+        ToggleHelper.sharedInstance.fetchTasks { }
+        
         return true
     }
     

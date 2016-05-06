@@ -166,8 +166,10 @@ class PlannerAdapter: BaseTableAdapter {
         // Fix cell swipe actions
         if PlannerTableViewCell.pauseButtonCellConfiguration().contains(item.taskStatus) {
             plannerCell.playButtonCellSetup()
+            plannerCell.clockImage.highlighted = true
         } else {
             plannerCell.pauseButtonCellSetup()
+            plannerCell.clockImage.highlighted = false
         }
 
         return plannerCell

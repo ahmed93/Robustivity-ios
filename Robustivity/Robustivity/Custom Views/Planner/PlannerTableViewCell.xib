@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="nZG-LU-gjW" id="DTC-YJ-cZG">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="113.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robustaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="tlT-aC-0Zz">
@@ -40,7 +40,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="uVO-54-iHa">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" highlightedImage="green_clock" translatesAutoresizingMaskIntoConstraints="NO" id="uVO-54-iHa">
                         <rect key="frame" x="245" y="18" width="15" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="uVO-54-iHa" secondAttribute="height" multiplier="29:33" id="6we-H9-WlN"/>
@@ -123,6 +123,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellSeparator" destination="raW-2h-dQ3" id="qRd-19-Yq3"/>
+                <outlet property="clockImage" destination="uVO-54-iHa" id="bf9-gT-Uam"/>
                 <outlet property="dueDate" destination="z00-Hg-Q5H" id="UIM-Rr-E7H"/>
                 <outlet property="dueDateBottomMarginLayoutConstraint" destination="NPt-h5-7qR" id="sSE-2y-gR5"/>
                 <outlet property="itemTitle" destination="ZKT-qO-Kmq" id="IrC-F7-Cm7"/>
@@ -134,6 +135,7 @@
     </objects>
     <resources>
         <image name="clock" width="34" height="39"/>
+        <image name="green_clock" width="42" height="48"/>
         <image name="robustaLogo" width="374" height="98"/>
     </resources>
 </document>

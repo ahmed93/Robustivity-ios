@@ -41,39 +41,44 @@ class FeedViewController: BaseViewController {
         let values = ["CheckInFeedTableViewCell","BroadcastFeedTableViewCell","UpdateFeedTableViewCell","ToggleFeedTableViewCell"]
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
-        self.toggleHelper.feedViewDelegate = self.adapter
+//        self.toggleHelper.feedViewDelegate = self.adapter
 
-        updateStickyToggleCell ()
+//        updateStickyToggleCell ()
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        self.toggleHelper.timerDelegate = self.adapter // Assuty
+//        self.toggleHelper.timerDelegate = self.adapter // Assuty
         
-        updateStickyToggleCell ()
+//        updateStickyToggleCell ()
         
     }
     
-    func updateStickyToggleCell () {
-        if (toggleHelper.toggleTask.taskId == 0) {
-            return
-            
-        }
-        let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
-        toggleCell.taskName.text = toggleHelper.toggleTask.taskName
-        toggleCell.projectName.text = toggleHelper.toggleTask.taskProjectName
-        toggleCell.toggleCellTask = toggleHelper.toggleTask
-        toggleCell.timeLabel.text = toggleHelper.toggledTime
-        toggleCell.playPauseButton.enabled = true
-        // Fix cell swipe actions
-        if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(toggleHelper.toggleTask.taskStatus) {
-            toggleCell.playButtonCellSetup()
-        } else {
-            toggleCell.pauseButtonCellSetup()
-        }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+//        self.toggleHelper.delegate = self.adapter
     }
+    
+//    func updateStickyToggleCell () {
+//        if (toggleHelper.toggleTask.taskId == 0) {
+//            return
+//            
+//        }
+//        let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+//        toggleCell.taskName.text = toggleHelper.toggleTask.taskName
+//        toggleCell.projectName.text = toggleHelper.toggleTask.taskProjectName
+//        toggleCell.toggleCellTask = toggleHelper.toggleTask
+//        toggleCell.timeLabel.text = toggleHelper.toggledTime
+//        toggleCell.playPauseButton.enabled = true
+//        // Fix cell swipe actions
+//        if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(toggleHelper.toggleTask.taskStatus) {
+//            toggleCell.playButtonCellSetup()
+//        } else {
+//            toggleCell.pauseButtonCellSetup()
+//        }
+//    }
     
     
 }

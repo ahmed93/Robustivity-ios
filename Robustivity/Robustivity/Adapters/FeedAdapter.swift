@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
-class FeedAdapter: BaseTableAdapter, ToggleTimerDelegate {
+class FeedAdapter: BaseTableAdapter {
     
     override init(viewController: UIViewController, tableView: UITableView, registerCellWithNib name: String, withIdentifier identifier: String) {
         super.init(viewController: viewController, tableView: tableView, registerCellWithNib: name, withIdentifier: identifier)
@@ -47,35 +47,60 @@ class FeedAdapter: BaseTableAdapter, ToggleTimerDelegate {
     }
     
     // Assuty
-    func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String) {
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
-        cell.timeLabel.text = didUpdateTimerWithValue
-    }
+//    func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String) {
+//        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+//        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
+//        cell.timeLabel.text = didUpdateTimerWithValue
+//    }
+//    
+//    func toggleTimer(timer: NSTimer, didStartTimer: String) {
+//        print("Did Start Timer")
+//        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+//        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
+//        let toggleHelper = ToggleHelper.sharedInstance
+//        cell.playButtonCellSetup()
+//        cell.toggleCellTask = toggleHelper.toggleTask
+//        cell.taskName.text = toggleHelper.toggleTask.taskName
+//        cell.projectName.text = toggleHelper.toggleTask.taskProjectName
+//        cell.timeLabel.text = toggleHelper.toggledTime
+//        cell.playPauseButton.enabled = true
+//        cell.timeLabel.text = didStartTimer
+//    }
+//    
+//    func toggleTimer(toggleManager: ToggleHelper, task: TaskModel, value: String) {
+//        print("Did Start Timer")
+//        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+//        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
+//        cell.playButtonCellSetup()
+//        cell.toggleCellTask = toggleManager.toggleTask
+//        cell.taskName.text = toggleManager.toggleTask.taskName
+//        cell.projectName.text = toggleManager.toggleTask.taskProjectName
+//        cell.timeLabel.text = toggleManager.toggledTime
+//        cell.playPauseButton.enabled = true
+//        cell.timeLabel.text = value
+//    }
     
-    func toggleTimer(timer: NSTimer, didStartTimer: String) {
-        print("Did Start Timer")
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
-        let toggleHelper = ToggleHelper.sharedInstance
-        cell.playButtonCellSetup()
-        cell.toggleCellTask = toggleHelper.toggleTask
-        cell.taskName.text = toggleHelper.toggleTask.taskName
-        cell.projectName.text = toggleHelper.toggleTask.taskProjectName
-        cell.timeLabel.text = toggleHelper.toggledTime
-        cell.playPauseButton.enabled = true
-        cell.timeLabel.text = didStartTimer
-
-    }
-    
-    func toggleTimer(timer: NSTimer, didPauseTimer: Bool) {
-        if(didPauseTimer) {
-            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-            let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
-            cell.pauseButtonCellSetup()
-
-        }
-    }
+//    func toggleTimer(timer: NSTimer, didPauseTimer: Bool) {
+//        if(didPauseTimer) {
+//            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+//            let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
+//            cell.pauseButtonCellSetup()
+//
+//        }
+//    }
+//    
+//    func toggleTimer(toggleManager: ToggleHelper, didChangeTask task: TaskModel, withInitValue: String) {
+//        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+//        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ToggleFeedTableViewCell
+//        let toggleHelper = ToggleHelper.sharedInstance
+//        cell.playButtonCellSetup()
+//        cell.toggleCellTask = toggleHelper.toggleTask
+//        cell.taskName.text = toggleHelper.toggleTask.taskName
+//        cell.projectName.text = toggleHelper.toggleTask.taskProjectName
+//        cell.timeLabel.text = toggleHelper.toggledTime
+//        cell.playPauseButton.enabled = true
+//        cell.timeLabel.text = withInitValue
+//    }
 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -97,8 +122,7 @@ class FeedAdapter: BaseTableAdapter, ToggleTimerDelegate {
      NotificationTableViewCell
      or a ToggleFeedCell in the header
      */
-    
-    
+        
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
         if(indexPath.section == 0){
             var toggleCell = tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell

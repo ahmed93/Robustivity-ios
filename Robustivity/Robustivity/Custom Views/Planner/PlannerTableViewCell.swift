@@ -22,6 +22,7 @@ class PlannerTableViewCell: SwipableTableViewCell {
     @IBOutlet weak var toggleTimer:RBLabel!
     @IBOutlet weak var dueDate:RBLabel!
     @IBOutlet weak var cellSeparator: UIView!
+    @IBOutlet weak var clockImage: UIImageView!
 
     @IBOutlet weak var dueDateBottomMarginLayoutConstraint: NSLayoutConstraint!
 //    
@@ -44,34 +45,27 @@ class PlannerTableViewCell: SwipableTableViewCell {
     
     override func playButtonAction() {
         print("play")
-        self.toggleHelper.toggleTask = self.plannerCellTask
-        self.toggleHelper.toggleResumeAction({ [unowned self]() in
-//            self.playButtonCellSetup()
+        
+        toggleHelper.toggleResumeAction(self.plannerCellTask, onSuccess: { [unowned self]() in
             self.tableView?.reloadData()
         })
         
     }
     override func pauseButtonAction() {
         print("pause")
-
-        if(self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
-            self.toggleHelper.togglePauseAction({ () in
-                self.pauseButtonCellSetup()
-            })
-
-        }
-        
+        toggleHelper.togglePauseAction({ () in
+            self.pauseButtonCellSetup()
+            self.clockImage.highlighted = false
+            self.toggleTimer.text = self.toggleHelper.toggledTime
+        })
     }
     override func stopButtonAction() {
         print("stop")
-        if(self.plannerCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
-            
-            self.toggleHelper.toggleStopAction({ () in
-                self.stopButtonCellSetup()
-            })
-
-        }
-        
+        toggleHelper.toggleStopAction({ () in
+            self.stopButtonCellSetup()
+            self.clockImage.highlighted = false
+            self.toggleTimer.text = self.toggleHelper.toggledTime
+        })
     }
     
     static func playButtonCellConfiguration() -> [String] {

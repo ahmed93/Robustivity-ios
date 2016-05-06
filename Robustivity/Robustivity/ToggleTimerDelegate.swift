@@ -9,9 +9,16 @@
 import Foundation
 
 @objc protocol ToggleTimerDelegate : AnyObject {
-    optional func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String)
-    optional func toggleTimer(timer: NSTimer, didStartTimer: String)
-    optional func toggleTimer(timer: NSTimer, didPauseTimer: Bool)
-    optional func toggleTimer(timer: NSTimer, didStopTimer: Bool)
+    func toggleManager(toggleManager: ToggleHelper, hasTask task: TaskModel, toggledTime: String)
+    func toggleManager(toggleManager: ToggleHelper, didChangeToggledTask task: TaskModel, toggledTime: String)
 
+    optional func toggleManager(toggleManager: ToggleHelper, didUpdateTimer value: String)
+    optional func toggleManager(toggleManager: ToggleHelper, willStartTimer toggledTime: String, forTask task: TaskModel)
+    optional func toggleManager(toggleManager: ToggleHelper, didStartTimer toggledTime: String, forTask task: TaskModel)
+    
+    optional func toggleManager(toggleManager: ToggleHelper, willPauseTimer toggledTime: String, forTask task: TaskModel)
+    optional func toggleManager(toggleManager: ToggleHelper, didPauseTimer toggledTime: String, forTask task: TaskModel)
+    
+    optional func toggleManager(toggleManager: ToggleHelper, willStopTimer toggledTime: String, forTask task: TaskModel)
+    optional func toggleManager(toggleManager: ToggleHelper, didStopTimer toggledTime: String, forTask task: TaskModel)
 }

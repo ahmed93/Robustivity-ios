@@ -34,33 +34,24 @@ class ToggleFeedTableViewCell: SwipableTableViewCell {
     
     override func playButtonAction() {
         print("play")
-        self.toggleHelper.toggleTask = self.toggleCellTask
-        self.toggleHelper.toggleResumeAction({ () in
+        self.toggleHelper.toggleResumeAction(toggleCellTask, onSuccess: { () in
             self.playButtonCellSetup()
         })
         
     }
+
     override func pauseButtonAction() {
         print("pause in toggle")
-        
-        if(self.toggleCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
-            self.toggleHelper.togglePauseAction({ () in
-                self.stopButtonCellSetup()
-            })
-            
-        }
-        
+        self.toggleHelper.togglePauseAction({ () in
+            self.stopButtonCellSetup()
+        })
     }
+
     override func stopButtonAction() {
         print("stop")
-        if(self.toggleCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
-            
-            self.toggleHelper.toggleStopAction({ () in
-                self.stopButtonCellSetup()
-            })
-            
-        }
-        
+        self.toggleHelper.toggleStopAction({ () in
+            self.stopButtonCellSetup()
+        })
     }
     
     static func playButtonCellConfiguration() -> [String] {

@@ -16,9 +16,9 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
     @IBOutlet weak var taskName: RBLabel!
     @IBOutlet weak var timer: RBLabel!
     
-    let toggleHelper = ToggleHelper.sharedInstance
-    
     var toggleCellTask:TaskModel = TaskModel() //Aya
+    
+    var toggleHelper = ToggleHelper.sharedInstance
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,33 +39,24 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
     
     override func playButtonAction() {
         print("play")
-        self.toggleHelper.toggleTask = self.toggleCellTask
-        self.toggleHelper.toggleResumeAction({ () in
+        
+        toggleHelper.toggleResumeAction(self.toggleCellTask, onSuccess: { () in
             self.playButtonCellSetup()
         })
         
     }
     override func pauseButtonAction() {
         print("pause")
-        
-        if(self.toggleCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
-            self.toggleHelper.togglePauseAction({ () in
-                self.pauseButtonCellSetup()
-            })
-            
-        }
-        
+
+        self.toggleHelper.togglePauseAction({ () in
+            self.pauseButtonCellSetup()
+        })
     }
     override func stopButtonAction() {
         print("stop")
-        if(self.toggleCellTask.taskId == self.toggleHelper.toggleTask.taskId) {
-            
-            self.toggleHelper.toggleStopAction({ () in
-                self.stopButtonCellSetup()
-            })
-            
-        }
-        
+        self.toggleHelper.toggleStopAction({ () in
+            self.stopButtonCellSetup()
+        })
     }
     
     static func playButtonCellConfiguration() -> [String] {

@@ -46,7 +46,7 @@ enum TaskStatus: String {
 
 // Ahmed Elassuty
 // Class Name should be changed to accomodate Tasks and Todos
-class TaskModel: Object, Mappable {
+@objc class TaskModel: Object, Mappable {
     // Should be global on the app
     static let dateFormatter = NSDateFormatter()
 
@@ -144,7 +144,13 @@ class TaskModel: Object, Mappable {
         let predicate = NSPredicate(format: "taskNature = %@ AND taskName CONTAINS[c] %@", type.rawValue, text)
         let result = realm.objects(self).filter(predicate).sorted("taskUpdatedAt", ascending: false)
         return result;
-        
+    }
+    
+    static func inProgress() -> TaskModel? {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "taskStatus = %@", TaskStatus.InProgress.rawValue)
+        let result = realm.objects(self).filter(predicate).first
+        return result
     }
 
 }
