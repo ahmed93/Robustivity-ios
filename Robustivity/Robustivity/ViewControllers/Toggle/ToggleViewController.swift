@@ -101,9 +101,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.toggleResumeBtn.alpha = 0;
         
         //Track input fields change
-//        self.todoTitleField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingDidEnd)
-//        
-//        self.todoProjectTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingDidEnd)
+        self.todoTitleField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingDidEnd)
+//
+        self.todoProjectTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingDidEnd)
         
         
         //Add tab gesture to dismiss keyboard
@@ -300,38 +300,38 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         })
     }
     
-//    func textFieldDidChange(textField: UITextField) {
-//        if((self.toggleHelper.currentTaskState == "playing" ||  self.toggleHelper.currentTaskState == "paused") && (self.todoTitleField.text != toggleHelper.toggledTask!.taskName || self.todoProjectTextField.text != toggleHelper.toggledTask!.taskProjectName)) {
-//            //Send update request
-//            
-//            var requestParams = [String : AnyObject]()
-//            
-//            requestParams["task[name]"] = self.todoTitleField.text
-//            
-//            if self.todoProjectTextField.text != "" {
-//                let projectId = self.projectPicker.selectedRowInComponent(0) + 1
-//                
-//                requestParams["task[project_id]"] = projectId
-//                
-//            }
-//            
-//            let url = APIRoutes.TASKS_INDEX
-//            let urlWithTaskId = url + String(toggleHelper.toggledTask!.taskId)
-//            
-//            API.put(urlWithTaskId, parameters: requestParams , callback: { (success, response) in
-//                if(success) {
-//                    
-//                    //Pending API modification to avoid empty response
-//                    let todo = Mapper<TaskModel>().map(response)
-//                    todo?.updateTask()
-//                    self.toggleHelper.toggledTask = todo!
-//                    
-//                }
-//                
-//            })
-//        }
-//        
-//    }
+    func textFieldDidChange(textField: UITextField) {
+        if( (self.toggleManager.toggledTask != nil)&&(self.todoTitleField.text != toggleManager.toggledTask!.taskName || self.todoProjectTextField.text != toggleManager.toggledTask!.taskProjectName)) {
+            //Send update request
+            
+            var requestParams = [String : AnyObject]()
+            
+            requestParams["task[name]"] = self.todoTitleField.text
+            
+            if self.todoProjectTextField.text != "" {
+                let projectId = self.projectPicker.selectedRowInComponent(0) + 1
+                
+                requestParams["task[project_id]"] = projectId
+                
+            }
+            
+            let url = APIRoutes.TASKS_INDEX
+            let urlWithTaskId = url + String(toggleManager.toggledTask!.taskId)
+            
+            API.put(urlWithTaskId, parameters: requestParams , callback: { (success, response) in
+                if(success) {
+                    
+                    //Pending API modification to avoid empty response
+                    let todo = Mapper<TaskModel>().map(response)
+                    todo?.updateTask()
+                    self.toggleManager.toggledTask = todo!
+                    
+                }
+                
+            })
+        }
+        
+    }
     
     //Gesture handler
     func dismissKeyboard() {
