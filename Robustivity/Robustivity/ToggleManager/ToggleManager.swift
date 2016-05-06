@@ -23,14 +23,14 @@ import RealmSwift
         
         return Static.instance!
     }
-    
-//    var todoProjectsName = [String]()
 
     var timer = NSTimer();
     var startDate = NSDate();
     var apiStartDate = NSDate();
     var currentTimeInterval = NSTimeInterval();
     var pausedTimeInterval = NSTimeInterval();
+    let realm = try! Realm()
+    var toggledTime = "00:00:00"
     
     var toggledTask:TaskModel? {
         willSet{
@@ -45,10 +45,6 @@ import RealmSwift
         }
     }
     
-    let realm = try! Realm()
-    var toggledTime = "00:00:00"
-    
-    // Assuty
     var delegate: ToggleManagerDelegate? {
         didSet {
             guard let toggledTask = toggledTask else { return }
@@ -166,6 +162,7 @@ import RealmSwift
                 }
 
                 self.stopTimer()
+                self.toggledTask = nil
                 onSuccess?()
             } else {
                 self.startTimer()
