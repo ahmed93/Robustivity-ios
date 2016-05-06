@@ -68,7 +68,7 @@ import RealmSwift
     }
     
     
-    // Mark: Timer Actions
+    // MARK: Timer Actions
     private func startTimer() {
         guard let toggledTask = toggledTask else { return }
 
@@ -99,7 +99,7 @@ import RealmSwift
         self.delegate?.toggleManager?(self, didStopTimer: toggledTime, forTask: toggledTask)
     }
     
-    
+    // MARK: Task Actions
     func togglePauseAction(onSuccess: (()->())?) {
         guard let toggledTask = toggledTask else { return }
         
