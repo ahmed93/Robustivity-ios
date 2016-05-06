@@ -355,7 +355,7 @@ extension ToggleViewController : ToggleManagerDelegate {
         case TaskStatus.InProgress.rawValue:
             self.toggleResumeViewSetup()
         case TaskStatus.Paused.rawValue:
-            self.toggleResumeViewSetup()
+//            self.toggleResumeViewSetup()
             self.togglePauseViewSetup()
         case TaskStatus.Closed.rawValue:
             self.toggleStopViewSetup()
