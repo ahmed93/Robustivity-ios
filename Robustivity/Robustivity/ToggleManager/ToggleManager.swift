@@ -105,9 +105,9 @@ import RealmSwift
 //        })
     }
     
-    func startTimer() {
+    private func startTimer() {
         guard let toggledTask = toggledTask else {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
+//            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
             return
         }
 
@@ -116,6 +116,25 @@ import RealmSwift
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
 
         self.delegate?.toggleManager?(self, didStartTimer: toggledTime, forTask: toggledTask)
+    }
+    
+    private func pauseTimer() {
+        guard let toggledTask = toggledTask else {
+            return
+        }
+        self.delegate?.toggleManager?(self, willPauseTimer: toggledTime, forTask: toggledTask)
+        self.timer.invalidate()
+        self.delegate?.toggleManager?(self, didPauseTimer: toggledTime, forTask: toggledTask)
+
+    }
+    private func stopTimer() {
+        guard let toggledTask = toggledTask else {
+            return
+        }
+        self.delegate?.toggleManager?(self, willStopTimer: toggledTime, forTask: toggledTask)
+        self.timer.invalidate()
+        self.delegate?.toggleManager?(self, didStopTimer: toggledTime, forTask: toggledTask)
+  
     }
     
     func togglePauseAction(onSuccess: (()->())?) {
@@ -134,7 +153,8 @@ import RealmSwift
                     toggledTask.taskStatus = "paused"
                 }
                 
-                self.delegate?.toggleManager?(self, didPauseTimer: self.toggledTime, forTask: toggledTask)
+//                self.delegate?.toggleManager?(self, didPauseTimer: self.toggledTime, forTask: toggledTask)
+                self.pauseTimer()
 
                 onSuccess?()
             } else {
@@ -199,8 +219,8 @@ import RealmSwift
                     toggledTask.taskStatus = "paused"
                 }
                 
-                self.delegate?.toggleManager?(self, didStopTimer: self.toggledTime, forTask: toggledTask)
-                
+//                self.delegate?.toggleManager?(self, didStopTimer: self.toggledTime, forTask: toggledTask)
+                self.stopTimer()
                 onSuccess()
             } else {
                 self.startTimer()
