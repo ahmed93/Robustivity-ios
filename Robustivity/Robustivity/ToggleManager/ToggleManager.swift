@@ -100,6 +100,29 @@ import RealmSwift
     }
     
     // MARK: Task Actions
+    func resumeCurrentTask(onSuccess: (() -> ())? = nil, onFailure: (() -> ())? = nil) {
+        
+    }
+    
+    func pauseCurrentTask(onSuccess: (() -> ())? = nil, onFailure: (() -> ())? = nil) {
+        
+    }
+    
+    func stopCurrentTask(onSuccess: (() -> ())? = nil, onFailure: (() -> ())? = nil) {
+        
+    }
+
+    func playNewTask(task: TaskModel, onSuccess: (() -> ())? = nil, onFailure: (() -> ())? = nil) {
+        if (task.taskId == toggledTask?.taskId) {
+            resumeCurrentTask(onSuccess, onFailure: onFailure)
+            return
+        }
+
+        // Handle new task logic
+    }
+    
+    
+    // old
     func togglePauseAction(onSuccess: (()->())?) {
         guard let toggledTask = toggledTask else { return }
         
