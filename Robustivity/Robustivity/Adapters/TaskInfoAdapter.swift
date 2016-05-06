@@ -60,19 +60,19 @@ class TaskInfoAdapter: BaseTableAdapter {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! TaskInfoToggledTableViewCell
         let toggleHelper = ToggleManager.sharedInstance
         //update cell of running task only
-        if(cell.toggleCellTask.taskId == toggleHelper.toggledTask!.taskId) {
-            cell.timer.text = didUpdateTimerWithValue
-
-        }
+//        if(cell.toggleCellTask.taskId == toggleHelper.toggledTask!.taskId) {
+//            cell.timer.text = didUpdateTimerWithValue
+//
+//        }
     }
     
     func toggleTimer(timer: NSTimer, didStartTimer: String) {
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! TaskInfoToggledTableViewCell
         let toggleHelper = ToggleManager.sharedInstance
-        if(cell.toggleCellTask.taskId == toggleHelper.toggledTask!.taskId) {
-            cell.playButtonCellSetup()
-        }
+//        if(cell.toggleCellTask.taskId == toggleHelper.toggledTask!.taskId) {
+//            cell.playButtonCellSetup()
+//        }
         
     }
 
@@ -81,10 +81,10 @@ class TaskInfoAdapter: BaseTableAdapter {
             let indexPath = NSIndexPath(forRow: 0, inSection: 0)
             let cell = tableView.cellForRowAtIndexPath(indexPath) as! TaskInfoToggledTableViewCell
             let toggleHelper = ToggleManager.sharedInstance
-            if(cell.toggleCellTask.taskId == toggleHelper.toggledTask!.taskId) {
-                cell.pauseButtonCellSetup()
-                
-            }
+//            if(cell.toggleCellTask.taskId == toggleHelper.toggledTask!.taskId) {
+//                cell.pauseButtonCellSetup()
+//                
+//            }
             
         }
     }

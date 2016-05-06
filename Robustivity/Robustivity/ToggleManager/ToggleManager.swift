@@ -31,7 +31,7 @@ import RealmSwift
     let realm = try! Realm()
     var toggledTime = "00:00:00"
     
-    var toggledTask:TaskModel? {
+    private var toggledTask:TaskModel? {
         willSet{
             guard let toggledTask = toggledTask else { return }
             guard let newValue = newValue else { return }

@@ -33,7 +33,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     let projectPicker = UIPickerView(); //Add picker view to be used in project names
     
     var todoProjectsName = [String]()
-
+    var toggleTask:TaskModel?
     
     let toggleManager = ToggleManager.sharedInstance
     
@@ -209,12 +209,12 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     }
     
     func togglePauseViewSetup() {
-        self.todoTitleField.text = toggleManager.toggledTask!.taskName
-        self.todoProjectTextField.text = toggleManager.toggledTask!.taskProjectName
-        if(toggleManager.toggledTask!.taskProjectName == "") {
+        self.todoTitleField.text = self.toggleTask!.taskName
+        self.todoProjectTextField.text = self.toggleTask!.taskProjectName
+        if(self.toggleTask!.taskProjectName == "") {
             self.todoProjectTextField.text = "miscellaneous"
         }
-        self.projectPicker.selectRow(toggleManager.toggledTask!.taskProjectId - 1, inComponent: 0, animated: false)
+        self.projectPicker.selectRow(self.toggleTask!.taskProjectId - 1, inComponent: 0, animated: false)
 
         self.toggledTime.textColor = Theme.blackColor();
         
@@ -278,13 +278,12 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     /*Change view setup to resume setup*/
     func toggleResumeViewSetup() {
         
-        self.todoTitleField.text = toggleManager.toggledTask!.taskName
-        print(toggleManager.toggledTask!.taskProjectName)
-        self.todoProjectTextField.text = toggleManager.toggledTask!.taskProjectName
-        if(toggleManager.toggledTask!.taskProjectName == "") {
+        self.todoTitleField.text = self.toggleTask!.taskName
+        self.todoProjectTextField.text = self.toggleTask!.taskProjectName
+        if(self.toggleTask!.taskProjectName == "") {
             self.todoProjectTextField.text = "miscellaneous"
         }
-        self.projectPicker.selectRow(toggleManager.toggledTask!.taskProjectId - 1, inComponent: 0, animated: false)
+        self.projectPicker.selectRow(self.toggleTask!.taskProjectId - 1, inComponent: 0, animated: false)
         self.toggledTime.textColor = Theme.greenColor();
         self.toggleResumeBtn.enabled = true
         UIView.animateWithDuration(0.5, animations: {
@@ -301,7 +300,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     }
     
     func textFieldDidChange(textField: UITextField) {
-        if( (self.toggleManager.toggledTask != nil)&&(self.todoTitleField.text != toggleManager.toggledTask!.taskName || self.todoProjectTextField.text != toggleManager.toggledTask!.taskProjectName)) {
+        if( (self.toggleTask != nil)&&(self.todoTitleField.text != self.toggleTask!.taskName || self.todoProjectTextField.text != self.toggleTask!.taskProjectName)) {
             //Send update request
             
             var requestParams = [String : AnyObject]()
@@ -316,7 +315,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
             }
             
             let url = APIRoutes.TASKS_INDEX
-            let urlWithTaskId = url + String(toggleManager.toggledTask!.taskId)
+            let urlWithTaskId = url + String(self.toggleTask!.taskId)
             
             API.put(urlWithTaskId, parameters: requestParams , callback: { (success, response) in
                 if(success) {
@@ -324,7 +323,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
                     //Pending API modification to avoid empty response
                     let todo = Mapper<TaskModel>().map(response)
                     todo?.updateTask()
-                    self.toggleManager.toggledTask = todo!
+                    self.toggleTask = todo!
                     
                 }
                 
@@ -378,6 +377,8 @@ extension ToggleViewController : ToggleManagerDelegate {
         default:
             print("Got Status : \(task.taskStatus)")
         }
+        
+        
     }
     
     func toggleManager(toggleManager: ToggleManager, didUpdateTimer value: String) {
@@ -385,21 +386,25 @@ extension ToggleViewController : ToggleManagerDelegate {
     }
     
     func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel, toggledTime: String) {
+        self.toggleTask = task
         prepareViewForTask(task)
     }
     
     func toggleManager(toggleManager: ToggleManager, didChangeToggledTask task: TaskModel, toggledTime: String) {
+        self.toggleTask = task
         prepareViewForTask(task)
     }
     
     func toggleManager(toggleManager: ToggleManager, didPauseTimer time: String, forTask task: TaskModel) {
+        self.toggleTask = task
         self.togglePauseViewSetup()
         toggledTime.text = time
     }
     
     func toggleManager(toggleManager: ToggleManager, didStopTimer time: String, forTask task: TaskModel) {
+        self.toggleTask = task
         self.toggleStopViewSetup()
-        toggledTime.text = time
+        toggledTime.text = "00:00:00"
     }
     
 }
