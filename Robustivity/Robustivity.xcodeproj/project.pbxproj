@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0110834D1CAC20CC00F616DD /* ProjectUpdateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */; };
-		0147DB2B1CD701FB0039B5E5 /* ToggleManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0147DB2A1CD701FB0039B5E5 /* ToggleManagerDelegate.swift */; };
 		0148F2F81CC69AE400CDAC9B /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */; };
 		014A868B1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A86891CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift */; };
 		014A868C1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014A868A1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib */; };
@@ -19,6 +18,8 @@
 		019B9A901CCF844C0098A344 /* ProjectUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019B9A8F1CCF844C0098A344 /* ProjectUpdate.swift */; };
 		01BD9EB01CC6842D00BC4694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */; };
 		01C72A431CD0383A002C3513 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C72A421CD0383A002C3513 /* TaskModel.swift */; };
+		01CC2E751CDD0E9F0031BACA /* ToggleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CC2E731CDD0E9F0031BACA /* ToggleManager.swift */; };
+		01CC2E761CDD0E9F0031BACA /* ToggleManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CC2E741CDD0E9F0031BACA /* ToggleManagerDelegate.swift */; };
 		04179F381CAD4F5E00A3513A /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */; };
 		185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */; };
 		18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */; };
@@ -162,7 +163,6 @@
 		34E7428B1CD1374B00576F88 /* AttendanceLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E742891CD1374B00576F88 /* AttendanceLogTableViewCell.swift */; };
 		34E7428C1CD1374B00576F88 /* AttendanceLogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E7428A1CD1374B00576F88 /* AttendanceLogTableViewCell.xib */; };
 		37AA68031CCD3354002F509E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA68021CCD3354002F509E /* Project.swift */; };
-		37AA680E1CD01198002F509E /* ToggleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA680D1CD01198002F509E /* ToggleManager.swift */; };
 		37AA68141CD4A677002F509E /* CheckInFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA68121CD4A677002F509E /* CheckInFeedTableViewCell.swift */; };
 		37AA68151CD4A677002F509E /* CheckInFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AA68131CD4A677002F509E /* CheckInFeedTableViewCell.xib */; };
 		411A8B1B1CD4EEA3006048DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411A8B1A1CD4EEA3006048DE /* User.swift */; };
@@ -213,7 +213,6 @@
 
 /* Begin PBXFileReference section */
 		0110834C1CAC20CC00F616DD /* ProjectUpdateAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateAdapter.swift; sourceTree = "<group>"; };
-		0147DB2A1CD701FB0039B5E5 /* ToggleManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleManagerDelegate.swift; sourceTree = "<group>"; };
 		0148F2F71CC69AE400CDAC9B /* APIRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		014A86891CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerSeeAllTableViewCell.swift; sourceTree = "<group>"; };
 		014A868A1CD2E0C50050BB09 /* PlannerSeeAllTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannerSeeAllTableViewCell.xib; sourceTree = "<group>"; };
@@ -224,6 +223,8 @@
 		019B9A8F1CCF844C0098A344 /* ProjectUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdate.swift; sourceTree = "<group>"; };
 		01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01C72A421CD0383A002C3513 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		01CC2E731CDD0E9F0031BACA /* ToggleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleManager.swift; sourceTree = "<group>"; };
+		01CC2E741CDD0E9F0031BACA /* ToggleManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleManagerDelegate.swift; sourceTree = "<group>"; };
 		04179F371CAD4F5E00A3513A /* ProfileAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
 		185FE3111CAC608500B3725E /* ProjectsListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsListAdapter.swift; sourceTree = "<group>"; };
 		18CE2A831CAC921000FE4A46 /* CreateTaskAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAdapter.swift; sourceTree = "<group>"; };
@@ -380,7 +381,6 @@
 		34E742891CD1374B00576F88 /* AttendanceLogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceLogTableViewCell.swift; sourceTree = "<group>"; };
 		34E7428A1CD1374B00576F88 /* AttendanceLogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendanceLogTableViewCell.xib; sourceTree = "<group>"; };
 		37AA68021CCD3354002F509E /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		37AA680D1CD01198002F509E /* ToggleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleManager.swift; sourceTree = "<group>"; };
 		37AA68121CD4A677002F509E /* CheckInFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInFeedTableViewCell.swift; sourceTree = "<group>"; };
 		37AA68131CD4A677002F509E /* CheckInFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInFeedTableViewCell.xib; sourceTree = "<group>"; };
 		3969DA73B5111ACE7DFB1ACA /* Pods_Robustivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robustivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -936,13 +936,13 @@
 			path = AttendanceLog;
 			sourceTree = "<group>";
 		};
-		37AA680C1CD01160002F509E /* Helpers */ = {
+		37AA680C1CD01160002F509E /* ToggleManager */ = {
 			isa = PBXGroup;
 			children = (
-				37AA680D1CD01198002F509E /* ToggleManager.swift */,
-				0147DB2A1CD701FB0039B5E5 /* ToggleManagerDelegate.swift */,
+				01CC2E731CDD0E9F0031BACA /* ToggleManager.swift */,
+				01CC2E741CDD0E9F0031BACA /* ToggleManagerDelegate.swift */,
 			);
-			name = Helpers;
+			path = ToggleManager;
 			sourceTree = "<group>";
 		};
 		37AA680F1CD4A5FB002F509E /* CheckInTableViewCell */ = {
@@ -1087,7 +1087,7 @@
 		A7BCE7AC1C7D8244007870CB /* Robustivity */ = {
 			isa = PBXGroup;
 			children = (
-				37AA680C1CD01160002F509E /* Helpers */,
+				37AA680C1CD01160002F509E /* ToggleManager */,
 				01BD9EAF1CC6842D00BC4694 /* GoogleService-Info.plist */,
 				A717E5A51CA149DF00F237DD /* Robustivity-Bridging-Header.h */,
 				A717E58B1CA1485000F237DD /* API */,
@@ -1404,7 +1404,6 @@
 				1B7F8DC21CB07C95007C8005 /* UIButton+WebCache.m in Sources */,
 				1B7F8EA21CB09507007C8005 /* ProjectInfoViewController.swift in Sources */,
 				A717E59D1CA1485000F237DD /* APIConnector_Module_1.swift in Sources */,
-				37AA680E1CD01198002F509E /* ToggleManager.swift in Sources */,
 				1B7F8DBA1CB07C95007C8005 /* NSData+ImageContentType.m in Sources */,
 				18CE2A841CAC921000FE4A46 /* CreateTaskAdapter.swift in Sources */,
 				1B7F8E961CB09507007C8005 /* SendExcuseViewController.swift in Sources */,
@@ -1422,6 +1421,7 @@
 				F4E645841CA95BAC00B579C2 /* DirectoryAdapter.swift in Sources */,
 				9426F5251CBABE71006BEFA1 /* TaskInfoToggledTableViewCell.swift in Sources */,
 				37AA68031CCD3354002F509E /* Project.swift in Sources */,
+				01CC2E751CDD0E9F0031BACA /* ToggleManager.swift in Sources */,
 				1B7F8E371CB094E6007C8005 /* ProjectUpdateTableViewCell.swift in Sources */,
 				A7C480261CA4030900F4FDB7 /* RBLabel.swift in Sources */,
 				1B7F8E2A1CB094E6007C8005 /* MoreTableViewCell.swift in Sources */,
@@ -1445,7 +1445,6 @@
 				1B7F8E261CB094E6007C8005 /* DirectoryCell.swift in Sources */,
 				BDB706571CCFD15600ED7D1E /* TaskCommentModel.swift in Sources */,
 				A717E5A91CA14D4800F237DD /* BaseCollectionAdapter.swift in Sources */,
-				0147DB2B1CD701FB0039B5E5 /* ToggleManagerDelegate.swift in Sources */,
 				1B7F8EAC1CB09507007C8005 /* NotificationsViewController.swift in Sources */,
 				185FE3121CAC608500B3725E /* ProjectsListAdapter.swift in Sources */,
 				A717E59F1CA1485000F237DD /* APIConnector_Module_3.swift in Sources */,
@@ -1490,6 +1489,7 @@
 				1B7F8DE41CB0948D007C8005 /* RoundBorderedView.swift in Sources */,
 				1B7F8DC71CB07C95007C8005 /* UIImageView+WebCache.m in Sources */,
 				41BA18A41CCF9FD900B0A062 /* NotificationModel.swift in Sources */,
+				01CC2E761CDD0E9F0031BACA /* ToggleManagerDelegate.swift in Sources */,
 				1B6BA96B1CD0FB0A00E96835 /* ProfilePicture.swift in Sources */,
 				75006FA11CD02E1D007D0846 /* Excuse.swift in Sources */,
 				1B7F8EB21CB09507007C8005 /* CreateTaskViewController.swift in Sources */,
