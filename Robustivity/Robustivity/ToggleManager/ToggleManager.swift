@@ -26,7 +26,6 @@ import RealmSwift
 
     var timer = NSTimer();
     var startDate = NSDate();
-    var apiStartDate = NSDate();
     var currentTimeInterval = NSTimeInterval();
     var pausedTimeInterval = NSTimeInterval();
     let realm = try! Realm()
