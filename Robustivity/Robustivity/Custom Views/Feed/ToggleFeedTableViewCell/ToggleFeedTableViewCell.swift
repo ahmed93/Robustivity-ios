@@ -9,47 +9,46 @@
 import UIKit
 
 class ToggleFeedTableViewCell: SwipableTableViewCell {
-
+    
     @IBOutlet weak var timeLabel: RBLabel!
     @IBOutlet weak var taskName: RBLabel!
     
     @IBOutlet weak var projectName: UILabel!
     
     var toggleCellTask:TaskModel = TaskModel() //Aya
-
+    
     
     let toggleManager = ToggleManager.sharedInstance
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
     
     override func playButtonAction() {
         print("play")
-        self.toggleManager.toggleResumeAction(toggleCellTask, onSuccess: { () in
+        toggleManager.resumeCurrentTask({ () in
             self.playButtonCellSetup()
         })
-        
     }
-
+    
     override func pauseButtonAction() {
-        print("pause in toggle")
-        self.toggleManager.togglePauseAction({ () in
+        print("pause")
+        toggleManager.pauseCurrentTask({ () in
             self.stopButtonCellSetup()
         })
     }
-
+    
     override func stopButtonAction() {
-        print("stop")
-        self.toggleManager.toggleStopAction({ () in
+        print("Stop")
+        toggleManager.stopCurrentTask({ () in
             self.stopButtonCellSetup()
         })
     }

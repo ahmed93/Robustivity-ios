@@ -9,9 +9,9 @@
 import UIKit
 
 class TaskInfoToggledTableViewCell: SwipableTableViewCell {
-
+    
     @IBOutlet weak var taskDate: RBLabel!
-   
+    
     @IBOutlet weak var timePhoto: UIImageView!
     @IBOutlet weak var taskName: RBLabel!
     @IBOutlet weak var timer: RBLabel!
@@ -29,32 +29,32 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
         taskDate.textColor = Theme.redColor()
         taskName.labelType = 3020
         
-}
-
+    }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
     override func playButtonAction() {
         print("play")
         
-        toggleManager.toggleResumeAction(self.toggleCellTask, onSuccess: { () in
+        toggleManager.playNewTask(self.toggleCellTask, onSuccess: { () in
             self.playButtonCellSetup()
         })
-        
     }
+    
     override func pauseButtonAction() {
         print("pause")
-
-        self.toggleManager.togglePauseAction({ () in
+        
+        toggleManager.pauseCurrentTask({ () in
             self.pauseButtonCellSetup()
         })
     }
     override func stopButtonAction() {
         print("stop")
-        self.toggleManager.toggleStopAction({ () in
+        toggleManager.stopCurrentTask({ () in
             self.stopButtonCellSetup()
         })
     }
@@ -66,5 +66,5 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
     static func pauseButtonCellConfiguration() -> [String] {
         return [TaskStatus.InProgress.rawValue]
     }
- 
+    
 }

@@ -30,7 +30,7 @@ class API: NSObject {
         
     }
     
-    static func post(url: String, parameters: [String: AnyObject], callback: (success: Bool, response: AnyObject) -> ()) {
+    static func post(url: String, parameters: [String: AnyObject]? = nil, callback: (success: Bool, response: AnyObject) -> ()) {
         
         baseRequest(.POST, url: url, parameters: parameters, callback: callback)
         
@@ -42,7 +42,7 @@ class API: NSObject {
         
     }
     
-    static func put(url: String, parameters: [String: AnyObject], callback: (success: Bool, response: AnyObject) -> ()) {
+    static func put(url: String, parameters: [String: AnyObject]? = nil, callback: (success: Bool, response: AnyObject) -> ()) {
         
         baseRequest(.PUT, url: url, parameters: parameters, callback: callback)
         

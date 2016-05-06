@@ -205,7 +205,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func togglePause(sender: AnyObject) {
-        toggleManager.togglePauseAction(nil)
+        toggleManager.pauseCurrentTask()
     }
     
     func togglePauseViewSetup() {
@@ -229,11 +229,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func toggleStop(sender: AnyObject) {
-        
-        self.toggleManager.toggleStopAction({ () in
-            self.toggleStopViewSetup()
-        })
-        
+        toggleManager.stopCurrentTask()
     }
     
     //Front end setup for the action
@@ -259,9 +255,8 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     */
     
     @IBAction func toggleResume(sender: AnyObject) {
-        
         self.toggleResumeBtn.enabled = false
-        self.toggleManager.toggleResumeAction()
+        toggleManager.resumeCurrentTask()
     }
     
     /*Change view setup to resume setup*/

@@ -123,9 +123,9 @@ enum TaskStatus: String {
             realm.add(tasks, update: true)
         }
     }
+
     func updateTask() {
         let realm = try! Realm()
-        
         try! realm.write {
             realm.add(self, update: true)
         }
