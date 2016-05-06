@@ -209,9 +209,25 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     }
     
     func togglePauseViewSetup() {
+        self.todoTitleField.text = toggleManager.toggledTask!.taskName
+        self.todoProjectTextField.text = toggleManager.toggledTask!.taskProjectName
+        if(toggleManager.toggledTask!.taskProjectName == "") {
+            self.todoProjectTextField.text = "miscellaneous"
+        }
+        self.projectPicker.selectRow(toggleManager.toggledTask!.taskProjectId - 1, inComponent: 0, animated: false)
+
         self.toggledTime.textColor = Theme.blackColor();
         
         UIView.animateWithDuration(0.5, animations: {
+            
+            self.togglePlayBtn.alpha = 0;
+            
+            self.toggleStopBtn.alpha = 1;
+            
+            self.toggleStopBtnCenterX.constant = 75;
+            
+            self.togglePauseBtnCenterX.constant = -75;
+            
             self.togglePauseBtn.alpha = 0; //hide button
             self.toggleResumeBtn.alpha = 1; //show button
             self.toggleResumeBtnCenterX.constant = -75;
@@ -355,7 +371,7 @@ extension ToggleViewController : ToggleManagerDelegate {
         case TaskStatus.InProgress.rawValue:
             self.toggleResumeViewSetup()
         case TaskStatus.Paused.rawValue:
-            self.toggleResumeViewSetup()
+//            self.toggleResumeViewSetup()
             self.togglePauseViewSetup()
         case TaskStatus.Closed.rawValue:
             self.toggleStopViewSetup()
