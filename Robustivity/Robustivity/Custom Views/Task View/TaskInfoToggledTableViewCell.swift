@@ -18,7 +18,7 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
     
     var toggleCellTask:TaskModel = TaskModel() //Aya
     
-    var toggleHelper = ToggleHelper.sharedInstance
+    var toggleManager = ToggleManager.sharedInstance
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +40,7 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
     override func playButtonAction() {
         print("play")
         
-        toggleHelper.toggleResumeAction(self.toggleCellTask, onSuccess: { () in
+        toggleManager.toggleResumeAction(self.toggleCellTask, onSuccess: { () in
             self.playButtonCellSetup()
         })
         
@@ -48,13 +48,13 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
     override func pauseButtonAction() {
         print("pause")
 
-        self.toggleHelper.togglePauseAction({ () in
+        self.toggleManager.togglePauseAction({ () in
             self.pauseButtonCellSetup()
         })
     }
     override func stopButtonAction() {
         print("stop")
-        self.toggleHelper.toggleStopAction({ () in
+        self.toggleManager.toggleStopAction({ () in
             self.stopButtonCellSetup()
         })
     }

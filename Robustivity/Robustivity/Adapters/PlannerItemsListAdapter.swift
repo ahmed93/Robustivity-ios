@@ -99,7 +99,7 @@ class PlannerItemsListAdapter  : BaseTableAdapter {
         let item = tasks[indexPath.row]
         plannerCell.itemTitle.text = item.taskName
         plannerCell.projectName.text = item.taskProjectName
-        plannerCell.toggleTimer.text = plannerCell.toggleHelper.stringFromTimeInterval(Double(item.taskDuration))
+        plannerCell.toggleTimer.text = plannerCell.toggleManager.stringFromTimeInterval(Double(item.taskDuration))
         
         plannerCell.plannerCellTask = item
         

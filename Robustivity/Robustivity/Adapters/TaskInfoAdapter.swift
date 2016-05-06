@@ -58,7 +58,7 @@ class TaskInfoAdapter: BaseTableAdapter {
     func toggleTimer(timer: NSTimer, didUpdateTimerWithValue: String) {
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! TaskInfoToggledTableViewCell
-        let toggleHelper = ToggleHelper.sharedInstance
+        let toggleHelper = ToggleManager.sharedInstance
         //update cell of running task only
         if(cell.toggleCellTask.taskId == toggleHelper.toggledTask!.taskId) {
             cell.timer.text = didUpdateTimerWithValue
@@ -69,7 +69,7 @@ class TaskInfoAdapter: BaseTableAdapter {
     func toggleTimer(timer: NSTimer, didStartTimer: String) {
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! TaskInfoToggledTableViewCell
-        let toggleHelper = ToggleHelper.sharedInstance
+        let toggleHelper = ToggleManager.sharedInstance
         if(cell.toggleCellTask.taskId == toggleHelper.toggledTask!.taskId) {
             cell.playButtonCellSetup()
         }
@@ -80,7 +80,7 @@ class TaskInfoAdapter: BaseTableAdapter {
         if(didPauseTimer) {
             let indexPath = NSIndexPath(forRow: 0, inSection: 0)
             let cell = tableView.cellForRowAtIndexPath(indexPath) as! TaskInfoToggledTableViewCell
-            let toggleHelper = ToggleHelper.sharedInstance
+            let toggleHelper = ToggleManager.sharedInstance
             if(cell.toggleCellTask.taskId == toggleHelper.toggledTask!.taskId) {
                 cell.pauseButtonCellSetup()
                 
@@ -123,7 +123,7 @@ class TaskInfoAdapter: BaseTableAdapter {
                 x = ""
             }
 
-            cell.timer.text = ToggleHelper.sharedInstance.stringFromTimeInterval(Double(currentTask.taskDuration))
+            cell.timer.text = ToggleManager.sharedInstance.stringFromTimeInterval(Double(currentTask.taskDuration))
             cell.taskName.text = currentTask.taskName
             cell.taskDate.text = x
             cell.toggleCellTask = currentTask

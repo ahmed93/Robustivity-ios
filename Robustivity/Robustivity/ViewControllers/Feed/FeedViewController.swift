@@ -16,7 +16,7 @@ class FeedViewController: BaseViewController {
     
     var adapter:FeedAdapter!
     var adapter1:OptionsTableAdapter!
-    let toggleHelper = ToggleHelper.sharedInstance
+    let toggleManager = ToggleManager.sharedInstance
     
     
     required init?(coder aDecoder: NSCoder) {

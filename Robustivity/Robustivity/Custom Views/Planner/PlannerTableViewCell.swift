@@ -27,7 +27,7 @@ class PlannerTableViewCell: SwipableTableViewCell {
     @IBOutlet weak var dueDateBottomMarginLayoutConstraint: NSLayoutConstraint!
 //    
     var plannerCellTask:TaskModel = TaskModel() //Aya
-    var toggleHelper = ToggleHelper.sharedInstance
+    var toggleManager = ToggleManager.sharedInstance
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,25 +46,25 @@ class PlannerTableViewCell: SwipableTableViewCell {
     override func playButtonAction() {
         print("play")
         
-        toggleHelper.toggleResumeAction(self.plannerCellTask, onSuccess: { [unowned self]() in
+        toggleManager.toggleResumeAction(self.plannerCellTask, onSuccess: { [unowned self]() in
             self.tableView?.reloadData()
         })
         
     }
     override func pauseButtonAction() {
         print("pause")
-        toggleHelper.togglePauseAction({ () in
+        toggleManager.togglePauseAction({ () in
             self.pauseButtonCellSetup()
             self.clockImage.highlighted = false
-            self.toggleTimer.text = self.toggleHelper.toggledTime
+            self.toggleTimer.text = self.toggleManager.toggledTime
         })
     }
     override func stopButtonAction() {
         print("stop")
-        toggleHelper.toggleStopAction({ () in
+        toggleManager.toggleStopAction({ () in
             self.stopButtonCellSetup()
             self.clockImage.highlighted = false
-            self.toggleTimer.text = self.toggleHelper.toggledTime
+            self.toggleTimer.text = self.toggleManager.toggledTime
         })
     }
     

@@ -10,15 +10,15 @@ import Foundation
 import ObjectMapper
 import RealmSwift
 
-@objc class ToggleHelper : NSObject {
-    class var sharedInstance: ToggleHelper {
+@objc class ToggleManager : NSObject {
+    class var sharedInstance: ToggleManager {
         struct Static {
-            static var instance: ToggleHelper?
+            static var instance: ToggleManager?
             static var token: dispatch_once_t = 0
         }
         
         dispatch_once(&Static.token) {
-            Static.instance = ToggleHelper()
+            Static.instance = ToggleManager()
         }
         
         return Static.instance!
@@ -42,7 +42,7 @@ import RealmSwift
     var toggledTime = "00:00:00"
     
     // Assuty
-    var delegate: ToggleTimerDelegate? {
+    var delegate: ToggleManagerDelegate? {
         didSet {
             guard let toggledTask = toggledTask else { return }
             delegate?.toggleManager(self, hasTask: toggledTask, toggledTime: toggledTime)

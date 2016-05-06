@@ -30,7 +30,7 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     var customSC:UISegmentedControl!
     var taskId:String!
     let preferences = NSUserDefaults.standardUserDefaults()
-    let toggleHelper = ToggleHelper.sharedInstance
+    let toggleManager = ToggleManager.sharedInstance
 
     
     override func viewDidLoad() {
