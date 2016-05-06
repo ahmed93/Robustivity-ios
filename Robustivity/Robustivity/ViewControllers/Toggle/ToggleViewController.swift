@@ -32,6 +32,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     let realm = try! Realm()
     let projectPicker = UIPickerView(); //Add picker view to be used in project names
     
+    var todoProjectsName = [String]()
+
+    
     let toggleManager = ToggleManager.sharedInstance
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,6 +51,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.wantsUserCheckInStatus = true
         super.viewDidLoad()
         self.edgesForExtendedLayout = .Bottom
+        self.fetchProjectsList()
         viewSetup()
     }
     
@@ -120,6 +124,21 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         toggleManager.delegate = nil
     }
     
+    func fetchProjectsList() {
+        API.get(APIRoutes.PROJECTS_INDEX, callback: { (success, response) in
+            if(success){
+                self.todoProjectsName = [String]()
+                //map the json object to the model and save them
+                let projects = Mapper<Project>().mapArray(response)
+                for project in projects! {
+                    self.todoProjectsName.append(project.projectName)
+                    project.save()
+                }
+                
+            }
+        })
+        
+    }
     /*
     ** toggleStartPlay
     ** The method is responsible for starting the timer
@@ -320,15 +339,15 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.toggleManager.todoProjectsName.count;
+        return self.todoProjectsName.count;
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.todoProjectTextField.text = self.toggleManager.todoProjectsName[row];
+        self.todoProjectTextField.text = self.todoProjectsName[row];
         self.todoProjectTextField.resignFirstResponder();
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.toggleManager.todoProjectsName[row]
+        return self.todoProjectsName[row]
     }
 }
 

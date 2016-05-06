@@ -24,7 +24,7 @@ import RealmSwift
         return Static.instance!
     }
     
-    var todoProjectsName = [String]()
+//    var todoProjectsName = [String]()
 
     var timer = NSTimer();
     var startDate = NSDate();
@@ -48,22 +48,6 @@ import RealmSwift
             delegate?.toggleManager(self, hasTask: toggledTask, toggledTime: toggledTime)
         }
     }
-
-    func fetchProjectsList() {
-        API.get(APIRoutes.PROJECTS_INDEX, callback: { (success, response) in
-            if(success){
-                self.todoProjectsName = [String]()
-                //map the json object to the model and save them
-                let projects = Mapper<Project>().mapArray(response)
-                for project in projects! {
-                    self.todoProjectsName.append(project.projectName)
-                    project.save()
-                }
-                
-            }
-        })
-        
-    }
     
     func fetchTasks(onNewRunningTaskExists:()->()) {
         guard let task = TaskModel.inProgress() else {return}
@@ -77,37 +61,10 @@ import RealmSwift
         onNewRunningTaskExists()
         self.startTimer()
 
-        
-
-        
-//        
-//        API.get(APIRoutes.TASKS_INDEX, callback: { (success, response) in
-//            if(success){
-//                
-//                //map the json object to the model and save them
-//                let tasks = Mapper<TaskModel>().mapArray(response)
-//                for task in tasks! {
-//                    task.updateTask()
-//                    if ( (task.taskStatus == "in_progress") ) {
-//                        self.timer.invalidate()
-//                        self.toggledTask = task
-//                        self.currentTaskState = "playing"
-//                        let interval:NSTimeInterval = Double(task.taskDuration)
-//                        self.pausedTimeInterval = interval
-//                        self.startDate = task.taskUpdatedAt!
-//                        onNewRunningTaskExists()
-//                        self.startTimer()
-//                    }
-//                    
-//                }
-//                
-//            }
-//        })
     }
     
     private func startTimer() {
         guard let toggledTask = toggledTask else {
-//            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true);
             return
         }
 
