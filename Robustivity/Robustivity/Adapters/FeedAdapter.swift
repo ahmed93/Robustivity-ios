@@ -358,11 +358,11 @@ extension FeedAdapter : ToggleManagerDelegate {
     func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel?, toggledTime: String?) {
         
         let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        if isValidIndexPath(toggleCellIndexPath) {
+        if task != nil && isValidIndexPath(toggleCellIndexPath) {
             let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! ToggleFeedTableViewCell
             toggleCell.toggleCellTask = task!
-            toggleCell.taskName.text = task?.taskName
-            toggleCell.projectName.text = task?.taskProjectName
+            toggleCell.taskName.text = task!.taskName
+            toggleCell.projectName.text = task!.taskProjectName
         }
 
         
