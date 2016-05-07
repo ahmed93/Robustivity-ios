@@ -323,6 +323,12 @@ extension FeedAdapter : ToggleManagerDelegate {
             toggleCell.taskName.text = task.taskName
             toggleCell.projectName.text = task.taskProjectName
             toggleCell.timeLabel.text = toggledTime
+            // Fix cell swipe actions
+            if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(task.taskStatus) {
+                toggleCell.playButtonCellSetup()
+            } else {
+                toggleCell.pauseButtonCellSetup()
+            }
         }
     }
     
