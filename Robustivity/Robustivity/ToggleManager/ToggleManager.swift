@@ -1,5 +1,5 @@
 //
-//  ToggleHelper.swift
+//  ToggleManager.swift
 //  Robustivity
 //
 //  Created by Aya Amr on 4/26/16.
