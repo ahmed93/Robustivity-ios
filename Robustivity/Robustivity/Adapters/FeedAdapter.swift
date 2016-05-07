@@ -339,10 +339,32 @@ class FeedAdapter: BaseTableAdapter {
         }
     }
     
+    func isValidIndexPath(indexpath: NSIndexPath)->Bool {
+        if indexpath.section < self.tableView.numberOfSections {
+            if indexpath.row < self.tableView.numberOfRowsInSection(indexpath.section) {
+                return true
+            }
+            
+        }
+        return false
+    }
+
+    
 }
+
+
 
 extension FeedAdapter : ToggleManagerDelegate {
     func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel?, toggledTime: String?) {
+        
+        let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        if isValidIndexPath(toggleCellIndexPath) {
+            let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! ToggleFeedTableViewCell
+            toggleCell.toggleCellTask = task!
+            toggleCell.taskName.text = task?.taskName
+            toggleCell.projectName.text = task?.taskProjectName
+        }
+
         
     }
     
@@ -351,5 +373,12 @@ extension FeedAdapter : ToggleManagerDelegate {
     }
     
     func toggleManager(toggleManager: ToggleManager, didUpdateTimer value: String) {
+        let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        if isValidIndexPath(toggleCellIndexPath) {
+            let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! ToggleFeedTableViewCell
+            toggleCell.timeLabel.text = value
+        }
+       
+
     }
 }
