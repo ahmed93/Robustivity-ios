@@ -17,7 +17,7 @@ class NotificationsViewController: BaseViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("NotificationsViewController", owner: self, options: nil)
+//        NSBundle.mainBundle().loadNibNamed("NotificationsViewController", owner: self, options: nil)
     }
     
     override func viewDidLoad() {

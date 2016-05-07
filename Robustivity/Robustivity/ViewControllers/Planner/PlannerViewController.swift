@@ -33,7 +33,7 @@ class PlannerViewController: BaseViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("PlannerViewController", owner: self, options: nil)
+//        NSBundle.mainBundle().loadNibNamed("PlannerViewController", owner: self, options: nil)
     }
     
     override func viewDidLoad() {

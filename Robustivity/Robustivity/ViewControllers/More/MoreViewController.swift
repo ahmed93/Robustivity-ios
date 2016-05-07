@@ -36,7 +36,7 @@ class MoreViewController: BaseViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("MoreViewController", owner: self, options: nil)
+//        NSBundle.mainBundle().loadNibNamed("MoreViewController", owner: self, options: nil)
     }
     
     

@@ -40,7 +40,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("ToggleViewController", owner: self, options: nil)
+//        NSBundle.mainBundle().loadNibNamed("ToggleViewController", owner: self, options: nil)
     }
     
     /*

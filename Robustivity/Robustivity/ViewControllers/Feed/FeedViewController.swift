@@ -21,17 +21,16 @@ class FeedViewController: BaseViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("FeedViewController", owner: self, options: nil)
+//        NSBundle.mainBundle().loadNibNamed("FeedViewController", owner: self, options: nil)
     }
     
-    override func loadView() {
-        super.loadView()
-    }
+//    override func loadView() {
+//        super.loadView()
+//    }
     
     
     override func viewDidLoad() {
         self.wantsUserCheckInStatus = true
-        
         super.viewDidLoad()
         print("DB LOCATION IS \(Realm.Configuration.defaultConfiguration.path!)" )
         // setting View TabBartitle + navigationBarTitle
