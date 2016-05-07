@@ -213,13 +213,4 @@ import RealmSwift
         let hours = (interval / 3600)
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
-    
-    func changeToggledTask(task: TaskModel) {
-        print(task)
-        print("------------------------")
-        toggledTask = task
-        startTimer()
-    }
-    
-    
 }
