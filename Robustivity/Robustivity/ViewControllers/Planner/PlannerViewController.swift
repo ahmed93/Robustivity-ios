@@ -62,13 +62,6 @@ class PlannerViewController: BaseViewController {
         tableView.reloadData()
     }
     
-//    override func viewDidAppear(animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        self.navigationController?.hidesBarsOnSwipe = false
-//        self.navigationController?.setNavigationBarHidden(false, animated: true)
-//    }
-    
     //    MARK: Segmented Control
     
     /**
