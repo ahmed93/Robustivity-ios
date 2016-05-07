@@ -189,7 +189,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
                 }
                 let todo = Mapper<TaskModel>().map(response["task"])
                 todo?.updateTask()
-                self.toggleManager.changeToggledTask(todo!)
+                self.toggleManager.playNewTask(todo!)
             }
             
         })

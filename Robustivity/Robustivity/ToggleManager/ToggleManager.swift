@@ -226,13 +226,5 @@ import RealmSwift
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
-    func changeToggledTask(task: TaskModel) {
-        print(task)
-        print("------------------------")
-        toggledTask = task
-        startDate = NSDate()
-        startTimer()
-    }
-    
     
 }
