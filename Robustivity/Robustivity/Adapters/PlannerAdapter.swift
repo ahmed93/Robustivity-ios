@@ -35,17 +35,19 @@ class PlannerAdapter: BaseTableAdapter {
     }
     
     func fetchFromServer() {
-        API.get(APIRoutes.TASKS_INDEX) { [unowned self] (success, response) -> () in
+        API.get(APIRoutes.TASKS_INDEX) { [weak self] (success, response) -> () in
             if success {
                 let dataResponse:[TaskModel]! = Mapper<TaskModel>().mapArray(response)
                 TaskModel.createOrUpdate(dataResponse)
                 
-                if self.viewController.respondsToSelector("stopRefreshControl") {
-                    self.viewController.performSelector("stopRefreshControl")
+                if self != nil {
+                    if self!.viewController.respondsToSelector("stopRefreshControl") {
+                        self!.viewController.performSelector("stopRefreshControl")
+                    }
+                    
+                    let data = self?.fetchFromDatabase()
+                    self!.refreshTable(data!, animationOptions: .TransitionCrossDissolve)
                 }
-                
-                let data = self.fetchFromDatabase()
-                self.refreshTable(data, animationOptions: .TransitionCrossDissolve)
             }
         }
     }

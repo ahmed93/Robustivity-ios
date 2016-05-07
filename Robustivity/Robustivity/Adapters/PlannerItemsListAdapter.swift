@@ -38,27 +38,26 @@ class PlannerItemsListAdapter  : BaseTableAdapter {
     }
     
     func fetchFromServer() {
-        API.get(APIRoutes.TASKS_INDEX) { [unowned self] (success, response) -> () in
-            guard case self = self else { return }
-
+        API.get(APIRoutes.TASKS_INDEX) { [weak self] (success, response) -> () in
             if success {
                 let dataResponse:[TaskModel]! = Mapper<TaskModel>().mapArray(response)
                 TaskModel.createOrUpdate(dataResponse)
                 
-                if self.viewController.respondsToSelector("stopRefreshControl") {
-                    self.viewController.performSelector("stopRefreshControl")
+                if self != nil {
+                    if self!.viewController.respondsToSelector("stopRefreshControl") {
+                        self!.viewController.performSelector("stopRefreshControl")
+                    }
+                    
+                    if self!.viewController.respondsToSelector("updateSearchResultsForSearchController:") {
+                        let searchController = (self!.viewController as! PlannerItemsListViewController).searchController
+                        self!.viewController.performSelector("updateSearchResultsForSearchController:", withObject: searchController)
+                    } else {
+                        // Will never be executed unless this adapter is used without a search controller
+                        // for another view controller
+                        let data = self!.fetchFromDatabase()
+                        self!.refreshTable(data, animationOptions: .TransitionCrossDissolve)
+                    }
                 }
-                
-                if self.viewController.respondsToSelector("updateSearchResultsForSearchController:") {
-                    let searchController = (self.viewController as! PlannerItemsListViewController).searchController
-                    self.viewController.performSelector("updateSearchResultsForSearchController:", withObject: searchController)
-                } else {
-                    // Will never be executed unless this adapter is used without a search controller
-                    // for another view controller
-                    let data = self.fetchFromDatabase()
-                    self.refreshTable(data, animationOptions: .TransitionCrossDissolve)
-                }
-                
             }
         }
     }
