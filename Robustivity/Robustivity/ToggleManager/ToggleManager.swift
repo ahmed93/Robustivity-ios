@@ -122,8 +122,11 @@ import RealmSwift
         timer.invalidate()
         API.put(url, callback: { (success, response) in
             if(success) {
+
+                let duration = response["total_logged_time"] as? Int
                 try! self.realm.write {
                     toggledTask.taskStatus = "paused"
+                    toggledTask.taskDuration = duration!
                 }
 
                 self.pauseTimer()
@@ -144,8 +147,10 @@ import RealmSwift
         self.timer.invalidate();
         API.put(url, callback: { (success, response) in
             if(success) {
+                let duration = response["total_logged_time"] as? Int
                 try! self.realm.write {
                     toggledTask.taskStatus = "paused"
+                    toggledTask.taskDuration = duration!
                 }
 
                 self.stopTimer()
