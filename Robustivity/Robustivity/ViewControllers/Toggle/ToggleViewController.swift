@@ -255,7 +255,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.todoProjectTextField.text = ""
         self.todoTitleField.text = ""
         self.toggledTime.text = "00:00:00";
-        self.toggleManager.pausedTimeInterval = 0;
         UIView.animateWithDuration(0.5, animations: {
             self.togglePlayBtn.alpha = 1;
             self.togglePauseBtn.alpha = 0;

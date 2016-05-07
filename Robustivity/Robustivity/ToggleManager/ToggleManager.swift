@@ -25,10 +25,8 @@ import RealmSwift
     }
 
     private var timer = NSTimer();
-
-    var startDate = NSDate();
-    var currentTimeInterval = NSTimeInterval();
-    var pausedTimeInterval = NSTimeInterval();
+    private var timerStartDate: NSDate?;
+    
     let realm = try! Realm()
     var toggledTime = "00:00:00"
     
@@ -55,11 +53,7 @@ import RealmSwift
     
     func fetchInProgressTask() {
         guard let task = TaskModel.inProgress() else { return }
-        
         self.toggledTask = task
-        let interval:NSTimeInterval = Double(task.taskDuration)
-        self.pausedTimeInterval = interval
-        self.startDate = task.taskUpdatedAt!
         self.startTimer()
     }
     
@@ -69,6 +63,7 @@ import RealmSwift
         guard let toggledTask = toggledTask else { return }
 
         self.delegate?.toggleManager?(self, willStartTimer: toggledTime, forTask: toggledTask)
+        timerStartDate = NSDate()
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
         self.delegate?.toggleManager?(self, didStartTimer: toggledTime, forTask: toggledTask)
     }
@@ -109,12 +104,8 @@ import RealmSwift
                 task?.updateTask()
 
                 self.toggledTask = task!
-                
-                self.startDate = self.toggledTask!.taskUpdatedAt!
-                let interval:NSTimeInterval = Double(self.toggledTask!.taskDuration)
-                self.pausedTimeInterval = interval
-                
                 self.startTimer()
+
                 onSuccess?()
             } else {
                 self.startTimer()
@@ -131,8 +122,6 @@ import RealmSwift
         timer.invalidate()
         API.put(url, callback: { (success, response) in
             if(success) {
-                self.pausedTimeInterval = self.currentTimeInterval
-                
                 try! self.realm.write {
                     toggledTask.taskStatus = "paused"
                 }
@@ -211,9 +200,8 @@ import RealmSwift
     @objc func updateToggledTime() {
         // Create date from the elapsed time
         let currentDate = NSDate();
-        var timeInterval = currentDate.timeIntervalSinceDate(self.startDate);
-        timeInterval += pausedTimeInterval;
-        self.currentTimeInterval = timeInterval;
+        var timeInterval = currentDate.timeIntervalSinceDate(timerStartDate!);
+        timeInterval += Double(toggledTask!.taskDuration);
         self.toggledTime = stringFromTimeInterval(timeInterval)
         self.delegate?.toggleManager?(self, didUpdateTimer: self.toggledTime) // Assuty
     }
@@ -230,7 +218,6 @@ import RealmSwift
         print(task)
         print("------------------------")
         toggledTask = task
-        startDate = NSDate()
         startTimer()
     }
     
