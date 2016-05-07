@@ -46,27 +46,27 @@ class PlannerTableViewCell: SwipableTableViewCell {
     override func playButtonAction() {
         print("play")
         
-        toggleManager.playNewTask(self.plannerCellTask, onSuccess: { [unowned self]() in
+        toggleManager.playNewTask(self.plannerCellTask, onSuccess: { [unowned self] () in
             self.tableView?.reloadData()
             })
     }
     
     override func pauseButtonAction() {
         print("pause")
-        toggleManager.pauseCurrentTask({ () in
+        toggleManager.pauseCurrentTask({ [unowned self] () in
             self.pauseButtonCellSetup()
             self.clockImage.highlighted = false
-            self.toggleTimer.text = self.toggleManager.toggledTime
-        })
+            self.toggleTimer.text = self.toggleManager.stringFromTimeInterval(Double(self.plannerCellTask.taskDuration))
+            })
     }
     
     override func stopButtonAction() {
         print("stop")
-        toggleManager.stopCurrentTask({ () in
+        toggleManager.stopCurrentTask( { [unowned self] () in
             self.stopButtonCellSetup()
             self.clockImage.highlighted = false
-            self.toggleTimer.text = self.toggleManager.toggledTime
-        })
+            self.toggleTimer.text = self.toggleManager.stringFromTimeInterval(Double(self.plannerCellTask.taskDuration))
+            })
     }
     
     static func playButtonCellConfiguration() -> [String] {

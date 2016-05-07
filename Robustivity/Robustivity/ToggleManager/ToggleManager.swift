@@ -28,25 +28,34 @@ import RealmSwift
     private var timerStartDate: NSDate?;
     
     let realm = try! Realm()
-    var toggledTime = "00:00:00"
+    private var toggledTaskDuration: String? {
+        get {
+            guard let toggledTask = toggledTask else {
+                return nil
+            }
+            
+            return stringFromTimeInterval(Double(toggledTask.taskDuration))
+        }
+    }
+    
+    private var toggledTime = "00:00:00"
     
     private var toggledTask:TaskModel? {
         willSet{
             guard let toggledTask = toggledTask else { return }
             guard let newValue = newValue else { return }
-            delegate?.toggleManager?(self, willChangeToggledTask: toggledTask, newTask: newValue, toggledTime: toggledTime)
+            delegate?.toggleManager?(self, willChangeToggledTask: toggledTask, newTask: newValue, toggledTime: toggledTaskDuration!)
         }
         
         didSet {
             guard let toggledTask = toggledTask else { return }
-            delegate?.toggleManager(self, didChangeToggledTask: toggledTask, toggledTime: toggledTime)
+            delegate?.toggleManager(self, didChangeToggledTask: toggledTask, toggledTime: toggledTaskDuration!)
         }
     }
     
     var delegate: ToggleManagerDelegate? {
         didSet {
-            guard let toggledTask = toggledTask else { return }
-            delegate?.toggleManager(self, hasTask: toggledTask, toggledTime: toggledTime)
+            delegate?.toggleManager(self, hasTask: toggledTask, toggledTime: toggledTaskDuration)
         }
     }
     
@@ -62,10 +71,19 @@ import RealmSwift
     private func startTimer() {
         guard let toggledTask = toggledTask else { return }
 
-        self.delegate?.toggleManager?(self, willStartTimer: toggledTime, forTask: toggledTask)
+        self.delegate?.toggleManager?(self, willStartTimer: toggledTaskDuration!, forTask: toggledTask)
         timerStartDate = NSDate()
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
-        self.delegate?.toggleManager?(self, didStartTimer: toggledTime, forTask: toggledTask)
+        self.delegate?.toggleManager?(self, didStartTimer: toggledTaskDuration!, forTask: toggledTask)
+    }
+    
+    private func resumeTimer() {
+        guard let toggledTask = toggledTask else { return }
+        
+        self.delegate?.toggleManager?(self, willResumeTimer: toggledTime, forTask: toggledTask)
+        timerStartDate = NSDate()
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
+        self.delegate?.toggleManager?(self, didResumeTimer: toggledTime, forTask: toggledTask)
     }
     
     private func pauseTimer() {
@@ -73,9 +91,9 @@ import RealmSwift
             return
         }
 
-        self.delegate?.toggleManager?(self, willPauseTimer: toggledTime, forTask: toggledTask)
+        self.delegate?.toggleManager?(self, willPauseTimer: toggledTaskDuration!, forTask: toggledTask)
         self.timer.invalidate()
-        self.delegate?.toggleManager?(self, didPauseTimer: toggledTime, forTask: toggledTask)
+        self.delegate?.toggleManager?(self, didPauseTimer: toggledTaskDuration!, forTask: toggledTask)
     }
 
     private func stopTimer() {
@@ -83,9 +101,9 @@ import RealmSwift
             return
         }
 
-        self.delegate?.toggleManager?(self, willStopTimer: toggledTime, forTask: toggledTask)
+        self.delegate?.toggleManager?(self, willStopTimer: toggledTaskDuration!, forTask: toggledTask)
         self.timer.invalidate()
-        self.delegate?.toggleManager?(self, didStopTimer: toggledTime, forTask: toggledTask)
+        self.delegate?.toggleManager?(self, didStopTimer: toggledTaskDuration!, forTask: toggledTask)
     }
     
     // MARK: Task Actions
@@ -95,7 +113,7 @@ import RealmSwift
         let url = formatURL(APIRoutes.TASK_TIMELOG_RESUME, stringToReplace: "task_id", with: toggledTask.taskId)
         
         self.timer.invalidate()
-        API.post(url, callback: { (success, response) in
+        API.post(url, callback: { [unowned self] (success, response) in
             if(success) {
                 
                 self.invalidateInProgressTasks()
@@ -108,7 +126,7 @@ import RealmSwift
 
                 onSuccess?()
             } else {
-                self.startTimer()
+                self.resumeTimer()
                 onFailure?()
             }
         })
@@ -120,7 +138,7 @@ import RealmSwift
         let url = formatURL(APIRoutes.TASK_TIMELOG_PAUSE, stringToReplace: "task_id", with: toggledTask.taskId)
         
         timer.invalidate()
-        API.put(url, callback: { (success, response) in
+        API.put(url, callback: { [unowned self] (success, response) in
             if(success) {
 
                 let duration = response["total_logged_time"] as? Int
@@ -133,7 +151,7 @@ import RealmSwift
                 onSuccess?()
 
             } else {
-                self.startTimer()
+                self.resumeTimer()
                 onFailure?()
             }
         })
@@ -145,19 +163,21 @@ import RealmSwift
         let url = formatURL(APIRoutes.TASK_TIMELOG_STOP, stringToReplace: "task_id", with: toggledTask.taskId)
         
         self.timer.invalidate();
-        API.put(url, callback: { (success, response) in
+        API.put(url, callback: { [unowned self] (success, response) in
             if(success) {
                 let duration = response["total_logged_time"] as? Int
                 try! self.realm.write {
                     toggledTask.taskStatus = "paused"
                     toggledTask.taskDuration = duration!
                 }
-
                 self.stopTimer()
+
                 self.toggledTask = nil
+                self.toggledTime = "00:00:00"
+
                 onSuccess?()
             } else {
-                self.startTimer()
+                self.resumeTimer()
                 onFailure?()
             }
         })

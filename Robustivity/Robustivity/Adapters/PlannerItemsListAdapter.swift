@@ -38,7 +38,9 @@ class PlannerItemsListAdapter  : BaseTableAdapter {
     }
     
     func fetchFromServer() {
-        API.get(APIRoutes.TASKS_INDEX) { (success, response) -> () in
+        API.get(APIRoutes.TASKS_INDEX) { [unowned self] (success, response) -> () in
+            guard case self = self else { return }
+
             if success {
                 let dataResponse:[TaskModel]! = Mapper<TaskModel>().mapArray(response)
                 TaskModel.createOrUpdate(dataResponse)

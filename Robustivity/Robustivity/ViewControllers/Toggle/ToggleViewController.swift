@@ -33,8 +33,9 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     let projectPicker = UIPickerView(); //Add picker view to be used in project names
     
     var todoProjectsName = [String]()
-    var toggleTask:TaskModel?
     
+    // Assuty add weak to toggledTask
+    weak var toggleTask:TaskModel?
     let toggleManager = ToggleManager.sharedInstance
     
     required init?(coder aDecoder: NSCoder) {
@@ -102,7 +103,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         
         //Track input fields change
         self.todoTitleField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingDidEnd)
-//
+        //
         self.todoProjectTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingDidEnd)
         
         
@@ -215,7 +216,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
             self.todoProjectTextField.text = "miscellaneous"
         }
         self.projectPicker.selectRow(self.toggleTask!.taskProjectId - 1, inComponent: 0, animated: false)
-
+        
         self.toggledTime.textColor = Theme.blackColor();
         
         UIView.animateWithDuration(0.5, animations: {
@@ -336,7 +337,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.todoTitleField.resignFirstResponder()
         self.todoProjectTextField.resignFirstResponder()
         
-    }    
+    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -364,22 +365,25 @@ extension ToggleViewController : ToggleManagerDelegate {
         case TaskStatus.InProgress.rawValue:
             self.toggleResumeViewSetup()
         case TaskStatus.Paused.rawValue:
-//            self.toggleResumeViewSetup()
             self.togglePauseViewSetup()
         case TaskStatus.Closed.rawValue:
             self.toggleStopViewSetup()
         default:
             print("Got Status : \(task.taskStatus)")
         }
-        
-        
     }
     
     func toggleManager(toggleManager: ToggleManager, didUpdateTimer value: String) {
         toggledTime.text = value
     }
     
-    func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel, toggledTime: String) {
+    func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel?, toggledTime: String?) {
+        guard let task = task else {
+            self.toggleStopViewSetup()
+            self.toggledTime.text = "00:00:00"
+            return
+        }
+
         self.toggleTask = task
         prepareViewForTask(task)
         self.toggledTime.text = toggledTime
@@ -397,7 +401,6 @@ extension ToggleViewController : ToggleManagerDelegate {
     }
     
     func toggleManager(toggleManager: ToggleManager, didStopTimer time: String, forTask task: TaskModel) {
-        self.toggleTask = task
         self.toggleStopViewSetup()
         toggledTime.text = "00:00:00"
     }

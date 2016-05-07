@@ -9,7 +9,7 @@
 import Foundation
 
 @objc protocol ToggleManagerDelegate : AnyObject {
-    func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel, toggledTime: String)
+    func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel?, toggledTime: String?)
     func toggleManager(toggleManager: ToggleManager, didChangeToggledTask task: TaskModel, toggledTime: String)
 
     optional func toggleManager(toggleManager: ToggleManager, willChangeToggledTask oldTask: TaskModel, newTask: TaskModel, toggledTime: String)
@@ -17,6 +17,9 @@ import Foundation
     optional func toggleManager(toggleManager: ToggleManager, didUpdateTimer value: String)
     optional func toggleManager(toggleManager: ToggleManager, willStartTimer toggledTime: String, forTask task: TaskModel)
     optional func toggleManager(toggleManager: ToggleManager, didStartTimer toggledTime: String, forTask task: TaskModel)
+    
+    optional func toggleManager(toggleManager: ToggleManager, willResumeTimer toggledTime: String, forTask task: TaskModel)
+    optional func toggleManager(toggleManager: ToggleManager, didResumeTimer toggledTime: String, forTask task: TaskModel)
     
     optional func toggleManager(toggleManager: ToggleManager, willPauseTimer toggledTime: String, forTask task: TaskModel)
     optional func toggleManager(toggleManager: ToggleManager, didPauseTimer toggledTime: String, forTask task: TaskModel)
