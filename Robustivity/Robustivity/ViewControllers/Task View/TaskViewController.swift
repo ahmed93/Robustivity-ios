@@ -52,7 +52,7 @@ class TaskViewController: BaseViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-//        self.toggleHelper.timerDelegate = self.infoAdapter // Assuty
+        toggleManager.delegate = self.infoAdapter
 
     }
     

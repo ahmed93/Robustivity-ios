@@ -243,3 +243,14 @@ class TaskInfoAdapter: BaseTableAdapter {
     }
     
 }
+
+extension TaskInfoAdapter : ToggleManagerDelegate {
+    func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel?, toggledTime: String?) {
+    }
+    
+    func toggleManager(toggleManager: ToggleManager, didChangeToggledTask task: TaskModel, toggledTime: String) {
+    }
+    
+    func toggleManager(toggleManager: ToggleManager, didUpdateTimer value: String) {
+    }
+}
