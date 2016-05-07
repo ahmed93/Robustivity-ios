@@ -177,12 +177,12 @@ import RealmSwift
     }
     
     // MARK: Helper Methods
-    func formatURL(var url: String, stringToReplace name: String, with value: Int) -> String {
+    private func formatURL(var url: String, stringToReplace name: String, with value: Int) -> String {
         url = (url as NSString).stringByReplacingOccurrencesOfString("{\(name)}", withString: String(value))
         return url
     }
     
-    func invalidateInProgressTasks() {
+    private func invalidateInProgressTasks() {
         let tasks = self.realm.objects(TaskModel).filter("taskStatus = 'in_progress'")
         try! self.realm.write {
             tasks.setValue("paused", forKey: "taskStatus")
@@ -197,7 +197,7 @@ import RealmSwift
     */
     
     // MARK: old
-    @objc func updateToggledTime() {
+    @objc private func updateToggledTime() {
         // Create date from the elapsed time
         let currentDate = NSDate();
         var timeInterval = currentDate.timeIntervalSinceDate(timerStartDate!);
