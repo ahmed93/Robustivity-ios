@@ -53,7 +53,7 @@ import RealmSwift
         }
     }
     
-    var delegate: ToggleManagerDelegate? {
+    weak var delegate: ToggleManagerDelegate? {
         didSet {
             delegate?.toggleManager(self, hasTask: toggledTask, toggledTime: toggledTaskDuration)
         }
