@@ -360,16 +360,22 @@ extension FeedAdapter : ToggleManagerDelegate {
         let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
         if task != nil && isValidIndexPath(toggleCellIndexPath) {
             let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! ToggleFeedTableViewCell
-            toggleCell.toggleCellTask = task!
             toggleCell.taskName.text = task!.taskName
             toggleCell.projectName.text = task!.taskProjectName
+            toggleCell.timeLabel.text = toggleManager.stringFromTimeInterval(Double((task?.taskDuration)!))
         }
 
         
     }
     
     func toggleManager(toggleManager: ToggleManager, didChangeToggledTask task: TaskModel, toggledTime: String) {
-        
+        let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        if  isValidIndexPath(toggleCellIndexPath) {
+            let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! ToggleFeedTableViewCell
+            toggleCell.taskName.text = task.taskName
+            toggleCell.projectName.text = task.taskProjectName
+            toggleCell.timeLabel.text = toggledTime
+        }
     }
     
     func toggleManager(toggleManager: ToggleManager, didUpdateTimer value: String) {
