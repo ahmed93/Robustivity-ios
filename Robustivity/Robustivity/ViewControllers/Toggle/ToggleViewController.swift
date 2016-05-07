@@ -122,7 +122,6 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        toggleManager.delegate = nil
     }
     
     func fetchProjectsList() {

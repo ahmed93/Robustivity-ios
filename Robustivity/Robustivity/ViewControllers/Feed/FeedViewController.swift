@@ -53,9 +53,8 @@ class FeedViewController: BaseViewController {
         //        updateStickyToggleCell ()
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        toggleManager.delegate = nil
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     //    func updateStickyToggleCell () {

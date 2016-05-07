@@ -378,7 +378,5 @@ extension FeedAdapter : ToggleManagerDelegate {
             let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! ToggleFeedTableViewCell
             toggleCell.timeLabel.text = value
         }
-       
-
     }
 }
