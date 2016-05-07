@@ -69,7 +69,7 @@ class FeedAdapter: BaseTableAdapter {
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
         if(indexPath.section == 0){
             var toggleCell = tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell
-            toggleCell.playPauseButton.enabled = false
+//            toggleCell.playPauseButton.enabled = false
             return toggleCell
 //            return tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell
         }
@@ -306,7 +306,13 @@ extension FeedAdapter : ToggleManagerDelegate {
             toggleCell.taskName.text = task!.taskName
             toggleCell.projectName.text = task!.taskProjectName
             toggleCell.timeLabel.text = toggleManager.stringFromTimeInterval(Double((task?.taskDuration)!))
-            toggleCell.playPauseButton.enabled = true
+            // Fix cell swipe actions
+            if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(task!.taskStatus) {
+                toggleCell.playButtonCellSetup()
+            } else {
+                toggleCell.pauseButtonCellSetup()
+            }
+            
         }
     }
     
