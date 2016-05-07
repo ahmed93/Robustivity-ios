@@ -363,6 +363,7 @@ extension FeedAdapter : ToggleManagerDelegate {
             toggleCell.taskName.text = task!.taskName
             toggleCell.projectName.text = task!.taskProjectName
             toggleCell.timeLabel.text = toggleManager.stringFromTimeInterval(Double((task?.taskDuration)!))
+            toggleCell.playPauseButton.enabled = true
         }
 
         
