@@ -21,12 +21,12 @@ class FeedViewController: BaseViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        NSBundle.mainBundle().loadNibNamed("FeedViewController", owner: self, options: nil)
+        //        NSBundle.mainBundle().loadNibNamed("FeedViewController", owner: self, options: nil)
     }
     
-//    override func loadView() {
-//        super.loadView()
-//    }
+    //    override func loadView() {
+    //        super.loadView()
+    //    }
     
     
     override func viewDidLoad() {
@@ -40,44 +40,42 @@ class FeedViewController: BaseViewController {
         let values = ["CheckInFeedTableViewCell","BroadcastFeedTableViewCell","UpdateFeedTableViewCell","ToggleFeedTableViewCell"]
         let dictionary:NSDictionary = NSDictionary(objects: keys ,forKeys: values)
         adapter = FeedAdapter(viewController: self, tableView: tableView, registerMultipleNibsAndIdenfifers: dictionary)
-//        self.toggleHelper.feedViewDelegate = self.adapter
-
-//        updateStickyToggleCell ()
+        //        self.toggleHelper.feedViewDelegate = self.adapter
+        
+        //        updateStickyToggleCell ()
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        toggleManager.delegate = self.adapter
         
-//        self.toggleHelper.timerDelegate = self.adapter // Assuty
-        
-//        updateStickyToggleCell ()
-        
+        //        updateStickyToggleCell ()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-//        self.toggleHelper.delegate = self.adapter
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        toggleManager.delegate = nil
     }
     
-//    func updateStickyToggleCell () {
-//        if (toggleHelper.toggleTask.taskId == 0) {
-//            return
-//            
-//        }
-//        let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
-//        toggleCell.taskName.text = toggleHelper.toggleTask.taskName
-//        toggleCell.projectName.text = toggleHelper.toggleTask.taskProjectName
-//        toggleCell.toggleCellTask = toggleHelper.toggleTask
-//        toggleCell.timeLabel.text = toggleHelper.toggledTime
-//        toggleCell.playPauseButton.enabled = true
-//        // Fix cell swipe actions
-//        if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(toggleHelper.toggleTask.taskStatus) {
-//            toggleCell.playButtonCellSetup()
-//        } else {
-//            toggleCell.pauseButtonCellSetup()
-//        }
-//    }
+    //    func updateStickyToggleCell () {
+    //        if (toggleHelper.toggleTask.taskId == 0) {
+    //            return
+    //
+    //        }
+    //        let toggleCell = adapter.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ToggleFeedTableViewCell
+    //        toggleCell.taskName.text = toggleHelper.toggleTask.taskName
+    //        toggleCell.projectName.text = toggleHelper.toggleTask.taskProjectName
+    //        toggleCell.toggleCellTask = toggleHelper.toggleTask
+    //        toggleCell.timeLabel.text = toggleHelper.toggledTime
+    //        toggleCell.playPauseButton.enabled = true
+    //        // Fix cell swipe actions
+    //        if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(toggleHelper.toggleTask.taskStatus) {
+    //            toggleCell.playButtonCellSetup()
+    //        } else {
+    //            toggleCell.pauseButtonCellSetup()
+    //        }
+    //    }
     
     
 }

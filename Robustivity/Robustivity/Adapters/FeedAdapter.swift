@@ -340,3 +340,16 @@ class FeedAdapter: BaseTableAdapter {
     }
     
 }
+
+extension FeedAdapter : ToggleManagerDelegate {
+    func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel?, toggledTime: String?) {
+        
+    }
+    
+    func toggleManager(toggleManager: ToggleManager, didChangeToggledTask task: TaskModel, toggledTime: String) {
+        
+    }
+    
+    func toggleManager(toggleManager: ToggleManager, didUpdateTimer value: String) {
+    }
+}
