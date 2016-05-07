@@ -336,12 +336,7 @@ class ToggleViewController: BaseViewController, UIPickerViewDataSource, UIPicker
         self.todoTitleField.resignFirstResponder()
         self.todoProjectTextField.resignFirstResponder()
         
-    }
-    
-    func updateToggledTimeNotification() {
-        self.toggledTime.text = self.toggleManager.toggledTime
-    }
-    
+    }    
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -387,6 +382,7 @@ extension ToggleViewController : ToggleManagerDelegate {
     func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel, toggledTime: String) {
         self.toggleTask = task
         prepareViewForTask(task)
+        self.toggledTime.text = toggledTime
     }
     
     func toggleManager(toggleManager: ToggleManager, didChangeToggledTask task: TaskModel, toggledTime: String) {
