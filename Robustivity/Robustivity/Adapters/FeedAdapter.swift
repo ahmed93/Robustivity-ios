@@ -40,7 +40,7 @@ class FeedAdapter: BaseTableAdapter {
                     self.tableItems.reverse()
                     self.tableView.reloadData()
                 }
-
+                
             })
             
         }
@@ -57,21 +57,21 @@ class FeedAdapter: BaseTableAdapter {
     }
     
     /*
-     Made by Khaled Elhossiny
-     this function checks the feed data and returns different type of cells
-     based on the index of the feed data, it either returns cells of type :
-     BroadCastFeedTableViewCell
-     CheckInFeedTableViewCell
-     NotificationTableViewCell
-     or a ToggleFeedCell in the header
-     */
-        
+    Made by Khaled Elhossiny
+    this function checks the feed data and returns different type of cells
+    based on the index of the feed data, it either returns cells of type :
+    BroadCastFeedTableViewCell
+    CheckInFeedTableViewCell
+    NotificationTableViewCell
+    or a ToggleFeedCell in the header
+    */
+    
     override func configureViaMultipleIdentifiers(indexPath: NSIndexPath) -> UITableViewCell? {
         if(indexPath.section == 0){
             var toggleCell = tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell
-//            toggleCell.playPauseButton.enabled = false
+            //            toggleCell.playPauseButton.enabled = false
             return toggleCell
-//            return tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell
+            //            return tableView.dequeueReusableCellWithIdentifier("toggleCell") as! ToggleFeedTableViewCell
         }
         else{
             let feed = tableItems.objectAtIndex(indexPath.row)as! FeedModel
@@ -100,34 +100,34 @@ class FeedAdapter: BaseTableAdapter {
     }
     
     /*
-     Made by Khaled Elhossiny
-     this function return dummy data to be displayed in feed
-     note that the image of the imageview is set from a url
-     */
+    Made by Khaled Elhossiny
+    this function return dummy data to be displayed in feed
+    note that the image of the imageview is set from a url
+    */
     
     /* static func fillFeedWithDummyData() -> [FeedModel]{
-     let user = UserModel(avatar: NSURL(string: "")!, name: "Islam")
-     let bf1 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
-     let bf2 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
-     let bf3 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
-     let nf = UpdateFeedModel(content: "Robustivity Project has 4 tasks done.",timeStamp: "Oct 12,2015")
-     let cif = CheckInFeedModel(user: user, tiemStamp: "now")
-     return [bf1,nf,bf2,cif,bf3]
-     }*/
+    let user = UserModel(avatar: NSURL(string: "")!, name: "Islam")
+    let bf1 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
+    let bf2 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
+    let bf3 = BroadcastFeedModel(user: user, tiemStamp: "Yesterday", content: "Dear Team, PLease join me in welcoming @AhmedHamouda who joined as a PHP Developer in the Development division.\nWelcome Hamouda to robusta's Superb team :)")
+    let nf = UpdateFeedModel(content: "Robustivity Project has 4 tasks done.",timeStamp: "Oct 12,2015")
+    let cif = CheckInFeedModel(user: user, tiemStamp: "now")
+    return [bf1,nf,bf2,cif,bf3]
+    }*/
     
     /*
-     Made by Khaled Elhossiny
-     this function takes a Broadcast Feed model as parameter
-     and returns a cell for this feed by setting its labels
-     and imageview according to the feed object
-     */
+    Made by Khaled Elhossiny
+    this function takes a Broadcast Feed model as parameter
+    and returns a cell for this feed by setting its labels
+    and imageview according to the feed object
+    */
     
     func broadCastFeedCell(tableView: UITableView, feed:FeedModel) -> BroadcastFeedTableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("broadCastCell") as! BroadcastFeedTableViewCell
         cell.broadcastTextLabel.text = feed.content
         cell.broadcastTitleLabel.text = feed.userName + " sent a broadcast"
         cell.timestampsLabel.text? = self.getTimeDifference(feed.timeStamp)
-
+        
         // Assuty -> Fix feed scroll bug
         let avatarURL:NSURL? = NSURL(string: APIRoutes.URL + feed.profilePicture)
         cell.avatarImageView.sd_setImageWithURL(avatarURL)
@@ -136,36 +136,36 @@ class FeedAdapter: BaseTableAdapter {
     }
     
     /*
-     Made by Khaled Elhossiny
-     this function is responsible for generating a seperator between
-     different cells of the tableview
-     */
+    Made by Khaled Elhossiny
+    this function is responsible for generating a seperator between
+    different cells of the tableview
+    */
     
     /* func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-     
-     if indexPath.section > 0{
-     cell.contentView.backgroundColor = UIColor.clearColor()
-     
-     let whiteRoundedView : UIView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 5))
-     
-     whiteRoundedView.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [1.0, 1.0, 1.0, 1.0])
-     whiteRoundedView.layer.masksToBounds = false
-     whiteRoundedView.layer.cornerRadius = 2.0
-     whiteRoundedView.layer.shadowOffset = CGSizeMake(-1, 1)
-     whiteRoundedView.layer.shadowOpacity = 0.2
-     
-     cell.contentView.addSubview(whiteRoundedView)
-     cell.contentView.sendSubviewToBack(whiteRoundedView)
-     }
-     }
-     */
+    
+    if indexPath.section > 0{
+    cell.contentView.backgroundColor = UIColor.clearColor()
+    
+    let whiteRoundedView : UIView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 5))
+    
+    whiteRoundedView.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [1.0, 1.0, 1.0, 1.0])
+    whiteRoundedView.layer.masksToBounds = false
+    whiteRoundedView.layer.cornerRadius = 2.0
+    whiteRoundedView.layer.shadowOffset = CGSizeMake(-1, 1)
+    whiteRoundedView.layer.shadowOpacity = 0.2
+    
+    cell.contentView.addSubview(whiteRoundedView)
+    cell.contentView.sendSubviewToBack(whiteRoundedView)
+    }
+    }
+    */
     
     /*
-     Made by Khaled Elhossiny
-     this function takes a CheckIn Feed model as parameter
-     and returns a cell for this feed by setting its labels
-     and imageview according to the feed object
-     */
+    Made by Khaled Elhossiny
+    this function takes a CheckIn Feed model as parameter
+    and returns a cell for this feed by setting its labels
+    and imageview according to the feed object
+    */
     
     func checkInFeedCell(tableView: UITableView, feed:FeedModel) -> CheckInFeedTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("checkInCell") as! CheckInFeedTableViewCell
@@ -179,11 +179,11 @@ class FeedAdapter: BaseTableAdapter {
         
     }
     /*
-     Made by Khaled Elhossiny
-     this function takes a Notification Feed model as parameter
-     and returns a cell for this feed by setting its labels
-     according to the feed object
-     */
+    Made by Khaled Elhossiny
+    this function takes a Notification Feed model as parameter
+    and returns a cell for this feed by setting its labels
+    according to the feed object
+    */
     
     func notificationFeedCell(tableView: UITableView, feed:FeedModel) -> UpdateFeedTableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("updateCell") as! UpdateFeedTableViewCell
@@ -198,10 +198,10 @@ class FeedAdapter: BaseTableAdapter {
     }
     
     /*
-     Made by Khaled Elhossiny
-     the table view has 2 sections, one for toggle view
-     and the other for other feed cells
-     */
+    Made by Khaled Elhossiny
+    the table view has 2 sections, one for toggle view
+    and the other for other feed cells
+    */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
@@ -215,8 +215,8 @@ class FeedAdapter: BaseTableAdapter {
     
     
     /* This function returns the time intervel between the Feed's
-     timestamp and current time of the app *
-     */
+    timestamp and current time of the app *
+    */
     func getTimeInterval(time: String) -> NSTimeInterval{
         
         let formatter = NSDateFormatter();
@@ -231,7 +231,7 @@ class FeedAdapter: BaseTableAdapter {
     }
     
     /* This function returns a string for time interval eg. 3 hours ago  *
-     */
+    */
     func getTimeDifference(time: String) -> String{
         var timeOutput:String = ""
         let diff = self.getTimeInterval(time)
@@ -279,7 +279,7 @@ class FeedAdapter: BaseTableAdapter {
         }
         return false
     }
-
+    
     
 }
 
@@ -289,42 +289,40 @@ extension FeedAdapter : ToggleManagerDelegate {
     func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel?, toggledTime: String?) {
         
         let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        if task != nil && isValidIndexPath(toggleCellIndexPath) {
-            let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! ToggleFeedTableViewCell
-            toggleCell.taskName.text = task!.taskName
-            toggleCell.projectName.text = task!.taskProjectName
-            toggleCell.timeLabel.text = toggleManager.stringFromTimeInterval(Double((task?.taskDuration)!))
-            // Fix cell swipe actions
-            if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(task!.taskStatus) {
-                toggleCell.playButtonCellSetup()
-            } else {
-                toggleCell.pauseButtonCellSetup()
-            }
-            
+        guard let task = task else { return }
+        guard let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as? ToggleFeedTableViewCell else { return }
+
+        toggleCell.taskName.text = task.taskName
+        toggleCell.projectName.text = task.taskProjectName
+        toggleCell.timeLabel.text = toggledTime
+
+        // Fix cell swipe actions
+        if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(task.taskStatus) {
+            toggleCell.playButtonCellSetup()
+        } else {
+            toggleCell.pauseButtonCellSetup()
         }
     }
     
     func toggleManager(toggleManager: ToggleManager, didChangeToggledTask task: TaskModel, toggledTime: String) {
         let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        if  isValidIndexPath(toggleCellIndexPath) {
-            let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! ToggleFeedTableViewCell
-            toggleCell.taskName.text = task.taskName
-            toggleCell.projectName.text = task.taskProjectName
-            toggleCell.timeLabel.text = toggledTime
-            // Fix cell swipe actions
-            if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(task.taskStatus) {
-                toggleCell.playButtonCellSetup()
-            } else {
-                toggleCell.pauseButtonCellSetup()
-            }
+        guard let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as? ToggleFeedTableViewCell else { return }
+        
+        toggleCell.taskName.text = task.taskName
+        toggleCell.projectName.text = task.taskProjectName
+        toggleCell.timeLabel.text = toggledTime
+        
+        // Fix cell swipe actions
+        if ToggleFeedTableViewCell.pauseButtonCellConfiguration().contains(task.taskStatus) {
+            toggleCell.playButtonCellSetup()
+        } else {
+            toggleCell.pauseButtonCellSetup()
         }
     }
     
     func toggleManager(toggleManager: ToggleManager, didUpdateTimer value: String) {
         let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        if isValidIndexPath(toggleCellIndexPath) {
-            let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! ToggleFeedTableViewCell
-            toggleCell.timeLabel.text = value
-        }
+        let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as? ToggleFeedTableViewCell
+        toggleCell?.timeLabel.text = value
     }
 }

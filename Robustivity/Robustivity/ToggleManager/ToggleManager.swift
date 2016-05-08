@@ -55,7 +55,7 @@ import RealmSwift
     
     weak var delegate: ToggleManagerDelegate? {
         didSet {
-            delegate?.toggleManager(self, hasTask: toggledTask, toggledTime: toggledTaskDuration)
+            delegate?.toggleManager(self, hasTask: toggledTask, toggledTime: toggledTime)
         }
     }
     
@@ -71,19 +71,20 @@ import RealmSwift
     private func startTimer() {
         guard let toggledTask = toggledTask else { return }
 
-        self.delegate?.toggleManager?(self, willStartTimer: toggledTaskDuration!, forTask: toggledTask)
+        toggledTime = toggledTaskDuration!
+        delegate?.toggleManager?(self, willStartTimer: toggledTaskDuration!, forTask: toggledTask)
         timerStartDate = NSDate()
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
-        self.delegate?.toggleManager?(self, didStartTimer: toggledTaskDuration!, forTask: toggledTask)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
+        delegate?.toggleManager?(self, didStartTimer: toggledTaskDuration!, forTask: toggledTask)
     }
     
     private func resumeTimer() {
         guard let toggledTask = toggledTask else { return }
         
-        self.delegate?.toggleManager?(self, willResumeTimer: toggledTime, forTask: toggledTask)
+        delegate?.toggleManager?(self, willResumeTimer: toggledTime, forTask: toggledTask)
         timerStartDate = NSDate()
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
-        self.delegate?.toggleManager?(self, didResumeTimer: toggledTime, forTask: toggledTask)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
+        delegate?.toggleManager?(self, didResumeTimer: toggledTime, forTask: toggledTask)
     }
     
     private func pauseTimer() {
@@ -91,9 +92,10 @@ import RealmSwift
             return
         }
 
-        self.delegate?.toggleManager?(self, willPauseTimer: toggledTaskDuration!, forTask: toggledTask)
-        self.timer.invalidate()
-        self.delegate?.toggleManager?(self, didPauseTimer: toggledTaskDuration!, forTask: toggledTask)
+        toggledTime = toggledTaskDuration!
+        delegate?.toggleManager?(self, willPauseTimer: toggledTaskDuration!, forTask: toggledTask)
+        timer.invalidate()
+        delegate?.toggleManager?(self, didPauseTimer: toggledTaskDuration!, forTask: toggledTask)
     }
 
     private func stopTimer() {
@@ -101,9 +103,10 @@ import RealmSwift
             return
         }
 
-        self.delegate?.toggleManager?(self, willStopTimer: toggledTaskDuration!, forTask: toggledTask)
-        self.timer.invalidate()
-        self.delegate?.toggleManager?(self, didStopTimer: toggledTaskDuration!, forTask: toggledTask)
+        toggledTime = toggledTaskDuration!
+        delegate?.toggleManager?(self, willStopTimer: toggledTaskDuration!, forTask: toggledTask)
+        timer.invalidate()
+        delegate?.toggleManager?(self, didStopTimer: toggledTaskDuration!, forTask: toggledTask)
     }
     
     // MARK: Task Actions
@@ -170,6 +173,7 @@ import RealmSwift
                     toggledTask.taskStatus = "paused"
                     toggledTask.taskDuration = duration!
                 }
+                
                 self.stopTimer()
 
                 self.toggledTask = nil
