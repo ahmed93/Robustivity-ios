@@ -17,7 +17,7 @@ class TaskInfoToggledTableViewCell: SwipableTableViewCell {
     @IBOutlet weak var timer: RBLabel!
     
     var toggleCellTask:TaskModel = TaskModel() //Aya
-    
+        
     var toggleManager = ToggleManager.sharedInstance
     
     override func awakeFromNib() {

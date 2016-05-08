@@ -18,6 +18,7 @@ import RealmSwift
 
 class TaskInfoAdapter: BaseTableAdapter {
     var currentTask = TaskModel()
+    var isActive = false
     
     override init(viewController: UIViewController, tableView: UITableView, registerMultipleNibsAndIdenfifers cellsNibs:NSDictionary) {
         super.init(viewController: viewController, tableView: tableView, registerMultipleNibsAndIdenfifers: cellsNibs)
@@ -241,16 +242,73 @@ class TaskInfoAdapter: BaseTableAdapter {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4
     }
+    func isValidIndexPath(indexpath: NSIndexPath)->Bool {
+        if indexpath.section < self.tableView.numberOfSections {
+            if indexpath.row < self.tableView.numberOfRowsInSection(indexpath.section) {
+                return true
+            }
+            
+        }
+        return false
+    }
     
 }
 
 extension TaskInfoAdapter : ToggleManagerDelegate {
     func toggleManager(toggleManager: ToggleManager, hasTask task: TaskModel?, toggledTime: String?) {
+        
+        let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        if task != nil && isValidIndexPath(toggleCellIndexPath) {
+            let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! TaskInfoToggledTableViewCell
+            print(toggleCell.toggleCellTask)
+
+            if toggleCell.toggleCellTask.taskId != task?.taskId {
+                self.isActive = false
+                return
+            }
+            self.isActive = true
+            toggleCell.taskName.text = task!.taskName
+            toggleCell.timer.text = toggleManager.stringFromTimeInterval(Double((task?.taskDuration)!))
+            // Fix cell swipe actions
+            if TaskInfoToggledTableViewCell.pauseButtonCellConfiguration().contains(task!.taskStatus) {
+                toggleCell.playButtonCellSetup()
+            } else {
+                toggleCell.pauseButtonCellSetup()
+            }
+            
+        }
     }
     
     func toggleManager(toggleManager: ToggleManager, didChangeToggledTask task: TaskModel, toggledTime: String) {
+        let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        if isValidIndexPath(toggleCellIndexPath) {
+            let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! TaskInfoToggledTableViewCell
+            print(toggleCell.toggleCellTask)
+            if toggleCell.toggleCellTask.taskId != task.taskId {
+                self.isActive = false
+                return
+            }
+            self.isActive = true
+            toggleCell.taskName.text = task.taskName
+            toggleCell.timer.text = toggleManager.stringFromTimeInterval(Double((task.taskDuration)))
+            // Fix cell swipe actions
+            if TaskInfoToggledTableViewCell.pauseButtonCellConfiguration().contains(task.taskStatus) {
+                toggleCell.playButtonCellSetup()
+            } else {
+                toggleCell.pauseButtonCellSetup()
+            }
+            
+        }
     }
     
     func toggleManager(toggleManager: ToggleManager, didUpdateTimer value: String) {
+        let toggleCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+//        print(self.isActive)
+
+        if isValidIndexPath(toggleCellIndexPath) && self.isActive {
+            let toggleCell = tableView.cellForRowAtIndexPath(toggleCellIndexPath) as! TaskInfoToggledTableViewCell
+            toggleCell.timer.text = value
+            
+        }
     }
 }
