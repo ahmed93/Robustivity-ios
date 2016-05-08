@@ -23,11 +23,12 @@ import RealmSwift
         
         return Static.instance!
     }
-
-    private var timer = NSTimer();
-    private var timerStartDate: NSDate?;
     
     let realm = try! Realm()
+
+    private var timer = NSTimer()
+    private var timerStartDate: NSDate?
+    private var toggledTime = "00:00:00"
     private var toggledTaskDuration: String? {
         get {
             guard let toggledTask = toggledTask else {
@@ -37,8 +38,6 @@ import RealmSwift
             return stringFromTimeInterval(Double(toggledTask.taskDuration))
         }
     }
-    
-    private var toggledTime = "00:00:00"
     
     private var toggledTask:TaskModel? {
         willSet{
@@ -59,22 +58,20 @@ import RealmSwift
         }
     }
     
-    
     func fetchInProgressTask() {
         guard let task = TaskModel.inProgress() else { return }
         self.toggledTask = task
         self.startTimer()
     }
     
-    
     // MARK: Timer Actions
     private func startTimer() {
         guard let toggledTask = toggledTask else { return }
-
+        
         toggledTime = toggledTaskDuration!
         delegate?.toggleManager?(self, willStartTimer: toggledTaskDuration!, forTask: toggledTask)
         timerStartDate = NSDate()
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateToggledTime", userInfo: nil, repeats: true)
         delegate?.toggleManager?(self, didStartTimer: toggledTaskDuration!, forTask: toggledTask)
     }
     
@@ -83,7 +80,7 @@ import RealmSwift
         
         delegate?.toggleManager?(self, willResumeTimer: toggledTime, forTask: toggledTask)
         timerStartDate = NSDate()
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateToggledTime"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateToggledTime", userInfo: nil, repeats: true)
         delegate?.toggleManager?(self, didResumeTimer: toggledTime, forTask: toggledTask)
     }
     
@@ -91,22 +88,38 @@ import RealmSwift
         guard let toggledTask = toggledTask else {
             return
         }
-
+        
         toggledTime = toggledTaskDuration!
         delegate?.toggleManager?(self, willPauseTimer: toggledTaskDuration!, forTask: toggledTask)
         timer.invalidate()
         delegate?.toggleManager?(self, didPauseTimer: toggledTaskDuration!, forTask: toggledTask)
     }
-
+    
     private func stopTimer() {
         guard let toggledTask = toggledTask else {
             return
         }
-
+        
         toggledTime = toggledTaskDuration!
         delegate?.toggleManager?(self, willStopTimer: toggledTaskDuration!, forTask: toggledTask)
         timer.invalidate()
         delegate?.toggleManager?(self, didStopTimer: toggledTaskDuration!, forTask: toggledTask)
+    }
+    
+    /*
+    ** updateToggledTime
+    ** CallBack function for NStimer
+    ** compares users's current time with saved start time and
+    ** update counter accordingly
+    */
+    
+    @objc private func updateToggledTime() {
+        // Create date from the elapsed time
+        let currentDate = NSDate();
+        var timeInterval = currentDate.timeIntervalSinceDate(timerStartDate!);
+        timeInterval += Double(toggledTask!.taskDuration);
+        self.toggledTime = stringFromTimeInterval(timeInterval)
+        self.delegate?.toggleManager?(self, didUpdateTimer: self.toggledTime) // Assuty
     }
     
     // MARK: Task Actions
@@ -123,16 +136,16 @@ import RealmSwift
                 
                 let task = Mapper<TaskModel>().map(response["task"])
                 task?.updateTask()
-
+                
                 self.toggledTask = task!
                 self.startTimer()
-
+                
                 onSuccess?()
             } else {
                 self.resumeTimer()
                 onFailure?()
             }
-        })
+            })
     }
     
     func pauseCurrentTask(onSuccess: (() -> ())? = nil, onFailure: (() -> ())? = nil) {
@@ -143,21 +156,21 @@ import RealmSwift
         timer.invalidate()
         API.put(url, callback: { [unowned self] (success, response) in
             if(success) {
-
+                
                 let duration = response["total_logged_time"] as? Int
                 try! self.realm.write {
                     toggledTask.taskStatus = "paused"
                     toggledTask.taskDuration = duration!
                 }
-
+                
                 self.pauseTimer()
                 onSuccess?()
-
+                
             } else {
                 self.resumeTimer()
                 onFailure?()
             }
-        })
+            })
     }
     
     func stopCurrentTask(onSuccess: (() -> ())? = nil, onFailure: (() -> ())? = nil) {
@@ -175,18 +188,18 @@ import RealmSwift
                 }
                 
                 self.stopTimer()
-
+                
                 self.toggledTask = nil
                 self.toggledTime = "00:00:00"
-
+                
                 onSuccess?()
             } else {
                 self.resumeTimer()
                 onFailure?()
             }
-        })
+            })
     }
-
+    
     func playNewTask(task: TaskModel, onSuccess: (() -> ())? = nil, onFailure: (() -> ())? = nil) {
         if (task.taskId == toggledTask?.taskId) {
             resumeCurrentTask(onSuccess, onFailure: onFailure)
@@ -216,23 +229,6 @@ import RealmSwift
         try! self.realm.write {
             tasks.setValue("paused", forKey: "taskStatus")
         }
-    }
-    
-    /*
-    ** updateToggledTime
-    ** CallBack function for NStimer
-    ** compares users's current time with saved start time and
-    ** update counter accordingly
-    */
-    
-    // MARK: old
-    @objc private func updateToggledTime() {
-        // Create date from the elapsed time
-        let currentDate = NSDate();
-        var timeInterval = currentDate.timeIntervalSinceDate(timerStartDate!);
-        timeInterval += Double(toggledTask!.taskDuration);
-        self.toggledTime = stringFromTimeInterval(timeInterval)
-        self.delegate?.toggleManager?(self, didUpdateTimer: self.toggledTime) // Assuty
     }
     
     func stringFromTimeInterval(interval: NSTimeInterval) -> String {
