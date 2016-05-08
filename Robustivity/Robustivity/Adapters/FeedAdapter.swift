@@ -99,10 +99,6 @@ class FeedAdapter: BaseTableAdapter {
         return tableItems.count;
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
     /*
      Made by Khaled Elhossiny
      this function return dummy data to be displayed in feed
@@ -131,11 +127,12 @@ class FeedAdapter: BaseTableAdapter {
         cell.broadcastTextLabel.text = feed.content
         cell.broadcastTitleLabel.text = feed.userName + " sent a broadcast"
         cell.timestampsLabel.text? = self.getTimeDifference(feed.timeStamp)
+
+        // Assuty -> Fix feed scroll bug
         let avatarURL:NSURL? = NSURL(string: APIRoutes.URL + feed.profilePicture)
-        let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
-        cell.avatarImageView.image = avatarImage!
-        return cell
+        cell.avatarImageView.sd_setImageWithURL(avatarURL)
         
+        return cell
     }
     
     /*
@@ -174,9 +171,10 @@ class FeedAdapter: BaseTableAdapter {
         let cell = tableView.dequeueReusableCellWithIdentifier("checkInCell") as! CheckInFeedTableViewCell
         cell.checkInTitleLabel.text = feed.userName + " has" + self.updateCheckInFeedContent(feed.content)
         cell.timeStampsLabel.text = self.getTimeDifference(feed.timeStamp)
+        
+        // Assuty -> Fix feed scroll bug
         let avatarURL:NSURL? = NSURL(string: APIRoutes.URL + feed.profilePicture)
-        let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
-        cell.avatarImageView.image = avatarImage!
+        cell.avatarImageView.sd_setImageWithURL(avatarURL)
         return cell
         
     }
@@ -192,22 +190,12 @@ class FeedAdapter: BaseTableAdapter {
         cell.updateLabel.text = feed.userName + " has added a new task"
         cell.taskLabel.text = feed.content
         cell.timeStampsLabel.text = self.getTimeDifference(feed.timeStamp)
+        
+        // Assuty -> Fix feed scroll bug
         let avatarURL:NSURL? = NSURL(string: APIRoutes.URL + feed.profilePicture)
-        let avatarImage:UIImage? = UIImage(data: NSData(contentsOfURL: avatarURL!)!)
-        cell.avatarImageView.image = avatarImage!
+        cell.avatarImageView.sd_setImageWithURL(avatarURL)
         return cell
     }
-    
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0{
-            return 0.5
-        }
-        else{
-            return 0.0
-        }
-    }
-    
     
     /*
      Made by Khaled Elhossiny
